@@ -1,0 +1,441 @@
+/* ============================================================
+   VOIDS — design tokens + base styles.
+   Ported from the VOIDS design system (Claude Design project).
+   Purple = authority · Blue = modern · Beige/White = calm.
+   Max two strong colors per design. Flat color only, no gradients.
+   ============================================================ */
+
+:root {
+  /* --- Brand primitives --- */
+  --voids-purple: #3a0ca3;
+  --voids-blue: #4476f2;
+  --voids-beige: #fffaec;
+  --voids-white: #ffffff;
+  --voids-black: #000000;
+
+  /* --- Purple tints & shades --- */
+  --voids-purple-700: #2c0a7a;
+  --voids-purple-600: #3a0ca3;
+  --voids-purple-400: #6a44c4;
+  --voids-purple-300: #9578d9;
+  --voids-purple-200: #c3b2ec;
+  --voids-purple-100: #e8e1f7;
+
+  /* --- Blue tints & shades --- */
+  --voids-blue-700: #2653c9;
+  --voids-blue-600: #4476f2;
+  --voids-blue-400: #6e93f5;
+  --voids-blue-300: #9bb4f8;
+  --voids-blue-200: #c6d5fc;
+  --voids-blue-100: #e7eefe;
+
+  /* --- Neutrals (warm, built on beige/white) --- */
+  --voids-ink: #000000;
+  --voids-ink-soft: #2b2b2b;
+  --voids-ink-muted: #5c5c5c;
+  --voids-line: #e4e0d4;
+  --voids-line-soft: #efebdd;
+
+  /* --- Semantic aliases --- */
+  --surface-page: var(--voids-beige);
+  --surface-card: var(--voids-white);
+  --surface-inverse: var(--voids-purple);
+  --surface-contrast: var(--voids-black);
+
+  --text-strong: var(--voids-ink);
+  --text-body: var(--voids-ink-soft);
+  --text-muted: var(--voids-ink-muted);
+  --text-on-dark: var(--voids-white);
+  --text-accent: var(--voids-purple);
+  --text-link: var(--voids-blue);
+  --text-link-hover: var(--voids-blue-700);
+
+  --action-primary: var(--voids-purple);
+  --action-primary-hover: var(--voids-purple-700);
+  --action-secondary: var(--voids-blue);
+  --action-secondary-hover: var(--voids-blue-700);
+
+  --border-hairline: var(--voids-line);
+  --focus-ring: var(--voids-blue);
+
+  /* --- Typography --- */
+  --font-display: var(--font-anton), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  --type-title: 60px;
+  --type-head: 32px;
+  --type-subtitle: 24px;
+  --type-section: 16px;
+  --type-subhead: 14px;
+  --type-body: 14px;
+  --type-body-sm: 12px;
+  --type-quote: 15px;
+  --type-caption: 10px;
+
+  --lh-display: 0.98;
+  --lh-heading: 1.1;
+  --lh-body: 1.55;
+  --lh-tight: 1.3;
+
+  --tracking-display: -0.01em;
+  --tracking-caps: 0.06em;
+  --tracking-body: 0em;
+
+  /* --- Spacing scale (4px base) --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* --- Radii — restrained, sharp brand --- */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --border-width: 1px;
+  --border-illustration: 2px;
+
+  /* --- Shadows — used sparingly --- */
+  --shadow-none: none;
+  --shadow-sm: 0 1px 2px rgba(20, 6, 60, 0.06);
+  --shadow-md: 0 6px 20px rgba(20, 6, 60, 0.08);
+  --shadow-lg: 0 18px 48px rgba(20, 6, 60, 0.12);
+
+  /* --- Motion — calm, no bounce --- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-linear: linear;
+  --dur-fast: 200ms;
+  --dur-base: 250ms;
+  --dur-slow: 300ms;
+  --transition-base: 250ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* --- Layout --- */
+  --container-max: 1200px;
+  --container-narrow: 760px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: var(--font-sans);
+  font-size: var(--type-body);
+  line-height: var(--lh-body);
+  color: var(--text-body);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--text-link);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+a:hover {
+  color: var(--text-link-hover);
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ============================================================
+   Layout helpers
+   ============================================================ */
+.wrap {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.narrow {
+  max-width: var(--container-narrow);
+}
+
+/* ============================================================
+   Type helpers
+   ============================================================ */
+.anton,
+.voids-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  line-height: var(--lh-display);
+  color: var(--text-strong);
+  text-transform: uppercase;
+}
+
+.voids-label {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--type-section);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.voids-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.voids-quote {
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-size: var(--type-quote);
+  line-height: var(--lh-body);
+  color: var(--text-body);
+}
+
+.voids-caption {
+  font-family: var(--font-sans);
+  font-size: var(--type-caption);
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   Button — primary = purple (authority), secondary = blue (modern).
+   ============================================================ */
+.btn {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  transition: background var(--dur-base) var(--ease-out),
+    color var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out);
+}
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+.btn--full {
+  width: 100%;
+}
+
+.btn--sm {
+  padding: 8px 16px;
+  font-size: 13px;
+}
+.btn--md {
+  padding: 12px 22px;
+  font-size: 14px;
+}
+.btn--lg {
+  padding: 16px 30px;
+  font-size: 16px;
+}
+
+.btn--primary {
+  background: var(--action-primary);
+  color: #fff;
+}
+.btn--primary:hover {
+  background: var(--action-primary-hover);
+}
+
+.btn--secondary {
+  background: var(--action-secondary);
+  color: #fff;
+}
+.btn--secondary:hover {
+  background: var(--action-secondary-hover);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--voids-purple);
+  border-color: var(--voids-purple);
+}
+.btn--outline:hover {
+  background: var(--voids-purple-100);
+}
+.btn--outline.btn--on-dark {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.btn--outline.btn--on-dark:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--voids-purple);
+}
+.btn--ghost:hover {
+  background: var(--voids-purple-100);
+}
+
+/* ============================================================
+   Badge / chip
+   ============================================================ */
+.badge {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid transparent;
+}
+.badge--purple {
+  background: var(--voids-purple-100);
+  color: var(--voids-purple-700);
+}
+.badge--blue {
+  background: var(--voids-blue-100);
+  color: var(--voids-blue-700);
+}
+.badge--neutral {
+  background: var(--voids-line-soft);
+  color: var(--text-body);
+}
+.badge--on-dark {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.chip {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid var(--border-hairline);
+  background: #fff;
+  color: var(--text-muted);
+  transition: background var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+.chip--active-purple {
+  border-color: var(--voids-purple);
+  background: var(--voids-purple);
+  color: #fff;
+}
+.chip--active-blue {
+  border-color: var(--voids-blue);
+  background: var(--voids-blue);
+  color: #fff;
+}
+
+/* ============================================================
+   Card — white surface on beige, hairline border, optional accent.
+   ============================================================ */
+.card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+.card--accent-purple {
+  border-top: 3px solid var(--voids-purple);
+}
+.card--accent-blue {
+  border-top: 3px solid var(--voids-blue);
+}
+.card--hoverable:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   Form fields
+   ============================================================ */
+.field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-strong);
+  margin-bottom: 6px;
+}
+.input,
+.textarea {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--text-strong);
+  background: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+.textarea {
+  line-height: var(--lh-body);
+  resize: vertical;
+}
+.input:focus,
+.textarea:focus {
+  border-color: var(--focus-ring);
+  box-shadow: 0 0 0 3px var(--voids-blue-100);
+}
+
+/* ============================================================
+   Photography placeholder — flat brand color, aspect-ratio box.
+   Swap for real photography (see /public/photography) once the
+   curated VOIDS photo library is exported from Claude Design.
+   ============================================================ */
+.photo-placeholder {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  background: var(--ph-bg, var(--voids-purple-100));
+}
+.photo-placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(0, 0, 0, 0.06) 100%);
+}
