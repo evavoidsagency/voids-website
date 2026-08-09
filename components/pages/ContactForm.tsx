@@ -15,7 +15,7 @@ const COPY: Record<
     message: "Waar kunnen we mee helpen?",
     submit: "Verstuur bericht",
     sentTitle: "BERICHT VERSTUURD.",
-    sentBody: "Dank je wel — we reageren binnen twee werkdagen.",
+    sentBody: "Dank je wel. We reageren binnen twee werkdagen.",
   },
   en: {
     name: "Name",
@@ -24,7 +24,7 @@ const COPY: Record<
     message: "What can we help you with?",
     submit: "Send message",
     sentTitle: "MESSAGE SENT.",
-    sentBody: "Thank you — we’ll get back to you within two business days.",
+    sentBody: "Thank you. We’ll get back to you within two business days.",
   },
 };
 

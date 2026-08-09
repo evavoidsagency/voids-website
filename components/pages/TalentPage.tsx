@@ -29,7 +29,7 @@ const COPY: Record<
   nl: {
     eyebrow: "Voor talent",
     title: "JOBS KOMEN NAAR JOU TOE.",
-    sub: "Vul één keer in wat je drijft en krijg gratis je career pager. Passende kansen landen daarna vanzelf in je WhatsApp. Gratis en laagdrempelig. Dat blijft zo.",
+    sub: "Vul één keer in wat je drijft en krijg gratis je career pager. Daarna krijg je passende kansen vanzelf via WhatsApp. Gratis en laagdrempelig, en dat blijft zo.",
     ctaPager: "Maak gratis je career pager",
     ctaWhats: "💜 Join WhatsApp",
     resources: [
@@ -41,7 +41,7 @@ const COPY: Record<
     fitTitleA: "JIJ ZIET OOK WAAROM",
     fitTitleB: "EEN ROL BIJ JÓU PAST.",
     fitText:
-      "Geen zwart gat waar je cv in verdwijnt. Bij elke match zie je transparant waarom die bij jouw matchprofiel past, zodat jij kiest en niet alleen wordt gekozen.",
+      "Bij de meeste vacatures hoor je alleen óf je gekozen bent, nooit waarom. Bij VOIDS zie je per match welke criteria wel en niet aansluiten op jouw profiel, zodat jij zelf beoordeelt of een rol past, in plaats van alleen af te wachten.",
     fitCardRole: "Werkstudent Growth · Mila Health",
     fitCriteria: [
       { label: "Sluit aan op “Impact maken”", pct: 92 },
@@ -63,7 +63,7 @@ const COPY: Record<
   en: {
     eyebrow: "For talent",
     title: "JOBS COME TO YOU.",
-    sub: "Tell us once what drives you and get your free career pager. After that, matching opportunities land in your WhatsApp automatically. Free, no strings, and it stays that way.",
+    sub: "Tell us once what drives you and get your free career pager. Matching opportunities then come straight to your WhatsApp. Free, no strings, and it stays that way.",
     ctaPager: "Build your free career pager",
     ctaWhats: "💜 Join WhatsApp",
     resources: [
@@ -75,7 +75,7 @@ const COPY: Record<
     fitTitleA: "YOU ALSO SEE WHY",
     fitTitleB: "A ROLE FITS YOU.",
     fitText:
-      "No black hole for your CV. With every match you can see exactly why it fits your profile, so you’re choosing too, not just being chosen.",
+      "With most job platforms, you only hear whether you were chosen, never why. At VOIDS, every match shows which criteria do and don’t line up with your profile, so you can judge the fit yourself instead of just waiting to be picked.",
     fitCardRole: "Working student Growth · Mila Health",
     fitCriteria: [
       { label: "Fits “Making impact”", pct: 92 },
@@ -105,7 +105,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
       <section style={{ background: "var(--voids-blue)", color: "#fff" }}>
         <div className="wrap" style={{ padding: "64px 32px 70px", maxWidth: 820 }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-blue-100)" }}>{c.eyebrow}</span>
-          <h1 className="anton" style={{ fontSize: 56, margin: "14px 0 18px", color: "#fff" }}>{c.title}</h1>
+          <h1 className="anton hero-h1" style={{ fontSize: 56, margin: "14px 0 18px", color: "#fff" }}>{c.title}</h1>
           <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-blue-100)", margin: "0 0 28px" }}>{c.sub}</p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             <Button variant="primary" size="lg" href={p("/pager")}>{c.ctaPager}</Button>
@@ -114,7 +114,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section className="wrap" style={{ padding: "60px 32px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20 }}>
+      <section className="wrap g-collapse" style={{ padding: "60px 32px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20 }}>
         {c.resources.map((r) =>
           r.whats ? (
             <WhatsAppTrigger key={r.title} className="card" style={{ display: "block", padding: 26 }}>
@@ -129,10 +129,10 @@ export function TalentPage({ lang }: { lang: Lang }) {
       </section>
 
       <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)", borderBottom: "1px solid var(--border-hairline)" }}>
-        <div className="wrap" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
+        <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.fitEyebrow}</span>
-            <h2 className="anton" style={{ fontSize: 36, margin: "10px 0 14px" }}>
+            <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px" }}>
               {c.fitTitleA}
               <br />
               {c.fitTitleB}
@@ -162,10 +162,10 @@ export function TalentPage({ lang }: { lang: Lang }) {
       </section>
 
       <section className="wrap" style={{ padding: "64px 32px" }}>
-        <div style={{ background: "var(--voids-purple)", color: "#fff", borderRadius: "var(--radius-lg)", padding: 40, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "center" }}>
+        <div className="g-collapse" style={{ background: "var(--voids-purple)", color: "#fff", borderRadius: "var(--radius-lg)", padding: 40, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "center" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.referralEyebrow}</span>
-            <h2 className="anton" style={{ fontSize: 38, margin: "10px 0 14px", color: "#fff" }}>
+            <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px", color: "#fff" }}>
               {c.referralTitleA}
               <br />
               {c.referralTitleB}

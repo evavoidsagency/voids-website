@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { StubPage } from "@/components/pages/StubPage";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Tarieven", alternates: { languages: { nl: "/pricing", en: "/en/pricing" } } };
+export const metadata: Metadata = pageMetadata({
+  lang: "nl",
+  path: "/pricing",
+  title: "Tarieven",
+  description: "Zelf een vacature plaatsen en direct online betalen bij VOIDS komt eraan. Wil je nu al werven? Plan een kennismaking.",
+});
 
 export default function Page() {
   return (

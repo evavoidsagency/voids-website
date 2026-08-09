@@ -1,18 +1,7 @@
 import { Photo } from "@/components/ui/Photo";
+import { findSdgIcon } from "@/lib/logos";
 import type { Lang } from "@/lib/i18n/common";
-
-const SDGS: Record<Lang, { num: string; title: string; text: string; color: string }[]> = {
-  nl: [
-    { num: "4", title: "Kwaliteitsonderwijs", text: "Werkervaring die telt tijdens de studie.", color: "#C5192D" },
-    { num: "8", title: "Eerlijk werk & economische groei", text: "Fair wages en transparante voorwaarden.", color: "#A21942" },
-    { num: "10", title: "Minder ongelijkheid", text: "Gelijke kansen, ongeacht netwerk of achtergrond.", color: "#DD1367" },
-  ],
-  en: [
-    { num: "4", title: "Quality education", text: "Work experience that counts during your studies.", color: "#C5192D" },
-    { num: "8", title: "Decent work & economic growth", text: "Fair wages and transparent terms.", color: "#A21942" },
-    { num: "10", title: "Reduced inequalities", text: "Equal opportunity, regardless of network or background.", color: "#DD1367" },
-  ],
-};
+import { SDGS } from "@/lib/content/sdgs";
 
 const COPY: Record<
   Lang,
@@ -31,10 +20,11 @@ const COPY: Record<
     solutionEyebrow: string;
     solutionTitle: string;
     solutionText: string;
-    stats: { value: string; text: string }[];
+    stats: { value: string; text: string; color: "purple" | "blue" }[];
+    ambitionEyebrow: string;
+    ambitionText: string;
     sdgTitle: string;
     sdgSub: string;
-    sdgFootnote: string;
     employersEyebrow: string;
     employersTitle: string;
     employersP1: string;
@@ -52,7 +42,7 @@ const COPY: Record<
     problemEyebrow: "Het probleem",
     problemTitle: "WERKERVARING IS EEN VOORRECHT GEWORDEN.",
     problemIntro:
-      "Relevante werkervaring is bijna een voorwaarde om na je studie aan een goede baan te komen. Maar juist die ervaring is niet voor iedereen even toegankelijk.",
+      "Relevante werkervaring is bijna een voorwaarde om na je studie aan een goede baan te komen. Maar die ervaring is niet voor iedereen even toegankelijk.",
     card1Title: "De stagevergoeding",
     card1Text:
       "Een stage betaalt meestal een vergoeding, maar vaak te weinig om echt van rond te komen. Voor wie geen buffer of steun heeft, is maandenlang stage lopen daardoor lastig vol te houden.",
@@ -66,13 +56,14 @@ const COPY: Record<
     solutionText:
       "Wij helpen organisaties betaalde werkstudentfuncties te creëren waarin studenten al tijdens hun studie aan echte vraagstukken werken, verantwoordelijkheid dragen en zich ontwikkelen. Inkomen én relevante ervaring, tegelijk. Kiezen hoeft niet meer.",
     stats: [
-      { value: "10%", text: "van de winst naar gelijke-kansen-initiatieven, onze pledge" },
-      { value: "100%", text: "transparante voorwaarden & fair wages voor elk talent" },
-      { value: "4.000+", text: "studenten met gelijke toegang tot kansen" },
+      { value: "100%", text: "transparante voorwaarden & fair wages voor elk talent", color: "blue" },
+      { value: "4.000+", text: "studenten met gelijke toegang tot kansen", color: "purple" },
     ],
+    ambitionEyebrow: "Onze ambitie",
+    ambitionText:
+      "Onze ambitie: vanaf medio 2027 investeren we 10% van onze winst terug in gelijke-kansen-initiatieven voor studenten.",
     sdgTitle: "WAAR WE AAN BIJDRAGEN",
     sdgSub: "Onze doelen sluiten aan op drie Sustainable Development Goals van de VN.",
-    sdgFootnote: "De officiële SDG-pictogrammen van de VN kunnen hier later worden toegevoegd.",
     employersEyebrow: "Ook voor werkgevers",
     employersTitle: "TALENT LEER JE EERDER KENNEN.",
     employersP1:
@@ -106,13 +97,14 @@ const COPY: Record<
     solutionText:
       "We help organisations create paid working-student roles where students work on real challenges during their studies, take responsibility and develop. Income and relevant experience at the same time. No more trade-off.",
     stats: [
-      { value: "10%", text: "of profit to equal-opportunity initiatives, our pledge" },
-      { value: "100%", text: "transparent terms & fair wages for every talent" },
-      { value: "4.000+", text: "students with equal access to opportunity" },
+      { value: "100%", text: "transparent terms & fair wages for every talent", color: "blue" },
+      { value: "4.000+", text: "students with equal access to opportunity", color: "purple" },
     ],
+    ambitionEyebrow: "Our ambition",
+    ambitionText:
+      "Our ambition: from mid-2027, we reinvest 10% of our profit into equal-opportunity initiatives for students.",
     sdgTitle: "WHAT WE CONTRIBUTE TO",
     sdgSub: "Our goals align with three UN Sustainable Development Goals.",
-    sdgFootnote: "The official UN SDG pictograms can be added here later.",
     employersEyebrow: "For employers too",
     employersTitle: "YOU GET TO KNOW TALENT EARLIER.",
     employersP1:
@@ -134,16 +126,16 @@ export function ImpactPage({ lang }: { lang: Lang }) {
       <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
         <div className="wrap" style={{ padding: "66px 32px 72px", maxWidth: 860 }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
-          <h1 className="anton" style={{ fontSize: 56, margin: "14px 0 18px", color: "#fff" }}>{c.title}</h1>
+          <h1 className="anton hero-h1" style={{ fontSize: 56, margin: "14px 0 18px", color: "#fff" }}>{c.title}</h1>
           <p style={{ fontSize: 18, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: 0 }}>{c.intro}</p>
         </div>
       </section>
 
       <section className="wrap" style={{ padding: "60px 32px 40px", maxWidth: 900 }}>
         <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.problemEyebrow}</span>
-        <h2 className="anton" style={{ fontSize: 38, margin: "10px 0 14px" }}>{c.problemTitle}</h2>
+        <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px" }}>{c.problemTitle}</h2>
         <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 26px" }}>{c.problemIntro}</p>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
           <div className="card" style={{ padding: 24 }}>
             <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8 }}>{c.card1Title}</div>
             <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card1Text}</p>
@@ -159,60 +151,76 @@ export function ImpactPage({ lang }: { lang: Lang }) {
       <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
         <div className="wrap" style={{ padding: "56px 32px", maxWidth: 900 }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.solutionEyebrow}</span>
-          <h2 className="anton" style={{ fontSize: 38, margin: "10px 0 14px", color: "#fff" }}>{c.solutionTitle}</h2>
+          <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px", color: "#fff" }}>{c.solutionTitle}</h2>
           <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0, maxWidth: 640 }}>{c.solutionText}</p>
         </div>
       </section>
 
       <Photo src="/photography/impact-band.jpg" alt="Werkstudenten aan het werk op kantoor" ratio="16 / 6" radius="0" sizes="100vw" />
 
-      <section className="wrap" style={{ padding: "60px 32px", display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
-        {c.stats.map((s, i) => (
-          <div key={s.text} className="card" style={{ padding: 28, textAlign: "center" }}>
-            <div className="anton" style={{ fontSize: 48, color: i === 1 ? "var(--voids-blue)" : "var(--voids-purple)" }}>{s.value}</div>
-            <div style={{ fontSize: 14, color: "var(--voids-ink-muted)", marginTop: 8 }}>{s.text}</div>
-          </div>
-        ))}
+      <section className="wrap" style={{ padding: "60px 32px 0" }}>
+        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20 }}>
+          {c.stats.map((s) => (
+            <div key={s.text} className="card" style={{ padding: 28, textAlign: "center" }}>
+              <div className="anton" style={{ fontSize: 48, color: s.color === "blue" ? "var(--voids-blue)" : "var(--voids-purple)" }}>{s.value}</div>
+              <div style={{ fontSize: 14, color: "var(--voids-ink-muted)", marginTop: 8 }}>{s.text}</div>
+            </div>
+          ))}
+        </div>
+        <div style={{ marginTop: 20, borderRadius: "var(--radius-md)", border: "1px dashed var(--voids-purple-300)", background: "var(--voids-purple-100)", padding: "18px 22px" }}>
+          <span
+            className="voids-eyebrow"
+            style={{ color: "var(--voids-purple)", marginBottom: 4, display: "block" }}
+          >
+            {c.ambitionEyebrow}
+          </span>
+          <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-soft)", margin: 0 }}>{c.ambitionText}</p>
+        </div>
       </section>
 
       <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)", borderBottom: "1px solid var(--border-hairline)" }}>
         <div className="wrap" style={{ padding: "60px 32px" }}>
-          <h2 className="anton" style={{ fontSize: 32, margin: "0 0 8px" }}>{c.sdgTitle}</h2>
+          <h2 className="anton section-h2" style={{ fontSize: 32, margin: "0 0 8px" }}>{c.sdgTitle}</h2>
           <p style={{ fontSize: 14, color: "var(--voids-ink-muted)", margin: "0 0 26px" }}>{c.sdgSub}</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
-            {SDGS[lang].map((s) => (
-              <div key={s.num} style={{ borderRadius: "var(--radius-md)", overflow: "hidden", boxShadow: "var(--shadow-sm)" }}>
-                <div style={{ background: s.color, color: "#fff", padding: "22px 22px 20px", aspectRatio: "1 / 1", display: "flex", flexDirection: "column" }}>
-                  <div style={{ fontSize: 12, fontWeight: 800 }}>SDG {s.num}</div>
-                  <div style={{ flex: 1 }} />
-                  <div className="anton" style={{ fontSize: 64, lineHeight: 0.9, marginBottom: 6, color: "#fff" }}>{s.num}</div>
-                  <div style={{ fontSize: 16, fontWeight: 800, lineHeight: 1.15, textTransform: "uppercase" }}>{s.title}</div>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, alignItems: "stretch" }}>
+            {SDGS[lang].map((s) => {
+              const icon = findSdgIcon(s.num);
+              return (
+                <div key={s.num} style={{ height: "100%", display: "flex", flexDirection: "column", borderRadius: "var(--radius-md)", overflow: "hidden", boxShadow: "var(--shadow-sm)" }}>
+                  <div style={{ background: s.color, minHeight: 180, display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
+                    {icon ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={icon} alt={`SDG ${s.num}: ${s.title}`} style={{ width: 132, height: 132, borderRadius: 14, boxShadow: "0 6px 18px rgba(0,0,0,.18)" }} />
+                    ) : (
+                      <div className="anton" style={{ fontSize: 72, lineHeight: 0.9, color: "#fff" }}>{s.num}</div>
+                    )}
+                  </div>
+                  <div style={{ background: "#fff", padding: "18px 20px", flex: 1, display: "flex", flexDirection: "column", gap: 6 }}>
+                    <div style={{ fontSize: 15, fontWeight: 800, lineHeight: 1.25, color: s.color, overflowWrap: "anywhere" }}>{s.title}</div>
+                    <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{s.text}</p>
+                  </div>
                 </div>
-                <div style={{ background: "#fff", padding: "16px 18px" }}>
-                  <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{s.text}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
-          <p style={{ fontSize: 11.5, color: "var(--voids-ink-muted)", margin: "16px 0 0" }}>{c.sdgFootnote}</p>
         </div>
       </section>
 
-      <section className="wrap" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
+      <section className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
         <Photo src="/photography/impact-employers.jpg" alt="Community" ratio="4 / 3" />
         <div>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.employersEyebrow}</span>
-          <h2 className="anton" style={{ fontSize: 34, margin: "10px 0 14px" }}>{c.employersTitle}</h2>
+          <h2 className="anton section-h2" style={{ fontSize: 34, margin: "10px 0 14px" }}>{c.employersTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 16px" }}>{c.employersP1}</p>
           <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.employersP2}</p>
         </div>
       </section>
 
       <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)" }}>
-        <div className="wrap" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
+        <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.movementEyebrow}</span>
-            <h2 className="anton" style={{ fontSize: 34, margin: "10px 0 14px" }}>{c.movementTitle}</h2>
+            <h2 className="anton section-h2" style={{ fontSize: 34, margin: "10px 0 14px" }}>{c.movementTitle}</h2>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.movementText}</p>
           </div>
           <Photo src="/photography/impact-movement.jpg" alt="Aan het werk op kantoor" ratio="4 / 3" />

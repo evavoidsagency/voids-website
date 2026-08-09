@@ -70,7 +70,7 @@ export function CostCalculator({ lang }: { lang: Lang }) {
           {c.hoursUnit}
         </span>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16 }}>
+      <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 16 }}>
         {c.cards.map((card) => (
           <div key={card.key} style={{ background: "var(--voids-beige)", border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", padding: 22, textAlign: "center" }}>
             <div style={{ fontSize: 14, fontWeight: 600 }}>{card.label}</div>

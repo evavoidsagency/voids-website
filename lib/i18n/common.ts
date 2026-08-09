@@ -128,19 +128,18 @@ export const t = {
   whatsJoin: { nl: "Join →", en: "Join →" },
   whatsMaybeLater: { nl: "Misschien later", en: "Maybe later" },
   footerTagline: {
-    nl: "Wij verbinden hoogopgeleid talent aan ambitieuze organisaties. Kwaliteit boven kwantiteit.",
-    en: "We connect highly-educated talent with ambitious organisations. Quality over quantity.",
+    nl: "Wij verbinden hoogopgeleid talent aan ambitieuze organisaties.",
+    en: "We connect highly-educated talent with ambitious organisations.",
   },
   footerMenu: { nl: "Menu", en: "Menu" },
   footerMore: { nl: "Meer", en: "More" },
   footerFaq: { nl: "FAQ", en: "FAQ" },
   footerPrivacy: { nl: "Privacy", en: "Privacy" },
+  footerTerms: { nl: "Voorwaarden", en: "Terms" },
   footerStayUpdated: { nl: "Blijf op de hoogte", en: "Stay in the loop" },
   footerNewsletterSub: {
     nl: "Vacaturemeldingen & community-updates.",
     en: "Job alerts & community updates.",
   },
-  footerEmailPlaceholder: { nl: "jouw@email.nl", en: "your@email.com" },
-  footerOn: { nl: "Aan", en: "On" },
   footerCopyright: { nl: "© 2026 VOIDS.agency · Amsterdam", en: "© 2026 VOIDS.agency · Amsterdam" },
 } satisfies Record<string, { nl: string; en: string }>;

@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { StubPage } from "@/components/pages/StubPage";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Career pager", alternates: { languages: { nl: "/pager", en: "/en/pager" } } };
+export const metadata: Metadata = pageMetadata({
+  lang: "nl",
+  path: "/pager",
+  title: "Career pager",
+  description: "De VOIDS career pager, jouw persoonlijke loopbaanadvies-intake, komt eraan.",
+});
 
 export default function Page() {
   return (

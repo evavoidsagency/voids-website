@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { StubPage } from "@/components/pages/StubPage";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Pricing", alternates: { languages: { nl: "/pricing", en: "/en/pricing" } } };
+export const metadata: Metadata = pageMetadata({
+  lang: "en",
+  path: "/pricing",
+  title: "Pricing",
+  description: "Posting your own vacancy and paying online at VOIDS is coming. Want to hire now? Book an intro call.",
+});
 
 export default function Page() {
   return (

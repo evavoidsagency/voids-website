@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { StubPage } from "@/components/pages/StubPage";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Job board", alternates: { languages: { nl: "/jobboard", en: "/en/jobboard" } } };
+export const metadata: Metadata = pageMetadata({
+  lang: "en",
+  path: "/jobboard",
+  title: "Job board",
+  description: "The VOIDS job board with open working-student, internship and starter roles is coming. Join the WhatsApp community for matching opportunities.",
+});
 
 export default function Page() {
   return (

@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { StubPage } from "@/components/pages/StubPage";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Jobboard", alternates: { languages: { nl: "/jobboard", en: "/en/jobboard" } } };
+export const metadata: Metadata = pageMetadata({
+  lang: "nl",
+  path: "/jobboard",
+  title: "Jobboard",
+  description: "Het VOIDS jobboard met open werkstudent-, stage- en starterrollen komt eraan. Join de WhatsApp-community voor passende kansen.",
+});
 
 export default function Page() {
   return (
