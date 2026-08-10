@@ -40,8 +40,8 @@ export const PROCESS: Record<Lang, { num: string; title: string; text: string; w
 };
 
 export const ROLE_TYPES: Record<Lang, string[]> = {
-  nl: ["Business development", "Sales", "Marketing", "Communicatie", "Finance", "Legal", "Founder's associate", "Operations"],
-  en: ["Business development", "Sales", "Marketing", "Communications", "Finance", "Legal", "Founder's associate", "Operations"],
+  nl: ["Business development", "Sales", "Marketing", "Communicatie", "Finance", "Legal", "Founder's associate", "Operations", "en meer"],
+  en: ["Business development", "Sales", "Marketing", "Communications", "Finance", "Legal", "Founder's associate", "Operations", "and more"],
 };
 
 export const WHY_WS: Record<Lang, { title: string; text: string }[]> = {

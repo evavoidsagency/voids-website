@@ -40,7 +40,7 @@ export const TRUSTED: [string, string][] = [
 export const TESTIMONIALS: Record<Lang, { quote: string; name: string; role: string; photo?: string }[]> = {
   nl: [
     {
-      quote: "VOIDS leverde binnen twee weken kandidaten die precies op onze vraag pasten.",
+      quote: "VOIDS leverde binnen twee weken kandidaten die precies bij onze vraag pasten.",
       name: "Bas Lemmens",
       role: "Co-founder Booking.com · President HotelPlanner",
     },

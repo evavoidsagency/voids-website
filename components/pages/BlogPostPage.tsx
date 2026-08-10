@@ -125,35 +125,28 @@ export function BlogPostPage({ lang, slug }: { lang: Lang; slug: string }) {
       </section>
 
       <section className="wrap narrow" style={{ padding: "0 32px 56px" }}>
-        {post.body[lang].map((block, i) => {
-          if (block.h2) {
-            return (
-              <h2
-                key={i}
-                className="anton section-h2"
-                style={{ fontSize: 21, margin: "30px 0 12px", textTransform: "none" }}
-              >
+        {post.body[lang].map((block, i) => (
+          <div key={i}>
+            {block.h2 && (
+              <h2 className="anton section-h2" style={{ fontSize: 21, margin: "30px 0 12px", textTransform: "none" }}>
                 {block.h2}
               </h2>
-            );
-          }
-          if (block.ul) {
-            return (
-              <ul key={i} style={{ margin: "0 0 14px", paddingLeft: 20 }}>
+            )}
+            {block.ul ? (
+              <ul style={{ margin: "0 0 14px", paddingLeft: 20 }}>
                 {block.ul.map((li, j) => (
                   <li key={j} style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-soft)", marginBottom: 8 }}>
                     {li}
                   </li>
                 ))}
               </ul>
-            );
-          }
-          return (
-            <p key={i} style={{ fontSize: 15, lineHeight: 1.75, color: "var(--voids-ink-soft)", margin: "0 0 14px" }}>
-              {block.p}
-            </p>
-          );
-        })}
+            ) : block.p ? (
+              <p style={{ fontSize: 15, lineHeight: 1.75, color: "var(--voids-ink-soft)", margin: "0 0 14px" }}>
+                {block.p}
+              </p>
+            ) : null}
+          </div>
+        ))}
       </section>
 
       <section className="wrap narrow" style={{ padding: "0 32px 56px" }}>

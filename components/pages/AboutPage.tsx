@@ -121,7 +121,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 22px" }}>{c.contactSub}</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <a href="mailto:info@voids.agency" style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink)", fontWeight: 500 }}>
-              ✉ info@voids.agency
+              📧 info@voids.agency
             </a>
             <div style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink-soft)" }}>📍 {c.location}</div>
             <div style={{ display: "flex", gap: 14, marginTop: 6 }}>

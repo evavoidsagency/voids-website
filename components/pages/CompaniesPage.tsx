@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { CostCalculator } from "@/components/pages/CostCalculator";
+import { Photo } from "@/components/ui/Photo";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { PROCESS, ROLE_TYPES, WHY_WS, BENCHMARK } from "@/lib/content/companies-content";
 
@@ -41,7 +42,7 @@ const COPY: Record<
     ctaIntro: "Plan een kennismaking",
     ctaPricing: "Bekijk tarieven",
     rolesEyebrow: "Soorten rollen",
-    rolesIntro: "Breed inzetbaar: zo'n beetje alles wat onder business support of -development valt.",
+    rolesIntro: "Een greep uit de rollen die we invullen:",
     whyWsEyebrow: "Waarom werkstudent",
     whyWsTitle: "ONZE VOORKEUR, EN WAAROM.",
     processTitle: "HET HELE PROCES, UIT HANDEN.",
@@ -73,7 +74,7 @@ const COPY: Record<
     ctaIntro: "Book an intro call",
     ctaPricing: "View pricing",
     rolesEyebrow: "Types of roles",
-    rolesIntro: "Broadly deployable: pretty much anything that falls under business support or development.",
+    rolesIntro: "A selection of the roles we fill:",
     whyWsEyebrow: "Why a working student",
     whyWsTitle: "OUR PREFERENCE, AND WHY.",
     processTitle: "WE RUN THE WHOLE PROCESS.",
@@ -122,23 +123,29 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.rolesEyebrow}</span>
         <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "8px 0 18px", maxWidth: 560 }}>{c.rolesIntro}</p>
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-          {ROLE_TYPES[lang].map((r) => (
-            <span
-              key={r}
-              style={{
-                fontSize: 13,
-                fontWeight: 600,
-                color: "var(--voids-purple)",
-                background: "var(--voids-purple-100)",
-                padding: "7px 14px",
-                borderRadius: 999,
-              }}
-            >
-              {r}
-            </span>
-          ))}
+          {ROLE_TYPES[lang].map((r, i) => {
+            const isLast = i === ROLE_TYPES[lang].length - 1;
+            return (
+              <span
+                key={r}
+                style={{
+                  fontSize: 13,
+                  fontWeight: 600,
+                  color: "var(--voids-purple)",
+                  background: isLast ? "transparent" : "var(--voids-purple-100)",
+                  border: isLast ? "1px dashed var(--voids-purple-300)" : "none",
+                  padding: "7px 14px",
+                  borderRadius: 999,
+                }}
+              >
+                {r}
+              </span>
+            );
+          })}
         </div>
       </section>
+
+      <Photo src="/photography/blog-2.jpg" alt="Werkstudent aan het werk op kantoor" ratio="16 / 6" radius="0" sizes="100vw" />
 
       <section className="wrap" style={{ padding: "64px 32px" }}>
         <div style={{ textAlign: "center", marginBottom: 36 }}>

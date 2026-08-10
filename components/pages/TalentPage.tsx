@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/Button";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { WhatsAppTrigger } from "@/components/site/WhatsAppTrigger";
 import { localePath, type Lang } from "@/lib/i18n/common";
+import { TALENT_THRIVING } from "@/lib/content/talent-thriving";
 
 const COPY: Record<
   Lang,
@@ -18,6 +19,8 @@ const COPY: Record<
     fitText: string;
     fitCardRole: string;
     fitCriteria: { label: string; pct: number }[];
+    thrivingEyebrow: string;
+    thrivingTitle: string;
     referralEyebrow: string;
     referralTitleA: string;
     referralTitleB: string;
@@ -48,6 +51,8 @@ const COPY: Record<
       { label: "Zelfstandig werken", pct: 88 },
       { label: "Data & uitzoeken", pct: 90 },
     ],
+    thrivingEyebrow: "Talent aan het woord",
+    thrivingTitle: "ZO ZIET DAT ER IN DE PRAKTIJK UIT.",
     referralEyebrow: "Referral",
     referralTitleA: "GOEDE MENSEN KENNEN",
     referralTitleB: "GOEDE MENSEN.",
@@ -82,6 +87,8 @@ const COPY: Record<
       { label: "Working independently", pct: 88 },
       { label: "Data & figuring things out", pct: 90 },
     ],
+    thrivingEyebrow: "Talent in their own words",
+    thrivingTitle: "WHAT THAT LOOKS LIKE IN PRACTICE.",
     referralEyebrow: "Referral",
     referralTitleA: "GOOD PEOPLE KNOW",
     referralTitleB: "GOOD PEOPLE.",
@@ -157,6 +164,24 @@ export function TalentPage({ lang }: { lang: Lang }) {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ background: "var(--voids-beige)" }}>
+        <div className="wrap" style={{ padding: "64px 32px" }}>
+          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.thrivingEyebrow}</span>
+          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "10px 0 26px" }}>{c.thrivingTitle}</h2>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 22 }}>
+            {TALENT_THRIVING[lang].map((t) => (
+              <div key={t.name} className="card" style={{ padding: 26 }}>
+                <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink)", margin: "0 0 16px" }}>
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div style={{ fontSize: 14, fontWeight: 600 }}>{t.name}</div>
+                <div style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>{t.role}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
