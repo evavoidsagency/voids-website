@@ -47,7 +47,7 @@ const COPY: Record<
     trustedBy: "VERTROUWD DOOR",
     doorTalentTitle: "VOOR TALENT",
     doorTalentText:
-      "Jij hoeft niet zelf op zoek naar vacatures: vertel ons wat je drijft, krijg gratis je career pager en sta meteen op de radar bij ambitieuze organisaties.",
+      "Jij hoeft niet zelf op zoek naar vacatures: vertel ons wat je drijft, krijg gratis je career pager en sta meteen op de radar bij ambitieuze organisaties. Nieuwe vacatures die bij je passen krijg je daarna gratis en automatisch toegestuurd.",
     doorTalentCta: "Ontdek de talentkant →",
     doorCompaniesTitle: "VOOR BEDRIJVEN",
     doorCompaniesText:
@@ -77,7 +77,7 @@ const COPY: Record<
     trustedBy: "TRUSTED BY",
     doorTalentTitle: "FOR TALENT",
     doorTalentText:
-      "No more trawling job boards: tell us what drives you, get your free career pager, and land on the radar of ambitious organisations straight away.",
+      "No more trawling job boards: tell us what drives you, get your free career pager, and land on the radar of ambitious organisations straight away. New matching vacancies then land in your inbox automatically, for free.",
     doorTalentCta: "Explore the talent side →",
     doorCompaniesTitle: "FOR COMPANIES",
     doorCompaniesText:
@@ -108,7 +108,7 @@ export function HomePage({ lang }: { lang: Lang }) {
           className="wrap g-collapse"
           style={{
             display: "grid",
-            gridTemplateColumns: "1.1fr .9fr",
+            gridTemplateColumns: ".95fr 1.15fr",
             gap: 44,
             alignItems: "center",
             padding: "70px 32px 76px",
@@ -144,7 +144,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               </div>
             </div>
           </div>
-          <Photo src="/photography/home-hero.jpg" alt="Twee collega's aan het werk op kantoor" ratio="4 / 5" priority />
+          <Photo src="/photography/home-hero.jpg" alt="Twee collega's aan het werk op kantoor" ratio="4 / 3" priority />
         </div>
       </section>
 

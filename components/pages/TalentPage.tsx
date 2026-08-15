@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/Button";
+import { Photo } from "@/components/ui/Photo";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { WhatsAppTrigger } from "@/components/site/WhatsAppTrigger";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { TALENT_THRIVING } from "@/lib/content/talent-thriving";
+import { findTestimonialPhoto } from "@/lib/logos";
 
 const COPY: Record<
   Lang,
@@ -121,7 +123,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section className="wrap g-collapse" style={{ padding: "60px 32px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20 }}>
+      <section className="wrap g-collapse" style={{ padding: "72px 32px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20 }}>
         {c.resources.map((r) =>
           r.whats ? (
             <WhatsAppTrigger key={r.title} className="card" style={{ display: "block", padding: 26 }}>
@@ -136,7 +138,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
       </section>
 
       <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)", borderBottom: "1px solid var(--border-hairline)" }}>
-        <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
+        <div className="wrap g-collapse" style={{ padding: "72px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.fitEyebrow}</span>
             <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px" }}>
@@ -169,19 +171,49 @@ export function TalentPage({ lang }: { lang: Lang }) {
       </section>
 
       <section style={{ background: "var(--voids-beige)" }}>
-        <div className="wrap" style={{ padding: "64px 32px" }}>
+        <div className="wrap" style={{ padding: "72px 32px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.thrivingEyebrow}</span>
-          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "10px 0 26px" }}>{c.thrivingTitle}</h2>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 22 }}>
-            {TALENT_THRIVING[lang].map((t) => (
-              <div key={t.name} className="card" style={{ padding: 26 }}>
-                <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink)", margin: "0 0 16px" }}>
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div style={{ fontSize: 14, fontWeight: 600 }}>{t.name}</div>
-                <div style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>{t.role}</div>
-              </div>
-            ))}
+          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "10px 0 30px" }}>{c.thrivingTitle}</h2>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+            {TALENT_THRIVING[lang].map((t) => {
+              const photo = findTestimonialPhoto(t.slug);
+              return (
+                <div key={t.name} className="card" style={{ padding: 26 }}>
+                  <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink)", margin: "0 0 18px" }}>
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div style={{ display: "flex", alignItems: "center", gap: 13 }}>
+                    {photo ? (
+                      <div style={{ width: 46, height: 46, borderRadius: "50%", flex: "none", overflow: "hidden", position: "relative" }}>
+                        <Photo src={photo} alt={t.name} ratio="1 / 1" radius="0" sizes="46px" />
+                      </div>
+                    ) : (
+                      <div
+                        style={{
+                          width: 46,
+                          height: 46,
+                          borderRadius: "50%",
+                          flex: "none",
+                          background: "var(--voids-purple-100)",
+                          color: "var(--voids-purple)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontWeight: 700,
+                          fontSize: 15,
+                        }}
+                      >
+                        {t.name.charAt(0)}
+                      </div>
+                    )}
+                    <div>
+                      <div style={{ fontSize: 14, fontWeight: 600 }}>{t.name}</div>
+                      <div style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>{t.role}</div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

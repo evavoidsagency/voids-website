@@ -2,6 +2,7 @@ import { Photo } from "@/components/ui/Photo";
 import { ContactForm } from "@/components/pages/ContactForm";
 import { SOCIALS, type Lang } from "@/lib/i18n/common";
 import { TEAM } from "@/lib/content/team";
+import { findTeamPhoto } from "@/lib/logos";
 
 const COPY: Record<
   Lang,
@@ -13,6 +14,8 @@ const COPY: Record<
     whatEyebrow: string;
     whatTitle: string;
     whatCards: { title: string; text: string }[];
+    foundersAlt: string;
+    foundersPending: string;
     teamTitle: string;
     coFounder: string;
     contactTitle: string;
@@ -37,6 +40,8 @@ const COPY: Record<
         text: "4.000+ studenten en starters in onze WhatsApp-community, plus een jobboard waar bedrijven vacatures rechtstreeks onder de aandacht brengen.",
       },
     ],
+    foundersAlt: "Eva en Wieke, de oprichters van VOIDS",
+    foundersPending: "Foto van Eva & Wieke volgt",
     teamTitle: "HET TEAM",
     coFounder: "Co-founder",
     contactTitle: "SNEL SCHAKELEN?",
@@ -60,6 +65,8 @@ const COPY: Record<
         text: "4,000+ students and starters in our WhatsApp community, plus a job board where companies put vacancies directly in front of them.",
       },
     ],
+    foundersAlt: "Eva and Wieke, the founders of VOIDS",
+    foundersPending: "Photo of Eva & Wieke coming soon",
     teamTitle: "THE TEAM",
     coFounder: "Co-founder",
     contactTitle: "WANT TO MOVE FAST?",
@@ -70,6 +77,7 @@ const COPY: Record<
 
 export function AboutPage({ lang }: { lang: Lang }) {
   const c = COPY[lang];
+  const foundersPhoto = findTeamPhoto("together");
 
   return (
     <>
@@ -80,7 +88,25 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 14px" }}>{c.p1}</p>
           <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.p2}</p>
         </div>
-        <Photo src="/photography/about-hero.jpg" alt="Aan het werk op kantoor, met uitzicht over Amsterdam" ratio="4 / 5" />
+        {foundersPhoto ? (
+          <Photo src={foundersPhoto} alt={c.foundersAlt} ratio="4 / 5" />
+        ) : (
+          <div
+            style={{
+              aspectRatio: "4 / 5",
+              borderRadius: "var(--radius-lg)",
+              border: "1px dashed var(--voids-line)",
+              background: "var(--voids-beige)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: 24,
+              textAlign: "center",
+            }}
+          >
+            <span style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>{c.foundersPending}</span>
+          </div>
+        )}
       </section>
 
       <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)", borderBottom: "1px solid var(--border-hairline)" }}>
@@ -120,7 +146,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "0 0 12px" }}>{c.contactTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 22px" }}>{c.contactSub}</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <a href="mailto:info@voids.agency" style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink)", fontWeight: 500 }}>
+            <a href="mailto:info@voids.agency" style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink)", fontWeight: 400 }}>
               📧 info@voids.agency
             </a>
             <div style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink-soft)" }}>📍 {c.location}</div>

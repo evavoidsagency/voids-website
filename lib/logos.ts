@@ -33,3 +33,13 @@ export function findLogoFile(slug: string): string | null {
 export function findSdgIcon(num: string): string | null {
   return findPublicAsset("sdg-icons", num);
 }
+
+/** Drop a matching file in /public/team/{slug}.jpg|.png to replace the placeholder (e.g. "together" for a founders photo). */
+export function findTeamPhoto(slug: string): string | null {
+  return findPublicAsset("team", slug);
+}
+
+/** Drop a matching file in /public/testimonials/{slug}.jpg|.png to add a photo to a quote. */
+export function findTestimonialPhoto(slug: string): string | null {
+  return findPublicAsset("testimonials", slug);
+}

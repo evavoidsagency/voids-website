@@ -158,7 +158,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
 
       <Photo src="/photography/impact-band.jpg" alt="Werkstudenten aan het werk op kantoor" ratio="16 / 6" radius="0" sizes="100vw" />
 
-      <section className="wrap" style={{ padding: "60px 32px 0" }}>
+      <section className="wrap" style={{ padding: "60px 32px 48px" }}>
         <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20 }}>
           {c.stats.map((s) => (
             <div key={s.text} className="card" style={{ padding: 28, textAlign: "center" }}>
@@ -187,7 +187,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
               const icon = findSdgIcon(s.num);
               return (
                 <div key={s.num} style={{ height: "100%", display: "flex", flexDirection: "column", borderRadius: "var(--radius-md)", overflow: "hidden", boxShadow: "var(--shadow-sm)" }}>
-                  <div style={{ background: s.color, minHeight: 180, display: "flex", alignItems: "center", justifyContent: "flex-start", padding: 24 }}>
+                  <div style={{ background: s.color, minHeight: 180, display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
                     {icon ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img src={icon} alt={`SDG ${s.num}: ${s.title}`} style={{ width: 132, height: 132, borderRadius: 14, boxShadow: "0 6px 18px rgba(0,0,0,.18)" }} />
@@ -195,7 +195,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
                       <div className="anton" style={{ fontSize: 72, lineHeight: 0.9, color: "#fff" }}>{s.num}</div>
                     )}
                   </div>
-                  <div style={{ background: "#fff", padding: "18px 20px", flex: 1, display: "flex", flexDirection: "column", gap: 6 }}>
+                  <div style={{ background: "#fff", padding: "18px 20px", flex: 1, display: "flex", flexDirection: "column", gap: 6, textAlign: "center", alignItems: "center" }}>
                     <div style={{ fontSize: 15, fontWeight: 800, lineHeight: 1.25, color: s.color, overflowWrap: "anywhere" }}>{s.title}</div>
                     <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{s.text}</p>
                   </div>

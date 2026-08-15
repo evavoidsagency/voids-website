@@ -42,7 +42,7 @@ const COPY: Record<
     ctaIntro: "Plan een kennismaking",
     ctaPricing: "Bekijk tarieven",
     rolesEyebrow: "Soorten rollen",
-    rolesIntro: "Een greep uit de rollen die we invullen:",
+    rolesIntro: "Onze werkstudenten en stagiairs versterken vooral de commerciële en groeigerichte kant van je organisatie. Een greep uit de rollen die we invullen:",
     whyWsEyebrow: "Waarom werkstudent",
     whyWsTitle: "ONZE VOORKEUR, EN WAAROM.",
     processTitle: "HET HELE PROCES, UIT HANDEN.",
@@ -74,7 +74,7 @@ const COPY: Record<
     ctaIntro: "Book an intro call",
     ctaPricing: "View pricing",
     rolesEyebrow: "Types of roles",
-    rolesIntro: "A selection of the roles we fill:",
+    rolesIntro: "Our working students and interns mainly strengthen the commercial and growth side of your organisation. A selection of the roles we fill:",
     whyWsEyebrow: "Why a working student",
     whyWsTitle: "OUR PREFERENCE, AND WHY.",
     processTitle: "WE RUN THE WHOLE PROCESS.",
@@ -119,9 +119,9 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section className="wrap" style={{ padding: "48px 32px 0" }}>
+      <section className="wrap" style={{ padding: "48px 32px 56px" }}>
         <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.rolesEyebrow}</span>
-        <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "8px 0 18px", maxWidth: 560 }}>{c.rolesIntro}</p>
+        <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "8px 0 18px", maxWidth: 640 }}>{c.rolesIntro}</p>
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
           {ROLE_TYPES[lang].map((r, i) => {
             const isLast = i === ROLE_TYPES[lang].length - 1;
@@ -145,7 +145,9 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <Photo src="/photography/blog-2.jpg" alt="Werkstudent aan het werk op kantoor" ratio="16 / 6" radius="0" sizes="100vw" />
+      <div className="wrap" style={{ padding: "0 32px" }}>
+        <Photo src="/photography/blog-2.jpg" alt="Werkstudent aan het werk op kantoor" ratio="16 / 6" sizes="(max-width: 1200px) 100vw, 1136px" />
+      </div>
 
       <section className="wrap" style={{ padding: "64px 32px" }}>
         <div style={{ textAlign: "center", marginBottom: 36 }}>

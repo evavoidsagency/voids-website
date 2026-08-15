@@ -26,7 +26,7 @@ export function CasesPage({ lang }: { lang: Lang }) {
       <section className="wrap" style={{ padding: "64px 32px 40px", maxWidth: 820 }}>
         <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.eyebrow}</span>
         <h1 className="anton hero-h1" style={{ fontSize: 48, margin: "12px 0 12px" }}>{c.title}</h1>
-        <p style={{ fontSize: 16, color: "var(--voids-ink-muted)", margin: 0 }}>{c.sub}</p>
+        <p style={{ fontSize: 16, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 620, textWrap: "balance" }}>{c.sub}</p>
       </section>
 
       <section className="wrap g-collapse" style={{ padding: "0 32px 30px", display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20 }}>
