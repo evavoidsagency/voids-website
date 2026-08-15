@@ -6,7 +6,17 @@ import type { Lang } from "@/lib/i18n/common";
 
 const COPY: Record<
   Lang,
-  { name: string; company: string; email: string; message: string; submit: string; sentTitle: string; sentBody: string }
+  {
+    name: string;
+    company: string;
+    email: string;
+    message: string;
+    submit: string;
+    submitting: string;
+    sentTitle: string;
+    sentBody: string;
+    errorBody: string;
+  }
 > = {
   nl: {
     name: "Naam",
@@ -14,8 +24,10 @@ const COPY: Record<
     email: "E-mail",
     message: "Waar kunnen we mee helpen?",
     submit: "Verstuur bericht",
+    submitting: "Versturen...",
     sentTitle: "BERICHT VERSTUURD.",
     sentBody: "Dank je wel. We reageren binnen twee werkdagen.",
+    errorBody: "Er ging iets mis bij het versturen. Probeer het nog eens, of mail ons direct op info@voids.agency.",
   },
   en: {
     name: "Name",
@@ -23,21 +35,20 @@ const COPY: Record<
     email: "Email",
     message: "What can we help you with?",
     submit: "Send message",
+    submitting: "Sending...",
     sentTitle: "MESSAGE SENT.",
     sentBody: "Thank you. We’ll get back to you within two business days.",
+    errorBody: "Something went wrong sending this. Please try again, or email us directly at info@voids.agency.",
   },
 };
 
-/**
- * Static demo form for Phase 1 — no backend wired yet. Swap the
- * onSubmit for a real handler (e.g. a Supabase `contact_requests`
- * insert or an email API route) in a later phase.
- */
+type Status = "idle" | "submitting" | "sent" | "error";
+
 export function ContactForm({ lang }: { lang: Lang }) {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
   const c = COPY[lang];
 
-  if (sent) {
+  if (status === "sent") {
     return (
       <div className="card" style={{ padding: 26, textAlign: "center" }}>
         <div className="anton" style={{ fontSize: 24, marginBottom: 8 }}>{c.sentTitle}</div>
@@ -50,19 +61,40 @@ export function ContactForm({ lang }: { lang: Lang }) {
     <form
       className="card"
       style={{ padding: 26 }}
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
-        setSent(true);
+        const form = e.currentTarget;
+        const data = new FormData(form);
+        setStatus("submitting");
+        try {
+          const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: data.get("name"),
+              company: data.get("company"),
+              email: data.get("email"),
+              message: data.get("message"),
+            }),
+          });
+          if (!res.ok) throw new Error("Request failed");
+          setStatus("sent");
+        } catch {
+          setStatus("error");
+        }
       }}
     >
       <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
-        <input className="input" placeholder={c.name} aria-label={c.name} required />
-        <input className="input" placeholder={c.company} aria-label={c.company} />
+        <input name="name" className="input" placeholder={c.name} aria-label={c.name} required />
+        <input name="company" className="input" placeholder={c.company} aria-label={c.company} />
       </div>
-      <input className="input" type="email" placeholder={c.email} aria-label={c.email} required style={{ marginBottom: 12 }} />
-      <textarea className="textarea" placeholder={c.message} aria-label={c.message} rows={4} style={{ marginBottom: 14 }} />
-      <Button variant="primary" size="md" fullWidth>
-        {c.submit}
+      <input name="email" className="input" type="email" placeholder={c.email} aria-label={c.email} required style={{ marginBottom: 12 }} />
+      <textarea name="message" className="textarea" placeholder={c.message} aria-label={c.message} rows={4} required style={{ marginBottom: 14 }} />
+      {status === "error" && (
+        <p style={{ fontSize: 13, color: "var(--voids-red, #c5192d)", margin: "0 0 12px" }}>{c.errorBody}</p>
+      )}
+      <Button variant="primary" size="md" fullWidth disabled={status === "submitting"}>
+        {status === "submitting" ? c.submitting : c.submit}
       </Button>
     </form>
   );

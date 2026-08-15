@@ -27,7 +27,7 @@ const SECTIONS: Record<Lang, LegalSection[]> = {
         { p: "Deze voorwaarden zijn van toepassing op alle diensten, waaronder in ieder geval:" },
         { ul: ["Werving en selectie", "Vacatureplaatsing", "Employer branding diensten", "Advisering op het gebied van talentstrategie", "Consultancy en aanverwante diensten"] },
         {
-          p: "Op diensten voor werving en selectie zijn daarnaast de separate Recruitment & Selection Terms van VOIDS van toepassing. Bij strijdigheid prevaleren die voorwaarden met betrekking tot wervingsopdrachten.",
+          p: "Op diensten voor werving en selectie zijn daarnaast de separate Werving- & Selectievoorwaarden van VOIDS van toepassing. Bij strijdigheid prevaleren die voorwaarden met betrekking tot wervingsopdrachten.",
         },
         { p: "De toepasselijkheid van eventuele algemene voorwaarden van de opdrachtgever wordt uitdrukkelijk van de hand gewezen." },
         { p: "Bij strijdigheid tussen deze voorwaarden en een specifieke schriftelijke overeenkomst of offerte, prevaleert de specifieke schriftelijke overeenkomst." },
@@ -112,7 +112,7 @@ const SECTIONS: Record<Lang, LegalSection[]> = {
       heading: "Artikel 11 – Non-circumventie",
       blocks: [
         { p: "De opdrachtgever zal VOIDS niet omzeilen ten aanzien van contacten, kandidaten of zakelijke relaties die door VOIDS zijn geïntroduceerd." },
-        { p: "Specifieke afspraken met betrekking tot werving zijn geregeld in de separate Recruitment & Selection Terms van VOIDS." },
+        { p: "Specifieke afspraken met betrekking tot werving zijn geregeld in de separate Werving- & Selectievoorwaarden van VOIDS." },
       ],
     },
     {
@@ -133,7 +133,7 @@ const SECTIONS: Record<Lang, LegalSection[]> = {
         { p: "These Terms apply to all services, including but not limited to:" },
         { ul: ["Recruitment and selection", "Vacancy advertising", "Employer branding services", "Talent strategy advisory", "Consultancy and related services"] },
         {
-          p: "Recruitment and selection services are additionally governed by VOIDS’ separate Recruitment & Selection Terms. In case of conflict, those terms shall prevail with respect to recruitment assignments.",
+          p: "Recruitment and selection services are additionally governed by VOIDS’ separate Werving- & Selectievoorwaarden. In case of conflict, those terms shall prevail with respect to recruitment assignments.",
         },
         { p: "The applicability of any general terms and conditions of the client is expressly rejected." },
         { p: "In case of conflict between these Terms and a specific written agreement or proposal, the specific written agreement shall prevail." },
@@ -218,7 +218,7 @@ const SECTIONS: Record<Lang, LegalSection[]> = {
       heading: "Article 11 – Non-Circumvention",
       blocks: [
         { p: "The client shall not circumvent VOIDS in relation to contacts, candidates, or business relations introduced by VOIDS." },
-        { p: "Recruitment-specific arrangements are governed by VOIDS’ separate Recruitment & Selection Terms." },
+        { p: "Recruitment-specific arrangements are governed by VOIDS’ separate Werving- & Selectievoorwaarden." },
       ],
     },
     {

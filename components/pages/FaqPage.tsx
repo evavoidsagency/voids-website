@@ -11,14 +11,14 @@ const QA: Record<Lang, { q: string; a: string; ul?: string[] }[]> = {
   nl: [
     {
       q: "Wat is VOIDS?",
-      a: "VOIDS is een junior talent agency, gespecialiseerd in het verbinden van bedrijven met toptalent uit Gen Z. We bemiddelen zowel parttime als fulltime rollen.",
+      a: "VOIDS is een junior talent agency in Amsterdam. We verbinden hoogopgeleid junior talent, denk aan werkstudenten, stagiairs en starters, aan ambitieuze organisaties, voorbij het cv en met oog voor drijfveren en werkstijl.",
     },
     {
       q: "Welke diensten biedt VOIDS voor bedrijven?",
       a: "We bieden twee hoofddiensten:",
       ul: [
         "Werving & selectie: we nemen het hele wervingsproces uit handen, van briefing tot ondertekende match.",
-        "Vacature plaatsen in onze community: je vacature rechtstreeks onder de aandacht van onze groeiende pool aan ambitieuze studenten en young professionals.",
+        "Vacature plaatsen in onze community: je vacature rechtstreeks onder de aandacht van onze groeiende pool aan ambitieuze studenten en starters.",
       ],
     },
     {
@@ -33,14 +33,14 @@ const QA: Record<Lang, { q: string; a: string; ul?: string[] }[]> = {
   en: [
     {
       q: "What is VOIDS?",
-      a: "VOIDS is a junior talent agency, specialised in connecting companies with top talent from Gen Z. We place both part-time and full-time roles.",
+      a: "VOIDS is a junior talent agency in Amsterdam. We connect highly-educated junior talent, think working students, interns and starters, with ambitious organisations, beyond the CV and with an eye for motivation and working style.",
     },
     {
       q: "What services does VOIDS offer for companies?",
       a: "We offer two main services:",
       ul: [
         "Recruitment & selection: we take the entire hiring process off your hands, from briefing to signed match.",
-        "Vacancy promotion in our community: your vacancy put directly in front of our growing pool of ambitious students and young professionals.",
+        "Vacancy promotion in our community: your vacancy put directly in front of our growing pool of ambitious students and starters.",
       ],
     },
     {
