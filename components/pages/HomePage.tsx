@@ -32,6 +32,8 @@ const COPY: Record<
     finalTitle: string;
     finalText: string;
     finalCta: string;
+    heroAlt: string;
+    missionAlt: string;
   }
 > = {
   nl: {
@@ -63,6 +65,8 @@ const COPY: Record<
     finalText:
       "Sluit je aan bij 4.000+ studenten en starters in onze community. Passende kansen krijg je direct via WhatsApp.",
     finalCta: "💜 Join de WhatsApp-community",
+    heroAlt: "Twee collega's aan het werk op kantoor",
+    missionAlt: "Het VOIDS-team op kantoor",
   },
   en: {
     heroTitle: "JUNIOR TALENT WITH SUBSTANCE.",
@@ -93,6 +97,8 @@ const COPY: Record<
     finalText:
       "Join 4,000+ students and starters in our community. Matching opportunities come straight to your WhatsApp.",
     finalCta: "💜 Join the WhatsApp community",
+    heroAlt: "Two colleagues working together in the office",
+    missionAlt: "The VOIDS team at the office",
   },
 };
 
@@ -144,7 +150,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               </div>
             </div>
           </div>
-          <Photo src="/photography/home-hero.jpg" alt="Twee collega's aan het werk op kantoor" ratio="4 / 3" priority />
+          <Photo src="/photography/home-hero.jpg" alt={c.heroAlt} ratio="4 / 3" priority />
         </div>
       </section>
 
@@ -279,7 +285,7 @@ export function HomePage({ lang }: { lang: Lang }) {
 
       {/* MISSION / IMPACT TEASER */}
       <section className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: ".9fr 1.1fr", gap: 44, alignItems: "center" }}>
-        <Photo src="/photography/home-mission.jpg" alt="Het VOIDS-team op kantoor" ratio="1 / 1" />
+        <Photo src="/photography/home-mission.jpg" alt={c.missionAlt} ratio="1 / 1" />
         <div>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.missionLabel}</span>
           <h2 className="anton section-h2" style={{ fontSize: 40, margin: "10px 0 16px" }}>{c.missionTitle}</h2>

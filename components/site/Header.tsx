@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/ui/Logo";
@@ -13,11 +13,14 @@ export function Header({ lang }: { lang: Lang }) {
   const altPath = altLocalePath(pathname);
   const homeHref = lang === "en" ? "/en" : "/";
   const [menuOpen, setMenuOpen] = useState(false);
+  const [lastPathname, setLastPathname] = useState(pathname);
 
-  // Close the mobile menu automatically whenever the route changes.
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
+  // Close the mobile menu automatically whenever the route changes, adjusted during
+  // render (React's recommended pattern) rather than in an effect.
+  if (pathname !== lastPathname) {
+    setLastPathname(pathname);
+    if (menuOpen) setMenuOpen(false);
+  }
 
   return (
     <header
@@ -29,7 +32,7 @@ export function Header({ lang }: { lang: Lang }) {
         borderBottom: "1px solid var(--border-hairline)",
       }}
     >
-      <div className="wrap" style={{ display: "flex", alignItems: "center", gap: 18, height: 70 }}>
+      <div className="wrap" style={{ display: "flex", alignItems: "center", gap: 18, minHeight: 70, flexWrap: "wrap", padding: "10px 32px" }}>
         <Link href={homeHref} style={{ display: "flex", alignItems: "center", flex: "none" }}>
           <Logo variant="black" width={100} />
         </Link>
@@ -83,7 +86,7 @@ export function Header({ lang }: { lang: Lang }) {
         <button
           className="nav-mobile-toggle"
           onClick={() => setMenuOpen((v) => !v)}
-          aria-label={menuOpen ? "Sluit menu" : "Open menu"}
+          aria-label={menuOpen ? t.closeMenu[lang] : t.openMenu[lang]}
           aria-expanded={menuOpen}
           style={{
             alignItems: "center",

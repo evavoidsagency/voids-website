@@ -15,7 +15,19 @@ export function WhatsAppTrigger({
 }) {
   const { openModal } = useWhatsApp();
   return (
-    <span onClick={openModal} className={className} style={{ cursor: "pointer", ...style }}>
+    <span
+      role="button"
+      tabIndex={0}
+      onClick={openModal}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openModal();
+        }
+      }}
+      className={className}
+      style={{ cursor: "pointer", ...style }}
+    >
       {children}
     </span>
   );

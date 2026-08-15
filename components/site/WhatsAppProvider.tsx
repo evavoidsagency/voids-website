@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { CHANNELS, t } from "@/lib/i18n/common";
 
@@ -32,6 +32,15 @@ function WhatsAppModal({ open, onClose }: { open: boolean; onClose: () => void }
   const pathname = usePathname();
   const lang: "nl" | "en" = pathname?.startsWith("/en") ? "en" : "nl";
 
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open, onClose]);
+
   if (!open) return null;
 
   return (
@@ -49,6 +58,9 @@ function WhatsAppModal({ open, onClose }: { open: boolean; onClose: () => void }
       }}
     >
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={t.whatsModalTitle[lang]}
         onClick={(e) => e.stopPropagation()}
         style={{
           background: "#fff",
@@ -114,12 +126,24 @@ function WhatsAppModal({ open, onClose }: { open: boolean; onClose: () => void }
               <span style={{ color: "var(--voids-blue)", fontWeight: 600, fontSize: 14 }}>{t.whatsJoin[lang]}</span>
             </a>
           ))}
-          <div
+          <button
+            type="button"
             onClick={onClose}
-            style={{ textAlign: "center", marginTop: 16, fontSize: 13, color: "var(--voids-ink-muted)", cursor: "pointer" }}
+            style={{
+              display: "block",
+              width: "100%",
+              textAlign: "center",
+              marginTop: 16,
+              fontSize: 13,
+              color: "var(--voids-ink-muted)",
+              cursor: "pointer",
+              background: "none",
+              border: "none",
+              font: "inherit",
+            }}
           >
             {t.whatsMaybeLater[lang]}
-          </div>
+          </button>
         </div>
       </div>
     </div>

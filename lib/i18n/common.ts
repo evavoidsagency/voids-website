@@ -120,6 +120,8 @@ export const t = {
   accountLabel: { nl: "Inloggen", en: "Log in" },
   whatsappCta: { nl: "💜 WhatsApp", en: "💜 WhatsApp" },
   careerPager: { nl: "Career pager", en: "Career pager" },
+  openMenu: { nl: "Open menu", en: "Open menu" },
+  closeMenu: { nl: "Sluit menu", en: "Close menu" },
   whatsModalTitle: { nl: "JOIN DE COMMUNITY 💜", en: "JOIN THE COMMUNITY 💜" },
   whatsModalSub: {
     nl: "Kies je kanaal. Passende jobs landen direct in je WhatsApp.",

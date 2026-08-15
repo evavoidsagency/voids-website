@@ -63,6 +63,7 @@ export function CostCalculator({ lang }: { lang: Lang }) {
           step={4}
           value={hours}
           onChange={(e) => setHours(parseInt(e.target.value, 10))}
+          aria-label={c.hoursLabel}
           style={{ flex: 1, accentColor: "var(--voids-purple)" }}
         />
         <span className="anton" style={{ fontSize: 24, color: "var(--voids-purple)", width: 56, textAlign: "right" }}>

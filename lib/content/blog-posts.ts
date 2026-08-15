@@ -1177,7 +1177,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
         {
           h2: "The real question isn't if, it's when",
-          p: "The question is rarely whether a company needs junior capacity, but how long it takes too long to ask it. If a founder is spending more than a few hours a week on work someone else could do, that's not a sign the company is still too small for a hire, it's a sign the hire is already overdue.",
+          p: "The question is rarely whether a company needs junior capacity, it's how long you've waited to ask it. If a founder is spending more than a few hours a week on work someone else could do, that's not a sign the company is still too small for a hire, it's a sign the hire is already overdue.",
         },
       ],
     },

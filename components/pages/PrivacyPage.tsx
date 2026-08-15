@@ -169,7 +169,7 @@ const SECTIONS: Record<Lang, LegalSection[]> = {
             "Name",
             "Email address",
             "Phone number",
-            "CV / resume",
+            "CV",
             "LinkedIn profile or portfolio links",
             "Education and study information",
             "Work experience and skills",
@@ -220,7 +220,7 @@ const SECTIONS: Record<Lang, LegalSection[]> = {
         { p: "We may share your personal data with:" },
         {
           ul: [
-            "Companies or organizations that have relevant job opportunities",
+            "Companies or organisations that have relevant job opportunities",
             "Service providers that help us operate our website or communication systems (such as email or cloud storage)",
           ],
         },
@@ -245,7 +245,7 @@ const SECTIONS: Record<Lang, LegalSection[]> = {
     {
       heading: "7. How we protect your data",
       blocks: [
-        { p: "We take reasonable technical and organizational measures to protect personal data, including:" },
+        { p: "We take reasonable technical and organisational measures to protect personal data, including:" },
         { ul: ["Secure email and cloud storage systems", "Restricted access to candidate information", "Use of password protection and secure devices"] },
         { p: "While we take appropriate precautions, no system can guarantee absolute security." },
       ],

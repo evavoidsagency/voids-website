@@ -79,7 +79,6 @@ export function BlogPostPage({ lang, slug }: { lang: Lang; slug: string }) {
     <>
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <section className="wrap narrow" style={{ padding: "48px 32px 0" }}>
@@ -95,8 +94,8 @@ export function BlogPostPage({ lang, slug }: { lang: Lang; slug: string }) {
             <span
               className="badge"
               style={{
-                border: `1px solid ${post.aud === "talent" ? "var(--voids-purple)" : "var(--voids-blue)"}`,
-                color: post.aud === "talent" ? "var(--voids-purple)" : "var(--voids-blue)",
+                border: `1px solid ${post.aud === "talent" ? "var(--voids-blue)" : "var(--voids-purple)"}`,
+                color: post.aud === "talent" ? "var(--voids-blue)" : "var(--voids-purple)",
                 background: "transparent",
               }}
             >
@@ -165,7 +164,7 @@ export function BlogPostPage({ lang, slug }: { lang: Lang; slug: string }) {
         </div>
       </section>
 
-      <section style={{ background: post.aud === "talent" ? "var(--voids-purple)" : "var(--voids-blue)" }}>
+      <section style={{ background: post.aud === "talent" ? "var(--voids-blue)" : "var(--voids-purple)" }}>
         <div className="wrap" style={{ padding: "52px 32px", textAlign: "center", color: "#fff" }}>
           <h2 className="anton section-h2" style={{ fontSize: 30, margin: "0 0 12px", color: "#fff" }}>
             {cta.title}

@@ -33,6 +33,7 @@ const COPY: Record<
     prefPara: string[];
     finalTitle: string;
     finalCta: string;
+    photoAlt: string;
   }
 > = {
   nl: {
@@ -66,6 +67,7 @@ const COPY: Record<
     ],
     finalTitle: "KLAAR OM TE SCHALEN?",
     finalCta: "Plan een kennismaking",
+    photoAlt: "Werkstudent aan het werk op kantoor",
   },
   en: {
     eyebrow: "For companies",
@@ -98,6 +100,7 @@ const COPY: Record<
     ],
     finalTitle: "READY TO SCALE?",
     finalCta: "Book an intro call",
+    photoAlt: "A working student at work in the office",
   },
 };
 
@@ -146,7 +149,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
       </section>
 
       <div className="wrap" style={{ padding: "0 32px" }}>
-        <Photo src="/photography/blog-2.jpg" alt="Werkstudent aan het werk op kantoor" ratio="16 / 6" sizes="(max-width: 1200px) 100vw, 1136px" />
+        <Photo src="/photography/blog-2.jpg" alt={c.photoAlt} ratio="16 / 6" sizes="(max-width: 1200px) 100vw, 1136px" />
       </div>
 
       <section className="wrap" style={{ padding: "64px 32px" }}>
@@ -198,7 +201,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         <div className="card" style={{ padding: 28 }}>
           <h3 className="anton section-h2" style={{ fontSize: 26, margin: "0 0 6px" }}>{c.checklistTitle}</h3>
           <p style={{ fontSize: 13, color: "var(--voids-ink-muted)", margin: "0 0 16px" }}>{c.checklistSub}</p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
             <div>
               <div style={{ fontSize: 13, fontWeight: 700, color: "var(--voids-purple)", marginBottom: 10 }}>{c.internHeading}</div>
               {c.internBullets.map((b) => (

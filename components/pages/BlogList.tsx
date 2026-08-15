@@ -63,8 +63,8 @@ export function BlogList({ lang }: { lang: Lang }) {
                   <span
                     className="badge"
                     style={{
-                      border: `1px solid ${post.aud === "talent" ? "var(--voids-purple)" : "var(--voids-blue)"}`,
-                      color: post.aud === "talent" ? "var(--voids-purple)" : "var(--voids-blue)",
+                      border: `1px solid ${post.aud === "talent" ? "var(--voids-blue)" : "var(--voids-purple)"}`,
+                      color: post.aud === "talent" ? "var(--voids-blue)" : "var(--voids-purple)",
                       background: "transparent",
                     }}
                   >

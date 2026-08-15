@@ -30,21 +30,24 @@ export function LegalPage({
               {s.heading}
             </h2>
           )}
-          {s.blocks.map((b, j) =>
-            b.p ? (
-              <p key={j} style={{ fontSize: 14.5, lineHeight: 1.7, color: "var(--voids-ink-soft)", margin: "0 0 12px" }}>
-                {b.p}
-              </p>
-            ) : (
-              <ul key={j} style={{ margin: "0 0 12px", paddingLeft: 20 }}>
-                {b.ul!.map((li, k) => (
-                  <li key={k} style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-soft)", marginBottom: 6 }}>
-                    {li}
-                  </li>
-                ))}
-              </ul>
-            )
-          )}
+          {s.blocks.map((b, j) => (
+            <div key={j}>
+              {b.p && (
+                <p style={{ fontSize: 14.5, lineHeight: 1.7, color: "var(--voids-ink-soft)", margin: "0 0 12px" }}>
+                  {b.p}
+                </p>
+              )}
+              {b.ul && (
+                <ul style={{ margin: "0 0 12px", paddingLeft: 20 }}>
+                  {b.ul.map((li, k) => (
+                    <li key={k} style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-soft)", marginBottom: 6 }}>
+                      {li}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
         </div>
       ))}
       {footnote && <p style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", marginTop: 40 }}>{footnote}</p>}

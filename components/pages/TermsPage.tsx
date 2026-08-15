@@ -25,7 +25,7 @@ const SECTIONS: Record<Lang, LegalSection[]> = {
           p: "Deze algemene voorwaarden zijn van toepassing op alle aanbiedingen, offertes, overeenkomsten en diensten die worden verricht onder de naam VOIDS vof (hierna: “VOIDS”), tenzij uitdrukkelijk schriftelijk anders is overeengekomen.",
         },
         { p: "Deze voorwaarden zijn van toepassing op alle diensten, waaronder in ieder geval:" },
-        { ul: ["Werving en selectie", "Vacature-advertising", "Employer branding diensten", "Advisering op het gebied van talentstrategie", "Consultancy en aanverwante diensten"] },
+        { ul: ["Werving en selectie", "Vacatureplaatsing", "Employer branding diensten", "Advisering op het gebied van talentstrategie", "Consultancy en aanverwante diensten"] },
         {
           p: "Op diensten voor werving en selectie zijn daarnaast de separate Recruitment & Selection Terms van VOIDS van toepassing. Bij strijdigheid prevaleren die voorwaarden met betrekking tot wervingsopdrachten.",
         },

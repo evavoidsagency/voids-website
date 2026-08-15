@@ -32,6 +32,9 @@ const COPY: Record<
     movementEyebrow: string;
     movementTitle: string;
     movementText: string;
+    bandAlt: string;
+    employersAlt: string;
+    movementAlt: string;
   }
 > = {
   nl: {
@@ -74,6 +77,9 @@ const COPY: Record<
     movementTitle: "IN DUITSLAND IS DIT AL NORMAAL.",
     movementText:
       "Daar is het werkstudentschap een vanzelfsprekend onderdeel van het hoger onderwijs. Nederland kan dezelfde beweging maken: een arbeidsmarkt waarin leren en werken met elkaar verbonden zijn, en waarin talent wordt beoordeeld op potentie, niet op geld, netwerk of eerdere ervaring.",
+    bandAlt: "Werkstudenten aan het werk op kantoor",
+    employersAlt: "Community van studenten en starters",
+    movementAlt: "Aan het werk op kantoor",
   },
   en: {
     eyebrow: "Impact",
@@ -115,6 +121,9 @@ const COPY: Record<
     movementTitle: "IN GERMANY THIS IS ALREADY NORMAL.",
     movementText:
       "There, working alongside your degree is a standard part of higher education. The Netherlands can make the same move: a labour market where learning and working are connected, and where talent is judged on potential, not on money, network or prior experience.",
+    bandAlt: "Working students at work in the office",
+    employersAlt: "Community of students and starters",
+    movementAlt: "Working at the office",
   },
 };
 
@@ -156,7 +165,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <Photo src="/photography/impact-band.jpg" alt="Werkstudenten aan het werk op kantoor" ratio="16 / 6" radius="0" sizes="100vw" />
+      <Photo src="/photography/impact-band.jpg" alt={c.bandAlt} ratio="16 / 6" radius="0" sizes="100vw" />
 
       <section className="wrap" style={{ padding: "60px 32px 48px" }}>
         <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20 }}>
@@ -207,7 +216,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
       </section>
 
       <section className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
-        <Photo src="/photography/impact-employers.jpg" alt="Community" ratio="4 / 3" />
+        <Photo src="/photography/impact-employers.jpg" alt={c.employersAlt} ratio="4 / 3" />
         <div>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.employersEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "10px 0 14px" }}>{c.employersTitle}</h2>
@@ -223,7 +232,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
             <h2 className="anton section-h2" style={{ fontSize: 34, margin: "10px 0 14px" }}>{c.movementTitle}</h2>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.movementText}</p>
           </div>
-          <Photo src="/photography/impact-movement.jpg" alt="Aan het werk op kantoor" ratio="4 / 3" />
+          <Photo src="/photography/impact-movement.jpg" alt={c.movementAlt} ratio="4 / 3" />
         </div>
       </section>
     </>

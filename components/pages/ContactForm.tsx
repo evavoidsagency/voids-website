@@ -55,12 +55,12 @@ export function ContactForm({ lang }: { lang: Lang }) {
         setSent(true);
       }}
     >
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
-        <input className="input" placeholder={c.name} required />
-        <input className="input" placeholder={c.company} />
+      <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
+        <input className="input" placeholder={c.name} aria-label={c.name} required />
+        <input className="input" placeholder={c.company} aria-label={c.company} />
       </div>
-      <input className="input" type="email" placeholder={c.email} required style={{ marginBottom: 12 }} />
-      <textarea className="textarea" placeholder={c.message} rows={4} style={{ marginBottom: 14 }} />
+      <input className="input" type="email" placeholder={c.email} aria-label={c.email} required style={{ marginBottom: 12 }} />
+      <textarea className="textarea" placeholder={c.message} aria-label={c.message} rows={4} style={{ marginBottom: 14 }} />
       <Button variant="primary" size="md" fullWidth>
         {c.submit}
       </Button>
