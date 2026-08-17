@@ -27,7 +27,7 @@ const COPY: Record<
     submitting: "Versturen...",
     sentTitle: "BERICHT VERSTUURD.",
     sentBody: "Dank je wel. We reageren binnen twee werkdagen.",
-    errorBody: "Er ging iets mis bij het versturen. Probeer het nog eens, of mail ons direct op info@voids.agency.",
+    errorBody: "Er ging iets mis bij het versturen. Probeer het nog eens, of mail ons direct op contact@voids.agency.",
   },
   en: {
     name: "Name",
@@ -38,7 +38,7 @@ const COPY: Record<
     submitting: "Sending...",
     sentTitle: "MESSAGE SENT.",
     sentBody: "Thank you. We’ll get back to you within two business days.",
-    errorBody: "Something went wrong sending this. Please try again, or email us directly at info@voids.agency.",
+    errorBody: "Something went wrong sending this. Please try again, or email us directly at contact@voids.agency.",
   },
 };
 

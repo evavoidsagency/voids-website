@@ -19,7 +19,7 @@ const ORGANIZATION_JSON_LD = {
     { "@type": "Person", name: "Wieke Sleutjes" },
   ],
   address: { "@type": "PostalAddress", addressLocality: "Amsterdam", addressCountry: "NL" },
-  email: "info@voids.agency",
+  email: "contact@voids.agency",
   sameAs: [SOCIALS.linkedin, SOCIALS.instagram, SOCIALS.tiktok],
 };
 

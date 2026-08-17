@@ -146,8 +146,8 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "0 0 12px" }}>{c.contactTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 22px" }}>{c.contactSub}</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <a href="mailto:info@voids.agency" style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink)", fontWeight: 400 }}>
-              📧 info@voids.agency
+            <a href="mailto:contact@voids.agency" style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink)", fontWeight: 400 }}>
+              📧 contact@voids.agency
             </a>
             <div style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink-soft)" }}>📍 {c.location}</div>
             <div style={{ display: "flex", gap: 14, marginTop: 6 }}>

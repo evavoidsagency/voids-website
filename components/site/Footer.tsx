@@ -88,7 +88,7 @@ export function Footer({ lang }: { lang: Lang }) {
           }}
         >
           <span>{t.footerCopyright[lang]}</span>
-          <span>info@voids.agency</span>
+          <span>contact@voids.agency</span>
         </div>
       </div>
     </footer>

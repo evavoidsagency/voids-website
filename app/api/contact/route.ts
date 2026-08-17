@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const TO_ADDRESS = "info@voids.agency";
+const TO_ADDRESS = "contact@voids.agency";
 
 export async function POST(request: Request) {
   const { name, company, email, message } = await request.json();
