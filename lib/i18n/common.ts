@@ -50,7 +50,7 @@ export const CHANNELS: {
     abbr: "ST",
     membersNl: "Fulltime & parttime banen",
     membersEn: "Full-time & part-time jobs",
-    link: "https://chat.whatsapp.com/CzN5MsbpEHd05uPTnkttDr?mode=wwc",
+    link: "https://chat.whatsapp.com/IaN0kEeuDjb341rExEmUm2?mode=gi_t",
   },
   {
     nameNl: "Stages",
@@ -58,7 +58,7 @@ export const CHANNELS: {
     abbr: "SG",
     membersNl: "Stageplekken",
     membersEn: "Internship spots",
-    link: "https://chat.whatsapp.com/KgBCsjHIY1SBp41XsjuGFT?mode=wwc",
+    link: "https://chat.whatsapp.com/LWCJAz0ftTaCOAOFqmw9jW?mode=gi_t",
   },
   {
     nameNl: "Werkstudentschappen",
@@ -66,7 +66,7 @@ export const CHANNELS: {
     abbr: "WS",
     membersNl: "Werken naast je studie",
     membersEn: "Work alongside your studies",
-    link: "https://chat.whatsapp.com/CiR5wRUeJe3DkAcJnzjLCE?mode=wwc",
+    link: "https://chat.whatsapp.com/Gr2K2NIcyybDPOBG7ODV2T?mode=gi_t",
   },
   {
     nameNl: "Bijbanen",
@@ -74,7 +74,7 @@ export const CHANNELS: {
     abbr: "BB",
     membersNl: "Flexibel bijverdienen",
     membersEn: "Flexible extra income",
-    link: "https://chat.whatsapp.com/DLzJJJwZtb7C11PK6P9fkG?mode=wwc",
+    link: "https://chat.whatsapp.com/LMpEUdegNr42uZm7tgRMWk?mode=gi_t",
   },
   {
     nameNl: "Freelance werk",
@@ -82,7 +82,7 @@ export const CHANNELS: {
     abbr: "FL",
     membersNl: "Opdrachten & projecten",
     membersEn: "Gigs & projects",
-    link: "https://chat.whatsapp.com/KxfCEDUet9y54csCgtVVYi?mode=wwc",
+    link: "https://chat.whatsapp.com/Fv1kBc7Ex6v0B6CnF6HP57?mode=gi_t",
   },
   {
     nameNl: "Carrièrekansen",
@@ -90,7 +90,7 @@ export const CHANNELS: {
     abbr: "CK",
     membersNl: "Doorgroei & starterrollen",
     membersEn: "Growth & starter roles",
-    link: "https://chat.whatsapp.com/FI6trMqZRwT2GsvbSmkwqp?mode=wwc",
+    link: "https://chat.whatsapp.com/HoDEZyDnNzVHLBuXU8e96N?mode=gi_t",
   },
   {
     nameNl: "Studentwork in NL (EN)",
@@ -98,7 +98,7 @@ export const CHANNELS: {
     abbr: "EN",
     membersNl: "For English speakers",
     membersEn: "For English speakers",
-    link: "https://chat.whatsapp.com/DsX8hvO7CLZDZRmjMBYiPc?mode=wwc",
+    link: "https://chat.whatsapp.com/LMoQg9Wzao5HpC3KyQvV2Q?mode=gi_t",
   },
   {
     nameNl: "Impactwerk",
@@ -106,7 +106,7 @@ export const CHANNELS: {
     abbr: "IW",
     membersNl: "Purpose-gedreven rollen",
     membersEn: "Purpose-driven roles",
-    link: "https://chat.whatsapp.com/J87GPeBOHP24YBnNctt5kT?mode=hqrt3",
+    link: "https://chat.whatsapp.com/LeIgU0MEPUv6FbaIYnpZqu?mode=gi_t",
   },
 ];
 
