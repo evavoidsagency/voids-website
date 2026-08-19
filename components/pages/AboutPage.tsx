@@ -33,11 +33,15 @@ const COPY: Record<
     whatCards: [
       {
         title: "Werving & selectie",
-        text: "We nemen het hele proces uit handen: van intake tot shortlist tot ondertekende match, voor werkstudenten, stagiairs en starters.",
+        text: "We nemen de volledige werving uit handen: van intake tot shortlist tot ondertekende match, voor werkstudenten, stagiairs en starters.",
       },
       {
         title: "Community & jobboard",
-        text: "4.000+ studenten en starters in onze WhatsApp-community, plus een jobboard waar bedrijven vacatures rechtstreeks onder de aandacht brengen.",
+        text: "4.000+ studenten en starters in onze WhatsApp-community, plus een jobboard waarmee je vacatures rechtstreeks onder hun aandacht brengt.",
+      },
+      {
+        title: "Advies & employer branding",
+        text: "We denken mee over je hele junior-strategie: van recruitment en het behouden van jong talent tot employer branding die echt aanslaat bij studenten en starters.",
       },
     ],
     foundersAlt: "Eva en Wieke, de oprichters van VOIDS",
@@ -58,11 +62,15 @@ const COPY: Record<
     whatCards: [
       {
         title: "Recruitment & selection",
-        text: "We take the whole process off your hands: from intake to shortlist to signed match, for working students, interns and starters.",
+        text: "We take the full hiring process off your hands: from intake to shortlist to signed match, for working students, interns and starters.",
       },
       {
         title: "Community & job board",
-        text: "4,000+ students and starters in our WhatsApp community, plus a job board where companies put vacancies directly in front of them.",
+        text: "4,000+ students and starters in our WhatsApp community, plus a job board that puts your vacancies directly in front of them.",
+      },
+      {
+        title: "Advice & employer branding",
+        text: "We think along on your whole junior strategy: from recruitment and retention to employer branding that actually lands with students and starters.",
       },
     ],
     foundersAlt: "Eva and Wieke, the founders of VOIDS",
@@ -77,7 +85,7 @@ const COPY: Record<
 
 export function AboutPage({ lang }: { lang: Lang }) {
   const c = COPY[lang];
-  const foundersPhoto = findTeamPhoto("together");
+  const foundersPhoto = findTeamPhoto("together-2");
 
   return (
     <>
@@ -113,7 +121,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "52px 32px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whatEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 22px" }}>{c.whatTitle}</h2>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20, maxWidth: 760 }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, maxWidth: 980 }}>
             {c.whatCards.map((card) => (
               <div key={card.title} className="card card--accent-purple" style={{ padding: 22 }}>
                 <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 8 }}>{card.title}</div>
