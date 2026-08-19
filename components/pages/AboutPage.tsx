@@ -1,5 +1,6 @@
 import { Photo } from "@/components/ui/Photo";
 import { ContactForm } from "@/components/pages/ContactForm";
+import { CalendlyButton } from "@/components/site/CalendlyButton";
 import { SOCIALS, type Lang } from "@/lib/i18n/common";
 import { TEAM } from "@/lib/content/team";
 import { findTeamPhoto } from "@/lib/logos";
@@ -20,6 +21,7 @@ const COPY: Record<
     coFounder: string;
     contactTitle: string;
     contactSub: string;
+    bookCall: string;
     location: string;
   }
 > = {
@@ -50,6 +52,7 @@ const COPY: Record<
     coFounder: "Co-founder",
     contactTitle: "SNEL SCHAKELEN?",
     contactSub: "Plan direct een kennismaking of stuur een bericht.",
+    bookCall: "Plan een kennismaking",
     location: "Amsterdam",
   },
   en: {
@@ -79,13 +82,14 @@ const COPY: Record<
     coFounder: "Co-founder",
     contactTitle: "WANT TO MOVE FAST?",
     contactSub: "Book an intro call or drop us a message.",
+    bookCall: "Book an intro call",
     location: "Amsterdam",
   },
 };
 
 export function AboutPage({ lang }: { lang: Lang }) {
   const c = COPY[lang];
-  const foundersPhoto = findTeamPhoto("together-2");
+  const foundersPhoto = findTeamPhoto("together-3");
 
   return (
     <>
@@ -153,6 +157,9 @@ export function AboutPage({ lang }: { lang: Lang }) {
         <div>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "0 0 12px" }}>{c.contactTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 22px" }}>{c.contactSub}</p>
+          <div style={{ marginBottom: 22 }}>
+            <CalendlyButton label={c.bookCall} />
+          </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <a href="mailto:contact@voids.agency" style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink)", fontWeight: 400 }}>
               📧 contact@voids.agency
