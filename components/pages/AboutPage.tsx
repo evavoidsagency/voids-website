@@ -89,7 +89,7 @@ const COPY: Record<
 
 export function AboutPage({ lang }: { lang: Lang }) {
   const c = COPY[lang];
-  const foundersPhoto = findTeamPhoto("together-5");
+  const foundersPhoto = findTeamPhoto("together-6");
 
   return (
     <>
