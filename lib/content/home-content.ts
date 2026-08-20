@@ -28,13 +28,6 @@ export const TRUSTED: { name: string; slug: string; url?: string }[] = [
   { name: "Green Team", slug: "green-team", url: "https://greenteam.energy/" },
   { name: "Writify", slug: "writify", url: "https://www.writify.co/" },
   { name: "The Longevity Store", slug: "the-longevity-store", url: "https://thelongevitystore.com/" },
-  { name: "Joulz", slug: "joulz", url: "https://joulz.nl/" },
-  { name: "Mila Health", slug: "mila-health", url: "https://milahealth.co/" },
-  { name: "Bit", slug: "bit", url: "https://wearebit.com/" },
-  { name: "Structural Collective", slug: "structural-collective", url: "https://www.structuralcollective.nl/" },
-  { name: "Monsterscore", slug: "monsterscore", url: "https://monsterscore.nl/" },
-  { name: "CribConnects", slug: "cribconnects", url: "https://www.cribconnects.com/" },
-  { name: "Relive", slug: "relive", url: "https://www.relive.com/" },
 ];
 
 export const TESTIMONIALS: Record<Lang, { quote: string; name: string; role: string; photo?: string }[]> = {
