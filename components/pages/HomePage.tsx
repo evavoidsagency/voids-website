@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { Photo } from "@/components/ui/Photo";
@@ -192,33 +193,42 @@ export function HomePage({ lang }: { lang: Lang }) {
             {c.trustedBy}
           </div>
           <div style={{ display: "flex", gap: 14, overflowX: "auto", padding: "4px 2px 10px" }}>
-            {TRUSTED.map(([name, slug]) => {
+            {TRUSTED.map(({ name, slug, url }) => {
               const logoUrl = findLogoFile(slug);
-              return (
-                <div
+              const tileStyle: CSSProperties = {
+                width: 140,
+                height: 72,
+                borderRadius: "var(--radius-md)",
+                flex: "none",
+                background: "#fff",
+                border: logoUrl ? "1px solid var(--border-hairline)" : "1px dashed var(--voids-line)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: 12,
+              };
+              const content = logoUrl ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={logoUrl} alt={name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+              ) : (
+                <span style={{ fontSize: 11, fontWeight: 600, color: "var(--voids-ink-muted)", textAlign: "center", lineHeight: 1.3 }}>
+                  {name}
+                </span>
+              );
+              return url ? (
+                <a
                   key={name}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   title={name}
-                  style={{
-                    width: 140,
-                    height: 72,
-                    borderRadius: "var(--radius-md)",
-                    flex: "none",
-                    background: "#fff",
-                    border: logoUrl ? "1px solid var(--border-hairline)" : "1px dashed var(--voids-line)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: 12,
-                  }}
+                  style={tileStyle}
                 >
-                  {logoUrl ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={logoUrl} alt={name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
-                  ) : (
-                    <span style={{ fontSize: 11, fontWeight: 600, color: "var(--voids-ink-muted)", textAlign: "center", lineHeight: 1.3 }}>
-                      {name}
-                    </span>
-                  )}
+                  {content}
+                </a>
+              ) : (
+                <div key={name} title={name} style={tileStyle}>
+                  {content}
                 </div>
               );
             })}
