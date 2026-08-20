@@ -26,7 +26,7 @@ const COPY: Record<
     submit: "Verstuur bericht",
     submitting: "Versturen...",
     sentTitle: "BERICHT VERSTUURD.",
-    sentBody: "Dank je wel. We reageren binnen twee werkdagen.",
+    sentBody: "Dankjewel. We komen binnenkort bij je terug.",
     errorBody: "Er ging iets mis bij het versturen. Probeer het nog eens, of mail ons direct op contact@voids.agency.",
   },
   en: {

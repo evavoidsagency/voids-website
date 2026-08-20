@@ -155,7 +155,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, maxWidth: 760 }}>
             {TEAM.map((m) => (
               <div key={m.name} className="card" style={{ padding: 0, overflow: "hidden" }}>
-                <Photo src={m.photo} alt={m.name} ratio="4 / 5" radius="0" objectPosition={m.objectPosition} sizes="(max-width: 800px) 50vw, 380px" />
+                <Photo src={m.photo} alt={m.name} ratio="4 / 5" radius="0" objectPosition={m.objectPosition} sizes="(max-width: 860px) 100vw, 380px" />
                 <div style={{ padding: "18px 20px" }}>
                   <div style={{ fontSize: 19, fontWeight: 600 }}>{m.name}</div>
                   <div style={{ fontSize: 13.5, color: "var(--voids-ink-muted)" }}>{c.coFounder}</div>

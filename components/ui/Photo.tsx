@@ -8,7 +8,7 @@ export function Photo({
   ratio = "4 / 5",
   radius = "var(--radius-lg)",
   priority = false,
-  sizes = "(max-width: 800px) 100vw, 50vw",
+  sizes = "(max-width: 860px) 100vw, 50vw",
   objectPosition = "center",
   style,
 }: {
