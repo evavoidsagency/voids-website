@@ -13,7 +13,7 @@ export const TRUSTED: { name: string; slug: string; url?: string }[] = [
   { name: "Van Oort & Van Oort", slug: "van-oort-van-oort", url: "https://www.vanoortenvanoort.nl/" },
   { name: "#MasterJeCijfers", slug: "masterjecijfers", url: "https://www.masterjecijfers.nl/" },
   { name: "The Cirqle", slug: "the-cirqle", url: "https://thecirqle.com/" },
-  { name: "Wallie", slug: "wallie" },
+  { name: "WePartyNow", slug: "wepartynow", url: "https://wepartynow.com/nl" },
   { name: "HotelPlanner", slug: "hotelplanner", url: "https://www.hotelplanner.com/" },
   { name: "M&G", slug: "mg", url: "https://www.michael-giso.com/" },
   { name: "Go Delphi", slug: "go-delphi", url: "https://www.godelphi.nl/" },
@@ -28,6 +28,13 @@ export const TRUSTED: { name: string; slug: string; url?: string }[] = [
   { name: "Green Team", slug: "green-team", url: "https://greenteam.energy/" },
   { name: "Writify", slug: "writify", url: "https://www.writify.co/" },
   { name: "The Longevity Store", slug: "the-longevity-store", url: "https://thelongevitystore.com/" },
+  { name: "Joulz", slug: "joulz", url: "https://joulz.nl/" },
+  { name: "Mila Health", slug: "mila-health", url: "https://milahealth.co/" },
+  { name: "Bit", slug: "bit", url: "https://wearebit.com/" },
+  { name: "Structural Collective", slug: "structural-collective", url: "https://www.structuralcollective.nl/" },
+  { name: "Monsterscore", slug: "monsterscore", url: "https://monsterscore.nl/" },
+  { name: "CribConnects", slug: "cribconnects", url: "https://www.cribconnects.com/" },
+  { name: "Relive", slug: "relive", url: "https://www.relive.com/" },
 ];
 
 export const TESTIMONIALS: Record<Lang, { quote: string; name: string; role: string; photo?: string }[]> = {
