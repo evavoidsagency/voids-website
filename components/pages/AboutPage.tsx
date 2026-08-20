@@ -89,11 +89,11 @@ const COPY: Record<
 
 export function AboutPage({ lang }: { lang: Lang }) {
   const c = COPY[lang];
-  const foundersPhoto = findTeamPhoto("together-7");
+  const foundersPhoto = findTeamPhoto("together-8");
 
   return (
     <>
-      <section className="wrap g-collapse" style={{ padding: "64px 32px 44px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
+      <section className="wrap g-collapse" style={{ padding: "64px 32px 44px", display: "grid", gridTemplateColumns: "1.15fr .85fr", gap: 44, alignItems: "center" }}>
         <div>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.eyebrow}</span>
           <h1 className="anton hero-h1" style={{ fontSize: 50, margin: "12px 0 16px" }}>{c.title}</h1>
@@ -152,7 +152,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
       <section style={{ background: "var(--voids-beige)", borderBottom: "1px solid var(--border-hairline)" }}>
         <div className="wrap" style={{ padding: "52px 32px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 28, margin: "0 0 22px" }}>{c.teamTitle}</h2>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, maxWidth: 760 }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, maxWidth: 640 }}>
             {TEAM.map((m) => (
               <div key={m.name} className="card" style={{ padding: 0, overflow: "hidden" }}>
                 <Photo src={m.photo} alt={m.name} ratio="4 / 5" radius="0" objectPosition={m.objectPosition} sizes="(max-width: 860px) 100vw, 380px" />
