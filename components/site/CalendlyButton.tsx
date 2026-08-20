@@ -11,7 +11,17 @@ declare global {
   }
 }
 
-export function CalendlyButton({ label }: { label: string }) {
+export function CalendlyButton({
+  label,
+  variant = "outline",
+  size = "md",
+  onDark = false,
+}: {
+  label: string;
+  variant?: "primary" | "secondary" | "outline" | "ghost";
+  size?: "sm" | "md" | "lg";
+  onDark?: boolean;
+}) {
   useEffect(() => {
     if (document.getElementById("calendly-widget-script")) return;
     const link = document.createElement("link");
@@ -28,8 +38,9 @@ export function CalendlyButton({ label }: { label: string }) {
   return (
     <Button
       type="button"
-      variant="outline"
-      size="md"
+      variant={variant}
+      size={size}
+      onDark={onDark}
       onClick={() => window.Calendly?.initPopupWidget({ url: CALENDLY_URL })}
     >
       {label}

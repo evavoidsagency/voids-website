@@ -44,7 +44,7 @@ const COPY: Record<
     ctaTalent: "Voor talent",
     stat1Label: "in de community",
     stat2Label: "eerlijke voorwaarden & fair pay",
-    stat3Label: "ambitie: winst naar impact",
+    stat3Label: "winst naar impact",
     nicheLabel: "Onze niche:",
     trustedBy: "VERTROUWD DOOR",
     doorTalentTitle: "VOOR TALENT",
@@ -76,7 +76,7 @@ const COPY: Record<
     ctaTalent: "For talent",
     stat1Label: "in the community",
     stat2Label: "fair terms & fair pay",
-    stat3Label: "ambition: profit to impact",
+    stat3Label: "profit to impact",
     nicheLabel: "Our niche:",
     trustedBy: "TRUSTED BY",
     doorTalentTitle: "FOR TALENT",
@@ -135,17 +135,17 @@ export function HomePage({ lang }: { lang: Lang }) {
                 {c.ctaTalent}
               </Button>
             </div>
-            <div style={{ display: "flex", gap: 34, marginTop: 40, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 22, marginTop: 40, flexWrap: "nowrap" }}>
               <div>
-                <div className="anton" style={{ fontSize: 34, color: "#fff" }}>4.000+</div>
+                <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}>4.000+</div>
                 <div style={{ fontSize: 12.5, color: "var(--voids-purple-100)" }}>{c.stat1Label}</div>
               </div>
               <div>
-                <div className="anton" style={{ fontSize: 34, color: "#fff" }}>100%</div>
+                <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}>100%</div>
                 <div style={{ fontSize: 12.5, color: "var(--voids-purple-100)" }}>{c.stat2Label}</div>
               </div>
               <div>
-                <div className="anton" style={{ fontSize: 34, color: "#fff" }}>10%</div>
+                <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}>10%</div>
                 <div style={{ fontSize: 12.5, color: "var(--voids-purple-100)" }}>{c.stat3Label}</div>
               </div>
             </div>

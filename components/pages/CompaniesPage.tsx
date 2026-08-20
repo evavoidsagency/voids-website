@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { CostCalculator } from "@/components/pages/CostCalculator";
 import { Photo } from "@/components/ui/Photo";
+import { CalendlyButton } from "@/components/site/CalendlyButton";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { PROCESS, ROLE_TYPES, WHY_WS, BENCHMARK } from "@/lib/content/companies-content";
 
@@ -116,7 +117,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <h1 className="anton hero-h1" style={{ fontSize: 54, margin: "14px 0 18px", color: "#fff", whiteSpace: "pre-line" }}>{c.title}</h1>
           <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 28px" }}>{c.sub}</p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <Button variant="secondary" size="lg" href={p("/about")}>{c.ctaIntro}</Button>
+            <CalendlyButton label={c.ctaIntro} variant="secondary" size="lg" />
             <Button variant="outline" size="lg" onDark href={p("/pricing")}>{c.ctaPricing}</Button>
           </div>
         </div>
@@ -243,7 +244,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
       <section style={{ background: "var(--voids-blue)" }}>
         <div className="wrap" style={{ padding: "52px 32px", textAlign: "center", color: "#fff" }}>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "0 0 20px", color: "#fff" }}>{c.finalTitle}</h2>
-          <Button variant="primary" size="lg" href={p("/about")}>{c.finalCta}</Button>
+          <CalendlyButton label={c.finalCta} variant="primary" size="lg" />
         </div>
       </section>
     </>

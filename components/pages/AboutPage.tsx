@@ -89,7 +89,7 @@ const COPY: Record<
 
 export function AboutPage({ lang }: { lang: Lang }) {
   const c = COPY[lang];
-  const foundersPhoto = findTeamPhoto("together-3");
+  const foundersPhoto = findTeamPhoto("together-4");
 
   return (
     <>
@@ -126,12 +126,25 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whatEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 22px" }}>{c.whatTitle}</h2>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, maxWidth: 980 }}>
-            {c.whatCards.map((card) => (
-              <div key={card.title} className="card card--accent-purple" style={{ padding: 22 }}>
-                <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 8 }}>{card.title}</div>
-                <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{card.text}</p>
-              </div>
-            ))}
+            {c.whatCards.map((card, i) => {
+              const accent = i === 1 ? "blue" : "purple";
+              return (
+                <div
+                  key={card.title}
+                  className={`card card--hoverable card--accent-${accent}`}
+                  style={{ padding: 24 }}
+                >
+                  <span
+                    className="anton"
+                    style={{ display: "block", fontSize: 34, lineHeight: 1, color: `var(--voids-${accent}-200)`, marginBottom: 14 }}
+                  >
+                    0{i + 1}
+                  </span>
+                  <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8 }}>{card.title}</div>
+                  <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{card.text}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
