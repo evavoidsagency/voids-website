@@ -3,20 +3,18 @@ import { findLogoFile } from "@/lib/logos";
 import type { Lang } from "@/lib/i18n/common";
 import { CLIENT_CASES, ROLES } from "@/lib/content/cases";
 
-const COPY: Record<Lang, { eyebrow: string; title: string; sub: string; rolesTitle: string; rolesSub: string }> = {
+const COPY: Record<Lang, { eyebrow: string; title: string; sub: string; rolesTitle: string }> = {
   nl: {
     eyebrow: "Cases",
     title: "MATCHES DIE WERKEN.",
     sub: "Een kleine greep uit de vele bedrijven waar we mee hebben samengewerkt, van scale-up tot corporate.",
     rolesTitle: "VOORBEELDEN VAN ROLLEN DIE WE INVULDEN",
-    rolesSub: "Een greep uit de rollen die we ooit hebben ingevuld, de volledige lijst is nog veel langer.",
   },
   en: {
     eyebrow: "Cases",
     title: "MATCHES THAT WORK.",
     sub: "A small selection from the many companies we've worked with, from scale-up to corporate.",
     rolesTitle: "EXAMPLES OF ROLES WE'VE FILLED",
-    rolesSub: "A selection of the roles we've filled over time, the full list runs much longer.",
   },
 };
 
@@ -64,8 +62,7 @@ export function CasesPage({ lang }: { lang: Lang }) {
 
       <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)" }}>
         <div className="wrap" style={{ padding: "50px 32px" }}>
-          <h2 className="anton section-h2" style={{ fontSize: 26, margin: "0 0 8px" }}>{c.rolesTitle}</h2>
-          <p style={{ fontSize: 14, color: "var(--voids-ink-muted)", margin: "0 0 20px", maxWidth: 560 }}>{c.rolesSub}</p>
+          <h2 className="anton section-h2" style={{ fontSize: 26, margin: "0 0 20px" }}>{c.rolesTitle}</h2>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 16 }}>
             {ROLES[lang].map((r) => (
               <div key={r.role} style={{ background: "var(--voids-beige)", border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", padding: 20 }}>
