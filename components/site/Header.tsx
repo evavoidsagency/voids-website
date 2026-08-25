@@ -11,6 +11,12 @@ import { NAV, altLocalePath, localePath, t, type Lang } from "@/lib/i18n/common"
 const PRIMARY_ORDER = ["talent", "companies", "impact", "about", "blog", "jobboard"];
 const COMPANIES_DROPDOWN_IDS = ["cases", "pricing"];
 
+const COMPANY_SERVICES: { id: string; nl: string; en: string; path: string }[] = [
+  { id: "wns", nl: "Werving & selectie", en: "Recruitment & selection", path: "/companies" },
+  { id: "community", nl: "Community & jobboard", en: "Community & job board", path: "/companies/community-jobboard" },
+  { id: "branding", nl: "Advies & employer branding", en: "Advice & employer branding", path: "/companies/employer-branding" },
+];
+
 export function Header({ lang }: { lang: Lang }) {
   const pathname = usePathname() || "/";
   const altPath = altLocalePath(pathname);
@@ -73,51 +79,72 @@ export function Header({ lang }: { lang: Lang }) {
               );
             }
 
-            const dropdownActive = companiesDropdownNav.some((d) => pathname === localePath(lang, d.path));
+            const dropdownActive =
+              companiesDropdownNav.some((d) => pathname === localePath(lang, d.path)) ||
+              COMPANY_SERVICES.some((s) => pathname === localePath(lang, s.path));
             return (
               <div key={n.id} ref={moreRef} style={{ position: "relative", display: "flex", alignItems: "center" }}>
-                <Link href={href} style={navLinkStyle(active)}>
-                  {lang === "en" ? n.en : n.nl}
-                </Link>
                 <button
                   type="button"
                   onClick={() => setMoreOpen((v) => !v)}
                   aria-expanded={moreOpen}
-                  aria-label={t.moreLabel[lang]}
+                  aria-haspopup="true"
                   style={{
-                    ...navLinkStyle(dropdownActive),
-                    padding: "8px 6px",
-                    marginLeft: -4,
-                    background: moreOpen ? "var(--voids-purple-100)" : "transparent",
+                    ...navLinkStyle(active || dropdownActive),
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 4,
+                    background: moreOpen || active || dropdownActive ? "var(--voids-purple-100)" : "transparent",
                     border: "none",
                     cursor: "pointer",
                   }}
                 >
+                  {lang === "en" ? n.en : n.nl}
                   <span style={{ fontSize: 10, display: "inline-block", transform: moreOpen ? "rotate(180deg)" : "none", transition: "transform 120ms ease" }}>▾</span>
                 </button>
                 {moreOpen && (
                   <div
+                    role="menu"
                     style={{
                       position: "absolute",
-                      top: "calc(100% + 6px)",
+                      top: "calc(100% + 8px)",
                       left: 0,
                       background: "#fff",
                       border: "1px solid var(--border-hairline)",
                       borderRadius: "var(--radius-md)",
                       boxShadow: "var(--shadow-md)",
                       padding: 6,
-                      minWidth: 150,
+                      minWidth: 230,
                       display: "flex",
                       flexDirection: "column",
-                      gap: 2,
                       zIndex: 50,
                     }}
                   >
+                    {COMPANY_SERVICES.map((s) => {
+                      const sHref = localePath(lang, s.path);
+                      const sActive = pathname === sHref;
+                      return (
+                        <Link
+                          key={s.id}
+                          href={sHref}
+                          role="menuitem"
+                          style={{ ...dropdownItemStyle, background: sActive ? "var(--voids-purple-100)" : "transparent" }}
+                        >
+                          {lang === "en" ? s.en : s.nl}
+                        </Link>
+                      );
+                    })}
+                    <div style={{ height: 1, background: "var(--border-hairline)", margin: "6px 4px" }} />
                     {companiesDropdownNav.map((d) => {
                       const dHref = localePath(lang, d.path);
                       const dActive = pathname === dHref;
                       return (
-                        <Link key={d.id} href={dHref} style={{ ...navLinkStyle(dActive), background: dActive ? "var(--voids-purple-100)" : "transparent" }}>
+                        <Link
+                          key={d.id}
+                          href={dHref}
+                          role="menuitem"
+                          style={{ ...dropdownItemStyle, background: dActive ? "var(--voids-purple-100)" : "transparent" }}
+                        >
                           {lang === "en" ? d.en : d.nl}
                         </Link>
                       );
@@ -195,9 +222,21 @@ export function Header({ lang }: { lang: Lang }) {
               const href = localePath(lang, n.path);
               const active = pathname === href;
               return (
-                <Link key={n.id} href={href} style={{ ...navLinkStyle(active), padding: "13px 4px", fontSize: 16 }}>
-                  {lang === "en" ? n.en : n.nl}
-                </Link>
+                <div key={n.id}>
+                  <Link href={href} style={{ ...navLinkStyle(active), padding: "13px 4px", fontSize: 16 }}>
+                    {lang === "en" ? n.en : n.nl}
+                  </Link>
+                  {n.id === "companies" &&
+                    COMPANY_SERVICES.filter((s) => s.id !== "wns").map((s) => {
+                      const sHref = localePath(lang, s.path);
+                      const sActive = pathname === sHref;
+                      return (
+                        <Link key={s.id} href={sHref} style={{ ...navLinkStyle(sActive), padding: "10px 4px 10px 18px", fontSize: 14, color: "var(--voids-ink-muted)" }}>
+                          {lang === "en" ? s.en : s.nl}
+                        </Link>
+                      );
+                    })}
+                </div>
               );
             })}
             <Link href={contactHref} style={{ ...navLinkStyle(false), padding: "13px 4px", fontSize: 16 }}>
@@ -246,6 +285,16 @@ function navLinkStyle(active: boolean): React.CSSProperties {
     whiteSpace: "nowrap",
   };
 }
+
+const dropdownItemStyle: React.CSSProperties = {
+  display: "block",
+  fontSize: 13.5,
+  fontWeight: 500,
+  color: "var(--voids-ink-soft)",
+  padding: "9px 12px",
+  borderRadius: 6,
+  whiteSpace: "nowrap",
+};
 
 const accountLinkStyle: React.CSSProperties = {
   cursor: "pointer",

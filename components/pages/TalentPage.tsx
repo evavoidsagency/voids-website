@@ -191,7 +191,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)", borderBottom: "1px solid var(--border-hairline)" }}>
+      <section style={{ background: "#fff" }}>
         <div className="wrap g-collapse" style={{ padding: "72px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.fitEyebrow}</span>

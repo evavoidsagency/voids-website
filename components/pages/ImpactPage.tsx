@@ -189,7 +189,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
 
       <Photo src="/photography/impact-band.jpg" alt={c.bandAlt} ratio="16 / 6" radius="0" sizes="100vw" />
 
-      <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)", borderBottom: "1px solid var(--border-hairline)" }}>
+      <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "60px 32px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 32, margin: "0 0 8px" }}>{c.sdgTitle}</h2>
           <p style={{ fontSize: 14, color: "var(--voids-ink-muted)", margin: "0 0 26px" }}>{c.sdgSub}</p>
@@ -227,7 +227,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)" }}>
+      <section style={{ background: "#fff" }}>
         <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.movementEyebrow}</span>

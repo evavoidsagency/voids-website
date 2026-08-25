@@ -139,7 +139,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section style={{ background: "var(--voids-purple-100)", borderTop: "1px solid var(--border-hairline)", borderBottom: "1px solid var(--border-hairline)" }}>
+      <section style={{ background: "var(--voids-purple-100)" }}>
         <div className="wrap" style={{ padding: "56px 32px 64px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyWsEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "8px 0 14px", maxWidth: 860 }}>{c.whyWsTitle}</h2>
@@ -204,7 +204,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)", borderBottom: "1px solid var(--border-hairline)" }}>
+      <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "64px 32px" }}>
           <div style={{ maxWidth: 600, marginBottom: 26 }}>
             <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.calcEyebrow}</span>

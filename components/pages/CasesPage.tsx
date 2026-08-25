@@ -60,7 +60,7 @@ export function CasesPage({ lang }: { lang: Lang }) {
         })}
       </section>
 
-      <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)" }}>
+      <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "50px 32px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 26, margin: "0 0 20px" }}>{c.rolesTitle}</h2>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 16 }}>

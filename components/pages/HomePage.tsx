@@ -165,7 +165,6 @@ export function HomePage({ lang }: { lang: Lang }) {
           flexWrap: "wrap",
           alignItems: "center",
           justifyContent: "center",
-          borderBottom: "1px solid var(--border-hairline)",
         }}
       >
         <span style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>{c.nicheLabel}</span>
@@ -187,7 +186,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       </section>
 
       {/* TRUSTED BY */}
-      <section style={{ borderBottom: "1px solid var(--border-hairline)", background: "var(--voids-beige)" }}>
+      <section style={{ background: "var(--voids-beige)" }}>
         <div className="wrap" style={{ padding: "34px 32px" }}>
           <div className="anton" style={{ fontSize: 20, textAlign: "center", marginBottom: 22 }}>
             {c.trustedBy}
@@ -270,7 +269,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       </section>
 
       {/* TESTIMONIALS */}
-      <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)", borderBottom: "1px solid var(--border-hairline)" }}>
+      <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "60px 32px" }}>
           <div className="anton" style={{ fontSize: 15, letterSpacing: ".06em", color: "var(--voids-ink-muted)", marginBottom: 26 }}>
             {c.testimonialsLabel}

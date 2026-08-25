@@ -37,16 +37,20 @@ const COPY: Record<
       {
         title: "Werving & selectie",
         text: "We nemen de volledige werving uit handen: van intake tot shortlist tot ondertekende match, voor werkstudenten, stagiairs en starters.",
+        path: "/companies",
+        cta: "Meer over werving & selectie →",
       },
       {
         title: "Community & jobboard",
         text: "Wil je zelf actief werven? Zet je vacature rechtstreeks onder de aandacht van 4.000+ studenten en starters in onze WhatsApp-community en op ons jobboard, naast onze werving & selectie-dienst.",
-        path: "/companies",
+        path: "/companies/community-jobboard",
         cta: "Bekijk de opties →",
       },
       {
         title: "Advies & employer branding",
         text: "We denken mee over je hele junior-strategie: van recruitment en het behouden van jong talent tot employer branding die echt aanslaat bij studenten en starters.",
+        path: "/companies/employer-branding",
+        cta: "Meer over advies & branding →",
       },
     ],
     foundersAlt: "Eva en Wieke, de oprichters van VOIDS",
@@ -69,16 +73,20 @@ const COPY: Record<
       {
         title: "Recruitment & selection",
         text: "We take the full hiring process off your hands: from intake to shortlist to signed match, for working students, interns and starters.",
+        path: "/companies",
+        cta: "More on recruitment & selection →",
       },
       {
         title: "Community & job board",
         text: "Want to recruit actively yourself? Put your vacancy directly in front of 4,000+ students and starters in our WhatsApp community and on our job board, alongside our recruitment & selection service.",
-        path: "/companies",
+        path: "/companies/community-jobboard",
         cta: "See the options →",
       },
       {
         title: "Advice & employer branding",
         text: "We think along on your whole junior strategy: from recruitment and retention to employer branding that actually lands with students and starters.",
+        path: "/companies/employer-branding",
+        cta: "More on advice & branding →",
       },
     ],
     foundersAlt: "Eva and Wieke, the founders of VOIDS",
@@ -126,7 +134,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
         )}
       </section>
 
-      <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)", borderBottom: "1px solid var(--border-hairline)" }}>
+      <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "52px 32px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whatEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 22px" }}>{c.whatTitle}</h2>
@@ -154,7 +162,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section style={{ background: "var(--voids-beige)", borderBottom: "1px solid var(--border-hairline)" }}>
+      <section style={{ background: "var(--voids-beige)" }}>
         <div className="wrap" style={{ padding: "52px 32px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 28, margin: "0 0 22px" }}>{c.teamTitle}</h2>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, maxWidth: 640 }}>
