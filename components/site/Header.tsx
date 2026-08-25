@@ -161,7 +161,7 @@ export function Header({ lang }: { lang: Lang }) {
               {t.contactLabel[lang]}
             </Button>
             <Button variant="primary" size="sm" href={localePath(lang, "/pager")}>
-              {t.careerPager[lang]}
+              {t.joinTalentPool[lang]}
             </Button>
           </div>
         </div>
@@ -225,7 +225,7 @@ export function Header({ lang }: { lang: Lang }) {
             <WhatsAppTrigger style={{ ...whatsTriggerStyle, fontSize: 16 }}>{t.whatsappCta[lang]}</WhatsAppTrigger>
 
             <Button variant="primary" size="md" fullWidth href={localePath(lang, "/pager")}>
-              {t.careerPager[lang]}
+              {t.joinTalentPool[lang]}
             </Button>
           </div>
         </div>

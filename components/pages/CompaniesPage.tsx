@@ -142,9 +142,9 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
       <section style={{ background: "var(--voids-purple-100)", borderTop: "1px solid var(--border-hairline)", borderBottom: "1px solid var(--border-hairline)" }}>
         <div className="wrap" style={{ padding: "56px 32px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyWsEyebrow}</span>
-          <h2 className="anton section-h2" style={{ fontSize: 34, margin: "8px 0 14px", maxWidth: 720 }}>{c.whyWsTitle}</h2>
-          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 640 }}>{c.whyWsIntro}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, marginBottom: 32 }}>
+          <h2 className="anton section-h2" style={{ fontSize: 34, margin: "8px 0 14px", maxWidth: 860 }}>{c.whyWsTitle}</h2>
+          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 860 }}>{c.whyWsIntro}</p>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, marginBottom: 32, maxWidth: 1040 }}>
             {WHY_WS[lang].map((w) => (
               <div key={w.title} className="card card--accent-purple" style={{ padding: 22 }}>
                 <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 8 }}>{w.title}</div>
@@ -153,7 +153,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
             ))}
           </div>
 
-          <div className="card" style={{ padding: 28, maxWidth: 780 }}>
+          <div className="card" style={{ padding: 28, maxWidth: 1040 }}>
             <h3 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 6px" }}>{c.checklistTitle}</h3>
             <p style={{ fontSize: 13, color: "var(--voids-ink-muted)", margin: "0 0 16px" }}>{c.checklistSub}</p>
             <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>

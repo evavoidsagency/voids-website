@@ -117,11 +117,11 @@ export const SOCIALS = {
 };
 
 export const t = {
-  accountLabel: { nl: "Inloggen", en: "Log in" },
+  accountLabel: { nl: "Talentpool inloggen", en: "Talent pool login" },
   contactLabel: { nl: "Contact", en: "Contact" },
   moreLabel: { nl: "Meer", en: "More" },
   whatsappCta: { nl: "💜 WhatsApp", en: "💜 WhatsApp" },
-  careerPager: { nl: "Career pager", en: "Career pager" },
+  joinTalentPool: { nl: "Join de talentpool", en: "Join the talent pool" },
   openMenu: { nl: "Open menu", en: "Open menu" },
   closeMenu: { nl: "Sluit menu", en: "Close menu" },
   whatsModalTitle: { nl: "JOIN DE COMMUNITY 💜", en: "JOIN THE COMMUNITY 💜" },
