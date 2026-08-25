@@ -55,7 +55,7 @@ export function Header({ lang }: { lang: Lang }) {
         borderBottom: "1px solid var(--border-hairline)",
       }}
     >
-      <div className="wrap" style={{ display: "flex", alignItems: "center", gap: 18, minHeight: 70, flexWrap: "wrap", padding: "10px 32px" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 18, minHeight: 70, flexWrap: "wrap", padding: "10px 32px", maxWidth: 1320, margin: "0 auto" }}>
         <Link href={homeHref} style={{ display: "flex", alignItems: "center", flex: "none" }}>
           <Logo variant="black" width={100} />
         </Link>

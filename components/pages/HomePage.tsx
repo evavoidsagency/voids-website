@@ -62,7 +62,7 @@ const COPY: Record<
     missionText:
       "We bouwen aan een eerlijkere arbeidsmarkt voor starters, met transparante voorwaarden, fair wages en gelijke kansen ongeacht netwerk of achtergrond. Het is onze ambitie om daar vanaf medio 2027 ook 10% van onze winst aan terug te geven.",
     missionCta: "Onze impact →",
-    finalTitle: "JOBS KOMEN NAAR JOU TOE.",
+    finalTitle: "STOP MET ZOEKEN, START MET ONTVANGEN.",
     finalText:
       "Sluit je aan bij 4.000+ studenten en starters in onze community. Passende kansen krijg je direct via WhatsApp.",
     finalCta: "💜 Join de WhatsApp-community",
@@ -94,7 +94,7 @@ const COPY: Record<
     missionText:
       "We’re building a fairer job market for starters, with transparent terms, fair wages and equal chances regardless of network or background. It's our ambition to also give back 10% of our profit to that cause from mid-2027.",
     missionCta: "Our impact →",
-    finalTitle: "JOBS COME TO YOU.",
+    finalTitle: "STOP SEARCHING, START RECEIVING.",
     finalText:
       "Join 4,000+ students and starters in our community. Matching opportunities come straight to your WhatsApp.",
     finalCta: "💜 Join the WhatsApp community",
@@ -192,46 +192,53 @@ export function HomePage({ lang }: { lang: Lang }) {
           <div className="anton" style={{ fontSize: 20, textAlign: "center", marginBottom: 22 }}>
             {c.trustedBy}
           </div>
-          <div style={{ display: "flex", gap: 14, overflowX: "auto", padding: "4px 2px 10px" }}>
-            {TRUSTED.map(({ name, slug, url }) => {
-              const logoUrl = findLogoFile(slug);
-              const tileStyle: CSSProperties = {
-                width: 140,
-                height: 72,
-                borderRadius: "var(--radius-md)",
-                flex: "none",
-                background: "#fff",
-                border: logoUrl ? "1px solid var(--border-hairline)" : "1px dashed var(--voids-line)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: 12,
-              };
-              const content = logoUrl ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={logoUrl} alt={name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
-              ) : (
-                <span style={{ fontSize: 11, fontWeight: 600, color: "var(--voids-ink-muted)", textAlign: "center", lineHeight: 1.3 }}>
-                  {name}
-                </span>
-              );
-              return url ? (
-                <a
-                  key={name}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title={name}
-                  style={tileStyle}
-                >
-                  {content}
-                </a>
-              ) : (
-                <div key={name} title={name} style={tileStyle}>
-                  {content}
-                </div>
-              );
-            })}
+          <div style={{ position: "relative" }}>
+            <div style={{ display: "flex", gap: 14, overflowX: "auto", padding: "4px 2px 10px" }}>
+              {TRUSTED.map(({ name, slug, url }) => {
+                const logoUrl = findLogoFile(slug);
+                const tileStyle: CSSProperties = {
+                  width: 140,
+                  height: 72,
+                  borderRadius: "var(--radius-md)",
+                  flex: "none",
+                  background: "#fff",
+                  border: logoUrl ? "1px solid var(--border-hairline)" : "1px dashed var(--voids-line)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: 12,
+                };
+                const content = logoUrl ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={logoUrl} alt={name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+                ) : (
+                  <span style={{ fontSize: 11, fontWeight: 600, color: "var(--voids-ink-muted)", textAlign: "center", lineHeight: 1.3 }}>
+                    {name}
+                  </span>
+                );
+                return url ? (
+                  <a key={name} href={url} target="_blank" rel="noopener noreferrer" title={name} style={tileStyle}>
+                    {content}
+                  </a>
+                ) : (
+                  <div key={name} title={name} style={tileStyle}>
+                    {content}
+                  </div>
+                );
+              })}
+            </div>
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                top: 0,
+                right: 0,
+                bottom: 10,
+                width: 56,
+                background: "linear-gradient(to right, transparent, var(--voids-beige))",
+                pointerEvents: "none",
+              }}
+            />
           </div>
         </div>
       </section>

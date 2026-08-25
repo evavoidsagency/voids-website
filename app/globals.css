@@ -487,7 +487,12 @@ button {
 .nav-mobile-toggle {
   display: none;
 }
-@media (max-width: 860px) {
+/* The desktop nav carries 6 primary links + a dropdown + a 5-item action
+   cluster — measured to need ~1300px to lay out on one row without
+   wrapping (the header uses its own wider max-width than the standard
+   1200px content wrap for this reason). Switch to the hamburger before
+   that point so it never wraps into an ugly two-row header. */
+@media (max-width: 1320px) {
   .nav-desktop-only {
     display: none !important;
   }
