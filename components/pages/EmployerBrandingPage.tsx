@@ -73,10 +73,25 @@ export function EmployerBrandingPage({ lang }: { lang: Lang }) {
 
   return (
     <>
-      <section className="wrap" style={{ padding: "64px 32px 40px" }}>
-        <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.eyebrow}</span>
-        <h1 className="anton hero-h1" style={{ fontSize: 44, margin: "12px 0 12px", maxWidth: 820, whiteSpace: "pre-line" }}>{c.title}</h1>
-        <p style={{ fontSize: 16, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 620, textWrap: "balance" }}>{c.sub}</p>
+      <section style={{ background: "var(--voids-beige)" }}>
+        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "start", padding: "64px 32px 56px" }}>
+          <div>
+            <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.eyebrow}</span>
+            <h1 className="anton hero-h1" style={{ fontSize: 40, margin: "12px 0 12px", whiteSpace: "pre-line" }}>{c.title}</h1>
+            <p style={{ fontSize: 16, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 480 }}>{c.sub}</p>
+          </div>
+
+          <div className="card" style={{ padding: 26 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: ".04em", textTransform: "uppercase", color: "var(--voids-ink-muted)", marginBottom: 14 }}>
+              {c.scopeTitle}
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {c.scope.map((s) => (
+                <div key={s.title} style={{ fontSize: 14.5, fontWeight: 600, color: "var(--voids-ink)" }}>✓ {s.title}</div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       <section style={{ background: "#fff" }}>

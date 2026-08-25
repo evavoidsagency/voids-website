@@ -1275,6 +1275,1710 @@ export const BLOG_POSTS: BlogPost[] = [
       ],
     },
   },
+
+  // 15 ----------------------------------------------------------------
+  {
+    slug: "proeftijd-werkstudentcontract",
+    aud: "beide",
+    photo: "/photography/blog-7.jpg",
+    tag: { nl: "Juridisch", en: "Legal" },
+    title: {
+      nl: "Proeftijd bij een werkstudentcontract: wat mag wel en wat niet?",
+      en: "Probation period in a working-student contract: what's allowed and what isn't?",
+    },
+    excerpt: {
+      nl: "Een proeftijd van drie maanden op een contract van vijf maanden mag gewoon niet. Wat de wet wél toestaat bij een werkstudentcontract, en waar je op moet letten voordat je tekent.",
+      en: "A three-month probation on a five-month contract simply isn't allowed. What the law actually permits in a working-student contract, and what to check before you sign.",
+    },
+    read: { nl: "5 min", en: "5 min" },
+    body: {
+      nl: [
+        {
+          p: "Dit artikel is algemene informatie, geen juridisch advies. Check bij twijfel altijd de actuele regels of een jurist. Een werkstudentcontract is een gewone arbeidsovereenkomst, dus de wettelijke regels voor een proeftijd gelden hier net zo goed als bij elk ander contract, ook al wordt dat in de praktijk regelmatig over het hoofd gezien.",
+        },
+        {
+          h2: "Wat is een proeftijd precies?",
+          p: "Een proeftijd is de periode aan het begin van een contract waarin zowel werkgever als werknemer het contract per direct kunnen beëindigen, zonder opzegtermijn en zonder reden op te hoeven geven. Het doel is over en weer te toetsen of de samenwerking bevalt, niet om iemand langdurig in onzekerheid te laten.",
+        },
+        {
+          h2: "Hoeveel proeftijd is wettelijk toegestaan bij een werkstudentcontract?",
+          p: "De lengte hangt af van de duur van het contract, niet van het feit dat het om een werkstudent gaat. Bij een contract van zes maanden of korter mag helemaal geen proeftijd worden afgesproken. Bij een contract langer dan zes maanden tot twee jaar is maximaal één maand proeftijd toegestaan. Bij een contract van twee jaar of langer, of voor onbepaalde tijd, mag de proeftijd oplopen tot maximaal twee maanden.",
+        },
+        {
+          h2: "Wat als de proeftijd niet aan deze regels voldoet?",
+          p: "Dan is de hele proeftijdbepaling nietig, niet alleen het deel dat te lang is. Dat betekent dat er vanaf dag één geen proeftijd geldt en de gewone opzegtermijnen en ontslagregels van toepassing zijn, ook als dat niet zo in het contract staat. Een proeftijd van drie maanden op een contract van vijf maanden is dus niet “drie maanden die eigenlijk één maand hadden moeten zijn”, het is helemaal geen geldige proeftijd.",
+        },
+        {
+          h2: "Loopt de proeftijd door als je door tentamens weinig uren maakt?",
+          p: "In de regel loopt een proeftijd door vanaf de afgesproken startdatum in kalenderdagen, ook als je in die periode door tentamens minder uren werkt. Dat is precies waarom het slim is om vooraf te bespreken hoe de eerste weken samenvallen met je studierooster, zodat de proeftijd niet toevallig samenvalt met je drukste tentamenweken.",
+        },
+        {
+          h2: "Checklist voordat je tekent",
+          ul: [
+            "Klopt de lengte van de proeftijd met de duur van het contract volgens de wet?",
+            "Staat de proeftijd expliciet en schriftelijk in het contract, niet alleen mondeling toegezegd?",
+            "Is duidelijk vanaf welke datum de proeftijd ingaat?",
+            "Is er ruimte besproken voor de studiebelasting in die eerste periode?",
+          ],
+        },
+        {
+          h2: "Waarom dit ertoe doet, ook bij een parttime rol",
+          p: "Een werkstudentcontract is geen lichtere versie van een arbeidsovereenkomst, dus de bescherming die erbij hoort is dat ook niet. Bij VOIDS zorgen we dat contracten kloppen voordat iemand tekent, precies omdat een eerlijke start net zo belangrijk is als een eerlijk salaris.",
+        },
+      ],
+      en: [
+        {
+          p: "This article is general information, not legal advice. If in doubt, always check the current rules or consult a lawyer. A working-student contract is a regular employment contract, so the statutory rules on probation periods apply exactly as they would to any other contract, even though that gets overlooked in practice fairly often.",
+        },
+        {
+          h2: "What exactly is a probation period?",
+          p: "A probation period is the window at the start of a contract during which either the employer or the employee can end it immediately, without notice and without giving a reason. The point is for both sides to test whether the working relationship fits, not to leave someone in prolonged uncertainty.",
+        },
+        {
+          h2: "How long can a probation period legally be in a working-student contract?",
+          p: "The length depends on the duration of the contract, not on the fact that it's a working-student role. For a contract of six months or less, no probation period is allowed at all. For a contract longer than six months up to two years, a maximum of one month is allowed. For a contract of two years or longer, or an indefinite contract, the probation period can run up to a maximum of two months.",
+        },
+        {
+          h2: "What happens if the probation period doesn't follow these rules?",
+          p: "Then the entire probation clause is void, not just the part that's too long. That means no probation period applies from day one, and the normal notice periods and dismissal rules kick in instead, whatever the contract says. A three-month probation on a five-month contract isn't \"three months that should really have been one,\" it's not a valid probation period at all.",
+        },
+        {
+          h2: "Does the probation period keep running if exams cut your hours?",
+          p: "As a rule, a probation period runs in calendar days from the agreed start date, even if you work fewer hours during that stretch because of exams. That's exactly why it's worth discussing upfront how the first few weeks line up with your exam schedule, so the probation period doesn't happen to fall during your busiest exam weeks.",
+        },
+        {
+          h2: "Checklist before you sign",
+          ul: [
+            "Does the length of the probation period match the contract duration under the law?",
+            "Is the probation period stated explicitly and in writing, not just promised verbally?",
+            "Is it clear from which date the probation period starts?",
+            "Has the study workload for that first stretch actually been discussed?",
+          ],
+        },
+        {
+          h2: "Why this matters, even for a part-time role",
+          p: "A working-student contract isn't a lighter version of an employment contract, so the protections that come with it aren't either. At VOIDS we make sure contracts are correct before anyone signs, precisely because a fair start matters just as much as fair pay.",
+        },
+      ],
+    },
+  },
+
+  // 16 ----------------------------------------------------------------
+  {
+    slug: "ziek-als-werkstudent",
+    aud: "talent",
+    photo: "/photography/blog-8.jpg",
+    tag: { nl: "Juridisch", en: "Legal" },
+    title: {
+      nl: "Ziek als werkstudent: heb je recht op doorbetaling?",
+      en: "Sick as a working student: are you still paid?",
+    },
+    excerpt: {
+      nl: "Ja, ook als werkstudent word je doorbetaald als je ziek bent. Wat je precies mag verwachten, hoe dat verschilt van een bijbaan, en wat je moet melden bij tentamens.",
+      en: "Yes, working students get paid sick leave too. What you can actually expect, how it differs from a side job, and what to do around exams.",
+    },
+    read: { nl: "5 min", en: "5 min" },
+    body: {
+      nl: [
+        {
+          p: "Dit artikel is algemene informatie, geen juridisch advies. Ziek zijn als werkstudent voelt soms als een grijs gebied, alsof het minder telt omdat je toch al niet fulltime werkt. Dat is het niet: een werkstudentcontract is een gewone arbeidsovereenkomst, en de regels rond loondoorbetaling bij ziekte gelden onverkort.",
+        },
+        {
+          h2: "Word je doorbetaald als je ziek bent als werkstudent?",
+          p: "Ja. Een werkgever is wettelijk verplicht om bij ziekte minimaal 70% van je loon door te betalen, met als ondergrens het wettelijk minimumloon in het eerste ziektejaar als 70% daaronder zou uitkomen. Dat geldt voor iedere werknemer met een arbeidsovereenkomst, en een werkstudentcontract is daar één van, ongeacht het aantal uren dat je werkt.",
+        },
+        {
+          h2: "Geldt dit ook als je maar 16 uur per week werkt?",
+          p: "Ja, het aantal uren verandert niets aan het recht op doorbetaling, alleen aan het bedrag: je krijgt een percentage van het loon dat bij jouw uren hoort, niet van een fulltime salaris. Een werkstudent die 16 uur per week werkt en ziek wordt, ontvangt dus 70% van het loon over die 16 uur, met dezelfde ondergrens van het minimumloon.",
+        },
+        {
+          h2: "Hoe verschilt dit van een bijbaan of een oproepcontract?",
+          p: "Bij een oproepcontract zonder vaste uren kan het lastiger zijn om vast te stellen waarover moet worden doorbetaald, juist omdat er geen vast aantal uren is afgesproken. Een werkstudentcontract met een vast of duidelijk afgebakend aantal uren per week voorkomt die onduidelijkheid: er is een helder bedrag om vanuit te rekenen, in plaats van een schatting achteraf.",
+        },
+        {
+          h2: "Moet je je ook ziekmelden als je alleen tentamens mist door griep?",
+          p: "Ja, ziekmelden werkt hetzelfde als bij ieder ander werk: bij je werkgever, niet bij je opleiding. Een tentamen missen door ziekte is een zaak tussen jou en je universiteit of hogeschool, los van je werk. Meld je dus gewoon ziek zoals je dat op een gewone werkdag zou doen, ook als de reden toevallig samenvalt met een tentamenweek.",
+        },
+        {
+          h2: "Wat als je werkgever zegt dat ziekteverzuim “niet meetelt” bij een werkstudentcontract?",
+          p: "Dat klopt niet, en het is precies het soort onderscheid dat een werkstudentrol niet apart maakt van een gewone parttime baan. Kom je dit tegen, vraag dan gewoon naar de onderbouwing, of leg het naast de tekst van je contract: de wettelijke regels rond loondoorbetaling bij ziekte staan los van de vraag of je nog studeert.",
+        },
+        {
+          h2: "Waarom dit VOIDS' vertrekpunt is",
+          p: "Een werkstudent heeft dezelfde rechten als iedere andere werknemer, ziekte inbegrepen. Bij VOIDS zorgen we dat kandidaten weten waar ze recht op hebben, zodat “het is toch maar een werkstudent” nooit een excuus wordt om iemand minder te bieden dan waar diegene recht op heeft.",
+        },
+      ],
+      en: [
+        {
+          p: "This article is general information, not legal advice. Being sick as a working student can feel like a grey area, as if it matters less because you're not working full-time anyway. It isn't: a working-student contract is a regular employment contract, and the rules on paid sick leave apply in full.",
+        },
+        {
+          h2: "Do working students still get paid when they're sick?",
+          p: "Yes. Employers are legally required to continue paying at least 70% of your wage during illness, with the statutory minimum wage as a floor during the first year of sickness if 70% would fall below it. That applies to any employee with an employment contract, and a working-student contract is one, regardless of how many hours you work.",
+        },
+        {
+          h2: "Does this still apply if you only work 16 hours a week?",
+          p: "Yes, the number of hours doesn't affect the right to continued pay, only the amount: you get a percentage of the wage tied to your hours, not of a full-time salary. A working student on 16 hours a week who falls ill receives 70% of the wage for those 16 hours, with the same minimum-wage floor.",
+        },
+        {
+          h2: "How does this differ from a side job or an on-call contract?",
+          p: "With an on-call contract that has no fixed hours, it can be harder to establish what continued pay should be based on, precisely because no set number of hours was agreed. A working-student contract with a fixed or clearly bounded number of hours per week avoids that ambiguity: there's a clear figure to calculate from, instead of an estimate after the fact.",
+        },
+        {
+          h2: "Do you still need to report sick if you're only missing an exam?",
+          p: "Yes, reporting sick works the same as for any other job: to your employer, not your university. Missing an exam because of illness is a matter between you and your university or college, separate from your work. Report sick the way you would on a normal working day, even if the timing happens to fall in an exam week.",
+        },
+        {
+          h2: "What if your employer says sick leave \"doesn't really count\" on a working-student contract?",
+          p: "That's not correct, and it's exactly the kind of distinction that shouldn't set a working-student role apart from an ordinary part-time job. If you run into this, just ask for the reasoning, or check it against your contract: the statutory rules on paid sick leave don't depend on whether you're still studying.",
+        },
+        {
+          h2: "Why this is VOIDS' starting point",
+          p: "A working student has the same rights as any other employee, sickness included. At VOIDS we make sure candidates know what they're entitled to, so \"they're just a working student\" never becomes an excuse to offer someone less than they're owed.",
+        },
+      ],
+    },
+  },
+
+  // 17 ----------------------------------------------------------------
+  {
+    slug: "vakantiedagen-opbouwen-als-werkstudent",
+    aud: "talent",
+    photo: "/photography/blog-1.jpg",
+    tag: { nl: "Juridisch", en: "Legal" },
+    title: {
+      nl: "Vakantiedagen opbouwen als werkstudent: hoe werkt dat?",
+      en: "Accruing vacation days as a working student: how does it work?",
+    },
+    excerpt: {
+      nl: "Ook bij 16 uur per week bouw je gewoon vakantiedagen op, naar rato van je uren. De rekensom uitgelegd, plus wat je kunt doen als je werkgever ze niet bijhoudt.",
+      en: "Even at 16 hours a week, you accrue vacation days, in proportion to your hours. The math explained, plus what to do if your employer isn't tracking them.",
+    },
+    read: { nl: "5 min", en: "5 min" },
+    body: {
+      nl: [
+        {
+          p: "Dit artikel is algemene informatie, geen juridisch advies. “Ik werk maar parttime, dus vakantiedagen zijn niet echt van toepassing” is een misverstand dat bij werkstudenten vaker voorkomt dan je zou denken. Ook bij minder uren bouw je gewoon vakantiedagen op, alleen naar rato.",
+        },
+        {
+          h2: "Bouw je als werkstudent vakantiedagen op?",
+          p: "Ja. Iedere werknemer met een arbeidsovereenkomst bouwt wettelijk minimaal vakantiedagen op ter grootte van vier keer het aantal uren dat je per week werkt, per jaar. Werk je 16 uur per week, dan bouw je dus minimaal 64 uur aan vakantie op per jaar, oftewel vier werkweken van 16 uur. Dat is een wettelijke ondergrens: veel werkgevers bieden er iets bovenop.",
+        },
+        {
+          h2: "Hoe reken je dat om naar dagen?",
+          p: "Vakantie-uren worden meestal omgerekend naar dagen op basis van je gemiddelde werkdag. Werk je bijvoorbeeld twee dagen van 8 uur per week, dan komt 64 uur neer op acht vakantiedagen van 8 uur. Werk je verspreid over meer, kortere dagen, dan verandert het aantal dagen, maar niet het totale aantal uren waar je recht op hebt.",
+        },
+        {
+          h2: "Bouw je ook vakantiedagen op tijdens een periode dat je minder werkt door tentamens?",
+          p: "Ja, zolang je contract doorloopt en je gewoon in dienst bent, bouw je op basis van je afgesproken uren op, ook als je in de praktijk een week minder werkt door een tentamenperiode die vooraf is afgesproken. Alleen bij onbetaald verlof kan de opbouw stilvallen, en dat hoort dan expliciet met je werkgever besproken te zijn.",
+        },
+        {
+          h2: "Vervallen vakantiedagen als je ze niet opneemt?",
+          p: "Wettelijke vakantiedagen vervallen doorgaans zes maanden na het einde van het jaar waarin ze zijn opgebouwd, tenzij je redelijkerwijs niet in staat was om ze op te nemen. Bovenwettelijke dagen, als je werkgever die extra aanbiedt, hebben vaak een langere houdbaarheid, meestal vijf jaar. Check je contract of personeelshandboek voor de precieze regeling bij jouw werkgever.",
+        },
+        {
+          h2: "Wat kun je doen als je werkgever geen overzicht bijhoudt?",
+          p: "Vraag er gewoon naar. De meeste bedrijven houden vakantie-uren bij in een systeem waar je zelf inzicht in hebt, en als dat niet zo is, mag je vragen om een overzicht. Een werkgever die dit niet bijhoudt, is niet automatisch in overtreding, maar het maakt het voor jou wel lastiger om te zien waar je recht op hebt, dus het loont om er vroeg naar te vragen in plaats van pas bij vertrek.",
+        },
+        {
+          h2: "Waarom dit meetelt, ook als je maar één jaar blijft",
+          p: "Vakantiedagen zijn geen extraatje dat je “verdient” als je lang genoeg blijft, het is een basisrecht vanaf je eerste werkdag. Bij VOIDS letten we erop dat contracten dit gewoon correct regelen, precies omdat een werkstudentbaan een volwaardige baan is en geen verkorte versie van werknemersrechten.",
+        },
+      ],
+      en: [
+        {
+          p: "This article is general information, not legal advice. \"I only work part-time, so vacation days don't really apply to me\" is a misconception that comes up among working students more often than you'd expect. Even on fewer hours, you accrue vacation days, just proportionally.",
+        },
+        {
+          h2: "Do working students accrue vacation days?",
+          p: "Yes. Every employee with an employment contract accrues, at minimum, vacation time equal to four times their weekly working hours, per year. If you work 16 hours a week, you accrue at least 64 hours of leave a year, the equivalent of four 16-hour work weeks. That's a statutory floor: many employers offer a bit more.",
+        },
+        {
+          h2: "How does that convert into days?",
+          p: "Vacation hours are usually converted into days based on your average working day. If you work, say, two 8-hour days a week, 64 hours works out to eight 8-hour vacation days. If you're spread over more, shorter days, the number of days changes, but the total hours you're entitled to don't.",
+        },
+        {
+          h2: "Do you still accrue leave during a period where exams cut your hours?",
+          p: "Yes, as long as your contract runs and you remain employed, you accrue leave based on your agreed hours, even if you work fewer hours in practice during a pre-agreed exam period. Accrual can pause during unpaid leave, and that should be explicitly discussed with your employer if it applies.",
+        },
+        {
+          h2: "Do vacation days expire if you don't use them?",
+          p: "Statutory vacation days generally expire six months after the end of the year in which they were accrued, unless you were reasonably unable to take them. Any extra days your employer offers on top of the legal minimum usually last longer, often five years. Check your contract or staff handbook for the exact policy at your employer.",
+        },
+        {
+          h2: "What can you do if your employer isn't tracking a balance?",
+          p: "Just ask. Most companies track vacation hours in a system you can see yourself, and if they don't, you can ask for an overview. An employer not tracking this isn't automatically breaking the rules, but it does make it harder for you to see what you're owed, so it's worth asking early rather than only when you leave.",
+        },
+        {
+          h2: "Why this matters, even if you only stay a year",
+          p: "Vacation days aren't a perk you \"earn\" by sticking around long enough, they're a basic right from your first day of work. At VOIDS we make sure contracts get this right, precisely because a working-student role is a full role, not a shortened version of employee rights.",
+        },
+      ],
+    },
+  },
+
+  // 18 ----------------------------------------------------------------
+  {
+    slug: "studiefinanciering-en-werken-combineren",
+    aud: "talent",
+    photo: "/photography/blog-2.jpg",
+    tag: { nl: "Uitgelegd", en: "Explained" },
+    title: {
+      nl: "Studiefinanciering en werken combineren: wat betekent dat voor belasting en toeslagen?",
+      en: "Combining student finance with work: what does it mean for tax and benefits?",
+    },
+    excerpt: {
+      nl: "Werken als werkstudent raakt niet je studiefinanciering zelf, maar wel mogelijk je toeslagen. Wat je moet weten voordat het najaar je ineens confronteert met een naheffing.",
+      en: "Working as a working student doesn't touch your student finance itself, but it can affect your benefits. What to know before autumn hits you with an unexpected repayment.",
+    },
+    read: { nl: "6 min", en: "6 min" },
+    body: {
+      nl: [
+        {
+          p: "Dit artikel is algemene informatie, geen fiscaal of juridisch advies. Check bij twijfel altijd de actuele regels via DUO, de Belastingdienst of een adviseur, want dit is precies het soort regelgeving dat kan wijzigen. Wat we wél op hoofdlijnen kunnen delen: waar werken als werkstudent wel en niet invloed op heeft.",
+        },
+        {
+          h2: "Raakt bijverdienen je studiefinanciering zelf?",
+          p: "Onder het huidige leenstelsel, dat sinds 2015 geldt, is er geen algemene bijverdiengrens meer die je basisbeurs of lening beïnvloedt: je mag in principe verdienen wat je verdient, zonder dat dit je studiefinanciering zelf raakt. Val je nog onder het oude stelsel met een prestatiebeurs, dan gelden mogelijk andere regels, dus check dat specifiek bij DUO als dat op jou van toepassing is.",
+        },
+        {
+          h2: "Betaal je belasting over je loon als werkstudent?",
+          p: "Ja, gewoon zoals iedere werknemer: je werkgever houdt loonheffing in op je salaris, op basis van de gebruikelijke belastingschijven. Verdien je in totaal weinig over het jaar, dan kan het zijn dat je via de jaarlijkse aangifte inkomstenbelasting een deel terugkrijgt, maar dat is iets voor achteraf, niet iets dat je loonstrookje nu al aanpast.",
+        },
+        {
+          h2: "Raakt een hoger inkomen je zorgtoeslag of huurtoeslag?",
+          p: "Toeslagen zoals zorgtoeslag en huurtoeslag zijn inkomensafhankelijk, dus een structureel hoger inkomen als werkstudent kan de hoogte daarvan beïnvloeden, en bij een flinke stijging zelfs het recht erop. Dat is geen straf op werken, het is simpelweg hoe het toeslagensysteem is ingericht: het compenseert minder naarmate je zelf meer verdient.",
+        },
+        {
+          h2: "Hoe voorkom je een vervelende naheffing achteraf?",
+          p: "Toeslagen worden op basis van een geschat jaarinkomen uitgekeerd, en als je gaandeweg het jaar meer gaat verdienen als werkstudent, loont het om je inkomensschatting bij te werken via de Belastingdienst zodra dat duidelijk wordt. Doe je dat niet, dan loop je het risico dat je aan het eind van het jaar moet terugbetalen, in plaats van dat gedurende het jaar geleidelijk te verrekenen.",
+        },
+        {
+          h2: "Wat kun je nu al doen?",
+          ul: [
+            "Check via Mijn Toeslagen of je inkomensschatting nog klopt zodra je weet wat je ongeveer gaat verdienen",
+            "Bewaar je loonstroken, ook als je van baan wisselt tijdens je studie",
+            "Vraag bij twijfel gewoon na bij DUO of de Belastingdienst in plaats van te gokken",
+          ],
+        },
+        {
+          h2: "Waarom dit VOIDS aangaat",
+          p: "Onduidelijkheid over toeslagen en belasting is precies het soort drempel die bijdraagt aan het idee dat betaald werken naast je studie ingewikkelder is dan het is. Bij VOIDS proberen we die drempel te verlagen door hier open over te zijn, zodat een eerlijk salaris ook daadwerkelijk aanvoelt als vooruitgang, niet als een risico.",
+        },
+      ],
+      en: [
+        {
+          p: "This article is general information, not tax or legal advice. If in doubt, always check the current rules via DUO, the Dutch Tax Authority, or an advisor, since this is exactly the kind of regulation that changes. What we can share at a general level: what working as a working student does and doesn't affect.",
+        },
+        {
+          h2: "Does earning extra income affect your student finance itself?",
+          p: "Under the current loan-based system, in place since 2015, there's no longer a general earnings cap that affects your basic grant or loan: in principle you can earn what you earn without it touching your student finance itself. If you still fall under the older performance-based grant system, different rules may apply, so check that specifically with DUO if it's relevant to you.",
+        },
+        {
+          h2: "Do you pay tax on your wage as a working student?",
+          p: "Yes, just like any employee: your employer withholds payroll tax from your salary based on the standard tax brackets. If your total income for the year is low, you may get some of that back through your annual income tax return, but that's something settled afterward, not something your payslip adjusts for now.",
+        },
+        {
+          h2: "Does a higher income affect your healthcare or rent benefit?",
+          p: "Benefits like healthcare allowance and rent allowance are income-dependent, so a structurally higher income as a working student can affect how much you receive, and with a significant jump, even your eligibility. That's not a penalty on working, it's simply how the benefits system is designed: it compensates less as your own income rises.",
+        },
+        {
+          h2: "How do you avoid an unpleasant repayment later?",
+          p: "Benefits are paid out based on an estimated annual income, and if you end up earning more as the year goes on, it's worth updating your income estimate with the Tax Authority as soon as that becomes clear. Skip that, and you risk having to repay a lump sum at year end instead of it being adjusted gradually along the way.",
+        },
+        {
+          h2: "What can you do right now?",
+          ul: [
+            "Check via Mijn Toeslagen whether your income estimate still holds once you know roughly what you'll earn",
+            "Keep your payslips, even if you switch jobs during your studies",
+            "If in doubt, just ask DUO or the Tax Authority instead of guessing",
+          ],
+        },
+        {
+          h2: "Why this is relevant to VOIDS",
+          p: "Confusion about benefits and tax is exactly the kind of barrier that feeds the idea that paid work alongside your studies is more complicated than it is. At VOIDS we try to lower that barrier by being upfront about it, so a fair salary actually feels like progress, not a risk.",
+        },
+      ],
+    },
+  },
+
+  // 19 ----------------------------------------------------------------
+  {
+    slug: "zzp-of-werkstudent",
+    aud: "beide",
+    photo: "/photography/blog-3.jpg",
+    tag: { nl: "Vergelijking", en: "Comparison" },
+    title: {
+      nl: "ZZP of werkstudent: wat is het verschil, en wat past bij jou?",
+      en: "Freelance or working student: what's the difference, and what fits you?",
+    },
+    excerpt: {
+      nl: "Als zzp'er factureer je, als werkstudent krijg je salaris. Dat klinkt als een detail, maar het verandert wie het risico draagt, wie de zekerheid krijgt, en wat bij welke situatie past.",
+      en: "As a freelancer you invoice, as a working student you get a payslip. That sounds like a detail, but it changes who carries the risk, who gets the security, and what fits which situation.",
+    },
+    read: { nl: "6 min", en: "6 min" },
+    body: {
+      nl: [
+        {
+          p: "Sommige studenten en starters overwegen om als zzp'er te gaan werken in plaats van als werkstudent, vaak omdat het flexibeler klinkt. Het is inderdaad een andere constructie, maar niet automatisch een betere: het verschil zit in wie het risico draagt en wie welke zekerheid krijgt, en dat verschil is groter dan het op het eerste gezicht lijkt.",
+        },
+        {
+          h2: "Wat is het kernverschil tussen zzp en werkstudent?",
+          p: "Als werkstudent ben je in loondienst: je hebt een arbeidsovereenkomst, je werkgever houdt loonheffing in, en je bouwt rechten op zoals vakantiedagen en loondoorbetaling bij ziekte. Als zzp'er ben je zelfstandig ondernemer: je stuurt facturen, regelt zelf je belastingaangifte, en hebt geen werkgever die verantwoordelijk is voor zaken als ziekte of pensioen.",
+        },
+        {
+          h2: "Wie draagt het risico bij ziekte of een rustige periode?",
+          p: "Bij een werkstudentcontract draagt de werkgever dat risico: bij ziekte word je doorbetaald, en een slappe periode voor het bedrijf verandert niets aan je afgesproken uren en salaris binnen de looptijd van je contract. Als zzp'er draag je dat risico zelf: geen opdrachten betekent geen inkomen, en ziekte betekent in de regel geen doorbetaling, tenzij je dat zelf hebt verzekerd.",
+        },
+        {
+          h2: "Is zzp-werk sneller geregeld dan een werkstudentcontract?",
+          p: "Soms wel, en dat is precies waarom het aantrekkelijk kan lijken voor een kortlopende, afgebakende klus. Voor structureel, terugkerend werk is dat voordeel echter kleiner dan het lijkt: je mist de zekerheid van een vast salaris en de bescherming die bij een arbeidsovereenkomst hoort, terwijl het werk zelf net zo structureel is als bij een werkstudentrol.",
+        },
+        {
+          h2: "Mag een bedrijf een werkstudentrol zomaar als zzp-opdracht aanbieden?",
+          p: "Niet zonder meer. Als het werk in de praktijk structureel is, op vaste tijden plaatsvindt en onder gezag van de opdrachtgever wordt uitgevoerd, dan lijkt dat meer op een arbeidsovereenkomst dan op een zelfstandige opdracht, ongeacht wat er op papier staat. Dit is een grijs gebied waar de regels de laatste jaren zijn aangescherpt, dus check bij twijfel de actuele regelgeving of vraag advies voordat je een zzp-constructie aangaat voor iets dat eigenlijk op een gewone baan lijkt.",
+        },
+        {
+          h2: "Wanneer past zzp dan wel goed bij een student of starter?",
+          ul: [
+            "Bij losse, kortlopende opdrachten zonder vaste uren of vaste werktijden",
+            "Als je bewust kiest voor de vrijheid om meerdere opdrachtgevers tegelijk te hebben",
+            "Als je de administratieve kant, van facturen tot belastingaangifte, aankunt naast je studie",
+          ],
+        },
+        {
+          h2: "Waarom VOIDS de voorkeur geeft aan het werkstudentmodel",
+          p: "Voor structureel, relevant werk naast een studie geeft VOIDS de voorkeur aan een werkstudentcontract boven een zzp-constructie, precies omdat het de zekerheid biedt die bij deze levensfase past: een vast salaris, opgebouwde rechten, en geen risico dat een rustige maand voor het bedrijf meteen je eigen inkomen raakt.",
+        },
+      ],
+      en: [
+        {
+          p: "Some students and starters consider working as a freelancer instead of a working student, often because it sounds more flexible. It is a different setup, but not automatically a better one: the difference lies in who carries the risk and who gets which security, and that difference is bigger than it looks at first glance.",
+        },
+        {
+          h2: "What's the core difference between freelancing and being a working student?",
+          p: "As a working student, you're an employee: you have an employment contract, your employer withholds payroll tax, and you build up rights like vacation days and paid sick leave. As a freelancer, you're self-employed: you send invoices, handle your own tax filing, and have no employer responsible for things like illness or pension.",
+        },
+        {
+          h2: "Who carries the risk during illness or a quiet period?",
+          p: "Under a working-student contract, the employer carries that risk: you get paid during illness, and a slow patch for the business doesn't change your agreed hours or pay within the term of your contract. As a freelancer, you carry that risk yourself: no assignments means no income, and illness generally means no continued pay unless you've insured yourself for it.",
+        },
+        {
+          h2: "Is freelance work quicker to arrange than a working-student contract?",
+          p: "Sometimes, and that's exactly why it can look appealing for a short, bounded piece of work. For structural, recurring work, though, that advantage is smaller than it looks: you miss the security of a fixed salary and the protections that come with an employment contract, while the work itself is just as structural as a working-student role.",
+        },
+        {
+          h2: "Can a company just offer a working-student role as a freelance gig instead?",
+          p: "Not without limits. If the work is structural in practice, happens on fixed hours, and is carried out under the client's direction, it looks more like an employment relationship than an independent assignment, whatever the paperwork says. This is a grey area where the rules have tightened in recent years, so check the current regulations or get advice if in doubt before entering a freelance setup for something that really looks like a regular job.",
+        },
+        {
+          h2: "So when does freelancing genuinely fit a student or starter?",
+          ul: [
+            "For loose, short-term assignments without fixed hours or fixed working times",
+            "When you deliberately want the freedom to work for multiple clients at once",
+            "When you can handle the admin side, from invoices to tax filing, alongside your studies",
+          ],
+        },
+        {
+          h2: "Why VOIDS prefers the working-student model",
+          p: "For structural, relevant work alongside a degree, VOIDS prefers a working-student contract over a freelance setup, precisely because it offers the security that fits this stage of life: a fixed salary, accrued rights, and no risk that a quiet month for the business hits your own income directly.",
+        },
+      ],
+    },
+  },
+
+  // 20 ----------------------------------------------------------------
+  {
+    slug: "nulurencontract-vs-werkstudentcontract",
+    aud: "beide",
+    photo: "/photography/blog-4.jpg",
+    tag: { nl: "Vergelijking", en: "Comparison" },
+    title: {
+      nl: "0-urencontract vs. werkstudentcontract: wat is het verschil?",
+      en: "Zero-hours contract vs. working-student contract: what's the difference?",
+    },
+    excerpt: {
+      nl: "Een 0-urencontract geeft geen enkele zekerheid over inkomen of rooster. Een werkstudentcontract wel. Wat dat in de praktijk betekent, en waarom het verschil groter is dan het klinkt.",
+      en: "A zero-hours contract offers no certainty at all over income or schedule. A working-student contract does. What that means in practice, and why the gap is bigger than it sounds.",
+    },
+    read: { nl: "5 min", en: "5 min" },
+    body: {
+      nl: [
+        {
+          p: "Dit artikel is algemene informatie, geen juridisch advies. Beide contractvormen worden weleens door elkaar gebruikt in vacatureteksten, maar een 0-urencontract en een werkstudentcontract zijn fundamenteel verschillend, met name in hoeveel zekerheid je krijgt over inkomen en rooster.",
+        },
+        {
+          h2: "Wat is een 0-urencontract precies?",
+          p: "Een 0-urencontract, ook wel oproepovereenkomst genoemd, betekent dat er geen vast aantal uren is afgesproken: je werkt en wordt betaald alleen als je wordt opgeroepen. Er is geen garantie op een minimum aantal uren per week of per maand, wat het voor jou lastig maakt om te plannen, zowel financieel als rond je studie.",
+        },
+        {
+          h2: "Wat is dan het verschil met een werkstudentcontract?",
+          p: "Een goed werkstudentcontract werkt met een vast aantal uren per week, of op zijn minst een duidelijke bandbreedte, in plaats van losse oproepen. Dat betekent dat je vooraf weet wat je gaat verdienen en wanneer je wordt verwacht, met ruimte om dat rond tentamens tijdelijk aan te passen in onderling overleg, niet doordat je simpelweg niet wordt opgeroepen.",
+        },
+        {
+          h2: "Moet een werkgever je van tevoren informeren bij een oproepcontract?",
+          p: "Ja, bij een oproepovereenkomst geldt een wettelijke oproeptermijn: je moet in de regel minstens vier dagen van tevoren worden opgeroepen. Wordt een oproep binnen die termijn ingetrokken of gewijzigd, dan behoud je meestal recht op loon over de oorspronkelijk afgesproken uren. Die bescherming bestaat, maar lost niet het achterliggende probleem op: je weet nog steeds pas kort van tevoren of en hoeveel je werkt.",
+        },
+        {
+          h2: "Heb je na verloop van tijd recht op vaste uren bij een oproepcontract?",
+          p: "Ja, na twaalf maanden op een oproepcontract is een werkgever wettelijk verplicht om een contract met een vast aantal uren aan te bieden, gebaseerd op het gemiddelde dat je in dat jaar hebt gewerkt. Dat is een goede stok achter de deur, maar betekent ook dat je een vol jaar met onzekerheid overbrugt voordat die zekerheid er is.",
+        },
+        {
+          h2: "Waarom is een 0-urencontract voor de meeste werkstudentrollen ongeschikt?",
+          ul: [
+            "Geen zekerheid over inkomen maakt het combineren met studiekosten en huur onnodig lastig",
+            "Geen vast rooster maakt het moeilijk om werk structureel in te plannen rond colleges en tentamens",
+            "Structureel terugkerend werk past sowieso beter bij een vast aantal uren dan bij losse oproepen",
+          ],
+        },
+        {
+          h2: "Waarom VOIDS werkt met vaste uren",
+          p: "Bij VOIDS matchen we op werkstudentrollen met een vast aantal uren per week, juist omdat onzekerheid over inkomen en rooster niet hoort bij wat een werkstudentbaan zou moeten zijn: een stabiele, betaalde basis naast je studie, geen wachten op de telefoon.",
+        },
+      ],
+      en: [
+        {
+          p: "This article is general information, not legal advice. The two contract types sometimes get used loosely in job postings, but a zero-hours contract and a working-student contract are fundamentally different, especially in how much certainty they give you over income and schedule.",
+        },
+        {
+          h2: "What exactly is a zero-hours contract?",
+          p: "A zero-hours contract, also called an on-call agreement, means no fixed number of hours has been agreed: you only work and get paid when you're called in. There's no guarantee of a minimum number of hours per week or month, which makes it hard to plan around, both financially and alongside your studies.",
+        },
+        {
+          h2: "So what's the difference with a working-student contract?",
+          p: "A good working-student contract runs on a fixed number of hours per week, or at least a clear range, instead of loose call-ins. That means you know in advance what you'll earn and when you're expected in, with room to adjust that temporarily around exams by mutual agreement, not simply because you weren't called in.",
+        },
+        {
+          h2: "Does an employer have to give notice before calling you in?",
+          p: "Yes, an on-call agreement carries a statutory notice period: as a rule, you must be called in at least four days in advance. If a call-in is cancelled or changed within that window, you generally keep the right to pay for the originally agreed hours. That protection exists, but it doesn't fix the underlying problem: you still only know shortly in advance whether, and how much, you'll be working.",
+        },
+        {
+          h2: "Do you eventually get a right to fixed hours on an on-call contract?",
+          p: "Yes, after twelve months on an on-call contract, an employer is legally required to offer a contract with a fixed number of hours, based on the average you worked over that year. That's a useful backstop, but it also means bridging a full year of uncertainty before that security kicks in.",
+        },
+        {
+          h2: "Why is a zero-hours contract unsuited to most working-student roles?",
+          ul: [
+            "No income certainty makes it unnecessarily hard to combine with study costs and rent",
+            "No fixed schedule makes it difficult to plan work structurally around lectures and exams",
+            "Structural, recurring work simply fits fixed hours better than loose call-ins",
+          ],
+        },
+        {
+          h2: "Why VOIDS works with fixed hours",
+          p: "At VOIDS we match candidates into working-student roles with a fixed number of hours per week, precisely because uncertainty over income and schedule isn't what a working-student job should be: a stable, paid foundation alongside your studies, not waiting by the phone.",
+        },
+      ],
+    },
+  },
+
+  // 21 ----------------------------------------------------------------
+  {
+    slug: "hoeveel-uur-mag-een-werkstudent-maximaal-werken",
+    aud: "beide",
+    photo: "/photography/blog-5.jpg",
+    tag: { nl: "Uitgelegd", en: "Explained" },
+    title: {
+      nl: "Hoeveel uur mag een werkstudent maximaal werken?",
+      en: "How many hours can a working student legally work?",
+    },
+    excerpt: {
+      nl: "De wet stelt een harde bovengrens aan werkuren, los van wat gebruikelijk is. Wat de Arbeidstijdenwet toestaat, en waarom “gebruikelijk” en “maximaal toegestaan” twee heel andere getallen zijn.",
+      en: "The law sets a hard ceiling on working hours, separate from what's typical. What the Working Hours Act allows, and why \"typical\" and \"legally maximum\" are two very different numbers.",
+    },
+    read: { nl: "5 min", en: "5 min" },
+    body: {
+      nl: [
+        {
+          p: "Dit artikel is algemene informatie, geen juridisch advies. Er is een verschil tussen hoeveel uur een werkstudent gebruikelijk werkt en hoeveel uur wettelijk maximaal is toegestaan: het eerste ligt meestal tussen de 16 en 24 uur per week, het tweede ligt via de Arbeidstijdenwet aanzienlijk hoger.",
+        },
+        {
+          h2: "Wat is het wettelijke maximum aantal werkuren per week?",
+          p: "Voor werknemers van 18 jaar en ouder geldt volgens de Arbeidstijdenwet een maximum van 60 uur in een enkele week, gemiddeld maximaal 55 uur per week over een periode van vier weken, en gemiddeld maximaal 48 uur per week over een periode van zestien weken. Daarnaast geldt een maximum van 12 uur per dienst.",
+        },
+        {
+          h2: "Gelden er strengere regels voor werknemers onder de 18?",
+          p: "Ja, voor minderjarige werknemers gelden strengere grenzen, met kortere maximale diensten en minder uren per week dan voor volwassenen. De meeste werkstudenten zijn 18 jaar of ouder, maar begin je jonger, dan is het goed om te weten dat er dan andere regels gelden.",
+        },
+        {
+          h2: "Betekent dit dat een werkstudent 48 uur per week mag werken?",
+          p: "Wettelijk gezien wel, maar dat is niet waar het werkstudentmodel voor bedoeld is. Het wettelijke maximum is een absolute bovengrens die geldt voor alle werknemers, niet een richtlijn voor wat verstandig is naast een studie. In de praktijk ligt het gebruikelijke aantal uren voor een werkstudent veel lager, meestal tussen de 16 en 24 uur per week, precies om ruimte te houden voor colleges, tentamens en studievoortgang.",
+        },
+        {
+          h2: "Kan een cao strengere regels stellen dan de wet?",
+          p: "Ja, veel sectoren hebben een cao met eigen afspraken over maximale werktijden, rusttijden en overwerk, die vaak strenger zijn dan het wettelijke minimum. Check dus niet alleen de Arbeidstijdenwet, maar ook of er een cao van toepassing is op de sector waarin je werkt.",
+        },
+        {
+          h2: "Wat gebeurt er als je structureel meer uren maakt dan afgesproken?",
+          p: "Structureel meer uren draaien dan in je contract staat, is geen automatisch wettelijk probleem zolang het binnen de grenzen van de Arbeidstijdenwet blijft, maar het is wel een signaal dat je rol qua omvang is gegroeid. Dat is precies het moment om het gesprek aan te gaan over of je contract, salaris en studiebalans nog kloppen bij wat je feitelijk doet.",
+        },
+        {
+          h2: "Waarom VOIDS altijd binnen de gebruikelijke bandbreedte matcht",
+          p: "Het wettelijk maximum is geen streefwaarde. Bij VOIDS matchen we werkstudenten binnen de 16 tot 24 uur die daadwerkelijk te combineren zijn met een studie, precies omdat het doel van een werkstudentbaan is dat beide, werk en studie, goed naast elkaar kunnen bestaan.",
+        },
+      ],
+      en: [
+        {
+          p: "This article is general information, not legal advice. There's a difference between how many hours a working student typically works and how many hours are legally allowed: the former usually sits between 16 and 24 hours a week, the latter, under the Working Hours Act, is considerably higher.",
+        },
+        {
+          h2: "What's the legal maximum number of working hours per week?",
+          p: "For employees aged 18 and over, the Working Hours Act (Arbeidstijdenwet) sets a maximum of 60 hours in any single week, an average of at most 55 hours a week over any four-week period, and an average of at most 48 hours a week over any sixteen-week period. There's also a maximum of 12 hours per shift.",
+        },
+        {
+          h2: "Do stricter rules apply to employees under 18?",
+          p: "Yes, stricter limits apply to minors, with shorter maximum shifts and fewer hours per week than for adults. Most working students are 18 or older, but if you're starting younger, it's worth knowing different rules apply.",
+        },
+        {
+          h2: "Does that mean a working student is allowed to work 48 hours a week?",
+          p: "Legally, yes, but that's not what the working-student model is for. The statutory maximum is an absolute ceiling that applies to all employees, not a guideline for what's sensible alongside a degree. In practice, the typical number of hours for a working student is far lower, usually between 16 and 24 a week, precisely to leave room for lectures, exams and academic progress.",
+        },
+        {
+          h2: "Can a collective labour agreement set stricter rules than the law?",
+          p: "Yes, many sectors have a collective labour agreement (cao) with its own terms on maximum working hours, rest periods and overtime, often stricter than the statutory minimum. So check not just the Working Hours Act, but also whether a cao applies to the sector you're working in.",
+        },
+        {
+          h2: "What happens if you're structurally working more hours than agreed?",
+          p: "Consistently working more hours than your contract states isn't automatically a legal problem as long as it stays within the limits of the Working Hours Act, but it is a signal that your role has grown in scope. That's exactly the moment to raise whether your contract, pay and study balance still match what you're actually doing.",
+        },
+        {
+          h2: "Why VOIDS always matches within the typical range",
+          p: "The legal maximum isn't a target. At VOIDS we match working students into roles within the 16 to 24 hours that genuinely combine with a degree, precisely because the whole point of a working-student job is that work and studying can coexist well.",
+        },
+      ],
+    },
+  },
+
+  // 22 ----------------------------------------------------------------
+  {
+    slug: "wat-verdient-een-werkstudent-gemiddeld",
+    aud: "talent",
+    photo: "/photography/blog-6.jpg",
+    tag: { nl: "Uitgelegd", en: "Explained" },
+    title: {
+      nl: "Wat verdient een werkstudent gemiddeld?",
+      en: "What does a working student typically earn?",
+    },
+    excerpt: {
+      nl: "Er bestaat geen wettelijk “werkstudentsalaris”, alleen een ondergrens: het minimumloon. Wat je tarief in de praktijk bepaalt, en hoe je checkt of jouw aanbod eerlijk is.",
+      en: "There's no legal \"working-student salary,\" only a floor: the minimum wage. What actually determines your rate in practice, and how to check whether your offer is fair.",
+    },
+    read: { nl: "5 min", en: "5 min" },
+    body: {
+      nl: [
+        {
+          p: "Er is geen vast bedrag dat “het gemiddelde werkstudentsalaris” heet, en elke vacaturetekst die zo'n getal met veel zekerheid noemt, moet je met een korrel zout nemen. Wat er wél is: een wettelijke ondergrens, en een aantal factoren die bepalen waar jouw tarief boven die ondergrens zou moeten uitkomen.",
+        },
+        {
+          h2: "Is er een minimumbedrag dat een werkstudent moet verdienen?",
+          p: "Ja: het wettelijk minimumloon, van toepassing op iedereen van 21 jaar of ouder, met het jeugdminimumloon voor wie jonger is. Dat bedrag wordt twee keer per jaar aangepast door de overheid, per 1 januari en per 1 juli, dus check voor een actueel bedrag altijd de site van de Rijksoverheid in plaats van een verouderd getal uit een oud artikel.",
+        },
+        {
+          h2: "Waarom verschilt het uurtarief zo sterk tussen werkstudentrollen?",
+          p: "Het tarief hangt vooral af van het niveau van het werk, niet van de leeftijd of studiefase van de werkstudent. Een werkstudent die zelfstandig een deel van een proces runt, verdient logischerwijs meer dan iemand die vooral ondersteunende taken doet, net zoals dat bij fulltime functies werkt. Sector en regio spelen ook mee: een rol in finance of tech betaalt doorgaans anders dan een rol in horeca of retail.",
+        },
+        {
+          h2: "Is een hoger aantal uren per week ook een hoger uurtarief?",
+          p: "Niet per se, en dat hoort het ook niet te zijn: het uurtarief zou moeten aansluiten bij het werk, niet bij het aantal uren dat je toevallig beschikbaar bent. Wel geldt: naarmate je uren richting fulltime groeien en je rol qua verantwoordelijkheid meegroeit, hoort het tarief daarin mee te bewegen.",
+        },
+        {
+          h2: "Hoe check je of een aangeboden tarief eerlijk is?",
+          ul: [
+            "Vergelijk het met het wettelijk minimumloon: ligt het daar net boven, of duidelijk boven?",
+            "Vraag wat een vergelijkbare junior collega met een fulltime contract per uur verdient",
+            "Kijk naar de aard van het werk: zelfstandige verantwoordelijkheid vraagt om een hoger tarief dan puur ondersteunend werk",
+            "Wees kritisch bij een tarief dat structureel op of net boven het minimumloon blijft hangen, ongeacht hoe het werk in de praktijk groeit",
+          ],
+        },
+        {
+          h2: "Waarom een “gemiddeld” salaris geen zinvolle maatstaf is",
+          p: "Een landelijk gemiddelde zegt weinig over jouw situatie, omdat het sector, regio en type werk door elkaar husselt. Een gemiddelde over alle werkstudentrollen in Nederland zegt evenveel over jouw aanbod als het gemiddelde inkomen in Nederland zegt over jouw eigen salaris: bijna niets, tenzij je precies weet wat er in dat gemiddelde zit.",
+        },
+        {
+          h2: "Waarom VOIDS hier geen genoegen mee neemt",
+          p: "Bij VOIDS kijken we per rol naar wat eerlijk is gegeven het werk, niet naar een landelijk gemiddelde dat toevallig laag genoeg uitkomt om als excuus te dienen. Een eerlijk tarief is een tarief dat het werk volgt, niet de status “student”.",
+        },
+      ],
+      en: [
+        {
+          p: "There's no fixed figure called \"the average working-student salary,\" and any job posting that states one with a lot of confidence should be taken with a grain of salt. What does exist: a statutory floor, and a handful of factors that determine where your rate should sit above that floor.",
+        },
+        {
+          h2: "Is there a minimum amount a working student has to earn?",
+          p: "Yes: the statutory minimum wage, which applies to everyone aged 21 and over, with the youth minimum wage for those younger. That figure is updated twice a year by the government, on 1 January and 1 July, so always check the government's own site for the current amount rather than an outdated number from an old article.",
+        },
+        {
+          h2: "Why does the hourly rate vary so much between working-student roles?",
+          p: "The rate mostly depends on the level of the work, not on the age or study stage of the working student. Someone independently running part of a process naturally earns more than someone mainly doing supporting tasks, the same way it works in full-time roles. Sector and region play a part too: a role in finance or tech typically pays differently than one in hospitality or retail.",
+        },
+        {
+          h2: "Does more hours per week also mean a higher hourly rate?",
+          p: "Not necessarily, and it shouldn't be: the hourly rate should track the work, not how many hours you happen to be available. That said, as your hours grow toward full-time and your responsibilities grow alongside them, the rate should move with it.",
+        },
+        {
+          h2: "How do you check whether an offered rate is fair?",
+          ul: [
+            "Compare it to the statutory minimum wage: is it just above it, or clearly above it?",
+            "Ask what a comparable junior colleague on a full-time contract earns per hour",
+            "Look at the nature of the work: independent responsibility warrants a higher rate than purely supporting tasks",
+            "Be wary of a rate that stays at or just above minimum wage regardless of how the work grows in practice",
+          ],
+        },
+        {
+          h2: "Why a \"national average\" isn't a useful benchmark",
+          p: "A nationwide average tells you little about your own situation, because it blends together every sector, region and type of work. An average across every working-student role in the Netherlands tells you about as much about your own offer as the average income in the Netherlands tells you about your own salary: almost nothing, unless you know exactly what's baked into that average.",
+        },
+        {
+          h2: "Why VOIDS doesn't settle for this",
+          p: "At VOIDS we look at what's fair per role given the actual work, not at a national average that happens to be low enough to serve as an excuse. A fair rate is one that follows the work, not the status of \"student.\"",
+        },
+      ],
+    },
+  },
+
+  // 23 ----------------------------------------------------------------
+  {
+    slug: "werkstudent-worden-zonder-ervaring",
+    aud: "talent",
+    photo: "/photography/blog-7.jpg",
+    tag: { nl: "Gids", en: "Guide" },
+    title: {
+      nl: "Werkstudent worden zonder ervaring: kan dat?",
+      en: "Becoming a working student with no experience: is it possible?",
+    },
+    excerpt: {
+      nl: "Ja, de meeste werkstudentrollen zijn juist bedoeld als eerste stap. Wat bedrijven écht zoeken als ze “ervaring” vragen, en hoe je zonder cv-regels toch overtuigt.",
+      en: "Yes, most working-student roles are specifically designed as a first step. What companies actually mean by \"experience,\" and how to convince them without a CV full of it.",
+    },
+    read: { nl: "6 min", en: "6 min" },
+    body: {
+      nl: [
+        {
+          p: "“Minimaal 1 jaar relevante ervaring” in een vacature voor een werkstudentrol is een van de meest ontmoedigende zinnen die je als student kunt tegenkomen, en gelukkig ook een van de meest misleidende. De meeste werkstudentrollen zijn juist bedoeld als eerste stap in een vakgebied, niet als vervolgstap na ervaring die je nog niet kunt hebben.",
+        },
+        {
+          h2: "Kun je werkstudent worden zonder relevante werkervaring?",
+          p: "Ja, en dat is bij de meeste werkstudentrollen ook de bedoeling. Een werkstudentrol is er juist om iemand de eerste relevante ervaring in een vakgebied te laten opdoen, niet om al ervaren mensen tijdelijk parttime in te huren. Wat bedrijven eigenlijk zoeken, is iemand die snel leert en zelfstandig aan de slag kan, niet per se iemand die het werk al kent.",
+        },
+        {
+          h2: "Wat bedoelen bedrijven dan echt met “ervaring gewenst”?",
+          p: "Vaak minder specifiek dan het klinkt: geen letterlijke werkervaring in exact dezelfde functie, maar een signaal dat iemand al iets heeft gedaan dat laat zien hoe diegene werkt. Een studievereniging waarin je verantwoordelijkheid droeg, een project waarin je iets van nul af aan opzette, of een bijbaan waarin je zelfstandig problemen oploste, telt vaak net zo goed mee als een stage in exact dezelfde sector.",
+        },
+        {
+          h2: "Wat kun je laten zien als je geen relevante stage of baan hebt gehad?",
+          ul: [
+            "Verantwoordelijkheden binnen een studievereniging, commissie of sportclub",
+            "Een project dat je zelfstandig hebt opgezet, ook als het klein was",
+            "Vrijwilligerswerk waarin je met mensen of deadlines te maken had",
+            "Concrete situaties waarin je een probleem oploste, ook buiten een werkcontext",
+          ],
+        },
+        {
+          h2: "Hoe schrijf je een matchprofiel als je nog weinig te laten zien hebt?",
+          p: "Focus op wie je bent en hoe je werkt, niet op een lijst functies die je nog niet hebt gehad. Twee of drie concrete situaties die laten zien hoe je omgaat met verantwoordelijkheid, tegenslag of een deadline, zeggen meer dan een cv vol lege regels die je erbij hebt verzonnen om het compleet te laten lijken.",
+        },
+        {
+          h2: "Moet je dan maar elke werkstudentvacature negeren die “ervaring” vraagt?",
+          p: "Nee, solliciteer gewoon. Veel vacatureteksten zijn geschreven met een ideaalbeeld in het achterhoofd, niet met een harde eis. Vooral bij kleinere bedrijven en scale-ups weegt een goede match op karakter en motivatie vaak zwaarder dan een exacte match op ervaringseisen die toch bedoeld waren als richtlijn, niet als drempel.",
+        },
+        {
+          h2: "Waarom VOIDS niet op cv-regels selecteert",
+          p: "Bij VOIDS matchen we op karakter en drijfveren, niet op wie toevallig al een stage bij een bekend bedrijf heeft gehad. Dat is niet alleen eerlijker, het is ook een betere voorspeller van of iemand in een rol gaat gedijen, juist omdat de meeste werkstudenten nog aan het begin van hun werkzame leven staan.",
+        },
+      ],
+      en: [
+        {
+          p: "\"At least 1 year of relevant experience\" in a job posting for a working-student role is one of the most discouraging sentences a student can come across, and thankfully also one of the most misleading. Most working-student roles exist specifically as a first step into a field, not as the step after experience you couldn't possibly have yet.",
+        },
+        {
+          h2: "Can you become a working student with no relevant experience?",
+          p: "Yes, and for most working-student roles, that's exactly the point. A working-student role exists to give someone their first relevant experience in a field, not to temporarily hire already-experienced people part-time. What companies are really looking for is someone who learns fast and can work independently, not necessarily someone who already knows the job.",
+        },
+        {
+          h2: "What do companies actually mean by \"experience preferred\"?",
+          p: "Often less specific than it sounds: not literal work experience in the exact same role, but a signal that someone has already done something that shows how they work. Responsibility within a student association, a project you built from scratch, or a side job where you solved problems independently often counts just as much as an internship in the exact same sector.",
+        },
+        {
+          h2: "What can you show if you haven't had a relevant internship or job?",
+          ul: [
+            "Responsibilities within a student association, committee, or sports club",
+            "A project you set up independently, even a small one",
+            "Volunteer work that involved people or deadlines",
+            "Concrete situations where you solved a problem, even outside a work context",
+          ],
+        },
+        {
+          h2: "How do you write a match profile if you don't have much to show yet?",
+          p: "Focus on who you are and how you work, not a list of roles you haven't had yet. Two or three concrete situations that show how you handle responsibility, setbacks or a deadline say more than a CV padded with vague lines just to make it look complete.",
+        },
+        {
+          h2: "So should you just skip every working-student posting that asks for experience?",
+          p: "No, apply anyway. Many job postings are written with an ideal candidate in mind, not a hard requirement. Especially at smaller companies and scale-ups, a strong match on character and motivation often outweighs an exact match on experience requirements that were meant as a guideline, not a gate.",
+        },
+        {
+          h2: "Why VOIDS doesn't select on CV checkboxes",
+          p: "At VOIDS we match on character and motivation, not on who happened to already have an internship at a well-known company. That's not just fairer, it's also a better predictor of whether someone will thrive in a role, precisely because most working students are still at the very start of their working life.",
+        },
+      ],
+    },
+  },
+
+  // 24 ----------------------------------------------------------------
+  {
+    slug: "hoe-kies-je-een-sector-als-student",
+    aud: "talent",
+    photo: "/photography/blog-8.jpg",
+    tag: { nl: "Carrière", en: "Career" },
+    title: {
+      nl: "Hoe kies je een sector als je nog geen idee hebt wat je wilt?",
+      en: "How do you pick a sector when you have no idea what you want?",
+    },
+    excerpt: {
+      nl: "“Wat wil je later worden” is de verkeerde vraag. Een praktische manier om een richting te vinden zonder dat je die richting meteen voor altijd hoeft vast te leggen.",
+      en: "\"What do you want to become\" is the wrong question. A practical way to find a direction without having to lock it in forever.",
+    },
+    read: { nl: "6 min", en: "6 min" },
+    body: {
+      nl: [
+        {
+          p: "“Wat wil je later worden” is een van de meest gestelde en minst nuttige vragen die een student kan krijgen. Het veronderstelt dat er één goed antwoord bestaat, terwijl de meeste mensen pas ontdekken wat bij ze past door het te proberen, niet door erover na te denken op de bank.",
+        },
+        {
+          h2: "Moet je je sector kiezen voordat je gaat werken?",
+          p: "Nee, en dat is precies waar de druk vandaan komt die de meeste studenten voelen. Je hoeft geen definitieve keuze te maken voordat je begint met werken: een werkstudentrol is juist een lagedrempelige manier om een sector te verkennen zonder je er meteen voor jaren aan te binden.",
+        },
+        {
+          h2: "Waar begin je als je echt geen idee hebt?",
+          p: "Begin niet bij sectoren, begin bij wat voor werk je energie geeft: cijfers doorgronden, mensen overtuigen, dingen bouwen, structuur aanbrengen in chaos, creatief bezig zijn. Die drijfveer vertaalt zich naar meerdere sectoren tegelijk. Iemand die energie krijgt van structuur aanbrengen, kan net zo goed gedijen in finance als in operations of projectmanagement.",
+        },
+        {
+          h2: "Is uitproberen echt beter dan erover nadenken?",
+          p: "Ja, in de meeste gevallen wel. Een paar maanden daadwerkelijk in een sector werken vertelt je meer over of het bij je past dan weken aan onderzoek en gesprekken vooraf. Je ontdekt dingen die je van tevoren niet had kunnen weten: hoe het tempo aanvoelt, wat voor mensen er werken, welk deel van het werk je juist niet leuk vindt.",
+        },
+        {
+          h2: "Wat als je erachter komt dat een sector toch niet bij je past?",
+          p: "Dat is geen verspilde tijd, dat is precies de informatie die je zocht. Een werkstudentrol van een jaar in een sector die uiteindelijk niet past, levert nog steeds relevante werkervaring, vaardigheden en een netwerk op, en scheelt je de veel duurdere fout om daar pas na afstuderen en een fulltime contract achter te komen.",
+        },
+        {
+          h2: "Hoe maak je die verkenning concreet?",
+          ul: [
+            "Kies een werkstudentrol op basis van het soort werk, niet alleen de sectornaam",
+            "Praat met mensen die het werk al doen, en vraag naar hun dagelijkse praktijk, niet alleen hun functietitel",
+            "Geef jezelf toestemming om na een jaar van richting te veranderen als het niet blijkt te passen",
+            "Let op patronen: welk soort taken geeft je energie, ongeacht in welke sector je die tegenkomt",
+          ],
+        },
+        {
+          h2: "Waarom dit precies is waar VOIDS bij helpt",
+          p: "Een matchprofiel dat kijkt naar wie je bent en wat je drijft, in plaats van naar een sector die je toevallig al had genoemd, is precies bedoeld om deze verkenning makkelijker te maken. Je hoeft niet te weten wat je wilt worden, je hoeft alleen te weten wat voor werk je energie geeft, en de rest volgt.",
+        },
+      ],
+      en: [
+        {
+          p: "\"What do you want to become\" is one of the most commonly asked and least useful questions a student can get. It assumes there's one right answer, when most people only discover what fits them by trying it, not by thinking about it on the couch.",
+        },
+        {
+          h2: "Do you have to pick your sector before you start working?",
+          p: "No, and that's exactly where most of the pressure students feel comes from. You don't have to make a final choice before you start working: a working-student role is a low-stakes way to explore a sector without committing to it for years right away.",
+        },
+        {
+          h2: "Where do you start if you genuinely have no idea?",
+          p: "Don't start with sectors, start with what kind of work gives you energy: digging into numbers, convincing people, building things, bringing structure to chaos, working creatively. That drive translates across multiple sectors at once. Someone who gets energy from bringing structure can thrive just as well in finance as in operations or project management.",
+        },
+        {
+          h2: "Is actually trying it out really better than thinking it through?",
+          p: "Yes, in most cases. A few months actually working in a sector tells you more about whether it fits than weeks of research and conversations beforehand. You discover things you couldn't have known in advance: how the pace feels, what kind of people work there, which part of the work you actually dislike.",
+        },
+        {
+          h2: "What if you find out a sector doesn't fit you after all?",
+          p: "That's not wasted time, that's exactly the information you were looking for. A year-long working-student role in a sector that turns out not to fit still delivers relevant experience, skills, and a network, and it saves you the far more expensive mistake of finding that out only after graduating into a full-time contract.",
+        },
+        {
+          h2: "How do you make that exploration concrete?",
+          ul: [
+            "Choose a working-student role based on the kind of work, not just the sector's name",
+            "Talk to people already doing the work, and ask about their daily reality, not just their job title",
+            "Give yourself permission to change direction after a year if it turns out not to fit",
+            "Watch for patterns: what kind of tasks give you energy, regardless of which sector you find them in",
+          ],
+        },
+        {
+          h2: "Why this is exactly what VOIDS helps with",
+          p: "A match profile that looks at who you are and what drives you, instead of a sector you happened to mention once, exists precisely to make this exploration easier. You don't need to know what you want to become, you just need to know what kind of work gives you energy, and the rest follows.",
+        },
+      ],
+    },
+  },
+
+  // 25 ----------------------------------------------------------------
+  {
+    slug: "bedrijfscultuur-herkennen-in-een-sollicitatiegesprek",
+    aud: "talent",
+    photo: "/photography/blog-1.jpg",
+    tag: { nl: "Gids", en: "Guide" },
+    title: {
+      nl: "Hoe herken je bedrijfscultuur tijdens een sollicitatiegesprek?",
+      en: "How do you spot company culture during a job interview?",
+    },
+    excerpt: {
+      nl: "Een gesprek is geen eenrichtingsverkeer. Concrete signalen, en concrete vragen om te stellen, om te zien of een cultuur echt is zoals de vacaturetekst belooft.",
+      en: "An interview isn't one-way traffic. Concrete signals to look for, and concrete questions to ask, to see whether a culture is really what the job posting promises.",
+    },
+    read: { nl: "6 min", en: "6 min" },
+    body: {
+      nl: [
+        {
+          p: "Een sollicitatiegesprek wordt vaak gezien als een test die jij moet doorstaan, terwijl het net zo goed een kans is om zelf te testen of een bedrijf bij jou past. Bedrijfscultuur laat zich niet aflezen aan een vacaturetekst vol woorden als “informele sfeer” en “platte organisatie”, die zeggen namelijk vrijwel niets. Wel te herkennen aan een paar concrete signalen tijdens het gesprek zelf.",
+        },
+        {
+          h2: "Kun je bedrijfscultuur echt beoordelen in één gesprek van dertig minuten?",
+          p: "Volledig niet, maar gedeeltelijk zeker wel. Je krijgt geen compleet beeld, maar wel signalen: hoe mensen over collega's praten, hoe ze reageren op een kritische vraag, of het gesprek een gesprek is of een eenrichtingsverhoor. Die signalen zijn niet doorslaggevend, maar wel betrouwbaarder dan de marketingtaal op de website.",
+        },
+        {
+          h2: "Op welke concrete signalen let je tijdens het gesprek?",
+          ul: [
+            "Praat de interviewer met plezier over het team, of vooral in algemene, gerepeteerde termen?",
+            "Wordt er concreet verteld hoe een gewone werkdag of -week eruitziet, of blijft het bij abstracte woorden als “dynamisch”?",
+            "Is er ruimte voor jouw vragen, of voelt het gesprek eenzijdig?",
+            "Reageert de interviewer ontspannen op een kritische vraag, of ontwijkend?",
+          ],
+        },
+        {
+          h2: "Welke vragen stel je om voorbij de standaardantwoorden te komen?",
+          p: "Vraag niet “hoe is de cultuur hier”, want dat levert bijna altijd een gerepeteerd antwoord op. Vraag in plaats daarvan naar iets concreets: “Wat deed de laatste werkstudent hier precies in de eerste maand?”, of “Kun je een moment noemen waarop iets niet volgens plan liep, en hoe ging het team daarmee om?”. Concrete vragen dwingen concrete antwoorden af, in plaats van marketingzinnen.",
+        },
+        {
+          h2: "Wat betekent het als een bedrijf geen concreet antwoord kan geven?",
+          p: "Dat is zelf al een signaal. Een bedrijf dat een werkstudentrol serieus heeft nagedacht, kan zo vertellen hoe de eerste maand eruitziet, wie het aanspreekpunt is en wat een normale werkweek behelst. Blijft het antwoord vaag, dan is de kans groter dat de rol zelf ook nog niet goed is uitgedacht, ongeacht hoe leuk de vacaturetekst klinkt.",
+        },
+        {
+          h2: "Hoe zwaar moet je een sollicitatiegesprek laten meewegen ten opzichte van reviews of via via informatie?",
+          p: "Combineer het liever dan dat je op één bron vertrouwt. Een gesprek geeft je een directe indruk, reviews geven je een patroon over tijd, en iemand die er al werkt of heeft gewerkt geeft je het meest eerlijke beeld. Geen van de drie is compleet op zichzelf, maar samen geven ze een veel realistischer plaatje dan de vacaturetekst alleen.",
+        },
+        {
+          h2: "Waarom VOIDS matcht op meer dan een vacaturetekst",
+          p: "Bij VOIDS kennen we de bedrijven waarmee we werken, niet alleen via hun vacaturetekst maar via het daadwerkelijke contact met teams en oprichters. Dat betekent dat je bij een match via VOIDS al een realistischer beeld hebt van een cultuur voordat het gesprek zelfs maar begint.",
+        },
+      ],
+      en: [
+        {
+          p: "A job interview is often seen as a test you have to pass, when it's just as much a chance to test whether a company fits you. Company culture doesn't show up in a job posting full of words like \"informal atmosphere\" and \"flat organisation,\" which say almost nothing on their own. It does show up in a handful of concrete signals during the conversation itself.",
+        },
+        {
+          h2: "Can you really judge company culture in one thirty-minute interview?",
+          p: "Not completely, but partially, yes. You won't get a full picture, but you will get signals: how people talk about colleagues, how they react to a critical question, whether the conversation actually goes both ways or turns into a one-sided interrogation. Those signals aren't conclusive, but they're more reliable than the marketing language on the website.",
+        },
+        {
+          h2: "What concrete signals should you look for during the interview?",
+          ul: [
+            "Does the interviewer talk about the team with genuine enthusiasm, or mostly in general, rehearsed terms?",
+            "Do they describe what a normal working day or week actually looks like, or does it stay at abstract words like \"dynamic\"?",
+            "Is there room for your questions, or does the conversation feel one-sided?",
+            "Does the interviewer respond calmly to a critical question, or does it feel evasive?",
+          ],
+        },
+        {
+          h2: "What questions get you past the standard answers?",
+          p: "Don't ask \"what's the culture like here,\" because that almost always gets you a rehearsed answer. Ask something concrete instead: \"What did the last working student here actually do in their first month?\" or \"Can you tell me about a time something didn't go to plan, and how the team handled it?\" Concrete questions force concrete answers, instead of marketing lines.",
+        },
+        {
+          h2: "What does it mean if a company can't give a concrete answer?",
+          p: "That's a signal in itself. A company that's genuinely thought through a working-student role can tell you what the first month looks like, who the point of contact is, and what a normal working week involves. If the answer stays vague, there's a good chance the role itself hasn't been properly thought through either, however good the job posting sounds.",
+        },
+        {
+          h2: "How much weight should an interview carry against reviews or word of mouth?",
+          p: "Combine them rather than trusting one source alone. An interview gives you a direct impression, reviews give you a pattern over time, and someone who already works or has worked there gives you the most honest picture. None of the three is complete on its own, but together they paint a far more realistic picture than the job posting alone.",
+        },
+        {
+          h2: "Why VOIDS matches on more than a job posting",
+          p: "At VOIDS we know the companies we work with, not just through their job posting but through direct contact with teams and founders. That means that with a match through VOIDS, you already have a more realistic picture of a culture before the interview even starts.",
+        },
+      ],
+    },
+  },
+
+  // 26 ----------------------------------------------------------------
+  {
+    slug: "van-werkstudent-naar-vaste-baan",
+    aud: "talent",
+    photo: "/photography/blog-2.jpg",
+    tag: { nl: "Carrière", en: "Career" },
+    title: {
+      nl: "Van werkstudent naar vaste baan: hoe pak je die overstap aan?",
+      en: "From working student to permanent job: how do you make that jump?",
+    },
+    excerpt: {
+      nl: "Veel werkstudenten stromen door bij hetzelfde bedrijf, maar dat gaat niet vanzelf. Wat je zelf kunt doen om van tijdelijke rol naar starterscontract te gaan, en wanneer je beter ergens anders kunt kijken.",
+      en: "Plenty of working students move into a permanent role at the same company, but it doesn't happen automatically. What you can do to move from a temporary role to a starter contract, and when you're better off looking elsewhere.",
+    },
+    read: { nl: "6 min", en: "6 min" },
+    body: {
+      nl: [
+        {
+          p: "Een van de grootste voordelen van een werkstudentrol is dat afstuderen niet per se betekent dat je weer bij nul begint met solliciteren. Veel bedrijven bieden een werkstudent die goed heeft gefunctioneerd gewoon een starterscontract aan. Dat gebeurt alleen niet automatisch: het is iets waar je zelf actief op kunt sturen.",
+        },
+        {
+          h2: "Stromen werkstudenten automatisch door naar een vaste baan?",
+          p: "Nee, niet automatisch, maar wel vaak, en zeker vaker dan bij een reguliere externe sollicitatie. Een bedrijf dat al maanden of jaren met je heeft gewerkt, hoeft geen inschattingsrisico meer te nemen: ze weten al hoe je werkt, wat je kan en of je bij het team past. Die informatie is precies wat een externe sollicitatieprocedure probeert te achterhalen in een paar gesprekken.",
+        },
+        {
+          h2: "Wanneer breng je het gesprek over doorstroom het beste ter sprake?",
+          p: "Eerder dan je zou denken, en zeker niet pas in de laatste maand van je studie. Breng het gesprek zes tot negen maanden voor je afstudeert al ter sprake, zodat een bedrijf de tijd heeft om budget en een rol te plannen, in plaats van dat je pas vlak voor je diploma vraagt of er iets vasts mogelijk is.",
+        },
+        {
+          h2: "Wat kun je zelf doen om je kansen te vergroten?",
+          ul: [
+            "Vraag actief om meer verantwoordelijkheid naarmate je langer meedraait, in plaats van te wachten tot het je wordt aangeboden",
+            "Maak je bijdrage zichtbaar: leg vast wat je hebt opgepakt en welk resultaat dat heeft opgeleverd",
+            "Wees duidelijk over je eigen tijdlijn, zodat een bedrijf niet wordt overvallen door je afstuderen",
+            "Vraag concreet naar het traject: is doorstroom naar een vast contract iets wat dit bedrijf eerder heeft gedaan, en hoe zag dat eruit?",
+          ],
+        },
+        {
+          h2: "Wat als een bedrijf geen concreet aanbod doet?",
+          p: "Vraag er dan gewoon naar in plaats van te blijven wachten. Sommige bedrijven denken pas na over een vast contract als iemand er expliciet naar vraagt, simpelweg omdat het er nog niet was ingepland. Krijg je een duidelijk “nee” of blijft het antwoord vaag, dan is dat waardevolle informatie: begin op tijd elders te kijken, in plaats van te wachten tot je studie al is afgerond.",
+        },
+        {
+          h2: "Is doorstromen bij hetzelfde bedrijf altijd de beste keuze?",
+          p: "Niet per se. Doorstromen bespaart wervingstijd en onzekerheid, maar is alleen een goede keuze als de rol ook daadwerkelijk groeit in verantwoordelijkheid en salaris. Een “vast contract” dat verder identiek is aan je werkstudentrol, alleen met meer uren, is geen promotie, het is dezelfde baan met een langere werkweek.",
+        },
+        {
+          h2: "Waarom VOIDS deze overstap ook na je studie blijft volgen",
+          p: "Bij VOIDS eindigt een match niet zodra je bent geplaatst: we blijven contact houden, ook richting het einde van je studie, precies om dit soort gesprekken op tijd te kunnen voeren in plaats van pas wanneer het al te laat is.",
+        },
+      ],
+      en: [
+        {
+          p: "One of the biggest advantages of a working-student role is that graduating doesn't necessarily mean starting the job search from zero. Plenty of companies simply offer a working student who's performed well a starter contract. It just doesn't happen automatically: it's something you can actively steer.",
+        },
+        {
+          h2: "Do working students automatically move into a permanent job?",
+          p: "No, not automatically, but often, and certainly more often than through a regular external application. A company that's already worked with you for months or years no longer has to take a guess: they already know how you work, what you can do, and whether you fit the team. That's exactly the information an external hiring process is trying to figure out in a couple of interviews.",
+        },
+        {
+          h2: "When's the best time to raise the conversation about moving to a permanent role?",
+          p: "Earlier than you'd think, and definitely not just in your final month of studying. Bring it up six to nine months before graduating, so the company has time to plan budget and a role, rather than you asking whether something permanent is possible right before you get your diploma.",
+        },
+        {
+          h2: "What can you do yourself to improve your odds?",
+          ul: [
+            "Actively ask for more responsibility the longer you're there, instead of waiting for it to be offered",
+            "Make your contribution visible: keep track of what you've taken on and what it delivered",
+            "Be clear about your own timeline, so the company isn't caught off guard by your graduation",
+            "Ask directly about the process: has this company moved working students into permanent roles before, and what did that look like?",
+          ],
+        },
+        {
+          h2: "What if a company doesn't make a concrete offer?",
+          p: "Just ask directly instead of waiting it out. Some companies only think about a permanent contract once someone explicitly asks, simply because it wasn't already on their radar. If you get a clear \"no\" or the answer stays vague, that's valuable information: start looking elsewhere in good time, rather than waiting until your degree is already finished.",
+        },
+        {
+          h2: "Is staying at the same company always the best choice?",
+          p: "Not necessarily. Staying saves you job-search time and uncertainty, but it's only a good choice if the role genuinely grows in responsibility and pay too. A \"permanent contract\" that's otherwise identical to your working-student role, just with more hours, isn't a promotion, it's the same job with a longer week.",
+        },
+        {
+          h2: "Why VOIDS keeps tracking this transition even after your studies",
+          p: "At VOIDS, a match doesn't end once you're placed: we stay in touch, including as your studies wind down, precisely so these conversations can happen on time instead of when it's already too late.",
+        },
+      ],
+    },
+  },
+
+  // 27 ----------------------------------------------------------------
+  {
+    slug: "kosten-werkstudent-vs-starter",
+    aud: "bedrijf",
+    photo: "/photography/blog-3.jpg",
+    tag: { nl: "Werkgever", en: "Employer" },
+    title: {
+      nl: "Wat kost een werkstudent vergeleken met een fulltime starter?",
+      en: "What does a working student cost compared to a full-time starter?",
+    },
+    excerpt: {
+      nl: "Minder salaris is niet het hele verhaal: ook werkgeverslasten en risico verschillen. Een eerlijke rekensom, inclusief wat een verkeerde keuze je uiteindelijk kost.",
+      en: "Lower salary isn't the whole story: employer costs and risk differ too. A fair breakdown, including what the wrong choice ends up costing you.",
+    },
+    read: { nl: "6 min", en: "6 min" },
+    body: {
+      nl: [
+        {
+          p: "“Een werkstudent is goedkoper dan een starter” klopt, maar zegt niet het hele verhaal. Het verschil zit niet alleen in het salaris, maar ook in werkgeverslasten, flexibiliteit en risico, en juist die factoren bepalen of een werkstudent voor jouw situatie daadwerkelijk de goedkopere optie is, of alleen op papier.",
+        },
+        {
+          h2: "Wat is het directe kostenverschil tussen een werkstudent en een fulltime starter?",
+          p: "Het grootste verschil zit in de uren: een werkstudent op 20 uur per week kost bij een vergelijkbaar uurtarief ongeveer de helft van een fulltime starter op 40 uur, simpelweg omdat er de helft van de uren wordt gewerkt. Dat is geen korting op het uurtarief, het is minder ingekochte tijd.",
+        },
+        {
+          h2: "Zijn de werkgeverslasten ook lager bij een werkstudent?",
+          p: "Grotendeels naar rato ja, want de meeste werkgeverslasten, zoals pensioenpremies en sociale lasten, schalen mee met het salaris en dus met de gewerkte uren. Er zijn geen aparte, lagere tarieven specifiek voor werkstudenten: het is dezelfde rekensom als bij iedere parttime werknemer.",
+        },
+        {
+          h2: "Hoe verschilt het risico tussen de twee?",
+          p: "Een werkstudentcontract is doorgaans korter en flexibeler dan een starterscontract, wat het risico bij een verkeerde match kleiner maakt: je zit korter vast en de investering per persoon is lager. Een starter kost meer om aan te nemen én om weer te laten gaan als het niet werkt, met een langere opzegtermijn en vaak hogere verwachtingen van beide kanten.",
+        },
+        {
+          h2: "Wanneer is een werkstudent eigenlijk duurder dan het lijkt?",
+          p: "Als je een werkstudent onderbetaalt ten opzichte van het niveau van het werk. Een te laag tarief bespaart op papier een paar euro per uur, maar leidt tot hogere uitstroom, en dat kost je opnieuw wervings- en inwerktijd, vaak vaker dan bij een fulltime starter die minder snel weer weggaat. Reken die verborgen kosten mee voordat je concludeert dat een werkstudent per definitie de goedkopere keuze is.",
+        },
+        {
+          h2: "Een simpele rekensom om zelf te maken",
+          ul: [
+            "Bereken het uurtarief los van het aantal uren: is het vergelijkbaar met wat een junior fulltime collega verdient?",
+            "Tel werving- en inwerktijd mee, niet alleen het salaris zelf",
+            "Reken uitstroomrisico mee: hoeveel kost het je als je twee keer per jaar opnieuw moet werven in plaats van één keer per jaar of minder",
+            "Kijk naar de aard van het werk: is het structureel genoeg om op termijn een starter te rechtvaardigen, of past het beter bij minder uren voor langere tijd",
+          ],
+        },
+        {
+          h2: "Waarom dit meer is dan een kostenvraagstuk voor VOIDS",
+          p: "Een werkstudent is geen goedkoop alternatief voor een starter, het is een andere manier om hetzelfde soort werk te organiseren, met een ander risicoprofiel. Bij VOIDS helpen we bedrijven die keuze goed maken, en waarschuwen we net zo hard tegen onderbetaling als tegen de verkeerde contractvorm voor het werk dat er ligt.",
+        },
+      ],
+      en: [
+        {
+          p: "\"A working student is cheaper than a starter\" is true, but it's not the whole story. The difference isn't just salary, it's also employer costs, flexibility and risk, and those factors are exactly what determine whether a working student is actually the cheaper option for your situation, or only on paper.",
+        },
+        {
+          h2: "What's the direct cost difference between a working student and a full-time starter?",
+          p: "The biggest difference is in hours: a working student on 20 hours a week costs roughly half of a full-time starter on 40 hours at a comparable hourly rate, simply because half the hours are being bought. That's not a discount on the rate, it's less time purchased.",
+        },
+        {
+          h2: "Are employer costs also lower for a working student?",
+          p: "Largely proportionally, yes, because most employer costs, like pension contributions and social charges, scale with salary and therefore with hours worked. There are no separate, lower rates specifically for working students: it's the same math as for any part-time employee.",
+        },
+        {
+          h2: "How does the risk differ between the two?",
+          p: "A working-student contract is generally shorter and more flexible than a starter contract, which lowers the risk of a bad match: you're committed for less time and the investment per person is smaller. A starter costs more to hire and more to let go if it doesn't work out, with a longer notice period and often higher expectations on both sides.",
+        },
+        {
+          h2: "When does a working student actually end up costing more than it looks?",
+          p: "When you underpay a working student relative to the level of the work. A low rate saves a few euros an hour on paper, but drives higher turnover, and that costs you recruiting and onboarding time again, often more frequently than with a full-time starter who's less likely to leave quickly. Factor in that hidden cost before concluding a working student is automatically the cheaper choice.",
+        },
+        {
+          h2: "A simple calculation to run yourself",
+          ul: [
+            "Work out the hourly rate separately from the number of hours: is it comparable to what a full-time junior colleague earns?",
+            "Count recruiting and onboarding time, not just the salary itself",
+            "Factor in turnover risk: what does it cost you to rehire twice a year instead of once a year or less",
+            "Look at the nature of the work: is it structural enough to justify a starter down the line, or does it fit better as fewer hours over a longer period",
+          ],
+        },
+        {
+          h2: "Why this is more than a cost question for VOIDS",
+          p: "A working student isn't a cheap substitute for a starter, it's a different way of organising the same kind of work, with a different risk profile. At VOIDS we help companies make that choice well, and we push back just as hard on underpayment as on the wrong contract type for the work at hand.",
+        },
+      ],
+    },
+  },
+
+  // 28 ----------------------------------------------------------------
+  {
+    slug: "vacaturetekst-die-junior-talent-aanspreekt",
+    aud: "bedrijf",
+    photo: "/photography/blog-4.jpg",
+    tag: { nl: "Gids", en: "Guide" },
+    title: {
+      nl: "Zo schrijf je een vacaturetekst die junior talent echt aanspreekt",
+      en: "How to write a job posting that actually speaks to junior talent",
+    },
+    excerpt: {
+      nl: "Een lijst eisen trekt geen goede kandidaten aan, het schrikt ze af. Wat wél werkt in een vacaturetekst voor werkstudenten en starters, met concrete voorbeelden.",
+      en: "A list of requirements doesn't attract good candidates, it scares them off. What actually works in a job posting for working students and starters, with concrete examples.",
+    },
+    read: { nl: "6 min", en: "6 min" },
+    body: {
+      nl: [
+        {
+          p: "De meeste vacatureteksten voor junior rollen zijn geschreven alsof ze voor een senior functie zijn: een lange lijst eisen, vage bedrijfsomschrijvingen en een functietitel die weinig zegt. Junior talent, en zeker Gen Z, leest daar snel overheen. Wat wel werkt, is een tekst die laat zien wat het werk daadwerkelijk inhoudt en wie erachter zit.",
+        },
+        {
+          h2: "Waarom werkt een lange eisenlijst averechts bij junior vacatures?",
+          p: "Onderzoek naar sollicitatiegedrag laat consistent zien dat kandidaten, en vrouwen relatief vaker dan mannen, afhaken als ze niet aan alle genoemde eisen voldoen, ook als die eisen eigenlijk “fijn om te hebben” waren in plaats van een harde grens. Bij een junior rol, waar per definitie nog weinig ervaring wordt verwacht, is een lange lijst eisen dus vooral een filter die de verkeerde mensen wegjaagt.",
+        },
+        {
+          h2: "Wat moet er in plaats van een eisenlijst centraal staan?",
+          p: "Beschrijf het werk zelf: wat doet iemand in een gewone week, met wie werkt diegene samen, en wat voor besluiten mag iemand na een paar maanden zelfstandig nemen. Dat is precies de informatie die een kandidaat nodig heeft om te beoordelen of de rol past, en het is ook precies de informatie die de meeste vacatureteksten overslaan.",
+        },
+        {
+          h2: "Hoe specifiek moet een vacaturetekst zijn over salaris en uren?",
+          p: "Zo specifiek mogelijk. Een tekst die salaris en uren vaag laat, wekt de indruk dat er iets te verbergen valt, en junior kandidaten die al gewend zijn aan onduidelijke bijbanen prikken daar snel doorheen. Noem een concreet uurtarief of een duidelijke bandbreedte, en het aantal uren per week, in plaats van “marktconform” zonder verdere toelichting.",
+        },
+        {
+          h2: "Wat trekt junior talent daadwerkelijk aan, buiten salaris?",
+          ul: [
+            "Concrete voorbeelden van wat een werkstudent in deze rol eerder heeft gedaan",
+            "Een duidelijk beeld van begeleiding: wie is het aanspreekpunt, en hoe ziet de eerste maand eruit",
+            "Ruimte voor groei binnen de rol, in plaats van een baan die er na een jaar nog precies zo uitziet",
+            "Een toon die past bij hoe het team daadwerkelijk communiceert, niet bij hoe een vacaturetekst “hoort” te klinken",
+          ],
+        },
+        {
+          h2: "Hoe lang moet een goede junior vacaturetekst zijn?",
+          p: "Korter dan de meeste bedrijven denken. Een tekst die in een paar alinea's laat zien wat het werk inhoudt, wat het betaalt en wie erachter zit, overtuigt sneller dan een pagina vol bedrijfswaarden en eisen. Kandidaten scannen een vacature in seconden voordat ze besluiten door te lezen, dus de belangrijkste informatie hoort bovenaan.",
+        },
+        {
+          h2: "Waarom VOIDS bedrijven helpt bij deze tekst",
+          p: "Een goede vacaturetekst is het eerste signaal van hoe een bedrijf junior talent behandelt. Bij VOIDS helpen we bedrijven die tekst zo te schrijven dat die past bij hoe Gen Z daadwerkelijk zoekt: op concreetheid en eerlijkheid, niet op een indrukwekkende lijst eisen.",
+        },
+      ],
+      en: [
+        {
+          p: "Most job postings for junior roles are written as if they were for a senior position: a long list of requirements, vague company blurbs, and a job title that says little. Junior talent, and Gen Z especially, skims right past that. What actually works is a posting that shows what the work really involves and who's behind it.",
+        },
+        {
+          h2: "Why does a long requirements list backfire on junior postings?",
+          p: "Research on application behaviour consistently shows candidates, and women more often than men, drop out if they don't meet every listed requirement, even when those requirements were meant as \"nice to have\" rather than a hard line. In a junior role, where limited experience is expected by definition, a long list of requirements mostly filters out the wrong people.",
+        },
+        {
+          h2: "What should take the place of a requirements list?",
+          p: "Describe the work itself: what does someone do in a typical week, who do they work with, and what decisions can they make independently after a few months. That's exactly the information a candidate needs to judge whether the role fits, and it's exactly the information most job postings skip.",
+        },
+        {
+          h2: "How specific should a posting be about salary and hours?",
+          p: "As specific as possible. A posting that leaves salary and hours vague gives the impression there's something to hide, and junior candidates who are already used to unclear side jobs pick up on that fast. State a concrete hourly rate or a clear range, and the number of hours per week, instead of \"competitive\" with no further detail.",
+        },
+        {
+          h2: "What actually attracts junior talent, beyond salary?",
+          ul: [
+            "Concrete examples of what a working student in this role has done before",
+            "A clear picture of guidance: who the point of contact is, and what the first month looks like",
+            "Room to grow within the role, instead of a job that looks exactly the same after a year",
+            "A tone that matches how the team actually communicates, not how a job posting is \"supposed\" to sound",
+          ],
+        },
+        {
+          h2: "How long should a good junior job posting be?",
+          p: "Shorter than most companies think. A posting that shows in a few paragraphs what the work involves, what it pays, and who's behind it convinces faster than a page full of company values and requirements. Candidates scan a posting in seconds before deciding to keep reading, so the most important information belongs at the top.",
+        },
+        {
+          h2: "Why VOIDS helps companies with this text",
+          p: "A good job posting is the first signal of how a company treats junior talent. At VOIDS we help companies write postings that match how Gen Z actually searches: on concreteness and honesty, not on an impressive list of requirements.",
+        },
+      ],
+    },
+  },
+
+  // 29 ----------------------------------------------------------------
+  {
+    slug: "werkstudenten-inzetten-tijdens-een-groeifase",
+    aud: "bedrijf",
+    photo: "/photography/blog-5.jpg",
+    tag: { nl: "Werkgever", en: "Employer" },
+    title: {
+      nl: "Werkstudenten inzetten tijdens een groeifase: hoe pak je dat aan?",
+      en: "Using working students during a growth phase: how do you approach it?",
+    },
+    excerpt: {
+      nl: "Snelle groei vraagt om capaciteit die meebeweegt, niet om vaste hires voor werk waarvan je nog niet weet of het blijft bestaan. Waarom werkstudenten daar goed bij passen, en waar de grenzen liggen.",
+      en: "Fast growth needs capacity that flexes, not permanent hires for work you don't yet know will stick around. Why working students fit well there, and where the limits are.",
+    },
+    read: { nl: "6 min", en: "6 min" },
+    body: {
+      nl: [
+        {
+          p: "Een scale-up in groeifase heeft vaak meer werk dan mensen, maar niet altijd genoeg zekerheid over welke rollen structureel blijven bestaan om meteen fulltime te werven. Werkstudenten passen goed bij precies dat probleem: capaciteit die meebeweegt met de groei, zonder dat je vooruit hoeft te lopen op beslissingen die je nog niet kunt maken.",
+        },
+        {
+          h2: "Waarom passen werkstudenten goed bij een snel groeiend bedrijf?",
+          p: "Groei betekent vaak dat werk sneller ontstaat dan de organisatiestructuur eromheen. Een werkstudent kun je relatief snel aan boord krijgen op een nieuwe markt, een nieuw proces of een tijdelijke piek, zonder het risico van een fulltime aanname op een rol die over een half jaar misschien weer anders wordt ingericht.",
+        },
+        {
+          h2: "Kun je met werkstudenten een hele nieuwe markt of productlijn opzetten?",
+          p: "Ja, en dat gebeurt in de praktijk vaker dan je zou denken. Bij Mila Health draaiden drie werkstudenten Marketing ieder hun eigen markt tijdens de internationale uitbreiding naar Zweden en Duitsland: te groot voor een stage, nog niet bewezen genoeg voor drie fulltime starters ineens. Zo test je of een markt levensvatbaar is voordat je de grotere investering doet.",
+        },
+        {
+          h2: "Wat is het risico van te veel leunen op werkstudenten tijdens groei?",
+          p: "Het risico zit in structureel werk laten dragen door een rol die bedoeld is om flexibel en tijdelijk te zijn. Als een werkstudentrol na een jaar nog steeds cruciaal is voor een proces zonder dat er een plan ligt voor wat daarna gebeurt, dan groeit het bedrijf sneller dan de organisatie eromheen, en dat is een probleem dat je beter voor bent dan achteraf oplost.",
+        },
+        {
+          h2: "Hoe bouw je hier wél een stabiele structuur omheen?",
+          ul: [
+            "Plan vooraf een moment waarop je evalueert of een werkstudentrol moet doorgroeien naar een starterscontract",
+            "Zorg voor overdracht van kennis, ook als een werkstudentrol tijdelijk is: leg processen vast, niet alleen in iemands hoofd",
+            "Bouw een tweede werkstudent in voordat de eerste vertrekt, zodat kennis niet in één keer de deur uit gaat",
+            "Betaal naar het niveau van het werk, niet naar het feit dat het tijdelijk aanvoelt: snelle groei is geen reden voor een lager tarief",
+          ],
+        },
+        {
+          h2: "Wanneer is het tijd om van werkstudenten naar starters over te stappen?",
+          p: "Zodra het werk niet langer een experiment is, maar een bewezen, terugkerend onderdeel van het bedrijf. Dat is het moment waarop de flexibiliteit van een werkstudentrol minder waard wordt dan de stabiliteit van een fulltime starter die het proces verder kan opschalen.",
+        },
+        {
+          h2: "Waarom VOIDS scale-ups helpt met dit soort inzet",
+          p: "Bij VOIDS werken we vaak met bedrijven in een groeifase, precies omdat werkstudenten daar zo goed bij passen: snel op te schalen, betaalbaar te testen, en met de juiste begeleiding een serieuze bijdrage in plaats van tijdelijke noodhulp.",
+        },
+      ],
+      en: [
+        {
+          p: "A scale-up in a growth phase often has more work than people, but not always enough certainty about which roles will stick around structurally to justify hiring full-time right away. Working students fit exactly that problem well: capacity that flexes with growth, without having to lock in decisions you can't yet make.",
+        },
+        {
+          h2: "Why do working students fit well at a fast-growing company?",
+          p: "Growth often means work appears faster than the organisational structure around it. You can bring a working student on board relatively quickly for a new market, a new process, or a temporary peak, without the risk of a full-time hire into a role that might look different again in six months.",
+        },
+        {
+          h2: "Can working students help you set up a whole new market or product line?",
+          p: "Yes, and it happens more often in practice than you'd think. At Mila Health, three working students in Marketing each ran their own market during the international expansion into Sweden and Germany: too big for an internship, not proven enough yet for three full-time starters at once. That's how you test whether a market is viable before making the bigger investment.",
+        },
+        {
+          h2: "What's the risk of leaning too heavily on working students during growth?",
+          p: "The risk is letting structural work be carried by a role that's meant to be flexible and temporary. If a working-student role is still critical to a process a year in, with no plan for what happens next, the company is growing faster than the structure around it, and that's a problem better prevented than fixed after the fact.",
+        },
+        {
+          h2: "How do you build real stability around this?",
+          ul: [
+            "Plan a moment upfront to evaluate whether a working-student role should grow into a starter contract",
+            "Ensure knowledge transfer, even for a temporary working-student role: document processes, don't just leave them in someone's head",
+            "Bring in a second working student before the first one leaves, so knowledge doesn't walk out the door all at once",
+            "Pay for the level of the work, not for how temporary it feels: fast growth isn't a reason for a lower rate",
+          ],
+        },
+        {
+          h2: "When is it time to move from working students to starters?",
+          p: "Once the work stops being an experiment and becomes a proven, recurring part of the business. That's the point where the flexibility of a working-student role becomes worth less than the stability of a full-time starter who can scale the process further.",
+        },
+        {
+          h2: "Why VOIDS helps scale-ups with this kind of hiring",
+          p: "At VOIDS we often work with companies in a growth phase, precisely because working students fit so well there: quick to scale up, affordable to test with, and with the right guidance a real contribution rather than a temporary patch.",
+        },
+      ],
+    },
+  },
+
+  // 30 ----------------------------------------------------------------
+  {
+    slug: "employer-branding-voor-gen-z",
+    aud: "bedrijf",
+    photo: "/photography/blog-6.jpg",
+    tag: { nl: "Gen Z", en: "Gen Z" },
+    title: {
+      nl: "Employer branding voor Gen Z: waar let deze generatie op?",
+      en: "Employer branding for Gen Z: what does this generation actually look for?",
+    },
+    excerpt: {
+      nl: "Een mooie “about us”-pagina overtuigt niemand meer. Wat Gen Z daadwerkelijk checkt voordat ze solliciteren, en hoe je dat als bedrijf zichtbaar maakt.",
+      en: "A polished \"about us\" page doesn't convince anyone anymore. What Gen Z actually checks before applying, and how to make that visible as a company.",
+    },
+    read: { nl: "6 min", en: "6 min" },
+    body: {
+      nl: [
+        {
+          p: "Employer branding voor eerdere generaties draaide vaak om imago: een mooie website, een indrukwekkend logo, een cultuurvideo met stockfoto-achtige beelden. Gen Z checkt anders: minder op wat een bedrijf over zichzelf zegt, meer op wat er te verifiëren valt via reviews, social media en mensen die er al werken.",
+        },
+        {
+          h2: "Waarom werkt traditionele employer branding minder goed bij Gen Z?",
+          p: "Gen Z is opgegroeid met marketing die overal doorheen kijkt, en herkent gepolijste bedrijfscommunicatie sneller dan voorgaande generaties. Een “about us”-pagina vol mooie woorden overtuigt niet meer als die niet te staven valt met iets concreets: een review, een post van een medewerker, een eerlijk antwoord in een gesprek.",
+        },
+        {
+          h2: "Wat checkt Gen Z voordat ze solliciteren?",
+          ul: [
+            "Reviews op platforms zoals Glassdoor, ook al zijn die niet altijd representatief",
+            "Wat medewerkers zelf posten op LinkedIn of Instagram, niet alleen wat het bedrijfsaccount post",
+            "Of salaris en uren transparant worden gecommuniceerd in de vacature zelf",
+            "Of er concrete voorbeelden zijn van hoe junior talent hier daadwerkelijk groeit",
+          ],
+        },
+        {
+          h2: "Is salaristransparantie echt zo belangrijk voor deze generatie?",
+          p: "Ja, en het is een van de duidelijkste signalen. Een vacature die salaris of een bandbreedte vaag laat, wekt bij Gen Z eerder wantrouwen dan nieuwsgierigheid. Transparantie over geld wordt niet gezien als onbeleefd, het wordt gezien als een teken van een bedrijf dat niets te verbergen heeft.",
+        },
+        {
+          h2: "Werkt het om huidige werkstudenten in te zetten voor employer branding?",
+          p: "Beter dan een gepolijste campagne. Een kandidaat gelooft een echte werkstudent die vertelt hoe de eerste maand eruitzag eerder dan een marketingvideo, simpelweg omdat het minder gefilterd aanvoelt. Laat mensen die het werk al doen vertellen hoe het werk daadwerkelijk is, in plaats van dat een marketingafdeling het voor hen invult.",
+        },
+        {
+          h2: "Wat is de snelste manier om je employer brand te verbeteren zonder groot budget?",
+          p: "Zorg dat de basis klopt voordat je aan campagnes begint: een eerlijke vacaturetekst met concreet salaris en concrete taken, een onboardingproces dat daadwerkelijk werkt, en tevreden werkstudenten die dat ook durven te zeggen. Dat kost geen marketingbudget, het kost alleen dat je intern op orde hebt wat je extern belooft.",
+        },
+        {
+          h2: "Waarom VOIDS employer branding koppelt aan echte ervaring",
+          p: "Bij VOIDS geloven we dat de beste employer branding niet uit een campagne komt, maar uit hoe een bedrijf junior talent daadwerkelijk behandelt. Daarom kijken we bij elke match ook naar wat eerdere werkstudenten van een bedrijf vinden, niet alleen naar wat er in de vacature staat.",
+        },
+      ],
+      en: [
+        {
+          p: "Employer branding for earlier generations was often about image: a polished website, an impressive logo, a culture video full of stock-photo-style shots. Gen Z checks differently: less on what a company says about itself, more on what can be verified through reviews, social media, and people who already work there.",
+        },
+        {
+          h2: "Why does traditional employer branding work less well on Gen Z?",
+          p: "Gen Z grew up with marketing that sees straight through it, and spots polished corporate messaging faster than previous generations did. An \"about us\" page full of nice words no longer convinces if it can't be backed up by something concrete: a review, an employee's post, an honest answer in an interview.",
+        },
+        {
+          h2: "What does Gen Z check before applying?",
+          ul: [
+            "Reviews on platforms like Glassdoor, even if they're not always fully representative",
+            "What employees themselves post on LinkedIn or Instagram, not just what the company account posts",
+            "Whether salary and hours are communicated transparently in the job posting itself",
+            "Whether there are concrete examples of junior talent actually growing there",
+          ],
+        },
+        {
+          h2: "Is pay transparency really that important to this generation?",
+          p: "Yes, and it's one of the clearest signals. A posting that leaves salary or a range vague breeds suspicion with Gen Z rather than curiosity. Transparency about money isn't seen as impolite, it's seen as a sign of a company that has nothing to hide.",
+        },
+        {
+          h2: "Does it work to put current working students front and centre for employer branding?",
+          p: "Better than a polished campaign. A candidate is more likely to believe a real working student describing what their first month looked like than a marketing video, simply because it feels less filtered. Let people already doing the work describe what it's actually like, instead of a marketing department filling that in for them.",
+        },
+        {
+          h2: "What's the fastest way to improve your employer brand without a big budget?",
+          p: "Get the fundamentals right before you start campaigning: an honest job posting with a concrete salary and concrete tasks, an onboarding process that actually works, and satisfied working students who are willing to say so. That doesn't cost a marketing budget, it just requires that what you promise externally actually holds up internally.",
+        },
+        {
+          h2: "Why VOIDS ties employer branding to real experience",
+          p: "At VOIDS we believe the best employer branding doesn't come from a campaign, it comes from how a company actually treats junior talent. That's why, for every match, we also look at what previous working students think of a company, not just what the posting says.",
+        },
+      ],
+    },
+  },
+
+  // 31 ----------------------------------------------------------------
+  {
+    slug: "diversiteit-in-junior-recruitment",
+    aud: "bedrijf",
+    photo: "/photography/blog-7.jpg",
+    tag: { nl: "Werkgever", en: "Employer" },
+    title: {
+      nl: "Diversiteit in junior recruitment: hoe voorkom je dat je steeds dezelfde kandidaten aantrekt?",
+      en: "Diversity in junior recruitment: how do you stop attracting the same candidates every time?",
+    },
+    excerpt: {
+      nl: "Werven via je eigen netwerk voelt efficiënt, maar levert vrijwel altijd hetzelfde soort kandidaat op. Waar het scheefgroeit, en wat je concreet kunt veranderen.",
+      en: "Hiring through your own network feels efficient, but almost always produces the same kind of candidate. Where it skews, and what you can concretely change.",
+    },
+    read: { nl: "6 min", en: "6 min" },
+    body: {
+      nl: [
+        {
+          p: "“We werven op kwaliteit, niet op diversiteit” is een veelgehoorde zin die voorbijgaat aan hoe wervingskanalen zelf al een filter zijn. Als je alleen via je eigen netwerk werft, selecteer je niet op kwaliteit, je selecteert op wie toevallig al toegang had tot dat netwerk, en dat is niet gelijk verdeeld.",
+        },
+        {
+          h2: "Waarom levert werven via je eigen netwerk minder diversiteit op?",
+          p: "Netwerken zijn van nature homogeen: mensen kennen vooral mensen die op henzelf lijken, qua opleiding, achtergrond en sociale kringen. Werf je structureel via via, dan blijf je vissen in dezelfde vijver, ook als je dat niet bewust doet. Dat is geen kwestie van goede of slechte intenties, het is simpelweg hoe netwerken werken.",
+        },
+        {
+          h2: "Bevoordelen cv-eisen onbedoeld bepaalde kandidaten?",
+          p: "Ja, vaker dan bedrijven zich realiseren. Een voorkeur voor een bekende studievereniging of een prestigieuze stage bevoordeelt wie toegang had tot die kansen, en die toegang hangt vaak samen met financiële achtergrond: niet iedereen kon zich een onbetaalde stage bij een bekend bedrijf veroorloven. Selecteren op zulke signalen selecteert dus indirect ook op achtergrond, ook zonder dat het de bedoeling is.",
+        },
+        {
+          h2: "Wat kun je concreet veranderen in je wervingsproces?",
+          ul: [
+            "Werf via een bredere community in plaats van uitsluitend via het eigen netwerk of via via",
+            "Kijk naar karakter en drijfveren in plaats van naar cv-signalen die toegang tot bepaalde kansen veronderstellen",
+            "Formuleer vacature-eisen als “fijn om te hebben” in plaats van harde eisen waar niemand volledig aan voldoet",
+            "Zorg voor meerdere beoordelaars bij een selectiegesprek, zodat één persoonlijke voorkeur niet de doorslag geeft",
+          ],
+        },
+        {
+          h2: "Kost een breder wervingsproces meer tijd?",
+          p: "In het begin misschien iets meer, omdat je een nieuw kanaal moet leren kennen, maar op termijn juist minder: een grotere, diversere poule aan kandidaten vergroot de kans op een goede match, in plaats van steeds hetzelfde beperkte netwerk uit te putten. Bedrijven die klagen dat “goed junior talent moeilijk te vinden is”, zoeken vaak gewoon op te weinig plekken.",
+        },
+        {
+          h2: "Levert een diverser team ook iets concreets op, buiten het principe?",
+          p: "Ja: een team met verschillende achtergronden en opleidingen kijkt anders naar een product, een klant of een probleem, en dat levert in de praktijk scherpere beslissingen op dan een team dat op vrijwel alle vlakken op elkaar lijkt. Dat is geen bijkomstig voordeel, het is precies waarom diversiteit ook een zakelijk argument is, los van de eerlijkheidsvraag.",
+        },
+        {
+          h2: "Waarom dit precies is waar VOIDS voor bestaat",
+          p: "Bij VOIDS werven we via een brede community van meer dan 4.000 studenten en starters, precies om bedrijven toegang te geven tot talent dat ze via hun eigen netwerk nooit hadden gevonden. Selecteren op karakter in plaats van cv-signalen is daarbij geen extra stap, het is het uitgangspunt.",
+        },
+      ],
+      en: [
+        {
+          p: "\"We hire on quality, not on diversity\" is a common line that overlooks how hiring channels themselves already act as a filter. If you only hire through your own network, you're not selecting on quality, you're selecting for whoever happened to already have access to that network, and that access isn't evenly distributed.",
+        },
+        {
+          h2: "Why does hiring through your own network produce less diversity?",
+          p: "Networks are naturally homogeneous: people mostly know people similar to themselves, in education, background and social circles. Hire structurally through personal connections, and you keep fishing in the same pond, even without meaning to. It's not a question of good or bad intentions, it's simply how networks work.",
+        },
+        {
+          h2: "Do CV requirements unintentionally favour certain candidates?",
+          p: "Yes, more often than companies realise. A preference for a well-known student association or a prestigious internship favours whoever had access to those opportunities, and that access often correlates with financial background: not everyone could afford an unpaid internship at a well-known company. Selecting on those signals indirectly selects on background too, even without meaning to.",
+        },
+        {
+          h2: "What can you concretely change in your hiring process?",
+          ul: [
+            "Hire through a broader community instead of exclusively through your own network or personal connections",
+            "Look at character and motivation instead of CV signals that assume access to particular opportunities",
+            "Frame job requirements as \"nice to have\" instead of hard requirements no candidate fully meets",
+            "Use multiple assessors in a selection interview, so one person's personal preference doesn't decide the outcome",
+          ],
+        },
+        {
+          h2: "Does a broader hiring process cost more time?",
+          p: "A bit more at first, since you need to learn a new channel, but less over time: a bigger, more diverse candidate pool raises your odds of a good match, instead of repeatedly exhausting the same limited network. Companies that complain \"good junior talent is hard to find\" are often just looking in too few places.",
+        },
+        {
+          h2: "Does a more diverse team deliver anything concrete, beyond the principle?",
+          p: "Yes: a team with different backgrounds and degrees looks at a product, a customer or a problem differently, and that produces sharper decisions in practice than a team that's similar across the board. That's not a side benefit, it's exactly why diversity is also a business argument, separate from the fairness question.",
+        },
+        {
+          h2: "Why this is exactly what VOIDS exists for",
+          p: "At VOIDS we hire through a broad community of more than 4,000 students and starters, precisely to give companies access to talent they'd never find through their own network. Selecting on character instead of CV signals isn't an extra step in that process, it's the starting point.",
+        },
+      ],
+    },
+  },
+
+  // 32 ----------------------------------------------------------------
+  {
+    slug: "wanneer-is-het-tijd-voor-een-tweede-werkstudent",
+    aud: "bedrijf",
+    photo: "/photography/blog-8.jpg",
+    tag: { nl: "Werkgever", en: "Employer" },
+    title: {
+      nl: "Wanneer is het tijd voor een tweede werkstudent?",
+      en: "When is it time for a second working student?",
+    },
+    excerpt: {
+      nl: "Eén werkstudent die overal “een beetje” bij helpt, is een risico, geen efficiëntie. Signalen dat het tijd is om uit te breiden, en hoe je dat zonder chaos aanpakt.",
+      en: "One working student helping out \"a bit of everything\" is a risk, not efficiency. Signals it's time to expand, and how to do it without creating chaos.",
+    },
+    read: { nl: "5 min", en: "5 min" },
+    body: {
+      nl: [
+        {
+          p: "Eén werkstudent aannemen voelt vaak als een veilige eerste stap, en dat is het ook. Maar bedrijven laten die ene werkstudent vervolgens vaak te lang te veel dragen, in plaats van op tijd na te denken over een tweede. Een paar concrete signalen om op te letten.",
+        },
+        {
+          h2: "Wat zijn de duidelijkste signalen dat je een tweede werkstudent nodig hebt?",
+          ul: [
+            "Je huidige werkstudent kan niet meer met vakantie of ziek zijn zonder dat er iets structureels blijft liggen",
+            "Kennis over een proces zit volledig in het hoofd van één persoon, zonder enige overdracht",
+            "Je werkstudent draait structureel meer uren dan afgesproken om het werk af te krijgen",
+            "Je overweegt serieus om zelf weer uitvoerend werk op te pakken dat je eerder had uitbesteed",
+          ],
+        },
+        {
+          h2: "Is één overbelaste werkstudent goedkoper dan twee werkstudenten?",
+          p: "Op papier misschien, in de praktijk zelden. Eén persoon die structureel overbelast is, levert op termijn lagere kwaliteit, hogere kans op uitval door ziekte of vertrek, en het risico dat kennis in één klap verdwijnt als diegene stopt. Twee werkstudenten die het werk verdelen, zijn vaak duurder in salaris maar goedkoper in risico.",
+        },
+        {
+          h2: "Moet een tweede werkstudent hetzelfde werk doen als de eerste?",
+          p: "Niet per se, en vaak juist niet. Een tweede werkstudent kan het bestaande werk verdelen, maar ook een nieuw, aangrenzend stuk oppakken, zodat de eerste werkstudent kan doorgroeien naar meer verantwoordelijkheid in plaats van simpelweg hetzelfde takenpakket te blijven delen.",
+        },
+        {
+          h2: "Hoe voorkom je chaos als je van één naar twee werkstudenten gaat?",
+          p: "Leg vooraf vast wie waarvoor verantwoordelijk is, zodat er geen overlap of gaten ontstaan. Betrek je bestaande werkstudent bij het inwerken van de nieuwe collega: dat versterkt niet alleen de overdracht van kennis, het geeft de eerste werkstudent ook een concreet signaal dat de rol serieus genoeg is om op te schalen.",
+        },
+        {
+          h2: "Wat als het budget voor een tweede werkstudent er nog niet is?",
+          p: "Reken dan eerst door wat de huidige situatie je al kost aan risico en overbelasting, voordat je concludeert dat het budget er niet is. Een werkstudent die vertrekt door structurele overbelasting kost meer aan hernieuwde werving en inwerktijd dan het aannemen van een tweede werkstudent had gekost.",
+        },
+        {
+          h2: "Waarom VOIDS bedrijven helpt met opschalen, niet alleen instromen",
+          p: "Bij VOIDS denken we niet alleen mee over de eerste werkstudent, maar ook over hoe een junior team er over een jaar uitziet. Een instroom die blijft plakken is zelden het resultaat van één goede hire, het is het resultaat van tijdig uitbreiden voordat de druk te hoog wordt.",
+        },
+      ],
+      en: [
+        {
+          p: "Hiring one working student often feels like a safe first step, and it is. But companies then often let that one working student carry too much for too long, instead of thinking about a second one in good time. A few concrete signals worth watching for.",
+        },
+        {
+          h2: "What are the clearest signals you need a second working student?",
+          ul: [
+            "Your current working student can no longer take a holiday or get sick without something structural falling behind",
+            "Knowledge about a process lives entirely in one person's head, with no handover at all",
+            "Your working student is structurally working more hours than agreed just to get the work done",
+            "You're seriously considering picking execution work back up yourself that you'd previously delegated",
+          ],
+        },
+        {
+          h2: "Is one overloaded working student cheaper than two working students?",
+          p: "On paper, maybe, in practice rarely. One person who's structurally overloaded produces lower quality over time, a higher chance of falling out through illness or leaving, and the risk that knowledge disappears all at once if they quit. Two working students splitting the work are often more expensive in salary but cheaper in risk.",
+        },
+        {
+          h2: "Does a second working student need to do the same work as the first?",
+          p: "Not necessarily, and often it shouldn't. A second working student can split the existing work, but can also pick up a new, adjacent piece, so the first working student can grow into more responsibility instead of simply continuing to share the same task list.",
+        },
+        {
+          h2: "How do you avoid chaos when going from one working student to two?",
+          p: "Set out upfront who's responsible for what, so there's no overlap or gaps. Involve your existing working student in onboarding the new one: that strengthens the knowledge handover, and it also gives the first working student a concrete signal that the role is serious enough to scale.",
+        },
+        {
+          h2: "What if the budget for a second working student isn't there yet?",
+          p: "Work out first what the current situation is already costing you in risk and overload, before concluding the budget isn't there. A working student who leaves due to structural overload costs more in rehiring and onboarding time than hiring a second working student would have.",
+        },
+        {
+          h2: "Why VOIDS helps companies scale, not just start",
+          p: "At VOIDS we don't just think about the first working student, we think about what a junior team looks like a year from now. A pipeline that sticks is rarely the result of one good hire, it's the result of expanding on time, before the pressure gets too high.",
+        },
+      ],
+    },
+  },
+
+  // 33 ----------------------------------------------------------------
+  {
+    slug: "trends-nederlandse-arbeidsmarkt-starters",
+    aud: "beide",
+    photo: "/photography/blog-1.jpg",
+    tag: { nl: "Trends", en: "Trends" },
+    title: {
+      nl: "Trends op de Nederlandse arbeidsmarkt voor starters en Gen Z",
+      en: "Trends in the Dutch labour market for starters and Gen Z",
+    },
+    excerpt: {
+      nl: "De arbeidsmarkt voor starters verandert sneller dan de meeste bedrijven hun wervingsproces aanpassen. Vier bewegingen die zowel kandidaten als werkgevers raken.",
+      en: "The labour market for starters is changing faster than most companies adjust their hiring process. Four shifts affecting candidates and employers alike.",
+    },
+    read: { nl: "6 min", en: "6 min" },
+    body: {
+      nl: [
+        {
+          p: "De arbeidsmarkt waarin de huidige generatie starters terechtkomt, verschilt op een aantal fundamentele punten van die van hun ouders. Geen enkele van deze bewegingen is nieuw op zichzelf, maar samen veranderen ze wat zowel kandidaten als werkgevers van een eerste baan verwachten.",
+        },
+        {
+          h2: "Waarom is werkervaring tijdens de studie belangrijker geworden dan vroeger?",
+          p: "Werkgevers verwachten van starters steeds vaker dat ze al iets van de praktijk hebben meegemaakt voordat ze fulltime beginnen, simpelweg omdat een cv met relevante werkervaring beter voorspelt hoe iemand functioneert dan cijfers alleen. Dat verschuift de druk naar eerder in de studie: wachten tot na het diploma om ervaring op te doen, is een steeds duurdere strategie geworden.",
+        },
+        {
+          h2: "Is de arbeidsmarkt voor starters krapper of ruimer geworden?",
+          p: "Dat verschilt sterk per sector en verandert bovendien met conjunctuur, dus een algemene uitspraak daarover is zelden lang houdbaar. Wat wel stabieler is: bedrijven die structureel investeren in een junior pijplijn, via werkstudenten die na hun studie doorstromen, zijn minder afhankelijk van de grillen van een krappe of ruime arbeidsmarkt dan bedrijven die alleen ad hoc werven wanneer de nood hoog is.",
+        },
+        {
+          h2: "Hoe verandert de manier waarop starters op zoek gaan naar werk?",
+          p: "Minder via traditionele vacaturesites alleen, meer via communities, social media en via via, maar dan bewust opgebouwd in plaats van toevallig. Studenten en starters delen vacatures en ervaringen steeds vaker binnen community's van duizenden mensen, wat de traditionele vacaturebank een stuk minder centraal maakt dan een aantal jaar geleden.",
+        },
+        {
+          h2: "Welke rol speelt salaristransparantie in deze verschuiving?",
+          p: "Een steeds grotere. Vacatures zonder concreet salaris of een duidelijke bandbreedte worden door starters vaker overgeslagen dan vroeger, en steeds meer bedrijven passen zich daarop aan door salaris standaard te noemen, niet als uitzondering maar als norm.",
+        },
+        {
+          h2: "Wat betekenen deze trends concreet voor werkgevers?",
+          ul: [
+            "Bouw aan een junior pijplijn vóór je die acuut nodig hebt, niet pas als een vacature dringend moet worden ingevuld",
+            "Wees transparant over salaris en uren, want dat wordt eerder verwacht dan uitzonderlijk gewaardeerd",
+            "Zoek breder dan traditionele vacaturesites en het eigen netwerk",
+            "Behandel een werkstudentrol als structureel onderdeel van de organisatie, niet als tijdelijke lapmiddel",
+          ],
+        },
+        {
+          h2: "Waarom VOIDS deze bewegingen op de voet volgt",
+          p: "Deze trends zijn precies waarom het werkstudentmodel de afgelopen jaren aan relevantie heeft gewonnen: het combineert wat starters steeds vaker zoeken, vroege, relevante ervaring en transparantie, met wat bedrijven nodig hebben, flexibele maar serieuze junior capaciteit. Bij VOIDS bouwen we daar dagelijks aan mee.",
+        },
+      ],
+      en: [
+        {
+          p: "The labour market the current generation of starters enters differs from their parents' in a few fundamental ways. None of these shifts is new on its own, but together they're changing what both candidates and employers expect from a first job.",
+        },
+        {
+          h2: "Why has work experience during your studies become more important than it used to be?",
+          p: "Employers increasingly expect starters to have already experienced some of the practice before starting full-time, simply because a CV with relevant work experience predicts on-the-job performance better than grades alone. That shifts the pressure earlier into a degree: waiting until after graduation to gain experience has become an increasingly costly strategy.",
+        },
+        {
+          h2: "Has the labour market for starters gotten tighter or looser?",
+          p: "That varies a lot by sector and shifts with the economic cycle, so a general statement rarely holds for long. What is more stable: companies that structurally invest in a junior pipeline, through working students who move into permanent roles after graduating, depend less on the swings of a tight or loose labour market than companies that only hire ad hoc when the need becomes urgent.",
+        },
+        {
+          h2: "How is the way starters search for work changing?",
+          p: "Less through traditional job boards alone, more through communities, social media, and personal connections, but built deliberately rather than left to chance. Students and starters increasingly share openings and experiences within communities of thousands of people, which makes the traditional job board a lot less central than it was a few years ago.",
+        },
+        {
+          h2: "What role does pay transparency play in this shift?",
+          p: "A growing one. Postings without a concrete salary or a clear range get skipped by starters more often than they used to, and more and more companies are adapting by stating salary as standard practice, not as an exception.",
+        },
+        {
+          h2: "What do these trends mean concretely for employers?",
+          ul: [
+            "Build a junior pipeline before you urgently need one, not only once a role has to be filled fast",
+            "Be transparent about salary and hours, since it's increasingly expected rather than exceptionally appreciated",
+            "Look beyond traditional job boards and your own network",
+            "Treat a working-student role as a structural part of the organisation, not a temporary patch",
+          ],
+        },
+        {
+          h2: "Why VOIDS tracks these shifts closely",
+          p: "These trends are exactly why the working-student model has gained relevance in recent years: it combines what starters increasingly look for, early, relevant experience and transparency, with what companies need, flexible but serious junior capacity. At VOIDS we build toward that every day.",
+        },
+      ],
+    },
+  },
+
+  // 34 ----------------------------------------------------------------
+  {
+    slug: "remote-hybride-werken-als-werkstudent",
+    aud: "beide",
+    photo: "/photography/blog-2.jpg",
+    tag: { nl: "Uitgelegd", en: "Explained" },
+    title: {
+      nl: "Remote of hybride werken als werkstudent: wat is realistisch?",
+      en: "Remote or hybrid work as a working student: what's realistic?",
+    },
+    excerpt: {
+      nl: "Volledig remote klinkt flexibel, maar is bij een junior rol vaak niet waar je het meeste van leert. Wat wel en niet werkt, voor kandidaten en voor bedrijven.",
+      en: "Fully remote sounds flexible, but for a junior role it's often not where you learn the most. What works and what doesn't, for candidates and for companies.",
+    },
+    read: { nl: "5 min", en: "5 min" },
+    body: {
+      nl: [
+        {
+          p: "Remote werken klinkt voor een werkstudent aantrekkelijk: geen reistijd, flexibel in te plannen rond colleges. In de praktijk is volledig remote werken bij een junior rol vaak minder waardevol dan het klinkt, precies omdat een groot deel van wat je leert in een eerste baan niet uit taken komt, maar uit meekijken en meeluisteren.",
+        },
+        {
+          h2: "Is volledig remote werken goed voor een werkstudent in een junior rol?",
+          p: "Niet per se, en vaker niet dan wel. Junior rollen leunen sterk op informeel leren: meeluisteren met een collega die een klant belt, kort iets vragen zonder een meeting te hoeven plannen, signalen oppikken over hoe een team werkt. Dat soort leren gaat via videobellen aanzienlijk moeizamer, en juist werkstudenten, die nog volop aan het leren zijn wat werk inhoudt, missen daar het meest door.",
+        },
+        {
+          h2: "Is hybride dan de betere middenweg?",
+          p: "Voor de meeste werkstudentrollen wel. Een paar vaste dagen op kantoor geven genoeg toegang tot die informele leermomenten, terwijl de overige dagen ruimte bieden om flexibel te plannen rond tentamens en projectweken. De vaste dagen zorgen er ook voor dat je daadwerkelijk deel wordt van het team, in plaats van een naam in een videobelscherm die af en toe meedoet.",
+        },
+        {
+          h2: "Wanneer past volledig remote werken wél goed bij een werkstudentrol?",
+          p: "Als het werk zelf sterk zelfstandig van aard is en weinig continu overleg vraagt, zoals bepaalde vormen van dataverwerking of contentproductie, en als er toch een structureel moment is voor overleg en feedback, ook als dat via videobellen gaat. Het probleem zit niet in remote werken zelf, het zit in remote werken zonder enige structuur voor begeleiding.",
+        },
+        {
+          h2: "Hoe voorkom je dat een werkstudent zich buitengesloten voelt bij hybride werken?",
+          ul: [
+            "Spreek vaste, gedeelde kantoordagen af in plaats van “kom maar wanneer het uitkomt”",
+            "Zorg dat belangrijke besluiten en informele updates niet alleen op kantoor plaatsvinden zonder dat er iets wordt vastgelegd voor wie er niet is",
+            "Plan een vast wekelijks moment voor feedback, ongeacht of dat op kantoor of via videobellen gebeurt",
+            "Betrek een remote werkstudent net zo actief bij informele momenten als bij formele vergaderingen",
+          ],
+        },
+        {
+          h2: "Wat verwachten werkstudenten zelf realistisch gezien van flexibiliteit?",
+          p: "Meestal geen volledige vrijheid, maar wel ruimte: flexibiliteit rond tentamenweken, een duidelijke afspraak over welke dagen wel en niet nodig zijn, en een werkgever die niet star vasthoudt aan vijf dagen op kantoor voor een functie die dat niet vereist. Dat is een andere vraag dan volledig remote willen werken, en het is meestal ook de vraag die er echt toe doet.",
+        },
+        {
+          h2: "Waarom VOIDS aandacht besteedt aan deze afspraak bij een match",
+          p: "Bij VOIDS bespreken we werkvorm expliciet bij elke match, precies omdat een verkeerde verwachting hierover een van de snelste manieren is om een verder goede match toch te laten mislukken. Duidelijkheid vooraf voorkomt frustratie achteraf, voor kandidaat én bedrijf.",
+        },
+      ],
+      en: [
+        {
+          p: "Remote work sounds appealing for a working student: no commute, easy to plan around lectures. In practice, fully remote work in a junior role is often less valuable than it sounds, precisely because a large part of what you learn in a first job doesn't come from tasks, it comes from watching and overhearing.",
+        },
+        {
+          h2: "Is fully remote work good for a working student in a junior role?",
+          p: "Not necessarily, and more often not than yes. Junior roles rely heavily on informal learning: overhearing a colleague on a client call, asking a quick question without scheduling a meeting, picking up on how a team actually works. That kind of learning is considerably harder over video calls, and working students, who are still very much learning what work involves, miss out on it the most.",
+        },
+        {
+          h2: "Is hybrid the better middle ground, then?",
+          p: "For most working-student roles, yes. A few fixed days in the office give enough access to those informal learning moments, while the remaining days offer room to plan flexibly around exams and project weeks. The fixed days also make you actually part of the team, rather than a name on a video call screen who joins occasionally.",
+        },
+        {
+          h2: "When does fully remote work actually fit a working-student role well?",
+          p: "When the work itself is strongly independent and doesn't need much continuous coordination, like certain kinds of data processing or content production, and when there's still a structural moment for check-ins and feedback, even if that's over video call. The problem isn't remote work itself, it's remote work with no structure for guidance at all.",
+        },
+        {
+          h2: "How do you stop a working student from feeling left out under hybrid work?",
+          ul: [
+            "Agree on fixed, shared office days instead of \"come in whenever it suits\"",
+            "Make sure important decisions and informal updates don't only happen in the office with nothing recorded for whoever wasn't there",
+            "Schedule a fixed weekly feedback moment, whether it happens in the office or over video call",
+            "Involve a remote working student just as actively in informal moments as in formal meetings",
+          ],
+        },
+        {
+          h2: "What do working students realistically expect from flexibility?",
+          p: "Usually not full freedom, but room: flexibility around exam weeks, a clear agreement on which days are and aren't needed, and an employer who doesn't rigidly insist on five office days for a role that doesn't require it. That's a different question from wanting to work fully remote, and it's usually also the question that actually matters.",
+        },
+        {
+          h2: "Why VOIDS pays attention to this agreement in every match",
+          p: "At VOIDS we discuss working arrangements explicitly for every match, precisely because a mismatched expectation here is one of the fastest ways an otherwise good match falls apart. Clarity upfront prevents frustration later, for candidate and company alike.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

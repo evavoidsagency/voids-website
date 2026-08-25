@@ -5,8 +5,9 @@ import { WhatsAppTrigger } from "@/components/site/WhatsAppTrigger";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { TALENT_THRIVING } from "@/lib/content/talent-thriving";
 import { findTestimonialPhoto } from "@/lib/logos";
+import { FaqAccordion } from "@/components/pages/FaqAccordion";
 
-const HERO_AVATARS = ["thomke-tierolff", "charlotte-pallandt", "anna-haasnoot", "bas-lemmens"];
+const HERO_AVATARS = ["thomke-tierolff", "charlotte-pallandt", "anna-haasnoot"];
 
 const COPY: Record<
   Lang,
@@ -47,36 +48,36 @@ const COPY: Record<
   nl: {
     eyebrow: "Voor talent",
     title: "JOBS KOMEN NAAR JOU TOE.",
-    sub: "Vul één keer in wat je drijft en krijg gratis je career pager. Daarna krijg je passende kansen vanzelf via WhatsApp. Gratis en laagdrempelig.",
-    ctaPager: "Maak gratis je career pager",
+    sub: "Beantwoord een paar vragen over jezelf en word onderdeel van onze talentpool: persoonlijke matches, offmarket-kansen en exclusieve events, rechtstreeks in je WhatsApp. Gratis en laagdrempelig.",
+    ctaPager: "Word lid van de talentpool",
     ctaWhats: "💜 Join WhatsApp",
     avatarLabel: "4.000+ studenten gingen je voor",
     stat1Label: "studenten in de community",
     stat2Label: "transparante voorwaarden",
     stat3Label: "winst terug naar gelijke kansen",
     resourcesEyebrow: "Jouw route",
-    resourcesTitle: "HOE DIEP WIL JE MEE?",
-    resourcesIntro: "Er zijn een paar manieren om met VOIDS in contact te komen, van vrijblijvend tot actief op de radar bij bedrijven. Elke stap dieper levert meer op.",
+    resourcesTitle: "DRIE MANIEREN OM DICHTERBIJ TE KOMEN.",
+    resourcesIntro: "Het meeste haal je uit onze talentpool: persoonlijke matches, offmarket-kansen en events. Liever eerst vrijblijvend rondkijken? Dat kan ook, via de WhatsApp-community of het jobboard.",
     resources: [
-      { tier: "Vrijblijvend", title: "Job board", text: "Bekijk open rollen en solliciteer direct per vacature, zonder account of profiel.", cta: "Bekijk jobs", path: "/jobboard" },
+      { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord een paar vragen over jezelf en je ambities en je bent onderdeel van onze actieve talentpool: track je sollicitaties, zie je matchscore per rol, en word proactief voorgesteld bij offmarket-kansen die nooit op het jobboard verschijnen. Wil je ook een gratis persoonlijk loopbaanprofiel? Die career pager sturen we je op aanvraag, op basis van je antwoorden.", cta: "Word lid van de talentpool", path: "/pager" },
       { tier: "Community", title: "WhatsApp-community", text: "Word lid van de community en krijg passende vacatures wekelijks rechtstreeks in je WhatsApp.", cta: "Join", whats: true },
-      { tier: "Actief in de talentpool", title: "Career pager", text: "Bouw je profiel op en kom in onze actieve talentpool: track je sollicitaties, zie je matchscore per rol, en word proactief voorgesteld bij offmarket-kansen.", cta: "Word lid van de talentpool", path: "/pager" },
+      { tier: "Vrijblijvend", title: "Job board", text: "Bekijk open rollen en solliciteer direct per vacature, zonder account of profiel.", cta: "Bekijk jobs", path: "/jobboard" },
     ],
     resourcesBadge: "Aanbevolen",
     faqEyebrow: "Veelgestelde vragen",
     faqTitle: "HOE HET PROCES WERKT.",
     faq: [
       {
-        q: "Hoe werkt de sollicitatieprocedure via VOIDS?",
-        a: "Dat hangt van je route af. Via het job board solliciteer je gewoon los per vacature, geen account nodig. Ben je lid van de talentpool (via de career pager), dan werkt het net iets anders: wij matchen je actief met organisaties die aansluiten op wat je zoekt, en breng je bij een klik in contact. Je regelt de rest daarna rechtstreeks met de werkgever.",
+        q: "Hoe werkt solliciteren via VOIDS?",
+        a: "Via het jobboard solliciteer je los, geen account nodig. Zit je in de talentpool? Dan matchen wij je actief en leggen we het contact. De rest regel je rechtstreeks met de werkgever.",
       },
       {
         q: "Hoe kom ik in de talentpool?",
-        a: "Het makkelijkst is via de career pager: één keer invullen wat je drijft en waar je naar op zoek bent. Liever niet de hele intake doen? Dan kun je ook gewoon je contactgegevens achterlaten, en nemen we zelf contact op. Zodra je in de talentpool zit, kunnen we je proactief voorstellen bij kansen die nooit op het job board verschijnen (offmarket dus), met je meedenken, en je uitnodigen voor exclusieve events.",
+        a: "Beantwoord een paar vragen over jezelf en je bent lid. Daarna stellen we je proactief voor bij offmarket-kansen, denken we met je mee en nodigen we je uit voor exclusieve events.",
       },
       {
         q: "Wat is de career pager precies?",
-        a: "De career pager is vooral het middel om in de talentpool te komen: het is een kort, persoonlijk loopbaanprofiel dat je gratis aanmaakt (wat je drijft, waar je goed in bent, wat voor werk daarbij past). Het echte doel is dat account: daarmee kun je solliciteren op rollen via de site, je sollicitaties bijhouden, per vacature precies zien hoe goed je matcht, en sta je op de radar bij organisaties die aansluiten.",
+        a: "Een gratis, persoonlijk loopbaanprofiel op basis van je antwoorden. Een leuke bonus, geen verplichte stap: lid worden van de talentpool kan ook zonder.",
       },
     ],
     fitEyebrow: "Two-way fit",
@@ -107,20 +108,20 @@ const COPY: Record<
   en: {
     eyebrow: "For talent",
     title: "JOBS COME TO YOU.",
-    sub: "Tell us once what drives you and get your free career pager. Matching opportunities then come straight to your WhatsApp. Free, no strings.",
-    ctaPager: "Build your free career pager",
+    sub: "Answer a few questions about yourself and become part of our talent pool: personal matches, off-market opportunities and exclusive events, straight in your WhatsApp. Free, no strings.",
+    ctaPager: "Join the talent pool",
     ctaWhats: "💜 Join WhatsApp",
     avatarLabel: "4,000+ students went before you",
     stat1Label: "students in the community",
     stat2Label: "transparent terms",
     stat3Label: "profit reinvested in equal opportunity",
     resourcesEyebrow: "Your route",
-    resourcesTitle: "HOW DEEP DO YOU WANT IN?",
-    resourcesIntro: "There are a few ways to engage with VOIDS, from no-strings-attached to actively on companies' radar. Each step deeper pays off more.",
+    resourcesTitle: "THREE WAYS TO GET CLOSER.",
+    resourcesIntro: "There are a few ways to engage with VOIDS. The more active you are, the more we can do for you: from individual vacancies to a spot in our talent pool, with personal matches and off-market opportunities.",
     resources: [
       { tier: "No strings attached", title: "Job board", text: "Browse open roles and apply directly to any vacancy, no account or profile needed.", cta: "View jobs", path: "/jobboard" },
       { tier: "Community", title: "WhatsApp community", text: "Join the community and get matching vacancies sent straight to your WhatsApp every week.", cta: "Join", whats: true },
-      { tier: "Active in the talent pool", title: "Career pager", text: "Build your profile and join our active talent pool: track your applications, see your match score per role, and get proactively put forward for off-market opportunities.", cta: "Join the talent pool", path: "/pager" },
+      { tier: "Active in the talent pool", title: "Talent pool", text: "Answer a few questions about yourself and your ambitions and you're part of our active talent pool: track your applications, see your match score per role, and get proactively put forward for off-market opportunities that never appear on the job board. Want a free personal career profile too? We'll send you that career pager on request, based on your answers.", cta: "Join the talent pool", path: "/pager" },
     ],
     resourcesBadge: "Recommended",
     faqEyebrow: "Frequently asked",
@@ -128,15 +129,15 @@ const COPY: Record<
     faq: [
       {
         q: "How does applying through VOIDS work?",
-        a: "Depends on your route. Via the job board you just apply per vacancy, no account needed. If you're in the talent pool (via the career pager), it works a bit differently: we actively match you with organisations that fit what you're looking for, and connect you at the click of a button. You arrange the rest directly with the employer.",
+        a: "Via the job board you apply per vacancy, no account needed. In the talent pool? We actively match you and make the connection. You arrange the rest directly with the employer.",
       },
       {
         q: "How do I get into the talent pool?",
-        a: "The easiest way is the career pager: fill in once what drives you and what you're looking for. Don't want to do the full intake? You can also just leave your contact details, and we'll reach out ourselves. Once you're in the talent pool, we can proactively put you forward for opportunities that never appear on the job board (off-market), think along with you, and invite you to exclusive events.",
+        a: "Answer a few questions about yourself and you're in. From there we proactively put you forward for off-market opportunities, think along with you, and invite you to exclusive events.",
       },
       {
         q: "What exactly is the career pager?",
-        a: "The career pager is mainly the means to get into the talent pool: it's a short, personal career profile you build for free (what drives you, what you're good at, what kind of work fits that). The real point is that account: it lets you apply to roles on the site, track your applications, see exactly how well you match a role, and puts you on the radar of organisations that fit.",
+        a: "A free, personal career profile based on your answers. A nice bonus, not a required step: joining the talent pool works without it too.",
       },
     ],
     fitEyebrow: "Two-way fit",
@@ -173,7 +174,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
   return (
     <>
       <section style={{ background: "var(--voids-blue)", color: "#fff" }}>
-        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "center", padding: "64px 32px 70px" }}>
+        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "start", padding: "64px 32px 70px" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-blue-100)" }}>{c.eyebrow}</span>
             <h1 className="anton hero-h1" style={{ fontSize: 52, margin: "14px 0 18px", color: "#fff" }}>{c.title}</h1>
@@ -232,7 +233,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
         <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 30px", maxWidth: 700 }}>{c.resourcesIntro}</p>
         <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20, alignItems: "stretch" }}>
           {c.resources.map((r, i) => {
-            const recommended = i === c.resources.length - 1;
+            const recommended = i === 0;
             const body = <ResourceCardBody r={r} num={i + 1} recommended={recommended} badge={c.resourcesBadge} />;
             const style: React.CSSProperties = recommended
               ? { display: "flex", flexDirection: "column", padding: 26, background: "var(--voids-purple)", color: "#fff", position: "relative" }
@@ -253,13 +254,8 @@ export function TalentPage({ lang }: { lang: Lang }) {
       <section className="wrap" style={{ padding: "0 32px 72px" }}>
         <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.faqEyebrow}</span>
         <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 22px" }}>{c.faqTitle}</h2>
-        <div style={{ display: "flex", flexDirection: "column", gap: 22, maxWidth: 780 }}>
-          {c.faq.map((item) => (
-            <div key={item.q}>
-              <div style={{ fontSize: 15.5, fontWeight: 600, marginBottom: 6 }}>{item.q}</div>
-              <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{item.a}</p>
-            </div>
-          ))}
+        <div style={{ maxWidth: 780 }}>
+          <FaqAccordion items={c.faq} />
         </div>
       </section>
 
@@ -397,7 +393,7 @@ function ResourceCardBody({
           </span>
         )}
       </div>
-      <div className="anton" style={{ fontSize: 22 }}>{r.title}</div>
+      <div className="anton" style={{ fontSize: 22, color: recommended ? "#fff" : "var(--text-strong)" }}>{r.title}</div>
       <p style={{ fontSize: 14, color: mutedColor, lineHeight: 1.55, margin: "10px 0 14px", flex: 1 }}>{r.text}</p>
       <span style={{ fontSize: 13.5, fontWeight: 600, color: ctaColor }}>{r.cta} →</span>
     </>

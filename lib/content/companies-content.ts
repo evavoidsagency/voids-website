@@ -46,12 +46,10 @@ export const ROLE_TYPES: Record<Lang, string[]> = {
 
 export const WHY_WS: Record<Lang, { title: string; text: string }[]> = {
   nl: [
-    { title: "Vs. een stagiair", text: "Een langere, stabielere samenwerking dan een stage van een paar maanden, met iemand die na de inwerkperiode al zelfstandig meedraait." },
     { title: "Vs. een starter", text: "Flexibeler en kostenefficiënter dan meteen een fulltime starter aannemen, zonder de drempel van een vast contract, terwijl je iemand al leert kennen vóór een eventueel vast aanbod." },
     { title: "Extra gemotiveerd", text: "Het werk telt mee voor hun studie én hun cv, niet alleen als bijbaantje: dat merk je terug in de betrokkenheid." },
   ],
   en: [
-    { title: "Vs. an intern", text: "A longer, more stable collaboration than a few months' internship, with someone who's running independently after onboarding." },
     { title: "Vs. a starter", text: "More flexible and more cost-efficient than hiring a full-time starter right away, no fixed-contract threshold, while you get to know someone before any permanent offer." },
     { title: "Extra motivated", text: "The work counts toward their studies and their CV, not just a side job: that shows up in how engaged they are." },
   ],

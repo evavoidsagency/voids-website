@@ -13,6 +13,7 @@ const COPY: Record<
     title: string;
     sub: string;
     ctaIntro: string;
+    heroStats: { value: string; label: string }[];
     processTitle: string;
     processSub: string;
     casesTitle: string;
@@ -29,6 +30,11 @@ const COPY: Record<
     title: "HET HELE PROCES, UIT HANDEN.",
     sub: "Zes stappen. Wij doen het werk, jullie beslissen. Van intake tot ondertekende match, voor werkstudenten, stagiairs en starters.",
     ctaIntro: "Plan een kennismaking",
+    heroStats: [
+      { value: "2-4", label: "voorgeselecteerde kandidaten per shortlist" },
+      { value: "±30 dagen", label: "gemiddelde tijd tot shortlist" },
+      { value: "4.000+", label: "studenten en starters in onze community" },
+    ],
     processTitle: "HOE HET WERKT",
     processSub: "Zes stappen, wij doen het werk, jullie beslissen.",
     casesTitle: "MATCHES DIE WERKEN",
@@ -44,6 +50,11 @@ const COPY: Record<
     title: "WE RUN THE WHOLE PROCESS.",
     sub: "Six steps. We do the work, you decide. From intake to signed match, for working students, interns and starters.",
     ctaIntro: "Book an intro call",
+    heroStats: [
+      { value: "2-4", label: "pre-selected candidates per shortlist" },
+      { value: "±30 days", label: "average time to shortlist" },
+      { value: "4,000+", label: "students and starters in our community" },
+    ],
     processTitle: "HOW IT WORKS",
     processSub: "Six steps, we do the work, you decide.",
     casesTitle: "MATCHES THAT WORK",
@@ -62,11 +73,24 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
   return (
     <>
       <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
-        <div className="wrap" style={{ padding: "64px 32px 56px" }}>
-          <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
-          <h1 className="anton hero-h1" style={{ fontSize: 46, margin: "14px 0 16px", color: "#fff", maxWidth: 780 }}>{c.title}</h1>
-          <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 26px", maxWidth: 620 }}>{c.sub}</p>
-          <CalendlyButton label={c.ctaIntro} variant="secondary" size="lg" />
+        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "start", padding: "64px 32px 56px" }}>
+          <div>
+            <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
+            <h1 className="anton hero-h1" style={{ fontSize: 44, margin: "14px 0 16px", color: "#fff" }}>{c.title}</h1>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 26px", maxWidth: 480 }}>{c.sub}</p>
+            <CalendlyButton label={c.ctaIntro} variant="secondary" size="lg" />
+          </div>
+
+          <div style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.18)", borderRadius: "var(--radius-lg)", padding: 26 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              {c.heroStats.map((s) => (
+                <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: "1px solid rgba(255,255,255,.14)", paddingTop: 14 }}>
+                  <span className="anton" style={{ fontSize: 26, color: "#fff", flex: "none", whiteSpace: "nowrap" }}>{s.value}</span>
+                  <span style={{ fontSize: 13, color: "var(--voids-purple-100)" }}>{s.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

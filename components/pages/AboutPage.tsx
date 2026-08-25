@@ -102,7 +102,7 @@ const COPY: Record<
 
 export function AboutPage({ lang }: { lang: Lang }) {
   const c = COPY[lang];
-  const foundersPhoto = findTeamPhoto("together-8");
+  const foundersPhoto = findTeamPhoto("together-8-crop");
 
   return (
     <>
@@ -114,7 +114,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.p2}</p>
         </div>
         {foundersPhoto ? (
-          <Photo src={foundersPhoto} alt={c.foundersAlt} ratio="4 / 5" />
+          <Photo src={foundersPhoto} alt={c.foundersAlt} ratio="1600 / 1695" />
         ) : (
           <div
             style={{

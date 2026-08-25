@@ -14,6 +14,7 @@ const COPY: Record<
     sub: string;
     ctaIntro: string;
     ctaProcess: string;
+    heroStats: { value: string; label: string }[];
     servicesEyebrow: string;
     servicesTitle: string;
     services: { title: string; text: string; cta: string; path: string }[];
@@ -47,6 +48,11 @@ const COPY: Record<
     sub: "Wij nemen het hele wervingsproces uit handen, van briefing tot getekende match, en leveren alleen kandidaten die een recruiter zelf grondig heeft beoordeeld. Jullie bekijken alleen nog 2-4 voorgeselecteerde kandidaten, gematcht op cultuur en groeifase, gemiddeld binnen 30 dagen.",
     ctaIntro: "Plan een kennismaking",
     ctaProcess: "Bekijk het proces",
+    heroStats: [
+      { value: "2-4", label: "voorgeselecteerde kandidaten per shortlist" },
+      { value: "±30 dagen", label: "gemiddelde tijd tot shortlist" },
+      { value: "6 stappen", label: "van intake tot ondertekende match" },
+    ],
     servicesEyebrow: "Wat we doen",
     servicesTitle: "DRIE MANIEREN OM MET ONS TE WERKEN.",
     services: [
@@ -72,8 +78,8 @@ const COPY: Record<
     rolesEyebrow: "Soorten rollen",
     rolesIntro: "Onze werkstudenten en stagiairs versterken vooral de commerciële en groeigerichte kant van je organisatie. Een greep uit de rollen die we invullen:",
     whyWsEyebrow: "Onze voorkeur",
-    whyWsTitle: "WAAROM WIJ ALTIJD EERST NAAR EEN WERKSTUDENT KIJKEN.",
-    whyWsIntro: "Werkstudenten invullen is niet zomaar één van de dingen die we doen: het is waar VOIDS voor staat en verreweg de meeste plaatsingen die we doen. Voor de meeste vragen is het ook simpelweg de beste oplossing, hieronder waarom, en wanneer een stagiair of starter juist beter past.",
+    whyWsTitle: "DE WERKSTUDENT IS ONZE EERSTE KEUZE.",
+    whyWsIntro: "Werkstudentrollen invullen is niet zomaar één van de dingen die we doen: het is waar VOIDS voor staat en verreweg de meeste plaatsingen die we doen. Voor de meeste vragen is het ook simpelweg de beste oplossing, hieronder waarom, en wanneer een stagiair of starter juist beter past.",
     calcEyebrow: "Voorbeeldsom",
     calcTitle: "WERKSTUDENT, STAGIAIR OF STARTER?",
     calcIntro: "Indicatieve kosten voor de werkgever per maand, inclusief werkgeverslasten, geen nettosalaris. Schuif de balk en vergelijk.",
@@ -104,6 +110,11 @@ const COPY: Record<
     sub: "We take the entire hiring process off your hands, from briefing to signed match, and only put forward candidates a recruiter has personally and thoroughly reviewed. You only review 2-4 pre-selected candidates, matched on culture and growth stage, on average within 30 days.",
     ctaIntro: "Book an intro call",
     ctaProcess: "See the process",
+    heroStats: [
+      { value: "2-4", label: "pre-selected candidates per shortlist" },
+      { value: "±30 days", label: "average time to shortlist" },
+      { value: "6 steps", label: "from intake to signed match" },
+    ],
     servicesEyebrow: "What we do",
     servicesTitle: "THREE WAYS TO WORK WITH US.",
     services: [
@@ -129,7 +140,7 @@ const COPY: Record<
     rolesEyebrow: "Types of roles",
     rolesIntro: "Our working students and interns mainly strengthen the commercial and growth side of your organisation. A selection of the roles we fill:",
     whyWsEyebrow: "Our preference",
-    whyWsTitle: "WHY WE ALWAYS LOOK AT A WORKING STUDENT FIRST.",
+    whyWsTitle: "THE WORKING STUDENT IS OUR FIRST CHOICE.",
     whyWsIntro: "Filling working-student roles isn't just one of the things we do: it's what VOIDS stands for, and by far the majority of the placements we make. For most hiring needs it's simply the best fit too, here's why, and when an intern or starter fits better instead.",
     calcEyebrow: "Example calculation",
     calcTitle: "WORKING STUDENT, INTERN OR STARTER?",
@@ -164,13 +175,26 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
   return (
     <>
       <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
-        <div className="wrap" style={{ padding: "64px 32px 70px" }}>
-          <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
-          <h1 className="anton hero-h1" style={{ fontSize: 54, margin: "14px 0 18px", color: "#fff", whiteSpace: "pre-line", maxWidth: 820 }}>{c.title}</h1>
-          <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 28px", maxWidth: 640 }}>{c.sub}</p>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <CalendlyButton label={c.ctaIntro} variant="secondary" size="lg" />
-            <Button variant="outline" size="lg" onDark href={p("/companies/recruitment-selection")}>{c.ctaProcess}</Button>
+        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "start", padding: "64px 32px 70px" }}>
+          <div>
+            <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
+            <h1 className="anton hero-h1" style={{ fontSize: 50, margin: "14px 0 18px", color: "#fff", whiteSpace: "pre-line" }}>{c.title}</h1>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 28px", maxWidth: 520 }}>{c.sub}</p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <CalendlyButton label={c.ctaIntro} variant="secondary" size="lg" />
+              <Button variant="outline" size="lg" onDark href={p("/companies/recruitment-selection")}>{c.ctaProcess}</Button>
+            </div>
+          </div>
+
+          <div style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.18)", borderRadius: "var(--radius-lg)", padding: 26 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              {c.heroStats.map((s) => (
+                <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: "1px solid rgba(255,255,255,.14)", paddingTop: 14 }}>
+                  <span className="anton" style={{ fontSize: 26, color: "#fff", flex: "none", whiteSpace: "nowrap" }}>{s.value}</span>
+                  <span style={{ fontSize: 13, color: "var(--voids-purple-100)" }}>{s.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -200,22 +224,38 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
       <section className="wrap" style={{ padding: "48px 32px 56px" }}>
         <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.rolesEyebrow}</span>
         <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "8px 0 18px", maxWidth: 640 }}>{c.rolesIntro}</p>
-        <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-          {ROLE_TYPES[lang].map((r) => (
-            <span
-              key={r}
-              style={{
-                fontSize: 13,
-                fontWeight: 600,
-                color: "var(--voids-purple)",
-                background: "var(--voids-purple-100)",
-                padding: "7px 14px",
-                borderRadius: 999,
-              }}
-            >
-              {r}
-            </span>
-          ))}
+        <div style={{ position: "relative" }}>
+          <div style={{ display: "flex", gap: 10, overflowX: "auto", padding: "2px 2px 10px" }}>
+            {ROLE_TYPES[lang].map((r) => (
+              <span
+                key={r}
+                style={{
+                  fontSize: 13,
+                  fontWeight: 600,
+                  color: "var(--voids-purple)",
+                  background: "var(--voids-purple-100)",
+                  padding: "7px 14px",
+                  borderRadius: 999,
+                  flex: "none",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {r}
+              </span>
+            ))}
+          </div>
+          <div
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              top: 0,
+              right: 0,
+              bottom: 10,
+              width: 56,
+              background: "linear-gradient(to right, transparent, var(--voids-beige))",
+              pointerEvents: "none",
+            }}
+          />
         </div>
       </section>
 
@@ -224,7 +264,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyWsEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "8px 0 14px", maxWidth: 860 }}>{c.whyWsTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 860 }}>{c.whyWsIntro}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, marginBottom: 32, maxWidth: 1040 }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20, marginBottom: 32, maxWidth: 1040 }}>
             {WHY_WS[lang].map((w) => (
               <div key={w.title} className="card card--accent-purple" style={{ padding: 22 }}>
                 <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 8 }}>{w.title}</div>
@@ -262,7 +302,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
       </section>
 
       <section className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
-        <Photo src="/photography/impact-employers.jpg" alt={c.employersAlt} ratio="4 / 3" />
+        <Photo src="/photography/impact-employers-crop.jpg" alt={c.employersAlt} ratio="1599 / 1585" />
         <div>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.employersEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "10px 0 14px" }}>{c.employersTitle}</h2>
