@@ -118,6 +118,8 @@ export const SOCIALS = {
 
 export const t = {
   accountLabel: { nl: "Inloggen", en: "Log in" },
+  contactLabel: { nl: "Contact", en: "Contact" },
+  moreLabel: { nl: "Meer", en: "More" },
   whatsappCta: { nl: "💜 WhatsApp", en: "💜 WhatsApp" },
   careerPager: { nl: "Career pager", en: "Career pager" },
   openMenu: { nl: "Open menu", en: "Open menu" },

@@ -15,6 +15,9 @@ const COPY: Record<
     ctaPager: string;
     ctaWhats: string;
     resources: { title: string; text: string; cta: string; path?: string; whats?: boolean }[];
+    faqEyebrow: string;
+    faqTitle: string;
+    faq: { q: string; a: string }[];
     fitEyebrow: string;
     fitTitleA: string;
     fitTitleB: string;
@@ -34,13 +37,29 @@ const COPY: Record<
   nl: {
     eyebrow: "Voor talent",
     title: "JOBS KOMEN NAAR JOU TOE.",
-    sub: "Vul één keer in wat je drijft en krijg gratis je career pager. Daarna krijg je passende kansen vanzelf via WhatsApp. Gratis en laagdrempelig, en dat blijft zo.",
+    sub: "Vul één keer in wat je drijft en krijg gratis je career pager. Daarna krijg je passende kansen vanzelf via WhatsApp. Gratis en laagdrempelig.",
     ctaPager: "Maak gratis je career pager",
     ctaWhats: "💜 Join WhatsApp",
     resources: [
       { title: "Career pager", text: "Doe de intake en krijg je persoonlijke loopbaanadvies.", cta: "Start", path: "/pager" },
       { title: "Job board", text: "Bekijk open rollen en solliciteer direct per vacature.", cta: "Bekijk jobs", path: "/jobboard" },
       { title: "WhatsApp-community", text: "Krijg passende jobs als eerste in je app.", cta: "Join", whats: true },
+    ],
+    faqEyebrow: "Veelgestelde vragen",
+    faqTitle: "HOE HET PROCES WERKT.",
+    faq: [
+      {
+        q: "Hoe werkt de sollicitatieprocedure via VOIDS?",
+        a: "Je solliciteert niet los per vacature. Je maakt één keer een profiel (via de career pager, of door je gegevens achter te laten) en wij matchen je actief met organisaties die aansluiten op wat je zoekt. Past een rol? Dan brengen we je in contact en regel je de rest rechtstreeks met de werkgever.",
+      },
+      {
+        q: "Hoe kom ik in de talentpool?",
+        a: "Het makkelijkst is via de career pager: één keer invullen wat je drijft en waar je naar op zoek bent. Liever niet de hele intake doen? Dan kun je ook gewoon je contactgegevens achterlaten, en nemen we zelf contact op.",
+      },
+      {
+        q: "Wat is de career pager precies?",
+        a: "Je career pager is een kort, persoonlijk loopbaanprofiel dat je gratis aanmaakt: wat je drijft, waar je goed in bent en wat voor werk daarbij past. Daarmee zetten we je op de radar bij organisaties die aansluiten, en krijg je passende vacatures automatisch toegestuurd.",
+      },
     ],
     fitEyebrow: "Two-way fit",
     fitTitleA: "JIJ ZIET OOK WAAROM",
@@ -70,13 +89,29 @@ const COPY: Record<
   en: {
     eyebrow: "For talent",
     title: "JOBS COME TO YOU.",
-    sub: "Tell us once what drives you and get your free career pager. Matching opportunities then come straight to your WhatsApp. Free, no strings, and it stays that way.",
+    sub: "Tell us once what drives you and get your free career pager. Matching opportunities then come straight to your WhatsApp. Free, no strings.",
     ctaPager: "Build your free career pager",
     ctaWhats: "💜 Join WhatsApp",
     resources: [
       { title: "Career pager", text: "Complete the intake and get your personal career advice.", cta: "Start", path: "/pager" },
       { title: "Job board", text: "Browse open roles and apply to any of them in a minute.", cta: "View jobs", path: "/jobboard" },
       { title: "WhatsApp community", text: "Be first to hear about matching jobs, right in your app.", cta: "Join", whats: true },
+    ],
+    faqEyebrow: "Frequently asked",
+    faqTitle: "HOW THE PROCESS WORKS.",
+    faq: [
+      {
+        q: "How does applying through VOIDS work?",
+        a: "You don't apply to individual vacancies. You build one profile (via the career pager, or by simply leaving your details) and we actively match you with organisations that fit what you're looking for. If a role fits, we connect you and you arrange the rest directly with the employer.",
+      },
+      {
+        q: "How do I get into the talent pool?",
+        a: "The easiest way is the career pager: fill in once what drives you and what you're looking for. Don't want to do the full intake? You can also just leave your contact details, and we'll reach out ourselves.",
+      },
+      {
+        q: "What exactly is the career pager?",
+        a: "Your career pager is a short, personal career profile you build for free: what drives you, what you're good at, and what kind of work fits that. It puts you on the radar of organisations that match, and matching vacancies then land in your inbox automatically.",
+      },
     ],
     fitEyebrow: "Two-way fit",
     fitTitleA: "YOU ALSO SEE WHY",
@@ -135,6 +170,19 @@ export function TalentPage({ lang }: { lang: Lang }) {
             </a>
           )
         )}
+      </section>
+
+      <section className="wrap" style={{ padding: "0 32px 72px", maxWidth: 780 }}>
+        <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.faqEyebrow}</span>
+        <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 22px" }}>{c.faqTitle}</h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+          {c.faq.map((item) => (
+            <div key={item.q}>
+              <div style={{ fontSize: 15.5, fontWeight: 600, marginBottom: 6 }}>{item.q}</div>
+              <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{item.a}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)", borderBottom: "1px solid var(--border-hairline)" }}>

@@ -38,7 +38,7 @@ const COPY: Record<
   }
 > = {
   nl: {
-    heroTitle: "JUNIOR TALENT MET SUBSTANTIE.",
+    heroTitle: "AMBITIEUS TALENT.\nAMBITIEUZE BEDRIJVEN.\nÉÉN MATCH.",
     heroSub:
       "Wij verbinden hoogopgeleid talent aan ambitieuze organisaties, voorbij het cv, met oog voor drijfveren, werkstijl en ambitie.",
     ctaCompanies: "Voor bedrijven →",
@@ -70,7 +70,7 @@ const COPY: Record<
     missionAlt: "Het VOIDS-team op kantoor",
   },
   en: {
-    heroTitle: "JUNIOR TALENT WITH SUBSTANCE.",
+    heroTitle: "AMBITIOUS TALENT.\nAMBITIOUS COMPANIES.\nONE MATCH.",
     heroSub:
       "We connect highly-educated talent with ambitious organisations, beyond the CV, with an eye for motivation, working style and ambition.",
     ctaCompanies: "For companies →",
@@ -122,7 +122,7 @@ export function HomePage({ lang }: { lang: Lang }) {
           }}
         >
           <div>
-            <h1 className="anton hero-h1" style={{ fontSize: 62, margin: "0 0 20px", color: "#fff" }}>
+            <h1 className="anton hero-h1" style={{ fontSize: 44, lineHeight: 1.12, margin: "0 0 20px", color: "#fff", whiteSpace: "pre-line" }}>
               {c.heroTitle}
             </h1>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-purple-100)", maxWidth: 520, margin: "0 0 30px" }}>

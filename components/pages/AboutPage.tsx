@@ -134,13 +134,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
                   className={`card card--hoverable card--accent-${accent}`}
                   style={{ padding: 24 }}
                 >
-                  <span
-                    className="anton"
-                    style={{ display: "block", fontSize: 34, lineHeight: 1, color: `var(--voids-${accent}-200)`, marginBottom: 14 }}
-                  >
-                    0{i + 1}
-                  </span>
-                  <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8 }}>{card.title}</div>
+                  <div className="anton" style={{ fontSize: 18, marginBottom: 10, color: accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)" }}>{card.title}</div>
                   <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{card.text}</p>
                 </div>
               );
@@ -166,7 +160,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section className="wrap g-collapse" style={{ padding: "56px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "start" }}>
+      <section id="contact" className="wrap g-collapse" style={{ padding: "56px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "start", scrollMarginTop: 90 }}>
         <div>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "0 0 12px" }}>{c.contactTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 22px" }}>{c.contactSub}</p>

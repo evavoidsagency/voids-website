@@ -70,7 +70,7 @@ const COPY: Record<
     employersEyebrow: "Ook voor werkgevers",
     employersTitle: "TALENT LEER JE EERDER KENNEN.",
     employersP1:
-      "In plaats van pas na het afstuderen te concurreren om schaarse starters, leren werkgevers talent eerder kennen, begeleiden het en laten het groeien. Een duurzamere relatie, waarin je investeert in ontwikkeling in plaats van alleen capaciteit inkoopt.",
+      "In plaats van pas na het afstuderen te concurreren om talent, leren werkgevers dat talent eerder kennen, begeleiden het en laten het groeien. Een duurzamere relatie, waarin je investeert in ontwikkeling in plaats van alleen capaciteit inkoopt.",
     employersP2:
       "Daarom kijken we verder dan het invullen van een vacature. We adviseren hoe een rol uitdagend, leerzaam en toekomstbestendig wordt. Een goede werkstudent is geen goedkope arbeidskracht, maar een toekomstige professional.",
     movementEyebrow: "De beweging",
@@ -114,7 +114,7 @@ const COPY: Record<
     employersEyebrow: "For employers too",
     employersTitle: "YOU GET TO KNOW TALENT EARLIER.",
     employersP1:
-      "Instead of competing for scarce starters only after graduation, employers get to know talent earlier, guide it and let it grow. A more lasting relationship, where you invest in development instead of simply buying capacity.",
+      "Instead of competing for talent only after graduation, employers get to know that talent earlier, guide it and let it grow. A more lasting relationship, where you invest in development instead of simply buying capacity.",
     employersP2:
       "That’s why we look beyond filling a vacancy. We advise on how to make a role challenging, worth learning from and future-proof. A good working student isn’t cheap labour, but a future professional.",
     movementEyebrow: "The movement",
@@ -140,34 +140,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section className="wrap" style={{ padding: "60px 32px 40px", maxWidth: 900 }}>
-        <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.problemEyebrow}</span>
-        <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px" }}>{c.problemTitle}</h2>
-        <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 26px" }}>{c.problemIntro}</p>
-        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-          <div className="card" style={{ padding: 24 }}>
-            <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8 }}>{c.card1Title}</div>
-            <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card1Text}</p>
-          </div>
-          <div className="card" style={{ padding: 24 }}>
-            <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8 }}>{c.card2Title}</div>
-            <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card2Text}</p>
-          </div>
-        </div>
-        <p style={{ fontSize: 16, lineHeight: 1.65, margin: "22px 0 0" }}>{c.problemClose}</p>
-      </section>
-
-      <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
-        <div className="wrap" style={{ padding: "56px 32px", maxWidth: 900 }}>
-          <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.solutionEyebrow}</span>
-          <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px", color: "#fff" }}>{c.solutionTitle}</h2>
-          <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0, maxWidth: 640 }}>{c.solutionText}</p>
-        </div>
-      </section>
-
-      <Photo src="/photography/impact-band.jpg" alt={c.bandAlt} ratio="16 / 6" radius="0" sizes="100vw" />
-
-      <section className="wrap" style={{ padding: "60px 32px 48px" }}>
+      <section className="wrap" style={{ padding: "48px 32px" }}>
         <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20 }}>
           {c.stats.map((s) => (
             <div key={s.text} className="card" style={{ padding: 28, textAlign: "center" }}>
@@ -186,6 +159,33 @@ export function ImpactPage({ lang }: { lang: Lang }) {
           <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-soft)", margin: 0 }}>{c.ambitionText}</p>
         </div>
       </section>
+
+      <section className="wrap" style={{ padding: "16px 32px 40px", maxWidth: 900 }}>
+        <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.problemEyebrow}</span>
+        <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px" }}>{c.problemTitle}</h2>
+        <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 26px" }}>{c.problemIntro}</p>
+        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+          <div className="card card--hoverable card--accent-blue" style={{ padding: 24 }}>
+            <div className="anton" style={{ fontSize: 18, marginBottom: 10, color: "var(--voids-blue)" }}>{c.card1Title}</div>
+            <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card1Text}</p>
+          </div>
+          <div className="card card--hoverable card--accent-blue" style={{ padding: 24 }}>
+            <div className="anton" style={{ fontSize: 18, marginBottom: 10, color: "var(--voids-blue)" }}>{c.card2Title}</div>
+            <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card2Text}</p>
+          </div>
+        </div>
+        <p style={{ fontSize: 16, lineHeight: 1.65, margin: "22px 0 0" }}>{c.problemClose}</p>
+      </section>
+
+      <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
+        <div className="wrap" style={{ padding: "56px 32px", maxWidth: 900 }}>
+          <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.solutionEyebrow}</span>
+          <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px", color: "#fff" }}>{c.solutionTitle}</h2>
+          <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0, maxWidth: 640 }}>{c.solutionText}</p>
+        </div>
+      </section>
+
+      <Photo src="/photography/impact-band.jpg" alt={c.bandAlt} ratio="16 / 6" radius="0" sizes="100vw" />
 
       <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)", borderBottom: "1px solid var(--border-hairline)" }}>
         <div className="wrap" style={{ padding: "60px 32px" }}>

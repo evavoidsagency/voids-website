@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/ui/Logo";
@@ -8,19 +8,41 @@ import { Button } from "@/components/ui/Button";
 import { WhatsAppTrigger } from "@/components/site/WhatsAppTrigger";
 import { NAV, altLocalePath, localePath, t, type Lang } from "@/lib/i18n/common";
 
+const PRIMARY_IDS = ["talent", "companies", "impact", "about"];
+
 export function Header({ lang }: { lang: Lang }) {
   const pathname = usePathname() || "/";
   const altPath = altLocalePath(pathname);
   const homeHref = lang === "en" ? "/en" : "/";
   const [menuOpen, setMenuOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const [lastPathname, setLastPathname] = useState(pathname);
+  const moreRef = useRef<HTMLDivElement>(null);
 
   // Close the mobile menu automatically whenever the route changes, adjusted during
   // render (React's recommended pattern) rather than in an effect.
   if (pathname !== lastPathname) {
     setLastPathname(pathname);
     if (menuOpen) setMenuOpen(false);
+    if (moreOpen) setMoreOpen(false);
   }
+
+  // Close the "More" dropdown on outside click — a genuine external-event
+  // subscription, not a state-reset-on-prop-change case.
+  useEffect(() => {
+    if (!moreOpen) return;
+    function handleClick(e: MouseEvent) {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [moreOpen]);
+
+  const primaryNav = NAV.filter((n) => PRIMARY_IDS.includes(n.id));
+  const moreNav = NAV.filter((n) => !PRIMARY_IDS.includes(n.id));
+  const contactHref = `${localePath(lang, "/about")}#contact`;
 
   return (
     <header
@@ -37,8 +59,8 @@ export function Header({ lang }: { lang: Lang }) {
           <Logo variant="black" width={100} />
         </Link>
 
-        <nav className="nav-desktop-only" style={{ gap: 2, marginLeft: 6, flexWrap: "wrap" }}>
-          {NAV.map((n) => {
+        <nav className="nav-desktop-only" style={{ gap: 2, marginLeft: 6, flexWrap: "wrap", alignItems: "center" }}>
+          {primaryNav.map((n) => {
             const href = localePath(lang, n.path);
             const active = pathname === href;
             return (
@@ -47,11 +69,51 @@ export function Header({ lang }: { lang: Lang }) {
               </Link>
             );
           })}
+
+          <div ref={moreRef} style={{ position: "relative" }}>
+            <button
+              type="button"
+              onClick={() => setMoreOpen((v) => !v)}
+              aria-expanded={moreOpen}
+              style={{ ...navLinkStyle(moreNav.some((n) => pathname === localePath(lang, n.path))), display: "flex", alignItems: "center", gap: 4, background: moreOpen ? "var(--voids-purple-100)" : navLinkStyle(false).background, border: "none", cursor: "pointer" }}
+            >
+              {t.moreLabel[lang]}
+              <span style={{ fontSize: 10, transform: moreOpen ? "rotate(180deg)" : "none", transition: "transform 120ms ease" }}>▾</span>
+            </button>
+            {moreOpen && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: "calc(100% + 6px)",
+                  left: 0,
+                  background: "#fff",
+                  border: "1px solid var(--border-hairline)",
+                  borderRadius: "var(--radius-md)",
+                  boxShadow: "var(--shadow-md)",
+                  padding: 6,
+                  minWidth: 150,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 2,
+                }}
+              >
+                {moreNav.map((n) => {
+                  const href = localePath(lang, n.path);
+                  const active = pathname === href;
+                  return (
+                    <Link key={n.id} href={href} style={{ ...navLinkStyle(active), background: active ? "var(--voids-purple-100)" : "transparent" }}>
+                      {lang === "en" ? n.en : n.nl}
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+          </div>
         </nav>
 
         <div style={{ flex: 1 }} />
 
-        <div className="nav-desktop-only" style={{ alignItems: "center", gap: 18 }}>
+        <div className="nav-desktop-only" style={{ alignItems: "center", gap: 16 }}>
           <div
             style={{
               display: "flex",
@@ -76,7 +138,10 @@ export function Header({ lang }: { lang: Lang }) {
 
           <WhatsAppTrigger style={whatsTriggerStyle}>{t.whatsappCta[lang]}</WhatsAppTrigger>
 
-          <div style={{ flex: "none", whiteSpace: "nowrap" }}>
+          <div style={{ flex: "none", whiteSpace: "nowrap", display: "flex", gap: 10 }}>
+            <Button variant="outline" size="sm" href={contactHref}>
+              {t.contactLabel[lang]}
+            </Button>
             <Button variant="primary" size="sm" href={localePath(lang, "/pager")}>
               {t.careerPager[lang]}
             </Button>
@@ -117,6 +182,9 @@ export function Header({ lang }: { lang: Lang }) {
                 </Link>
               );
             })}
+            <Link href={contactHref} style={{ ...navLinkStyle(false), padding: "13px 4px", fontSize: 16 }}>
+              {t.contactLabel[lang]}
+            </Link>
           </nav>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 14, borderTop: "1px solid var(--border-hairline)", paddingTop: 18 }}>
