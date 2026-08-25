@@ -147,10 +147,10 @@ export function TalentPage({ lang }: { lang: Lang }) {
   return (
     <>
       <section style={{ background: "var(--voids-blue)", color: "#fff" }}>
-        <div className="wrap" style={{ padding: "64px 32px 70px", maxWidth: 820 }}>
+        <div className="wrap" style={{ padding: "64px 32px 70px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-blue-100)" }}>{c.eyebrow}</span>
-          <h1 className="anton hero-h1" style={{ fontSize: 56, margin: "14px 0 18px", color: "#fff" }}>{c.title}</h1>
-          <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-blue-100)", margin: "0 0 28px" }}>{c.sub}</p>
+          <h1 className="anton hero-h1" style={{ fontSize: 56, margin: "14px 0 18px", color: "#fff", maxWidth: 820 }}>{c.title}</h1>
+          <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-blue-100)", margin: "0 0 28px", maxWidth: 640 }}>{c.sub}</p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             <Button variant="primary" size="lg" href={p("/pager")}>{c.ctaPager}</Button>
             <WhatsAppButton variant="outline" size="lg" onDark>{c.ctaWhats}</WhatsAppButton>
@@ -172,10 +172,10 @@ export function TalentPage({ lang }: { lang: Lang }) {
         )}
       </section>
 
-      <section className="wrap" style={{ padding: "0 32px 72px", maxWidth: 780 }}>
+      <section className="wrap" style={{ padding: "0 32px 72px" }}>
         <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.faqEyebrow}</span>
         <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 22px" }}>{c.faqTitle}</h2>
-        <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 22, maxWidth: 780 }}>
           {c.faq.map((item) => (
             <div key={item.q}>
               <div style={{ fontSize: 15.5, fontWeight: 600, marginBottom: 6 }}>{item.q}</div>

@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/Button";
 import { WhatsAppTrigger } from "@/components/site/WhatsAppTrigger";
 import { NAV, altLocalePath, localePath, t, type Lang } from "@/lib/i18n/common";
 
-const PRIMARY_IDS = ["talent", "companies", "impact", "about"];
+const PRIMARY_ORDER = ["talent", "companies", "impact", "about", "blog", "jobboard"];
+const COMPANIES_DROPDOWN_IDS = ["cases", "pricing"];
 
 export function Header({ lang }: { lang: Lang }) {
   const pathname = usePathname() || "/";
@@ -40,8 +41,8 @@ export function Header({ lang }: { lang: Lang }) {
     return () => document.removeEventListener("mousedown", handleClick);
   }, [moreOpen]);
 
-  const primaryNav = NAV.filter((n) => PRIMARY_IDS.includes(n.id));
-  const moreNav = NAV.filter((n) => !PRIMARY_IDS.includes(n.id));
+  const primaryNav = PRIMARY_ORDER.map((id) => NAV.find((n) => n.id === id)!).filter(Boolean);
+  const companiesDropdownNav = NAV.filter((n) => COMPANIES_DROPDOWN_IDS.includes(n.id));
   const contactHref = `${localePath(lang, "/about")}#contact`;
 
   return (
@@ -63,52 +64,69 @@ export function Header({ lang }: { lang: Lang }) {
           {primaryNav.map((n) => {
             const href = localePath(lang, n.path);
             const active = pathname === href;
+
+            if (n.id !== "companies") {
+              return (
+                <Link key={n.id} href={href} style={navLinkStyle(active)}>
+                  {lang === "en" ? n.en : n.nl}
+                </Link>
+              );
+            }
+
+            const dropdownActive = companiesDropdownNav.some((d) => pathname === localePath(lang, d.path));
             return (
-              <Link key={n.id} href={href} style={navLinkStyle(active)}>
-                {lang === "en" ? n.en : n.nl}
-              </Link>
+              <div key={n.id} ref={moreRef} style={{ position: "relative", display: "flex", alignItems: "center" }}>
+                <Link href={href} style={navLinkStyle(active)}>
+                  {lang === "en" ? n.en : n.nl}
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setMoreOpen((v) => !v)}
+                  aria-expanded={moreOpen}
+                  aria-label={t.moreLabel[lang]}
+                  style={{
+                    ...navLinkStyle(dropdownActive),
+                    padding: "8px 6px",
+                    marginLeft: -4,
+                    background: moreOpen ? "var(--voids-purple-100)" : "transparent",
+                    border: "none",
+                    cursor: "pointer",
+                  }}
+                >
+                  <span style={{ fontSize: 10, display: "inline-block", transform: moreOpen ? "rotate(180deg)" : "none", transition: "transform 120ms ease" }}>▾</span>
+                </button>
+                {moreOpen && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "calc(100% + 6px)",
+                      left: 0,
+                      background: "#fff",
+                      border: "1px solid var(--border-hairline)",
+                      borderRadius: "var(--radius-md)",
+                      boxShadow: "var(--shadow-md)",
+                      padding: 6,
+                      minWidth: 150,
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 2,
+                      zIndex: 50,
+                    }}
+                  >
+                    {companiesDropdownNav.map((d) => {
+                      const dHref = localePath(lang, d.path);
+                      const dActive = pathname === dHref;
+                      return (
+                        <Link key={d.id} href={dHref} style={{ ...navLinkStyle(dActive), background: dActive ? "var(--voids-purple-100)" : "transparent" }}>
+                          {lang === "en" ? d.en : d.nl}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
             );
           })}
-
-          <div ref={moreRef} style={{ position: "relative" }}>
-            <button
-              type="button"
-              onClick={() => setMoreOpen((v) => !v)}
-              aria-expanded={moreOpen}
-              style={{ ...navLinkStyle(moreNav.some((n) => pathname === localePath(lang, n.path))), display: "flex", alignItems: "center", gap: 4, background: moreOpen ? "var(--voids-purple-100)" : navLinkStyle(false).background, border: "none", cursor: "pointer" }}
-            >
-              {t.moreLabel[lang]}
-              <span style={{ fontSize: 10, transform: moreOpen ? "rotate(180deg)" : "none", transition: "transform 120ms ease" }}>▾</span>
-            </button>
-            {moreOpen && (
-              <div
-                style={{
-                  position: "absolute",
-                  top: "calc(100% + 6px)",
-                  left: 0,
-                  background: "#fff",
-                  border: "1px solid var(--border-hairline)",
-                  borderRadius: "var(--radius-md)",
-                  boxShadow: "var(--shadow-md)",
-                  padding: 6,
-                  minWidth: 150,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 2,
-                }}
-              >
-                {moreNav.map((n) => {
-                  const href = localePath(lang, n.path);
-                  const active = pathname === href;
-                  return (
-                    <Link key={n.id} href={href} style={{ ...navLinkStyle(active), background: active ? "var(--voids-purple-100)" : "transparent" }}>
-                      {lang === "en" ? n.en : n.nl}
-                    </Link>
-                  );
-                })}
-              </div>
-            )}
-          </div>
         </nav>
 
         <div style={{ flex: 1 }} />

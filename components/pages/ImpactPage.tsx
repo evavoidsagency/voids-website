@@ -133,10 +133,10 @@ export function ImpactPage({ lang }: { lang: Lang }) {
   return (
     <>
       <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
-        <div className="wrap" style={{ padding: "66px 32px 72px", maxWidth: 860 }}>
+        <div className="wrap" style={{ padding: "66px 32px 72px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
-          <h1 className="anton hero-h1" style={{ fontSize: 56, margin: "14px 0 18px", color: "#fff" }}>{c.title}</h1>
-          <p style={{ fontSize: 18, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: 0 }}>{c.intro}</p>
+          <h1 className="anton hero-h1" style={{ fontSize: 56, margin: "14px 0 18px", color: "#fff", maxWidth: 860 }}>{c.title}</h1>
+          <p style={{ fontSize: 18, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: 0, maxWidth: 720 }}>{c.intro}</p>
         </div>
       </section>
 
@@ -160,11 +160,11 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section className="wrap" style={{ padding: "16px 32px 40px", maxWidth: 900 }}>
+      <section className="wrap" style={{ padding: "16px 32px 40px" }}>
         <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.problemEyebrow}</span>
-        <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px" }}>{c.problemTitle}</h2>
-        <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 26px" }}>{c.problemIntro}</p>
-        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+        <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px", maxWidth: 900 }}>{c.problemTitle}</h2>
+        <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 26px", maxWidth: 700 }}>{c.problemIntro}</p>
+        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, maxWidth: 900 }}>
           <div className="card card--hoverable card--accent-blue" style={{ padding: 24 }}>
             <StipendIcon />
             <div className="anton" style={{ fontSize: 18, margin: "14px 0 10px", color: "var(--voids-blue)" }}>{c.card1Title}</div>
@@ -176,13 +176,13 @@ export function ImpactPage({ lang }: { lang: Lang }) {
             <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card2Text}</p>
           </div>
         </div>
-        <p style={{ fontSize: 16, lineHeight: 1.65, margin: "22px 0 0" }}>{c.problemClose}</p>
+        <p style={{ fontSize: 16, lineHeight: 1.65, margin: "22px 0 0", maxWidth: 900 }}>{c.problemClose}</p>
       </section>
 
       <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
-        <div className="wrap" style={{ padding: "56px 32px", maxWidth: 900 }}>
+        <div className="wrap" style={{ padding: "56px 32px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.solutionEyebrow}</span>
-          <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px", color: "#fff" }}>{c.solutionTitle}</h2>
+          <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px", color: "#fff", maxWidth: 900 }}>{c.solutionTitle}</h2>
           <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0, maxWidth: 640 }}>{c.solutionText}</p>
         </div>
       </section>

@@ -56,16 +56,3 @@ export const WHY_WS: Record<Lang, { title: string; text: string }[]> = {
     { title: "Extra motivated", text: "The work counts toward their studies and their CV, not just a side job: that shows up in how engaged they are." },
   ],
 };
-
-export const BENCHMARK: Record<Lang, { label: string; value: string; src: string }[]> = {
-  nl: [
-    { label: "Werkstudent · mediaan uurtarief", value: "€ 16–24", src: "Indicatie marktdata" },
-    { label: "Beschikbaarheid juniors", value: "Hoog na tentamenperiodes", src: "" },
-    { label: "Onze focus", value: "Betaalde werkstudentrollen", src: "" },
-  ],
-  en: [
-    { label: "Working student · median hourly rate", value: "€ 16–24", src: "Market-data estimate" },
-    { label: "Junior availability", value: "High after exam season", src: "" },
-    { label: "Our focus", value: "Paid working-student roles", src: "" },
-  ],
-};
