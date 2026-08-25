@@ -166,11 +166,13 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 26px" }}>{c.problemIntro}</p>
         <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
           <div className="card card--hoverable card--accent-blue" style={{ padding: 24 }}>
-            <div className="anton" style={{ fontSize: 18, marginBottom: 10, color: "var(--voids-blue)" }}>{c.card1Title}</div>
+            <StipendIcon />
+            <div className="anton" style={{ fontSize: 18, margin: "14px 0 10px", color: "var(--voids-blue)" }}>{c.card1Title}</div>
             <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card1Text}</p>
           </div>
           <div className="card card--hoverable card--accent-blue" style={{ padding: 24 }}>
-            <div className="anton" style={{ fontSize: 18, marginBottom: 10, color: "var(--voids-blue)" }}>{c.card2Title}</div>
+            <ShiftIcon />
+            <div className="anton" style={{ fontSize: 18, margin: "14px 0 10px", color: "var(--voids-blue)" }}>{c.card2Title}</div>
             <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card2Text}</p>
           </div>
         </div>
@@ -236,5 +238,33 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         </div>
       </section>
     </>
+  );
+}
+
+function StipendIcon() {
+  return (
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+      <ellipse cx="14" cy="22" rx="10" ry="5" stroke="var(--voids-blue)" strokeWidth="2" />
+      <path d="M4 22V16" stroke="var(--voids-blue)" strokeWidth="2" strokeLinecap="round" />
+      <path d="M24 22V16" stroke="var(--voids-blue)" strokeWidth="2" strokeLinecap="round" />
+      <ellipse cx="14" cy="12" rx="10" ry="5" stroke="var(--voids-blue)" strokeWidth="2" />
+      <path
+        d="M12 9.3c-.9.3-1.5 1-1.5 1.9 0 1.1 1.1 2 2.5 2s2.5-.9 2.5-2c0-.9-.6-1.6-1.5-1.9M10.8 12h2.4M10.8 9.6h3.6"
+        stroke="var(--voids-blue)"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function ShiftIcon() {
+  return (
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+      <path d="M9 9L12 4H22L25 9" stroke="var(--voids-blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6 9H28L26.5 28C26.5 29 25.5 30 24.5 30H9.5C8.5 30 7.5 29 7.5 28L6 9Z" stroke="var(--voids-blue)" strokeWidth="2" strokeLinejoin="round" />
+      <path d="M13 14V17" stroke="var(--voids-blue)" strokeWidth="2" strokeLinecap="round" />
+      <path d="M21 14V17" stroke="var(--voids-blue)" strokeWidth="2" strokeLinecap="round" />
+    </svg>
   );
 }
