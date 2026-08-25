@@ -37,7 +37,7 @@ const COPY: Record<
       {
         title: "Werving & selectie",
         text: "We nemen de volledige werving uit handen: van intake tot shortlist tot ondertekende match, voor werkstudenten, stagiairs en starters.",
-        path: "/companies",
+        path: "/companies/recruitment-selection",
         cta: "Meer over werving & selectie →",
       },
       {
@@ -73,7 +73,7 @@ const COPY: Record<
       {
         title: "Recruitment & selection",
         text: "We take the full hiring process off your hands: from intake to shortlist to signed match, for working students, interns and starters.",
-        path: "/companies",
+        path: "/companies/recruitment-selection",
         cta: "More on recruitment & selection →",
       },
       {
@@ -165,12 +165,24 @@ export function AboutPage({ lang }: { lang: Lang }) {
       <section style={{ background: "var(--voids-beige)" }}>
         <div className="wrap" style={{ padding: "52px 32px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 28, margin: "0 0 22px" }}>{c.teamTitle}</h2>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, maxWidth: 640 }}>
-            {TEAM.map((m) => (
-              <div key={m.name} className="card" style={{ padding: 0, overflow: "hidden" }}>
-                <Photo src={m.photo} alt={m.name} ratio="4 / 5" radius="0" objectPosition={m.objectPosition} sizes="(max-width: 860px) 100vw, 380px" />
-                <div style={{ padding: "18px 20px" }}>
-                  <div style={{ fontSize: 19, fontWeight: 600 }}>{m.name}</div>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 340px))", gap: 4, maxWidth: 684 }}>
+            {TEAM.map((m, i) => (
+              <div
+                key={m.name}
+                className="card"
+                style={{
+                  padding: 0,
+                  overflow: "hidden",
+                  borderTopLeftRadius: i === 0 ? "var(--radius-lg)" : 0,
+                  borderBottomLeftRadius: i === 0 ? "var(--radius-lg)" : 0,
+                  borderTopRightRadius: i === 1 ? "var(--radius-lg)" : 0,
+                  borderBottomRightRadius: i === 1 ? "var(--radius-lg)" : 0,
+                  borderRight: i === 0 ? "none" : undefined,
+                }}
+              >
+                <Photo src={m.photo} alt={m.name} ratio="4 / 5" radius="0" objectPosition={m.objectPosition} sizes="(max-width: 860px) 100vw, 340px" />
+                <div style={{ padding: "20px 22px" }}>
+                  <div style={{ fontSize: 21, fontWeight: 600 }}>{m.name}</div>
                   <div style={{ fontSize: 13.5, color: "var(--voids-ink-muted)" }}>{c.coFounder}</div>
                 </div>
               </div>

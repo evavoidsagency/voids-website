@@ -9,10 +9,9 @@ import { WhatsAppTrigger } from "@/components/site/WhatsAppTrigger";
 import { NAV, altLocalePath, localePath, t, type Lang } from "@/lib/i18n/common";
 
 const PRIMARY_ORDER = ["talent", "companies", "impact", "about", "blog", "jobboard"];
-const COMPANIES_DROPDOWN_IDS = ["cases", "pricing"];
 
 const COMPANY_SERVICES: { id: string; nl: string; en: string; path: string }[] = [
-  { id: "wns", nl: "Werving & selectie", en: "Recruitment & selection", path: "/companies" },
+  { id: "wns", nl: "Werving & selectie", en: "Recruitment & selection", path: "/companies/recruitment-selection" },
   { id: "community", nl: "Community & jobboard", en: "Community & job board", path: "/companies/community-jobboard" },
   { id: "branding", nl: "Advies & employer branding", en: "Advice & employer branding", path: "/companies/employer-branding" },
 ];
@@ -48,7 +47,6 @@ export function Header({ lang }: { lang: Lang }) {
   }, [moreOpen]);
 
   const primaryNav = PRIMARY_ORDER.map((id) => NAV.find((n) => n.id === id)!).filter(Boolean);
-  const companiesDropdownNav = NAV.filter((n) => COMPANIES_DROPDOWN_IDS.includes(n.id));
   const contactHref = `${localePath(lang, "/about")}#contact`;
 
   return (
@@ -79,9 +77,7 @@ export function Header({ lang }: { lang: Lang }) {
               );
             }
 
-            const dropdownActive =
-              companiesDropdownNav.some((d) => pathname === localePath(lang, d.path)) ||
-              COMPANY_SERVICES.some((s) => pathname === localePath(lang, s.path));
+            const dropdownActive = COMPANY_SERVICES.some((s) => pathname === localePath(lang, s.path));
             return (
               <div key={n.id} ref={moreRef} style={{ position: "relative", display: "flex", alignItems: "center" }}>
                 <button
@@ -131,21 +127,6 @@ export function Header({ lang }: { lang: Lang }) {
                           style={{ ...dropdownItemStyle, background: sActive ? "var(--voids-purple-100)" : "transparent" }}
                         >
                           {lang === "en" ? s.en : s.nl}
-                        </Link>
-                      );
-                    })}
-                    <div style={{ height: 1, background: "var(--border-hairline)", margin: "6px 4px" }} />
-                    {companiesDropdownNav.map((d) => {
-                      const dHref = localePath(lang, d.path);
-                      const dActive = pathname === dHref;
-                      return (
-                        <Link
-                          key={d.id}
-                          href={dHref}
-                          role="menuitem"
-                          style={{ ...dropdownItemStyle, background: dActive ? "var(--voids-purple-100)" : "transparent" }}
-                        >
-                          {lang === "en" ? d.en : d.nl}
                         </Link>
                       );
                     })}
@@ -227,7 +208,7 @@ export function Header({ lang }: { lang: Lang }) {
                     {lang === "en" ? n.en : n.nl}
                   </Link>
                   {n.id === "companies" &&
-                    COMPANY_SERVICES.filter((s) => s.id !== "wns").map((s) => {
+                    COMPANY_SERVICES.map((s) => {
                       const sHref = localePath(lang, s.path);
                       const sActive = pathname === sHref;
                       return (

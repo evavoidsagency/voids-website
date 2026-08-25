@@ -1,6 +1,5 @@
-import { Button } from "@/components/ui/Button";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
-import { localePath, type Lang } from "@/lib/i18n/common";
+import type { Lang } from "@/lib/i18n/common";
 
 const COPY: Record<
   Lang,
@@ -12,7 +11,6 @@ const COPY: Record<
     how: { title: string; text: string; accent: "purple" | "blue" }[];
     pricingTitle: string;
     pricingText: string;
-    pricingCta: string;
     contactTitle: string;
     contactText: string;
     contactCta: string;
@@ -37,7 +35,6 @@ const COPY: Record<
     ],
     pricingTitle: "WAT KOST HET",
     pricingText: "Een vacature plaatsen kan al, via een kort intakegesprek. Zelf plaatsen en direct online betalen volgt binnenkort.",
-    pricingCta: "Bekijk de tarieven",
     contactTitle: "VACATURE PLAATSEN?",
     contactText: "Stuur ons je vacature, dan zetten we die voor je live.",
     contactCta: "Neem contact op",
@@ -61,7 +58,6 @@ const COPY: Record<
     ],
     pricingTitle: "WHAT IT COSTS",
     pricingText: "Posting a vacancy is already possible, via a short intake call. Self-service posting with online payment is coming soon.",
-    pricingCta: "See our pricing",
     contactTitle: "WANT TO POST A VACANCY?",
     contactText: "Send us your vacancy and we'll get it live for you.",
     contactCta: "Get in touch",
@@ -94,14 +90,9 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
       </section>
 
       <section className="wrap" style={{ padding: "52px 32px 64px" }}>
-        <div className="card" style={{ padding: 28, maxWidth: 760, display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 20 }}>
-          <div>
-            <div className="anton" style={{ fontSize: 18, marginBottom: 6 }}>{c.pricingTitle}</div>
-            <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 420 }}>{c.pricingText}</p>
-          </div>
-          <Button variant="outline" size="sm" href={localePath(lang, "/pricing")}>
-            {c.pricingCta}
-          </Button>
+        <div className="card" style={{ padding: 28, maxWidth: 760 }}>
+          <div className="anton" style={{ fontSize: 18, marginBottom: 6 }}>{c.pricingTitle}</div>
+          <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 460 }}>{c.pricingText}</p>
         </div>
       </section>
 

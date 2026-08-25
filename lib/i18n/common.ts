@@ -15,9 +15,7 @@ export const NAV: NavItem[] = [
   { id: "jobboard", nl: "Jobs", en: "Jobs", path: "/jobboard", stub: true },
   { id: "companies", nl: "Bedrijven", en: "Companies", path: "/companies" },
   { id: "impact", nl: "Impact", en: "Impact", path: "/impact" },
-  { id: "cases", nl: "Cases", en: "Cases", path: "/cases" },
   { id: "blog", nl: "Blog", en: "Blog", path: "/blog" },
-  { id: "pricing", nl: "Tarieven", en: "Pricing", path: "/pricing", stub: true },
   { id: "about", nl: "Over ons", en: "About", path: "/about" },
 ];
 
