@@ -25,21 +25,16 @@ const COPY: Record<
     ambitionText: string;
     sdgTitle: string;
     sdgSub: string;
-    employersEyebrow: string;
-    employersTitle: string;
-    employersP1: string;
-    employersP2: string;
     movementEyebrow: string;
     movementTitle: string;
     movementText: string;
     bandAlt: string;
-    employersAlt: string;
     movementAlt: string;
   }
 > = {
   nl: {
     eyebrow: "Impact",
-    title: "RECRUITMENT IS HET MIDDEL, NIET HET DOEL.",
+    title: "RECRUITMENT IS HET MIDDEL,\nNIET HET DOEL.",
     intro:
       "VOIDS bestaat om de overgang van studie naar werk eerlijker te maken. De eerste baan bepaalt vaak de rest van een loopbaan, en die eerste stap is niet voor iedereen gelijk. Recruitment is ons middel; gelijke kansen zijn het doel.",
     problemEyebrow: "Het probleem",
@@ -67,23 +62,16 @@ const COPY: Record<
       "Onze ambitie: vanaf medio 2027 investeren we 10% van onze winst terug in gelijke-kansen-initiatieven voor studenten.",
     sdgTitle: "WAAR WE AAN BIJDRAGEN",
     sdgSub: "Onze doelen sluiten aan op drie Sustainable Development Goals van de VN.",
-    employersEyebrow: "Ook voor werkgevers",
-    employersTitle: "TALENT LEER JE EERDER KENNEN.",
-    employersP1:
-      "In plaats van pas na het afstuderen te concurreren om talent, leren werkgevers dat talent eerder kennen, begeleiden het en laten het groeien. Een duurzamere relatie, waarin je investeert in ontwikkeling in plaats van alleen capaciteit inkoopt.",
-    employersP2:
-      "Daarom kijken we verder dan het invullen van een vacature. We adviseren hoe een rol uitdagend, leerzaam en toekomstbestendig wordt. Een goede werkstudent is geen goedkope arbeidskracht, maar een toekomstige professional.",
     movementEyebrow: "De beweging",
     movementTitle: "IN DUITSLAND IS DIT AL NORMAAL.",
     movementText:
       "Daar is het werkstudentschap een vanzelfsprekend onderdeel van het hoger onderwijs. Nederland kan dezelfde beweging maken: een arbeidsmarkt waarin leren en werken met elkaar verbonden zijn, en waarin talent wordt beoordeeld op potentie, niet op geld, netwerk of eerdere ervaring.",
     bandAlt: "Werkstudenten aan het werk op kantoor",
-    employersAlt: "Community van studenten en starters",
     movementAlt: "Aan het werk op kantoor",
   },
   en: {
     eyebrow: "Impact",
-    title: "RECRUITMENT IS THE MEANS, NOT THE GOAL.",
+    title: "RECRUITMENT IS THE MEANS,\nNOT THE GOAL.",
     intro:
       "VOIDS exists to make the transition from study to work fairer. The first job often shapes the rest of a career, and that first step isn’t equal for everyone. Recruitment is our means; equal opportunity is the goal.",
     problemEyebrow: "The problem",
@@ -111,18 +99,11 @@ const COPY: Record<
       "Our ambition: from mid-2027, we reinvest 10% of our profit into equal-opportunity initiatives for students.",
     sdgTitle: "WHAT WE CONTRIBUTE TO",
     sdgSub: "Our goals align with three UN Sustainable Development Goals.",
-    employersEyebrow: "For employers too",
-    employersTitle: "YOU GET TO KNOW TALENT EARLIER.",
-    employersP1:
-      "Instead of competing for talent only after graduation, employers get to know that talent earlier, guide it and let it grow. A more lasting relationship, where you invest in development instead of simply buying capacity.",
-    employersP2:
-      "That’s why we look beyond filling a vacancy. We advise on how to make a role challenging, worth learning from and future-proof. A good working student isn’t cheap labour, but a future professional.",
     movementEyebrow: "The movement",
     movementTitle: "IN GERMANY THIS IS ALREADY NORMAL.",
     movementText:
       "There, working alongside your degree is a standard part of higher education. The Netherlands can make the same move: a labour market where learning and working are connected, and where talent is judged on potential, not on money, network or prior experience.",
     bandAlt: "Working students at work in the office",
-    employersAlt: "Community of students and starters",
     movementAlt: "Working at the office",
   },
 };
@@ -133,30 +114,29 @@ export function ImpactPage({ lang }: { lang: Lang }) {
   return (
     <>
       <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
-        <div className="wrap" style={{ padding: "66px 32px 72px" }}>
-          <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
-          <h1 className="anton hero-h1" style={{ fontSize: 56, margin: "14px 0 18px", color: "#fff", maxWidth: 860 }}>{c.title}</h1>
-          <p style={{ fontSize: 18, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: 0, maxWidth: 720 }}>{c.intro}</p>
-        </div>
-      </section>
+        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "center", padding: "66px 32px 72px" }}>
+          <div>
+            <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
+            <h1 className="anton hero-h1" style={{ fontSize: 52, margin: "14px 0 18px", color: "#fff", whiteSpace: "pre-line" }}>{c.title}</h1>
+            <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: 0, maxWidth: 520 }}>{c.intro}</p>
+          </div>
 
-      <section className="wrap" style={{ padding: "48px 32px" }}>
-        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20 }}>
-          {c.stats.map((s) => (
-            <div key={s.text} className="card" style={{ padding: 28, textAlign: "center" }}>
-              <div className="anton" style={{ fontSize: 48, color: s.color === "blue" ? "var(--voids-blue)" : "var(--voids-purple)" }}>{s.value}</div>
-              <div style={{ fontSize: 14, color: "var(--voids-ink-muted)", marginTop: 8 }}>{s.text}</div>
+          <div>
+            <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 14 }}>
+              {c.stats.map((s) => (
+                <div key={s.text} className="card" style={{ padding: 22, textAlign: "center" }}>
+                  <div className="anton" style={{ fontSize: 40, color: s.color === "blue" ? "var(--voids-blue)" : "var(--voids-purple)" }}>{s.value}</div>
+                  <div style={{ fontSize: 13, color: "var(--voids-ink-muted)", marginTop: 6 }}>{s.text}</div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <div style={{ marginTop: 20, borderRadius: "var(--radius-md)", border: "1px dashed var(--voids-purple-300)", background: "var(--voids-purple-100)", padding: "18px 22px" }}>
-          <span
-            className="voids-eyebrow"
-            style={{ color: "var(--voids-purple)", marginBottom: 4, display: "block" }}
-          >
-            {c.ambitionEyebrow}
-          </span>
-          <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-soft)", margin: 0 }}>{c.ambitionText}</p>
+            <div style={{ marginTop: 14, borderRadius: "var(--radius-md)", background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.18)", padding: "16px 20px" }}>
+              <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)", marginBottom: 4, display: "block" }}>
+                {c.ambitionEyebrow}
+              </span>
+              <p style={{ fontSize: 13, lineHeight: 1.55, color: "#fff", margin: 0 }}>{c.ambitionText}</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -214,16 +194,6 @@ export function ImpactPage({ lang }: { lang: Lang }) {
               );
             })}
           </div>
-        </div>
-      </section>
-
-      <section className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
-        <Photo src="/photography/impact-employers.jpg" alt={c.employersAlt} ratio="4 / 3" />
-        <div>
-          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.employersEyebrow}</span>
-          <h2 className="anton section-h2" style={{ fontSize: 34, margin: "10px 0 14px" }}>{c.employersTitle}</h2>
-          <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 16px" }}>{c.employersP1}</p>
-          <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.employersP2}</p>
         </div>
       </section>
 

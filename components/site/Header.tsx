@@ -78,24 +78,48 @@ export function Header({ lang }: { lang: Lang }) {
             }
 
             const dropdownActive = COMPANY_SERVICES.some((s) => pathname === localePath(lang, s.path));
+            const highlighted = active || dropdownActive || moreOpen;
             return (
-              <div key={n.id} ref={moreRef} style={{ position: "relative", display: "flex", alignItems: "center" }}>
+              <div
+                key={n.id}
+                ref={moreRef}
+                style={{
+                  position: "relative",
+                  display: "flex",
+                  alignItems: "center",
+                  borderRadius: 6,
+                  background: highlighted ? "var(--voids-purple-100)" : "transparent",
+                }}
+              >
+                <Link
+                  href={href}
+                  style={{
+                    cursor: "pointer",
+                    fontSize: 13.5,
+                    fontWeight: active ? 600 : 500,
+                    color: highlighted ? "var(--voids-purple)" : "var(--voids-ink-soft)",
+                    padding: "8px 2px 8px 11px",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {lang === "en" ? n.en : n.nl}
+                </Link>
                 <button
                   type="button"
                   onClick={() => setMoreOpen((v) => !v)}
                   aria-expanded={moreOpen}
                   aria-haspopup="true"
+                  aria-label={t.moreLabel[lang]}
                   style={{
-                    ...navLinkStyle(active || dropdownActive),
                     display: "flex",
                     alignItems: "center",
-                    gap: 4,
-                    background: moreOpen || active || dropdownActive ? "var(--voids-purple-100)" : "transparent",
+                    padding: "8px 10px 8px 2px",
+                    color: highlighted ? "var(--voids-purple)" : "var(--voids-ink-soft)",
+                    background: "transparent",
                     border: "none",
                     cursor: "pointer",
                   }}
                 >
-                  {lang === "en" ? n.en : n.nl}
                   <span style={{ fontSize: 10, display: "inline-block", transform: moreOpen ? "rotate(180deg)" : "none", transition: "transform 120ms ease" }}>▾</span>
                 </button>
                 {moreOpen && (

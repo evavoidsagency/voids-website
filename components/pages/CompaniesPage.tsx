@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { CostCalculator } from "@/components/pages/CostCalculator";
 import { Photo } from "@/components/ui/Photo";
@@ -13,6 +14,9 @@ const COPY: Record<
     sub: string;
     ctaIntro: string;
     ctaProcess: string;
+    servicesEyebrow: string;
+    servicesTitle: string;
+    services: { title: string; text: string; cta: string; path: string }[];
     rolesEyebrow: string;
     rolesIntro: string;
     whyWsEyebrow: string;
@@ -28,9 +32,13 @@ const COPY: Record<
     wsHeading: string;
     wsBullets: string[];
     prefPara: string[];
+    employersEyebrow: string;
+    employersTitle: string;
+    employersP1: string;
+    employersP2: string;
+    employersAlt: string;
     finalTitle: string;
     finalCta: string;
-    photoAlt: string;
   }
 > = {
   nl: {
@@ -39,6 +47,28 @@ const COPY: Record<
     sub: "Wij nemen het hele wervingsproces uit handen, van briefing tot getekende match, en leveren alleen kandidaten die een recruiter zelf grondig heeft beoordeeld. Jullie bekijken alleen nog 2-4 voorgeselecteerde kandidaten, gematcht op cultuur en groeifase, gemiddeld binnen 30 dagen.",
     ctaIntro: "Plan een kennismaking",
     ctaProcess: "Bekijk het proces",
+    servicesEyebrow: "Wat we doen",
+    servicesTitle: "DRIE MANIEREN OM MET ONS TE WERKEN.",
+    services: [
+      {
+        title: "Werving & selectie",
+        text: "We nemen de volledige werving uit handen: van intake tot shortlist tot ondertekende match.",
+        cta: "Bekijk het proces →",
+        path: "/companies/recruitment-selection",
+      },
+      {
+        title: "Community & jobboard",
+        text: "Zet je vacature zelf rechtstreeks onder de aandacht van 4.000+ studenten en starters.",
+        cta: "Bekijk de opties →",
+        path: "/companies/community-jobboard",
+      },
+      {
+        title: "Advies & employer branding",
+        text: "We denken mee over je hele junior-strategie, van recruitment tot het behouden van jong talent.",
+        cta: "Meer over advies & branding →",
+        path: "/companies/employer-branding",
+      },
+    ],
     rolesEyebrow: "Soorten rollen",
     rolesIntro: "Onze werkstudenten en stagiairs versterken vooral de commerciële en groeigerichte kant van je organisatie. Een greep uit de rollen die we invullen:",
     whyWsEyebrow: "Onze voorkeur",
@@ -58,9 +88,15 @@ const COPY: Record<
       "vanaf €800 bruto per maand op fulltime basis (naar rato bij minder uren)",
       ". Onder dat bedrag matchen we niet. Meer betalen juichen we juist toe.",
     ],
+    employersEyebrow: "De lange termijn",
+    employersTitle: "TALENT LEER JE EERDER KENNEN.",
+    employersP1:
+      "In plaats van pas na het afstuderen te concurreren om talent, leren jullie dat talent eerder kennen, begeleiden het en laten het groeien. Een duurzamere relatie, waarin je investeert in ontwikkeling in plaats van alleen capaciteit inkoopt.",
+    employersP2:
+      "Daarom kijken we verder dan het invullen van een vacature. We adviseren hoe een rol uitdagend, leerzaam en toekomstbestendig wordt. Een goede werkstudent is geen goedkope arbeidskracht, maar een toekomstige professional.",
+    employersAlt: "Community van studenten en starters",
     finalTitle: "KLAAR OM TE SCHALEN?",
     finalCta: "Plan een kennismaking",
-    photoAlt: "Werkstudent aan het werk op kantoor",
   },
   en: {
     eyebrow: "For companies",
@@ -68,6 +104,28 @@ const COPY: Record<
     sub: "We take the entire hiring process off your hands, from briefing to signed match, and only put forward candidates a recruiter has personally and thoroughly reviewed. You only review 2-4 pre-selected candidates, matched on culture and growth stage, on average within 30 days.",
     ctaIntro: "Book an intro call",
     ctaProcess: "See the process",
+    servicesEyebrow: "What we do",
+    servicesTitle: "THREE WAYS TO WORK WITH US.",
+    services: [
+      {
+        title: "Recruitment & selection",
+        text: "We take the full hiring process off your hands: from intake to shortlist to signed match.",
+        cta: "See the process →",
+        path: "/companies/recruitment-selection",
+      },
+      {
+        title: "Community & job board",
+        text: "Put your vacancy directly in front of 4,000+ students and starters yourself.",
+        cta: "See the options →",
+        path: "/companies/community-jobboard",
+      },
+      {
+        title: "Advice & employer branding",
+        text: "We think along on your whole junior strategy, from recruitment to retaining junior talent.",
+        cta: "More on advice & branding →",
+        path: "/companies/employer-branding",
+      },
+    ],
     rolesEyebrow: "Types of roles",
     rolesIntro: "Our working students and interns mainly strengthen the commercial and growth side of your organisation. A selection of the roles we fill:",
     whyWsEyebrow: "Our preference",
@@ -87,9 +145,15 @@ const COPY: Record<
       "from €800 gross per month on a full-time basis (pro-rata for fewer hours)",
       ". We don’t match below that. We welcome paying more.",
     ],
+    employersEyebrow: "The long term",
+    employersTitle: "YOU GET TO KNOW TALENT EARLIER.",
+    employersP1:
+      "Instead of competing for talent only after graduation, you get to know that talent earlier, guide it and let it grow. A more lasting relationship, where you invest in development instead of simply buying capacity.",
+    employersP2:
+      "That’s why we look beyond filling a vacancy. We advise on how to make a role challenging, worth learning from and future-proof. A good working student isn’t cheap labour, but a future professional.",
+    employersAlt: "Community of students and starters",
     finalTitle: "READY TO SCALE?",
     finalCta: "Book an intro call",
-    photoAlt: "A working student at work in the office",
   },
 };
 
@@ -107,6 +171,28 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             <CalendlyButton label={c.ctaIntro} variant="secondary" size="lg" />
             <Button variant="outline" size="lg" onDark href={p("/companies/recruitment-selection")}>{c.ctaProcess}</Button>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ background: "#fff" }}>
+        <div className="wrap" style={{ padding: "52px 32px" }}>
+          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.servicesEyebrow}</span>
+          <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 22px" }}>{c.servicesTitle}</h2>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, maxWidth: 980 }}>
+            {c.services.map((s, i) => {
+              const accent = i === 1 ? "blue" : "purple";
+              const accentColor = accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)";
+              return (
+                <div key={s.title} className={`card card--hoverable card--accent-${accent}`} style={{ padding: 24, display: "flex", flexDirection: "column" }}>
+                  <div className="anton" style={{ fontSize: 18, marginBottom: 10, color: accentColor }}>{s.title}</div>
+                  <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{s.text}</p>
+                  <Link href={p(s.path)} style={{ fontSize: 13, fontWeight: 600, color: accentColor, marginTop: 14 }}>
+                    {s.cta}
+                  </Link>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -175,9 +261,15 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <div className="wrap" style={{ padding: "56px 32px 0" }}>
-        <Photo src="/photography/blog-2.jpg" alt={c.photoAlt} ratio="16 / 6" sizes="(max-width: 1200px) 100vw, 1136px" />
-      </div>
+      <section className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
+        <Photo src="/photography/impact-employers.jpg" alt={c.employersAlt} ratio="4 / 3" />
+        <div>
+          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.employersEyebrow}</span>
+          <h2 className="anton section-h2" style={{ fontSize: 34, margin: "10px 0 14px" }}>{c.employersTitle}</h2>
+          <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 16px" }}>{c.employersP1}</p>
+          <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.employersP2}</p>
+        </div>
+      </section>
 
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "64px 32px" }}>

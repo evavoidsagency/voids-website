@@ -18,7 +18,7 @@ const COPY: Record<
 > = {
   nl: {
     eyebrow: "Community & jobboard",
-    title: "ZET JE VACATURE VOOR 4.000+ STUDENTEN EN STARTERS.",
+    title: "ZET JE VACATURE VOOR\n4.000+ STUDENTEN EN STARTERS.",
     sub: "Naast onze werving & selectie-dienst kun je je vacature ook zelf onder de aandacht brengen: rechtstreeks in onze WhatsApp-community en op ons jobboard.",
     howTitle: "HOE HET WERKT",
     how: [
@@ -41,7 +41,7 @@ const COPY: Record<
   },
   en: {
     eyebrow: "Community & job board",
-    title: "PUT YOUR VACANCY IN FRONT OF 4,000+ STUDENTS AND STARTERS.",
+    title: "PUT YOUR VACANCY IN FRONT OF\n4,000+ STUDENTS AND STARTERS.",
     sub: "Alongside our recruitment & selection service, you can also put your vacancy in front of candidates yourself: directly in our WhatsApp community and on our job board.",
     howTitle: "HOW IT WORKS",
     how: [
@@ -71,7 +71,7 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
     <>
       <section className="wrap" style={{ padding: "64px 32px 40px" }}>
         <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.eyebrow}</span>
-        <h1 className="anton hero-h1" style={{ fontSize: 44, margin: "12px 0 12px", maxWidth: 820 }}>{c.title}</h1>
+        <h1 className="anton hero-h1" style={{ fontSize: 44, margin: "12px 0 12px", maxWidth: 820, whiteSpace: "pre-line" }}>{c.title}</h1>
         <p style={{ fontSize: 16, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 620, textWrap: "balance" }}>{c.sub}</p>
       </section>
 

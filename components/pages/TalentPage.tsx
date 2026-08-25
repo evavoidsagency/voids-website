@@ -6,6 +6,8 @@ import { localePath, type Lang } from "@/lib/i18n/common";
 import { TALENT_THRIVING } from "@/lib/content/talent-thriving";
 import { findTestimonialPhoto } from "@/lib/logos";
 
+const HERO_AVATARS = ["thomke-tierolff", "charlotte-pallandt", "anna-haasnoot", "bas-lemmens"];
+
 const COPY: Record<
   Lang,
   {
@@ -14,8 +16,15 @@ const COPY: Record<
     sub: string;
     ctaPager: string;
     ctaWhats: string;
+    avatarLabel: string;
+    stat1Label: string;
+    stat2Label: string;
+    stat3Label: string;
+    resourcesEyebrow: string;
+    resourcesTitle: string;
     resourcesIntro: string;
     resources: { tier: string; title: string; text: string; cta: string; path?: string; whats?: boolean }[];
+    resourcesBadge: string;
     faqEyebrow: string;
     faqTitle: string;
     faq: { q: string; a: string }[];
@@ -41,12 +50,19 @@ const COPY: Record<
     sub: "Vul één keer in wat je drijft en krijg gratis je career pager. Daarna krijg je passende kansen vanzelf via WhatsApp. Gratis en laagdrempelig.",
     ctaPager: "Maak gratis je career pager",
     ctaWhats: "💜 Join WhatsApp",
-    resourcesIntro: "Er zijn een paar manieren om met VOIDS in contact te komen, van vrijblijvend tot actief op de radar bij bedrijven.",
+    avatarLabel: "4.000+ studenten gingen je voor",
+    stat1Label: "studenten in de community",
+    stat2Label: "transparante voorwaarden",
+    stat3Label: "winst terug naar gelijke kansen",
+    resourcesEyebrow: "Jouw route",
+    resourcesTitle: "HOE DIEP WIL JE MEE?",
+    resourcesIntro: "Er zijn een paar manieren om met VOIDS in contact te komen, van vrijblijvend tot actief op de radar bij bedrijven. Elke stap dieper levert meer op.",
     resources: [
       { tier: "Vrijblijvend", title: "Job board", text: "Bekijk open rollen en solliciteer direct per vacature, zonder account of profiel.", cta: "Bekijk jobs", path: "/jobboard" },
       { tier: "Community", title: "WhatsApp-community", text: "Word lid van de community en krijg passende vacatures wekelijks rechtstreeks in je WhatsApp.", cta: "Join", whats: true },
       { tier: "Actief in de talentpool", title: "Career pager", text: "Bouw je profiel op en kom in onze actieve talentpool: track je sollicitaties, zie je matchscore per rol, en word proactief voorgesteld bij offmarket-kansen.", cta: "Word lid van de talentpool", path: "/pager" },
     ],
+    resourcesBadge: "Aanbevolen",
     faqEyebrow: "Veelgestelde vragen",
     faqTitle: "HOE HET PROCES WERKT.",
     faq: [
@@ -94,12 +110,19 @@ const COPY: Record<
     sub: "Tell us once what drives you and get your free career pager. Matching opportunities then come straight to your WhatsApp. Free, no strings.",
     ctaPager: "Build your free career pager",
     ctaWhats: "💜 Join WhatsApp",
-    resourcesIntro: "There are a few ways to engage with VOIDS, from no-strings-attached to actively on companies' radar.",
+    avatarLabel: "4,000+ students went before you",
+    stat1Label: "students in the community",
+    stat2Label: "transparent terms",
+    stat3Label: "profit reinvested in equal opportunity",
+    resourcesEyebrow: "Your route",
+    resourcesTitle: "HOW DEEP DO YOU WANT IN?",
+    resourcesIntro: "There are a few ways to engage with VOIDS, from no-strings-attached to actively on companies' radar. Each step deeper pays off more.",
     resources: [
       { tier: "No strings attached", title: "Job board", text: "Browse open roles and apply directly to any vacancy, no account or profile needed.", cta: "View jobs", path: "/jobboard" },
       { tier: "Community", title: "WhatsApp community", text: "Join the community and get matching vacancies sent straight to your WhatsApp every week.", cta: "Join", whats: true },
       { tier: "Active in the talent pool", title: "Career pager", text: "Build your profile and join our active talent pool: track your applications, see your match score per role, and get proactively put forward for off-market opportunities.", cta: "Join the talent pool", path: "/pager" },
     ],
+    resourcesBadge: "Recommended",
     faqEyebrow: "Frequently asked",
     faqTitle: "HOW THE PROCESS WORKS.",
     faq: [
@@ -150,31 +173,80 @@ export function TalentPage({ lang }: { lang: Lang }) {
   return (
     <>
       <section style={{ background: "var(--voids-blue)", color: "#fff" }}>
-        <div className="wrap" style={{ padding: "64px 32px 70px" }}>
-          <span className="voids-eyebrow" style={{ color: "var(--voids-blue-100)" }}>{c.eyebrow}</span>
-          <h1 className="anton hero-h1" style={{ fontSize: 56, margin: "14px 0 18px", color: "#fff", maxWidth: 820 }}>{c.title}</h1>
-          <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-blue-100)", margin: "0 0 28px", maxWidth: 640 }}>{c.sub}</p>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <Button variant="primary" size="lg" href={p("/pager")}>{c.ctaPager}</Button>
-            <WhatsAppButton variant="outline" size="lg" onDark>{c.ctaWhats}</WhatsAppButton>
+        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "center", padding: "64px 32px 70px" }}>
+          <div>
+            <span className="voids-eyebrow" style={{ color: "var(--voids-blue-100)" }}>{c.eyebrow}</span>
+            <h1 className="anton hero-h1" style={{ fontSize: 52, margin: "14px 0 18px", color: "#fff" }}>{c.title}</h1>
+            <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-blue-100)", margin: "0 0 28px", maxWidth: 520 }}>{c.sub}</p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <Button variant="primary" size="lg" href={p("/pager")}>{c.ctaPager}</Button>
+              <WhatsAppButton variant="outline" size="lg" onDark>{c.ctaWhats}</WhatsAppButton>
+            </div>
+          </div>
+
+          <div style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.18)", borderRadius: "var(--radius-lg)", padding: 26 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 22 }}>
+              <div style={{ display: "flex" }}>
+                {HERO_AVATARS.map((slug, i) => {
+                  const photo = findTestimonialPhoto(slug);
+                  return (
+                    <div
+                      key={slug}
+                      style={{
+                        width: 44,
+                        height: 44,
+                        borderRadius: "50%",
+                        overflow: "hidden",
+                        position: "relative",
+                        flex: "none",
+                        border: "2px solid var(--voids-blue)",
+                        marginLeft: i === 0 ? 0 : -14,
+                      }}
+                    >
+                      {photo && <Photo src={photo} alt="" ratio="1 / 1" radius="0" sizes="44px" />}
+                    </div>
+                  );
+                })}
+              </div>
+              <span style={{ fontSize: 13.5, fontWeight: 600, color: "#fff" }}>{c.avatarLabel}</span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              {[
+                { value: "4.000+", label: c.stat1Label },
+                { value: "100%", label: c.stat2Label },
+                { value: "10%", label: c.stat3Label },
+              ].map((s) => (
+                <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: "1px solid rgba(255,255,255,.14)", paddingTop: 14 }}>
+                  <span className="anton" style={{ fontSize: 26, color: "#fff", flex: "none" }}>{s.value}</span>
+                  <span style={{ fontSize: 13, color: "var(--voids-blue-100)" }}>{s.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="wrap" style={{ padding: "72px 32px" }}>
-        <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 26px", maxWidth: 700 }}>{c.resourcesIntro}</p>
-        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20 }}>
-          {c.resources.map((r, i) =>
-            r.whats ? (
-              <WhatsAppTrigger key={r.title} className="card card--hoverable" style={{ display: "block", padding: 26 }}>
-                <ResourceCardBody r={r} num={i + 1} />
+        <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.resourcesEyebrow}</span>
+        <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 10px" }}>{c.resourcesTitle}</h2>
+        <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 30px", maxWidth: 700 }}>{c.resourcesIntro}</p>
+        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20, alignItems: "stretch" }}>
+          {c.resources.map((r, i) => {
+            const recommended = i === c.resources.length - 1;
+            const body = <ResourceCardBody r={r} num={i + 1} recommended={recommended} badge={c.resourcesBadge} />;
+            const style: React.CSSProperties = recommended
+              ? { display: "flex", flexDirection: "column", padding: 26, background: "var(--voids-purple)", color: "#fff", position: "relative" }
+              : { display: "flex", flexDirection: "column", padding: 26, textDecoration: "none" };
+            return r.whats ? (
+              <WhatsAppTrigger key={r.title} className={recommended ? "card" : "card card--hoverable"} style={style}>
+                {body}
               </WhatsAppTrigger>
             ) : (
-              <a key={r.title} href={p(r.path!)} className="card card--hoverable" style={{ display: "block", padding: 26, textDecoration: "none" }}>
-                <ResourceCardBody r={r} num={i + 1} />
+              <a key={r.title} href={p(r.path!)} className={recommended ? "card" : "card card--hoverable"} style={style}>
+                {body}
               </a>
-            )
-          )}
+            );
+          })}
         </div>
       </section>
 
@@ -298,16 +370,36 @@ export function TalentPage({ lang }: { lang: Lang }) {
   );
 }
 
-function ResourceCardBody({ r, num }: { r: { tier: string; title: string; text: string; cta: string }; num: number }) {
+function ResourceCardBody({
+  r,
+  num,
+  recommended,
+  badge,
+}: {
+  r: { tier: string; title: string; text: string; cta: string };
+  num: number;
+  recommended: boolean;
+  badge: string;
+}) {
+  const mutedColor = recommended ? "var(--voids-purple-100)" : "var(--voids-ink-muted)";
+  const numColor = recommended ? "rgba(255,255,255,.55)" : "var(--voids-blue-200)";
+  const ctaColor = recommended ? "#fff" : "var(--voids-blue)";
   return (
     <>
-      <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 6 }}>
-        <span className="anton" style={{ fontSize: 18, color: "var(--voids-blue-200)" }}>0{num}</span>
-        <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".04em", textTransform: "uppercase", color: "var(--voids-ink-muted)" }}>{r.tier}</span>
+      <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 8, marginBottom: 6 }}>
+        <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
+          <span className="anton" style={{ fontSize: 18, color: numColor }}>0{num}</span>
+          <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".04em", textTransform: "uppercase", color: mutedColor }}>{r.tier}</span>
+        </div>
+        {recommended && (
+          <span style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: ".03em", textTransform: "uppercase", color: "var(--voids-purple)", background: "#fff", borderRadius: 999, padding: "4px 9px", whiteSpace: "nowrap" }}>
+            {badge}
+          </span>
+        )}
       </div>
       <div className="anton" style={{ fontSize: 22 }}>{r.title}</div>
-      <p style={{ fontSize: 14, color: "var(--voids-ink-muted)", lineHeight: 1.55, margin: "10px 0 14px" }}>{r.text}</p>
-      <span style={{ fontSize: 13.5, fontWeight: 600, color: "var(--voids-blue)" }}>{r.cta} →</span>
+      <p style={{ fontSize: 14, color: mutedColor, lineHeight: 1.55, margin: "10px 0 14px", flex: 1 }}>{r.text}</p>
+      <span style={{ fontSize: 13.5, fontWeight: 600, color: ctaColor }}>{r.cta} →</span>
     </>
   );
 }

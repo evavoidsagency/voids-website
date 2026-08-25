@@ -16,7 +16,7 @@ const COPY: Record<
 > = {
   nl: {
     eyebrow: "Advies & employer branding",
-    title: "BOUW AAN EEN MERK WAAR STUDENTEN VOOR KIEZEN.",
+    title: "BOUW AAN EEN MERK\nWAAR STUDENTEN VOOR KIEZEN.",
     sub: "We denken mee over je hele junior-strategie: van hoe je nu al werft tot hoe je jong talent na de eerste maanden vasthoudt.",
     scopeTitle: "WAAR WE MEE HELPEN",
     scope: [
@@ -75,7 +75,7 @@ export function EmployerBrandingPage({ lang }: { lang: Lang }) {
     <>
       <section className="wrap" style={{ padding: "64px 32px 40px" }}>
         <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.eyebrow}</span>
-        <h1 className="anton hero-h1" style={{ fontSize: 44, margin: "12px 0 12px", maxWidth: 820 }}>{c.title}</h1>
+        <h1 className="anton hero-h1" style={{ fontSize: 44, margin: "12px 0 12px", maxWidth: 820, whiteSpace: "pre-line" }}>{c.title}</h1>
         <p style={{ fontSize: 16, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 620, textWrap: "balance" }}>{c.sub}</p>
       </section>
 
