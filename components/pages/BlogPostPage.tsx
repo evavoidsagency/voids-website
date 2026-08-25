@@ -13,6 +13,11 @@ const AUD_LABEL: Record<Lang, Record<BlogAud, string>> = {
 
 const BACK_LABEL: Record<Lang, string> = { nl: "← Terug naar blog", en: "← Back to blog" };
 
+const LEGAL_NOTICE: Record<Lang, string> = {
+  nl: "Dit artikel is algemene informatie, geen juridisch, fiscaal of financieel advies. Regels wijzigen en je situatie kan afwijken: check de actuele regels bij een officiële bron (bijv. Rijksoverheid, Belastingdienst, Juridisch Loket) of raadpleeg een adviseur voordat je erop vertrouwt.",
+  en: "This article is general information, not legal, tax or financial advice. Rules change and your situation may differ: check the current rules with an official source or a qualified advisor before relying on it.",
+};
+
 const CTA_COPY: Record<Lang, Record<BlogAud, { title: string; sub: string }>> = {
   nl: {
     bedrijf: {
@@ -146,6 +151,23 @@ export function BlogPostPage({ lang, slug }: { lang: Lang; slug: string }) {
             ) : null}
           </div>
         ))}
+
+        {post.legalTopic && (
+          <div
+            style={{
+              marginTop: 20,
+              borderRadius: "var(--radius-md)",
+              border: "1px solid var(--border-hairline)",
+              background: "var(--voids-beige)",
+              padding: "14px 16px",
+              fontSize: 12.5,
+              lineHeight: 1.55,
+              color: "var(--voids-ink-muted)",
+            }}
+          >
+            {LEGAL_NOTICE[lang]}
+          </div>
+        )}
       </section>
 
       <section className="wrap narrow" style={{ padding: "0 32px 56px" }}>

@@ -15,6 +15,8 @@ export type BlogPost = {
   excerpt: Record<Lang, string>;
   read: Record<Lang, string>;
   body: Record<Lang, BlogBlock[]>;
+  /** True when the post states legal, labour-law, tax or benefits specifics — shows a "not legal advice" notice. */
+  legalTopic?: boolean;
 };
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -22,6 +24,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "wat-is-een-werkstudent",
     aud: "beide",
+    legalTopic: true,
     photo: "/photography/blog-1.jpg",
     tag: { nl: "Uitgelegd", en: "Explained" },
     title: {
@@ -79,7 +82,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
         {
           h2: "Waarom dit VOIDS' vertrekpunt is",
-          p: "Bij VOIDS geven we zelf de voorkeur aan werkstudenten boven stagiairs, juist omdat het een eerlijkere en stabielere vorm van werkervaring oplevert: een echt salaris in plaats van een vergoeding, en een rol die lang genoeg duurt om er daadwerkelijk iets aan over te houden. Plaatsen we toch een stagiair, dan hanteren we minimaal de wettelijke stagevergoeding-norm van de overheid: €800 bruto per maand fulltime. Werk dat ertoe doet, verdient een salaris dat ertoe doet, ongeacht wat er op iemands cv staat.",
+          p: "Bij VOIDS geven we zelf de voorkeur aan werkstudenten boven stagiairs, juist omdat het een eerlijkere en stabielere vorm van werkervaring oplevert: een echt salaris in plaats van een vergoeding, en een rol die lang genoeg duurt om er daadwerkelijk iets aan over te houden. Plaatsen we toch een stagiair, dan hanteren we minimaal de door de overheid aanbevolen stagevergoeding-norm: €800 bruto per maand fulltime. Werk dat ertoe doet, verdient een salaris dat ertoe doet, ongeacht wat er op iemands cv staat.",
         },
       ],
       en: [
@@ -137,6 +140,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "werkstudent-stagiair-of-starter",
     aud: "bedrijf",
+    legalTopic: true,
     photo: "/photography/blog-2.jpg",
     tag: { nl: "Vergelijking", en: "Comparison" },
     title: {
@@ -329,6 +333,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "eerlijk-uurtarief-werkstudent",
     aud: "bedrijf",
+    legalTopic: true,
     photo: "/photography/blog-4.jpg",
     tag: { nl: "Fair pay", en: "Fair pay" },
     title: {
@@ -371,7 +376,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
         {
           h2: "Waarom VOIDS hier scherp op is",
-          p: "Toegang tot relevante werkervaring hoort niet afhankelijk te zijn van wie het zich kan veroorloven om voor weinig te werken. Daarom geven we bij VOIDS zelf de voorkeur aan werkstudentschappen boven stages, en houden we bij geplaatste stages minimaal de wettelijke stagevergoeding-norm van €800 bruto per maand fulltime aan als ondergrens.",
+          p: "Toegang tot relevante werkervaring hoort niet afhankelijk te zijn van wie het zich kan veroorloven om voor weinig te werken. Daarom geven we bij VOIDS zelf de voorkeur aan werkstudentschappen boven stages, en houden we bij geplaatste stages minimaal de aanbevolen stagevergoeding-norm van de overheid van €800 bruto per maand fulltime aan als ondergrens.",
         },
       ],
       en: [
@@ -746,7 +751,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "werkstudentovereenkomst-wat-moet-erin",
     aud: "beide",
-    photo: "/photography/blog-1.jpg",
+    legalTopic: true,
+    photo: "/photography/mariselle-1.jpg",
     tag: { nl: "Juridisch", en: "Legal" },
     title: {
       nl: "De werkstudentovereenkomst: wat moet er (juridisch) in staan?",
@@ -843,7 +849,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "werkstudent-duitsland-vs-nederland",
     aud: "bedrijf",
-    photo: "/photography/blog-2.jpg",
+    legalTopic: true,
+    photo: "/photography/mariselle-2.jpg",
     tag: { nl: "Internationaal", en: "International" },
     title: {
       nl: "Werkstudenten in Duitsland vs. Nederland: wat kunnen we leren?",
@@ -930,7 +937,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "werkstudent-onboarden-eerste-maand",
     aud: "bedrijf",
-    photo: "/photography/blog-3.jpg",
+    photo: "/photography/mariselle-3.jpg",
     tag: { nl: "Onboarding", en: "Onboarding" },
     title: {
       nl: "Zo onboard je een werkstudent goed in de eerste maand",
@@ -1015,7 +1022,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "red-flags-bij-een-jobaanbod",
     aud: "talent",
-    photo: "/photography/blog-4.jpg",
+    photo: "/photography/mariselle-4.jpg",
     tag: { nl: "Red flags", en: "Red flags" },
     title: {
       nl: "5 red flags die je als student serieus moet nemen bij een aanbod",
@@ -1092,7 +1099,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "eerste-junior-hire-founders",
     aud: "bedrijf",
-    photo: "/photography/blog-5.jpg",
+    photo: "/photography/mariselle-5.jpg",
     tag: { nl: "Founders", en: "Founders" },
     title: {
       nl: "Je eerste junior hire: waarom founders te lang wachten",
@@ -1187,7 +1194,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "bijbaan-of-relevante-ervaring",
     aud: "talent",
-    photo: "/photography/blog-6.jpg",
+    legalTopic: true,
+    photo: "/photography/mariselle-6.jpg",
     tag: { nl: "Arbeidsmarkt", en: "Labour market" },
     title: {
       nl: "Bijbaan of relevante werkervaring: wat telt zwaarder voor je cv?",
@@ -1280,7 +1288,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "proeftijd-werkstudentcontract",
     aud: "beide",
-    photo: "/photography/blog-7.jpg",
+    legalTopic: true,
+    photo: "/photography/mariselle-7.jpg",
     tag: { nl: "Juridisch", en: "Legal" },
     title: {
       nl: "Proeftijd bij een werkstudentcontract: wat mag wel en wat niet?",
@@ -1367,7 +1376,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ziek-als-werkstudent",
     aud: "talent",
-    photo: "/photography/blog-8.jpg",
+    legalTopic: true,
+    photo: "/photography/mariselle-8.jpg",
     tag: { nl: "Juridisch", en: "Legal" },
     title: {
       nl: "Ziek als werkstudent: heb je recht op doorbetaling?",
@@ -1444,7 +1454,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "vakantiedagen-opbouwen-als-werkstudent",
     aud: "talent",
-    photo: "/photography/blog-1.jpg",
+    legalTopic: true,
+    photo: "/photography/mariselle-9.jpg",
     tag: { nl: "Juridisch", en: "Legal" },
     title: {
       nl: "Vakantiedagen opbouwen als werkstudent: hoe werkt dat?",
@@ -1521,7 +1532,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "studiefinanciering-en-werken-combineren",
     aud: "talent",
-    photo: "/photography/blog-2.jpg",
+    legalTopic: true,
+    photo: "/photography/mariselle-10.jpg",
     tag: { nl: "Uitgelegd", en: "Explained" },
     title: {
       nl: "Studiefinanciering en werken combineren: wat betekent dat voor belasting en toeslagen?",
@@ -1539,7 +1551,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
         {
           h2: "Raakt bijverdienen je studiefinanciering zelf?",
-          p: "Onder het huidige leenstelsel, dat sinds 2015 geldt, is er geen algemene bijverdiengrens meer die je basisbeurs of lening beïnvloedt: je mag in principe verdienen wat je verdient, zonder dat dit je studiefinanciering zelf raakt. Val je nog onder het oude stelsel met een prestatiebeurs, dan gelden mogelijk andere regels, dus check dat specifiek bij DUO als dat op jou van toepassing is.",
+          p: "Onder het huidige stelsel van studiefinanciering geldt er geen algemene bijverdiengrens meer die je basisbeurs of lening beïnvloedt: je mag in principe verdienen wat je verdient, zonder dat dit je studiefinanciering zelf raakt. De regels rond studiefinanciering zijn de afgelopen jaren wel veranderd, dus check bij twijfel altijd de actuele situatie bij DUO, zeker als je nog onder een ouder stelsel met een prestatiebeurs valt.",
         },
         {
           h2: "Betaal je belasting over je loon als werkstudent?",
@@ -1572,7 +1584,7 @@ export const BLOG_POSTS: BlogPost[] = [
         },
         {
           h2: "Does earning extra income affect your student finance itself?",
-          p: "Under the current loan-based system, in place since 2015, there's no longer a general earnings cap that affects your basic grant or loan: in principle you can earn what you earn without it touching your student finance itself. If you still fall under the older performance-based grant system, different rules may apply, so check that specifically with DUO if it's relevant to you.",
+          p: "Under the current student finance system, there's no longer a general earnings cap that affects your basic grant or loan: in principle you can earn what you earn without it touching your student finance itself. The rules around student finance have changed a few times in recent years, so if in doubt, always check the current situation with DUO, especially if you still fall under an older performance-based grant system.",
         },
         {
           h2: "Do you pay tax on your wage as a working student?",
@@ -1606,7 +1618,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "zzp-of-werkstudent",
     aud: "beide",
-    photo: "/photography/blog-3.jpg",
+    legalTopic: true,
+    photo: "/photography/blog-1.jpg",
     tag: { nl: "Vergelijking", en: "Comparison" },
     title: {
       nl: "ZZP of werkstudent: wat is het verschil, en wat past bij jou?",
@@ -1691,7 +1704,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "nulurencontract-vs-werkstudentcontract",
     aud: "beide",
-    photo: "/photography/blog-4.jpg",
+    legalTopic: true,
+    photo: "/photography/blog-2.jpg",
     tag: { nl: "Vergelijking", en: "Comparison" },
     title: {
       nl: "0-urencontract vs. werkstudentcontract: wat is het verschil?",
@@ -1776,7 +1790,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "hoeveel-uur-mag-een-werkstudent-maximaal-werken",
     aud: "beide",
-    photo: "/photography/blog-5.jpg",
+    legalTopic: true,
+    photo: "/photography/blog-3.jpg",
     tag: { nl: "Uitgelegd", en: "Explained" },
     title: {
       nl: "Hoeveel uur mag een werkstudent maximaal werken?",
@@ -1853,7 +1868,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "wat-verdient-een-werkstudent-gemiddeld",
     aud: "talent",
-    photo: "/photography/blog-6.jpg",
+    legalTopic: true,
+    photo: "/photography/blog-4.jpg",
     tag: { nl: "Uitgelegd", en: "Explained" },
     title: {
       nl: "Wat verdient een werkstudent gemiddeld?",
@@ -1940,7 +1956,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "werkstudent-worden-zonder-ervaring",
     aud: "talent",
-    photo: "/photography/blog-7.jpg",
+    photo: "/photography/blog-5.jpg",
     tag: { nl: "Gids", en: "Guide" },
     title: {
       nl: "Werkstudent worden zonder ervaring: kan dat?",
@@ -2027,7 +2043,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "hoe-kies-je-een-sector-als-student",
     aud: "talent",
-    photo: "/photography/blog-8.jpg",
+    photo: "/photography/blog-6.jpg",
     tag: { nl: "Carrière", en: "Career" },
     title: {
       nl: "Hoe kies je een sector als je nog geen idee hebt wat je wilt?",
@@ -2114,7 +2130,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "bedrijfscultuur-herkennen-in-een-sollicitatiegesprek",
     aud: "talent",
-    photo: "/photography/blog-1.jpg",
+    photo: "/photography/blog-7.jpg",
     tag: { nl: "Gids", en: "Guide" },
     title: {
       nl: "Hoe herken je bedrijfscultuur tijdens een sollicitatiegesprek?",
@@ -2201,7 +2217,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "van-werkstudent-naar-vaste-baan",
     aud: "talent",
-    photo: "/photography/blog-2.jpg",
+    photo: "/photography/blog-8.jpg",
     tag: { nl: "Carrière", en: "Career" },
     title: {
       nl: "Van werkstudent naar vaste baan: hoe pak je die overstap aan?",
@@ -2288,7 +2304,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "kosten-werkstudent-vs-starter",
     aud: "bedrijf",
-    photo: "/photography/blog-3.jpg",
+    legalTopic: true,
+    photo: "/photography/mariselle-1.jpg",
     tag: { nl: "Werkgever", en: "Employer" },
     title: {
       nl: "Wat kost een werkstudent vergeleken met een fulltime starter?",
@@ -2375,7 +2392,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "vacaturetekst-die-junior-talent-aanspreekt",
     aud: "bedrijf",
-    photo: "/photography/blog-4.jpg",
+    photo: "/photography/mariselle-2.jpg",
     tag: { nl: "Gids", en: "Guide" },
     title: {
       nl: "Zo schrijf je een vacaturetekst die junior talent echt aanspreekt",
@@ -2462,7 +2479,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "werkstudenten-inzetten-tijdens-een-groeifase",
     aud: "bedrijf",
-    photo: "/photography/blog-5.jpg",
+    photo: "/photography/mariselle-3.jpg",
     tag: { nl: "Werkgever", en: "Employer" },
     title: {
       nl: "Werkstudenten inzetten tijdens een groeifase: hoe pak je dat aan?",
@@ -2549,7 +2566,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "employer-branding-voor-gen-z",
     aud: "bedrijf",
-    photo: "/photography/blog-6.jpg",
+    photo: "/photography/mariselle-4.jpg",
     tag: { nl: "Gen Z", en: "Gen Z" },
     title: {
       nl: "Employer branding voor Gen Z: waar let deze generatie op?",
@@ -2636,7 +2653,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "diversiteit-in-junior-recruitment",
     aud: "bedrijf",
-    photo: "/photography/blog-7.jpg",
+    photo: "/photography/mariselle-5.jpg",
     tag: { nl: "Werkgever", en: "Employer" },
     title: {
       nl: "Diversiteit in junior recruitment: hoe voorkom je dat je steeds dezelfde kandidaten aantrekt?",
@@ -2723,7 +2740,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "wanneer-is-het-tijd-voor-een-tweede-werkstudent",
     aud: "bedrijf",
-    photo: "/photography/blog-8.jpg",
+    photo: "/photography/mariselle-6.jpg",
     tag: { nl: "Werkgever", en: "Employer" },
     title: {
       nl: "Wanneer is het tijd voor een tweede werkstudent?",
@@ -2810,7 +2827,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "trends-nederlandse-arbeidsmarkt-starters",
     aud: "beide",
-    photo: "/photography/blog-1.jpg",
+    photo: "/photography/mariselle-7.jpg",
     tag: { nl: "Trends", en: "Trends" },
     title: {
       nl: "Trends op de Nederlandse arbeidsmarkt voor starters en Gen Z",
@@ -2897,7 +2914,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "remote-hybride-werken-als-werkstudent",
     aud: "beide",
-    photo: "/photography/blog-2.jpg",
+    photo: "/photography/mariselle-8.jpg",
     tag: { nl: "Uitgelegd", en: "Explained" },
     title: {
       nl: "Remote of hybride werken als werkstudent: wat is realistisch?",
