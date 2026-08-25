@@ -6,7 +6,7 @@ export const PROCESS: Record<Lang, { num: string; title: string; text: string; w
     {
       num: "02",
       title: "Sourcing, binnen en buiten de community",
-      text: "We zoeken actief binnen onze community van 4.000+ studenten én daarbuiten, onder andere via studieverenigingen, om zoveel mogelijk geschikte kandidaten te bereiken.",
+      text: "We zoeken actief binnen onze community van 4.000+ studenten, via ons bredere netwerk van samenwerkingspartners, en daarbuiten via studieverenigingen, om zoveel mogelijk geschikte kandidaten te bereiken.",
       when: "Dag 1-7",
     },
     { num: "03", title: "Voorselectie & check", text: "Een recruiter beoordeelt elke match handmatig. Alleen de sterkste gaan door.", when: "Dag 8-14" },
@@ -24,7 +24,7 @@ export const PROCESS: Record<Lang, { num: string; title: string; text: string; w
     {
       num: "02",
       title: "Sourcing, inside and outside our community",
-      text: "We search actively across our 4,000+ student community and beyond, including through partnerships with study associations, to reach as many suitable candidates as possible.",
+      text: "We search actively across our 4,000+ student community, our wider network of partner organisations, and beyond through partnerships with study associations, to reach as many suitable candidates as possible.",
       when: "Day 1-7",
     },
     { num: "03", title: "Pre-selection & review", text: "A recruiter reviews every match personally. Only the strongest make the cut.", when: "Day 8-14" },
@@ -40,8 +40,8 @@ export const PROCESS: Record<Lang, { num: string; title: string; text: string; w
 };
 
 export const ROLE_TYPES: Record<Lang, string[]> = {
-  nl: ["Business development", "Sales", "Marketing", "Communicatie", "Finance", "Legal", "Founder's associate", "Operations", "en meer"],
-  en: ["Business development", "Sales", "Marketing", "Communications", "Finance", "Legal", "Founder's associate", "Operations", "and more"],
+  nl: ["Business development", "Sales", "Marketing", "Communicatie", "Data", "AI & automatisering", "Finance", "Legal", "Founder's associate", "Operations", "en meer"],
+  en: ["Business development", "Sales", "Marketing", "Communications", "Data", "AI & automation", "Finance", "Legal", "Founder's associate", "Operations", "and more"],
 };
 
 export const WHY_WS: Record<Lang, { title: string; text: string }[]> = {
@@ -61,13 +61,11 @@ export const BENCHMARK: Record<Lang, { label: string; value: string; src: string
   nl: [
     { label: "Werkstudent · mediaan uurtarief", value: "€ 16–24", src: "Indicatie marktdata" },
     { label: "Beschikbaarheid juniors", value: "Hoog na tentamenperiodes", src: "" },
-    { label: "Werkstudentmodel in Duitsland", value: "Al standaard", src: "" },
     { label: "Onze focus", value: "Betaalde werkstudentrollen", src: "" },
   ],
   en: [
     { label: "Working student · median hourly rate", value: "€ 16–24", src: "Market-data estimate" },
     { label: "Junior availability", value: "High after exam season", src: "" },
-    { label: "Working-student model in Germany", value: "Already the norm", src: "" },
     { label: "Our focus", value: "Paid working-student roles", src: "" },
   ],
 };

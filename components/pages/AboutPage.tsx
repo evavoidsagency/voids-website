@@ -1,7 +1,8 @@
+import Link from "next/link";
 import { Photo } from "@/components/ui/Photo";
 import { ContactForm } from "@/components/pages/ContactForm";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
-import { SOCIALS, type Lang } from "@/lib/i18n/common";
+import { SOCIALS, localePath, type Lang } from "@/lib/i18n/common";
 import { TEAM } from "@/lib/content/team";
 import { findTeamPhoto } from "@/lib/logos";
 
@@ -14,7 +15,7 @@ const COPY: Record<
     p2: string;
     whatEyebrow: string;
     whatTitle: string;
-    whatCards: { title: string; text: string }[];
+    whatCards: { title: string; text: string; path?: string; cta?: string }[];
     foundersAlt: string;
     foundersPending: string;
     teamTitle: string;
@@ -39,7 +40,9 @@ const COPY: Record<
       },
       {
         title: "Community & jobboard",
-        text: "4.000+ studenten en starters in onze WhatsApp-community, plus een jobboard waarmee je vacatures rechtstreeks onder hun aandacht brengt.",
+        text: "Wil je zelf actief werven? Zet je vacature rechtstreeks onder de aandacht van 4.000+ studenten en starters in onze WhatsApp-community en op ons jobboard, naast onze werving & selectie-dienst.",
+        path: "/companies",
+        cta: "Bekijk de opties →",
       },
       {
         title: "Advies & employer branding",
@@ -69,7 +72,9 @@ const COPY: Record<
       },
       {
         title: "Community & job board",
-        text: "4,000+ students and starters in our WhatsApp community, plus a job board that puts your vacancies directly in front of them.",
+        text: "Want to recruit actively yourself? Put your vacancy directly in front of 4,000+ students and starters in our WhatsApp community and on our job board, alongside our recruitment & selection service.",
+        path: "/companies",
+        cta: "See the options →",
       },
       {
         title: "Advice & employer branding",
@@ -128,14 +133,20 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, maxWidth: 980 }}>
             {c.whatCards.map((card, i) => {
               const accent = i === 1 ? "blue" : "purple";
+              const accentColor = accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)";
               return (
                 <div
                   key={card.title}
                   className={`card card--hoverable card--accent-${accent}`}
-                  style={{ padding: 24 }}
+                  style={{ padding: 24, display: "flex", flexDirection: "column" }}
                 >
-                  <div className="anton" style={{ fontSize: 18, marginBottom: 10, color: accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)" }}>{card.title}</div>
-                  <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{card.text}</p>
+                  <div className="anton" style={{ fontSize: 18, marginBottom: 10, color: accentColor }}>{card.title}</div>
+                  <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{card.text}</p>
+                  {card.path && card.cta && (
+                    <Link href={localePath(lang, card.path)} style={{ fontSize: 13, fontWeight: 600, color: accentColor, marginTop: 14 }}>
+                      {card.cta}
+                    </Link>
+                  )}
                 </div>
               );
             })}

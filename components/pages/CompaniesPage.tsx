@@ -17,6 +17,7 @@ const COPY: Record<
     rolesIntro: string;
     whyWsEyebrow: string;
     whyWsTitle: string;
+    whyWsIntro: string;
     processTitle: string;
     processSub: string;
     calcEyebrow: string;
@@ -40,13 +41,14 @@ const COPY: Record<
   nl: {
     eyebrow: "Voor bedrijven",
     title: "EEN SHORTLIST,\nGEEN CV-STAPEL.",
-    sub: "Wij nemen het hele wervingsproces uit handen, van briefing tot getekende match. Jullie beoordelen alleen nog 2-4 voorgeselecteerde kandidaten, gematcht op cultuur en groeifase, vaak binnen enkele weken.",
+    sub: "Wij nemen het hele wervingsproces uit handen, van briefing tot getekende match, en leveren alleen kandidaten die een recruiter zelf grondig heeft beoordeeld. Jullie bekijken alleen nog 2-4 voorgeselecteerde kandidaten, gematcht op cultuur en groeifase, gemiddeld binnen 30 dagen.",
     ctaIntro: "Plan een kennismaking",
     ctaPricing: "Bekijk tarieven",
     rolesEyebrow: "Soorten rollen",
     rolesIntro: "Onze werkstudenten en stagiairs versterken vooral de commerciële en groeigerichte kant van je organisatie. Een greep uit de rollen die we invullen:",
-    whyWsEyebrow: "Waarom werkstudent",
-    whyWsTitle: "ONZE VOORKEUR, EN WAAROM.",
+    whyWsEyebrow: "Onze hoofddienst",
+    whyWsTitle: "WAAROM WIJ ALTIJD EERST NAAR EEN WERKSTUDENT KIJKEN.",
+    whyWsIntro: "Werkstudenten invullen is niet zomaar één van de dingen die we doen: het is waar VOIDS voor staat en verreweg de meeste plaatsingen die we doen. Voor de meeste vragen is het ook simpelweg de beste oplossing, hieronder waarom.",
     processTitle: "HET HELE PROCES, UIT HANDEN.",
     processSub: "Zes stappen. Wij doen het werk, jullie beslissen.",
     calcEyebrow: "Voorbeeldsom",
@@ -56,7 +58,7 @@ const COPY: Record<
     benchmarkTitle: "JUNIOR-MARKT IN ÉÉN OOGOPSLAG",
     benchmarkSub: "Op basis van arbeidsmarktdata, geen verkooppraatjes.",
     checklistTitle: "STAGIAIR VS. WERKSTUDENT",
-    checklistSub: "Snelle checklist: wat past bij je vraag?",
+    checklistSub: "Het kernverschil: een stagiair leert vooral een vak, een werkstudent draait structureel mee als volwaardig teamlid. Snelle checklist, wat past bij je vraag?",
     internHeading: "Kies een stagiair als…",
     internBullets: ["er een leerdoel/opdracht is", "je tijd hebt voor begeleiding", "het project 3–6 mnd duurt"],
     wsHeading: "Kies een werkstudent als…",
@@ -73,13 +75,14 @@ const COPY: Record<
   en: {
     eyebrow: "For companies",
     title: "A SHORTLIST,\nNOT A CV PILE.",
-    sub: "We take the entire hiring process off your hands, from briefing to signed match. You only review 2-4 pre-selected candidates, matched on culture and growth stage, often within a few weeks.",
+    sub: "We take the entire hiring process off your hands, from briefing to signed match, and only put forward candidates a recruiter has personally and thoroughly reviewed. You only review 2-4 pre-selected candidates, matched on culture and growth stage, on average within 30 days.",
     ctaIntro: "Book an intro call",
     ctaPricing: "View pricing",
     rolesEyebrow: "Types of roles",
     rolesIntro: "Our working students and interns mainly strengthen the commercial and growth side of your organisation. A selection of the roles we fill:",
-    whyWsEyebrow: "Why a working student",
-    whyWsTitle: "OUR PREFERENCE, AND WHY.",
+    whyWsEyebrow: "Our core service",
+    whyWsTitle: "WHY WE ALWAYS LOOK AT A WORKING STUDENT FIRST.",
+    whyWsIntro: "Filling working-student roles isn't just one of the things we do: it's what VOIDS stands for, and by far the majority of the placements we make. For most hiring needs it's simply the best fit too, here's why.",
     processTitle: "WE RUN THE WHOLE PROCESS.",
     processSub: "Six steps. We do the work, you decide.",
     calcEyebrow: "Example calculation",
@@ -89,7 +92,7 @@ const COPY: Record<
     benchmarkTitle: "THE JUNIOR MARKET AT A GLANCE",
     benchmarkSub: "Based on labour-market data, no sales talk.",
     checklistTitle: "INTERN VS. WORKING STUDENT",
-    checklistSub: "Quick checklist: what fits your situation?",
+    checklistSub: "The core difference: an intern is mainly there to learn a trade, a working student runs structurally as a full team member. Quick checklist, what fits your situation?",
     internHeading: "Choose an intern if…",
     internBullets: ["there’s a clear learning goal or project", "you have time for guidance", "the project runs 3–6 months"],
     wsHeading: "Choose a working student if…",
@@ -146,6 +149,22 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
               </span>
             );
           })}
+        </div>
+      </section>
+
+      <section style={{ background: "var(--voids-purple-100)", borderTop: "1px solid var(--border-hairline)", borderBottom: "1px solid var(--border-hairline)" }}>
+        <div className="wrap" style={{ padding: "56px 32px" }}>
+          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyWsEyebrow}</span>
+          <h2 className="anton section-h2" style={{ fontSize: 34, margin: "8px 0 14px", maxWidth: 720 }}>{c.whyWsTitle}</h2>
+          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 640 }}>{c.whyWsIntro}</p>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20 }}>
+            {WHY_WS[lang].map((w) => (
+              <div key={w.title} className="card card--accent-purple" style={{ padding: 22 }}>
+                <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 8 }}>{w.title}</div>
+                <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{w.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -222,21 +241,6 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
               <strong style={{ color: "var(--voids-ink)" }}>{c.prefPara[1]}</strong>
               {c.prefPara[2]}
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section style={{ background: "#fff", borderTop: "1px solid var(--border-hairline)" }}>
-        <div className="wrap" style={{ padding: "64px 32px" }}>
-          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyWsEyebrow}</span>
-          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 26px" }}>{c.whyWsTitle}</h2>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20 }}>
-            {WHY_WS[lang].map((w) => (
-              <div key={w.title} className="card card--accent-purple" style={{ padding: 22 }}>
-                <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 8 }}>{w.title}</div>
-                <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{w.text}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
