@@ -44,13 +44,15 @@ export const ROLE_TYPES: Record<Lang, string[]> = {
   en: ["Business development", "Sales", "Marketing", "Communications", "Data", "AI & automation", "Finance", "Legal", "Founder's associate", "Operations", "and more"],
 };
 
-export const WHY_WS: Record<Lang, { title: string; text: string; icon: "flex" | "spark" }[]> = {
+export const WHY_WS: Record<Lang, { title: string; text: string; icon: "flex" | "spark" | "duration" }[]> = {
   nl: [
     { title: "Vs. een starter", text: "Flexibeler en kostenefficiënter dan meteen een fulltime starter aannemen, zonder de drempel van een vast contract, terwijl je iemand al leert kennen vóór een eventueel vast aanbod.", icon: "flex" },
+    { title: "Vs. een stagiair", text: "Blijft langer en groeit mee: een stagiair werkt aan een leerdoel van een paar maanden, een werkstudent draait structureel mee en kan doorgroeien binnen het team.", icon: "duration" },
     { title: "Extra gemotiveerd", text: "Het werk telt mee voor hun studie én hun cv, niet alleen als bijbaantje: dat merk je terug in de betrokkenheid.", icon: "spark" },
   ],
   en: [
     { title: "Vs. a starter", text: "More flexible and more cost-efficient than hiring a full-time starter right away, no fixed-contract threshold, while you get to know someone before any permanent offer.", icon: "flex" },
+    { title: "Vs. an intern", text: "Stays longer and grows with your team: an intern works toward a few months' learning goal, a working student runs structurally and can grow within the role.", icon: "duration" },
     { title: "Extra motivated", text: "The work counts toward their studies and their CV, not just a side job: that shows up in how engaged they are.", icon: "spark" },
   ],
 };

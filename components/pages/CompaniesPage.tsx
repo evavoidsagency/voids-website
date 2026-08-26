@@ -175,7 +175,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
   return (
     <>
       <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
-        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "start", padding: "64px 32px 70px" }}>
+        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "center", padding: "64px 32px 70px" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
             <h1 className="anton hero-h1" style={{ fontSize: 50, margin: "14px 0 18px", color: "#fff", whiteSpace: "pre-line" }}>{c.title}</h1>
@@ -186,7 +186,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
             </div>
           </div>
 
-          <div style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.18)", borderRadius: "var(--radius-lg)", padding: 26, marginTop: 38 }}>
+          <div style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.18)", borderRadius: "var(--radius-lg)", padding: 26 }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               {c.heroStats.map((s) => (
                 <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: "1px solid rgba(255,255,255,.14)", paddingTop: 14 }}>
@@ -264,10 +264,10 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyWsEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "8px 0 14px", maxWidth: 860 }}>{c.whyWsTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 860 }}>{c.whyWsIntro}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20, marginBottom: 32, maxWidth: 1040 }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, marginBottom: 32, maxWidth: 1040 }}>
             {WHY_WS[lang].map((w) => (
               <div key={w.title} className="card card--accent-purple" style={{ padding: 22 }}>
-                {w.icon === "flex" ? <SwitchIcon /> : <SparkIcon />}
+                {w.icon === "flex" ? <SwitchIcon /> : w.icon === "duration" ? <DurationIcon /> : <SparkIcon />}
                 <div style={{ fontSize: 15, fontWeight: 600, margin: "10px 0 8px" }}>{w.title}</div>
                 <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{w.text}</p>
               </div>
@@ -342,6 +342,16 @@ function SwitchIcon() {
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
       <path d="M4 10h16l-4-4" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M24 18H8l4 4" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function DurationIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <circle cx="14" cy="15" r="10" stroke="var(--voids-purple)" strokeWidth="2" />
+      <path d="M14 9v6l4 3" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M10 2h8" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }

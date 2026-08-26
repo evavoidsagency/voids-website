@@ -77,40 +77,37 @@ export function EmployerBrandingPage({ lang }: { lang: Lang }) {
 
   return (
     <>
-      <section style={{ background: "var(--voids-beige)" }}>
-        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "start", padding: "64px 32px 56px" }}>
+      <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
+        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "center", padding: "64px 32px 56px" }}>
           <div>
-            <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.eyebrow}</span>
-            <h1 className="anton hero-h1" style={{ fontSize: 40, margin: "12px 0 12px", whiteSpace: "pre-line" }}>{c.title}</h1>
-            <p style={{ fontSize: 16, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 480 }}>{c.sub}</p>
+            <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
+            <h1 className="anton hero-h1" style={{ fontSize: 40, margin: "12px 0 12px", color: "#fff", whiteSpace: "pre-line" }}>{c.title}</h1>
+            <p style={{ fontSize: 16, color: "var(--voids-purple-100)", margin: 0, maxWidth: 480 }}>{c.sub}</p>
           </div>
-
-          <div className="card" style={{ padding: 26, marginTop: 38 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: ".04em", textTransform: "uppercase", color: "var(--voids-ink-muted)", marginBottom: 14 }}>
-              {c.scopeTitle}
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              {c.scope.map((s) => (
-                <div key={s.title} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14.5, fontWeight: 600, color: "var(--voids-ink)" }}>
-                  <span style={{ color: s.accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)" }}>✓</span> {s.title}
-                </div>
-              ))}
-            </div>
-          </div>
+          <Photo src="/photography/employer-branding-band.jpg" alt={c.bandAlt} ratio="4 / 3" />
         </div>
       </section>
 
-      <Photo src="/photography/employer-branding-band.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" sizes="100vw" />
-
       <section style={{ background: "#fff" }}>
-        <div className="wrap" style={{ padding: "44px 32px" }}>
-          <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 20px" }}>{c.scopeTitle}</h2>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, maxWidth: 1040 }}>
+        <div className="wrap" style={{ padding: "56px 32px 64px" }}>
+          <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 30px" }}>{c.scopeTitle}</h2>
+          <div style={{ display: "flex", flexDirection: "column", maxWidth: 860 }}>
             {c.scope.map((s, i) => (
-              <div key={s.title} className={`card card--accent-${s.accent}`} style={{ padding: 22 }}>
-                {i === 0 ? <CompassIcon /> : i === 1 ? <MegaphoneIcon /> : <SproutIcon />}
-                <div className="anton" style={{ fontSize: 17, margin: "10px 0 8px" }}>{s.title}</div>
-                <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{s.text}</p>
+              <div
+                key={s.title}
+                style={{
+                  display: "flex",
+                  gap: 20,
+                  alignItems: "flex-start",
+                  padding: "22px 0",
+                  borderTop: i === 0 ? "none" : "1px solid var(--border-hairline)",
+                }}
+              >
+                <div style={{ flex: "none", marginTop: 2 }}>{i === 0 ? <CompassIcon /> : i === 1 ? <MegaphoneIcon /> : <SproutIcon />}</div>
+                <div>
+                  <div className="anton" style={{ fontSize: 17, marginBottom: 6, color: s.accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)" }}>{s.title}</div>
+                  <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 620 }}>{s.text}</p>
+                </div>
               </div>
             ))}
           </div>
