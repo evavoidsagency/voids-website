@@ -37,12 +37,16 @@ const COPY: Record<
     fitCriteria: { label: string; pct: number }[];
     thrivingEyebrow: string;
     thrivingTitle: string;
+    bandAlt: string;
     referralEyebrow: string;
     referralTitleA: string;
     referralTitleB: string;
     referralText: string;
     referralCta: string;
     referralSteps: string[];
+    finalTitle: string;
+    finalText: string;
+    finalCta: string;
   }
 > = {
   nl: {
@@ -93,6 +97,7 @@ const COPY: Record<
     ],
     thrivingEyebrow: "Talent aan het woord",
     thrivingTitle: "ZO ZIET DAT ER IN DE PRAKTIJK UIT.",
+    bandAlt: "Twee werkstudenten aan het werk",
     referralEyebrow: "Referral",
     referralTitleA: "GOEDE MENSEN KENNEN",
     referralTitleB: "GOEDE MENSEN.",
@@ -104,6 +109,9 @@ const COPY: Record<
       "Je vriend maakt een profiel en wordt gematcht.",
       "Bij een plaatsing ontvang jij een beloning.",
     ],
+    finalTitle: "KLAAR OM GEZIEN TE WORDEN?",
+    finalText: "Beantwoord een paar vragen en je staat op de radar bij bedrijven die bij je passen.",
+    finalCta: "Word lid van de talentpool",
   },
   en: {
     eyebrow: "For talent",
@@ -153,6 +161,7 @@ const COPY: Record<
     ],
     thrivingEyebrow: "Talent in their own words",
     thrivingTitle: "WHAT THAT LOOKS LIKE IN PRACTICE.",
+    bandAlt: "Two working students collaborating",
     referralEyebrow: "Referral",
     referralTitleA: "GOOD PEOPLE KNOW",
     referralTitleB: "GOOD PEOPLE.",
@@ -164,6 +173,9 @@ const COPY: Record<
       "Your friend creates a profile and gets matched.",
       "When they’re placed, you receive a reward.",
     ],
+    finalTitle: "READY TO GET NOTICED?",
+    finalText: "Answer a few questions and you're on the radar of companies that fit you.",
+    finalCta: "Join the talent pool",
   },
 };
 
@@ -251,6 +263,41 @@ export function TalentPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
+      <section style={{ background: "#fff" }}>
+        <div className="wrap g-collapse" style={{ padding: "72px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
+          <div>
+            <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.fitEyebrow}</span>
+            <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px" }}>
+              {c.fitTitleA}
+              <br />
+              {c.fitTitleB}
+            </h2>
+            <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", maxWidth: 460 }}>{c.fitText}</p>
+          </div>
+          <div style={{ background: "var(--voids-beige)", border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", padding: 24 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+              <span style={{ fontWeight: 600, fontSize: 15 }}>{c.fitCardRole}</span>
+              <span className="anton" style={{ fontSize: 26, color: "var(--voids-blue)" }}>92%</span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 11 }}>
+              {c.fitCriteria.map((f) => (
+                <div key={f.label}>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12.5, marginBottom: 4 }}>
+                    <span>{f.label}</span>
+                    <span style={{ color: "var(--voids-blue)", fontWeight: 600 }}>Match</span>
+                  </div>
+                  <div style={{ height: 7, borderRadius: 999, background: "var(--voids-line-soft)" }}>
+                    <div style={{ width: `${f.pct}%`, height: "100%", background: "var(--voids-blue)", borderRadius: 999 }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Photo src="/photography/talent-band.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" sizes="100vw" />
+
       <section style={{ background: "var(--voids-beige)" }}>
         <div className="wrap" style={{ padding: "72px 32px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.thrivingEyebrow}</span>
@@ -330,36 +377,11 @@ export function TalentPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section style={{ background: "#fff" }}>
-        <div className="wrap g-collapse" style={{ padding: "72px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
-          <div>
-            <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.fitEyebrow}</span>
-            <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px" }}>
-              {c.fitTitleA}
-              <br />
-              {c.fitTitleB}
-            </h2>
-            <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", maxWidth: 460 }}>{c.fitText}</p>
-          </div>
-          <div style={{ background: "var(--voids-beige)", border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", padding: 24 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-              <span style={{ fontWeight: 600, fontSize: 15 }}>{c.fitCardRole}</span>
-              <span className="anton" style={{ fontSize: 26, color: "var(--voids-blue)" }}>92%</span>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 11 }}>
-              {c.fitCriteria.map((f) => (
-                <div key={f.label}>
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12.5, marginBottom: 4 }}>
-                    <span>{f.label}</span>
-                    <span style={{ color: "var(--voids-blue)", fontWeight: 600 }}>Match</span>
-                  </div>
-                  <div style={{ height: 7, borderRadius: 999, background: "var(--voids-line-soft)" }}>
-                    <div style={{ width: `${f.pct}%`, height: "100%", background: "var(--voids-blue)", borderRadius: 999 }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+      <section style={{ background: "var(--voids-blue)" }}>
+        <div className="wrap" style={{ padding: "56px 32px", textAlign: "center", color: "#fff" }}>
+          <h2 className="anton section-h2" style={{ fontSize: 38, margin: "0 0 12px", color: "#fff" }}>{c.finalTitle}</h2>
+          <p style={{ fontSize: 16, color: "var(--voids-blue-100)", maxWidth: 480, margin: "0 auto 24px" }}>{c.finalText}</p>
+          <Button variant="secondary" size="lg" href={p("/pager")}>{c.finalCta}</Button>
         </div>
       </section>
     </>
