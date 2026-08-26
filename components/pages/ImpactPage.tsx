@@ -144,7 +144,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.problemEyebrow}</span>
         <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px", maxWidth: 1040 }}>{c.problemTitle}</h2>
         <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 26px", maxWidth: 820 }}>{c.problemIntro}</p>
-        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, maxWidth: 1040 }}>
+        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, maxWidth: 1040, alignItems: "start" }}>
           <div className="card card--hoverable card--accent-blue" style={{ padding: 24 }}>
             <StipendIcon />
             <div className="anton" style={{ fontSize: 18, margin: "14px 0 10px", color: "var(--voids-blue)" }}>{c.card1Title}</div>
@@ -156,7 +156,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
             <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card2Text}</p>
           </div>
         </div>
-        <p style={{ fontSize: 17, fontWeight: 600, lineHeight: 1.55, margin: "22px 0 0", maxWidth: 1040 }}>{c.problemClose}</p>
+        <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "22px 0 0", maxWidth: 1040 }}>{c.problemClose}</p>
       </section>
 
       <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
