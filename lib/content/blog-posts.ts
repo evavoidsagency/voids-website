@@ -25,7 +25,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "wat-is-een-werkstudent",
     aud: "beide",
     legalTopic: true,
-    photo: "/photography/mariselle-6.jpg",
+    photo: "/photography/mariselle-4.jpg",
     tag: { nl: "Uitgelegd", en: "Explained" },
     title: {
       nl: "Wat is een werkstudent, en wat mag je verwachten?",
@@ -141,7 +141,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "werkstudent-stagiair-of-starter",
     aud: "bedrijf",
     legalTopic: true,
-    photo: "/photography/mariselle-5.jpg",
+    photo: "/photography/blog-3.jpg",
     tag: { nl: "Vergelijking", en: "Comparison" },
     title: {
       nl: "Werkstudent, stagiair of starter: wat past bij jouw bedrijf?",
@@ -236,7 +236,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "junior-instroom-die-blijft-plakken",
     aud: "bedrijf",
-    photo: "/photography/blog-5.jpg",
+    photo: "/photography/mariselle-11.jpg",
     tag: { nl: "Werkgever", en: "Employer" },
     title: {
       nl: "Zo bouw je een junior-instroom die blijft plakken",
@@ -334,7 +334,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "eerlijk-uurtarief-werkstudent",
     aud: "bedrijf",
     legalTopic: true,
-    photo: "/photography/mariselle-2.jpg",
+    photo: "/photography/mariselle-10.jpg",
     tag: { nl: "Fair pay", en: "Fair pay" },
     title: {
       nl: "Wat is een eerlijk uurtarief voor een werkstudent?",
@@ -419,7 +419,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "matchprofiel-dat-opvalt",
     aud: "talent",
-    photo: "/photography/blog-6.jpg",
+    photo: "/photography/blog-8.jpg",
     tag: { nl: "Carrière", en: "Career" },
     title: {
       nl: "Zo schrijf je een matchprofiel dat opvalt",
@@ -512,7 +512,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "betaald-werken-naast-je-studie",
     aud: "talent",
-    photo: "/photography/blog-8.jpg",
+    photo: "/photography/blog-7.jpg",
     tag: { nl: "Studie & werk", en: "Study & work" },
     title: {
       nl: "Betaald werken naast je studie: wat levert het op?",
@@ -674,7 +674,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "gen-z-matcht-op-karakter",
     aud: "beide",
-    photo: "/photography/blog-7.jpg",
+    photo: "/photography/blog-4.jpg",
     tag: { nl: "Gen Z", en: "Gen Z" },
     title: {
       nl: "Waarom Gen Z op karakter matcht, niet op functietitel",
@@ -752,7 +752,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "werkstudentovereenkomst-wat-moet-erin",
     aud: "beide",
     legalTopic: true,
-    photo: "/photography/mariselle-3.jpg",
+    photo: "/photography/blog-1.jpg",
     tag: { nl: "Juridisch", en: "Legal" },
     title: {
       nl: "De werkstudentovereenkomst: wat moet er (juridisch) in staan?",
@@ -850,7 +850,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "werkstudent-duitsland-vs-nederland",
     aud: "bedrijf",
     legalTopic: true,
-    photo: "/photography/mariselle-8.jpg",
+    photo: "/photography/mariselle-2.jpg",
     tag: { nl: "Internationaal", en: "International" },
     title: {
       nl: "Werkstudenten in Duitsland vs. Nederland: wat kunnen we leren?",
@@ -937,7 +937,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "werkstudent-onboarden-eerste-maand",
     aud: "bedrijf",
-    photo: "/photography/blog-2.jpg",
+    photo: "/photography/blog-6.jpg",
     tag: { nl: "Onboarding", en: "Onboarding" },
     title: {
       nl: "Zo onboard je een werkstudent goed in de eerste maand",
@@ -1022,7 +1022,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "red-flags-bij-een-jobaanbod",
     aud: "talent",
-    photo: "/photography/mariselle-4.jpg",
+    photo: "/photography/mariselle-7.jpg",
     tag: { nl: "Red flags", en: "Red flags" },
     title: {
       nl: "5 red flags die je als student serieus moet nemen bij een aanbod",
@@ -1099,7 +1099,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "eerste-junior-hire-founders",
     aud: "bedrijf",
-    photo: "/photography/blog-3.jpg",
+    photo: "/photography/mariselle-1.jpg",
     tag: { nl: "Founders", en: "Founders" },
     title: {
       nl: "Je eerste junior hire: waarom founders te lang wachten",
@@ -1195,7 +1195,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "bijbaan-of-relevante-ervaring",
     aud: "talent",
     legalTopic: true,
-    photo: "/photography/mariselle-7.jpg",
+    photo: "/photography/mariselle-6.jpg",
     tag: { nl: "Arbeidsmarkt", en: "Labour market" },
     title: {
       nl: "Bijbaan of relevante werkervaring: wat telt zwaarder voor je cv?",
@@ -1289,7 +1289,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "proeftijd-werkstudentcontract",
     aud: "beide",
     legalTopic: true,
-    photo: "/photography/mariselle-10.jpg",
+    photo: "/photography/mariselle-8.jpg",
     tag: { nl: "Juridisch", en: "Legal" },
     title: {
       nl: "Proeftijd bij een werkstudentcontract: wat mag wel en wat niet?",
@@ -1377,7 +1377,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "ziek-als-werkstudent",
     aud: "talent",
     legalTopic: true,
-    photo: "/photography/mariselle-1.jpg",
+    photo: "/photography/blog-2.jpg",
     tag: { nl: "Juridisch", en: "Legal" },
     title: {
       nl: "Ziek als werkstudent: heb je recht op doorbetaling?",
@@ -1455,7 +1455,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "vakantiedagen-opbouwen-als-werkstudent",
     aud: "talent",
     legalTopic: true,
-    photo: "/photography/blog-1.jpg",
+    photo: "/photography/mariselle-5.jpg",
     tag: { nl: "Juridisch", en: "Legal" },
     title: {
       nl: "Vakantiedagen opbouwen als werkstudent: hoe werkt dat?",
@@ -1533,7 +1533,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "studiefinanciering-en-werken-combineren",
     aud: "talent",
     legalTopic: true,
-    photo: "/photography/blog-4.jpg",
+    photo: "/photography/blog-5.jpg",
     tag: { nl: "Uitgelegd", en: "Explained" },
     title: {
       nl: "Studiefinanciering en werken combineren: wat betekent dat voor belasting en toeslagen?",
@@ -1619,7 +1619,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "zzp-of-werkstudent",
     aud: "beide",
     legalTopic: true,
-    photo: "/photography/mariselle-6.jpg",
+    photo: "/photography/mariselle-3.jpg",
     tag: { nl: "Vergelijking", en: "Comparison" },
     title: {
       nl: "ZZP of werkstudent: wat is het verschil, en wat past bij jou?",
@@ -1705,7 +1705,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "nulurencontract-vs-werkstudentcontract",
     aud: "beide",
     legalTopic: true,
-    photo: "/photography/mariselle-5.jpg",
+    photo: "/photography/mariselle-4.jpg",
     tag: { nl: "Vergelijking", en: "Comparison" },
     title: {
       nl: "0-urencontract vs. werkstudentcontract: wat is het verschil?",
@@ -1791,7 +1791,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "hoeveel-uur-mag-een-werkstudent-maximaal-werken",
     aud: "beide",
     legalTopic: true,
-    photo: "/photography/blog-5.jpg",
+    photo: "/photography/blog-3.jpg",
     tag: { nl: "Uitgelegd", en: "Explained" },
     title: {
       nl: "Hoeveel uur mag een werkstudent maximaal werken?",
@@ -1869,7 +1869,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "wat-verdient-een-werkstudent-gemiddeld",
     aud: "talent",
     legalTopic: true,
-    photo: "/photography/mariselle-2.jpg",
+    photo: "/photography/mariselle-11.jpg",
     tag: { nl: "Uitgelegd", en: "Explained" },
     title: {
       nl: "Wat verdient een werkstudent gemiddeld?",
@@ -1956,7 +1956,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "werkstudent-worden-zonder-ervaring",
     aud: "talent",
-    photo: "/photography/blog-6.jpg",
+    photo: "/photography/mariselle-10.jpg",
     tag: { nl: "Gids", en: "Guide" },
     title: {
       nl: "Werkstudent worden zonder ervaring: kan dat?",
@@ -2130,7 +2130,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "bedrijfscultuur-herkennen-in-een-sollicitatiegesprek",
     aud: "talent",
-    photo: "/photography/mariselle-9.jpg",
+    photo: "/photography/blog-7.jpg",
     tag: { nl: "Gids", en: "Guide" },
     title: {
       nl: "Hoe herken je bedrijfscultuur tijdens een sollicitatiegesprek?",
@@ -2217,7 +2217,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "van-werkstudent-naar-vaste-baan",
     aud: "talent",
-    photo: "/photography/blog-7.jpg",
+    photo: "/photography/mariselle-9.jpg",
     tag: { nl: "Carrière", en: "Career" },
     title: {
       nl: "Van werkstudent naar vaste baan: hoe pak je die overstap aan?",
@@ -2305,7 +2305,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "kosten-werkstudent-vs-starter",
     aud: "bedrijf",
     legalTopic: true,
-    photo: "/photography/mariselle-3.jpg",
+    photo: "/photography/blog-4.jpg",
     tag: { nl: "Werkgever", en: "Employer" },
     title: {
       nl: "Wat kost een werkstudent vergeleken met een fulltime starter?",
@@ -2392,7 +2392,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "vacaturetekst-die-junior-talent-aanspreekt",
     aud: "bedrijf",
-    photo: "/photography/mariselle-8.jpg",
+    photo: "/photography/blog-1.jpg",
     tag: { nl: "Gids", en: "Guide" },
     title: {
       nl: "Zo schrijf je een vacaturetekst die junior talent echt aanspreekt",
@@ -2479,7 +2479,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "werkstudenten-inzetten-tijdens-een-groeifase",
     aud: "bedrijf",
-    photo: "/photography/blog-2.jpg",
+    photo: "/photography/mariselle-2.jpg",
     tag: { nl: "Werkgever", en: "Employer" },
     title: {
       nl: "Werkstudenten inzetten tijdens een groeifase: hoe pak je dat aan?",
@@ -2566,7 +2566,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "employer-branding-voor-gen-z",
     aud: "bedrijf",
-    photo: "/photography/mariselle-4.jpg",
+    photo: "/photography/blog-6.jpg",
     tag: { nl: "Gen Z", en: "Gen Z" },
     title: {
       nl: "Employer branding voor Gen Z: waar let deze generatie op?",
@@ -2653,7 +2653,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "diversiteit-in-junior-recruitment",
     aud: "bedrijf",
-    photo: "/photography/blog-3.jpg",
+    photo: "/photography/mariselle-7.jpg",
     tag: { nl: "Werkgever", en: "Employer" },
     title: {
       nl: "Diversiteit in junior recruitment: hoe voorkom je dat je steeds dezelfde kandidaten aantrekt?",
@@ -2740,7 +2740,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "wanneer-is-het-tijd-voor-een-tweede-werkstudent",
     aud: "bedrijf",
-    photo: "/photography/mariselle-7.jpg",
+    photo: "/photography/mariselle-1.jpg",
     tag: { nl: "Werkgever", en: "Employer" },
     title: {
       nl: "Wanneer is het tijd voor een tweede werkstudent?",
@@ -2827,7 +2827,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "trends-nederlandse-arbeidsmarkt-starters",
     aud: "beide",
-    photo: "/photography/mariselle-10.jpg",
+    photo: "/photography/mariselle-6.jpg",
     tag: { nl: "Trends", en: "Trends" },
     title: {
       nl: "Trends op de Nederlandse arbeidsmarkt voor starters en Gen Z",
@@ -2914,7 +2914,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "remote-hybride-werken-als-werkstudent",
     aud: "beide",
-    photo: "/photography/mariselle-1.jpg",
+    photo: "/photography/mariselle-8.jpg",
     tag: { nl: "Uitgelegd", en: "Explained" },
     title: {
       nl: "Remote of hybride werken als werkstudent: wat is realistisch?",

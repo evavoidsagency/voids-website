@@ -1,4 +1,5 @@
 import { CalendlyButton } from "@/components/site/CalendlyButton";
+import { Photo } from "@/components/ui/Photo";
 import type { Lang } from "@/lib/i18n/common";
 
 const COPY: Record<
@@ -12,6 +13,7 @@ const COPY: Record<
     how: { title: string; text: string; accent: "purple" | "blue" }[];
     pricingTitle: string;
     pricingText: string;
+    bandAlt: string;
     contactTitle: string;
     contactText: string;
     contactCta: string;
@@ -41,6 +43,7 @@ const COPY: Record<
     ],
     pricingTitle: "WAT KOST HET",
     pricingText: "Een vacature plaatsen kan al, via een kort intakegesprek. Zelf plaatsen en direct online betalen volgt binnenkort.",
+    bandAlt: "Team aan het werk op kantoor",
     contactTitle: "VACATURE PLAATSEN?",
     contactText: "Stuur ons je vacature, dan zetten we die voor je live.",
     contactCta: "Neem contact op",
@@ -69,6 +72,7 @@ const COPY: Record<
     ],
     pricingTitle: "WHAT IT COSTS",
     pricingText: "Posting a vacancy is already possible, via a short intake call. Self-service posting with online payment is coming soon.",
+    bandAlt: "The team at work in the office",
     contactTitle: "WANT TO POST A VACANCY?",
     contactText: "Send us your vacancy and we'll get it live for you.",
     contactCta: "Get in touch",
@@ -100,6 +104,8 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
           </div>
         </div>
       </section>
+
+      <Photo src="/photography/community-jobboard-band.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" sizes="100vw" />
 
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "56px 32px 64px" }}>

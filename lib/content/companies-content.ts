@@ -44,13 +44,13 @@ export const ROLE_TYPES: Record<Lang, string[]> = {
   en: ["Business development", "Sales", "Marketing", "Communications", "Data", "AI & automation", "Finance", "Legal", "Founder's associate", "Operations", "and more"],
 };
 
-export const WHY_WS: Record<Lang, { title: string; text: string }[]> = {
+export const WHY_WS: Record<Lang, { title: string; text: string; icon: "flex" | "spark" }[]> = {
   nl: [
-    { title: "Vs. een starter", text: "Flexibeler en kostenefficiënter dan meteen een fulltime starter aannemen, zonder de drempel van een vast contract, terwijl je iemand al leert kennen vóór een eventueel vast aanbod." },
-    { title: "Extra gemotiveerd", text: "Het werk telt mee voor hun studie én hun cv, niet alleen als bijbaantje: dat merk je terug in de betrokkenheid." },
+    { title: "Vs. een starter", text: "Flexibeler en kostenefficiënter dan meteen een fulltime starter aannemen, zonder de drempel van een vast contract, terwijl je iemand al leert kennen vóór een eventueel vast aanbod.", icon: "flex" },
+    { title: "Extra gemotiveerd", text: "Het werk telt mee voor hun studie én hun cv, niet alleen als bijbaantje: dat merk je terug in de betrokkenheid.", icon: "spark" },
   ],
   en: [
-    { title: "Vs. a starter", text: "More flexible and more cost-efficient than hiring a full-time starter right away, no fixed-contract threshold, while you get to know someone before any permanent offer." },
-    { title: "Extra motivated", text: "The work counts toward their studies and their CV, not just a side job: that shows up in how engaged they are." },
+    { title: "Vs. a starter", text: "More flexible and more cost-efficient than hiring a full-time starter right away, no fixed-contract threshold, while you get to know someone before any permanent offer.", icon: "flex" },
+    { title: "Extra motivated", text: "The work counts toward their studies and their CV, not just a side job: that shows up in how engaged they are.", icon: "spark" },
   ],
 };

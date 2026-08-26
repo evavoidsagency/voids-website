@@ -1,4 +1,5 @@
 import { CalendlyButton } from "@/components/site/CalendlyButton";
+import { Photo } from "@/components/ui/Photo";
 import type { Lang } from "@/lib/i18n/common";
 
 const COPY: Record<
@@ -9,6 +10,7 @@ const COPY: Record<
     sub: string;
     scopeTitle: string;
     scope: { title: string; text: string; accent: "purple" | "blue" }[];
+    bandAlt: string;
     contactTitle: string;
     contactText: string;
     contactCta: string;
@@ -36,6 +38,7 @@ const COPY: Record<
         accent: "purple",
       },
     ],
+    bandAlt: "VOIDS-team aan het werk",
     contactTitle: "EENS SPARREN?",
     contactText: "Plan een vrijblijvend gesprek over je junior-strategie.",
     contactCta: "Plan een kennismaking",
@@ -62,6 +65,7 @@ const COPY: Record<
         accent: "purple",
       },
     ],
+    bandAlt: "The VOIDS team at work",
     contactTitle: "WANT TO SPAR?",
     contactText: "Book a free-form call about your junior strategy.",
     contactCta: "Book an intro call",
@@ -95,6 +99,8 @@ export function EmployerBrandingPage({ lang }: { lang: Lang }) {
           </div>
         </div>
       </section>
+
+      <Photo src="/photography/employer-branding-band.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" sizes="100vw" />
 
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "44px 32px" }}>

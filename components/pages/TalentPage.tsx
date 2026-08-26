@@ -299,6 +299,29 @@ export function TalentPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
+      <section className="wrap" style={{ padding: "64px 32px" }}>
+        <div className="g-collapse" style={{ background: "var(--voids-purple)", color: "#fff", borderRadius: "var(--radius-lg)", padding: 40, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "center" }}>
+          <div>
+            <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.referralEyebrow}</span>
+            <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px", color: "#fff" }}>
+              {c.referralTitleA}
+              <br />
+              {c.referralTitleB}
+            </h2>
+            <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 22px" }}>{c.referralText}</p>
+            <WhatsAppButton variant="secondary" size="md">{c.referralCta}</WhatsAppButton>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+            {c.referralSteps.map((s, i) => (
+              <div key={s} style={{ display: "flex", gap: 14, alignItems: "center", background: "rgba(255,255,255,.1)", borderRadius: "var(--radius-md)", padding: 16 }}>
+                <span className="anton" style={{ fontSize: 22, color: "#fff" }}>{i + 1}</span>
+                <span style={{ fontSize: 14 }}>{s}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="wrap" style={{ padding: "72px 32px" }}>
         <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.faqEyebrow}</span>
         <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 22px" }}>{c.faqTitle}</h2>
@@ -336,29 +359,6 @@ export function TalentPage({ lang }: { lang: Lang }) {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="wrap" style={{ padding: "64px 32px" }}>
-        <div className="g-collapse" style={{ background: "var(--voids-purple)", color: "#fff", borderRadius: "var(--radius-lg)", padding: 40, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "center" }}>
-          <div>
-            <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.referralEyebrow}</span>
-            <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px", color: "#fff" }}>
-              {c.referralTitleA}
-              <br />
-              {c.referralTitleB}
-            </h2>
-            <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 22px" }}>{c.referralText}</p>
-            <WhatsAppButton variant="secondary" size="md">{c.referralCta}</WhatsAppButton>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-            {c.referralSteps.map((s, i) => (
-              <div key={s} style={{ display: "flex", gap: 14, alignItems: "center", background: "rgba(255,255,255,.1)", borderRadius: "var(--radius-md)", padding: 16 }}>
-                <span className="anton" style={{ fontSize: 22, color: "#fff" }}>{i + 1}</span>
-                <span style={{ fontSize: 14 }}>{s}</span>
-              </div>
-            ))}
           </div>
         </div>
       </section>

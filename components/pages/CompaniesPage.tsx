@@ -84,7 +84,7 @@ const COPY: Record<
     calcTitle: "WERKSTUDENT, STAGIAIR OF STARTER?",
     calcIntro: "Indicatieve kosten voor de werkgever per maand, inclusief werkgeverslasten, geen nettosalaris. Schuif de balk en vergelijk.",
     checklistTitle: "STAGIAIR VS. WERKSTUDENT",
-    checklistSub: "Het kernverschil: een stagiair leert vooral een vak, een werkstudent draait structureel mee als volwaardig teamlid. Snelle checklist, wat past bij je vraag?",
+    checklistSub: "Toch niet elke rol is een werkstudentrol. Het kernverschil: een stagiair leert vooral een vak, een werkstudent draait structureel mee als volwaardig teamlid. Snelle checklist, wat past bij je vraag?",
     internHeading: "Kies een stagiair als…",
     internBullets: ["er een leerdoel/opdracht is", "je tijd hebt voor begeleiding", "het project 3–6 mnd duurt"],
     wsHeading: "Kies een werkstudent als…",
@@ -146,7 +146,7 @@ const COPY: Record<
     calcTitle: "WORKING STUDENT, INTERN OR STARTER?",
     calcIntro: "Indicative cost to the employer per month, including employer contributions, not take-home pay. Slide the bar to compare.",
     checklistTitle: "INTERN VS. WORKING STUDENT",
-    checklistSub: "The core difference: an intern is mainly there to learn a trade, a working student runs structurally as a full team member. Quick checklist, what fits your situation?",
+    checklistSub: "Still, not every role is a working-student role. The core difference: an intern is mainly there to learn a trade, a working student runs structurally as a full team member. Quick checklist, what fits your situation?",
     internHeading: "Choose an intern if…",
     internBullets: ["there’s a clear learning goal or project", "you have time for guidance", "the project runs 3–6 months"],
     wsHeading: "Choose a working student if…",
@@ -267,7 +267,8 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20, marginBottom: 32, maxWidth: 1040 }}>
             {WHY_WS[lang].map((w) => (
               <div key={w.title} className="card card--accent-purple" style={{ padding: 22 }}>
-                <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 8 }}>{w.title}</div>
+                {w.icon === "flex" ? <SwitchIcon /> : <SparkIcon />}
+                <div style={{ fontSize: 15, fontWeight: 600, margin: "10px 0 8px" }}>{w.title}</div>
                 <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{w.text}</p>
               </div>
             ))}
@@ -278,13 +279,17 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
             <p style={{ fontSize: 13, color: "var(--voids-ink-muted)", margin: "0 0 16px" }}>{c.checklistSub}</p>
             <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
               <div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: "var(--voids-purple)", marginBottom: 10 }}>{c.internHeading}</div>
+                <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: "var(--voids-purple)", marginBottom: 10 }}>
+                  <CapIcon /> {c.internHeading}
+                </div>
                 {c.internBullets.map((b) => (
                   <div key={b} style={{ fontSize: 13, color: "var(--voids-ink-soft)", lineHeight: 1.5, marginBottom: 8 }}>✓ {b}</div>
                 ))}
               </div>
               <div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: "var(--voids-blue)", marginBottom: 10 }}>{c.wsHeading}</div>
+                <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: "var(--voids-blue)", marginBottom: 10 }}>
+                  <BriefcaseIcon /> {c.wsHeading}
+                </div>
                 {c.wsBullets.map((b) => (
                   <div key={b} style={{ fontSize: 13, color: "var(--voids-ink-soft)", lineHeight: 1.5, marginBottom: 8 }}>✓ {b}</div>
                 ))}
@@ -329,5 +334,41 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         </div>
       </section>
     </>
+  );
+}
+
+function SwitchIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <path d="M4 10h16l-4-4" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M24 18H8l4 4" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function SparkIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <path d="M14 3v6M14 19v6M3 14h6M19 14h6M6.5 6.5l4.2 4.2M17.3 17.3l4.2 4.2M6.5 21.5l4.2-4.2M17.3 10.7l4.2-4.2" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function CapIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 4L2 9l10 5 10-5-10-5Z" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function BriefcaseIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="8" width="18" height="12" rx="2" stroke="var(--voids-blue)" strokeWidth="1.6" />
+      <path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="var(--voids-blue)" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M3 13h18" stroke="var(--voids-blue)" strokeWidth="1.6" />
+    </svg>
   );
 }
