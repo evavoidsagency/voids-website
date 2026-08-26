@@ -88,7 +88,7 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
             <p style={{ fontSize: 16, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 480 }}>{c.sub}</p>
           </div>
 
-          <div className="card" style={{ padding: 26 }}>
+          <div className="card" style={{ padding: 26, marginTop: 38 }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               {c.heroStats.map((s, i) => (
                 <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: i === 0 ? "none" : "1px solid var(--border-hairline)", paddingTop: i === 0 ? 0 : 14 }}>
@@ -105,14 +105,16 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "56px 32px 64px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 20px" }}>{c.howTitle}</h2>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20 }}>
-            {c.how.map((h) => (
+            {c.how.map((h, i) => (
               <div key={h.title} className={`card card--accent-${h.accent}`} style={{ padding: 24 }}>
-                <div className="anton" style={{ fontSize: 18, marginBottom: 10 }}>{h.title}</div>
+                {i === 0 ? <ChatIcon /> : <BoardIcon />}
+                <div className="anton" style={{ fontSize: 18, margin: "12px 0 10px" }}>{h.title}</div>
                 <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{h.text}</p>
               </div>
             ))}
             <div className="card" style={{ padding: 24, background: "var(--voids-beige)" }}>
-              <div className="anton" style={{ fontSize: 18, marginBottom: 10 }}>{c.pricingTitle}</div>
+              <CoinIcon />
+              <div className="anton" style={{ fontSize: 18, margin: "12px 0 10px" }}>{c.pricingTitle}</div>
               <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{c.pricingText}</p>
             </div>
           </div>
@@ -129,5 +131,34 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
         </div>
       </section>
     </>
+  );
+}
+
+function ChatIcon() {
+  return (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+      <path d="M5 8a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H12l-5 5v-5H8a3 3 0 0 1-3-3V8Z" stroke="var(--voids-purple)" strokeWidth="2" strokeLinejoin="round" />
+      <path d="M10 11.5h10M10 15.5h6" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function BoardIcon() {
+  return (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+      <rect x="4" y="9" width="22" height="16" rx="2" stroke="var(--voids-blue)" strokeWidth="2" />
+      <path d="M11 9V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="var(--voids-blue)" strokeWidth="2" strokeLinecap="round" />
+      <path d="M4 15h22" stroke="var(--voids-blue)" strokeWidth="2" />
+    </svg>
+  );
+}
+
+function CoinIcon() {
+  return (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+      <circle cx="15" cy="15" r="11" stroke="var(--voids-purple)" strokeWidth="2" />
+      <path d="M18 11.5c-.6-.9-1.7-1.5-3-1.5-2 0-3.5 1.4-3.5 3.2 0 1.8 1.5 2.6 3.5 3.2 2 .6 3.5 1.4 3.5 3.2 0 1.8-1.5 3.2-3.5 3.2-1.3 0-2.4-.6-3-1.5" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M15 8.5v13" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
   );
 }

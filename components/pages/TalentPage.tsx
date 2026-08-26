@@ -7,7 +7,7 @@ import { TALENT_THRIVING } from "@/lib/content/talent-thriving";
 import { findTestimonialPhoto } from "@/lib/logos";
 import { FaqAccordion } from "@/components/pages/FaqAccordion";
 
-const HERO_AVATARS = ["thomke-tierolff", "charlotte-pallandt", "anna-haasnoot"];
+const HERO_AVATARS = ["thomke-tierolff", "anna-haasnoot", "charlotte-pallandt"];
 
 const COPY: Record<
   Lang,
@@ -59,7 +59,7 @@ const COPY: Record<
     resourcesTitle: "DRIE MANIEREN OM DICHTERBIJ TE KOMEN.",
     resourcesIntro: "Het meeste haal je uit onze talentpool: persoonlijke matches, offmarket-kansen en events. Liever eerst vrijblijvend rondkijken? Dat kan ook, via de WhatsApp-community of het jobboard.",
     resources: [
-      { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord een paar vragen over jezelf en je ambities en je bent onderdeel van onze actieve talentpool: track je sollicitaties, zie je matchscore per rol, en word proactief voorgesteld bij offmarket-kansen die nooit op het jobboard verschijnen. Wil je ook een gratis persoonlijk loopbaanprofiel? Die career pager sturen we je op aanvraag, op basis van je antwoorden.", cta: "Word lid van de talentpool", path: "/pager" },
+      { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord een paar vragen over jezelf en je ambities en je bent onderdeel van onze actieve talentpool: track je sollicitaties, zie je matchscore per rol, en word proactief voorgesteld bij offmarket-kansen die nooit op het jobboard verschijnen.", cta: "Word lid van de talentpool", path: "/pager" },
       { tier: "Community", title: "WhatsApp-community", text: "Word lid van de community en krijg passende vacatures wekelijks rechtstreeks in je WhatsApp.", cta: "Join", whats: true },
       { tier: "Vrijblijvend", title: "Job board", text: "Bekijk open rollen en solliciteer direct per vacature, zonder account of profiel.", cta: "Bekijk jobs", path: "/jobboard" },
     ],
@@ -69,7 +69,7 @@ const COPY: Record<
     faq: [
       {
         q: "Hoe werkt solliciteren via VOIDS?",
-        a: "Via het jobboard solliciteer je los, geen account nodig. Zit je in de talentpool? Dan matchen wij je actief en leggen we het contact. De rest regel je rechtstreeks met de werkgever.",
+        a: "Via het jobboard of een vacature in de WhatsApp-community solliciteer je los, per rol. Je kan je ook algemeen aanmelden bij de talentpool: dan matchen wij je actief, ook bij rollen die nooit online komen. Wat daarna gebeurt verschilt per vacature: soms loopt de selectie via de werkgever zelf, soms doen wij die eerste selectie en de gesprekken. Gaat dat goed, dan brengen we je in contact en pakt de werkgever het verder op.",
       },
       {
         q: "Hoe kom ik in de talentpool?",
@@ -121,7 +121,7 @@ const COPY: Record<
     resources: [
       { tier: "No strings attached", title: "Job board", text: "Browse open roles and apply directly to any vacancy, no account or profile needed.", cta: "View jobs", path: "/jobboard" },
       { tier: "Community", title: "WhatsApp community", text: "Join the community and get matching vacancies sent straight to your WhatsApp every week.", cta: "Join", whats: true },
-      { tier: "Active in the talent pool", title: "Talent pool", text: "Answer a few questions about yourself and your ambitions and you're part of our active talent pool: track your applications, see your match score per role, and get proactively put forward for off-market opportunities that never appear on the job board. Want a free personal career profile too? We'll send you that career pager on request, based on your answers.", cta: "Join the talent pool", path: "/pager" },
+      { tier: "Active in the talent pool", title: "Talent pool", text: "Answer a few questions about yourself and your ambitions and you're part of our active talent pool: track your applications, see your match score per role, and get proactively put forward for off-market opportunities that never appear on the job board.", cta: "Join the talent pool", path: "/pager" },
     ],
     resourcesBadge: "Recommended",
     faqEyebrow: "Frequently asked",
@@ -129,7 +129,7 @@ const COPY: Record<
     faq: [
       {
         q: "How does applying through VOIDS work?",
-        a: "Via the job board you apply per vacancy, no account needed. In the talent pool? We actively match you and make the connection. You arrange the rest directly with the employer.",
+        a: "Via the job board or a vacancy in the WhatsApp community, you apply per role. You can also sign up generally for the talent pool: we then actively match you, including to roles that never go online. What happens next depends on the vacancy: sometimes the employer runs the selection themselves, sometimes we handle the first selection and interviews ourselves. If that goes well, we connect you and the employer takes it from there.",
       },
       {
         q: "How do I get into the talent pool?",
@@ -185,7 +185,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
             </div>
           </div>
 
-          <div style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.18)", borderRadius: "var(--radius-lg)", padding: 26 }}>
+          <div style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.18)", borderRadius: "var(--radius-lg)", padding: 26, marginTop: 38 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 22 }}>
               <div style={{ display: "flex" }}>
                 {HERO_AVATARS.map((slug, i) => {
@@ -251,47 +251,6 @@ export function TalentPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section className="wrap" style={{ padding: "0 32px 72px" }}>
-        <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.faqEyebrow}</span>
-        <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 22px" }}>{c.faqTitle}</h2>
-        <div style={{ maxWidth: 780 }}>
-          <FaqAccordion items={c.faq} />
-        </div>
-      </section>
-
-      <section style={{ background: "#fff" }}>
-        <div className="wrap g-collapse" style={{ padding: "72px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
-          <div>
-            <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.fitEyebrow}</span>
-            <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px" }}>
-              {c.fitTitleA}
-              <br />
-              {c.fitTitleB}
-            </h2>
-            <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", maxWidth: 460 }}>{c.fitText}</p>
-          </div>
-          <div style={{ background: "var(--voids-beige)", border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", padding: 24 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-              <span style={{ fontWeight: 600, fontSize: 15 }}>{c.fitCardRole}</span>
-              <span className="anton" style={{ fontSize: 26, color: "var(--voids-blue)" }}>92%</span>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 11 }}>
-              {c.fitCriteria.map((f) => (
-                <div key={f.label}>
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12.5, marginBottom: 4 }}>
-                    <span>{f.label}</span>
-                    <span style={{ color: "var(--voids-blue)", fontWeight: 600 }}>Match</span>
-                  </div>
-                  <div style={{ height: 7, borderRadius: 999, background: "var(--voids-line-soft)" }}>
-                    <div style={{ width: `${f.pct}%`, height: "100%", background: "var(--voids-blue)", borderRadius: 999 }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section style={{ background: "var(--voids-beige)" }}>
         <div className="wrap" style={{ padding: "72px 32px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.thrivingEyebrow}</span>
@@ -336,6 +295,47 @@ export function TalentPage({ lang }: { lang: Lang }) {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="wrap" style={{ padding: "72px 32px" }}>
+        <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.faqEyebrow}</span>
+        <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 22px" }}>{c.faqTitle}</h2>
+        <div style={{ maxWidth: 780 }}>
+          <FaqAccordion items={c.faq} />
+        </div>
+      </section>
+
+      <section style={{ background: "#fff" }}>
+        <div className="wrap g-collapse" style={{ padding: "72px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
+          <div>
+            <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.fitEyebrow}</span>
+            <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px" }}>
+              {c.fitTitleA}
+              <br />
+              {c.fitTitleB}
+            </h2>
+            <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", maxWidth: 460 }}>{c.fitText}</p>
+          </div>
+          <div style={{ background: "var(--voids-beige)", border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", padding: 24 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+              <span style={{ fontWeight: 600, fontSize: 15 }}>{c.fitCardRole}</span>
+              <span className="anton" style={{ fontSize: 26, color: "var(--voids-blue)" }}>92%</span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 11 }}>
+              {c.fitCriteria.map((f) => (
+                <div key={f.label}>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12.5, marginBottom: 4 }}>
+                    <span>{f.label}</span>
+                    <span style={{ color: "var(--voids-blue)", fontWeight: 600 }}>Match</span>
+                  </div>
+                  <div style={{ height: 7, borderRadius: 999, background: "var(--voids-line-soft)" }}>
+                    <div style={{ width: `${f.pct}%`, height: "100%", background: "var(--voids-blue)", borderRadius: 999 }} />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

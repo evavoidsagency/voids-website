@@ -81,13 +81,15 @@ export function EmployerBrandingPage({ lang }: { lang: Lang }) {
             <p style={{ fontSize: 16, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 480 }}>{c.sub}</p>
           </div>
 
-          <div className="card" style={{ padding: 26 }}>
+          <div className="card" style={{ padding: 26, marginTop: 38 }}>
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: ".04em", textTransform: "uppercase", color: "var(--voids-ink-muted)", marginBottom: 14 }}>
               {c.scopeTitle}
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {c.scope.map((s) => (
-                <div key={s.title} style={{ fontSize: 14.5, fontWeight: 600, color: "var(--voids-ink)" }}>✓ {s.title}</div>
+                <div key={s.title} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14.5, fontWeight: 600, color: "var(--voids-ink)" }}>
+                  <span style={{ color: s.accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)" }}>✓</span> {s.title}
+                </div>
               ))}
             </div>
           </div>
@@ -98,9 +100,10 @@ export function EmployerBrandingPage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "44px 32px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 20px" }}>{c.scopeTitle}</h2>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, maxWidth: 1040 }}>
-            {c.scope.map((s) => (
+            {c.scope.map((s, i) => (
               <div key={s.title} className={`card card--accent-${s.accent}`} style={{ padding: 22 }}>
-                <div className="anton" style={{ fontSize: 17, marginBottom: 8 }}>{s.title}</div>
+                {i === 0 ? <CompassIcon /> : i === 1 ? <MegaphoneIcon /> : <SproutIcon />}
+                <div className="anton" style={{ fontSize: 17, margin: "10px 0 8px" }}>{s.title}</div>
                 <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{s.text}</p>
               </div>
             ))}
@@ -118,5 +121,33 @@ export function EmployerBrandingPage({ lang }: { lang: Lang }) {
         </div>
       </section>
     </>
+  );
+}
+
+function CompassIcon() {
+  return (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+      <circle cx="15" cy="15" r="11" stroke="var(--voids-purple)" strokeWidth="2" />
+      <path d="M19 11l-2.5 6.5L10 20l2.5-6.5L19 11Z" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function MegaphoneIcon() {
+  return (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+      <path d="M4 12v6a2 2 0 0 0 2 2h1l2 6h3l-1.5-6H12l12 5V7L12 12H4Z" stroke="var(--voids-blue)" strokeWidth="2" strokeLinejoin="round" />
+      <path d="M24 12.5v5" stroke="var(--voids-blue)" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function SproutIcon() {
+  return (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+      <path d="M15 26V15" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" />
+      <path d="M15 15C15 10 11 8 6 8c0 5 2.5 9 9 9Z" stroke="var(--voids-purple)" strokeWidth="2" strokeLinejoin="round" />
+      <path d="M15 12c0-4.5 3-6.5 9-6.5-.3 4.5-2.5 8-9 8" stroke="var(--voids-purple)" strokeWidth="2" strokeLinejoin="round" />
+    </svg>
   );
 }

@@ -121,7 +121,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
             <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: 0, maxWidth: 520 }}>{c.intro}</p>
           </div>
 
-          <div>
+          <div style={{ marginTop: 38 }}>
             <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 14 }}>
               {c.stats.map((s) => (
                 <div key={s.text} className="card" style={{ padding: 22, textAlign: "center" }}>
@@ -156,7 +156,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
             <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card2Text}</p>
           </div>
         </div>
-        <p style={{ fontSize: 16, lineHeight: 1.65, margin: "22px 0 0", maxWidth: 1040 }}>{c.problemClose}</p>
+        <p style={{ fontSize: 17, fontWeight: 600, lineHeight: 1.55, margin: "22px 0 0", maxWidth: 1040 }}>{c.problemClose}</p>
       </section>
 
       <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
