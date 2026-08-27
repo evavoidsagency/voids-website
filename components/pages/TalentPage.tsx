@@ -63,7 +63,7 @@ const COPY: Record<
     resourcesTitle: "DRIE MANIEREN OM DICHTERBIJ TE KOMEN.",
     resourcesIntro: "Het meeste haal je uit onze talentpool: persoonlijke matches, offmarket-kansen en events. Liever eerst vrijblijvend rondkijken? Dat kan ook, via de WhatsApp-community of het jobboard.",
     resources: [
-      { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord een paar vragen over jezelf en je ambities en je bent onderdeel van onze actieve talentpool: track je sollicitaties, zie je matchscore per rol, en word proactief voorgesteld bij offmarket-kansen die nooit op het jobboard verschijnen.", cta: "Word lid van de talentpool", path: "/pager" },
+      { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord één keer een paar vragen, en wij doen de rest: je wordt proactief voorgesteld bij offmarket-kansen die nooit op het jobboard verschijnen, mét een matchscore per rol zodat je meteen ziet of het past.", cta: "Word lid van de talentpool", path: "/pager" },
       { tier: "Community", title: "WhatsApp-community", text: "Word lid van de community en krijg passende vacatures wekelijks rechtstreeks in je WhatsApp.", cta: "Join", whats: true },
       { tier: "Vrijblijvend", title: "Job board", text: "Bekijk open rollen en solliciteer direct per vacature, zonder account of profiel.", cta: "Bekijk jobs", path: "/jobboard" },
     ],
@@ -129,7 +129,7 @@ const COPY: Record<
     resources: [
       { tier: "No strings attached", title: "Job board", text: "Browse open roles and apply directly to any vacancy, no account or profile needed.", cta: "View jobs", path: "/jobboard" },
       { tier: "Community", title: "WhatsApp community", text: "Join the community and get matching vacancies sent straight to your WhatsApp every week.", cta: "Join", whats: true },
-      { tier: "Active in the talent pool", title: "Talent pool", text: "Answer a few questions about yourself and your ambitions and you're part of our active talent pool: track your applications, see your match score per role, and get proactively put forward for off-market opportunities that never appear on the job board.", cta: "Join the talent pool", path: "/pager" },
+      { tier: "Active in the talent pool", title: "Talent pool", text: "Answer a few questions once, and we do the rest: you get proactively put forward for off-market opportunities that never appear on the job board, with a match score per role so you instantly see if it fits.", cta: "Join the talent pool", path: "/pager" },
     ],
     resourcesBadge: "Recommended",
     faqEyebrow: "Frequently asked",
