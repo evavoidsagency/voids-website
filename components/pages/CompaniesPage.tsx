@@ -29,8 +29,10 @@ const COPY: Record<
     checklistTitle: string;
     checklistSub: string;
     internHeading: string;
+    internDuration: string;
     internBullets: string[];
     wsHeading: string;
+    wsDuration: string;
     wsBullets: string[];
     prefPara: string[];
     employersEyebrow: string;
@@ -86,8 +88,10 @@ const COPY: Record<
     checklistTitle: "STAGIAIR VS. WERKSTUDENT",
     checklistSub: "Toch niet elke rol is een werkstudentrol. Het kernverschil: een stagiair leert vooral een vak, een werkstudent draait structureel mee als volwaardig teamlid. Snelle checklist, wat past bij je vraag?",
     internHeading: "Kies een stagiair als…",
+    internDuration: "~3-6 maanden",
     internBullets: ["er een leerdoel/opdracht is", "je tijd hebt voor begeleiding", "het project 3–6 mnd duurt"],
     wsHeading: "Kies een werkstudent als…",
+    wsDuration: "1+ jaar, groeit mee",
     wsBullets: ["je structureel handen nodig hebt", "iemand zelfstandig moet draaien", "je langer wilt samenwerken"],
     prefPara: [
       "We werven ook stagiairs, maar alleen tegen een stagevergoeding die minimaal gelijk is aan de norm die de Rijksoverheid zelf hanteert, ",
@@ -148,8 +152,10 @@ const COPY: Record<
     checklistTitle: "INTERN VS. WORKING STUDENT",
     checklistSub: "Still, not every role is a working-student role. The core difference: an intern is mainly there to learn a trade, a working student runs structurally as a full team member. Quick checklist, what fits your situation?",
     internHeading: "Choose an intern if…",
+    internDuration: "~3-6 months",
     internBullets: ["there’s a clear learning goal or project", "you have time for guidance", "the project runs 3–6 months"],
     wsHeading: "Choose a working student if…",
+    wsDuration: "1+ year, grows with you",
     wsBullets: ["you need consistent extra capacity", "someone needs to run with it independently", "you want a longer collaboration"],
     prefPara: [
       "We also recruit interns, but only at an allowance that is at least equal to the standard the Dutch government itself applies, ",
@@ -264,10 +270,10 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyWsEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "8px 0 14px", maxWidth: 860 }}>{c.whyWsTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 860 }}>{c.whyWsIntro}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, marginBottom: 32, maxWidth: 1040 }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20, marginBottom: 32, maxWidth: 1040 }}>
             {WHY_WS[lang].map((w) => (
               <div key={w.title} className="card card--accent-purple" style={{ padding: 22 }}>
-                {w.icon === "flex" ? <SwitchIcon /> : w.icon === "duration" ? <DurationIcon /> : <SparkIcon />}
+                {w.icon === "flex" ? <SwitchIcon /> : <SparkIcon />}
                 <div style={{ fontSize: 15, fontWeight: 600, margin: "10px 0 8px" }}>{w.title}</div>
                 <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{w.text}</p>
               </div>
@@ -279,16 +285,22 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
             <p style={{ fontSize: 13, color: "var(--voids-ink-muted)", margin: "0 0 16px" }}>{c.checklistSub}</p>
             <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: "var(--voids-purple)", marginBottom: 10 }}>
-                  <CapIcon /> {c.internHeading}
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 10 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: "var(--voids-purple)" }}>
+                    <CapIcon /> {c.internHeading}
+                  </div>
+                  <span className="badge badge--purple" style={{ whiteSpace: "nowrap" }}>{c.internDuration}</span>
                 </div>
                 {c.internBullets.map((b) => (
                   <div key={b} style={{ fontSize: 13, color: "var(--voids-ink-soft)", lineHeight: 1.5, marginBottom: 8 }}>✓ {b}</div>
                 ))}
               </div>
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: "var(--voids-blue)", marginBottom: 10 }}>
-                  <BriefcaseIcon /> {c.wsHeading}
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 10 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: "var(--voids-blue)" }}>
+                    <BriefcaseIcon /> {c.wsHeading}
+                  </div>
+                  <span className="badge badge--blue" style={{ whiteSpace: "nowrap" }}>{c.wsDuration}</span>
                 </div>
                 {c.wsBullets.map((b) => (
                   <div key={b} style={{ fontSize: 13, color: "var(--voids-ink-soft)", lineHeight: 1.5, marginBottom: 8 }}>✓ {b}</div>
@@ -342,16 +354,6 @@ function SwitchIcon() {
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
       <path d="M4 10h16l-4-4" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M24 18H8l4 4" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function DurationIcon() {
-  return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <circle cx="14" cy="15" r="10" stroke="var(--voids-purple)" strokeWidth="2" />
-      <path d="M14 9v6l4 3" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M10 2h8" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
