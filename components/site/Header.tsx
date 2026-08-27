@@ -222,7 +222,7 @@ export function Header({ lang }: { lang: Lang }) {
 
       {menuOpen && (
         <div className="mobile-menu">
-          <nav style={{ display: "flex", flexDirection: "column", gap: 2, marginBottom: 20 }}>
+          <nav style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 20 }}>
             {NAV.map((n) => {
               const href = localePath(lang, n.path);
               const active = pathname === href;
@@ -231,16 +231,19 @@ export function Header({ lang }: { lang: Lang }) {
                   <Link href={href} style={{ ...navLinkStyle(active), padding: "13px 4px", fontSize: 16 }}>
                     {lang === "en" ? n.en : n.nl}
                   </Link>
-                  {n.id === "companies" &&
-                    COMPANY_SERVICES.map((s) => {
-                      const sHref = localePath(lang, s.path);
-                      const sActive = pathname === sHref;
-                      return (
-                        <Link key={s.id} href={sHref} style={{ ...navLinkStyle(sActive), padding: "10px 4px 10px 18px", fontSize: 14, color: "var(--voids-ink-muted)" }}>
-                          {lang === "en" ? s.en : s.nl}
-                        </Link>
-                      );
-                    })}
+                  {n.id === "companies" && (
+                    <div style={{ display: "flex", flexDirection: "column", gap: 4, marginTop: 4, marginBottom: 4 }}>
+                      {COMPANY_SERVICES.map((s) => {
+                        const sHref = localePath(lang, s.path);
+                        const sActive = pathname === sHref;
+                        return (
+                          <Link key={s.id} href={sHref} style={{ ...navLinkStyle(sActive), padding: "11px 4px 11px 18px", fontSize: 14, color: "var(--voids-ink-muted)" }}>
+                            {lang === "en" ? s.en : s.nl}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               );
             })}
