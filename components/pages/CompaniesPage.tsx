@@ -35,6 +35,14 @@ const COPY: Record<
     wsDuration: string;
     wsBullets: string[];
     prefPara: string[];
+    compare2Title: string;
+    compare2Sub: string;
+    starterHeading: string;
+    starterDuration: string;
+    starterBullets: string[];
+    ws2Heading: string;
+    ws2Duration: string;
+    ws2Bullets: string[];
     employersEyebrow: string;
     employersTitle: string;
     employersP1: string;
@@ -98,6 +106,14 @@ const COPY: Record<
       "vanaf €800 bruto per maand op fulltime basis (naar rato bij minder uren)",
       ". Onder dat bedrag matchen we niet. Meer betalen juichen we juist toe.",
     ],
+    compare2Title: "WERKSTUDENT VS. STARTER",
+    compare2Sub: "En hoe verhoudt een werkstudent zich tot een starter? Het kernverschil: een starter is vanaf dag 1 fulltime en vast, een werkstudent bouwt daar geleidelijk naartoe. Snelle checklist, wat past bij je situatie?",
+    starterHeading: "Kies een starter als…",
+    starterDuration: "Fulltime, vast contract",
+    starterBullets: ["de rol vraagt om fulltime inzet vanaf dag 1", "je meteen senior verantwoordelijkheid belegt", "er geen ruimte hoeft te zijn voor studie of flexibiliteit"],
+    ws2Heading: "Kies een werkstudent als…",
+    ws2Duration: "1+ jaar, groeit mee",
+    ws2Bullets: ["je flexibel wilt op- en afschalen", "kosten meewegen t.o.v. een fulltime starter", "je iemand eerst wilt leren kennen"],
     employersEyebrow: "De lange termijn",
     employersTitle: "TALENT LEER JE EERDER KENNEN.",
     employersP1:
@@ -162,6 +178,14 @@ const COPY: Record<
       "from €800 gross per month on a full-time basis (pro-rata for fewer hours)",
       ". We don’t match below that. We welcome paying more.",
     ],
+    compare2Title: "WORKING STUDENT VS. STARTER",
+    compare2Sub: "And how does a working student compare to a starter? The core difference: a starter is full-time and fixed from day 1, a working student builds up to that gradually. Quick checklist, what fits your situation?",
+    starterHeading: "Choose a starter if…",
+    starterDuration: "Full-time, fixed contract",
+    starterBullets: ["the role needs full-time commitment from day 1", "you're handing over senior responsibility right away", "studies or flexibility don't need to factor in"],
+    ws2Heading: "Choose a working student if…",
+    ws2Duration: "1+ year, grows with you",
+    ws2Bullets: ["you want to scale up and down flexibly", "cost matters compared to a full-time starter", "you want to get to know someone first"],
     employersEyebrow: "The long term",
     employersTitle: "YOU GET TO KNOW TALENT EARLIER.",
     employersP1:
@@ -270,51 +294,56 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyWsEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "8px 0 14px", maxWidth: 860 }}>{c.whyWsTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 860 }}>{c.whyWsIntro}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20, marginBottom: 32, maxWidth: 1040 }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 16, marginBottom: 32, maxWidth: 1040 }}>
             {WHY_WS[lang].map((w) => (
-              <div key={w.title} className="card card--accent-purple" style={{ padding: 22 }}>
-                {w.icon === "flex" ? <SwitchIcon /> : <SparkIcon />}
-                <div style={{ fontSize: 15, fontWeight: 600, margin: "10px 0 8px" }}>{w.title}</div>
-                <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{w.text}</p>
+              <div key={w.title} className="card card--accent-purple" style={{ padding: 20 }}>
+                {WHY_WS_ICONS[w.icon]}
+                <div style={{ fontSize: 14, fontWeight: 600, margin: "10px 0 6px" }}>{w.title}</div>
+                <p style={{ fontSize: 12.5, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: 0 }}>{w.text}</p>
               </div>
             ))}
           </div>
 
-          <div className="card" style={{ padding: 28, maxWidth: 1040 }}>
-            <h3 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 6px" }}>{c.checklistTitle}</h3>
-            <p style={{ fontSize: 13, color: "var(--voids-ink-muted)", margin: "0 0 16px" }}>{c.checklistSub}</p>
-            <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
-              <div>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 10 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: "var(--voids-purple)" }}>
-                    <CapIcon /> {c.internHeading}
-                  </div>
-                  <span className="badge badge--purple" style={{ whiteSpace: "nowrap" }}>{c.internDuration}</span>
-                </div>
-                {c.internBullets.map((b) => (
-                  <div key={b} style={{ fontSize: 13, color: "var(--voids-ink-soft)", lineHeight: 1.5, marginBottom: 8 }}>✓ {b}</div>
-                ))}
-              </div>
-              <div>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 10 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: "var(--voids-blue)" }}>
-                    <BriefcaseIcon /> {c.wsHeading}
-                  </div>
-                  <span className="badge badge--blue" style={{ whiteSpace: "nowrap" }}>{c.wsDuration}</span>
-                </div>
-                {c.wsBullets.map((b) => (
-                  <div key={b} style={{ fontSize: 13, color: "var(--voids-ink-soft)", lineHeight: 1.5, marginBottom: 8 }}>✓ {b}</div>
-                ))}
-              </div>
-            </div>
-            <div style={{ borderTop: "1px solid var(--border-hairline)", marginTop: 20, paddingTop: 16 }}>
-              <p style={{ fontSize: 13, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>
-                {c.prefPara[0]}
-                <strong style={{ color: "var(--voids-ink)" }}>{c.prefPara[1]}</strong>
-                {c.prefPara[2]}
-              </p>
-            </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 20, maxWidth: 1040 }}>
+            <ComparisonCard
+              title={c.checklistTitle}
+              sub={c.checklistSub}
+              leftIcon={<CapIcon />}
+              leftColor="var(--voids-purple)"
+              leftBadgeClass="badge--purple"
+              leftHeading={c.internHeading}
+              leftDuration={c.internDuration}
+              leftBullets={c.internBullets}
+              rightIcon={<BriefcaseIcon />}
+              rightColor="var(--voids-blue)"
+              rightBadgeClass="badge--blue"
+              rightHeading={c.wsHeading}
+              rightDuration={c.wsDuration}
+              rightBullets={c.wsBullets}
+            />
+            <ComparisonCard
+              title={c.compare2Title}
+              sub={c.compare2Sub}
+              leftIcon={<RocketIcon />}
+              leftColor="var(--voids-purple)"
+              leftBadgeClass="badge--purple"
+              leftHeading={c.starterHeading}
+              leftDuration={c.starterDuration}
+              leftBullets={c.starterBullets}
+              rightIcon={<BriefcaseIcon />}
+              rightColor="var(--voids-blue)"
+              rightBadgeClass="badge--blue"
+              rightHeading={c.ws2Heading}
+              rightDuration={c.ws2Duration}
+              rightBullets={c.ws2Bullets}
+            />
           </div>
+
+          <p style={{ fontSize: 13, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "20px 0 0", maxWidth: 1040 }}>
+            {c.prefPara[0]}
+            <strong style={{ color: "var(--voids-ink)" }}>{c.prefPara[1]}</strong>
+            {c.prefPara[2]}
+          </p>
         </div>
       </section>
 
@@ -382,5 +411,105 @@ function BriefcaseIcon() {
       <path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="var(--voids-blue)" strokeWidth="1.6" strokeLinecap="round" />
       <path d="M3 13h18" stroke="var(--voids-blue)" strokeWidth="1.6" />
     </svg>
+  );
+}
+
+function RocketIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 2c3 2 5 6 5 10 0 2-1 4-2 5l-3-1-3 1c-1-1-2-3-2-5 0-4 2-8 5-10Z" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinejoin="round" />
+      <circle cx="12" cy="10" r="1.6" stroke="var(--voids-purple)" strokeWidth="1.6" />
+      <path d="M9 17l-2 4M15 17l2 4" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function TrustIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <path d="M14 4c3.5 3.5 6 4.5 9 4.5v6c0 6-4 9.5-9 11-5-1.5-9-5-9-11v-6c3 0 5.5-1 9-4.5Z" stroke="var(--voids-purple)" strokeWidth="1.8" strokeLinejoin="round" />
+      <path d="M10.5 14l2.3 2.3 4.7-4.7" stroke="var(--voids-purple)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function GrowthIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <path d="M4 20h20" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" />
+      <path d="M8 20v-5M14 20v-9M20 20v-13" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" />
+      <path d="M17 3.5h4v4" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M20.5 4L14 10.5l-3-3-4.5 4.5" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+const WHY_WS_ICONS: Record<"flex" | "trust" | "growth" | "spark", React.ReactNode> = {
+  flex: <SwitchIcon />,
+  trust: <TrustIcon />,
+  growth: <GrowthIcon />,
+  spark: <SparkIcon />,
+};
+
+function ComparisonCard({
+  title,
+  sub,
+  leftIcon,
+  leftColor,
+  leftBadgeClass,
+  leftHeading,
+  leftDuration,
+  leftBullets,
+  rightIcon,
+  rightColor,
+  rightBadgeClass,
+  rightHeading,
+  rightDuration,
+  rightBullets,
+}: {
+  title: string;
+  sub: string;
+  leftIcon: React.ReactNode;
+  leftColor: string;
+  leftBadgeClass: string;
+  leftHeading: string;
+  leftDuration: string;
+  leftBullets: string[];
+  rightIcon: React.ReactNode;
+  rightColor: string;
+  rightBadgeClass: string;
+  rightHeading: string;
+  rightDuration: string;
+  rightBullets: string[];
+}) {
+  return (
+    <div className="card" style={{ padding: 28 }}>
+      <h3 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 6px" }}>{title}</h3>
+      <p style={{ fontSize: 13, color: "var(--voids-ink-muted)", margin: "0 0 16px" }}>{sub}</p>
+      <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+        <div>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 10 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: leftColor }}>
+              {leftIcon} {leftHeading}
+            </div>
+            <span className={`badge ${leftBadgeClass}`} style={{ whiteSpace: "nowrap" }}>{leftDuration}</span>
+          </div>
+          {leftBullets.map((b) => (
+            <div key={b} style={{ fontSize: 13, color: "var(--voids-ink-soft)", lineHeight: 1.5, marginBottom: 8 }}>✓ {b}</div>
+          ))}
+        </div>
+        <div>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 10 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: rightColor }}>
+              {rightIcon} {rightHeading}
+            </div>
+            <span className={`badge ${rightBadgeClass}`} style={{ whiteSpace: "nowrap" }}>{rightDuration}</span>
+          </div>
+          {rightBullets.map((b) => (
+            <div key={b} style={{ fontSize: 13, color: "var(--voids-ink-soft)", lineHeight: 1.5, marginBottom: 8 }}>✓ {b}</div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
