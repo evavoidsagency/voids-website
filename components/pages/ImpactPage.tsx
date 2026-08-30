@@ -46,7 +46,7 @@ const COPY: Record<
       "Een stage betaalt meestal een vergoeding, maar vaak te weinig om echt van rond te komen. Voor wie geen buffer of steun heeft, is maandenlang stage lopen daardoor lastig vol te houden.",
     card2Title: "De bijbaan uit noodzaak",
     card2Text:
-      "Horeca of retail om rond te komen. Levert inkomen op, maar draagt zelden bij aan een cv of aan professionele groei.",
+      "Horeca of retail om de huur te kunnen betalen. Het levert inkomen op, maar geen inhoudelijke ervaring: het staat los van de studie en draagt zelden bij aan een cv of aan professionele groei.",
     problemClose:
       "De één investeert zo in zijn toekomst, terwijl de ander noodgedwongen kiest voor werk dat vooral geld oplevert. Ongelijke kansen, nog vóór de eerste sollicitatie.",
     solutionEyebrow: "De oplossing",
@@ -83,7 +83,7 @@ const COPY: Record<
       "An internship usually pays an allowance, but often too little to really live on. For anyone without savings or support, months of interning is hard to sustain.",
     card2Title: "The side job out of necessity",
     card2Text:
-      "Hospitality or retail to make ends meet. It brings income, but rarely adds to a CV or professional growth.",
+      "Hospitality or retail just to cover the rent. It brings in income, but no relevant experience: it has nothing to do with their studies and rarely adds to a CV or professional growth.",
     problemClose:
       "So one student invests in their future while another is pushed into work that only pays the bills. Unequal chances, before the first application is even sent.",
     solutionEyebrow: "The solution",
@@ -144,7 +144,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.problemEyebrow}</span>
         <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px", maxWidth: 1040 }}>{c.problemTitle}</h2>
         <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 26px", maxWidth: 820 }}>{c.problemIntro}</p>
-        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, maxWidth: 1040, alignItems: "start" }}>
+        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, maxWidth: 1040 }}>
           <div className="card card--hoverable card--accent-blue" style={{ padding: 24 }}>
             <StipendIcon />
             <div className="anton" style={{ fontSize: 18, margin: "14px 0 10px", color: "var(--voids-blue)" }}>{c.card1Title}</div>
