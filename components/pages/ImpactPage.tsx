@@ -40,7 +40,7 @@ const COPY: Record<
     problemEyebrow: "Het probleem",
     problemTitle: "WERKERVARING IS EEN VOORRECHT GEWORDEN.",
     problemIntro:
-      "Relevante werkervaring is bijna een voorwaarde om na je studie aan een goede baan te komen. Maar die ervaring is niet voor iedereen even toegankelijk.",
+      "Dit is hoe de arbeidsmarkt er nu voor staat: relevante werkervaring is bijna een voorwaarde om na je studie aan een goede baan te komen, maar díe werkervaring levert vaak te weinig inkomen op om van te leven. Het probleem: studenten moeten daardoor vaak kiezen tussen werkervaring en inkomen, en wie dat inkomen nodig heeft, kan voor werkervaring dan ook lang niet altijd kiezen.",
     card1Title: "De stagevergoeding",
     card1Text:
       "Een stage betaalt meestal een vergoeding, maar vaak te weinig om echt van rond te komen. Voor wie geen buffer of steun heeft, is maandenlang stage lopen daardoor lastig vol te houden.",
@@ -48,7 +48,7 @@ const COPY: Record<
     card2Text:
       "Horeca of retail om de huur te kunnen betalen. Het levert inkomen op, maar geen inhoudelijke ervaring: het staat los van de studie en draagt zelden bij aan een cv of aan professionele groei.",
     problemClose:
-      "De één investeert zo in zijn toekomst, terwijl de ander noodgedwongen kiest voor werk dat vooral geld oplevert. Ongelijke kansen, nog vóór de eerste sollicitatie.",
+      "De één kan zich de keuze voor werkervaring veroorloven, de ander niet. Ongelijke kansen, ingebakken in de status quo, nog vóór de eerste sollicitatie.",
     solutionEyebrow: "De oplossing",
     solutionTitle: "HET WERKSTUDENTSCHAP HEFT DE KEUZE OP.",
     solutionText:
@@ -77,7 +77,7 @@ const COPY: Record<
     problemEyebrow: "The problem",
     problemTitle: "WORK EXPERIENCE HAS BECOME A PRIVILEGE.",
     problemIntro:
-      "Relevant work experience is almost a requirement to land a good job after your studies. Yet that very experience isn’t equally accessible to everyone.",
+      "This is how the labour market looks right now: relevant work experience is almost a requirement to land a good job after your studies, but that very experience often doesn’t pay enough to live on. The problem: students often have to choose between work experience and income, and for anyone who needs that income, choosing work experience isn’t always an option.",
     card1Title: "The internship allowance",
     card1Text:
       "An internship usually pays an allowance, but often too little to really live on. For anyone without savings or support, months of interning is hard to sustain.",
@@ -85,7 +85,7 @@ const COPY: Record<
     card2Text:
       "Hospitality or retail just to cover the rent. It brings in income, but no relevant experience: it has nothing to do with their studies and rarely adds to a CV or professional growth.",
     problemClose:
-      "So one student invests in their future while another is pushed into work that only pays the bills. Unequal chances, before the first application is even sent.",
+      "One student can afford to choose work experience, another can’t. Unequal chances, built into the status quo, before the first application is even sent.",
     solutionEyebrow: "The solution",
     solutionTitle: "THE WORKING-STUDENT MODEL REMOVES THE TRADE-OFF.",
     solutionText:
