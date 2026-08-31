@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { Lang } from "@/lib/i18n/common";
 
-const RATES = { werkstudent: 16, starter: 24 };
+const RATES = { werkstudent: 20, starter: 24 };
 const WEEKS_PER_MONTH = 4.33;
 const INTERN_MIN_MONTHLY_FULLTIME = 800;
 const FULLTIME_HOURS = 40;
@@ -28,7 +28,7 @@ const COPY: Record<
       { key: "starter", label: "Starter (pro-rata)", note: "Volledig zelfstandig" },
     ],
     footnote:
-      "Indicatie van de totale loonkosten voor de werkgever per maand: bruto uurtarief plús werkgeverslasten (zoals vakantiegeld en pensioenafdracht), dus geen nettosalaris voor de werkstudent/starter zelf. Stagiair: vanaf €800 bruto/maand fulltime, naar rato bij minder uren, gelijk aan de Rijksoverheidsnorm (meer betalen juichen we toe). Werkstudent: ± €16 bruto p/u incl. werkgeverslasten. Starter: ± €24 bruto p/u incl. werkgeverslasten. Een starter werkt normaal fulltime; hier pro-rata getoond ter vergelijking. Dit is een indicatie, geen offerte: vraag ons gerust om een exacte berekening voor jouw situatie.",
+      "Indicatie van de totale loonkosten voor de werkgever per maand: bruto uurtarief plús werkgeverslasten (zoals vakantiegeld en pensioenafdracht), dus geen nettosalaris voor de werkstudent/starter zelf. Stagiair: vanaf €800 bruto/maand fulltime, naar rato bij minder uren, gelijk aan de Rijksoverheidsnorm (meer betalen juichen we toe). Werkstudent: ± €20 bruto p/u incl. werkgeverslasten, op basis van ons salariskompas-advies (minimumloon +10 tot 20%) plus circa 20% werkgeverslasten. Starter: ± €24 bruto p/u incl. werkgeverslasten. Een starter werkt normaal fulltime; hier pro-rata getoond ter vergelijking. Dit is een indicatie, geen offerte: vraag ons gerust om een exacte berekening voor jouw situatie.",
   },
   en: {
     hoursLabel: "Hours / week",
@@ -40,7 +40,7 @@ const COPY: Record<
       { key: "starter", label: "Starter (pro-rata)", note: "Fully independent" },
     ],
     footnote:
-      "An estimate of total monthly labour cost to the employer: gross hourly rate plus employer costs (such as holiday allowance and pension contributions), so this is not the take-home pay of the working student/starter. Intern: from €800 gross/month full-time, pro-rata for fewer hours, matching the Dutch government standard (we welcome paying more). Working student: ± €16 gross/hr incl. employer costs. Starter: ± €24 gross/hr incl. employer costs. A starter normally works full-time; shown pro-rata here for comparison. This is an estimate, not a quote: feel free to ask us for an exact calculation for your situation.",
+      "An estimate of total monthly labour cost to the employer: gross hourly rate plus employer costs (such as holiday allowance and pension contributions), so this is not the take-home pay of the working student/starter. Intern: from €800 gross/month full-time, pro-rata for fewer hours, matching the Dutch government standard (we welcome paying more). Working student: ± €20 gross/hr incl. employer costs, based on our salary-compass advice (minimum wage +10 to 20%) plus roughly 20% employer costs. Starter: ± €24 gross/hr incl. employer costs. A starter normally works full-time; shown pro-rata here for comparison. This is an estimate, not a quote: feel free to ask us for an exact calculation for your situation.",
   },
 };
 
