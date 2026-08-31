@@ -27,7 +27,7 @@ const QA: Record<Lang, { q: string; a: string; ul?: string[] }[]> = {
     },
     {
       q: "Hoe kan ik me aanmelden bij VOIDS?",
-      a: "Maak gratis je career pager aan, join onze WhatsApp-community, of neem contact op via het formulier op deze pagina. Laat je gegevens achter en we nemen zo snel mogelijk contact op om kansen of samenwerking te bespreken.",
+      a: "Maak gratis je career pager aan, join onze WhatsApp-community, of mail ons op contact@voids.agency om kansen of samenwerking te bespreken. We reageren zo snel mogelijk.",
     },
   ],
   en: [
@@ -49,7 +49,7 @@ const QA: Record<Lang, { q: string; a: string; ul?: string[] }[]> = {
     },
     {
       q: "How can I sign up with VOIDS?",
-      a: "Build your free career pager, join our WhatsApp community, or get in touch via the form on this page. Leave your details and we'll reach out as soon as possible to discuss opportunities or collaboration.",
+      a: "Build your free career pager, join our WhatsApp community, or email us at contact@voids.agency to discuss opportunities or collaboration. We'll get back to you as soon as possible.",
     },
   ],
 };
