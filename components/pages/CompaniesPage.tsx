@@ -6,6 +6,7 @@ import { Photo } from "@/components/ui/Photo";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { ROLE_TYPES, WHY_WS } from "@/lib/content/companies-content";
+import { TALENT_PROFILES } from "@/lib/content/talent-profiles";
 
 const COPY: Record<
   Lang,
@@ -21,6 +22,9 @@ const COPY: Record<
     services: { title: string; text: string; cta: string; path: string }[];
     rolesEyebrow: string;
     rolesIntro: string;
+    profilesEyebrow: string;
+    profilesTitle: string;
+    profilesIntro: string;
     whyWsEyebrow: string;
     whyWsTitle: string;
     whyWsIntro: string;
@@ -97,6 +101,9 @@ const COPY: Record<
     ],
     rolesEyebrow: "Soorten rollen",
     rolesIntro: "Onze werkstudenten en stagiairs versterken vooral de commerciële en groeigerichte kant van je organisatie. Een greep uit de rollen die we invullen:",
+    profilesEyebrow: "Ons talent",
+    profilesTitle: "HIGH ACHIEVERS, GESELECTEERD OP KWALITEIT EN CULTUUR.",
+    profilesIntro: "We sourcen voornamelijk hbo- en wo-studenten en young professionals: ambitieus, snel zelfstandig en gewend om te presteren naast hun studie. We matchen niet alleen op skills, maar vooral op cultuurfit, zodat wat we voorstellen ook echt past. Een greep uit recente profielen:",
     whyWsEyebrow: "Onze voorkeur",
     whyWsTitle: "DE WERKSTUDENT IS ONZE EERSTE KEUZE.",
     whyWsIntro: "Werkstudentrollen invullen is niet zomaar één van de dingen die we doen: het is waar VOIDS voor staat en verreweg de meeste plaatsingen die we doen. Voor de meeste vragen is het ook simpelweg de beste oplossing, hieronder waarom, en wanneer een stagiair of starter juist beter past.",
@@ -178,6 +185,9 @@ const COPY: Record<
     ],
     rolesEyebrow: "Types of roles",
     rolesIntro: "Our working students and interns mainly strengthen the commercial and growth side of your organisation. A selection of the roles we fill:",
+    profilesEyebrow: "Our talent",
+    profilesTitle: "HIGH ACHIEVERS, SELECTED ON QUALITY AND CULTURE.",
+    profilesIntro: "We mainly source university (WO) and university-of-applied-sciences (HBO) students and young professionals: ambitious, quick to work independently, and used to performing alongside their studies. We match not just on skills but on culture fit, so what we put forward actually fits. A selection of recent profiles:",
     whyWsEyebrow: "Our preference",
     whyWsTitle: "THE WORKING STUDENT IS OUR FIRST CHOICE.",
     whyWsIntro: "Filling working-student roles isn't just one of the things we do: it's what VOIDS stands for, and by far the majority of the placements we make. For most hiring needs it's simply the best fit too, here's why, and when an intern or starter fits better instead.",
@@ -314,6 +324,24 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
               pointerEvents: "none",
             }}
           />
+        </div>
+      </section>
+
+      <section style={{ background: "#fff" }}>
+        <div className="wrap" style={{ padding: "48px 32px 56px" }}>
+          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.profilesEyebrow}</span>
+          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 14px", maxWidth: 760 }}>{c.profilesTitle}</h2>
+          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 26px", maxWidth: 720 }}>{c.profilesIntro}</p>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 16 }}>
+            {TALENT_PROFILES[lang].map((pr) => (
+              <div key={pr.field} className="card" style={{ padding: 20 }}>
+                <span className="badge badge--purple" style={{ marginBottom: 12, display: "inline-block" }}>{pr.field}</span>
+                <div style={{ fontSize: 14, fontWeight: 600, margin: "0 0 4px" }}>{pr.edu}</div>
+                <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", marginBottom: 12 }}>{pr.skills}</div>
+                <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-soft)", margin: 0, fontStyle: "italic" }}>{pr.traits}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
