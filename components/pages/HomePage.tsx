@@ -50,7 +50,7 @@ const COPY: Record<
     trustedBy: "VERTROUWD DOOR",
     doorTalentTitle: "VOOR TALENT",
     doorTalentText:
-      "Jij hoeft niet zelf op zoek naar vacatures: vertel ons wat je drijft, krijg gratis je career pager en sta meteen op de radar bij ambitieuze organisaties. Nieuwe vacatures die bij je passen krijg je daarna gratis en automatisch toegestuurd.",
+      "Vind een rol via ons jobboard, sluit je aan bij de WhatsApp-community voor nieuwe kansen, of vertel ons wat je drijft en ontvang een gratis career pager op maat.",
     doorTalentCta: "Ontdek de talentkant →",
     doorCompaniesTitle: "VOOR BEDRIJVEN",
     doorCompaniesText:
@@ -82,7 +82,7 @@ const COPY: Record<
     trustedBy: "TRUSTED BY",
     doorTalentTitle: "FOR TALENT",
     doorTalentText:
-      "No more trawling job boards: tell us what drives you, get your free career pager, and land on the radar of ambitious organisations straight away. New matching vacancies then land in your inbox automatically, for free.",
+      "Find a role on our job board, join the WhatsApp community for new opportunities, or tell us what drives you and get a free, personalised career pager.",
     doorTalentCta: "Explore the talent side →",
     doorCompaniesTitle: "FOR COMPANIES",
     doorCompaniesText:
@@ -247,10 +247,10 @@ export function HomePage({ lang }: { lang: Lang }) {
         <Link
           href={p("/talent")}
           className="card"
-          style={{ display: "block", borderTop: "3px solid var(--voids-blue)", padding: 32, textDecoration: "none" }}
+          style={{ display: "flex", flexDirection: "column", borderTop: "3px solid var(--voids-blue)", padding: 32, textDecoration: "none" }}
         >
           <div className="anton" style={{ fontSize: 28 }}>{c.doorTalentTitle}</div>
-          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "12px 0 18px" }}>
+          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "12px 0 18px", flex: 1 }}>
             {c.doorTalentText}
           </p>
           <span style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-blue)" }}>{c.doorTalentCta}</span>
@@ -258,10 +258,10 @@ export function HomePage({ lang }: { lang: Lang }) {
         <Link
           href={p("/companies")}
           className="card"
-          style={{ display: "block", borderTop: "3px solid var(--voids-purple)", padding: 32, textDecoration: "none" }}
+          style={{ display: "flex", flexDirection: "column", borderTop: "3px solid var(--voids-purple)", padding: 32, textDecoration: "none" }}
         >
           <div className="anton" style={{ fontSize: 28 }}>{c.doorCompaniesTitle}</div>
-          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "12px 0 18px" }}>
+          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "12px 0 18px", flex: 1 }}>
             {c.doorCompaniesText}
           </p>
           <span style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-purple)" }}>{c.doorCompaniesCta}</span>
