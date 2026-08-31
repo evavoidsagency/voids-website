@@ -335,7 +335,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 16 }}>
             {TALENT_PROFILES[lang].map((pr) => (
               <div key={pr.field} className="card" style={{ padding: 20 }}>
-                <span className="badge badge--purple" style={{ marginBottom: 12, display: "inline-block" }}>{pr.field}</span>
+                <span className="badge badge--purple" style={{ marginLeft: -10, marginBottom: 12, display: "inline-block" }}>{pr.field}</span>
                 <div style={{ fontSize: 14, fontWeight: 600, margin: "0 0 4px" }}>{pr.edu}</div>
                 <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", marginBottom: 12 }}>{pr.skills}</div>
                 <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-soft)", margin: 0, fontStyle: "italic" }}>{pr.traits}</p>
