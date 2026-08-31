@@ -290,7 +290,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
       </section>
 
       <section style={{ background: "var(--voids-purple-100)" }}>
-        <div className="wrap" style={{ padding: "56px 32px 64px" }}>
+        <div className="wrap" style={{ padding: "56px 32px 64px", maxWidth: 1104 }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyWsEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "8px 0 14px", maxWidth: 860 }}>{c.whyWsTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 860 }}>{c.whyWsIntro}</p>
