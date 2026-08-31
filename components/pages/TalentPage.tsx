@@ -307,25 +307,26 @@ export function TalentPage({ lang }: { lang: Lang }) {
       </section>
 
       <section style={{ background: "#fff" }}>
-        <div className="wrap g-collapse" style={{ padding: "72px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "start" }}>
-          <div>
-            <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.fitEyebrow}</span>
-            <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px" }}>
-              {c.fitTitleA}
-              <br />
-              {c.fitTitleB}
-            </h2>
-            <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", maxWidth: 460, margin: "0 0 18px" }}>{c.fitText}</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 460 }}>
-              {c.fitBenefits.map((b) => (
-                <div key={b} style={{ display: "flex", gap: 10, fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-soft)" }}>
-                  <span style={{ color: "var(--voids-blue)", flex: "none" }}>✓</span>
-                  <span>{b}</span>
-                </div>
-              ))}
+        <div className="wrap" style={{ padding: "72px 32px" }}>
+          <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.fitEyebrow}</span>
+          <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 26px" }}>
+            {c.fitTitleA}
+            <br />
+            {c.fitTitleB}
+          </h2>
+          <div className="wrap g-collapse" style={{ padding: 0, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "start" }}>
+            <div>
+              <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", maxWidth: 460, margin: "0 0 18px" }}>{c.fitText}</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 460 }}>
+                {c.fitBenefits.map((b) => (
+                  <div key={b} style={{ display: "flex", gap: 10, fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-soft)" }}>
+                    <span style={{ color: "var(--voids-blue)", flex: "none" }}>✓</span>
+                    <span>{b}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="card" style={{ padding: 20 }}>
+            <div className="card" style={{ padding: 20 }}>
             <div style={{ fontSize: 12.5, fontWeight: 600, color: "var(--voids-ink-muted)", marginBottom: 10 }}>{c.fitCardCaption}</div>
             <div style={{ background: "var(--voids-beige)", borderRadius: "var(--radius-md)", padding: 24 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
@@ -348,6 +349,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
             </div>
             <div style={{ marginTop: 16 }}>
               <Button variant="secondary" size="md" fullWidth href={p("/pager")}>{c.fitCta}</Button>
+            </div>
             </div>
           </div>
         </div>
