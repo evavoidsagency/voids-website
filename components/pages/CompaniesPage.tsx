@@ -369,11 +369,10 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
             </Link>
           </p>
 
-          <div className="card" style={{ padding: 24, marginTop: 32, maxWidth: 1040, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, flexWrap: "wrap" }}>
-            <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 640 }}>{c.impactNote}</p>
-            <Link href={p("/impact")} style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-purple)", whiteSpace: "nowrap", flex: "none" }}>
-              {c.impactCta} →
-            </Link>
+          <div className="card card--accent-purple" style={{ padding: 24, marginTop: 32, maxWidth: 1040, display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
+            <HeartIcon />
+            <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1, minWidth: 260 }}>{c.impactNote}</p>
+            <Button variant="outline" size="md" href={p("/impact")}>{c.impactCta} →</Button>
           </div>
         </div>
       </section>
@@ -457,6 +456,19 @@ function RocketIcon() {
       <path d="M12 2c3 2 5 6 5 10 0 2-1 4-2 5l-3-1-3 1c-1-1-2-3-2-5 0-4 2-8 5-10Z" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinejoin="round" />
       <circle cx="12" cy="10" r="1.6" stroke="var(--voids-purple)" strokeWidth="1.6" />
       <path d="M9 17l-2 4M15 17l2 4" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function HeartIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" style={{ flex: "none" }}>
+      <path
+        d="M14 24S4 17.5 4 10.8C4 7 7 4.5 10.2 4.5c1.9 0 3.6 1 4.8 2.6 1.2-1.6 2.9-2.6 4.8-2.6C23 4.5 24 7 24 10.8 24 17.5 14 24 14 24Z"
+        stroke="var(--voids-purple)"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
