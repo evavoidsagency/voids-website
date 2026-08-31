@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { CostCalculator } from "@/components/pages/CostCalculator";
+import { SalaryCompass } from "@/components/pages/SalaryCompass";
 import { Photo } from "@/components/ui/Photo";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
 import { localePath, type Lang } from "@/lib/i18n/common";
@@ -23,6 +24,9 @@ const COPY: Record<
     whyWsEyebrow: string;
     whyWsTitle: string;
     whyWsIntro: string;
+    compassEyebrow: string;
+    compassTitle: string;
+    compassIntro: string;
     calcEyebrow: string;
     calcTitle: string;
     calcIntro: string;
@@ -96,6 +100,9 @@ const COPY: Record<
     whyWsEyebrow: "Onze voorkeur",
     whyWsTitle: "DE WERKSTUDENT IS ONZE EERSTE KEUZE.",
     whyWsIntro: "Werkstudentrollen invullen is niet zomaar één van de dingen die we doen: het is waar VOIDS voor staat en verreweg de meeste plaatsingen die we doen. Voor de meeste vragen is het ook simpelweg de beste oplossing, hieronder waarom, en wanneer een stagiair of starter juist beter past.",
+    compassEyebrow: "Salariskompas",
+    compassTitle: "WAT BETAAL JE EEN WERKSTUDENT?",
+    compassIntro: "Er is geen vast bedrag: het hangt af van de rol, verantwoordelijkheid en sector. Ons advies als vloer: ga minstens 10 tot 20% boven het wettelijk minimumloon zitten, en check altijd of er een CAO geldt die een hoger loon voorschrijft.",
     calcEyebrow: "Voorbeeldsom",
     calcTitle: "WERKSTUDENT, STAGIAIR OF STARTER?",
     calcIntro: "Indicatieve kosten voor de werkgever per maand, inclusief werkgeverslasten, geen nettosalaris. Schuif de balk en vergelijk.",
@@ -174,6 +181,9 @@ const COPY: Record<
     whyWsEyebrow: "Our preference",
     whyWsTitle: "THE WORKING STUDENT IS OUR FIRST CHOICE.",
     whyWsIntro: "Filling working-student roles isn't just one of the things we do: it's what VOIDS stands for, and by far the majority of the placements we make. For most hiring needs it's simply the best fit too, here's why, and when an intern or starter fits better instead.",
+    compassEyebrow: "Salary compass",
+    compassTitle: "WHAT DO YOU PAY A WORKING STUDENT?",
+    compassIntro: "There's no fixed number: it depends on the role, responsibility and sector. Our baseline advice: sit at least 10 to 20% above the statutory minimum wage, and always check whether a CAO (collective agreement) sets a higher rate.",
     calcEyebrow: "Example calculation",
     calcTitle: "WORKING STUDENT, INTERN OR STARTER?",
     calcIntro: "Indicative cost to the employer per month, including employer contributions, not take-home pay. Slide the bar to compare.",
@@ -384,6 +394,19 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "10px 0 14px" }}>{c.employersTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 16px" }}>{c.employersP1}</p>
           <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.employersP2}</p>
+        </div>
+      </section>
+
+      <section style={{ background: "var(--voids-purple-100)" }}>
+        <div className="wrap" style={{ padding: "64px 32px" }}>
+          <div style={{ maxWidth: 640, marginBottom: 30 }}>
+            <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.compassEyebrow}</span>
+            <h2 className="anton section-h2" style={{ fontSize: 34, margin: "8px 0 8px" }}>{c.compassTitle}</h2>
+            <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: 0 }}>{c.compassIntro}</p>
+          </div>
+          <div style={{ maxWidth: 780 }}>
+            <SalaryCompass lang={lang} />
+          </div>
         </div>
       </section>
 
