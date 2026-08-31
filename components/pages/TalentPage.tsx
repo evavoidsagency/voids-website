@@ -33,6 +33,8 @@ const COPY: Record<
     fitTitleA: string;
     fitTitleB: string;
     fitText: string;
+    fitBenefits: string[];
+    fitCardCaption: string;
     fitCardRole: string;
     fitCriteria: { label: string; pct: number }[];
     thrivingEyebrow: string;
@@ -61,7 +63,7 @@ const COPY: Record<
     stat3Label: "winst terug naar gelijke kansen",
     resourcesEyebrow: "Jouw route",
     resourcesTitle: "DRIE MANIEREN OM DICHTERBIJ TE KOMEN.",
-    resourcesIntro: "Het meeste haal je uit onze talentpool: persoonlijke matches, offmarket-kansen en events. Liever eerst vrijblijvend rondkijken? Dat kan ook, via de WhatsApp-community of het jobboard.",
+    resourcesIntro: "Wij bieden meer dan losse vacatures: een jobboard om zelf te solliciteren, een WhatsApp-community met wekelijkse kansen, en een talentpool die je proactief matcht, ook bij rollen die nooit online komen. Hoe actiever je meedoet, hoe meer we voor je kunnen doen.",
     resources: [
       { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord één keer een paar vragen, en wij doen de rest: je wordt proactief voorgesteld bij offmarket-kansen die nooit op het jobboard verschijnen, mét een matchscore per rol zodat je meteen ziet of het past.", cta: "Word lid van de talentpool", path: "/pager" },
       { tier: "Community", title: "WhatsApp-community", text: "Word lid van de community en krijg passende vacatures wekelijks rechtstreeks in je WhatsApp.", cta: "Join", whats: true },
@@ -84,11 +86,18 @@ const COPY: Record<
         a: "Een gratis, persoonlijk loopbaanprofiel op basis van je antwoorden. Een leuke bonus, geen verplichte stap: lid worden van de talentpool kan ook zonder.",
       },
     ],
-    fitEyebrow: "Two-way fit",
-    fitTitleA: "JIJ ZIET OOK WAAROM",
-    fitTitleB: "EEN ROL BIJ JÓU PAST.",
+    fitEyebrow: "Talentpool",
+    fitTitleA: "DIT KRIJG JE ALS JE LID",
+    fitTitleB: "WORDT VAN DE TALENTPOOL.",
     fitText:
-      "Bij de meeste vacatures hoor je alleen óf je gekozen bent, nooit waarom. Bij VOIDS zie je per match welke criteria wel en niet aansluiten op jouw profiel, zodat jij zelf beoordeelt of een rol past, in plaats van alleen af te wachten.",
+      "Los solliciteren via het jobboard kan altijd, zonder profiel. Maak je een profiel aan in de talentpool, dan krijg je in je portal ook:",
+    fitBenefits: [
+      "Een matchscore per rol: je ziet zelf welke criteria wel en niet aansluiten, in plaats van alleen te horen óf je gekozen bent.",
+      "Proactieve voorstellen bij offmarket-kansen die nooit op het jobboard verschijnen.",
+      "Je gratis career pager: een persoonlijk loopbaanprofiel op basis van je antwoorden.",
+      "Eén klik solliciteren vanuit je portal, in plaats van los per vacature zoals op het jobboard.",
+    ],
+    fitCardCaption: "Wat je ziet in je portal, als lid van de talentpool",
     fitCardRole: "Werkstudent Growth · Mila Health",
     fitCriteria: [
       { label: "Sluit aan op “Impact maken”", pct: 92 },
@@ -125,11 +134,11 @@ const COPY: Record<
     stat3Label: "profit reinvested in equal opportunity",
     resourcesEyebrow: "Your route",
     resourcesTitle: "THREE WAYS TO GET CLOSER.",
-    resourcesIntro: "There are a few ways to engage with VOIDS. The more active you are, the more we can do for you: from individual vacancies to a spot in our talent pool, with personal matches and off-market opportunities.",
+    resourcesIntro: "We offer more than individual vacancies: a job board to apply yourself, a WhatsApp community with weekly opportunities, and a talent pool that proactively matches you, even to roles that never go online. The more active you are, the more we can do for you.",
     resources: [
-      { tier: "No strings attached", title: "Job board", text: "Browse open roles and apply directly to any vacancy, no account or profile needed.", cta: "View jobs", path: "/jobboard" },
-      { tier: "Community", title: "WhatsApp community", text: "Join the community and get matching vacancies sent straight to your WhatsApp every week.", cta: "Join", whats: true },
       { tier: "Active in the talent pool", title: "Talent pool", text: "Answer a few questions once, and we do the rest: you get proactively put forward for off-market opportunities that never appear on the job board, with a match score per role so you instantly see if it fits.", cta: "Join the talent pool", path: "/pager" },
+      { tier: "Community", title: "WhatsApp community", text: "Join the community and get matching vacancies sent straight to your WhatsApp every week.", cta: "Join", whats: true },
+      { tier: "No strings attached", title: "Job board", text: "Browse open roles and apply directly to any vacancy, no account or profile needed.", cta: "View jobs", path: "/jobboard" },
     ],
     resourcesBadge: "Recommended",
     faqEyebrow: "Frequently asked",
@@ -148,11 +157,18 @@ const COPY: Record<
         a: "A free, personal career profile based on your answers. A nice bonus, not a required step: joining the talent pool works without it too.",
       },
     ],
-    fitEyebrow: "Two-way fit",
-    fitTitleA: "YOU ALSO SEE WHY",
-    fitTitleB: "A ROLE FITS YOU.",
+    fitEyebrow: "Talent pool",
+    fitTitleA: "WHAT YOU GET AS A",
+    fitTitleB: "TALENT POOL MEMBER.",
     fitText:
-      "With most job platforms, you only hear whether you were chosen, never why. At VOIDS, every match shows which criteria do and don’t line up with your profile, so you can judge the fit yourself instead of just waiting to be picked.",
+      "Applying via the job board works fine without a profile. Create a profile in the talent pool, and your portal also gives you:",
+    fitBenefits: [
+      "A match score per role: you see for yourself which criteria do and don’t line up, instead of only hearing whether you were chosen.",
+      "Proactive introductions to off-market opportunities that never appear on the job board.",
+      "Your free career pager: a personal career profile based on your answers.",
+      "One-click applying from your portal, instead of applying separately per vacancy like on the job board.",
+    ],
+    fitCardCaption: "What you see in your portal, as a talent pool member",
     fitCardRole: "Working student Growth · Mila Health",
     fitCriteria: [
       { label: "Fits “Making impact”", pct: 92 },
@@ -272,25 +288,36 @@ export function TalentPage({ lang }: { lang: Lang }) {
               <br />
               {c.fitTitleB}
             </h2>
-            <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", maxWidth: 460 }}>{c.fitText}</p>
-          </div>
-          <div style={{ background: "var(--voids-beige)", border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", padding: 24 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-              <span style={{ fontWeight: 600, fontSize: 15 }}>{c.fitCardRole}</span>
-              <span className="anton" style={{ fontSize: 26, color: "var(--voids-blue)" }}>92%</span>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 11 }}>
-              {c.fitCriteria.map((f) => (
-                <div key={f.label}>
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12.5, marginBottom: 4 }}>
-                    <span>{f.label}</span>
-                    <span style={{ color: "var(--voids-blue)", fontWeight: 600 }}>Match</span>
-                  </div>
-                  <div style={{ height: 7, borderRadius: 999, background: "var(--voids-line-soft)" }}>
-                    <div style={{ width: `${f.pct}%`, height: "100%", background: "var(--voids-blue)", borderRadius: 999 }} />
-                  </div>
+            <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", maxWidth: 460, margin: "0 0 18px" }}>{c.fitText}</p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 460 }}>
+              {c.fitBenefits.map((b) => (
+                <div key={b} style={{ display: "flex", gap: 10, fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-soft)" }}>
+                  <span style={{ color: "var(--voids-blue)", flex: "none" }}>✓</span>
+                  <span>{b}</span>
                 </div>
               ))}
+            </div>
+          </div>
+          <div>
+            <div style={{ fontSize: 12.5, fontWeight: 600, color: "var(--voids-ink-muted)", marginBottom: 8 }}>{c.fitCardCaption}</div>
+            <div style={{ background: "var(--voids-beige)", border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", padding: 24 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+                <span style={{ fontWeight: 600, fontSize: 15 }}>{c.fitCardRole}</span>
+                <span className="anton" style={{ fontSize: 26, color: "var(--voids-blue)" }}>92%</span>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 11 }}>
+                {c.fitCriteria.map((f) => (
+                  <div key={f.label}>
+                    <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12.5, marginBottom: 4 }}>
+                      <span>{f.label}</span>
+                      <span style={{ color: "var(--voids-blue)", fontWeight: 600 }}>Match</span>
+                    </div>
+                    <div style={{ height: 7, borderRadius: 999, background: "var(--voids-line-soft)" }}>
+                      <div style={{ width: `${f.pct}%`, height: "100%", background: "var(--voids-blue)", borderRadius: 999 }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
