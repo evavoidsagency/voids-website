@@ -163,7 +163,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
       </section>
 
       <section style={{ background: "var(--voids-beige)" }}>
-        <div className="wrap" style={{ padding: "52px 32px" }}>
+        <div className="wrap" style={{ padding: "52px 32px", maxWidth: 748 }}>
           <h2 className="anton section-h2" style={{ fontSize: 28, margin: "0 0 22px" }}>{c.teamTitle}</h2>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 340px))", gap: 4, maxWidth: 684 }}>
             {TEAM.map((m, i) => (
