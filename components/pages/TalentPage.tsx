@@ -64,9 +64,9 @@ const COPY: Record<
     stat3Label: "winst terug naar gelijke kansen",
     resourcesEyebrow: "Jouw route",
     resourcesTitle: "DRIE MANIEREN OM DICHTERBIJ TE KOMEN.",
-    resourcesIntro: "Wij bieden meer dan losse vacatures: een jobboard om zelf te solliciteren, een WhatsApp-community met wekelijkse kansen, en een talentpool die je proactief matcht, ook bij rollen die nooit online komen. Hoe actiever je meedoet, hoe meer we voor je kunnen doen.",
+    resourcesIntro: "Wij bieden meer dan losse vacatures: een jobboard om zelf te solliciteren, een WhatsApp-community met wekelijkse kansen, en een talentpool die je proactief matcht. Omdat we zo nauw met werkgevers samenwerken, kunnen we vaak breder met ze meedenken dan alleen de vacatures die online staan. Hoe actiever je meedoet, hoe meer we voor je kunnen doen.",
     resources: [
-      { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord één keer een paar vragen, en wij doen de rest: je wordt proactief voorgesteld bij offmarket-kansen die nooit op het jobboard verschijnen, mét een matchscore per rol zodat je meteen ziet of het past.", cta: "Word lid van de talentpool", path: "/pager" },
+      { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord één keer een paar vragen, en wij doen de rest: je wordt proactief voorgesteld bij offmarket-kansen, rollen waar we dankzij onze nauwe samenwerking met werkgevers al vroeg over meedenken, mét een matchscore per rol zodat je meteen ziet of het past.", cta: "Word lid van de talentpool", path: "/pager" },
       { tier: "Community", title: "WhatsApp-community", text: "Word lid van de community en krijg passende vacatures wekelijks rechtstreeks in je WhatsApp.", cta: "Join", whats: true },
       { tier: "Vrijblijvend", title: "Job board", text: "Bekijk open rollen en solliciteer direct per vacature, zonder account of profiel.", cta: "Bekijk jobs", path: "/jobboard" },
     ],
@@ -76,7 +76,7 @@ const COPY: Record<
     faq: [
       {
         q: "Hoe werkt solliciteren via VOIDS?",
-        a: "Via het jobboard of een vacature in de WhatsApp-community solliciteer je los, per rol. Je kan je ook algemeen aanmelden bij de talentpool: dan matchen wij je actief, ook bij rollen die nooit online komen. Wat daarna gebeurt verschilt per vacature: soms loopt de selectie via de werkgever zelf, soms doen wij die eerste selectie en de gesprekken. Gaat dat goed, dan brengen we je in contact en pakt de werkgever het verder op.",
+        a: "Via het jobboard of een vacature in de WhatsApp-community solliciteer je los, per rol. Je kan je ook algemeen aanmelden bij de talentpool: dan matchen wij je actief, ook bij rollen waar we vanuit onze samenwerking met werkgevers al vroeg over meedenken. Wat daarna gebeurt verschilt per vacature: soms loopt de selectie via de werkgever zelf, soms doen wij die eerste selectie en de gesprekken. Gaat dat goed, dan brengen we je in contact en pakt de werkgever het verder op.",
       },
       {
         q: "Hoe kom ik in de talentpool?",
@@ -106,7 +106,7 @@ const COPY: Record<
       "Los solliciteren via het jobboard kan altijd, zonder profiel. Maak je een profiel aan in de talentpool, dan krijg je in je portal ook:",
     fitBenefits: [
       "Een matchscore per rol: je ziet zelf welke criteria wel en niet aansluiten, in plaats van alleen te horen óf je gekozen bent.",
-      "Proactieve voorstellen bij offmarket-kansen die nooit op het jobboard verschijnen.",
+      "Proactieve voorstellen bij offmarket-kansen: rollen waar we dankzij onze nauwe samenwerking met werkgevers al vroeg over meedenken.",
       "Je gratis career pager: een persoonlijk loopbaanprofiel op basis van je antwoorden.",
       "Eén klik solliciteren vanuit je portal, in plaats van los per vacature zoals op het jobboard.",
     ],
@@ -148,9 +148,9 @@ const COPY: Record<
     stat3Label: "profit reinvested in equal opportunity",
     resourcesEyebrow: "Your route",
     resourcesTitle: "THREE WAYS TO GET CLOSER.",
-    resourcesIntro: "We offer more than individual vacancies: a job board to apply yourself, a WhatsApp community with weekly opportunities, and a talent pool that proactively matches you, even to roles that never go online. The more active you are, the more we can do for you.",
+    resourcesIntro: "We offer more than individual vacancies: a job board to apply yourself, a WhatsApp community with weekly opportunities, and a talent pool that proactively matches you. Because we work so closely with employers, we can often think along with them more broadly than just the vacancies that are posted. The more active you are, the more we can do for you.",
     resources: [
-      { tier: "Active in the talent pool", title: "Talent pool", text: "Answer a few questions once, and we do the rest: you get proactively put forward for off-market opportunities that never appear on the job board, with a match score per role so you instantly see if it fits.", cta: "Join the talent pool", path: "/pager" },
+      { tier: "Active in the talent pool", title: "Talent pool", text: "Answer a few questions once, and we do the rest: you get proactively put forward for off-market opportunities, roles we're already thinking through with employers early on thanks to our close working relationship, with a match score per role so you instantly see if it fits.", cta: "Join the talent pool", path: "/pager" },
       { tier: "Community", title: "WhatsApp community", text: "Join the community and get matching vacancies sent straight to your WhatsApp every week.", cta: "Join", whats: true },
       { tier: "No strings attached", title: "Job board", text: "Browse open roles and apply directly to any vacancy, no account or profile needed.", cta: "View jobs", path: "/jobboard" },
     ],
@@ -160,7 +160,7 @@ const COPY: Record<
     faq: [
       {
         q: "How does applying through VOIDS work?",
-        a: "Via the job board or a vacancy in the WhatsApp community, you apply per role. You can also sign up generally for the talent pool: we then actively match you, including to roles that never go online. What happens next depends on the vacancy: sometimes the employer runs the selection themselves, sometimes we handle the first selection and interviews ourselves. If that goes well, we connect you and the employer takes it from there.",
+        a: "Via the job board or a vacancy in the WhatsApp community, you apply per role. You can also sign up generally for the talent pool: we then actively match you, including to roles we're already thinking through with employers early on. What happens next depends on the vacancy: sometimes the employer runs the selection themselves, sometimes we handle the first selection and interviews ourselves. If that goes well, we connect you and the employer takes it from there.",
       },
       {
         q: "How do I get into the talent pool?",
@@ -190,7 +190,7 @@ const COPY: Record<
       "Applying via the job board works fine without a profile. Create a profile in the talent pool, and your portal also gives you:",
     fitBenefits: [
       "A match score per role: you see for yourself which criteria do and don’t line up, instead of only hearing whether you were chosen.",
-      "Proactive introductions to off-market opportunities that never appear on the job board.",
+      "Proactive introductions to off-market opportunities: roles we're already thinking through with employers early on thanks to our close working relationship.",
       "Your free career pager: a personal career profile based on your answers.",
       "One-click applying from your portal, instead of applying separately per vacancy like on the job board.",
     ],
@@ -314,7 +314,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
             <br />
             {c.fitTitleB}
           </h2>
-          <div className="wrap g-collapse" style={{ padding: 0, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "start" }}>
+          <div className="wrap g-collapse" style={{ padding: 0, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
             <div>
               <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", maxWidth: 460, margin: "0 0 18px" }}>{c.fitText}</p>
               <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 460 }}>
