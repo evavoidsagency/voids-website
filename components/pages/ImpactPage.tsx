@@ -12,8 +12,10 @@ const COPY: Record<
     problemEyebrow: string;
     problemTitle: string;
     problemIntro: string;
+    card1Badge: string;
     card1Title: string;
     card1Text: string;
+    card2Badge: string;
     card2Title: string;
     card2Text: string;
     problemClose: string;
@@ -41,9 +43,11 @@ const COPY: Record<
     problemTitle: "WERKERVARING IS EEN VOORRECHT GEWORDEN.",
     problemIntro:
       "Relevante werkervaring is bijna een voorwaarde voor een goede baan na je studie. Maar vaak moet je kiezen: werkervaring, of een inkomen om van te leven. Wie dat inkomen nodig heeft, kan die keuze niet zomaar maken.",
+    card1Badge: "Werkervaring",
     card1Title: "De stagevergoeding",
     card1Text:
       "Een stage betaalt meestal een vergoeding, maar vaak te weinig om echt van rond te komen. Voor wie geen buffer of steun heeft, is maandenlang stage lopen daardoor lastig vol te houden.",
+    card2Badge: "Inkomen",
     card2Title: "De bijbaan uit noodzaak",
     card2Text:
       "Horeca of retail om de huur te kunnen betalen. Het levert inkomen op, maar geen inhoudelijke ervaring: het staat los van de studie en draagt zelden bij aan een cv of aan professionele groei.",
@@ -78,9 +82,11 @@ const COPY: Record<
     problemTitle: "WORK EXPERIENCE HAS BECOME A PRIVILEGE.",
     problemIntro:
       "Relevant work experience is almost a requirement for a good job after your studies. But often you have to choose: work experience, or an income to live on. Anyone who needs that income can’t just make that choice.",
+    card1Badge: "Work experience",
     card1Title: "The internship allowance",
     card1Text:
       "An internship usually pays an allowance, but often too little to really live on. For anyone without savings or support, months of interning is hard to sustain.",
+    card2Badge: "Income",
     card2Title: "The side job out of necessity",
     card2Text:
       "Hospitality or retail just to cover the rent. It brings in income, but no relevant experience: it has nothing to do with their studies and rarely adds to a CV or professional growth.",
@@ -146,12 +152,18 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 26px", maxWidth: 820 }}>{c.problemIntro}</p>
         <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, maxWidth: 1040 }}>
           <div className="card card--hoverable card--accent-blue" style={{ padding: 24 }}>
-            <StipendIcon />
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <StipendIcon />
+              <span className="badge badge--purple">{c.card1Badge}</span>
+            </div>
             <div className="anton" style={{ fontSize: 18, margin: "14px 0 10px", color: "var(--voids-blue)" }}>{c.card1Title}</div>
             <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card1Text}</p>
           </div>
           <div className="card card--hoverable card--accent-blue" style={{ padding: 24 }}>
-            <ShiftIcon />
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <ShiftIcon />
+              <span className="badge badge--blue">{c.card2Badge}</span>
+            </div>
             <div className="anton" style={{ fontSize: 18, margin: "14px 0 10px", color: "var(--voids-blue)" }}>{c.card2Title}</div>
             <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card2Text}</p>
           </div>
