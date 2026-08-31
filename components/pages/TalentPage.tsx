@@ -35,6 +35,7 @@ const COPY: Record<
     fitText: string;
     fitBenefits: string[];
     fitCardCaption: string;
+    fitCta: string;
     fitCardRole: string;
     fitCriteria: { label: string; pct: number }[];
     thrivingEyebrow: string;
@@ -98,6 +99,7 @@ const COPY: Record<
       "Eén klik solliciteren vanuit je portal, in plaats van los per vacature zoals op het jobboard.",
     ],
     fitCardCaption: "Wat je ziet in je portal, als lid van de talentpool",
+    fitCta: "Word nu lid",
     fitCardRole: "Werkstudent Growth · Mila Health",
     fitCriteria: [
       { label: "Sluit aan op “Impact maken”", pct: 92 },
@@ -169,6 +171,7 @@ const COPY: Record<
       "One-click applying from your portal, instead of applying separately per vacancy like on the job board.",
     ],
     fitCardCaption: "What you see in your portal, as a talent pool member",
+    fitCta: "Join now",
     fitCardRole: "Working student Growth · Mila Health",
     fitCriteria: [
       { label: "Fits “Making impact”", pct: 92 },
@@ -289,7 +292,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
               {c.fitTitleB}
             </h2>
             <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", maxWidth: 460, margin: "0 0 18px" }}>{c.fitText}</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 460 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 460, marginBottom: 24 }}>
               {c.fitBenefits.map((b) => (
                 <div key={b} style={{ display: "flex", gap: 10, fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-soft)" }}>
                   <span style={{ color: "var(--voids-blue)", flex: "none" }}>✓</span>
@@ -297,6 +300,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
                 </div>
               ))}
             </div>
+            <Button variant="primary" size="md" href={p("/pager")}>{c.fitCta}</Button>
           </div>
           <div>
             <div style={{ fontSize: 12.5, fontWeight: 600, color: "var(--voids-ink-muted)", marginBottom: 8 }}>{c.fitCardCaption}</div>
