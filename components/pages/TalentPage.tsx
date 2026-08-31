@@ -86,6 +86,18 @@ const COPY: Record<
         q: "Wat is de career pager precies?",
         a: "Een gratis, persoonlijk loopbaanprofiel op basis van je antwoorden. Een leuke bonus, geen verplichte stap: lid worden van de talentpool kan ook zonder.",
       },
+      {
+        q: "Kost het lid worden van de talentpool iets?",
+        a: "Nee, meedoen is voor jou altijd gratis. Wij worden betaald door de bedrijven waar we mensen plaatsen, niet door de studenten en starters in onze community.",
+      },
+      {
+        q: "Ik heb nog geen werkervaring, kan ik me toch aanmelden?",
+        a: "Ja, juist dan. De talentpool is bedoeld voor studenten en starters die hun eerste relevante ervaring nog zoeken. We matchen op motivatie, werkstijl en ambitie, niet alleen op een lang cv.",
+      },
+      {
+        q: "Wat gebeurt er met mijn gegevens?",
+        a: "We delen je profiel alleen met een werkgever als er een concrete match is, nooit zomaar breed. Je kan op elk moment vragen om je gegevens aan te passen of te verwijderen.",
+      },
     ],
     fitEyebrow: "Talentpool",
     fitTitleA: "DIT KRIJG JE ALS JE LID",
@@ -157,6 +169,18 @@ const COPY: Record<
       {
         q: "What exactly is the career pager?",
         a: "A free, personal career profile based on your answers. A nice bonus, not a required step: joining the talent pool works without it too.",
+      },
+      {
+        q: "Does joining the talent pool cost anything?",
+        a: "No, it's always free for you. We're paid by the companies we place people with, not by the students and starters in our community.",
+      },
+      {
+        q: "I don't have any work experience yet, can I still sign up?",
+        a: "Yes, especially then. The talent pool is for students and starters still looking for their first relevant experience. We match on motivation, working style and ambition, not just a long CV.",
+      },
+      {
+        q: "What happens to my data?",
+        a: "We only share your profile with an employer when there's a concrete match, never broadly. You can ask us to update or delete your data at any time.",
       },
     ],
     fitEyebrow: "Talent pool",
@@ -283,7 +307,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
       </section>
 
       <section style={{ background: "#fff" }}>
-        <div className="wrap g-collapse" style={{ padding: "72px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
+        <div className="wrap g-collapse" style={{ padding: "72px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "start" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.fitEyebrow}</span>
             <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px" }}>
@@ -292,7 +316,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
               {c.fitTitleB}
             </h2>
             <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", maxWidth: 460, margin: "0 0 18px" }}>{c.fitText}</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 460, marginBottom: 24 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 460 }}>
               {c.fitBenefits.map((b) => (
                 <div key={b} style={{ display: "flex", gap: 10, fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-soft)" }}>
                   <span style={{ color: "var(--voids-blue)", flex: "none" }}>✓</span>
@@ -300,7 +324,6 @@ export function TalentPage({ lang }: { lang: Lang }) {
                 </div>
               ))}
             </div>
-            <Button variant="primary" size="md" href={p("/pager")}>{c.fitCta}</Button>
           </div>
           <div>
             <div style={{ fontSize: 12.5, fontWeight: 600, color: "var(--voids-ink-muted)", marginBottom: 8 }}>{c.fitCardCaption}</div>
@@ -309,7 +332,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
                 <span style={{ fontWeight: 600, fontSize: 15 }}>{c.fitCardRole}</span>
                 <span className="anton" style={{ fontSize: 26, color: "var(--voids-blue)" }}>92%</span>
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 11 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 11, marginBottom: 20 }}>
                 {c.fitCriteria.map((f) => (
                   <div key={f.label}>
                     <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12.5, marginBottom: 4 }}>
@@ -322,6 +345,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
                   </div>
                 ))}
               </div>
+              <Button variant="secondary" size="md" fullWidth href={p("/pager")}>{c.fitCta}</Button>
             </div>
           </div>
         </div>
