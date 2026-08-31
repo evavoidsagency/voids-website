@@ -381,7 +381,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "56px 32px", textAlign: "center", color: "#fff" }}>
           <h2 className="anton section-h2" style={{ fontSize: 38, margin: "0 0 12px", color: "#fff" }}>{c.finalTitle}</h2>
           <p style={{ fontSize: 16, color: "var(--voids-blue-100)", maxWidth: 480, margin: "0 auto 24px" }}>{c.finalText}</p>
-          <Button variant="secondary" size="lg" href={p("/pager")}>{c.finalCta}</Button>
+          <Button variant="primary" size="lg" href={p("/pager")}>{c.finalCta}</Button>
         </div>
       </section>
     </>
