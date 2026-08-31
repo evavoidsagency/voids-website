@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   lang: "nl",
-  path: "/companies/werving-selectie",
+  path: "/companies/recruitment-selection",
   title: "Werving & selectie",
   description: "Zes stappen. Wij doen het werk, jullie beslissen. Van intake tot ondertekende match, voor werkstudenten, stagiairs en starters.",
 });

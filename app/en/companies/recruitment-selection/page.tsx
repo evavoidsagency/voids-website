@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   lang: "en",
-  path: "/companies/werving-selectie",
+  path: "/companies/recruitment-selection",
   title: "Recruitment & selection",
   description: "Six steps. We do the work, you decide. From intake to signed match, for working students, interns and starters.",
 });
