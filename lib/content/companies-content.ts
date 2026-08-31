@@ -48,7 +48,7 @@ export const WHY_WS: Record<Lang, { title: string; text: string; icon: "flex" | 
   nl: [
     {
       title: "Flexibel & kostenefficiënt",
-      text: "Je schaalt op en af in je eigen tempo, tegen lagere kosten dan een fulltime starter. Geen drempel van een vast contract.",
+      text: "Werkstudenten zijn vaak flexibel in beschikbaarheid en denken makkelijk mee over uren en planning. Dat maakt op- en afschalen simpel, tegen lagere kosten dan een fulltime starter.",
       icon: "flex",
     },
     {
@@ -70,7 +70,7 @@ export const WHY_WS: Record<Lang, { title: string; text: string; icon: "flex" | 
   en: [
     {
       title: "Flexible & cost-efficient",
-      text: "You scale up and down at your own pace, at a lower cost than a full-time starter. No fixed-contract threshold.",
+      text: "Working students tend to be flexible about their availability and happy to talk through hours and planning together. That makes scaling up or down easy, at a lower cost than a full-time starter.",
       icon: "flex",
     },
     {
