@@ -59,6 +59,7 @@ const COPY: Record<
     salaryLabel: string;
     salaryMinLabel: string;
     salaryAdviceLabel: string;
+    salaryAdviceExample: string;
     salaryAboveLabel: string;
     salaryFootnote: string;
     costBlogNote: string;
@@ -146,7 +147,8 @@ const COPY: Record<
     salaryLabel: "Salariskompas",
     salaryMinLabel: "Minimumloon",
     salaryAdviceLabel: "VOIDS-advies",
-    salaryAboveLabel: "hoger, afhankelijk van rol & CAO",
+    salaryAdviceExample: "Bijv. € 16,49–17,99 boven het wettelijk minimum hieronder. Geldt er een CAO? Reken dan vanaf dát bedrag, niet vanaf het wettelijk minimum.",
+    salaryAboveLabel: "Hoger? Afhankelijk van rol & CAO.",
     salaryFootnote: "Per 1 juli 2026, o.b.v. het wettelijk minimumloon (21+, bron: rijksoverheid.nl). Voor jongere werkstudenten en CAO-functies gelden andere bedragen.",
     costBlogNote: "Benieuwd naar de volledige kostenvergelijking?",
     costBlogCta: "Wat kost een werkstudent vergeleken met een fulltime starter?",
@@ -232,7 +234,8 @@ const COPY: Record<
     salaryLabel: "Salary compass",
     salaryMinLabel: "Minimum wage",
     salaryAdviceLabel: "VOIDS advice",
-    salaryAboveLabel: "higher, depending on role & CAO",
+    salaryAdviceExample: "E.g. € 16.49–17.99 above the statutory minimum below. If a CAO applies, calculate from that amount instead of the statutory minimum.",
+    salaryAboveLabel: "Higher? Depends on role & CAO.",
     salaryFootnote: "As of 1 July 2026, based on the statutory minimum wage (21+, source: rijksoverheid.nl). Different amounts apply for younger working students and CAO roles.",
     costBlogNote: "Curious about the full cost comparison?",
     costBlogCta: "What does a working student cost compared to a full-time starter?",
@@ -411,19 +414,24 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
               {c.compareBlogCta} →
             </Link>
           </p>
-          <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 10, marginTop: 14, padding: "10px 16px", background: "var(--voids-beige)", border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", maxWidth: 1040 }}>
-            <span style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: ".03em", textTransform: "uppercase", color: "var(--voids-purple)", flex: "none" }}>{c.salaryLabel}</span>
-            <span style={{ fontSize: 13, color: "var(--voids-ink-soft)" }}>
-              {c.salaryMinLabel} <strong style={{ color: "var(--voids-ink)" }}>{lang === "nl" ? "€ 14,99" : "€ 14.99"}</strong>
-            </span>
-            <span style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>→</span>
-            <span style={{ fontSize: 13, color: "var(--voids-purple)", fontWeight: 700 }}>
-              {lang === "nl" ? "€ 16,49–17,99" : "€ 16.49–17.99"} <span style={{ fontWeight: 500, color: "var(--voids-ink-soft)" }}>{c.salaryAdviceLabel}</span>
-            </span>
-            <span style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>→</span>
-            <span style={{ fontSize: 13, color: "var(--voids-ink-soft)" }}>{c.salaryAboveLabel}</span>
+          <div className="card" style={{ padding: 22, marginTop: 24, maxWidth: 340 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".03em", textTransform: "uppercase", color: "var(--voids-purple)", marginBottom: 14 }}>
+              {c.salaryLabel}
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 8, marginBottom: 4 }}>
+              <span style={{ fontSize: 13, color: "var(--voids-purple)", fontWeight: 700 }}>{c.salaryAdviceLabel}</span>
+              <span style={{ fontSize: 20, fontWeight: 700, color: "var(--voids-purple)" }} className="anton">+10–20%</span>
+            </div>
+            <div style={{ fontSize: 11.5, lineHeight: 1.5, color: "var(--voids-ink-muted)" }}>{c.salaryAdviceExample}</div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 8, marginTop: 12, paddingTop: 10, borderTop: "1px solid var(--border-hairline)" }}>
+              <span style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>{c.salaryMinLabel}</span>
+              <span style={{ fontSize: 15, fontWeight: 700, color: "var(--voids-ink)" }}>{lang === "nl" ? "€ 14,99" : "€ 14.99"}</span>
+            </div>
+            <div style={{ fontSize: 12, color: "var(--voids-ink-muted)", marginTop: 10, paddingTop: 10, borderTop: "1px solid var(--border-hairline)" }}>
+              {c.salaryAboveLabel}
+            </div>
+            <p style={{ fontSize: 10.5, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: "14px 0 0" }}>{c.salaryFootnote}</p>
           </div>
-          <p style={{ fontSize: 11, color: "var(--voids-ink-muted)", margin: "6px 0 0", maxWidth: 1040 }}>{c.salaryFootnote}</p>
 
           <div className="card card--accent-purple" style={{ padding: 24, marginTop: 32, maxWidth: 1040, display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
             <HeartIcon />
