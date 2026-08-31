@@ -86,8 +86,8 @@ export const CHANNELS: {
     nameNl: "Carrièrekansen",
     nameEn: "Career opportunities",
     abbr: "CK",
-    membersNl: "Doorgroei & starterrollen",
-    membersEn: "Growth & starter roles",
+    membersNl: "Vrijwilligerswerk & bestuursrollen",
+    membersEn: "Volunteering & board roles",
     link: "https://chat.whatsapp.com/HoDEZyDnNzVHLBuXU8e96N?mode=gi_t",
   },
   {
