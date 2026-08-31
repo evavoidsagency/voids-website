@@ -404,7 +404,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           </p>
           <p style={{ fontSize: 13, margin: "6px 0 0", maxWidth: 1040 }}>
             <span style={{ color: "var(--voids-ink-muted)" }}>{c.salaryNote} </span>
-            <Link href={p(`/companies/recruitment-selection#salariskompas`)} style={{ fontWeight: 600, color: "var(--voids-purple)" }}>
+            <Link href={p(`/companies/employer-branding#salariskompas`)} style={{ fontWeight: 600, color: "var(--voids-purple)" }}>
               {c.salaryCta}
             </Link>
           </p>

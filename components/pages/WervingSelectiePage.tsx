@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Photo } from "@/components/ui/Photo";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
-import { SalaryCompass } from "@/components/pages/SalaryCompass";
 import { findLogoFile } from "@/lib/logos";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { PROCESS } from "@/lib/content/companies-content";
@@ -20,9 +19,6 @@ const COPY: Record<
     casesTitle: string;
     casesSub: string;
     rolesTitle: string;
-    compassEyebrow: string;
-    compassTitle: string;
-    compassIntro: string;
     calcNote: string;
     calcCta: string;
     finalTitle: string;
@@ -44,9 +40,6 @@ const COPY: Record<
     casesTitle: "MATCHES DIE WERKEN",
     casesSub: "Een kleine greep uit de vele bedrijven waar we mee hebben samengewerkt, van scale-up tot corporate.",
     rolesTitle: "VOORBEELDEN VAN ROLLEN DIE WE INVULDEN",
-    compassEyebrow: "Salariskompas",
-    compassTitle: "WAT BETAAL JE EEN WERKSTUDENT?",
-    compassIntro: "Er is geen vast bedrag: het hangt af van de rol, verantwoordelijkheid en sector. Ons advies: ga minimaal 10 tot 20% boven het wettelijk minimumloon zitten, en check altijd of er een CAO geldt die een hoger loon voorschrijft.",
     calcNote: "Benieuwd wat een werkstudent, stagiair of starter kost, en wanneer je voor welke kiest?",
     calcCta: "Bekijk de calculator en checklist →",
     finalTitle: "KLAAR OM TE SCHALEN?",
@@ -67,9 +60,6 @@ const COPY: Record<
     casesTitle: "MATCHES THAT WORK",
     casesSub: "A small selection from the many companies we've worked with, from scale-up to corporate.",
     rolesTitle: "EXAMPLES OF ROLES WE'VE FILLED",
-    compassEyebrow: "Salary compass",
-    compassTitle: "WHAT DO YOU PAY A WORKING STUDENT?",
-    compassIntro: "There's no fixed number: it depends on the role, responsibility and sector. Our advice: sit at least 10 to 20% above the statutory minimum wage, and always check whether a CAO (collective agreement) sets a higher rate.",
     calcNote: "Curious what a working student, intern or starter costs, and when to choose which?",
     calcCta: "See the calculator and checklist →",
     finalTitle: "READY TO SCALE?",
@@ -171,19 +161,6 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      <section id="salariskompas" style={{ background: "var(--voids-purple-100)" }}>
-        <div className="wrap" style={{ padding: "56px 32px" }}>
-          <div style={{ maxWidth: 640, marginBottom: 30 }}>
-            <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.compassEyebrow}</span>
-            <h2 className="anton section-h2" style={{ fontSize: 28, margin: "8px 0 8px" }}>{c.compassTitle}</h2>
-            <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: 0 }}>{c.compassIntro}</p>
-          </div>
-          <div style={{ maxWidth: 780 }}>
-            <SalaryCompass lang={lang} />
-          </div>
         </div>
       </section>
 
