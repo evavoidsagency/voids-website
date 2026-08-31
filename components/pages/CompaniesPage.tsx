@@ -48,6 +48,12 @@ const COPY: Record<
     employersP1: string;
     employersP2: string;
     employersAlt: string;
+    impactNote: string;
+    impactCta: string;
+    compareBlogNote: string;
+    compareBlogCta: string;
+    costBlogNote: string;
+    costBlogCta: string;
     finalTitle: string;
     finalCta: string;
   }
@@ -121,6 +127,12 @@ const COPY: Record<
     employersP2:
       "Daarom kijken we verder dan het invullen van een vacature. We adviseren hoe een rol uitdagend, leerzaam en toekomstbestendig wordt. Een goede werkstudent is geen goedkope arbeidskracht, maar een toekomstige professional.",
     employersAlt: "Community van studenten en starters",
+    impactNote: "Onze voorkeur voor werkstudenten gaat verder dan efficiëntie: het is onderdeel van onze missie om toegang tot werkervaring eerlijker te maken.",
+    impactCta: "Lees over onze impact",
+    compareBlogNote: "Dieper induiken in de vergelijking?",
+    compareBlogCta: "Werkstudent, stagiair of starter: wat past bij jouw bedrijf?",
+    costBlogNote: "Benieuwd naar de volledige kostenvergelijking?",
+    costBlogCta: "Wat kost een werkstudent vergeleken met een fulltime starter?",
     finalTitle: "KLAAR OM TE SCHALEN?",
     finalCta: "Plan een kennismaking",
   },
@@ -193,6 +205,12 @@ const COPY: Record<
     employersP2:
       "That’s why we look beyond filling a vacancy. We advise on how to make a role challenging, worth learning from and future-proof. A good working student isn’t cheap labour, but a future professional.",
     employersAlt: "Community of students and starters",
+    impactNote: "Our preference for working students goes beyond efficiency: it's part of our mission to make access to work experience fairer.",
+    impactCta: "Read about our impact",
+    compareBlogNote: "Want to dig deeper into the comparison?",
+    compareBlogCta: "Working student, intern or starter: what fits your company?",
+    costBlogNote: "Curious about the full cost comparison?",
+    costBlogCta: "What does a working student cost compared to a full-time starter?",
     finalTitle: "READY TO SCALE?",
     finalCta: "Book an intro call",
   },
@@ -344,6 +362,19 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
             <strong style={{ color: "var(--voids-ink)" }}>{c.prefPara[1]}</strong>
             {c.prefPara[2]}
           </p>
+          <p style={{ fontSize: 13, margin: "10px 0 0", maxWidth: 1040 }}>
+            <span style={{ color: "var(--voids-ink-muted)" }}>{c.compareBlogNote} </span>
+            <Link href={p(`/blog/werkstudent-stagiair-of-starter`)} style={{ fontWeight: 600, color: "var(--voids-purple)" }}>
+              {c.compareBlogCta} →
+            </Link>
+          </p>
+
+          <div className="card" style={{ padding: 24, marginTop: 32, maxWidth: 1040, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, flexWrap: "wrap" }}>
+            <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 640 }}>{c.impactNote}</p>
+            <Link href={p("/impact")} style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-purple)", whiteSpace: "nowrap", flex: "none" }}>
+              {c.impactCta} →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -365,6 +396,12 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
             <p style={{ fontSize: 15, color: "var(--voids-ink-muted)", margin: 0 }}>{c.calcIntro}</p>
           </div>
           <CostCalculator lang={lang} />
+          <p style={{ fontSize: 13, margin: "20px 0 0" }}>
+            <span style={{ color: "var(--voids-ink-muted)" }}>{c.costBlogNote} </span>
+            <Link href={p(`/blog/kosten-werkstudent-vs-starter`)} style={{ fontWeight: 600, color: "var(--voids-purple)" }}>
+              {c.costBlogCta} →
+            </Link>
+          </p>
         </div>
       </section>
 
