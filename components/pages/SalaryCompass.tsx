@@ -13,18 +13,18 @@ const COPY: Record<
 > = {
   nl: {
     steps: [
-      { label: "Wettelijk minimumloon (21+)", value: `€ ${MIN_WAGE.toFixed(2).replace(".", ",")}`, note: "Absolute ondergrens, per 1 juli 2026" },
-      { label: "VOIDS-advies", value: `€ ${ADVICE_LOW.toFixed(2).replace(".", ",")} – ${ADVICE_HIGH.toFixed(2).replace(".", ",")}`, note: "+10 tot 20% boven het minimumloon", recommended: true },
-      { label: "Hoger? Prima.", value: `€ ${Math.ceil(ADVICE_HIGH)}+`, note: "Afhankelijk van rol, ervaring & CAO" },
+      { label: "Wettelijk minimumloon (21+)", value: `€ ${MIN_WAGE.toFixed(2).replace(".", ",")}`, note: "Ondergrens per 1 juli 2026" },
+      { label: "VOIDS-advies", value: `€ ${ADVICE_LOW.toFixed(2).replace(".", ",")} – ${ADVICE_HIGH.toFixed(2).replace(".", ",")}`, note: "+10 tot 20% boven minimumloon", recommended: true },
+      { label: "Boven het advies", value: `€ ${Math.ceil(ADVICE_HIGH)}+`, note: "Afhankelijk van rol, ervaring & CAO" },
     ],
     footnote:
       "Cijfers o.b.v. het wettelijk brutominimumloon voor werknemers van 21 jaar en ouder, per 1 juli 2026 (bron: rijksoverheid.nl). Voor werkstudenten onder de 21 geldt een lager wettelijk minimumjeugdloon; reken vanaf dat bedrag met dezelfde marge. Geldt er een CAO voor de functie of sector? Die gaat vaak vóór het wettelijk minimum.",
   },
   en: {
     steps: [
-      { label: "Statutory minimum wage (21+)", value: `€ ${MIN_WAGE.toFixed(2)}`, note: "Absolute floor, as of 1 July 2026" },
+      { label: "Statutory minimum wage (21+)", value: `€ ${MIN_WAGE.toFixed(2)}`, note: "Floor as of 1 July 2026" },
       { label: "VOIDS advice", value: `€ ${ADVICE_LOW.toFixed(2)} – ${ADVICE_HIGH.toFixed(2)}`, note: "+10 to 20% above minimum wage", recommended: true },
-      { label: "Higher? Great.", value: `€ ${Math.ceil(ADVICE_HIGH)}+`, note: "Depends on role, experience & CAO" },
+      { label: "Above the advice", value: `€ ${Math.ceil(ADVICE_HIGH)}+`, note: "Depends on role, experience & CAO" },
     ],
     footnote:
       "Figures based on the statutory gross minimum wage for employees aged 21 and older, as of 1 July 2026 (source: rijksoverheid.nl). Working students under 21 fall under a lower statutory youth minimum wage; apply the same margin from that amount. If a CAO applies to the role or sector, it usually takes precedence over the statutory minimum.",
