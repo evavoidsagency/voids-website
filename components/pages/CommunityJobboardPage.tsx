@@ -85,14 +85,14 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
   return (
     <>
       <section style={{ background: "var(--voids-beige)" }}>
-        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "start", padding: "64px 32px 56px" }}>
+        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "center", padding: "64px 32px 56px" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.eyebrow}</span>
             <h1 className="anton hero-h1" style={{ fontSize: 42, margin: "12px 0 12px", whiteSpace: "pre-line" }}>{c.title}</h1>
             <p style={{ fontSize: 16, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 480 }}>{c.sub}</p>
           </div>
 
-          <div className="card" style={{ padding: 26, marginTop: 38 }}>
+          <div className="card" style={{ padding: 26 }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               {c.heroStats.map((s, i) => (
                 <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: i === 0 ? "none" : "1px solid var(--border-hairline)", paddingTop: i === 0 ? 0 : 14 }}>
