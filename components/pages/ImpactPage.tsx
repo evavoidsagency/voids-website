@@ -42,7 +42,7 @@ const COPY: Record<
     problemEyebrow: "Het probleem",
     problemTitle: "WERKERVARING IS EEN VOORRECHT GEWORDEN.",
     problemIntro:
-      "Relevante werkervaring is bijna een voorwaarde voor een goede baan na je studie. Maar vaak moet je kiezen: werkervaring, of een inkomen om van te leven. Wie dat inkomen nodig heeft, kan die keuze niet zomaar maken.",
+      "Relevante werkervaring is bijna een voorwaarde voor een goede baan na je studie. Maar vaak moet je kiezen: ervaring opdoen via een stage, of geld verdienen met een bijbaan die vaak los staat van je studie, en je dus weinig richting geeft. Wie dat inkomen nodig heeft, kan voor die ervaring dan ook niet zomaar kiezen.",
     card1Badge: "Werkervaring",
     card1Title: "De stagevergoeding",
     card1Text:
@@ -81,7 +81,7 @@ const COPY: Record<
     problemEyebrow: "The problem",
     problemTitle: "WORK EXPERIENCE HAS BECOME A PRIVILEGE.",
     problemIntro:
-      "Relevant work experience is almost a requirement for a good job after your studies. But often you have to choose: work experience, or an income to live on. Anyone who needs that income can’t just make that choice.",
+      "Relevant work experience is almost a requirement for a good job after your studies. But often you have to choose: gain experience through an internship, or earn money with a side job that's usually unrelated to your studies, and gives you little sense of direction. Anyone who needs that income can't just choose the experience instead.",
     card1Badge: "Work experience",
     card1Title: "The internship allowance",
     card1Text:
