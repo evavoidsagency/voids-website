@@ -1,6 +1,5 @@
 import { CalendlyButton } from "@/components/site/CalendlyButton";
 import { Photo } from "@/components/ui/Photo";
-import { SalaryCompass } from "@/components/pages/SalaryCompass";
 import type { Lang } from "@/lib/i18n/common";
 
 const COPY: Record<
@@ -11,9 +10,6 @@ const COPY: Record<
     sub: string;
     scopeTitle: string;
     scope: { title: string; text: string; accent: "purple" | "blue" }[];
-    compassEyebrow: string;
-    compassTitle: string;
-    compassIntro: string;
     bandAlt: string;
     contactTitle: string;
     contactText: string;
@@ -42,9 +38,6 @@ const COPY: Record<
         accent: "purple",
       },
     ],
-    compassEyebrow: "Salariskompas",
-    compassTitle: "WAT BETAAL JE EEN WERKSTUDENT?",
-    compassIntro: "Er is geen vast bedrag: het hangt af van de rol, verantwoordelijkheid en sector. Ons advies: ga minimaal 10 tot 20% boven het wettelijk minimumloon zitten, en check altijd of er een CAO geldt die een hoger loon voorschrijft.",
     bandAlt: "VOIDS-team aan het werk",
     contactTitle: "EENS SPARREN?",
     contactText: "Plan een vrijblijvend gesprek over je junior-strategie.",
@@ -72,9 +65,6 @@ const COPY: Record<
         accent: "purple",
       },
     ],
-    compassEyebrow: "Salary compass",
-    compassTitle: "WHAT DO YOU PAY A WORKING STUDENT?",
-    compassIntro: "There's no fixed number: it depends on the role, responsibility and sector. Our advice: sit at least 10 to 20% above the statutory minimum wage, and always check whether a CAO (collective agreement) sets a higher rate.",
     bandAlt: "The VOIDS team at work",
     contactTitle: "WANT TO SPAR?",
     contactText: "Book a free-form call about your junior strategy.",
@@ -120,19 +110,6 @@ export function EmployerBrandingPage({ lang }: { lang: Lang }) {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="salariskompas" style={{ background: "var(--voids-purple-100)" }}>
-        <div className="wrap" style={{ padding: "56px 32px" }}>
-          <div style={{ maxWidth: 640, marginBottom: 30 }}>
-            <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.compassEyebrow}</span>
-            <h2 className="anton section-h2" style={{ fontSize: 28, margin: "8px 0 8px" }}>{c.compassTitle}</h2>
-            <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: 0 }}>{c.compassIntro}</p>
-          </div>
-          <div style={{ maxWidth: 780 }}>
-            <SalaryCompass lang={lang} />
           </div>
         </div>
       </section>

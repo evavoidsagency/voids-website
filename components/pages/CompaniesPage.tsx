@@ -56,8 +56,11 @@ const COPY: Record<
     impactCta: string;
     compareBlogNote: string;
     compareBlogCta: string;
-    salaryNote: string;
-    salaryCta: string;
+    salaryLabel: string;
+    salaryMinLabel: string;
+    salaryAdviceLabel: string;
+    salaryAboveLabel: string;
+    salaryFootnote: string;
     costBlogNote: string;
     costBlogCta: string;
     finalTitle: string;
@@ -140,8 +143,11 @@ const COPY: Record<
     impactCta: "Lees over onze impact",
     compareBlogNote: "Dieper induiken in de vergelijking?",
     compareBlogCta: "Werkstudent, stagiair of starter: wat past bij jouw bedrijf?",
-    salaryNote: "Benieuwd wat je concreet zou moeten betalen?",
-    salaryCta: "Bekijk ons salariskompas →",
+    salaryLabel: "Salariskompas",
+    salaryMinLabel: "Minimumloon",
+    salaryAdviceLabel: "VOIDS-advies",
+    salaryAboveLabel: "hoger, afhankelijk van rol & CAO",
+    salaryFootnote: "Per 1 juli 2026, o.b.v. het wettelijk minimumloon (21+, bron: rijksoverheid.nl). Voor jongere werkstudenten en CAO-functies gelden andere bedragen.",
     costBlogNote: "Benieuwd naar de volledige kostenvergelijking?",
     costBlogCta: "Wat kost een werkstudent vergeleken met een fulltime starter?",
     finalTitle: "KLAAR OM TE SCHALEN?",
@@ -223,8 +229,11 @@ const COPY: Record<
     impactCta: "Read about our impact",
     compareBlogNote: "Want to dig deeper into the comparison?",
     compareBlogCta: "Working student, intern or starter: what fits your company?",
-    salaryNote: "Curious what you should actually be paying?",
-    salaryCta: "See our salary compass →",
+    salaryLabel: "Salary compass",
+    salaryMinLabel: "Minimum wage",
+    salaryAdviceLabel: "VOIDS advice",
+    salaryAboveLabel: "higher, depending on role & CAO",
+    salaryFootnote: "As of 1 July 2026, based on the statutory minimum wage (21+, source: rijksoverheid.nl). Different amounts apply for younger working students and CAO roles.",
     costBlogNote: "Curious about the full cost comparison?",
     costBlogCta: "What does a working student cost compared to a full-time starter?",
     finalTitle: "READY TO SCALE?",
@@ -402,12 +411,19 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
               {c.compareBlogCta} →
             </Link>
           </p>
-          <p style={{ fontSize: 13, margin: "6px 0 0", maxWidth: 1040 }}>
-            <span style={{ color: "var(--voids-ink-muted)" }}>{c.salaryNote} </span>
-            <Link href={p(`/companies/employer-branding#salariskompas`)} style={{ fontWeight: 600, color: "var(--voids-purple)" }}>
-              {c.salaryCta}
-            </Link>
-          </p>
+          <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 10, marginTop: 14, padding: "10px 16px", background: "var(--voids-beige)", border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", maxWidth: 1040 }}>
+            <span style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: ".03em", textTransform: "uppercase", color: "var(--voids-purple)", flex: "none" }}>{c.salaryLabel}</span>
+            <span style={{ fontSize: 13, color: "var(--voids-ink-soft)" }}>
+              {c.salaryMinLabel} <strong style={{ color: "var(--voids-ink)" }}>{lang === "nl" ? "€ 14,99" : "€ 14.99"}</strong>
+            </span>
+            <span style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>→</span>
+            <span style={{ fontSize: 13, color: "var(--voids-purple)", fontWeight: 700 }}>
+              {lang === "nl" ? "€ 16,49–17,99" : "€ 16.49–17.99"} <span style={{ fontWeight: 500, color: "var(--voids-ink-soft)" }}>{c.salaryAdviceLabel}</span>
+            </span>
+            <span style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>→</span>
+            <span style={{ fontSize: 13, color: "var(--voids-ink-soft)" }}>{c.salaryAboveLabel}</span>
+          </div>
+          <p style={{ fontSize: 11, color: "var(--voids-ink-muted)", margin: "6px 0 0", maxWidth: 1040 }}>{c.salaryFootnote}</p>
 
           <div className="card card--accent-purple" style={{ padding: 24, marginTop: 32, maxWidth: 1040, display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
             <HeartIcon />
