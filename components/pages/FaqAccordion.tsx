@@ -6,7 +6,7 @@ export function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
   const [open, setOpen] = useState(0);
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+    <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 10, alignItems: "start" }}>
       {items.map((item, i) => {
         const isOpen = open === i;
         return (

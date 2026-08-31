@@ -325,14 +325,14 @@ export function TalentPage({ lang }: { lang: Lang }) {
               ))}
             </div>
           </div>
-          <div>
-            <div style={{ fontSize: 12.5, fontWeight: 600, color: "var(--voids-ink-muted)", marginBottom: 8 }}>{c.fitCardCaption}</div>
-            <div style={{ background: "var(--voids-beige)", border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", padding: 24 }}>
+          <div className="card" style={{ padding: 20 }}>
+            <div style={{ fontSize: 12.5, fontWeight: 600, color: "var(--voids-ink-muted)", marginBottom: 10 }}>{c.fitCardCaption}</div>
+            <div style={{ background: "var(--voids-beige)", borderRadius: "var(--radius-md)", padding: 24 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
                 <span style={{ fontWeight: 600, fontSize: 15 }}>{c.fitCardRole}</span>
                 <span className="anton" style={{ fontSize: 26, color: "var(--voids-blue)" }}>92%</span>
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 11, marginBottom: 20 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 11 }}>
                 {c.fitCriteria.map((f) => (
                   <div key={f.label}>
                     <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12.5, marginBottom: 4 }}>
@@ -345,6 +345,8 @@ export function TalentPage({ lang }: { lang: Lang }) {
                   </div>
                 ))}
               </div>
+            </div>
+            <div style={{ marginTop: 16 }}>
               <Button variant="secondary" size="md" fullWidth href={p("/pager")}>{c.fitCta}</Button>
             </div>
           </div>
@@ -427,7 +429,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
       <section className="wrap" style={{ padding: "72px 32px" }}>
         <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.faqEyebrow}</span>
         <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 22px" }}>{c.faqTitle}</h2>
-        <div style={{ maxWidth: 780 }}>
+        <div style={{ maxWidth: 1040 }}>
           <FaqAccordion items={c.faq} />
         </div>
       </section>
