@@ -90,13 +90,26 @@ export function EmployerBrandingPage({ lang }: { lang: Lang }) {
 
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "56px 32px 64px" }}>
-          <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 22px" }}>{c.scopeTitle}</h2>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20 }}>
+          <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 6px" }}>{c.scopeTitle}</h2>
+          <div style={{ display: "flex", flexDirection: "column" }}>
             {c.scope.map((s, i) => (
-              <div key={s.title} className={`card card--accent-${s.accent}`} style={{ padding: 24 }}>
-                {i === 0 ? <CompassIcon /> : i === 1 ? <MegaphoneIcon /> : <SproutIcon />}
-                <div className="anton" style={{ fontSize: 17, margin: "12px 0 8px", color: s.accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)" }}>{s.title}</div>
-                <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{s.text}</p>
+              <div
+                key={s.title}
+                className="g-collapse"
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "280px 1fr",
+                  gap: 24,
+                  alignItems: "baseline",
+                  padding: "26px 0",
+                  borderTop: i === 0 ? "none" : "1px solid var(--border-hairline)",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  {i === 0 ? <CompassIcon /> : i === 1 ? <MegaphoneIcon /> : <SproutIcon />}
+                  <div className="anton" style={{ fontSize: 18, color: s.accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)" }}>{s.title}</div>
+                </div>
+                <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 640 }}>{s.text}</p>
               </div>
             ))}
           </div>
