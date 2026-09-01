@@ -60,7 +60,6 @@ const COPY: Record<
     salaryMinLabel: string;
     salaryAdviceLabel: string;
     salaryAdviceExample: string;
-    salaryAboveLabel: string;
     salaryFootnote: string;
     costBlogNote: string;
     costBlogCta: string;
@@ -148,7 +147,6 @@ const COPY: Record<
     salaryMinLabel: "Minimumloon",
     salaryAdviceLabel: "VOIDS-advies",
     salaryAdviceExample: "Bijv. € 16,49–17,99 boven het wettelijk minimum hieronder. Geldt er een CAO? Reken dan vanaf dát bedrag, niet vanaf het wettelijk minimum.",
-    salaryAboveLabel: "Hoger? Afhankelijk van rol & CAO.",
     salaryFootnote: "Per 1 juli 2026, o.b.v. het wettelijk minimumloon (21+, bron: rijksoverheid.nl). Voor jongere werkstudenten en CAO-functies gelden andere bedragen.",
     costBlogNote: "Benieuwd naar de volledige kostenvergelijking?",
     costBlogCta: "Wat kost een werkstudent vergeleken met een fulltime starter?",
@@ -235,7 +233,6 @@ const COPY: Record<
     salaryMinLabel: "Minimum wage",
     salaryAdviceLabel: "VOIDS advice",
     salaryAdviceExample: "E.g. € 16.49–17.99 above the statutory minimum below. If a CAO applies, calculate from that amount instead of the statutory minimum.",
-    salaryAboveLabel: "Higher? Depends on role & CAO.",
     salaryFootnote: "As of 1 July 2026, based on the statutory minimum wage (21+, source: rijksoverheid.nl). Different amounts apply for younger working students and CAO roles.",
     costBlogNote: "Curious about the full cost comparison?",
     costBlogCta: "What does a working student cost compared to a full-time starter?",
@@ -343,7 +340,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 16 }}>
             {TALENT_PROFILES[lang].map((pr) => (
               <div key={pr.field} className="card" style={{ padding: 20 }}>
-                <span className="badge badge--purple" style={{ marginLeft: -10, marginBottom: 12, display: "inline-block" }}>{pr.field}</span>
+                <span className="badge badge--purple" style={{ marginBottom: 12, display: "inline-block" }}>{pr.field}</span>
                 <div style={{ fontSize: 14, fontWeight: 600, margin: "0 0 4px" }}>{pr.edu}</div>
                 <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", marginBottom: 12 }}>{pr.skills}</div>
                 <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-soft)", margin: 0, fontStyle: "italic" }}>{pr.traits}</p>
@@ -414,23 +411,28 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
               {c.compareBlogCta} →
             </Link>
           </p>
-          <div className="card" style={{ padding: 22, marginTop: 24, maxWidth: 340 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".03em", textTransform: "uppercase", color: "var(--voids-purple)", marginBottom: 14 }}>
-              {c.salaryLabel}
+          <div className="card" style={{ padding: 24, marginTop: 24, maxWidth: 1040 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 28, flexWrap: "wrap" }}>
+              <div style={{ flex: 1, minWidth: 260 }}>
+                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".03em", textTransform: "uppercase", color: "var(--voids-purple)", marginBottom: 8 }}>
+                  {c.salaryLabel}
+                </div>
+                <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: 0 }}>{c.salaryAdviceExample}</p>
+              </div>
+              <div style={{ display: "flex", gap: 36, flex: "none" }}>
+                <div style={{ textAlign: "right" }}>
+                  <div style={{ fontSize: 12, color: "var(--voids-ink-muted)", marginBottom: 2, whiteSpace: "nowrap" }}>{c.salaryMinLabel}</div>
+                  <div className="anton" style={{ fontSize: 24, color: "var(--voids-ink)" }}>{lang === "nl" ? "€ 14,99" : "€ 14.99"}</div>
+                </div>
+                <div style={{ textAlign: "right" }}>
+                  <div style={{ fontSize: 12, color: "var(--voids-purple)", fontWeight: 600, marginBottom: 2, whiteSpace: "nowrap" }}>{c.salaryAdviceLabel}</div>
+                  <div className="anton" style={{ fontSize: 24, color: "var(--voids-purple)" }}>+10–20%</div>
+                </div>
+              </div>
             </div>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 8, marginBottom: 4 }}>
-              <span style={{ fontSize: 13, color: "var(--voids-purple)", fontWeight: 700 }}>{c.salaryAdviceLabel}</span>
-              <span style={{ fontSize: 20, fontWeight: 700, color: "var(--voids-purple)" }} className="anton">+10–20%</span>
-            </div>
-            <div style={{ fontSize: 11.5, lineHeight: 1.5, color: "var(--voids-ink-muted)" }}>{c.salaryAdviceExample}</div>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 8, marginTop: 12, paddingTop: 10, borderTop: "1px solid var(--border-hairline)" }}>
-              <span style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>{c.salaryMinLabel}</span>
-              <span style={{ fontSize: 15, fontWeight: 700, color: "var(--voids-ink)" }}>{lang === "nl" ? "€ 14,99" : "€ 14.99"}</span>
-            </div>
-            <div style={{ fontSize: 12, color: "var(--voids-ink-muted)", marginTop: 10, paddingTop: 10, borderTop: "1px solid var(--border-hairline)" }}>
-              {c.salaryAboveLabel}
-            </div>
-            <p style={{ fontSize: 10.5, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: "14px 0 0" }}>{c.salaryFootnote}</p>
+            <p style={{ fontSize: 11, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: "16px 0 0", paddingTop: 14, borderTop: "1px solid var(--border-hairline)" }}>
+              {c.salaryFootnote}
+            </p>
           </div>
 
           <div className="card card--accent-purple" style={{ padding: 24, marginTop: 32, maxWidth: 1040, display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
