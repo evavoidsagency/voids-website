@@ -92,26 +92,33 @@ export function EmployerBrandingPage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "56px 32px 64px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 6px" }}>{c.scopeTitle}</h2>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            {c.scope.map((s, i) => (
-              <div
-                key={s.title}
-                className="g-collapse"
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "280px 1fr",
-                  gap: 24,
-                  alignItems: "baseline",
-                  padding: "26px 0",
-                  borderTop: i === 0 ? "none" : "1px solid var(--border-hairline)",
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  {i === 0 ? <CompassIcon /> : i === 1 ? <MegaphoneIcon /> : <SproutIcon />}
-                  <div className="anton" style={{ fontSize: 18, color: s.accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)" }}>{s.title}</div>
+            {c.scope.map((s, i) => {
+              const color = s.accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)";
+              const bg = s.accent === "blue" ? "var(--voids-blue-100)" : "var(--voids-purple-100)";
+              return (
+                <div
+                  key={s.title}
+                  className="g-collapse"
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "280px 1fr",
+                    gap: 24,
+                    alignItems: "center",
+                    padding: "28px 0 28px 20px",
+                    borderTop: i === 0 ? "none" : "1px solid var(--border-hairline)",
+                    borderLeft: `3px solid ${color}`,
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                    <div style={{ width: 44, height: 44, borderRadius: "50%", background: bg, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
+                      {i === 0 ? <CompassIcon /> : i === 1 ? <MegaphoneIcon /> : <SproutIcon />}
+                    </div>
+                    <div className="anton" style={{ fontSize: 18, color }}>{s.title}</div>
+                  </div>
+                  <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 640 }}>{s.text}</p>
                 </div>
-                <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 640 }}>{s.text}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
