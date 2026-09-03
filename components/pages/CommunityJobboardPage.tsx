@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
 import { Photo } from "@/components/ui/Photo";
-import type { Lang } from "@/lib/i18n/common";
+import { localePath, type Lang } from "@/lib/i18n/common";
 
 const COPY: Record<
   Lang,
@@ -81,6 +82,7 @@ const COPY: Record<
 
 export function CommunityJobboardPage({ lang }: { lang: Lang }) {
   const c = COPY[lang];
+  const p = (path: string) => localePath(lang, path);
 
   return (
     <>
@@ -111,13 +113,21 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "56px 32px 64px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 20px" }}>{c.howTitle}</h2>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20 }}>
-            {c.how.map((h, i) => (
-              <div key={h.title} className={`card card--accent-${h.accent}`} style={{ padding: 24 }}>
-                {i === 0 ? <ChatIcon /> : <BoardIcon />}
-                <div className="anton" style={{ fontSize: 18, margin: "12px 0 10px" }}>{h.title}</div>
-                <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{h.text}</p>
-              </div>
-            ))}
+            {c.how.map((h, i) =>
+              i === 1 ? (
+                <Link key={h.title} href={p("/jobboard")} className={`card card--hoverable card--accent-${h.accent}`} style={{ padding: 24, display: "block", textDecoration: "none", color: "inherit" }}>
+                  <BoardIcon />
+                  <div className="anton" style={{ fontSize: 18, margin: "12px 0 10px" }}>{h.title}</div>
+                  <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{h.text}</p>
+                </Link>
+              ) : (
+                <div key={h.title} className={`card card--accent-${h.accent}`} style={{ padding: 24 }}>
+                  <ChatIcon />
+                  <div className="anton" style={{ fontSize: 18, margin: "12px 0 10px" }}>{h.title}</div>
+                  <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{h.text}</p>
+                </div>
+              )
+            )}
             <div className="card" style={{ padding: 24, background: "var(--voids-beige)" }}>
               <CoinIcon />
               <div className="anton" style={{ fontSize: 18, margin: "12px 0 10px" }}>{c.pricingTitle}</div>
