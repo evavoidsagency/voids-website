@@ -1,9 +1,25 @@
 import { LegalPage } from "@/components/pages/LegalPage";
+import { Button } from "@/components/ui/Button";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import type { Lang } from "@/lib/i18n/common";
 
-const COPY: Record<Lang, { eyebrow: string; title: string }> = {
-  nl: { eyebrow: "FAQ", title: "VEELGESTELDE VRAGEN." },
-  en: { eyebrow: "FAQ", title: "FREQUENTLY ASKED QUESTIONS." },
+const COPY: Record<Lang, { eyebrow: string; title: string; ctaTitle: string; ctaText: string; ctaWhats: string; ctaMail: string }> = {
+  nl: {
+    eyebrow: "FAQ",
+    title: "VEELGESTELDE VRAGEN.",
+    ctaTitle: "STAAT JE VRAAG ER NIET BIJ?",
+    ctaText: "Join de WhatsApp-community of mail ons direct. We reageren zo snel mogelijk.",
+    ctaWhats: "💜 Join WhatsApp",
+    ctaMail: "Mail ons",
+  },
+  en: {
+    eyebrow: "FAQ",
+    title: "FREQUENTLY ASKED QUESTIONS.",
+    ctaTitle: "DIDN'T FIND YOUR ANSWER?",
+    ctaText: "Join the WhatsApp community or email us directly. We'll get back to you as soon as possible.",
+    ctaWhats: "💜 Join WhatsApp",
+    ctaMail: "Email us",
+  },
 };
 
 /** Updated for the new platform — the VOIDS Academy question is dropped (not launching soon). */
@@ -84,6 +100,18 @@ export function FaqPage({ lang }: { lang: Lang }) {
           blocks: item.ul ? [{ p: item.a }, { ul: item.ul }] : [{ p: item.a }],
         }))}
       />
+      <section style={{ background: "var(--voids-blue)" }}>
+        <div className="wrap" style={{ padding: "48px 32px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 20 }}>
+          <div>
+            <h2 className="anton section-h2" style={{ fontSize: 26, color: "#fff", margin: "0 0 6px" }}>{c.ctaTitle}</h2>
+            <p style={{ fontSize: 14.5, color: "var(--voids-blue-100)", margin: 0 }}>{c.ctaText}</p>
+          </div>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <WhatsAppButton variant="outline" size="md" onDark>{c.ctaWhats}</WhatsAppButton>
+            <Button variant="outline" size="md" onDark href="mailto:contact@voids.agency">{c.ctaMail}</Button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
