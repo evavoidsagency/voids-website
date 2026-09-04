@@ -167,9 +167,26 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.strengthEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 14px", maxWidth: 760 }}>{c.strengthTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-soft)", margin: "0 0 22px", maxWidth: 700 }}>{c.strengthText}</p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
             {c.strengthPoints.map((pt) => (
-              <span key={pt} className="badge badge--purple">{pt}</span>
+              <span
+                key={pt}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  fontSize: 13.5,
+                  fontWeight: 600,
+                  color: "var(--voids-purple)",
+                  background: "#fff",
+                  borderRadius: 999,
+                  padding: "10px 18px",
+                  boxShadow: "var(--shadow-sm)",
+                }}
+              >
+                <CheckIcon />
+                {pt}
+              </span>
             ))}
           </div>
         </div>
@@ -255,5 +272,14 @@ export function AboutPage({ lang }: { lang: Lang }) {
         <ContactForm lang={lang} />
       </section>
     </>
+  );
+}
+
+function CheckIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <circle cx="7" cy="7" r="6.25" stroke="var(--voids-purple)" strokeWidth="1.4" />
+      <path d="M4.3 7.1l1.9 1.9 3.5-3.9" stroke="var(--voids-purple)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }
