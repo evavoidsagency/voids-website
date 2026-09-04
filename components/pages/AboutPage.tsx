@@ -17,6 +17,11 @@ const COPY: Record<
     strengthTitle: string;
     strengthText: string;
     strengthPoints: string[];
+    partnersEyebrow: string;
+    partnersTitle: string;
+    partnersText: string;
+    partnerName: string;
+    partnerRole: string;
     whatEyebrow: string;
     whatTitle: string;
     whatCards: { verb: string; title: string; text: string; path?: string; cta?: string }[];
@@ -44,6 +49,12 @@ const COPY: Record<
       "Aanwezig bij young talent events",
       "4.000+ studenten in de community",
     ],
+    partnersEyebrow: "Samenwerkingen",
+    partnersTitle: "VERBONDEN AAN HET ONDERWIJS.",
+    partnersText:
+      "We zijn Impact Fellow bij de Universiteit van Amsterdam, en bouwen van daaruit aan structurele samenwerkingen met hogescholen en universiteiten door heel Nederland.",
+    partnerName: "Universiteit van Amsterdam",
+    partnerRole: "Impact Fellow",
     whatEyebrow: "Wat we doen",
     whatTitle: "HOE WE DAT WAARMAKEN.",
     whatCards: [
@@ -92,6 +103,12 @@ const COPY: Record<
       "Present at young talent events",
       "4,000+ students in the community",
     ],
+    partnersEyebrow: "Partnerships",
+    partnersTitle: "CONNECTED TO HIGHER EDUCATION.",
+    partnersText:
+      "We're an Impact Fellow at the University of Amsterdam, and are building structural partnerships with universities and universities of applied sciences across the Netherlands from there.",
+    partnerName: "University of Amsterdam",
+    partnerRole: "Impact Fellow",
     whatEyebrow: "What we do",
     whatTitle: "WHAT WE ACTUALLY DELIVER.",
     whatCards: [
@@ -189,6 +206,22 @@ export function AboutPage({ lang }: { lang: Lang }) {
                 {pt}
               </span>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ background: "var(--voids-beige)" }}>
+        <div className="wrap" style={{ padding: "48px 32px" }}>
+          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.partnersEyebrow}</span>
+          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 14px" }}>{c.partnersTitle}</h2>
+          <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 26px", maxWidth: 700 }}>{c.partnersText}</p>
+          <div className="card" style={{ display: "inline-flex", alignItems: "center", gap: 16, padding: "16px 24px" }}>
+            <div className="anton" style={{ fontSize: 20, color: "var(--voids-purple)" }}>UvA</div>
+            <div style={{ width: 1, height: 32, background: "var(--border-hairline)" }} />
+            <div>
+              <div style={{ fontSize: 14, fontWeight: 600 }}>{c.partnerName}</div>
+              <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)" }}>{c.partnerRole}</div>
+            </div>
           </div>
         </div>
       </section>
