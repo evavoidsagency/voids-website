@@ -165,8 +165,8 @@ export function AboutPage({ lang }: { lang: Lang }) {
       <section style={{ background: "var(--voids-purple-100)" }}>
         <div className="wrap" style={{ padding: "48px 32px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.strengthEyebrow}</span>
-          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 14px", maxWidth: 760 }}>{c.strengthTitle}</h2>
-          <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-soft)", margin: "0 0 22px", maxWidth: 700 }}>{c.strengthText}</p>
+          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 14px" }}>{c.strengthTitle}</h2>
+          <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-soft)", margin: "0 0 22px" }}>{c.strengthText}</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
             {c.strengthPoints.map((pt) => (
               <span
