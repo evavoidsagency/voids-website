@@ -40,9 +40,9 @@ const COPY: Record<
     strengthText:
       "We wachten niet tot cv's binnenkomen. Via structurele samenwerkingen met studieverenigingen en de plekken waar young talent samenkomt, bouwen we die kennis zelf op. Daardoor zien we verder dan een cv: we prikken door tot wie iemand écht is, en of dat de gedrevenheid en potentie oplevert waar we naar zoeken.",
     strengthPoints: [
-      "Structurele samenwerkingen met studieverenigingen",
-      "Aanwezig op de events waar young talent samenkomt",
-      "4.000+ studenten in onze eigen community",
+      "Studieverenigingen als partner",
+      "Aanwezig bij young talent events",
+      "4.000+ studenten in de community",
     ],
     whatEyebrow: "Wat we doen",
     whatTitle: "HOE WE DAT WAARMAKEN.",
@@ -88,9 +88,9 @@ const COPY: Record<
     strengthText:
       "We don't wait for CVs to land in an inbox. Through structural partnerships with study associations and the places where young talent actually gathers, we build that knowledge ourselves. That's how we see past a CV: we can tell who someone really is, and whether that adds up to the drive and potential we're looking for.",
     strengthPoints: [
-      "Structural partnerships with study associations",
-      "Present at the events where young talent gathers",
-      "4,000+ students in our own community",
+      "Study associations as partners",
+      "Present at young talent events",
+      "4,000+ students in the community",
     ],
     whatEyebrow: "What we do",
     whatTitle: "WHAT WE ACTUALLY DELIVER.",
@@ -167,7 +167,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.strengthEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 14px", maxWidth: 760 }}>{c.strengthTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-soft)", margin: "0 0 22px", maxWidth: 700 }}>{c.strengthText}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 10 }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
             {c.strengthPoints.map((pt) => (
               <span
                 key={pt}
@@ -181,6 +181,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
                   background: "#fff",
                   borderRadius: 999,
                   padding: "10px 18px",
+                  whiteSpace: "nowrap",
                   boxShadow: "var(--shadow-sm)",
                 }}
               >
