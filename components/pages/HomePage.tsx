@@ -268,6 +268,21 @@ export function HomePage({ lang }: { lang: Lang }) {
         </Link>
       </section>
 
+      {/* MISSION / IMPACT TEASER */}
+      <section className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: ".9fr 1.1fr", gap: 44, alignItems: "center" }}>
+        <Photo src="/photography/home-mission.jpg" alt={c.missionAlt} ratio="1 / 1" />
+        <div>
+          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.missionLabel}</span>
+          <h2 className="anton section-h2" style={{ fontSize: 40, margin: "10px 0 16px" }}>{c.missionTitle}</h2>
+          <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", maxWidth: 520, margin: "0 0 22px" }}>
+            {c.missionText}
+          </p>
+          <Button variant="primary" size="md" href={p("/impact")}>
+            {c.missionCta}
+          </Button>
+        </div>
+      </section>
+
       {/* TESTIMONIALS */}
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "60px 32px" }}>
@@ -296,21 +311,6 @@ export function HomePage({ lang }: { lang: Lang }) {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* MISSION / IMPACT TEASER */}
-      <section className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: ".9fr 1.1fr", gap: 44, alignItems: "center" }}>
-        <Photo src="/photography/home-mission.jpg" alt={c.missionAlt} ratio="1 / 1" />
-        <div>
-          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.missionLabel}</span>
-          <h2 className="anton section-h2" style={{ fontSize: 40, margin: "10px 0 16px" }}>{c.missionTitle}</h2>
-          <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", maxWidth: 520, margin: "0 0 22px" }}>
-            {c.missionText}
-          </p>
-          <Button variant="primary" size="md" href={p("/impact")}>
-            {c.missionCta}
-          </Button>
         </div>
       </section>
 
