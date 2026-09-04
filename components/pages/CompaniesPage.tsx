@@ -295,7 +295,8 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
               const badgeClass = accent === "blue" ? "badge--blue" : "badge--purple";
               return (
                 <div key={s.verb} className={`card card--hoverable card--accent-${accent}`} style={{ padding: 26, display: "flex", flexDirection: "column" }}>
-                  <div className="anton" style={{ fontSize: 34, color: accentColor, marginBottom: 12 }}>{s.verb}</div>
+                  <div className="anton" style={{ fontSize: 34, color: accentColor, marginBottom: 4 }}>{s.verb}</div>
+                  <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: ".02em", textTransform: "uppercase", color: "var(--voids-ink-muted)", marginBottom: 16 }}>{s.title}</div>
                   <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 20px", flex: 1 }}>{s.text}</p>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 18 }}>
                     {s.chips.map((chip) => (
