@@ -251,26 +251,28 @@ export function AboutPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section id="contact" className="wrap g-collapse" style={{ padding: "56px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "start", scrollMarginTop: 90 }}>
-        <div>
-          <h2 className="anton section-h2" style={{ fontSize: 34, margin: "0 0 12px" }}>{c.contactTitle}</h2>
-          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 22px" }}>{c.contactSub}</p>
-          <div style={{ marginBottom: 22 }}>
-            <CalendlyButton label={c.bookCall} />
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <a href="mailto:contact@voids.agency" style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink)", fontWeight: 400 }}>
-              📧 contact@voids.agency
-            </a>
-            <div style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink-soft)" }}>📍 {c.location}</div>
-            <div style={{ display: "flex", gap: 14, marginTop: 6 }}>
-              <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" style={{ fontSize: 14, fontWeight: 600 }}>LinkedIn</a>
-              <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" style={{ fontSize: 14, fontWeight: 600 }}>Instagram</a>
-              <a href={SOCIALS.tiktok} target="_blank" rel="noopener noreferrer" style={{ fontSize: 14, fontWeight: 600 }}>TikTok</a>
+      <section id="contact" style={{ background: "#fff", scrollMarginTop: 90 }}>
+        <div className="wrap g-collapse" style={{ padding: "56px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "start" }}>
+          <div>
+            <h2 className="anton section-h2" style={{ fontSize: 34, margin: "0 0 12px" }}>{c.contactTitle}</h2>
+            <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 22px" }}>{c.contactSub}</p>
+            <div style={{ marginBottom: 22 }}>
+              <CalendlyButton label={c.bookCall} />
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <a href="mailto:contact@voids.agency" style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink)", fontWeight: 400 }}>
+                📧 contact@voids.agency
+              </a>
+              <div style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink-soft)" }}>📍 {c.location}</div>
+              <div style={{ display: "flex", gap: 14, marginTop: 6 }}>
+                <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" style={{ fontSize: 14, fontWeight: 600 }}>LinkedIn</a>
+                <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" style={{ fontSize: 14, fontWeight: 600 }}>Instagram</a>
+                <a href={SOCIALS.tiktok} target="_blank" rel="noopener noreferrer" style={{ fontSize: 14, fontWeight: 600 }}>TikTok</a>
+              </div>
             </div>
           </div>
+          <ContactForm lang={lang} />
         </div>
-        <ContactForm lang={lang} />
       </section>
     </>
   );
