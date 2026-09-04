@@ -150,7 +150,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.problemEyebrow}</span>
         <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px", maxWidth: 1040 }}>{c.problemTitle}</h2>
         <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 26px", maxWidth: 820 }}>{c.problemIntro}</p>
-        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, maxWidth: 1040 }}>
+        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
           <div className="card card--hoverable card--accent-blue" style={{ padding: 24 }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <StipendIcon />
@@ -210,7 +210,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section style={{ background: "#fff" }}>
+      <section style={{ background: "var(--voids-beige)" }}>
         <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.movementEyebrow}</span>

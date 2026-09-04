@@ -82,7 +82,7 @@ const COPY: Record<
     servicesTitle: "DRIE MANIEREN OM MET ONS TE WERKEN.",
     services: [
       {
-        verb: "Vinden",
+        verb: "Talent vinden",
         title: "Werving & selectie",
         text: "We vinden kandidaten die passen bij de rol, de cultuur en de groeifase van je organisatie. Van werkstudent tot starter, elke match persoonlijk beoordeeld door een recruiter.",
         chips: ["Werkstudenten", "Stagiairs", "Starters"],
@@ -90,7 +90,7 @@ const COPY: Record<
         path: "/companies/recruitment-selection",
       },
       {
-        verb: "Versterken",
+        verb: "Team versterken",
         title: "Advies & employer branding",
         text: "Met advies over je junior-strategie en employer branding bouwen we mee aan een merk waar studenten voor kiezen, en een team dat groeit in plaats van na een half jaar te vertrekken.",
         chips: ["Junior-strategie", "Employer branding", "Behoud van talent"],
@@ -98,7 +98,7 @@ const COPY: Record<
         path: "/companies/employer-branding",
       },
       {
-        verb: "Bereiken",
+        verb: "Studenten bereiken",
         title: "Community & jobboard",
         text: "Zet je vacature rechtstreeks voor 4.000+ studenten en starters: wekelijks in de WhatsApp-community en doorlopend op ons jobboard.",
         chips: ["WhatsApp-community", "Jobboard"],

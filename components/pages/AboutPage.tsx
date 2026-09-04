@@ -19,7 +19,7 @@ const COPY: Record<
     strengthPoints: string[];
     whatEyebrow: string;
     whatTitle: string;
-    whatCards: { title: string; text: string; path?: string; cta?: string }[];
+    whatCards: { verb: string; title: string; text: string; path?: string; cta?: string }[];
     foundersAlt: string;
     foundersPending: string;
     teamTitle: string;
@@ -48,18 +48,21 @@ const COPY: Record<
     whatTitle: "HOE WE DAT WAARMAKEN.",
     whatCards: [
       {
+        verb: "Talent vinden",
         title: "Werving & selectie",
         text: "We nemen de volledige werving uit handen: van intake tot shortlist tot ondertekende match, voor werkstudenten, stagiairs en starters.",
         path: "/companies/recruitment-selection",
         cta: "Meer over werving & selectie →",
       },
       {
+        verb: "Studenten bereiken",
         title: "Community & jobboard",
         text: "Wil je zelf actief werven? Zet je vacature rechtstreeks onder de aandacht van 4.000+ studenten en starters in onze WhatsApp-community en op ons jobboard, naast onze werving & selectie-dienst.",
         path: "/companies/community-jobboard",
         cta: "Bekijk de opties →",
       },
       {
+        verb: "Team versterken",
         title: "Advies & employer branding",
         text: "We denken mee over je hele junior-strategie: van recruitment en het behouden van jong talent tot employer branding die echt aanslaat bij studenten en starters.",
         path: "/companies/employer-branding",
@@ -93,18 +96,21 @@ const COPY: Record<
     whatTitle: "WHAT WE ACTUALLY DELIVER.",
     whatCards: [
       {
+        verb: "Find talent",
         title: "Recruitment & selection",
         text: "We take the full hiring process off your hands: from intake to shortlist to signed match, for working students, interns and starters.",
         path: "/companies/recruitment-selection",
         cta: "More on recruitment & selection →",
       },
       {
+        verb: "Reach students",
         title: "Community & job board",
         text: "Want to recruit actively yourself? Put your vacancy directly in front of 4,000+ students and starters in our WhatsApp community and on our job board, alongside our recruitment & selection service.",
         path: "/companies/community-jobboard",
         cta: "See the options →",
       },
       {
+        verb: "Strengthen your team",
         title: "Advice & employer branding",
         text: "We think along on your whole junior strategy: from recruitment and retention to employer branding that actually lands with students and starters.",
         path: "/companies/employer-branding",
@@ -173,17 +179,18 @@ export function AboutPage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "52px 32px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whatEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 22px" }}>{c.whatTitle}</h2>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, maxWidth: 980 }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20 }}>
             {c.whatCards.map((card, i) => {
               const accent = i === 1 ? "blue" : "purple";
               const accentColor = accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)";
               return (
                 <div
-                  key={card.title}
+                  key={card.verb}
                   className={`card card--hoverable card--accent-${accent}`}
-                  style={{ padding: 24, display: "flex", flexDirection: "column" }}
+                  style={{ padding: 26, display: "flex", flexDirection: "column" }}
                 >
-                  <div className="anton" style={{ fontSize: 18, marginBottom: 10, color: accentColor }}>{card.title}</div>
+                  <div className="anton" style={{ fontSize: 26, color: accentColor, marginBottom: 4 }}>{card.verb}</div>
+                  <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: ".02em", textTransform: "uppercase", color: "var(--voids-ink-muted)", marginBottom: 14 }}>{card.title}</div>
                   <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{card.text}</p>
                   {card.path && card.cta && (
                     <Link href={localePath(lang, card.path)} style={{ fontSize: 13, fontWeight: 600, color: accentColor, marginTop: 14 }}>
