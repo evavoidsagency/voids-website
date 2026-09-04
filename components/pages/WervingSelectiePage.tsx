@@ -190,7 +190,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section style={{ background: "#fff" }}>
+      <section style={{ background: "var(--voids-beige)" }}>
         <div className="wrap" style={{ padding: "40px 32px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
           <p style={{ fontSize: 15, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 460 }}>{c.calcNote}</p>
           <Link href={localePath(lang, "/companies")} style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-purple)" }}>

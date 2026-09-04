@@ -186,7 +186,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       </section>
 
       {/* TRUSTED BY */}
-      <section style={{ background: "var(--voids-beige)" }}>
+      <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "34px 32px" }}>
           <div className="anton" style={{ fontSize: 20, textAlign: "center", marginBottom: 22 }}>
             {c.trustedBy}
@@ -234,7 +234,7 @@ export function HomePage({ lang }: { lang: Lang }) {
                 right: 0,
                 bottom: 10,
                 width: 56,
-                background: "linear-gradient(to right, transparent, var(--voids-beige))",
+                background: "linear-gradient(to right, transparent, #fff)",
                 pointerEvents: "none",
               }}
             />
@@ -243,43 +243,47 @@ export function HomePage({ lang }: { lang: Lang }) {
       </section>
 
       {/* TWO DOORS */}
-      <section className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
-        <Link
-          href={p("/talent")}
-          className="card"
-          style={{ display: "flex", flexDirection: "column", borderTop: "3px solid var(--voids-blue)", padding: 32, textDecoration: "none" }}
-        >
-          <div className="anton" style={{ fontSize: 28 }}>{c.doorTalentTitle}</div>
-          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "12px 0 18px", flex: 1 }}>
-            {c.doorTalentText}
-          </p>
-          <span style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-blue)" }}>{c.doorTalentCta}</span>
-        </Link>
-        <Link
-          href={p("/companies")}
-          className="card"
-          style={{ display: "flex", flexDirection: "column", borderTop: "3px solid var(--voids-purple)", padding: 32, textDecoration: "none" }}
-        >
-          <div className="anton" style={{ fontSize: 28 }}>{c.doorCompaniesTitle}</div>
-          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "12px 0 18px", flex: 1 }}>
-            {c.doorCompaniesText}
-          </p>
-          <span style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-purple)" }}>{c.doorCompaniesCta}</span>
-        </Link>
+      <section style={{ background: "var(--voids-beige)" }}>
+        <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+          <Link
+            href={p("/talent")}
+            className="card"
+            style={{ display: "flex", flexDirection: "column", borderTop: "3px solid var(--voids-blue)", padding: 32, textDecoration: "none" }}
+          >
+            <div className="anton" style={{ fontSize: 28 }}>{c.doorTalentTitle}</div>
+            <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "12px 0 18px", flex: 1 }}>
+              {c.doorTalentText}
+            </p>
+            <span style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-blue)" }}>{c.doorTalentCta}</span>
+          </Link>
+          <Link
+            href={p("/companies")}
+            className="card"
+            style={{ display: "flex", flexDirection: "column", borderTop: "3px solid var(--voids-purple)", padding: 32, textDecoration: "none" }}
+          >
+            <div className="anton" style={{ fontSize: 28 }}>{c.doorCompaniesTitle}</div>
+            <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "12px 0 18px", flex: 1 }}>
+              {c.doorCompaniesText}
+            </p>
+            <span style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-purple)" }}>{c.doorCompaniesCta}</span>
+          </Link>
+        </div>
       </section>
 
       {/* MISSION / IMPACT TEASER */}
-      <section className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: ".9fr 1.1fr", gap: 44, alignItems: "center" }}>
-        <Photo src="/photography/home-mission.jpg" alt={c.missionAlt} ratio="1 / 1" />
-        <div>
-          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.missionLabel}</span>
-          <h2 className="anton section-h2" style={{ fontSize: 40, margin: "10px 0 16px" }}>{c.missionTitle}</h2>
-          <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", maxWidth: 520, margin: "0 0 22px" }}>
-            {c.missionText}
-          </p>
-          <Button variant="primary" size="md" href={p("/impact")}>
-            {c.missionCta}
-          </Button>
+      <section style={{ background: "var(--voids-purple-100)" }}>
+        <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: ".9fr 1.1fr", gap: 44, alignItems: "center" }}>
+          <Photo src="/photography/home-mission.jpg" alt={c.missionAlt} ratio="1 / 1" />
+          <div>
+            <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.missionLabel}</span>
+            <h2 className="anton section-h2" style={{ fontSize: 40, margin: "10px 0 16px" }}>{c.missionTitle}</h2>
+            <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-soft)", maxWidth: 520, margin: "0 0 22px" }}>
+              {c.missionText}
+            </p>
+            <Button variant="primary" size="md" href={p("/impact")}>
+              {c.missionCta}
+            </Button>
+          </div>
         </div>
       </section>
 
