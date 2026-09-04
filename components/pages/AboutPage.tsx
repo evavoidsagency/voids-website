@@ -167,7 +167,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.strengthEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 14px", maxWidth: 760 }}>{c.strengthTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-soft)", margin: "0 0 22px", maxWidth: 700 }}>{c.strengthText}</p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 10 }}>
             {c.strengthPoints.map((pt) => (
               <span
                 key={pt}
