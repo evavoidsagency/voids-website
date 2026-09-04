@@ -171,20 +171,22 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section className="wrap" style={{ padding: "48px 32px 20px" }}>
-        <h2 className="anton section-h2" style={{ fontSize: 22, margin: "0 0 20px" }}>{c.rolesTitle}</h2>
-        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 16 }}>
-          {ROLES[lang].map((r) => (
-            <div key={r.role} style={{ background: "var(--voids-beige)", border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", padding: 20 }}>
-              <div style={{ fontSize: 15, fontWeight: 600 }}>{r.role}</div>
-              <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", margin: "4px 0 12px" }}>{r.company} · {r.uren}</div>
-              <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                {r.tags.map((t) => (
-                  <span key={t} className="badge badge--blue">{t}</span>
-                ))}
+      <section style={{ background: "#fff" }}>
+        <div className="wrap" style={{ padding: "48px 32px 56px" }}>
+          <h2 className="anton section-h2" style={{ fontSize: 22, margin: "0 0 20px" }}>{c.rolesTitle}</h2>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 16 }}>
+            {ROLES[lang].map((r) => (
+              <div key={r.role} style={{ background: "var(--voids-beige)", border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", padding: 20 }}>
+                <div style={{ fontSize: 15, fontWeight: 600 }}>{r.role}</div>
+                <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", margin: "4px 0 12px" }}>{r.company} · {r.uren}</div>
+                <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                  {r.tags.map((t) => (
+                    <span key={t} className="badge badge--blue">{t}</span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
