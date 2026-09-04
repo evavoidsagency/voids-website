@@ -209,7 +209,7 @@ export function HomePage({ lang }: { lang: Lang }) {
                 };
                 const content = logoUrl ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={logoUrl} alt={name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+                  <img src={logoUrl} alt={name} width={116} height={48} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
                 ) : (
                   <span style={{ fontSize: 11, fontWeight: 600, color: "var(--voids-ink-muted)", textAlign: "center", lineHeight: 1.3 }}>
                     {name}
