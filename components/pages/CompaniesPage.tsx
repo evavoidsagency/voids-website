@@ -24,6 +24,7 @@ const COPY: Record<
     profilesEyebrow: string;
     profilesTitle: string;
     profilesIntro: string;
+    profilesCta: string;
     whyWsEyebrow: string;
     whyWsTitle: string;
     whyWsIntro: string;
@@ -69,14 +70,14 @@ const COPY: Record<
 > = {
   nl: {
     eyebrow: "Voor bedrijven",
-    title: "EEN SHORTLIST,\nGEEN CV-STAPEL.",
-    sub: "Wij nemen het hele wervingsproces uit handen, van briefing tot getekende match, en leveren alleen kandidaten die een recruiter zelf grondig heeft beoordeeld. Jullie bekijken alleen nog 2-4 voorgeselecteerde kandidaten, gematcht op cultuur en groeifase, gemiddeld binnen 30 dagen.",
+    title: "JUNIOR TALENT,\nVAN WERVING TOT BEHOUD.",
+    sub: "Van het vinden en selecteren van werkstudenten, stagiairs en starters tot advies over je junior-strategie en zichtbaarheid bij 4.000+ studenten: wij helpen op elk vlak van je junior-talent-aanpak.",
     ctaIntro: "Plan een kennismaking",
-    ctaProcess: "Bekijk het proces",
+    ctaProcess: "Bekijk onze diensten",
     heroStats: [
-      { value: "2-4", label: "voorgeselecteerde kandidaten per shortlist" },
-      { value: "±30 dagen", label: "gemiddelde tijd tot shortlist" },
-      { value: "6 stappen", label: "van intake tot ondertekende match" },
+      { value: "4.000+", label: "studenten en starters in onze community" },
+      { value: "100%", label: "transparante voorwaarden & fair pay" },
+      { value: "10%", label: "winst naar impact vanaf medio 2027" },
     ],
     servicesEyebrow: "Wat we doen",
     servicesTitle: "DRIE MANIEREN OM MET ONS TE WERKEN.",
@@ -110,7 +111,8 @@ const COPY: Record<
     rolesIntro: "Onze werkstudenten en stagiairs versterken vooral de commerciële en groeigerichte kant van je organisatie. Een greep uit de rollen die we invullen:",
     profilesEyebrow: "Ons talent",
     profilesTitle: "HIGH ACHIEVERS, GESELECTEERD OP KWALITEIT EN CULTUUR.",
-    profilesIntro: "We sourcen voornamelijk hbo- en wo-studenten en young professionals: ambitieus, snel zelfstandig en gewend om te presteren naast hun studie. We matchen niet alleen op skills, maar vooral op cultuurfit, zodat wat we voorstellen ook echt past. Een greep uit recente profielen:",
+    profilesIntro: "We sourcen voornamelijk hbo- en wo-studenten en young professionals: ambitieus, snel zelfstandig en gewend om te presteren naast hun studie. We matchen niet alleen op skills, maar vooral op cultuurfit. Dit talent zit in onze bredere talentpool en wordt ingezet via al onze diensten, van werving tot community. Een greep uit de vakgebieden:",
+    profilesCta: "Bekijk voorbeeldprofielen →",
     whyWsEyebrow: "Onze voorkeur",
     whyWsTitle: "DE WERKSTUDENT IS ONZE EERSTE KEUZE.",
     whyWsIntro: "Werkstudentrollen invullen is niet zomaar één van de dingen die we doen: het is waar VOIDS voor staat en verreweg de meeste plaatsingen die we doen. Voor de meeste vragen is het ook simpelweg de beste oplossing, hieronder waarom, en wanneer een stagiair of starter juist beter past.",
@@ -161,14 +163,14 @@ const COPY: Record<
   },
   en: {
     eyebrow: "For companies",
-    title: "A SHORTLIST,\nNOT A CV PILE.",
-    sub: "We take the entire hiring process off your hands, from briefing to signed match, and only put forward candidates a recruiter has personally and thoroughly reviewed. You only review 2-4 pre-selected candidates, matched on culture and growth stage, on average within 30 days.",
+    title: "JUNIOR TALENT,\nFROM HIRING TO RETENTION.",
+    sub: "From finding and selecting working students, interns and starters, to advice on your junior strategy and visibility with 4,000+ students: we help across every part of your junior talent approach.",
     ctaIntro: "Book an intro call",
-    ctaProcess: "See the process",
+    ctaProcess: "See our services",
     heroStats: [
-      { value: "2-4", label: "pre-selected candidates per shortlist" },
-      { value: "±30 days", label: "average time to shortlist" },
-      { value: "6 steps", label: "from intake to signed match" },
+      { value: "4,000+", label: "students and starters in our community" },
+      { value: "100%", label: "transparent terms & fair pay" },
+      { value: "10%", label: "profit to impact from mid-2027" },
     ],
     servicesEyebrow: "What we do",
     servicesTitle: "THREE WAYS TO WORK WITH US.",
@@ -202,7 +204,8 @@ const COPY: Record<
     rolesIntro: "Our working students and interns mainly strengthen the commercial and growth side of your organisation. A selection of the roles we fill:",
     profilesEyebrow: "Our talent",
     profilesTitle: "HIGH ACHIEVERS, SELECTED ON QUALITY AND CULTURE.",
-    profilesIntro: "We mainly source university (WO) and university-of-applied-sciences (HBO) students and young professionals: ambitious, quick to work independently, and used to performing alongside their studies. We match not just on skills but on culture fit, so what we put forward actually fits. A selection of recent profiles:",
+    profilesIntro: "We mainly source university (WO) and university-of-applied-sciences (HBO) students and young professionals: ambitious, quick to work independently, and used to performing alongside their studies. We match not just on skills but on culture fit. This talent sits in our broader talent pool and is placed through all of our services, from recruitment to community. A selection of the fields:",
+    profilesCta: "See example profiles →",
     whyWsEyebrow: "Our preference",
     whyWsTitle: "THE WORKING STUDENT IS OUR FIRST CHOICE.",
     whyWsIntro: "Filling working-student roles isn't just one of the things we do: it's what VOIDS stands for, and by far the majority of the placements we make. For most hiring needs it's simply the best fit too, here's why, and when an intern or starter fits better instead.",
@@ -267,7 +270,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 28px", maxWidth: 520 }}>{c.sub}</p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <CalendlyButton label={c.ctaIntro} variant="secondary" size="lg" />
-              <Button variant="outline" size="lg" onDark href={p("/companies/recruitment-selection")}>{c.ctaProcess}</Button>
+              <Button variant="outline" size="lg" onDark href={`${p("/companies")}#diensten`}>{c.ctaProcess}</Button>
             </div>
           </div>
 
@@ -284,7 +287,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section style={{ background: "#fff" }}>
+      <section id="diensten" style={{ background: "#fff", scrollMarginTop: 90 }}>
         <div className="wrap" style={{ padding: "52px 32px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.servicesEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 22px" }}>{c.servicesTitle}</h2>
@@ -355,17 +358,15 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "48px 32px 56px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.profilesEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 14px", maxWidth: 760 }}>{c.profilesTitle}</h2>
-          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 26px", maxWidth: 720 }}>{c.profilesIntro}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 16 }}>
+          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 22px", maxWidth: 720 }}>{c.profilesIntro}</p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 20 }}>
             {TALENT_PROFILES[lang].map((pr) => (
-              <div key={pr.field} className="card" style={{ padding: 20 }}>
-                <span className="badge badge--purple" style={{ marginBottom: 12, display: "inline-block" }}>{pr.field}</span>
-                <div style={{ fontSize: 14, fontWeight: 600, margin: "0 0 4px" }}>{pr.edu}</div>
-                <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", marginBottom: 12 }}>{pr.skills}</div>
-                <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-soft)", margin: 0, fontStyle: "italic" }}>{pr.traits}</p>
-              </div>
+              <span key={pr.field} className="badge badge--purple">{pr.field}</span>
             ))}
           </div>
+          <Link href={`${p("/companies/recruitment-selection")}#profielen`} style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-purple)" }}>
+            {c.profilesCta}
+          </Link>
         </div>
       </section>
 

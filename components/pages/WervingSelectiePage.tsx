@@ -5,6 +5,7 @@ import { findLogoFile } from "@/lib/logos";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { PROCESS } from "@/lib/content/companies-content";
 import { CLIENT_CASES, ROLES } from "@/lib/content/cases";
+import { TALENT_PROFILES } from "@/lib/content/talent-profiles";
 
 const COPY: Record<
   Lang,
@@ -18,6 +19,8 @@ const COPY: Record<
     processSub: string;
     casesTitle: string;
     casesSub: string;
+    profilesTitle: string;
+    profilesSub: string;
     rolesTitle: string;
     calcNote: string;
     calcCta: string;
@@ -39,6 +42,8 @@ const COPY: Record<
     processSub: "Zes stappen, wij doen het werk, jullie beslissen.",
     casesTitle: "MATCHES DIE WERKEN",
     casesSub: "Een kleine greep uit de vele bedrijven waar we mee hebben samengewerkt, van scale-up tot corporate.",
+    profilesTitle: "HIGH ACHIEVERS, GESELECTEERD OP KWALITEIT EN CULTUUR.",
+    profilesSub: "We sourcen voornamelijk hbo- en wo-studenten en young professionals: ambitieus, snel zelfstandig en gewend om te presteren naast hun studie. We matchen niet alleen op skills, maar vooral op cultuurfit, zodat wat we voorstellen ook echt past. Een greep uit recente profielen:",
     rolesTitle: "VOORBEELDEN VAN ROLLEN DIE WE INVULDEN",
     calcNote: "Benieuwd wat een werkstudent, stagiair of starter kost, en wanneer je voor welke kiest?",
     calcCta: "Bekijk de calculator en checklist →",
@@ -59,6 +64,8 @@ const COPY: Record<
     processSub: "Six steps, we do the work, you decide.",
     casesTitle: "MATCHES THAT WORK",
     casesSub: "A small selection from the many companies we've worked with, from scale-up to corporate.",
+    profilesTitle: "HIGH ACHIEVERS, SELECTED ON QUALITY AND CULTURE.",
+    profilesSub: "We mainly source university (WO) and university-of-applied-sciences (HBO) students and young professionals: ambitious, quick to work independently, and used to performing alongside their studies. We match not just on skills but on culture fit, so what we put forward actually fits. A selection of recent profiles:",
     rolesTitle: "EXAMPLES OF ROLES WE'VE FILLED",
     calcNote: "Curious what a working student, intern or starter costs, and when to choose which?",
     calcCta: "See the calculator and checklist →",
@@ -143,6 +150,23 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section id="profielen" style={{ background: "var(--voids-beige)", scrollMarginTop: 90 }}>
+        <div className="wrap" style={{ padding: "56px 32px" }}>
+          <h2 className="anton section-h2" style={{ fontSize: 26, margin: "0 0 4px", maxWidth: 760 }}>{c.profilesTitle}</h2>
+          <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 24px", maxWidth: 720 }}>{c.profilesSub}</p>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 16 }}>
+            {TALENT_PROFILES[lang].map((pr) => (
+              <div key={pr.field} className="card" style={{ padding: 20 }}>
+                <span className="badge badge--purple" style={{ marginBottom: 12, display: "inline-block" }}>{pr.field}</span>
+                <div style={{ fontSize: 14, fontWeight: 600, margin: "0 0 4px" }}>{pr.edu}</div>
+                <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", marginBottom: 12 }}>{pr.skills}</div>
+                <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-soft)", margin: 0, fontStyle: "italic" }}>{pr.traits}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
