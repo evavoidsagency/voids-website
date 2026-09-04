@@ -13,6 +13,10 @@ const COPY: Record<
     title: string;
     p1: string;
     p2: string;
+    strengthEyebrow: string;
+    strengthTitle: string;
+    strengthText: string;
+    strengthPoints: string[];
     whatEyebrow: string;
     whatTitle: string;
     whatCards: { title: string; text: string; path?: string; cta?: string }[];
@@ -31,6 +35,15 @@ const COPY: Record<
     title: "WE FILL THE VOIDS.",
     p1: "Overal op de arbeidsmarkt zitten gaten. Studenten met talent dat bedrijven niet zien. Bedrijven met kansen die studenten nooit voorbij zien komen. Die leegtes, die voids, vullen wij door de juiste mensen aan de juiste plek te verbinden.",
     p2: "We kijken verder dan een cv: naar drijfveren, werkstijl en ambitie. Persoonlijk, selectief en met een missie: een eerlijkere start voor iedereen.",
+    strengthEyebrow: "Onze kracht",
+    strengthTitle: "WE KENNEN GEN Z VAN BINNENUIT.",
+    strengthText:
+      "We wachten niet tot cv's binnenkomen. Via structurele samenwerkingen met studieverenigingen en de plekken waar young talent samenkomt, bouwen we die kennis zelf op. Daardoor zien we verder dan een cv: we prikken door tot wie iemand écht is, en of dat de gedrevenheid en potentie oplevert waar we naar zoeken.",
+    strengthPoints: [
+      "Structurele samenwerkingen met studieverenigingen",
+      "Aanwezig op de events waar young talent samenkomt",
+      "4.000+ studenten in onze eigen community",
+    ],
     whatEyebrow: "Wat we doen",
     whatTitle: "HOE WE DAT WAARMAKEN.",
     whatCards: [
@@ -67,6 +80,15 @@ const COPY: Record<
     title: "WE FILL THE VOIDS.",
     p1: "The job market is full of gaps. Students with talent companies never see. Companies with opportunities students never come across. Those empty spaces, those voids, we fill by connecting the right people to the right place.",
     p2: "We look beyond the CV: at motivation, working style and ambition. Personal, selective and on a mission to give everyone a fairer start.",
+    strengthEyebrow: "Our edge",
+    strengthTitle: "WE KNOW GEN Z FROM THE INSIDE.",
+    strengthText:
+      "We don't wait for CVs to land in an inbox. Through structural partnerships with study associations and the places where young talent actually gathers, we build that knowledge ourselves. That's how we see past a CV: we can tell who someone really is, and whether that adds up to the drive and potential we're looking for.",
+    strengthPoints: [
+      "Structural partnerships with study associations",
+      "Present at the events where young talent gathers",
+      "4,000+ students in our own community",
+    ],
     whatEyebrow: "What we do",
     whatTitle: "WHAT WE ACTUALLY DELIVER.",
     whatCards: [
@@ -132,6 +154,19 @@ export function AboutPage({ lang }: { lang: Lang }) {
             <span style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>{c.foundersPending}</span>
           </div>
         )}
+      </section>
+
+      <section style={{ background: "var(--voids-purple-100)" }}>
+        <div className="wrap" style={{ padding: "48px 32px" }}>
+          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.strengthEyebrow}</span>
+          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 14px", maxWidth: 760 }}>{c.strengthTitle}</h2>
+          <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-soft)", margin: "0 0 22px", maxWidth: 700 }}>{c.strengthText}</p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+            {c.strengthPoints.map((pt) => (
+              <span key={pt} className="badge badge--purple">{pt}</span>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section style={{ background: "#fff" }}>

@@ -18,7 +18,7 @@ const COPY: Record<
     heroStats: { value: string; label: string }[];
     servicesEyebrow: string;
     servicesTitle: string;
-    services: { title: string; text: string; cta: string; path: string }[];
+    services: { verb: string; title: string; text: string; chips: string[]; cta: string; path: string }[];
     rolesEyebrow: string;
     rolesIntro: string;
     profilesEyebrow: string;
@@ -82,22 +82,28 @@ const COPY: Record<
     servicesTitle: "DRIE MANIEREN OM MET ONS TE WERKEN.",
     services: [
       {
+        verb: "Vinden",
         title: "Werving & selectie",
-        text: "We nemen de volledige werving uit handen: van intake tot shortlist tot ondertekende match.",
+        text: "We vinden kandidaten die passen bij de rol, de cultuur en de groeifase van je organisatie. Van werkstudent tot starter, elke match persoonlijk beoordeeld door een recruiter.",
+        chips: ["Werkstudenten", "Stagiairs", "Starters"],
         cta: "Bekijk het proces →",
         path: "/companies/recruitment-selection",
       },
       {
-        title: "Community & jobboard",
-        text: "Zet je vacature zelf rechtstreeks onder de aandacht van 4.000+ studenten en starters.",
-        cta: "Bekijk de opties →",
-        path: "/companies/community-jobboard",
-      },
-      {
+        verb: "Versterken",
         title: "Advies & employer branding",
-        text: "We denken mee over je hele junior-strategie, van recruitment tot het behouden van jong talent.",
+        text: "Met advies over je junior-strategie en employer branding bouwen we mee aan een merk waar studenten voor kiezen, en een team dat groeit in plaats van na een half jaar te vertrekken.",
+        chips: ["Junior-strategie", "Employer branding", "Behoud van talent"],
         cta: "Meer over advies & branding →",
         path: "/companies/employer-branding",
+      },
+      {
+        verb: "Bereiken",
+        title: "Community & jobboard",
+        text: "Zet je vacature rechtstreeks voor 4.000+ studenten en starters: wekelijks in de WhatsApp-community en doorlopend op ons jobboard.",
+        chips: ["WhatsApp-community", "Jobboard"],
+        cta: "Bekijk de opties →",
+        path: "/companies/community-jobboard",
       },
     ],
     rolesEyebrow: "Soorten rollen",
@@ -168,22 +174,28 @@ const COPY: Record<
     servicesTitle: "THREE WAYS TO WORK WITH US.",
     services: [
       {
+        verb: "Find",
         title: "Recruitment & selection",
-        text: "We take the full hiring process off your hands: from intake to shortlist to signed match.",
+        text: "We find candidates who fit the role, the culture and the growth stage of your organisation. From working student to starter, every match personally reviewed by a recruiter.",
+        chips: ["Working students", "Interns", "Starters"],
         cta: "See the process →",
         path: "/companies/recruitment-selection",
       },
       {
-        title: "Community & job board",
-        text: "Put your vacancy directly in front of 4,000+ students and starters yourself.",
-        cta: "See the options →",
-        path: "/companies/community-jobboard",
-      },
-      {
+        verb: "Strengthen",
         title: "Advice & employer branding",
-        text: "We think along on your whole junior strategy, from recruitment to retaining junior talent.",
+        text: "With advice on your junior strategy and employer branding, we help build a brand students actually choose, and a team that grows instead of leaving after six months.",
+        chips: ["Junior strategy", "Employer branding", "Retention"],
         cta: "More on advice & branding →",
         path: "/companies/employer-branding",
+      },
+      {
+        verb: "Reach",
+        title: "Community & job board",
+        text: "Put your vacancy directly in front of 4,000+ students and starters: weekly in the WhatsApp community and continuously on our job board.",
+        chips: ["WhatsApp community", "Job board"],
+        cta: "See the options →",
+        path: "/companies/community-jobboard",
       },
     ],
     rolesEyebrow: "Types of roles",
@@ -276,15 +288,21 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "52px 32px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.servicesEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 22px" }}>{c.servicesTitle}</h2>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, maxWidth: 980 }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20 }}>
             {c.services.map((s, i) => {
-              const accent = i === 1 ? "blue" : "purple";
+              const accent = i === 2 ? "blue" : "purple";
               const accentColor = accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)";
+              const badgeClass = accent === "blue" ? "badge--blue" : "badge--purple";
               return (
-                <div key={s.title} className={`card card--hoverable card--accent-${accent}`} style={{ padding: 24, display: "flex", flexDirection: "column" }}>
-                  <div className="anton" style={{ fontSize: 18, marginBottom: 10, color: accentColor }}>{s.title}</div>
-                  <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{s.text}</p>
-                  <Link href={p(s.path)} style={{ fontSize: 13, fontWeight: 600, color: accentColor, marginTop: 14 }}>
+                <div key={s.verb} className={`card card--hoverable card--accent-${accent}`} style={{ padding: 26, display: "flex", flexDirection: "column" }}>
+                  <div className="anton" style={{ fontSize: 34, color: accentColor, marginBottom: 12 }}>{s.verb}</div>
+                  <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 20px", flex: 1 }}>{s.text}</p>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 18 }}>
+                    {s.chips.map((chip) => (
+                      <span key={chip} className={`badge ${badgeClass}`}>{chip}</span>
+                    ))}
+                  </div>
+                  <Link href={p(s.path)} style={{ fontSize: 13, fontWeight: 600, color: accentColor }}>
                     {s.cta}
                   </Link>
                 </div>
