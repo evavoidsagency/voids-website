@@ -196,12 +196,12 @@ export function BlogPostPage({ lang, slug }: { lang: Lang; slug: string }) {
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             {(post.aud === "bedrijf" || post.aud === "beide") && (
-              <Button variant={post.aud === "beide" ? "outline" : "primary"} size="lg" onDark href={p("/companies")}>
+              <Button variant="outline" size="lg" onDark href={p("/companies")}>
                 {COMPANIES_CTA[lang]}
               </Button>
             )}
             {(post.aud === "talent" || post.aud === "beide") && (
-              <WhatsAppButton variant={post.aud === "beide" ? "outline" : "secondary"} size="lg" onDark>
+              <WhatsAppButton variant="outline" size="lg" onDark>
                 {WHATSAPP_CTA[lang]}
               </WhatsAppButton>
             )}
