@@ -1,6 +1,7 @@
 import { Photo } from "@/components/ui/Photo";
+import { Button } from "@/components/ui/Button";
 import { findSdgIcon } from "@/lib/logos";
-import type { Lang } from "@/lib/i18n/common";
+import { localePath, type Lang } from "@/lib/i18n/common";
 import { SDGS } from "@/lib/content/sdgs";
 
 const COPY: Record<
@@ -32,6 +33,10 @@ const COPY: Record<
     movementText: string;
     bandAlt: string;
     movementAlt: string;
+    finalTitle: string;
+    finalText: string;
+    finalTalentCta: string;
+    finalCompaniesCta: string;
   }
 > = {
   nl: {
@@ -72,6 +77,10 @@ const COPY: Record<
       "Daar is het werkstudentschap een vanzelfsprekend onderdeel van het hoger onderwijs. Nederland kan dezelfde beweging maken: een arbeidsmarkt waarin leren en werken met elkaar verbonden zijn, en waarin talent wordt beoordeeld op potentie, niet op geld, netwerk of eerdere ervaring.",
     bandAlt: "Werkstudenten aan het werk op kantoor",
     movementAlt: "Aan het werk op kantoor",
+    finalTitle: "KLAAR OM HET VERSCHIL TE MAKEN?",
+    finalText: "Of je nu talent bent op zoek naar een eerlijke start, of een bedrijf dat wil investeren in de volgende generatie: we horen graag van je.",
+    finalTalentCta: "Voor talent →",
+    finalCompaniesCta: "Voor bedrijven →",
   },
   en: {
     eyebrow: "Impact",
@@ -111,11 +120,16 @@ const COPY: Record<
       "There, working alongside your degree is a standard part of higher education. The Netherlands can make the same move: a labour market where learning and working are connected, and where talent is judged on potential, not on money, network or prior experience.",
     bandAlt: "Working students at work in the office",
     movementAlt: "Working at the office",
+    finalTitle: "READY TO MAKE A DIFFERENCE?",
+    finalText: "Whether you're talent looking for a fair start, or a company that wants to invest in the next generation: we'd love to hear from you.",
+    finalTalentCta: "For talent →",
+    finalCompaniesCta: "For companies →",
   },
 };
 
 export function ImpactPage({ lang }: { lang: Lang }) {
   const c = COPY[lang];
+  const p = (path: string) => localePath(lang, path);
 
   return (
     <>
@@ -218,6 +232,17 @@ export function ImpactPage({ lang }: { lang: Lang }) {
             <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.movementText}</p>
           </div>
           <Photo src="/photography/impact-movement.jpg" alt={c.movementAlt} ratio="4 / 3" />
+        </div>
+      </section>
+
+      <section style={{ background: "var(--voids-purple)" }}>
+        <div className="wrap" style={{ padding: "52px 32px", textAlign: "center", color: "#fff" }}>
+          <h2 className="anton section-h2" style={{ fontSize: 34, margin: "0 0 12px", color: "#fff" }}>{c.finalTitle}</h2>
+          <p style={{ fontSize: 16, color: "var(--voids-purple-100)", maxWidth: 560, margin: "0 auto 24px" }}>{c.finalText}</p>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+            <Button variant="outline" size="lg" onDark href={p("/talent")}>{c.finalTalentCta}</Button>
+            <Button variant="outline" size="lg" onDark href={p("/companies")}>{c.finalCompaniesCta}</Button>
+          </div>
         </div>
       </section>
     </>
