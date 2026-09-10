@@ -430,16 +430,19 @@ a:hover .blog-thumb img {
   transform: translateX(4px);
 }
 
-/* FAQ accordion: independent-flowing columns instead of a CSS grid, so
-   expanding one answer doesn't stretch its row-neighbor in the other
-   column and leave an awkward gap. */
+/* FAQ accordion: two fixed, independently-flowing columns (not CSS
+   multi-column) so the item-to-column assignment never changes when one
+   answer opens — CSS column-count rebalances columns on height change,
+   which visibly shuffled items between columns. */
 .faq-columns {
-  column-count: 2;
-  column-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 10px;
+  align-items: start;
 }
 @media (max-width: 860px) {
   .faq-columns {
-    column-count: 1;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -635,6 +638,13 @@ a:hover .blog-thumb img {
    photo stays mounted and just swaps src, so only the text re-animates). */
 .services-tab-panel {
   animation: services-tab-fade 0.25s ease;
+}
+.services-tab-cta {
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+.services-tab-cta:hover {
+  transform: translateX(4px);
 }
 @keyframes services-tab-fade {
   from {

@@ -54,19 +54,30 @@ export function ServicesTabs({ services }: { services: ServiceTab[] }) {
         })}
       </div>
 
-      <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 40, alignItems: "center" }}>
+      <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 40, alignItems: "stretch" }}>
         <Photo src={s.photo} alt={s.photoAlt} ratio="4 / 3" />
-        <div key={active} className="services-tab-panel">
-          <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: ".02em", textTransform: "uppercase", color: "var(--voids-ink-muted)", marginBottom: 10 }}>
-            {s.title}
-          </div>
-          <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 20px" }}>{s.text}</p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 22 }}>
+        <div
+          key={active}
+          className="services-tab-panel"
+          style={{
+            borderRadius: "var(--radius-lg)",
+            background: "var(--voids-beige)",
+            borderLeft: `4px solid ${color}`,
+            padding: "30px 32px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <span className="voids-eyebrow" style={{ color, marginBottom: 8 }}>{s.title}</span>
+          <h3 className="anton" style={{ fontSize: 24, margin: "0 0 14px" }}>{s.verb}.</h3>
+          <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 22px" }}>{s.text}</p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 24 }}>
             {s.chips.map((chip) => (
               <span key={chip} className={`badge ${badgeClass}`}>{chip}</span>
             ))}
           </div>
-          <Link href={s.href} style={{ fontSize: 14, fontWeight: 600, color }}>
+          <Link href={s.href} className="services-tab-cta" style={{ fontSize: 14, fontWeight: 600, color }}>
             {s.cta}
           </Link>
         </div>

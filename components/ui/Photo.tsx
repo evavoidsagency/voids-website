@@ -10,6 +10,8 @@ export function Photo({
   priority = false,
   sizes = "(max-width: 860px) 100vw, 50vw",
   objectPosition = "center",
+  flip = false,
+  zoom = 1,
   style,
 }: {
   src: string;
@@ -19,8 +21,13 @@ export function Photo({
   priority?: boolean;
   sizes?: string;
   objectPosition?: string;
+  /** Mirror the image horizontally — used to visually distinguish reused source photos. */
+  flip?: boolean;
+  /** Scale the image up (cropping further in) — used to visually distinguish reused source photos. */
+  zoom?: number;
   style?: CSSProperties;
 }) {
+  const transforms = [flip ? "scaleX(-1)" : "", zoom !== 1 ? `scale(${zoom})` : ""].filter(Boolean).join(" ");
   return (
     <div
       style={{
@@ -38,7 +45,7 @@ export function Photo({
         fill
         priority={priority}
         sizes={sizes}
-        style={{ objectFit: "cover", objectPosition }}
+        style={{ objectFit: "cover", objectPosition, transform: transforms || undefined }}
       />
     </div>
   );

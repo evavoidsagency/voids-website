@@ -173,7 +173,9 @@ export function BlogPostPage({ lang, slug }: { lang: Lang; slug: string }) {
       <section className="wrap narrow" style={{ padding: "0 32px 56px" }}>
         <h2 className="anton section-h2" style={{ fontSize: 18, margin: "0 0 16px" }}>{RELATED_TITLE[lang]}</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          {getRelatedPosts(slug).map((r) => (
+          {getRelatedPosts(slug).map((r, i, arr) => {
+            const dupeIndex = arr.slice(0, i).filter((p) => p.photo === r.photo).length;
+            return (
             <Link
               key={r.slug}
               href={p(`/blog/${r.slug}`)}
@@ -181,14 +183,15 @@ export function BlogPostPage({ lang, slug }: { lang: Lang; slug: string }) {
               style={{ display: "flex", overflow: "hidden", padding: 0, textDecoration: "none", color: "inherit" }}
             >
               <div className="blog-thumb" style={{ width: 96, flex: "none" }}>
-                <Photo src={r.photo} alt={r.title[lang]} ratio="1 / 1" radius="0" sizes="96px" />
+                <Photo src={r.photo} alt={r.title[lang]} ratio="1 / 1" radius="0" sizes="96px" flip={dupeIndex > 0} zoom={dupeIndex > 1 ? 1.25 : 1} />
               </div>
               <div style={{ padding: "14px 18px", minWidth: 0 }}>
                 <span className="badge badge--blue" style={{ marginBottom: 6, display: "inline-block" }}>{r.tag[lang]}</span>
                 <div style={{ fontSize: 14, fontWeight: 600, lineHeight: 1.35, color: "var(--voids-ink)" }}>{r.title[lang]}</div>
               </div>
             </Link>
-          ))}
+            );
+          })}
         </div>
       </section>
 

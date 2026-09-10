@@ -32,6 +32,16 @@ export function BlogList({ lang }: { lang: Lang }) {
   const [aud, setAud] = useState<Filter>("alle");
   const posts = BLOG_POSTS.filter((post) => aud === "alle" || post.aud === aud || post.aud === "beide");
 
+  // Photography ran out of unique shots before posts, so some photos repeat.
+  // Give each repeat a distinct crop (mirrored / zoomed) so reused photos
+  // never render as pixel-identical thumbnails next to each other.
+  const photoSeen = new Map<string, number>();
+  const photoVariant = (src: string) => {
+    const n = photoSeen.get(src) ?? 0;
+    photoSeen.set(src, n + 1);
+    return { flip: n === 1 || n === 3, zoom: n === 2 || n === 3 ? 1.25 : 1 };
+  };
+
   return (
     <>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }}>
@@ -46,7 +56,9 @@ export function BlogList({ lang }: { lang: Lang }) {
         ))}
       </div>
       <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20 }}>
-        {posts.map((post) => (
+        {posts.map((post) => {
+          const variant = photoVariant(post.photo);
+          return (
           <Link
             key={post.slug}
             href={localePath(lang, `/blog/${post.slug}`)}
@@ -54,7 +66,7 @@ export function BlogList({ lang }: { lang: Lang }) {
             style={{ padding: 0, display: "flex", overflow: "hidden", textDecoration: "none", color: "inherit" }}
           >
             <div className="blog-thumb" style={{ width: 150, flex: "none" }}>
-              <Photo src={post.photo} alt={post.title[lang]} ratio="1 / 1" radius="0" sizes="150px" />
+              <Photo src={post.photo} alt={post.title[lang]} ratio="1 / 1" radius="0" sizes="150px" flip={variant.flip} zoom={variant.zoom} />
             </div>
             <div style={{ padding: 20 }}>
               <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
@@ -78,7 +90,8 @@ export function BlogList({ lang }: { lang: Lang }) {
               </div>
             </div>
           </Link>
-        ))}
+          );
+        })}
       </div>
     </>
   );
