@@ -104,7 +104,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
 
       <section className="wrap" style={{ padding: "56px 32px 20px" }}>
         <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 20px" }}>{c.processTitle}</h2>
-        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 18 }}>
+        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 18, alignItems: "start" }}>
           {PROCESS[lang].map((s, i) => (
             <div key={s.num} className="card card--accent-purple" style={{ padding: 22 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 }}>

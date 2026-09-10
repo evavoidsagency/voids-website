@@ -192,7 +192,7 @@ export function EmployerBrandingPage({ lang }: { lang: Lang }) {
           <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 30px", maxWidth: 800 }}>{c.formatsSub}</p>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: ".85fr 1.15fr", gap: 40, alignItems: "center" }}>
             <Photo src="/photography/employer-branding-formats.jpg" alt={c.formatsPhotoAlt} ratio="4 / 5" />
-            <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 16 }}>
+            <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 16, alignItems: "start" }}>
               {c.formats.map((f) => {
                 const color = f.accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)";
                 const bg = f.accent === "blue" ? "var(--voids-blue-100)" : "var(--voids-purple-100)";

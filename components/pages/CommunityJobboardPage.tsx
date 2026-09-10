@@ -114,7 +114,7 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "56px 32px 64px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 20px" }}>{c.howTitle}</h2>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20 }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, alignItems: "start" }}>
             {c.how.map((h, i) =>
               i === 1 ? (
                 <Link key={h.title} href={p("/jobboard")} className={`card card--hoverable card--accent-${h.accent}`} style={{ padding: 24, display: "block", textDecoration: "none", color: "inherit" }}>
