@@ -32,7 +32,7 @@ const COPY: Record<
   nl: {
     eyebrow: "Werving & selectie",
     title: "HET HELE PROCES, UIT HANDEN.",
-    sub: "Zes stappen. Wij doen het werk, jullie beslissen. Van intake tot ondertekende match, voor werkstudenten, stagiairs en starters.",
+    sub: "Wij zoeken in opdracht van jouw organisatie naar junior talent, van werkstudent tot stagiair en starter, om je openstaande rol in te vullen. Zes stappen, wij doen het werk, jullie beslissen.",
     ctaIntro: "Plan een kennismaking",
     heroStats: [
       { value: "2-4", label: "voorgeselecteerde kandidaten per shortlist" },
@@ -54,7 +54,7 @@ const COPY: Record<
   en: {
     eyebrow: "Recruitment & selection",
     title: "WE RUN THE WHOLE PROCESS.",
-    sub: "Six steps. We do the work, you decide. From intake to signed match, for working students, interns and starters.",
+    sub: "On behalf of your organisation, we search for junior talent, from working students to interns and starters, to fill your open role. Six steps, we do the work, you decide.",
     ctaIntro: "Book an intro call",
     heroStats: [
       { value: "2-4", label: "pre-selected candidates per shortlist" },
