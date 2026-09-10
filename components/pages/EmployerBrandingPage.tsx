@@ -190,19 +190,19 @@ export function EmployerBrandingPage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "56px 32px 64px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 6px" }}>{c.formatsTitle}</h2>
           <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 30px", maxWidth: 800 }}>{c.formatsSub}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: ".85fr 1.15fr", gap: 40, alignItems: "center" }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: ".85fr 1.15fr", gap: 40, alignItems: "start" }}>
             <Photo src="/photography/employer-branding-formats.jpg" alt={c.formatsPhotoAlt} ratio="4 / 5" />
-            <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 16, alignItems: "start" }}>
+            <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 16, alignItems: "stretch" }}>
               {c.formats.map((f) => {
                 const color = f.accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)";
                 const bg = f.accent === "blue" ? "var(--voids-blue-100)" : "var(--voids-purple-100)";
                 return (
-                  <div key={f.title} className={`card card--hoverable card--accent-${f.accent}`} style={{ padding: 20, background: "#fff" }}>
+                  <div key={f.title} className={`card card--hoverable card--accent-${f.accent}`} style={{ padding: 20, background: "#fff", display: "flex", flexDirection: "column" }}>
                     <div style={{ width: 40, height: 40, borderRadius: "50%", background: bg, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
                       <FormatIcon icon={f.icon} color={color} />
                     </div>
                     <div className="anton" style={{ fontSize: 16, margin: "0 0 6px", color }}>{f.title}</div>
-                    <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{f.text}</p>
+                    <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{f.text}</p>
                   </div>
                 );
               })}
