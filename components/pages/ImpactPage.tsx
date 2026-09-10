@@ -1,5 +1,6 @@
 import { Photo } from "@/components/ui/Photo";
 import { Button } from "@/components/ui/Button";
+import { CountUp } from "@/components/ui/CountUp";
 import { findSdgIcon } from "@/lib/logos";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { SDGS } from "@/lib/content/sdgs";
@@ -26,6 +27,11 @@ const COPY: Record<
     stats: { value: string; text: string; color: "purple" | "blue" }[];
     ambitionEyebrow: string;
     ambitionText: string;
+    workshopsEyebrow: string;
+    workshopsTitle: string;
+    workshopsText: string;
+    workshopsTopics: string[];
+    workshopsAlt: string;
     sdgTitle: string;
     sdgSub: string;
     movementEyebrow: string;
@@ -69,6 +75,19 @@ const COPY: Record<
     ambitionEyebrow: "Onze ambitie",
     ambitionText:
       "Onze ambitie: vanaf medio 2027 investeren we 10% van onze winst terug in gelijke-kansen-initiatieven voor studenten.",
+    workshopsEyebrow: "Ook buiten recruitment",
+    workshopsTitle: "IMPACT BEGINT AL OP SCHOOL.",
+    workshopsText:
+      "Niet iedereen weet vanzelf wat bij hem of haar past, en die keuze is lastiger als je er nooit op voorbereid bent. Daarom geven we ook workshops, lezingen en masterclasses op scholen en bij (studenten)organisaties, over de overgang van school naar werk.",
+    workshopsTopics: [
+      "Carrière-oriëntatie",
+      "Je drijfveren ontdekken",
+      "Solliciteren & je cv",
+      "Personal branding & LinkedIn",
+      "Werkstudentschap als opstap",
+      "Netwerken zonder netwerk",
+    ],
+    workshopsAlt: "Studenten tijdens een workshop over solliciteren",
     sdgTitle: "WAAR WE AAN BIJDRAGEN",
     sdgSub: "Onze doelen sluiten aan op drie Sustainable Development Goals van de VN.",
     movementEyebrow: "De beweging",
@@ -107,11 +126,24 @@ const COPY: Record<
       "We help organisations create paid working-student roles where students work on real challenges during their studies, take responsibility and develop. Income and relevant experience at the same time. No more trade-off.",
     stats: [
       { value: "100%", text: "transparent terms & fair wages for every talent", color: "blue" },
-      { value: "4.000+", text: "students with equal access to opportunity", color: "purple" },
+      { value: "4,000+", text: "students with equal access to opportunity", color: "purple" },
     ],
     ambitionEyebrow: "Our ambition",
     ambitionText:
       "Our ambition: from mid-2027, we reinvest 10% of our profit into equal-opportunity initiatives for students.",
+    workshopsEyebrow: "Beyond recruitment",
+    workshopsTitle: "IMPACT STARTS AT SCHOOL.",
+    workshopsText:
+      "Not everyone naturally knows what fits them, and that choice gets harder if you've never been prepared for it. That's why we also run workshops, talks and masterclasses at schools and (student) organisations, on the transition from school to work.",
+    workshopsTopics: [
+      "Career orientation",
+      "Discovering your drivers",
+      "Applying & your CV",
+      "Personal branding & LinkedIn",
+      "Working student roles as a stepping stone",
+      "Networking without a network",
+    ],
+    workshopsAlt: "Students during a workshop about applying for jobs",
     sdgTitle: "WHAT WE CONTRIBUTE TO",
     sdgSub: "Our goals align with three UN Sustainable Development Goals.",
     movementEyebrow: "The movement",
@@ -145,7 +177,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
             <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 14 }}>
               {c.stats.map((s) => (
                 <div key={s.text} className="card" style={{ padding: 22, textAlign: "center" }}>
-                  <div className="anton" style={{ fontSize: 40, color: s.color === "blue" ? "var(--voids-blue)" : "var(--voids-purple)" }}>{s.value}</div>
+                  <div className="anton" style={{ fontSize: 40, color: s.color === "blue" ? "var(--voids-blue)" : "var(--voids-purple)" }}><CountUp value={s.value} /></div>
                   <div style={{ fontSize: 13, color: "var(--voids-ink-muted)", marginTop: 6 }}>{s.text}</div>
                 </div>
               ))}
@@ -160,33 +192,47 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section className="wrap" style={{ padding: "16px 32px 40px" }}>
+      <section className="wrap" style={{ padding: "64px 32px 72px" }}>
         <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.problemEyebrow}</span>
-        <h2 className="anton section-h2" style={{ fontSize: 38, margin: "10px 0 14px", maxWidth: 1040 }}>{c.problemTitle}</h2>
-        <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 26px", maxWidth: 820 }}>{c.problemIntro}</p>
-        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-          <div className="card card--hoverable card--accent-blue" style={{ padding: 24 }}>
+        <h2 className="anton section-h2" style={{ fontSize: 38, margin: "14px 0 20px", maxWidth: 1040 }}>{c.problemTitle}</h2>
+        <p style={{ fontSize: 16.5, lineHeight: 1.75, color: "var(--voids-ink-muted)", margin: "0 0 44px", maxWidth: 900 }}>{c.problemIntro}</p>
+        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }}>
+          <div className="card card--hoverable card--accent-blue" style={{ padding: 32 }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <StipendIcon />
               <span className="badge badge--purple">{c.card1Badge}</span>
             </div>
-            <div className="anton" style={{ fontSize: 18, margin: "14px 0 10px", color: "var(--voids-blue)" }}>{c.card1Title}</div>
-            <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card1Text}</p>
+            <div className="anton" style={{ fontSize: 19, margin: "20px 0 12px", color: "var(--voids-blue)" }}>{c.card1Title}</div>
+            <p style={{ fontSize: 14.5, lineHeight: 1.7, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card1Text}</p>
           </div>
-          <div className="card card--hoverable card--accent-blue" style={{ padding: 24 }}>
+          <div className="card card--hoverable card--accent-blue" style={{ padding: 32 }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <ShiftIcon />
               <span className="badge badge--blue">{c.card2Badge}</span>
             </div>
-            <div className="anton" style={{ fontSize: 18, margin: "14px 0 10px", color: "var(--voids-blue)" }}>{c.card2Title}</div>
-            <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card2Text}</p>
+            <div className="anton" style={{ fontSize: 19, margin: "20px 0 12px", color: "var(--voids-blue)" }}>{c.card2Title}</div>
+            <p style={{ fontSize: 14.5, lineHeight: 1.7, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card2Text}</p>
           </div>
         </div>
-        <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "22px 0 0", maxWidth: 1040 }}>{c.problemClose}</p>
+        <div style={{ marginTop: 64, textAlign: "center" }}>
+          <p
+            className="anton"
+            style={{
+              fontSize: 26,
+              lineHeight: 1.4,
+              color: "var(--voids-purple)",
+              margin: "0 auto",
+              maxWidth: 700,
+              textTransform: "none",
+            }}
+          >
+            {c.problemClose}
+          </p>
+        </div>
       </section>
 
       <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
-        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "start", padding: "56px 32px" }}>
+        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "start", padding: "64px 32px" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.solutionEyebrow}</span>
             <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px", color: "#fff" }}>{c.solutionTitle}</h2>
@@ -197,6 +243,22 @@ export function ImpactPage({ lang }: { lang: Lang }) {
       </section>
 
       <section style={{ background: "#fff" }}>
+        <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
+          <Photo src="/photography/impact-workshops.jpg" alt={c.workshopsAlt} ratio="4 / 3" />
+          <div>
+            <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.workshopsEyebrow}</span>
+            <h2 className="anton section-h2" style={{ fontSize: 32, margin: "10px 0 14px" }}>{c.workshopsTitle}</h2>
+            <p style={{ fontSize: 15.5, lineHeight: 1.7, color: "var(--voids-ink-muted)", margin: "0 0 22px", maxWidth: 480 }}>{c.workshopsText}</p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+              {c.workshopsTopics.map((topic) => (
+                <span key={topic} className="badge badge--purple">{topic}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ background: "var(--voids-purple-100)" }}>
         <div className="wrap" style={{ padding: "60px 32px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 32, margin: "0 0 8px" }}>{c.sdgTitle}</h2>
           <p style={{ fontSize: 14, color: "var(--voids-ink-muted)", margin: "0 0 26px" }}>{c.sdgSub}</p>

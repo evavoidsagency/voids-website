@@ -1,11 +1,11 @@
 import Link from "next/link";
-import type { CSSProperties } from "react";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { Photo } from "@/components/ui/Photo";
+import { CountUp } from "@/components/ui/CountUp";
 import { findLogoFile } from "@/lib/logos";
 import { localePath, type Lang } from "@/lib/i18n/common";
-import { NICHES, TRUSTED, TESTIMONIALS } from "@/lib/content/home-content";
+import { TRUSTED, TESTIMONIALS } from "@/lib/content/home-content";
 
 const COPY: Record<
   Lang,
@@ -14,15 +14,18 @@ const COPY: Record<
     heroSub: string;
     ctaCompanies: string;
     ctaTalent: string;
+    stat1Value: string;
     stat1Label: string;
+    stat2Value: string;
     stat2Label: string;
+    stat3Value: string;
     stat3Label: string;
-    nicheLabel: string;
     trustedBy: string;
     doorTalentTitle: string;
     doorTalentText: string;
     doorTalentCta: string;
     doorCompaniesTitle: string;
+    doorCompaniesTalentTypes: string;
     doorCompaniesText: string;
     doorCompaniesCta: string;
     testimonialsLabel: string;
@@ -43,18 +46,21 @@ const COPY: Record<
       "Wij verbinden hoogopgeleid talent aan ambitieuze organisaties, voorbij het cv, met oog voor drijfveren, werkstijl en ambitie.",
     ctaCompanies: "Voor bedrijven →",
     ctaTalent: "Voor talent",
+    stat1Value: "4.000+",
     stat1Label: "in de community",
+    stat2Value: "100%",
     stat2Label: "eerlijke voorwaarden & fair pay",
+    stat3Value: "10%",
     stat3Label: "winst naar impact",
-    nicheLabel: "Onze niche:",
     trustedBy: "VERTROUWD DOOR",
     doorTalentTitle: "VOOR TALENT",
     doorTalentText:
       "Vind een rol via ons jobboard, sluit je aan bij de WhatsApp-community voor nieuwe kansen, of vertel ons wat je drijft en ontvang een gratis career pager op maat.",
     doorTalentCta: "Ontdek de talentkant →",
     doorCompaniesTitle: "VOOR BEDRIJVEN",
+    doorCompaniesTalentTypes: "Werkstudenten, stagiairs, starters én trainees:",
     doorCompaniesText:
-      "Een voorgeselecteerde shortlist in plaats van een stapel cv’s: werkstudenten, stagiairs en starters, gematcht op cultuur en groeifase.",
+      "een voorgeselecteerde shortlist in plaats van een stapel cv’s, gematcht op cultuur en groeifase.",
     doorCompaniesCta: "Bekijk het aanbod →",
     testimonialsLabel: "Wat opdrachtgevers en talent zeggen",
     missionLabel: "Onze missie",
@@ -75,18 +81,21 @@ const COPY: Record<
       "We connect highly-educated talent with ambitious organisations, beyond the CV, with an eye for motivation, working style and ambition.",
     ctaCompanies: "For companies →",
     ctaTalent: "For talent",
+    stat1Value: "4,000+",
     stat1Label: "in the community",
+    stat2Value: "100%",
     stat2Label: "fair terms & fair pay",
+    stat3Value: "10%",
     stat3Label: "profit to impact",
-    nicheLabel: "Our niche:",
     trustedBy: "TRUSTED BY",
     doorTalentTitle: "FOR TALENT",
     doorTalentText:
       "Find a role on our job board, join the WhatsApp community for new opportunities, or tell us what drives you and get a free, personalised career pager.",
     doorTalentCta: "Explore the talent side →",
     doorCompaniesTitle: "FOR COMPANIES",
+    doorCompaniesTalentTypes: "Working students, interns, starters and trainees:",
     doorCompaniesText:
-      "A pre-selected shortlist instead of a stack of CVs: working students, interns and starters, matched on culture and growth stage.",
+      "a pre-selected shortlist instead of a stack of CVs, matched on culture and growth stage.",
     doorCompaniesCta: "See what we offer →",
     testimonialsLabel: "What clients and talent say",
     missionLabel: "Our mission",
@@ -115,8 +124,8 @@ export function HomePage({ lang }: { lang: Lang }) {
           className="wrap g-collapse"
           style={{
             display: "grid",
-            gridTemplateColumns: ".95fr 1.15fr",
-            gap: 44,
+            gridTemplateColumns: ".8fr 1.3fr",
+            gap: 40,
             alignItems: "center",
             padding: "70px 32px 76px",
           }}
@@ -138,15 +147,15 @@ export function HomePage({ lang }: { lang: Lang }) {
             </div>
             <div style={{ display: "flex", gap: 22, marginTop: 40, flexWrap: "nowrap" }}>
               <div>
-                <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}>4.000+</div>
+                <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}><CountUp value={c.stat1Value} /></div>
                 <div style={{ fontSize: 12.5, color: "var(--voids-purple-100)" }}>{c.stat1Label}</div>
               </div>
               <div>
-                <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}>100%</div>
+                <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}><CountUp value={c.stat2Value} /></div>
                 <div style={{ fontSize: 12.5, color: "var(--voids-purple-100)" }}>{c.stat2Label}</div>
               </div>
               <div>
-                <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}>10%</div>
+                <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}><CountUp value={c.stat3Value} /></div>
                 <div style={{ fontSize: 12.5, color: "var(--voids-purple-100)" }}>{c.stat3Label}</div>
               </div>
             </div>
@@ -155,89 +164,33 @@ export function HomePage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      {/* NICHE STRIP */}
-      <section
-        className="wrap"
-        style={{
-          padding: "26px 32px",
-          display: "flex",
-          gap: 14,
-          flexWrap: "wrap",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <span style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>{c.nicheLabel}</span>
-        {NICHES[lang].map((n) => (
-          <span
-            key={n}
-            style={{
-              fontSize: 13,
-              fontWeight: 600,
-              color: "var(--voids-purple)",
-              background: "var(--voids-purple-100)",
-              padding: "6px 13px",
-              borderRadius: 6,
-            }}
-          >
-            {n}
-          </span>
-        ))}
-      </section>
-
       {/* TRUSTED BY */}
       <section style={{ background: "#fff" }}>
-        <div className="wrap" style={{ padding: "34px 32px" }}>
-          <div className="anton" style={{ fontSize: 20, textAlign: "center", marginBottom: 22 }}>
+        <div className="wrap" style={{ padding: "48px 32px 0" }}>
+          <div className="anton" style={{ fontSize: 13, letterSpacing: ".08em", textAlign: "center", color: "var(--voids-ink-muted)" }}>
             {c.trustedBy}
           </div>
-          <div style={{ position: "relative" }}>
-            <div style={{ display: "flex", gap: 14, overflowX: "auto", padding: "4px 2px 10px" }}>
-              {TRUSTED.map(({ name, slug, url }) => {
-                const logoUrl = findLogoFile(slug);
-                const tileStyle: CSSProperties = {
-                  width: 140,
-                  height: 72,
-                  borderRadius: "var(--radius-md)",
-                  flex: "none",
-                  background: "#fff",
-                  border: logoUrl ? "1px solid var(--border-hairline)" : "1px dashed var(--voids-line)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: 12,
-                };
-                const content = logoUrl ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={logoUrl} alt={name} width={116} height={48} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
-                ) : (
-                  <span style={{ fontSize: 11, fontWeight: 600, color: "var(--voids-ink-muted)", textAlign: "center", lineHeight: 1.3 }}>
-                    {name}
-                  </span>
-                );
-                return url ? (
-                  <a key={name} href={url} target="_blank" rel="noopener noreferrer" title={name} style={tileStyle}>
-                    {content}
-                  </a>
-                ) : (
-                  <div key={name} title={name} style={tileStyle}>
-                    {content}
-                  </div>
-                );
-              })}
-            </div>
-            <div
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                top: 0,
-                right: 0,
-                bottom: 10,
-                width: 56,
-                background: "linear-gradient(to right, transparent, #fff)",
-                pointerEvents: "none",
-              }}
-            />
+        </div>
+        <div className="logo-marquee-mask" style={{ marginTop: 26, paddingBottom: 56 }}>
+          <div className="logo-marquee-track">
+            {[...TRUSTED, ...TRUSTED].map(({ name, slug, url }, i) => {
+              const logoUrl = findLogoFile(slug);
+              const content = logoUrl ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={logoUrl} alt={name} className="logo-marquee-img" />
+              ) : (
+                <span className="logo-marquee-fallback">{name}</span>
+              );
+              return url ? (
+                <a key={`${name}-${i}`} href={url} target="_blank" rel="noopener noreferrer" title={name} className="logo-marquee-item">
+                  {content}
+                </a>
+              ) : (
+                <div key={`${name}-${i}`} title={name} className="logo-marquee-item">
+                  {content}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -247,25 +200,25 @@ export function HomePage({ lang }: { lang: Lang }) {
         <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
           <Link
             href={p("/talent")}
-            className="card"
+            className="card card--hoverable"
             style={{ display: "flex", flexDirection: "column", borderTop: "3px solid var(--voids-blue)", padding: 32, textDecoration: "none" }}
           >
             <div className="anton" style={{ fontSize: 28 }}>{c.doorTalentTitle}</div>
             <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "12px 0 18px", flex: 1 }}>
               {c.doorTalentText}
             </p>
-            <span style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-blue)" }}>{c.doorTalentCta}</span>
+            <span className="door-cta" style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-blue)", display: "inline-block" }}>{c.doorTalentCta}</span>
           </Link>
           <Link
             href={p("/companies")}
-            className="card"
+            className="card card--hoverable"
             style={{ display: "flex", flexDirection: "column", borderTop: "3px solid var(--voids-purple)", padding: 32, textDecoration: "none" }}
           >
             <div className="anton" style={{ fontSize: 28 }}>{c.doorCompaniesTitle}</div>
             <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "12px 0 18px", flex: 1 }}>
-              {c.doorCompaniesText}
+              <strong style={{ color: "var(--voids-purple)", fontWeight: 700 }}>{c.doorCompaniesTalentTypes}</strong> {c.doorCompaniesText}
             </p>
-            <span style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-purple)" }}>{c.doorCompaniesCta}</span>
+            <span className="door-cta" style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-purple)", display: "inline-block" }}>{c.doorCompaniesCta}</span>
           </Link>
         </div>
       </section>
@@ -287,15 +240,15 @@ export function HomePage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section style={{ background: "#fff" }}>
+      {/* TESTIMONIALS — social proof right before the final ask */}
+      <section style={{ background: "var(--voids-beige)" }}>
         <div className="wrap" style={{ padding: "60px 32px" }}>
           <div className="anton" style={{ fontSize: 15, letterSpacing: ".06em", color: "var(--voids-ink-muted)", marginBottom: 26 }}>
             {c.testimonialsLabel}
           </div>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 22 }}>
             {TESTIMONIALS[lang].map((t) => (
-              <div key={t.name + t.quote} style={{ background: "var(--voids-beige)", border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", padding: 26 }}>
+              <div key={t.name + t.quote} className="card" style={{ padding: 26 }}>
                 <p style={{ fontFamily: "var(--font-sans)", fontSize: 18, fontWeight: 500, lineHeight: 1.5, color: "var(--voids-ink)", margin: "0 0 18px" }}>
                   &ldquo;{t.quote}&rdquo;
                 </p>

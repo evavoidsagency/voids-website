@@ -1,10 +1,5 @@
 import type { Lang } from "@/lib/i18n/common";
 
-export const NICHES: Record<Lang, string[]> = {
-  nl: ["Werkstudenten", "Stagiairs", "Starters", "Traineeships"],
-  en: ["Working students", "Interns", "Starters", "Traineeships"],
-};
-
 /** name, slug, url — drop a matching file in /public/logos/{slug}.svg|.png to replace the placeholder. url is optional; omit for companies we couldn't confidently verify. */
 /** Order is deliberately shuffled so same-color logos (the orange/coral cluster: hubby, writify,
     dropp, wepartynow, monsterscore) don't bunch together — spread roughly every 4-5 slots. */

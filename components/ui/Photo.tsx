@@ -28,6 +28,7 @@ export function Photo({
         aspectRatio: ratio,
         borderRadius: radius,
         overflow: "hidden",
+        background: "var(--voids-line-soft)",
         ...style,
       }}
     >

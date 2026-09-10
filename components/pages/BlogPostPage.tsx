@@ -158,7 +158,7 @@ export function BlogPostPage({ lang, slug }: { lang: Lang; slug: string }) {
               marginTop: 20,
               borderRadius: "var(--radius-md)",
               border: "1px solid var(--border-hairline)",
-              background: "var(--voids-beige)",
+              background: "#fff",
               padding: "14px 16px",
               fontSize: 12.5,
               lineHeight: 1.55,
@@ -172,15 +172,21 @@ export function BlogPostPage({ lang, slug }: { lang: Lang; slug: string }) {
 
       <section className="wrap narrow" style={{ padding: "0 32px 56px" }}>
         <h2 className="anton section-h2" style={{ fontSize: 18, margin: "0 0 16px" }}>{RELATED_TITLE[lang]}</h2>
-        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {getRelatedPosts(slug).map((r) => (
             <Link
               key={r.slug}
               href={p(`/blog/${r.slug}`)}
-              className="card"
-              style={{ display: "block", padding: "14px 18px", textDecoration: "none" }}
+              className="card flex-collapse"
+              style={{ display: "flex", overflow: "hidden", padding: 0, textDecoration: "none", color: "inherit" }}
             >
-              <span style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-ink)" }}>{r.title[lang]} →</span>
+              <div className="blog-thumb" style={{ width: 96, flex: "none" }}>
+                <Photo src={r.photo} alt={r.title[lang]} ratio="1 / 1" radius="0" sizes="96px" />
+              </div>
+              <div style={{ padding: "14px 18px", minWidth: 0 }}>
+                <span className="badge badge--blue" style={{ marginBottom: 6, display: "inline-block" }}>{r.tag[lang]}</span>
+                <div style={{ fontSize: 14, fontWeight: 600, lineHeight: 1.35, color: "var(--voids-ink)" }}>{r.title[lang]}</div>
+              </div>
             </Link>
           ))}
         </div>
@@ -191,7 +197,7 @@ export function BlogPostPage({ lang, slug }: { lang: Lang; slug: string }) {
           <h2 className="anton section-h2" style={{ fontSize: 30, margin: "0 0 12px", color: "#fff" }}>
             {cta.title}
           </h2>
-          <p style={{ fontSize: 15, margin: "0 0 24px", color: "rgba(255,255,255,.85)", maxWidth: 520, marginLeft: "auto", marginRight: "auto" }}>
+          <p style={{ fontSize: 15, margin: "0 0 24px", color: "rgba(255,255,255,.85)", maxWidth: 620, marginLeft: "auto", marginRight: "auto" }}>
             {cta.sub}
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>

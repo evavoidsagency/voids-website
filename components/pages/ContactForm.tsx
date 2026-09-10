@@ -37,7 +37,7 @@ const COPY: Record<
     submit: "Send message",
     submitting: "Sending…",
     sentTitle: "MESSAGE SENT.",
-    sentBody: "Thank you. We’ll get back to you within two business days.",
+    sentBody: "Thank you. We’ll get back to you soon.",
     errorBody: "Something went wrong sending this. Please try again, or email us directly at contact@voids.agency.",
   },
 };

@@ -409,6 +409,39 @@ button:focus-visible,
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
+.card--hoverable img,
+.blog-thumb img {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card--hoverable:hover img,
+a:hover .blog-thumb img {
+  transform: scale(1.06);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card--hoverable img,
+  .blog-thumb img {
+    transition: none;
+  }
+}
+.door-cta {
+  transition: transform 0.2s ease;
+}
+.card--hoverable:hover .door-cta {
+  transform: translateX(4px);
+}
+
+/* FAQ accordion: independent-flowing columns instead of a CSS grid, so
+   expanding one answer doesn't stretch its row-neighbor in the other
+   column and leave an awkward gap. */
+.faq-columns {
+  column-count: 2;
+  column-gap: 10px;
+}
+@media (max-width: 860px) {
+  .faq-columns {
+    column-count: 1;
+  }
+}
 
 /* ============================================================
    Form fields
@@ -535,4 +568,106 @@ button:focus-visible,
   max-width: 480px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Trusted-by logo band: an auto-scrolling strip (content duplicated once by
+   the caller) instead of a row of bordered card tiles — reads sharper and
+   shows every logo without a manual scroll. */
+.logo-marquee-mask {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.logo-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  width: max-content;
+  animation: logo-marquee 68s linear infinite;
+}
+.logo-marquee-mask:hover .logo-marquee-track {
+  animation-play-state: paused;
+}
+.logo-marquee-item {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  width: 148px;
+  border-radius: var(--radius-md);
+  background: var(--voids-beige);
+  padding: 10px 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.logo-marquee-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.logo-marquee-img {
+  max-height: 38px;
+  max-width: 116px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.logo-marquee-fallback {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--voids-ink-muted);
+  white-space: nowrap;
+}
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee-track {
+    animation: none;
+  }
+}
+
+/* Companies page ServicesTabs: fade the text panel in on tab switch (the
+   photo stays mounted and just swaps src, so only the text re-animates). */
+.services-tab-panel {
+  animation: services-tab-fade 0.25s ease;
+}
+@keyframes services-tab-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .services-tab-panel {
+    animation: none;
+  }
+}
+
+/* About page team grid: the two founder cards sit edge-to-edge on desktop
+   and read as one merged pill (inner corners squared off, shared border
+   dropped). Below the .g-collapse breakpoint they stack full-width, so each
+   needs its own complete rounding again instead of two mismatched corners. */
+@media (min-width: 861px) {
+  .team-card--left {
+    border-top-left-radius: var(--radius-lg) !important;
+    border-bottom-left-radius: var(--radius-lg) !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-right: none !important;
+  }
+  .team-card--right {
+    border-top-right-radius: var(--radius-lg) !important;
+    border-bottom-right-radius: var(--radius-lg) !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
 }

@@ -2,15 +2,15 @@
 
 import { useState } from "react";
 
-export function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
+export function FaqAccordion({ items }: { items: { q: string; a: string; ul?: string[] }[] }) {
   const [open, setOpen] = useState(0);
 
   return (
-    <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 10, alignItems: "start" }}>
+    <div className="faq-columns">
       {items.map((item, i) => {
         const isOpen = open === i;
         return (
-          <div key={item.q} className="card" style={{ padding: 0, overflow: "hidden" }}>
+          <div key={item.q} className="card" style={{ padding: 0, overflow: "hidden", breakInside: "avoid", marginBottom: 10 }}>
             <button
               type="button"
               onClick={() => setOpen(isOpen ? -1 : i)}
@@ -46,9 +46,20 @@ export function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
               </span>
             </button>
             {isOpen && (
-              <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0, padding: "0 20px 18px" }}>
-                {item.a}
-              </p>
+              <div style={{ padding: "0 20px 18px" }}>
+                <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: item.ul ? "0 0 10px" : 0 }}>
+                  {item.a}
+                </p>
+                {item.ul && (
+                  <ul style={{ margin: 0, paddingLeft: 18 }}>
+                    {item.ul.map((li) => (
+                      <li key={li} style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-muted)", marginBottom: 4 }}>
+                        {li}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             )}
           </div>
         );

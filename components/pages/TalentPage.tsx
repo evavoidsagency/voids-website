@@ -6,6 +6,8 @@ import { localePath, type Lang } from "@/lib/i18n/common";
 import { TALENT_THRIVING } from "@/lib/content/talent-thriving";
 import { findTestimonialPhoto } from "@/lib/logos";
 import { FaqAccordion } from "@/components/pages/FaqAccordion";
+import { MatchBars } from "@/components/pages/MatchBars";
+import { CountUp } from "@/components/ui/CountUp";
 
 const HERO_AVATARS = ["thomke-tierolff", "anna-haasnoot", "charlotte-pallandt"];
 
@@ -18,6 +20,7 @@ const COPY: Record<
     ctaPager: string;
     ctaWhats: string;
     avatarLabel: string;
+    stat1Value: string;
     stat1Label: string;
     stat2Label: string;
     stat3Label: string;
@@ -59,6 +62,7 @@ const COPY: Record<
     ctaPager: "Word lid van de talentpool",
     ctaWhats: "💜 Join WhatsApp",
     avatarLabel: "4.000+ studenten gingen je voor",
+    stat1Value: "4.000+",
     stat1Label: "studenten in de community",
     stat2Label: "transparante voorwaarden",
     stat3Label: "winst terug naar gelijke kansen",
@@ -66,7 +70,7 @@ const COPY: Record<
     resourcesTitle: "DRIE MANIEREN OM DICHTERBIJ TE KOMEN.",
     resourcesIntro: "Wij bieden meer dan losse vacatures: een jobboard om zelf te solliciteren, een WhatsApp-community met wekelijkse kansen, en een talentpool die je proactief matcht. Omdat we zo nauw met werkgevers samenwerken, kunnen we vaak breder met ze meedenken dan alleen de vacatures die online staan. Hoe actiever je meedoet, hoe meer we voor je kunnen doen.",
     resources: [
-      { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord één keer een paar vragen, en wij doen de rest: je wordt proactief voorgesteld bij offmarket-kansen, rollen waar we dankzij onze nauwe samenwerking met werkgevers al vroeg over meedenken, mét een matchscore per rol zodat je meteen ziet of het past.", cta: "Word lid van de talentpool", path: "/pager" },
+      { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord één keer een paar vragen, en wij doen de rest: je wordt proactief voorgesteld bij offmarket-kansen, rollen waar we dankzij onze nauwe samenwerking met werkgevers al vroeg over meedenken, mét een matchscore per rol zodat je meteen ziet of het past.", cta: "Start je profiel", path: "/pager" },
       { tier: "Community", title: "WhatsApp-community", text: "Word lid van de community en krijg passende vacatures wekelijks rechtstreeks in je WhatsApp.", cta: "Join", whats: true },
       { tier: "Vrijblijvend", title: "Job board", text: "Bekijk open rollen en solliciteer direct per vacature, zonder account of profiel.", cta: "Bekijk jobs", path: "/jobboard" },
     ],
@@ -134,7 +138,7 @@ const COPY: Record<
     ],
     finalTitle: "KLAAR OM GEZIEN TE WORDEN?",
     finalText: "Beantwoord een paar vragen en je staat op de radar bij bedrijven die bij je passen.",
-    finalCta: "Word lid van de talentpool",
+    finalCta: "Meld je nu aan",
   },
   en: {
     eyebrow: "For talent",
@@ -143,6 +147,7 @@ const COPY: Record<
     ctaPager: "Join the talent pool",
     ctaWhats: "💜 Join WhatsApp",
     avatarLabel: "4,000+ students went before you",
+    stat1Value: "4,000+",
     stat1Label: "students in the community",
     stat2Label: "transparent terms",
     stat3Label: "profit reinvested in equal opportunity",
@@ -229,18 +234,18 @@ export function TalentPage({ lang }: { lang: Lang }) {
   return (
     <>
       <section style={{ background: "var(--voids-blue)", color: "#fff" }}>
-        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "start", padding: "64px 32px 70px" }}>
+        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "center", padding: "64px 32px 70px" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-blue-100)" }}>{c.eyebrow}</span>
             <h1 className="anton hero-h1" style={{ fontSize: 52, margin: "14px 0 18px", color: "#fff" }}>{c.title}</h1>
-            <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-blue-100)", margin: "0 0 28px", maxWidth: 520 }}>{c.sub}</p>
+            <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-blue-100)", margin: "0 0 28px", maxWidth: 560 }}>{c.sub}</p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <Button variant="primary" size="lg" href={p("/pager")}>{c.ctaPager}</Button>
               <WhatsAppButton variant="outline" size="lg" onDark>{c.ctaWhats}</WhatsAppButton>
             </div>
           </div>
 
-          <div style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.18)", borderRadius: "var(--radius-lg)", padding: 26, marginTop: 38 }}>
+          <div style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.18)", borderRadius: "var(--radius-lg)", padding: 26 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 22 }}>
               <div style={{ display: "flex" }}>
                 {HERO_AVATARS.map((slug, i) => {
@@ -268,12 +273,12 @@ export function TalentPage({ lang }: { lang: Lang }) {
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               {[
-                { value: "4.000+", label: c.stat1Label },
+                { value: c.stat1Value, label: c.stat1Label },
                 { value: "100%", label: c.stat2Label },
                 { value: "10%", label: c.stat3Label },
               ].map((s) => (
                 <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: "1px solid rgba(255,255,255,.14)", paddingTop: 14 }}>
-                  <span className="anton" style={{ fontSize: 26, color: "#fff", flex: "none" }}>{s.value}</span>
+                  <span className="anton" style={{ fontSize: 26, color: "#fff", flex: "none" }}><CountUp value={s.value} /></span>
                   <span style={{ fontSize: 13, color: "var(--voids-blue-100)" }}>{s.label}</span>
                 </div>
               ))}
@@ -320,7 +325,9 @@ export function TalentPage({ lang }: { lang: Lang }) {
               <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 460 }}>
                 {c.fitBenefits.map((b) => (
                   <div key={b} style={{ display: "flex", gap: 10, fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-soft)" }}>
-                    <span style={{ color: "var(--voids-blue)", flex: "none" }}>✓</span>
+                    <span style={{ flex: "none", marginTop: 2 }}>
+                      <CheckIcon />
+                    </span>
                     <span>{b}</span>
                   </div>
                 ))}
@@ -331,21 +338,9 @@ export function TalentPage({ lang }: { lang: Lang }) {
             <div style={{ background: "var(--voids-beige)", borderRadius: "var(--radius-md)", padding: 24 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
                 <span style={{ fontWeight: 600, fontSize: 15 }}>{c.fitCardRole}</span>
-                <span className="anton" style={{ fontSize: 26, color: "var(--voids-blue)" }}>92%</span>
+                <span className="anton" style={{ fontSize: 26, color: "var(--voids-blue)" }}><CountUp value="92%" /></span>
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 11 }}>
-                {c.fitCriteria.map((f) => (
-                  <div key={f.label}>
-                    <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12.5, marginBottom: 4 }}>
-                      <span>{f.label}</span>
-                      <span style={{ color: "var(--voids-blue)", fontWeight: 600 }}>Match</span>
-                    </div>
-                    <div style={{ height: 7, borderRadius: 999, background: "var(--voids-line-soft)" }}>
-                      <div style={{ width: `${f.pct}%`, height: "100%", background: "var(--voids-blue)", borderRadius: 999 }} />
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <MatchBars criteria={c.fitCriteria} />
             </div>
             <div style={{ marginTop: 16 }}>
               <Button variant="secondary" size="md" fullWidth href={p("/pager")}>{c.fitCta}</Button>
@@ -405,7 +400,8 @@ export function TalentPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section className="wrap" style={{ padding: "64px 32px" }}>
+      <section style={{ background: "#fff" }}>
+        <div className="wrap" style={{ padding: "64px 32px" }}>
         <div className="g-collapse" style={{ background: "var(--voids-purple)", color: "#fff", borderRadius: "var(--radius-lg)", padding: 40, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "center" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.referralEyebrow}</span>
@@ -426,6 +422,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
             ))}
           </div>
         </div>
+        </div>
       </section>
 
       <section className="wrap" style={{ padding: "72px 32px" }}>
@@ -444,6 +441,15 @@ export function TalentPage({ lang }: { lang: Lang }) {
         </div>
       </section>
     </>
+  );
+}
+
+function CheckIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <circle cx="7" cy="7" r="6.25" stroke="var(--voids-blue)" strokeWidth="1.4" />
+      <path d="M4.3 7.1l1.9 1.9 3.5-3.9" stroke="var(--voids-blue)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }
 

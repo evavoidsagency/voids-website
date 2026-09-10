@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
+import { CountUp } from "@/components/ui/CountUp";
 import { Photo } from "@/components/ui/Photo";
 import { localePath, type Lang } from "@/lib/i18n/common";
 
@@ -86,20 +87,21 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
 
   return (
     <>
-      <section style={{ background: "var(--voids-beige)" }}>
+      <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
         <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "center", padding: "64px 32px 56px" }}>
           <div>
-            <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.eyebrow}</span>
-            <h1 className="anton hero-h1" style={{ fontSize: 42, margin: "12px 0 12px", whiteSpace: "pre-line" }}>{c.title}</h1>
-            <p style={{ fontSize: 16, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 480 }}>{c.sub}</p>
+            <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
+            <h1 className="anton hero-h1" style={{ fontSize: 42, margin: "12px 0 12px", color: "#fff", whiteSpace: "pre-line" }}>{c.title}</h1>
+            <p style={{ fontSize: 16, color: "var(--voids-purple-100)", margin: "0 0 26px", maxWidth: 480 }}>{c.sub}</p>
+            <CalendlyButton label={c.contactCta} variant="secondary" size="lg" />
           </div>
 
-          <div className="card" style={{ padding: 26 }}>
+          <div style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.18)", borderRadius: "var(--radius-lg)", padding: 26 }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               {c.heroStats.map((s, i) => (
-                <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: i === 0 ? "none" : "1px solid var(--border-hairline)", paddingTop: i === 0 ? 0 : 14 }}>
-                  <span className="anton" style={{ fontSize: 24, color: "var(--voids-purple)", flex: "none", whiteSpace: "nowrap" }}>{s.value}</span>
-                  <span style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>{s.label}</span>
+                <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: i === 0 ? "none" : "1px solid rgba(255,255,255,.14)", paddingTop: i === 0 ? 0 : 14 }}>
+                  <span className="anton" style={{ fontSize: 24, color: "#fff", flex: "none", whiteSpace: "nowrap" }}><CountUp value={s.value} /></span>
+                  <span style={{ fontSize: 13, color: "var(--voids-purple-100)" }}>{s.label}</span>
                 </div>
               ))}
             </div>
@@ -107,7 +109,7 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <Photo src="/photography/community-jobboard-band.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" sizes="100vw" />
+      <Photo src="/photography/community-jobboard-band.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" objectPosition="center 55%" sizes="100vw" />
 
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "56px 32px 64px" }}>

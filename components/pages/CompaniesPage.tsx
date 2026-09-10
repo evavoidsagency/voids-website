@@ -3,9 +3,10 @@ import { Button } from "@/components/ui/Button";
 import { CostCalculator } from "@/components/pages/CostCalculator";
 import { Photo } from "@/components/ui/Photo";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
+import { CountUp } from "@/components/ui/CountUp";
+import { ServicesTabs } from "@/components/pages/ServicesTabs";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { ROLE_TYPES, WHY_WS } from "@/lib/content/companies-content";
-import { TALENT_PROFILES } from "@/lib/content/talent-profiles";
 
 const COPY: Record<
   Lang,
@@ -18,9 +19,11 @@ const COPY: Record<
     heroStats: { value: string; label: string }[];
     servicesEyebrow: string;
     servicesTitle: string;
-    services: { verb: string; title: string; text: string; chips: string[]; cta: string; path: string }[];
-    rolesEyebrow: string;
-    rolesIntro: string;
+    services: { verb: string; title: string; text: string; chips: string[]; cta: string; path: string; photo: string; photoAlt: string }[];
+    bandEyebrow: string;
+    bandTitle: string;
+    bandText: string;
+    bandAlt: string;
     profilesEyebrow: string;
     profilesTitle: string;
     profilesIntro: string;
@@ -89,14 +92,8 @@ const COPY: Record<
         chips: ["Werkstudenten", "Stagiairs", "Starters"],
         cta: "Bekijk het proces →",
         path: "/companies/recruitment-selection",
-      },
-      {
-        verb: "Team versterken",
-        title: "Advies & employer branding",
-        text: "Met advies over je junior-strategie en employer branding bouwen we mee aan een merk waar studenten voor kiezen, en een team dat groeit in plaats van na een half jaar te vertrekken.",
-        chips: ["Junior-strategie", "Employer branding", "Behoud van talent"],
-        cta: "Meer over advies & branding →",
-        path: "/companies/employer-branding",
+        photo: "/photography/services-tab-find.jpg",
+        photoAlt: "Een VOIDS-recruiter aan het werk",
       },
       {
         verb: "Studenten bereiken",
@@ -105,13 +102,27 @@ const COPY: Record<
         chips: ["WhatsApp-community", "Jobboard"],
         cta: "Bekijk de opties →",
         path: "/companies/community-jobboard",
+        photo: "/photography/community-jobboard-band.jpg",
+        photoAlt: "Studenten en starters in de VOIDS-community",
+      },
+      {
+        verb: "Team versterken",
+        title: "Advies & employer branding",
+        text: "Met advies over je junior-strategie en employer branding bouwen we mee aan een merk waar studenten voor kiezen, en een team dat groeit in plaats van na een half jaar te vertrekken.",
+        chips: ["Junior-strategie", "Employer branding", "Behoud van talent"],
+        cta: "Meer over advies & branding →",
+        path: "/companies/employer-branding",
+        photo: "/photography/employer-branding-band.jpg",
+        photoAlt: "VOIDS aan het werk op kantoor",
       },
     ],
-    rolesEyebrow: "Soorten rollen",
-    rolesIntro: "Onze werkstudenten en stagiairs versterken vooral de commerciële en groeigerichte kant van je organisatie. Een greep uit de rollen die we invullen:",
+    bandEyebrow: "Hoe wij werken",
+    bandTitle: "ALTIJD EEN VAST AANSPREEKPUNT.",
+    bandText: "Of het nu gaat om werving, advies of zichtbaarheid in onze community: je werkt niet met een algoritme, maar met iemand bij VOIDS die je organisatie kent en meedenkt.",
+    bandAlt: "Een VOIDS-recruiter aan het werk",
     profilesEyebrow: "Ons talent",
     profilesTitle: "HIGH ACHIEVERS, GESELECTEERD OP KWALITEIT EN CULTUUR.",
-    profilesIntro: "We sourcen voornamelijk hbo- en wo-studenten en young professionals: ambitieus, snel zelfstandig en gewend om te presteren naast hun studie. We matchen niet alleen op skills, maar vooral op cultuurfit. Dit talent zit in onze bredere talentpool en wordt ingezet via al onze diensten, van werving tot community. Een greep uit de vakgebieden:",
+    profilesIntro: "Al onze diensten putten uit dezelfde brede talentpool: voornamelijk hbo- en wo-studenten en young professionals, ambitieus en gewend om te presteren naast hun studie, geselecteerd op cultuurfit net zo goed als op skills. Een greep uit de vakgebieden:",
     profilesCta: "Bekijk voorbeeldprofielen →",
     whyWsEyebrow: "Onze voorkeur",
     whyWsTitle: "DE WERKSTUDENT IS ONZE EERSTE KEUZE.",
@@ -182,14 +193,8 @@ const COPY: Record<
         chips: ["Working students", "Interns", "Starters"],
         cta: "See the process →",
         path: "/companies/recruitment-selection",
-      },
-      {
-        verb: "Strengthen",
-        title: "Advice & employer branding",
-        text: "With advice on your junior strategy and employer branding, we help build a brand students actually choose, and a team that grows instead of leaving after six months.",
-        chips: ["Junior strategy", "Employer branding", "Retention"],
-        cta: "More on advice & branding →",
-        path: "/companies/employer-branding",
+        photo: "/photography/services-tab-find.jpg",
+        photoAlt: "A VOIDS recruiter at work",
       },
       {
         verb: "Reach",
@@ -198,13 +203,27 @@ const COPY: Record<
         chips: ["WhatsApp community", "Job board"],
         cta: "See the options →",
         path: "/companies/community-jobboard",
+        photo: "/photography/community-jobboard-band.jpg",
+        photoAlt: "Students and starters in the VOIDS community",
+      },
+      {
+        verb: "Strengthen",
+        title: "Advice & employer branding",
+        text: "With advice on your junior strategy and employer branding, we help build a brand students actually choose, and a team that grows instead of leaving after six months.",
+        chips: ["Junior strategy", "Employer branding", "Retention"],
+        cta: "More on advice & branding →",
+        path: "/companies/employer-branding",
+        photo: "/photography/employer-branding-band.jpg",
+        photoAlt: "VOIDS at work in the office",
       },
     ],
-    rolesEyebrow: "Types of roles",
-    rolesIntro: "Our working students and interns mainly strengthen the commercial and growth side of your organisation. A selection of the roles we fill:",
+    bandEyebrow: "How we work",
+    bandTitle: "ALWAYS ONE POINT OF CONTACT.",
+    bandText: "Whether it's recruitment, advice or visibility in our community: you don't work with an algorithm, but with someone at VOIDS who knows your organisation and thinks along.",
+    bandAlt: "A VOIDS recruiter at work",
     profilesEyebrow: "Our talent",
     profilesTitle: "HIGH ACHIEVERS, SELECTED ON QUALITY AND CULTURE.",
-    profilesIntro: "We mainly source university (WO) and university-of-applied-sciences (HBO) students and young professionals: ambitious, quick to work independently, and used to performing alongside their studies. We match not just on skills but on culture fit. This talent sits in our broader talent pool and is placed through all of our services, from recruitment to community. A selection of the fields:",
+    profilesIntro: "All of our services draw from the same broad talent pool: mainly university and university-of-applied-sciences students and young professionals, ambitious and used to performing alongside their studies, selected on culture fit as much as on skills. A selection of the fields:",
     profilesCta: "See example profiles →",
     whyWsEyebrow: "Our preference",
     whyWsTitle: "THE WORKING STUDENT IS OUR FIRST CHOICE.",
@@ -278,7 +297,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               {c.heroStats.map((s) => (
                 <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: "1px solid rgba(255,255,255,.14)", paddingTop: 14 }}>
-                  <span className="anton" style={{ fontSize: 26, color: "#fff", flex: "none", whiteSpace: "nowrap" }}>{s.value}</span>
+                  <span className="anton" style={{ fontSize: 26, color: "#fff", flex: "none", whiteSpace: "nowrap" }}><CountUp value={s.value} /></span>
                   <span style={{ fontSize: 13, color: "var(--voids-purple-100)" }}>{s.label}</span>
                 </div>
               ))}
@@ -291,77 +310,29 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "52px 32px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.servicesEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 22px" }}>{c.servicesTitle}</h2>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20 }}>
-            {c.services.map((s, i) => {
-              const accent = i === 2 ? "blue" : "purple";
-              const accentColor = accent === "blue" ? "var(--voids-blue)" : "var(--voids-purple)";
-              const badgeClass = accent === "blue" ? "badge--blue" : "badge--purple";
-              return (
-                <div key={s.verb} className={`card card--hoverable card--accent-${accent}`} style={{ padding: 26, display: "flex", flexDirection: "column" }}>
-                  <div className="anton" style={{ fontSize: 34, color: accentColor, marginBottom: 4 }}>{s.verb}</div>
-                  <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: ".02em", textTransform: "uppercase", color: "var(--voids-ink-muted)", marginBottom: 16 }}>{s.title}</div>
-                  <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 20px", flex: 1 }}>{s.text}</p>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 18 }}>
-                    {s.chips.map((chip) => (
-                      <span key={chip} className={`badge ${badgeClass}`}>{chip}</span>
-                    ))}
-                  </div>
-                  <Link href={p(s.path)} style={{ fontSize: 13, fontWeight: 600, color: accentColor }}>
-                    {s.cta}
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
+          <ServicesTabs services={c.services.map((s) => ({ ...s, href: p(s.path) }))} />
         </div>
       </section>
 
-      <section className="wrap" style={{ padding: "48px 32px 56px" }}>
-        <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.rolesEyebrow}</span>
-        <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "8px 0 18px", maxWidth: 640 }}>{c.rolesIntro}</p>
-        <div style={{ position: "relative" }}>
-          <div style={{ display: "flex", gap: 10, overflowX: "auto", padding: "2px 2px 10px" }}>
-            {ROLE_TYPES[lang].map((r) => (
-              <span
-                key={r}
-                style={{
-                  fontSize: 13,
-                  fontWeight: 600,
-                  color: "var(--voids-purple)",
-                  background: "var(--voids-purple-100)",
-                  padding: "7px 14px",
-                  borderRadius: 999,
-                  flex: "none",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {r}
-              </span>
-            ))}
+      <section style={{ background: "var(--voids-beige)" }}>
+        <div className="wrap g-collapse" style={{ padding: "56px 32px", display: "grid", gridTemplateColumns: "1fr .9fr", gap: 44, alignItems: "center" }}>
+          <div>
+            <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.bandEyebrow}</span>
+            <h2 className="anton section-h2" style={{ fontSize: 30, margin: "10px 0 14px" }}>{c.bandTitle}</h2>
+            <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 460 }}>{c.bandText}</p>
           </div>
-          <div
-            aria-hidden="true"
-            style={{
-              position: "absolute",
-              top: 0,
-              right: 0,
-              bottom: 10,
-              width: 56,
-              background: "linear-gradient(to right, transparent, var(--voids-beige))",
-              pointerEvents: "none",
-            }}
-          />
+          <Photo src="/photography/companies-band.jpg" alt={c.bandAlt} ratio="4 / 3" />
         </div>
       </section>
 
       <section style={{ background: "#fff" }}>
-        <div className="wrap" style={{ padding: "48px 32px 56px" }}>
+        <div className="wrap" style={{ padding: "52px 32px 60px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.profilesEyebrow}</span>
-          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 14px", maxWidth: 760 }}>{c.profilesTitle}</h2>
-          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 22px", maxWidth: 720 }}>{c.profilesIntro}</p>
+          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 14px", maxWidth: 900 }}>{c.profilesTitle}</h2>
+          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 22px", maxWidth: 1000 }}>{c.profilesIntro}</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 20 }}>
-            {TALENT_PROFILES[lang].map((pr) => (
-              <span key={pr.field} className="badge badge--purple">{pr.field}</span>
+            {ROLE_TYPES[lang].map((r) => (
+              <span key={r} className="badge badge--purple">{r}</span>
             ))}
           </div>
           <Link href={`${p("/companies/recruitment-selection")}#profielen`} style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-purple)" }}>
@@ -419,8 +390,12 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
               rightBullets={c.ws2Bullets}
             />
           </div>
+        </div>
+      </section>
 
-          <p style={{ fontSize: 13, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "20px 0 0", maxWidth: 1040 }}>
+      <section style={{ background: "#fff" }}>
+        <div className="wrap" style={{ padding: "52px 32px 60px", maxWidth: 1104 }}>
+          <p style={{ fontSize: 13, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 1040 }}>
             {c.prefPara[0]}
             <strong style={{ color: "var(--voids-ink)" }}>{c.prefPara[1]}</strong>
             {c.prefPara[2]}
@@ -619,7 +594,7 @@ function ComparisonCard({
 }) {
   return (
     <div className="card" style={{ padding: 28 }}>
-      <h3 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 6px" }}>{title}</h3>
+      <h3 className="anton" style={{ fontSize: 24, margin: "0 0 6px" }}>{title}</h3>
       <p style={{ fontSize: 13, color: "var(--voids-ink-muted)", margin: "0 0 16px" }}>{sub}</p>
       <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
         <div>

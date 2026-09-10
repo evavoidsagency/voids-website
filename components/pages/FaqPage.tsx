@@ -1,4 +1,4 @@
-import { LegalPage } from "@/components/pages/LegalPage";
+import { FaqAccordion } from "@/components/pages/FaqAccordion";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import type { Lang } from "@/lib/i18n/common";
@@ -31,9 +31,10 @@ const QA: Record<Lang, { q: string; a: string; ul?: string[] }[]> = {
     },
     {
       q: "Welke diensten biedt VOIDS voor bedrijven?",
-      a: "We bieden twee hoofddiensten:",
+      a: "We bieden drie hoofddiensten:",
       ul: [
         "Werving & selectie: we nemen het hele wervingsproces uit handen, van briefing tot ondertekende match.",
+        "Advies & employer branding: we denken mee over je junior-strategie en helpen een merk bouwen waar studenten voor kiezen.",
         "Vacature plaatsen in onze community: je vacature rechtstreeks onder de aandacht van onze groeiende pool aan ambitieuze studenten en starters.",
       ],
     },
@@ -45,6 +46,22 @@ const QA: Record<Lang, { q: string; a: string; ul?: string[] }[]> = {
       q: "Hoe kan ik me aanmelden bij VOIDS?",
       a: "Maak gratis je career pager aan, join onze WhatsApp-community, of mail ons op contact@voids.agency om kansen of samenwerking te bespreken. We reageren zo snel mogelijk.",
     },
+    {
+      q: "Wat kost het om met VOIDS te werken?",
+      a: "De investering verschilt per dienst en per rol. Tijdens een vrijblijvend kennismakingsgesprek geven we je een concreet voorstel op maat.",
+    },
+    {
+      q: "Hoe snel kan ik kandidaten verwachten?",
+      a: "Dat verschilt per rol, maar na de intake nemen we actief in en buiten onze community door om kandidaten te vinden. Richting week 3 ontvang je meestal een voorgeselecteerde shortlist.",
+    },
+    {
+      q: "In welke regio's is VOIDS actief?",
+      a: "We zijn gevestigd in Amsterdam. Het merendeel van de bedrijven en het talent in onze community zit in de Randstad, maar samenwerken op afstand is net zo goed mogelijk.",
+    },
+    {
+      q: "Is VOIDS gratis voor studenten en starters?",
+      a: "Ja, altijd. Een career pager aanmaken, lid worden van de talentpool en de WhatsApp-community kost je niets, wat er ook uit voortkomt.",
+    },
   ],
   en: [
     {
@@ -53,9 +70,10 @@ const QA: Record<Lang, { q: string; a: string; ul?: string[] }[]> = {
     },
     {
       q: "What services does VOIDS offer for companies?",
-      a: "We offer two main services:",
+      a: "We offer three main services:",
       ul: [
         "Recruitment & selection: we take the entire hiring process off your hands, from briefing to signed match.",
+        "Advice & employer branding: we think along on your junior strategy and help build a brand students actually choose.",
         "Vacancy promotion in our community: your vacancy put directly in front of our growing pool of ambitious students and starters.",
       ],
     },
@@ -66,6 +84,22 @@ const QA: Record<Lang, { q: string; a: string; ul?: string[] }[]> = {
     {
       q: "How can I sign up with VOIDS?",
       a: "Build your free career pager, join our WhatsApp community, or email us at contact@voids.agency to discuss opportunities or collaboration. We'll get back to you as soon as possible.",
+    },
+    {
+      q: "What does it cost to work with VOIDS?",
+      a: "The investment differs per service and per role. During a free-form intro call, we give you a concrete proposal tailored to your situation.",
+    },
+    {
+      q: "How fast can I expect candidates?",
+      a: "That varies per role, but after the intake we actively search inside and outside our community to find candidates. By around week 3 you usually receive a pre-selected shortlist.",
+    },
+    {
+      q: "Which regions is VOIDS active in?",
+      a: "We're based in Amsterdam. Most of the companies and talent in our community are in the Randstad area, but working together remotely is just as possible.",
+    },
+    {
+      q: "Is VOIDS free for students and starters?",
+      a: "Yes, always. Building a career pager, joining the talent pool and the WhatsApp community cost you nothing, whatever comes of it.",
     },
   ],
 };
@@ -92,14 +126,11 @@ export function FaqPage({ lang }: { lang: Lang }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <LegalPage
-        eyebrow={c.eyebrow}
-        title={c.title}
-        sections={QA[lang].map((item) => ({
-          heading: item.q,
-          blocks: item.ul ? [{ p: item.a }, { ul: item.ul }] : [{ p: item.a }],
-        }))}
-      />
+      <section className="wrap" style={{ padding: "48px 32px 56px" }}>
+        <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.eyebrow}</span>
+        <h1 className="anton hero-h1" style={{ fontSize: 38, margin: "10px 0 26px" }}>{c.title}</h1>
+        <FaqAccordion items={QA[lang]} />
+      </section>
       <section style={{ background: "var(--voids-blue)" }}>
         <div className="wrap" style={{ padding: "48px 32px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 20 }}>
           <div>

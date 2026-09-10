@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Photo } from "@/components/ui/Photo";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
+import { CountUp } from "@/components/ui/CountUp";
 import { findLogoFile } from "@/lib/logos";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { PROCESS } from "@/lib/content/companies-content";
@@ -35,7 +36,7 @@ const COPY: Record<
     ctaIntro: "Plan een kennismaking",
     heroStats: [
       { value: "2-4", label: "voorgeselecteerde kandidaten per shortlist" },
-      { value: "±30 dagen", label: "gemiddelde tijd tot shortlist" },
+      { value: "~3 weken", label: "gemiddelde tijd tot shortlist" },
       { value: "4.000+", label: "studenten en starters in onze community" },
     ],
     processTitle: "HOE HET WERKT",
@@ -57,7 +58,7 @@ const COPY: Record<
     ctaIntro: "Book an intro call",
     heroStats: [
       { value: "2-4", label: "pre-selected candidates per shortlist" },
-      { value: "±30 days", label: "average time to shortlist" },
+      { value: "~3 weeks", label: "average time to shortlist" },
       { value: "4,000+", label: "students and starters in our community" },
     ],
     processTitle: "HOW IT WORKS",
@@ -92,7 +93,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               {c.heroStats.map((s) => (
                 <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: "1px solid rgba(255,255,255,.14)", paddingTop: 14 }}>
-                  <span className="anton" style={{ fontSize: 26, color: "#fff", flex: "none", whiteSpace: "nowrap" }}>{s.value}</span>
+                  <span className="anton" style={{ fontSize: 26, color: "#fff", flex: "none", whiteSpace: "nowrap" }}><CountUp value={s.value} /></span>
                   <span style={{ fontSize: 13, color: "var(--voids-purple-100)" }}>{s.label}</span>
                 </div>
               ))}
@@ -104,13 +105,13 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
       <section className="wrap" style={{ padding: "56px 32px 20px" }}>
         <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 20px" }}>{c.processTitle}</h2>
         <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 18 }}>
-          {PROCESS[lang].map((s) => (
+          {PROCESS[lang].map((s, i) => (
             <div key={s.num} className="card card--accent-purple" style={{ padding: 22 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 8 }}>
-                <span className="anton" style={{ fontSize: 30, color: "var(--voids-purple-200)" }}>{s.num}</span>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 }}>
+                <HandCircleNumber n={i + 1} />
                 <span className="badge badge--purple" style={{ whiteSpace: "nowrap" }}>{s.when}</span>
               </div>
-              <div style={{ fontSize: 16, fontWeight: 600, margin: "8px 0 6px" }}>{s.title}</div>
+              <div style={{ fontSize: 16, fontWeight: 600, margin: "14px 0 6px" }}>{s.title}</div>
               <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{s.text}</p>
             </div>
           ))}
@@ -120,7 +121,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "56px 32px 40px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 26, margin: "0 0 4px" }}>{c.casesTitle}</h2>
-          <p style={{ fontSize: 14.5, color: "var(--voids-ink-muted)", margin: "0 0 24px", maxWidth: 620 }}>{c.casesSub}</p>
+          <p style={{ fontSize: 14.5, color: "var(--voids-ink-muted)", margin: "0 0 24px", maxWidth: 780 }}>{c.casesSub}</p>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20 }}>
             {CLIENT_CASES[lang].map((cs) => {
               const logoUrl = findLogoFile(cs.slug);
@@ -158,9 +159,9 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "56px 32px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 26, margin: "0 0 4px", maxWidth: 760 }}>{c.profilesTitle}</h2>
           <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 24px", maxWidth: 720 }}>{c.profilesSub}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 16 }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 16, alignItems: "stretch" }}>
             {TALENT_PROFILES[lang].map((pr) => (
-              <div key={pr.field} className="card" style={{ padding: 20 }}>
+              <div key={pr.field} className="card" style={{ padding: 20, height: "100%", display: "flex", flexDirection: "column" }}>
                 <span className="badge badge--purple" style={{ marginBottom: 12, display: "inline-block" }}>{pr.field}</span>
                 <div style={{ fontSize: 14, fontWeight: 600, margin: "0 0 4px" }}>{pr.edu}</div>
                 <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", marginBottom: 12 }}>{pr.skills}</div>
@@ -176,7 +177,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
           <h2 className="anton section-h2" style={{ fontSize: 22, margin: "0 0 20px" }}>{c.rolesTitle}</h2>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 16 }}>
             {ROLES[lang].map((r) => (
-              <div key={r.role} style={{ background: "var(--voids-beige)", border: "1px solid var(--border-hairline)", borderRadius: "var(--radius-md)", padding: 20 }}>
+              <div key={r.role} className="card card--hoverable" style={{ padding: 20 }}>
                 <div style={{ fontSize: 15, fontWeight: 600 }}>{r.role}</div>
                 <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", margin: "4px 0 12px" }}>{r.company} · {r.uren}</div>
                 <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
@@ -191,7 +192,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
       </section>
 
       <section style={{ background: "var(--voids-beige)" }}>
-        <div className="wrap" style={{ padding: "40px 32px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
+        <div className="wrap" style={{ padding: "48px 32px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
           <p style={{ fontSize: 15, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 460 }}>{c.calcNote}</p>
           <Link href={localePath(lang, "/companies")} style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-purple)" }}>
             {c.calcCta}
@@ -206,5 +207,23 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
         </div>
       </section>
     </>
+  );
+}
+
+/** A hand-drawn, marker-circled step number — one signature touch on the one section of the site that's a real numbered sequence. */
+function HandCircleNumber({ n }: { n: number }) {
+  return (
+    <div style={{ position: "relative", width: 42, height: 42, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
+      <svg width="42" height="42" viewBox="0 0 42 42" style={{ position: "absolute", inset: 0 }} aria-hidden="true">
+        <path
+          d="M21 4.5c9 -1.3 17 5.5 16.3 14.8 -0.6 8.6 -7.6 16.4 -17 15.9 -9.5 -0.5 -16 -8.7 -14.6 -17.4C 6.9 9.6 13.2 5.5 21 4.5Z"
+          fill="none"
+          stroke="var(--voids-purple)"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+      <span className="anton" style={{ fontSize: 17, position: "relative", color: "var(--voids-purple)" }}>{n}</span>
+    </div>
   );
 }

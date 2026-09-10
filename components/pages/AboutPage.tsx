@@ -17,9 +17,6 @@ const COPY: Record<
     strengthTitle: string;
     strengthText: string;
     strengthPoints: string[];
-    partnersNote: string;
-    partnerName: string;
-    partnerRole: string;
     whatEyebrow: string;
     whatTitle: string;
     whatCards: { verb: string; title: string; text: string; path?: string; cta?: string }[];
@@ -47,9 +44,6 @@ const COPY: Record<
       "Aanwezig bij young talent events",
       "4.000+ studenten in de community",
     ],
-    partnersNote: "We bouwen van daaruit aan meer samenwerkingen met hogescholen en universiteiten.",
-    partnerName: "Universiteit van Amsterdam",
-    partnerRole: "Impact Fellow",
     whatEyebrow: "Wat we doen",
     whatTitle: "HOE WE DAT WAARMAKEN.",
     whatCards: [
@@ -98,9 +92,6 @@ const COPY: Record<
       "Present at young talent events",
       "4,000+ students in the community",
     ],
-    partnersNote: "We're building more partnerships with universities and universities of applied sciences from there.",
-    partnerName: "University of Amsterdam",
-    partnerRole: "Impact Fellow",
     whatEyebrow: "What we do",
     whatTitle: "WHAT WE ACTUALLY DELIVER.",
     whatCards: [
@@ -172,7 +163,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
       </section>
 
       <section style={{ background: "var(--voids-purple-100)" }}>
-        <div className="wrap" style={{ padding: "48px 32px" }}>
+        <div className="wrap" style={{ padding: "56px 32px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.strengthEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 14px" }}>{c.strengthTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-soft)", margin: "0 0 22px" }}>{c.strengthText}</p>
@@ -238,16 +229,8 @@ export function AboutPage({ lang }: { lang: Lang }) {
             {TEAM.map((m, i) => (
               <div
                 key={m.name}
-                className="card"
-                style={{
-                  padding: 0,
-                  overflow: "hidden",
-                  borderTopLeftRadius: i === 0 ? "var(--radius-lg)" : 0,
-                  borderBottomLeftRadius: i === 0 ? "var(--radius-lg)" : 0,
-                  borderTopRightRadius: i === 1 ? "var(--radius-lg)" : 0,
-                  borderBottomRightRadius: i === 1 ? "var(--radius-lg)" : 0,
-                  borderRight: i === 0 ? "none" : undefined,
-                }}
+                className={`card ${i === 0 ? "team-card--left" : i === 1 ? "team-card--right" : ""}`}
+                style={{ padding: 0, overflow: "hidden" }}
               >
                 <Photo src={m.photo} alt={m.name} ratio="4 / 5" radius="0" objectPosition={m.objectPosition} sizes="(max-width: 860px) 100vw, 340px" />
                 <div style={{ padding: "20px 22px" }}>
@@ -256,10 +239,6 @@ export function AboutPage({ lang }: { lang: Lang }) {
                 </div>
               </div>
             ))}
-          </div>
-          <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 10, marginTop: 24, maxWidth: 684 }}>
-            <span className="badge badge--purple" style={{ whiteSpace: "nowrap" }}>{c.partnerName} · {c.partnerRole}</span>
-            <span style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>{c.partnersNote}</span>
           </div>
         </div>
       </section>
