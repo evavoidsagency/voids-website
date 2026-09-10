@@ -109,7 +109,7 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <Photo src="/photography/community-jobboard-band.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" objectPosition="center 55%" sizes="100vw" />
+      <Photo src="/photography/community-jobboard-band-2.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" objectPosition="center 55%" sizes="100vw" />
 
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "56px 32px 64px" }}>

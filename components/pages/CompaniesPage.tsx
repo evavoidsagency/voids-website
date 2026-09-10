@@ -102,7 +102,7 @@ const COPY: Record<
         chips: ["WhatsApp-community", "Jobboard"],
         cta: "Bekijk de opties →",
         path: "/companies/community-jobboard",
-        photo: "/photography/community-jobboard-band.jpg",
+        photo: "/photography/community-jobboard-band-2.jpg",
         photoAlt: "Studenten en starters in de VOIDS-community",
       },
       {
@@ -203,7 +203,7 @@ const COPY: Record<
         chips: ["WhatsApp community", "Job board"],
         cta: "See the options →",
         path: "/companies/community-jobboard",
-        photo: "/photography/community-jobboard-band.jpg",
+        photo: "/photography/community-jobboard-band-2.jpg",
         photoAlt: "Students and starters in the VOIDS community",
       },
       {
