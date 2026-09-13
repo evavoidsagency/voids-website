@@ -346,12 +346,12 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyWsEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "8px 0 14px", maxWidth: 860 }}>{c.whyWsTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 860 }}>{c.whyWsIntro}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 16, marginBottom: 32, maxWidth: 1040, alignItems: "start" }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 16, marginBottom: 32, maxWidth: 1040, alignItems: "stretch" }}>
             {WHY_WS[lang].map((w) => (
-              <div key={w.title} className="card card--accent-purple" style={{ padding: 20 }}>
+              <div key={w.title} className="card card--accent-purple" style={{ padding: 20, height: "100%", display: "flex", flexDirection: "column" }}>
                 {WHY_WS_ICONS[w.icon]}
                 <div style={{ fontSize: 14, fontWeight: 600, margin: "10px 0 6px" }}>{w.title}</div>
-                <p style={{ fontSize: 12.5, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: 0 }}>{w.text}</p>
+                <p style={{ fontSize: 12.5, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{w.text}</p>
               </div>
             ))}
           </div>
