@@ -4,7 +4,7 @@ import { Photo } from "@/components/ui/Photo";
 import { Button } from "@/components/ui/Button";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
 import { CountUp } from "@/components/ui/CountUp";
-import { findLogoFile } from "@/lib/logos";
+import { findLogoFile, findTestimonialPhoto } from "@/lib/logos";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { PROCESS } from "@/lib/content/companies-content";
 import { CLIENT_CASES } from "@/lib/content/cases";
@@ -24,6 +24,12 @@ const COPY: Record<
     casesSub: string;
     profilesTitle: string;
     profilesSub: string;
+    testimonialP1: string;
+    testimonialP2: string;
+    testimonialName: string;
+    testimonialRole: string;
+    googleRating: string;
+    googleReviewCount: string;
     calcNote: string;
     calcCta: string;
     finalTitle: string;
@@ -46,6 +52,14 @@ const COPY: Record<
     casesSub: "Een kleine greep uit de vele bedrijven waar we mee hebben samengewerkt, van scale-up tot corporate.",
     profilesTitle: "HIGH ACHIEVERS, GESELECTEERD OP KWALITEIT EN CULTUUR.",
     profilesSub: "We sourcen voornamelijk hbo- en wo-studenten en young professionals: ambitieus, snel zelfstandig en gewend om te presteren naast hun studie. We matchen niet alleen op skills, maar vooral op cultuurfit, zodat wat we voorstellen ook echt past.",
+    testimonialP1:
+      "We zochten een **vrij specifiek profiel** voor onze werkstudent: iemand met zowel theoretische als praktische kennis van marketing, en affiniteit met de energietransitie – met name netcongestie-oplossingen.",
+    testimonialP2:
+      "VOIDS vond **op korte termijn** vier kandidaten voor ons, en na onze eigen gesprekken **vonden we een uitstekende match**. Complimenten aan VOIDS voor hun professionaliteit en betrokkenheid.",
+    testimonialName: "Noortje Jonk",
+    testimonialRole: "Commercial Manager bij Enerzien",
+    googleRating: "5.0",
+    googleReviewCount: "31 reviews",
     calcNote: "Benieuwd wat een werkstudent, stagiair of starter kost, en wanneer je voor welke kiest?",
     calcCta: "Bekijk de calculator en checklist →",
     finalTitle: "KLAAR OM TE SCHALEN?",
@@ -67,6 +81,14 @@ const COPY: Record<
     casesSub: "A small selection from the many companies we've worked with, from scale-up to corporate.",
     profilesTitle: "HIGH ACHIEVERS, SELECTED ON QUALITY AND CULTURE.",
     profilesSub: "We mainly source university and university-of-applied-sciences students and young professionals: ambitious, quick to work independently, and used to performing alongside their studies. We match not just on skills but on culture fit, so what we put forward actually fits.",
+    testimonialP1:
+      "We were looking for a **fairly specific profile** for our working student: someone with both theoretical and practical knowledge of marketing, and affinity with the energy transition – especially grid congestion solutions.",
+    testimonialP2:
+      "VOIDS found four candidates for us **on short notice**, and after conducting our own interviews **we found a great fit**. Compliments to VOIDS for their professionalism and commitment.",
+    testimonialName: "Noortje Jonk",
+    testimonialRole: "Commercial Manager at Enerzien",
+    googleRating: "5.0",
+    googleReviewCount: "31 reviews",
     calcNote: "Curious what a working student, intern or starter costs, and when to choose which?",
     calcCta: "See the calculator and checklist →",
     finalTitle: "READY TO SCALE?",
@@ -150,6 +172,35 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ background: "var(--voids-purple)" }}>
+        <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: ".8fr 1.2fr", gap: 44, alignItems: "center" }}>
+          <div style={{ textAlign: "center" }}>
+            {(() => {
+              const photo = findTestimonialPhoto("noortje-jonk");
+              return photo ? (
+                <div style={{ width: 160, height: 160, margin: "0 auto", borderRadius: "50%", overflow: "hidden", position: "relative" }}>
+                  <Photo src={photo} alt={c.testimonialName} ratio="1 / 1" radius="0" sizes="160px" />
+                </div>
+              ) : (
+                <div
+                  className="anton"
+                  style={{ width: 160, height: 160, margin: "0 auto", borderRadius: "50%", background: "rgba(255,255,255,.12)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 52 }}
+                >
+                  {c.testimonialName.charAt(0)}
+                </div>
+              );
+            })()}
+            <div style={{ marginTop: 16, color: "#fff", fontWeight: 700, fontSize: 15 }}>{c.testimonialName}</div>
+            <div style={{ color: "var(--voids-purple-100)", fontSize: 13 }}>{c.testimonialRole}</div>
+          </div>
+          <div>
+            <p style={{ fontSize: 18, lineHeight: 1.6, color: "#fff", margin: "0 0 16px" }}>&ldquo;{renderEmphasis(c.testimonialP1)}</p>
+            <p style={{ fontSize: 18, lineHeight: 1.6, color: "#fff", margin: "0 0 28px" }}>{renderEmphasis(c.testimonialP2)}&rdquo;</p>
+            <GoogleBadge rating={c.googleRating} count={c.googleReviewCount} href="https://share.google/Ki4rN5ZbP3TjyTBCI" />
           </div>
         </div>
       </section>
@@ -270,6 +321,61 @@ const FIELD_ICONS: Record<string, ReactNode> = {
 };
 
 /** A hand-drawn, marker-circled step number — one signature touch on the one section of the site that's a real numbered sequence. */
+/** Renders **bold** markers in a copy string as <strong> — keeps emphasis translatable and data-driven. */
+function renderEmphasis(text: string): ReactNode {
+  const parts = text.split(/\*\*(.+?)\*\*/g);
+  return parts.map((part, i) => (i % 2 === 1 ? <strong key={i}>{part}</strong> : part));
+}
+
+function GoogleGIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true">
+      <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z" />
+      <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z" />
+      <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z" />
+      <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z" />
+    </svg>
+  );
+}
+
+function StarIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBC04" aria-hidden="true">
+      <path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.8 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.8 7.1-.7Z" />
+    </svg>
+  );
+}
+
+function GoogleBadge({ rating, count, href }: { rating: string; count: string; href: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: "inline-flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 4,
+        background: "#fff",
+        borderRadius: "var(--radius-lg)",
+        padding: "16px 28px",
+        textDecoration: "none",
+        boxShadow: "var(--shadow-md)",
+      }}
+    >
+      <GoogleGIcon />
+      <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 2 }}>
+        <span className="anton" style={{ fontSize: 18, color: "var(--text-strong)" }}>{rating}</span>
+        <span style={{ display: "flex", gap: 1 }}>
+          {Array.from({ length: 5 }).map((_, i) => <StarIcon key={i} />)}
+        </span>
+      </div>
+      <span style={{ fontSize: 12, color: "var(--voids-ink-muted)" }}>{count}</span>
+    </a>
+  );
+}
+
 function HandCircleNumber({ n }: { n: number }) {
   return (
     <div style={{ position: "relative", width: 42, height: 42, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
