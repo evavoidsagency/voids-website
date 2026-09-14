@@ -14,6 +14,7 @@ const COPY: Record<
   {
     eyebrow: string;
     title: string;
+    heroHook: string;
     sub: string;
     ctaIntro: string;
     ctaProcess: string;
@@ -80,6 +81,7 @@ const COPY: Record<
   nl: {
     eyebrow: "Voor bedrijven",
     title: "JUNIOR TALENT,\nVAN WERVING TOT BEHOUD.",
+    heroHook: "Adverteer zelf bij onze community, of geef het hele proces uit handen: hoe dan ook binnen 30 dagen versterking.",
     sub: "Van het vinden en selecteren van werkstudenten, stagiairs en starters tot advies over je junior-strategie en zichtbaarheid bij 4.000+ studenten: wij helpen op elk vlak van je junior-talent-aanpak.",
     ctaIntro: "Plan een kennismaking",
     ctaProcess: "Bekijk onze diensten",
@@ -182,6 +184,7 @@ const COPY: Record<
   en: {
     eyebrow: "For companies",
     title: "JUNIOR TALENT,\nFROM HIRING TO RETENTION.",
+    heroHook: "Advertise it yourself in our community, or hand off the whole process: either way, reinforcement within 30 days.",
     sub: "From finding and selecting working students, interns and starters, to advice on your junior strategy and visibility with 4,000+ students: we help across every part of your junior talent approach.",
     ctaIntro: "Book an intro call",
     ctaProcess: "See our services",
@@ -293,7 +296,8 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "center", padding: "64px 32px 70px" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
-            <h1 className="anton hero-h1" style={{ fontSize: 50, margin: "14px 0 18px", color: "#fff", whiteSpace: "pre-line" }}>{c.title}</h1>
+            <h1 className="anton hero-h1" style={{ fontSize: 50, margin: "14px 0 16px", color: "#fff", whiteSpace: "pre-line" }}>{c.title}</h1>
+            <p className="anton" style={{ fontSize: 18, lineHeight: 1.45, textTransform: "none", color: "#fff", margin: "0 0 14px", maxWidth: 520 }}>{c.heroHook}</p>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 28px", maxWidth: 520 }}>{c.sub}</p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <CalendlyButton label={c.ctaIntro} variant="secondary" size="lg" />
