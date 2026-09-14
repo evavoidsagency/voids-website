@@ -12,7 +12,7 @@ export default function Page() {
     <StubPage
       lang="nl"
       title="PORTAL KOMT ERAAN."
-      body="Inloggen en je persoonlijke sollicitatie-overzicht landen in fase 4 van het platform."
+      body="Inloggen en je persoonlijke sollicitatie-overzicht komen mogelijk in een latere fase van het platform. Solliciteren kan nu al zonder account via het jobboard."
     />
   );
 }

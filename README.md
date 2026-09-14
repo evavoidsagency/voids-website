@@ -9,9 +9,18 @@ model, matching logic and build phasing.
 
 Live content: Home, Talent, Companies, Impact, Cases, Blog, About — in
 Dutch (default, unprefixed) and English (`/en/...`). `/jobboard`,
-`/pricing`, `/pager` and `/portal` are placeholder pages: they're on
-the site map and in the nav because the mockup and briefing put them
-there, but their real functionality (Phases 2–5) isn't built yet.
+`/pricing` and `/pager` are placeholder pages: they're on the site map
+and in the nav because the mockup and briefing put them there, but
+their real functionality (Phases 2–4) isn't built yet.
+
+`/portal` (the candidate portal, formerly Phase 4) has been taken out
+of the build order for now — not enough time before launch, and it
+may get built later. Its stub page and locale routes still exist
+(`app/(nl)/portal`, `app/en/portal`) and stay excluded from the
+sitemap and `robots.ts`, but nothing in the nav or on-page copy links
+to or promises it anymore. Re-adding it later is just: re-link it from
+`components/site/Header.tsx`, restore an `accountLabel` entry in
+`lib/i18n/common.ts`, and give it a real phase number in the briefing.
 
 ## Getting started
 

@@ -182,10 +182,6 @@ export function Header({ lang }: { lang: Lang }) {
             </Link>
           </div>
 
-          <Link href={localePath(lang, "/portal")} style={accountLinkStyle}>
-            {t.accountLabel[lang]}
-          </Link>
-
           <WhatsAppTrigger style={whatsTriggerStyle}>{t.whatsappCta[lang]}</WhatsAppTrigger>
 
           <div style={{ flex: "none", whiteSpace: "nowrap", display: "flex", gap: 10 }}>
@@ -265,10 +261,6 @@ export function Header({ lang }: { lang: Lang }) {
               </div>
             </div>
 
-            <Link href={localePath(lang, "/portal")} style={{ ...accountLinkStyle, fontSize: 16 }}>
-              {t.accountLabel[lang]}
-            </Link>
-
             <WhatsAppTrigger style={{ ...whatsTriggerStyle, fontSize: 16 }}>{t.whatsappCta[lang]}</WhatsAppTrigger>
 
             <Button variant="primary" size="md" fullWidth href={localePath(lang, "/pager")}>
@@ -302,15 +294,6 @@ const dropdownItemStyle: React.CSSProperties = {
   padding: "9px 12px",
   borderRadius: 6,
   whiteSpace: "nowrap",
-};
-
-const accountLinkStyle: React.CSSProperties = {
-  cursor: "pointer",
-  fontSize: 13.5,
-  fontWeight: 600,
-  color: "var(--voids-ink-soft)",
-  whiteSpace: "nowrap",
-  flex: "none",
 };
 
 const whatsTriggerStyle: React.CSSProperties = {

@@ -12,7 +12,7 @@ export default function Page() {
     <StubPage
       lang="en"
       title="THE PORTAL IS COMING."
-      body="Logging in and your personal application overview land in Phase 4 of the platform."
+      body="Logging in and your personal application overview may land in a later phase of the platform. You can already apply without an account via the job board."
     />
   );
 }

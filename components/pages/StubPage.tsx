@@ -8,8 +8,11 @@ const COPY: Record<Lang, { back: string }> = {
 
 /**
  * Placeholder for a route that's on the site map (per the platform
- * briefing's phasing) but not built yet — jobboard is Phase 3, career
- * pager Phase 2, portal Phase 4, self-service pricing/payment Phase 5.
+ * briefing's phasing) but not built yet — career pager is Phase 2,
+ * jobboard Phase 3, self-service pricing/payment Phase 4. Portal is
+ * deferred with no scheduled phase (see briefing section 5) — its stub
+ * stays unlinked and noindexed rather than removed, so it can be
+ * reconnected without rebuilding the route.
  */
 export function StubPage({
   lang,

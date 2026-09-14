@@ -115,7 +115,6 @@ export const SOCIALS = {
 };
 
 export const t = {
-  accountLabel: { nl: "Portal", en: "Portal" },
   contactLabel: { nl: "Contact", en: "Contact" },
   moreLabel: { nl: "Meer", en: "More" },
   whatsappCta: { nl: "💜 WhatsApp", en: "💜 WhatsApp" },
