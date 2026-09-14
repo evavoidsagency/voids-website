@@ -69,18 +69,3 @@ export const CLIENT_CASES: Record<
     },
   ],
 };
-
-export const ROLES: Record<Lang, { role: string; company: string; uren: string; tags: string[] }[]> = {
-  nl: [
-    { role: "Werkstudent Marketing (NL/SE/DE)", company: "Mila Health", uren: "±20 u/wk", tags: ["Marketing", "Internationaal"] },
-    { role: "Founder's Associate", company: "Hubby", uren: "±20 u/wk", tags: ["Strategie", "Founder support"] },
-    { role: "Werkstudent Order to Cash", company: "Joulz", uren: "±20 u/wk", tags: ["Debiteuren", "Facturatie"] },
-    { role: "Werkstudent Purchase to Pay", company: "Joulz", uren: "±20 u/wk", tags: ["Crediteuren", "Bankverwerking"] },
-  ],
-  en: [
-    { role: "Working student Marketing (NL/SE/DE)", company: "Mila Health", uren: "±20 hrs/wk", tags: ["Marketing", "International"] },
-    { role: "Founder's Associate", company: "Hubby", uren: "±20 hrs/wk", tags: ["Strategy", "Founder support"] },
-    { role: "Working student Order to Cash", company: "Joulz", uren: "±20 hrs/wk", tags: ["Receivables", "Invoicing"] },
-    { role: "Working student Purchase to Pay", company: "Joulz", uren: "±20 hrs/wk", tags: ["Payables", "Bank processing"] },
-  ],
-};

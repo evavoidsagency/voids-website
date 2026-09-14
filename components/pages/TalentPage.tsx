@@ -57,7 +57,7 @@ const COPY: Record<
   nl: {
     eyebrow: "Voor talent",
     title: "JOBS KOMEN NAAR JOU TOE.",
-    sub: "Beantwoord een paar vragen over jezelf en word onderdeel van onze talentpool: persoonlijke matches, offmarket-kansen en exclusieve events, rechtstreeks in je WhatsApp. Gratis en laagdrempelig.",
+    sub: "Beantwoord een paar vragen over jezelf en word onderdeel van onze talentpool: persoonlijke matches, offmarket-kansen en exclusieve events. Gratis en laagdrempelig.",
     ctaPager: "Word lid van de talentpool",
     ctaWhats: "💜 Join WhatsApp",
     avatarLabel: "4.000+ studenten gingen je voor",
@@ -66,7 +66,7 @@ const COPY: Record<
     stat2Label: "transparante voorwaarden",
     stat3Label: "winst terug naar gelijke kansen",
     resourcesEyebrow: "Jouw route",
-    resourcesTitle: "DRIE MANIEREN OM DICHTERBIJ TE KOMEN.",
+    resourcesTitle: "DRIE WEGEN NAAR JE VOLGENDE ROL.",
     resourcesIntro: "Wij bieden meer dan losse vacatures: een jobboard om zelf te solliciteren, een WhatsApp-community met wekelijkse kansen, en een talentpool die je proactief matcht. Omdat we zo nauw met werkgevers samenwerken, kunnen we vaak breder met ze meedenken dan alleen de vacatures die online staan. Hoe actiever je meedoet, hoe meer we voor je kunnen doen.",
     resources: [
       { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord één keer een paar vragen, en wij doen de rest: je wordt proactief voorgesteld bij offmarket-kansen, rollen waar we dankzij onze nauwe samenwerking met werkgevers al vroeg over meedenken, en krijgt een plek in ons exclusieve netwerk met events.", cta: "Start je profiel", path: "/pager" },
@@ -136,7 +136,7 @@ const COPY: Record<
   en: {
     eyebrow: "For talent",
     title: "JOBS COME TO YOU.",
-    sub: "Answer a few questions about yourself and become part of our talent pool: personal matches, off-market opportunities and exclusive events, straight in your WhatsApp. Free, no strings.",
+    sub: "Answer a few questions about yourself and become part of our talent pool: personal matches, off-market opportunities and exclusive events. Free, no strings.",
     ctaPager: "Join the talent pool",
     ctaWhats: "💜 Join WhatsApp",
     avatarLabel: "4,000+ students went before you",
@@ -145,7 +145,7 @@ const COPY: Record<
     stat2Label: "transparent terms",
     stat3Label: "profit reinvested in equal opportunity",
     resourcesEyebrow: "Your route",
-    resourcesTitle: "THREE WAYS TO GET CLOSER.",
+    resourcesTitle: "THREE PATHS TO YOUR NEXT ROLE.",
     resourcesIntro: "We offer more than individual vacancies: a job board to apply yourself, a WhatsApp community with weekly opportunities, and a talent pool that proactively matches you. Because we work so closely with employers, we can often think along with them more broadly than just the vacancies that are posted. The more active you are, the more we can do for you.",
     resources: [
       { tier: "Active in the talent pool", title: "Talent pool", text: "Answer a few questions once, and we do the rest: you get proactively put forward for off-market opportunities, roles we're already thinking through with employers early on thanks to our close working relationship, plus a spot in our exclusive network with events.", cta: "Join the talent pool", path: "/pager" },

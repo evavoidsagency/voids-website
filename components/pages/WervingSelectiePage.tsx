@@ -5,7 +5,7 @@ import { CountUp } from "@/components/ui/CountUp";
 import { findLogoFile } from "@/lib/logos";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { PROCESS } from "@/lib/content/companies-content";
-import { CLIENT_CASES, ROLES } from "@/lib/content/cases";
+import { CLIENT_CASES } from "@/lib/content/cases";
 import { TALENT_PROFILES } from "@/lib/content/talent-profiles";
 
 const COPY: Record<
@@ -22,7 +22,6 @@ const COPY: Record<
     casesSub: string;
     profilesTitle: string;
     profilesSub: string;
-    rolesTitle: string;
     calcNote: string;
     calcCta: string;
     finalTitle: string;
@@ -45,7 +44,6 @@ const COPY: Record<
     casesSub: "Een kleine greep uit de vele bedrijven waar we mee hebben samengewerkt, van scale-up tot corporate.",
     profilesTitle: "HIGH ACHIEVERS, GESELECTEERD OP KWALITEIT EN CULTUUR.",
     profilesSub: "We sourcen voornamelijk hbo- en wo-studenten en young professionals: ambitieus, snel zelfstandig en gewend om te presteren naast hun studie. We matchen niet alleen op skills, maar vooral op cultuurfit, zodat wat we voorstellen ook echt past.",
-    rolesTitle: "VOORBEELDEN VAN ROLLEN DIE WE INVULDEN",
     calcNote: "Benieuwd wat een werkstudent, stagiair of starter kost, en wanneer je voor welke kiest?",
     calcCta: "Bekijk de calculator en checklist →",
     finalTitle: "KLAAR OM TE SCHALEN?",
@@ -67,7 +65,6 @@ const COPY: Record<
     casesSub: "A small selection from the many companies we've worked with, from scale-up to corporate.",
     profilesTitle: "HIGH ACHIEVERS, SELECTED ON QUALITY AND CULTURE.",
     profilesSub: "We mainly source university and university-of-applied-sciences students and young professionals: ambitious, quick to work independently, and used to performing alongside their studies. We match not just on skills but on culture fit, so what we put forward actually fits.",
-    rolesTitle: "EXAMPLES OF ROLES WE'VE FILLED",
     calcNote: "Curious what a working student, intern or starter costs, and when to choose which?",
     calcCta: "See the calculator and checklist →",
     finalTitle: "READY TO SCALE?",
@@ -166,25 +163,6 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
                 <div style={{ fontSize: 14, fontWeight: 600, margin: "0 0 4px" }}>{pr.edu}</div>
                 <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", marginBottom: 12 }}>{pr.skills}</div>
                 <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-soft)", margin: 0, fontStyle: "italic" }}>{pr.traits}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section style={{ background: "#fff" }}>
-        <div className="wrap" style={{ padding: "48px 32px 56px" }}>
-          <h2 className="anton section-h2" style={{ fontSize: 22, margin: "0 0 20px" }}>{c.rolesTitle}</h2>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 16 }}>
-            {ROLES[lang].map((r) => (
-              <div key={r.role} className="card card--hoverable" style={{ padding: 20 }}>
-                <div style={{ fontSize: 15, fontWeight: 600 }}>{r.role}</div>
-                <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", margin: "4px 0 12px" }}>{r.company} · {r.uren}</div>
-                <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                  {r.tags.map((t) => (
-                    <span key={t} className="badge badge--blue">{t}</span>
-                  ))}
-                </div>
               </div>
             ))}
           </div>
