@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Photo } from "@/components/ui/Photo";
 import { ContactForm } from "@/components/pages/ContactForm";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
+import { AboutAccordion } from "@/components/pages/AboutAccordion";
 import { SOCIALS, localePath, type Lang } from "@/lib/i18n/common";
 import { TEAM } from "@/lib/content/team";
 import { findTeamPhoto } from "@/lib/logos";
@@ -11,12 +12,14 @@ const COPY: Record<
   {
     eyebrow: string;
     title: string;
+    whyLabel: string;
     p1: string;
     p2: string;
-    strengthEyebrow: string;
-    strengthTitle: string;
-    strengthText: string;
-    strengthPoints: string[];
+    howLabel: string;
+    howText: string;
+    howPoints: string[];
+    whatLabel: string;
+    whatSummary: string;
     whatEyebrow: string;
     whatTitle: string;
     whatCards: { verb: string; title: string; text: string; path?: string; cta?: string }[];
@@ -33,17 +36,20 @@ const COPY: Record<
   nl: {
     eyebrow: "Over ons",
     title: "WE FILL THE VOIDS.",
+    whyLabel: "WAAROM VOIDS?",
     p1: "Overal op de arbeidsmarkt zitten gaten. Studenten met talent dat bedrijven niet zien. Bedrijven met kansen die studenten nooit voorbij zien komen. Die leegtes, die voids, vullen wij door de juiste mensen aan de juiste plek te verbinden.",
     p2: "We kijken verder dan een cv: naar drijfveren, werkstijl en ambitie. Persoonlijk, selectief en met een missie: een eerlijkere start voor iedereen.",
-    strengthEyebrow: "Onze kracht",
-    strengthTitle: "WE KENNEN GEN Z VAN BINNENUIT.",
-    strengthText:
+    howLabel: "HOE WE WERKEN",
+    howText:
       "We wachten niet tot cv's binnenkomen. Via structurele samenwerkingen met studieverenigingen en de plekken waar young talent samenkomt, bouwen we die kennis zelf op. Daardoor zien we verder dan een cv: we prikken door tot wie iemand écht is, en of dat de gedrevenheid en potentie oplevert waar we naar zoeken.",
-    strengthPoints: [
+    howPoints: [
       "Studieverenigingen als partner",
       "Aanwezig bij young talent events",
       "4.000+ studenten in de community",
     ],
+    whatLabel: "WAT WE DOEN",
+    whatSummary:
+      "Van volledige werving en selectie tot zelf een vacature plaatsen in onze community, tot advies over je junior-strategie: hieronder in detail.",
     whatEyebrow: "Wat we doen",
     whatTitle: "HOE WE DAT WAARMAKEN.",
     whatCards: [
@@ -81,17 +87,20 @@ const COPY: Record<
   en: {
     eyebrow: "About us",
     title: "WE FILL THE VOIDS.",
+    whyLabel: "WHY VOIDS?",
     p1: "The job market is full of gaps. Students with talent companies never see. Companies with opportunities students never come across. Those empty spaces, those voids, we fill by connecting the right people to the right place.",
     p2: "We look beyond the CV: at motivation, working style and ambition. Personal, selective and on a mission to give everyone a fairer start.",
-    strengthEyebrow: "Our edge",
-    strengthTitle: "WE KNOW GEN Z FROM THE INSIDE.",
-    strengthText:
+    howLabel: "HOW WE WORK",
+    howText:
       "We don't wait for CVs to land in an inbox. Through structural partnerships with study associations and the places where young talent actually gathers, we build that knowledge ourselves. That's how we see past a CV: we can tell who someone really is, and whether that adds up to the drive and potential we're looking for.",
-    strengthPoints: [
+    howPoints: [
       "Study associations as partners",
       "Present at young talent events",
       "4,000+ students in the community",
     ],
+    whatLabel: "WHAT WE DO",
+    whatSummary:
+      "From full-service recruitment and selection, to advertising a vacancy yourself in our community, to advice on your junior strategy: the detail is below.",
     whatEyebrow: "What we do",
     whatTitle: "WHAT WE ACTUALLY DELIVER.",
     whatCards: [
@@ -137,9 +146,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
       <section className="wrap g-collapse" style={{ padding: "64px 32px 44px", display: "grid", gridTemplateColumns: "1.15fr .85fr", gap: 44, alignItems: "center" }}>
         <div>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.eyebrow}</span>
-          <h1 className="anton hero-h1" style={{ fontSize: 50, margin: "12px 0 16px" }}>{c.title}</h1>
-          <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 14px" }}>{c.p1}</p>
-          <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.p2}</p>
+          <h1 className="anton hero-h1" style={{ fontSize: 50, margin: "12px 0 0" }}>{c.title}</h1>
         </div>
         {foundersPhoto ? (
           <Photo src={foundersPhoto} alt={c.foundersAlt} ratio="1600 / 1695" />
@@ -162,34 +169,57 @@ export function AboutPage({ lang }: { lang: Lang }) {
         )}
       </section>
 
-      <section style={{ background: "var(--voids-purple-100)" }}>
-        <div className="wrap" style={{ padding: "56px 32px" }}>
-          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.strengthEyebrow}</span>
-          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 14px" }}>{c.strengthTitle}</h2>
-          <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-soft)", margin: "0 0 22px" }}>{c.strengthText}</p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-            {c.strengthPoints.map((pt) => (
-              <span
-                key={pt}
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  fontSize: 13.5,
-                  fontWeight: 600,
-                  color: "var(--voids-purple)",
-                  background: "#fff",
-                  borderRadius: 999,
-                  padding: "10px 18px",
-                  whiteSpace: "nowrap",
-                  boxShadow: "var(--shadow-sm)",
-                }}
-              >
-                <CheckIcon />
-                {pt}
-              </span>
-            ))}
-          </div>
+      <section style={{ background: "var(--voids-purple)" }}>
+        <div className="wrap" style={{ padding: "16px 32px 8px" }}>
+          <AboutAccordion
+            items={[
+              {
+                title: c.whyLabel,
+                content: (
+                  <>
+                    <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: "0 0 14px" }}>{c.p1}</p>
+                    <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0 }}>{c.p2}</p>
+                  </>
+                ),
+              },
+              {
+                title: c.howLabel,
+                content: (
+                  <>
+                    <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: "0 0 20px" }}>{c.howText}</p>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+                      {c.howPoints.map((pt) => (
+                        <span
+                          key={pt}
+                          style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: 8,
+                            fontSize: 13.5,
+                            fontWeight: 600,
+                            color: "#fff",
+                            border: "1px solid rgba(255,255,255,.35)",
+                            borderRadius: 999,
+                            padding: "10px 18px",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          <CheckIcon color="#fff" />
+                          {pt}
+                        </span>
+                      ))}
+                    </div>
+                  </>
+                ),
+              },
+              {
+                title: c.whatLabel,
+                content: (
+                  <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0 }}>{c.whatSummary}</p>
+                ),
+              },
+            ]}
+          />
         </div>
       </section>
 
@@ -270,11 +300,11 @@ export function AboutPage({ lang }: { lang: Lang }) {
   );
 }
 
-function CheckIcon() {
+function CheckIcon({ color = "var(--voids-purple)" }: { color?: string }) {
   return (
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-      <circle cx="7" cy="7" r="6.25" stroke="var(--voids-purple)" strokeWidth="1.4" />
-      <path d="M4.3 7.1l1.9 1.9 3.5-3.9" stroke="var(--voids-purple)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="7" cy="7" r="6.25" stroke={color} strokeWidth="1.4" />
+      <path d="M4.3 7.1l1.9 1.9 3.5-3.9" stroke={color} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
