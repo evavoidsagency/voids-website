@@ -28,9 +28,46 @@ const AUD_LABEL: Record<Lang, Record<BlogAud, string>> = {
 
 const READ_MORE: Record<Lang, string> = { nl: "leestijd · Lees meer →", en: "read · Read more →" };
 
+// Reorders items so repeats of the same key land at least `minGap` slots apart
+// wherever the remaining pool allows it. Used to keep reused blog photos from
+// sitting in the same grid column (or side by side) even after they're
+// visually varied — a mirrored copy right under the original still reads as
+// "the same photo twice" at a glance.
+function spreadDuplicates<T>(items: T[], keyFn: (item: T) => string, minGap: number): T[] {
+  const remaining = [...items];
+  const result: T[] = [];
+  const lastPlaced = new Map<string, number>();
+  while (remaining.length) {
+    let pick = remaining.findIndex((item) => {
+      const last = lastPlaced.get(keyFn(item));
+      return last === undefined || result.length - last >= minGap;
+    });
+    if (pick === -1) {
+      // Nothing satisfies the gap yet (too many repeats for the list length) —
+      // fall back to whichever key was placed longest ago.
+      pick = 0;
+      let oldest = lastPlaced.get(keyFn(remaining[0])) ?? -Infinity;
+      for (let i = 1; i < remaining.length; i++) {
+        const last = lastPlaced.get(keyFn(remaining[i])) ?? -Infinity;
+        if (last < oldest) {
+          oldest = last;
+          pick = i;
+        }
+      }
+    }
+    const [item] = remaining.splice(pick, 1);
+    lastPlaced.set(keyFn(item), result.length);
+    result.push(item);
+  }
+  return result;
+}
+
 export function BlogList({ lang }: { lang: Lang }) {
   const [aud, setAud] = useState<Filter>("alle");
-  const posts = BLOG_POSTS.filter((post) => aud === "alle" || post.aud === aud || post.aud === "beide");
+  const filtered = BLOG_POSTS.filter((post) => aud === "alle" || post.aud === aud || post.aud === "beide");
+  // Grid is 2 columns — a gap of 3 keeps a repeated photo out of the same
+  // column (2 slots down) and off to the side (1 slot over).
+  const posts = spreadDuplicates(filtered, (post) => post.photo, 3);
 
   // Photography ran out of unique shots before posts, so some photos repeat.
   // Give each repeat a distinct crop (mirrored / zoomed) so reused photos
