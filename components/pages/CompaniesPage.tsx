@@ -29,6 +29,9 @@ const COPY: Record<
     whyWsEyebrow: string;
     whyWsTitle: string;
     whyWsIntro: string;
+    retentionLabel: string;
+    retentionStatValue: string;
+    retentionStatText: string;
     altOptionsEyebrow: string;
     altOptionsTitle: string;
     stageEyebrow: string;
@@ -127,6 +130,9 @@ const COPY: Record<
     whyWsEyebrow: "Onze voorkeur",
     whyWsTitle: "DE WERKSTUDENT IS ONZE EERSTE KEUZE.",
     whyWsIntro: "Werkstudentrollen invullen is niet zomaar één van de dingen die we doen: het is waar VOIDS voor staat en verreweg de meeste plaatsingen die we doen. Voor de meeste vragen is het ook simpelweg de beste oplossing, hieronder waarom, en wanneer een stagiair of starter juist beter past.",
+    retentionLabel: "Wist je dat?",
+    retentionStatValue: "81%",
+    retentionStatText: "van de werkstudenten blijft minimaal een jaar op zijn rol; de helft mikt zelfs op 1–3 jaar, vaak met het oog op een vaste aanstelling.",
     altOptionsEyebrow: "Toch twijfels?",
     altOptionsTitle: "WANNEER EEN STAGIAIR OF STARTER BETER PAST.",
     stageEyebrow: "Stagevergoeding",
@@ -226,6 +232,9 @@ const COPY: Record<
     whyWsEyebrow: "Our preference",
     whyWsTitle: "THE WORKING STUDENT IS OUR FIRST CHOICE.",
     whyWsIntro: "Filling working-student roles isn't just one of the things we do: it's what VOIDS stands for, and by far the majority of the placements we make. For most hiring needs it's simply the best fit too, here's why, and when an intern or starter fits better instead.",
+    retentionLabel: "Did you know?",
+    retentionStatValue: "81%",
+    retentionStatText: "of working students stay in their role for at least a year; half of them aim for 1–3 years, often hoping to move into a permanent position.",
     altOptionsEyebrow: "Still deciding?",
     altOptionsTitle: "WHEN AN INTERN OR STARTER FITS BETTER.",
     stageEyebrow: "Intern pay",
@@ -346,6 +355,15 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
                 <p style={{ fontSize: 12.5, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{w.text}</p>
               </div>
             ))}
+          </div>
+          <div className="card" style={{ padding: 24, marginTop: 20, maxWidth: 1040, display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
+            <div className="anton" style={{ fontSize: 40, color: "var(--voids-purple)", lineHeight: 1, flex: "none" }}>
+              <CountUp value={c.retentionStatValue} />
+            </div>
+            <div style={{ flex: 1, minWidth: 240 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".03em", textTransform: "uppercase", color: "var(--voids-purple)", marginBottom: 4 }}>{c.retentionLabel}</div>
+              <p style={{ fontSize: 14, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: 0 }}>{c.retentionStatText}</p>
+            </div>
           </div>
         </div>
       </section>
