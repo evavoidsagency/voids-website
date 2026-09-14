@@ -38,6 +38,8 @@ export function ComparisonCard({
   const isLeft = active === "left";
   const color = isLeft ? leftColor : rightColor;
   const bg = color.includes("blue") ? "var(--voids-blue-100)" : "var(--voids-purple-100)";
+  const icon = isLeft ? leftIcon : rightIcon;
+  const heading = isLeft ? leftHeading : rightHeading;
   const badgeClass = isLeft ? leftBadgeClass : rightBadgeClass;
   const duration = isLeft ? leftDuration : rightDuration;
   const bullets = isLeft ? leftBullets : rightBullets;
@@ -83,16 +85,24 @@ export function ComparisonCard({
         })}
       </div>
 
-      <div key={active} className="services-tab-panel" style={{ background: bg, borderRadius: "var(--radius-md)", padding: 20 }}>
-        <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 12 }}>
+      <div key={active} className="services-tab-panel" style={{ background: bg, borderRadius: "var(--radius-md)", padding: 22 }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, marginBottom: 16, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ width: 34, height: 34, borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
+              {icon}
+            </div>
+            <span className="anton" style={{ fontSize: 15, color }}>{heading}</span>
+          </div>
           <span className={`badge ${badgeClass}`} style={{ whiteSpace: "nowrap", background: "#fff" }}>{duration}</span>
         </div>
-        {bullets.map((b) => (
-          <div key={b} style={{ display: "flex", gap: 8, fontSize: 13.5, color: "var(--voids-ink-soft)", lineHeight: 1.5, marginBottom: 10 }}>
-            <CheckIcon color={color} />
-            <span>{b}</span>
-          </div>
-        ))}
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          {bullets.map((b) => (
+            <div key={b} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13.5, color: "var(--voids-ink-soft)", lineHeight: 1.5, background: "#fff", borderRadius: "var(--radius-sm)", padding: "11px 14px" }}>
+              <CheckIcon color={color} />
+              <span>{b}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

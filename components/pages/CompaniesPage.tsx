@@ -21,9 +21,6 @@ const COPY: Record<
     servicesEyebrow: string;
     servicesTitle: string;
     services: { verb: string; title: string; text: string; chips: string[]; cta: string; path: string; photo: string; photoAlt: string }[];
-    bandEyebrow: string;
-    bandTitle: string;
-    bandText: string;
     bandAlt: string;
     profilesEyebrow: string;
     profilesTitle: string;
@@ -120,9 +117,6 @@ const COPY: Record<
         photoAlt: "VOIDS aan het werk op kantoor",
       },
     ],
-    bandEyebrow: "Hoe wij werken",
-    bandTitle: "ALTIJD EEN VAST AANSPREEKPUNT.",
-    bandText: "Of het nu gaat om werving, advies of zichtbaarheid in onze community: je werkt niet met een algoritme, maar met iemand bij VOIDS die je organisatie kent en meedenkt.",
     bandAlt: "Een VOIDS-recruiter aan het werk",
     profilesEyebrow: "Ons talent",
     profilesTitle: "HIGH ACHIEVERS, GESELECTEERD OP KWALITEIT EN CULTUUR.",
@@ -220,9 +214,6 @@ const COPY: Record<
         photoAlt: "VOIDS at work in the office",
       },
     ],
-    bandEyebrow: "How we work",
-    bandTitle: "ALWAYS ONE POINT OF CONTACT.",
-    bandText: "Whether it's recruitment, advice or visibility in our community: you don't work with an algorithm, but with someone at VOIDS who knows your organisation and thinks along.",
     bandAlt: "A VOIDS recruiter at work",
     profilesEyebrow: "Our talent",
     profilesTitle: "HIGH ACHIEVERS, SELECTED ON QUALITY AND CULTURE.",
@@ -316,17 +307,6 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section style={{ background: "var(--voids-beige)" }}>
-        <div className="wrap g-collapse" style={{ padding: "56px 32px", display: "grid", gridTemplateColumns: "1fr .9fr", gap: 44, alignItems: "center" }}>
-          <div>
-            <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.bandEyebrow}</span>
-            <h2 className="anton section-h2" style={{ fontSize: 30, margin: "10px 0 14px" }}>{c.bandTitle}</h2>
-            <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 460 }}>{c.bandText}</p>
-          </div>
-          <Photo src="/photography/companies-band.jpg" alt={c.bandAlt} ratio="4 / 3" />
-        </div>
-      </section>
-
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "52px 32px 60px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.profilesEyebrow}</span>
@@ -343,6 +323,8 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
+      <Photo src="/photography/companies-band.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" sizes="100vw" />
+
       <section style={{ background: "var(--voids-purple-100)" }}>
         <div className="wrap" style={{ padding: "56px 32px 64px", maxWidth: 1104 }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyWsEyebrow}</span>
@@ -350,9 +332,11 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 860 }}>{c.whyWsIntro}</p>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 16, marginBottom: 32, maxWidth: 1040, alignItems: "stretch" }}>
             {WHY_WS[lang].map((w) => (
-              <div key={w.title} className="card card--accent-purple" style={{ padding: 20, height: "100%", display: "flex", flexDirection: "column" }}>
-                {WHY_WS_ICONS[w.icon]}
-                <div style={{ fontSize: 14, fontWeight: 600, margin: "10px 0 6px" }}>{w.title}</div>
+              <div key={w.title} className="card card--hoverable card--accent-purple" style={{ padding: 22, height: "100%", display: "flex", flexDirection: "column" }}>
+                <div style={{ width: 44, height: 44, borderRadius: "50%", background: "var(--voids-purple-100)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+                  {WHY_WS_ICONS[w.icon]}
+                </div>
+                <div style={{ fontSize: 15, fontWeight: 700, margin: "0 0 6px" }}>{w.title}</div>
                 <p style={{ fontSize: 12.5, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{w.text}</p>
               </div>
             ))}
