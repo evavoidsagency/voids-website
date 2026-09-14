@@ -329,7 +329,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "56px 32px 64px", maxWidth: 1104 }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyWsEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "8px 0 14px", maxWidth: 860 }}>{c.whyWsTitle}</h2>
-          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 860 }}>{c.whyWsIntro}</p>
+          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 1040 }}>{c.whyWsIntro}</p>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 16, maxWidth: 1040, alignItems: "stretch" }}>
             {WHY_WS[lang].map((w) => (
               <div key={w.title} className="card card--hoverable card--accent-purple" style={{ padding: 22, height: "100%", display: "flex", flexDirection: "column" }}>
