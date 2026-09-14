@@ -533,6 +533,13 @@ a:hover .blog-thumb img {
   .flex-collapse {
     flex-direction: column !important;
   }
+  /* A photo stretched to match a sibling grid column's height (aspect-ratio:
+     auto + height:100%) has no intrinsic size once .g-collapse stacks that
+     column into its own zero-height row — give it back a fixed ratio. */
+  .formats-photo {
+    aspect-ratio: 4 / 5 !important;
+    height: auto !important;
+  }
   /* Page hero <h1> — the biggest text on the page, needs to shrink most. */
   .hero-h1 {
     font-size: 34px !important;

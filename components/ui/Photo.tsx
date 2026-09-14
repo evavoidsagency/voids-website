@@ -13,6 +13,7 @@ export function Photo({
   flip = false,
   zoom = 1,
   style,
+  className,
 }: {
   src: string;
   alt: string;
@@ -26,10 +27,12 @@ export function Photo({
   /** Scale the image up (cropping further in) — used to visually distinguish reused source photos. */
   zoom?: number;
   style?: CSSProperties;
+  className?: string;
 }) {
   const transforms = [flip ? "scaleX(-1)" : "", zoom !== 1 ? `scale(${zoom})` : ""].filter(Boolean).join(" ");
   return (
     <div
+      className={className}
       style={{
         position: "relative",
         aspectRatio: ratio,
