@@ -42,7 +42,10 @@ const COPY: Record<
     wsHeading: string;
     wsDuration: string;
     wsBullets: string[];
-    prefPara: string[];
+    prefIntro: string;
+    prefOutro: string;
+    prefStatValue: string;
+    prefStatLabel: string;
     compare2Title: string;
     compare2Sub: string;
     starterHeading: string;
@@ -138,11 +141,10 @@ const COPY: Record<
     wsHeading: "Kies een werkstudent als…",
     wsDuration: "1+ jaar, groeit mee",
     wsBullets: ["je structureel handen nodig hebt", "iemand zelfstandig moet draaien", "je langer wilt samenwerken"],
-    prefPara: [
-      "We werven ook stagiairs, maar alleen tegen een stagevergoeding die minimaal gelijk is aan de norm die de Rijksoverheid zelf hanteert, ",
-      "vanaf €800 bruto per maand op fulltime basis (naar rato bij minder uren)",
-      ". Onder dat bedrag matchen we niet. Meer betalen juichen we juist toe.",
-    ],
+    prefIntro: "We werven ook stagiairs, maar alleen tegen een stagevergoeding die minimaal gelijk is aan de norm die de Rijksoverheid zelf hanteert.",
+    prefOutro: "Onder dat bedrag matchen we niet. Meer betalen juichen we juist toe.",
+    prefStatValue: "€800",
+    prefStatLabel: "bruto per maand, fulltime (naar rato bij minder uren)",
     compare2Title: "WERKSTUDENT VS. STARTER",
     compare2Sub: "En hoe verhoudt een werkstudent zich tot een starter? Het kernverschil: een starter is afgestudeerd en heeft geen studie meer naast het werk, een werkstudent combineert de rol nog met een opleiding. Snelle checklist, wat past bij je situatie?",
     starterHeading: "Kies een starter als…",
@@ -239,11 +241,10 @@ const COPY: Record<
     wsHeading: "Choose a working student if…",
     wsDuration: "1+ year, grows with you",
     wsBullets: ["you need consistent extra capacity", "someone needs to run with it independently", "you want a longer collaboration"],
-    prefPara: [
-      "We also recruit interns, but only at an allowance that is at least equal to the standard the Dutch government itself applies, ",
-      "from €800 gross per month on a full-time basis (pro-rata for fewer hours)",
-      ". We don’t match below that. We welcome paying more.",
-    ],
+    prefIntro: "We also recruit interns, but only at an allowance that is at least equal to the standard the Dutch government itself applies.",
+    prefOutro: "We don't match below that. We welcome paying more.",
+    prefStatValue: "€800",
+    prefStatLabel: "gross per month, full-time (pro-rata for fewer hours)",
     compare2Title: "WORKING STUDENT VS. STARTER",
     compare2Sub: "And how does a working student compare to a starter? The core difference: a starter has graduated and has no studies left to combine with the role, a working student is still combining the role with a degree. Quick checklist, what fits your situation?",
     starterHeading: "Choose a starter if…",
@@ -395,17 +396,22 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
 
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "52px 32px 60px", maxWidth: 1104 }}>
-          <p style={{ fontSize: 13, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 1040 }}>
-            {c.prefPara[0]}
-            <strong style={{ color: "var(--voids-ink)" }}>{c.prefPara[1]}</strong>
-            {c.prefPara[2]}
-          </p>
-          <p style={{ fontSize: 13, margin: "10px 0 0", maxWidth: 1040 }}>
-            <span style={{ color: "var(--voids-ink-muted)" }}>{c.compareBlogNote} </span>
-            <Link href={p(`/blog/werkstudent-stagiair-of-starter`)} style={{ fontWeight: 600, color: "var(--voids-purple)" }}>
-              {c.compareBlogCta} →
-            </Link>
-          </p>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1.3fr .9fr", gap: 24, alignItems: "center", maxWidth: 1040 }}>
+            <div>
+              <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.prefIntro}</p>
+              <p style={{ fontSize: 13, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "8px 0 0" }}>{c.prefOutro}</p>
+              <p style={{ fontSize: 13, margin: "14px 0 0" }}>
+                <span style={{ color: "var(--voids-ink-muted)" }}>{c.compareBlogNote} </span>
+                <Link href={p(`/blog/werkstudent-stagiair-of-starter`)} style={{ fontWeight: 600, color: "var(--voids-purple)" }}>
+                  {c.compareBlogCta} →
+                </Link>
+              </p>
+            </div>
+            <div className="card card--accent-purple" style={{ padding: "20px 22px", textAlign: "center", background: "var(--voids-purple-100)" }}>
+              <div className="anton" style={{ fontSize: 36, color: "var(--voids-purple)", lineHeight: 1 }}>{c.prefStatValue}</div>
+              <div style={{ fontSize: 12.5, lineHeight: 1.4, color: "var(--voids-ink-muted)", marginTop: 8 }}>{c.prefStatLabel}</div>
+            </div>
+          </div>
           <div className="card" style={{ padding: 24, marginTop: 24, maxWidth: 1040 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 28, flexWrap: "wrap" }}>
               <div style={{ flex: 1, minWidth: 260 }}>
@@ -561,6 +567,15 @@ const WHY_WS_ICONS: Record<"flex" | "trust" | "growth" | "spark", React.ReactNod
   spark: <SparkIcon />,
 };
 
+function CheckIcon({ color }: { color: string }) {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ flex: "none", marginTop: 2 }}>
+      <circle cx="7" cy="7" r="6.25" stroke={color} strokeWidth="1.4" />
+      <path d="M4.3 7.1l1.9 1.9 3.5-3.9" stroke={color} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 function ComparisonCard({
   title,
   sub,
@@ -592,31 +607,39 @@ function ComparisonCard({
   rightDuration: string;
   rightBullets: string[];
 }) {
+  const leftBg = leftColor.includes("blue") ? "var(--voids-blue-100)" : "var(--voids-purple-100)";
+  const rightBg = rightColor.includes("blue") ? "var(--voids-blue-100)" : "var(--voids-purple-100)";
   return (
     <div className="card" style={{ padding: 28 }}>
       <h3 className="anton" style={{ fontSize: 24, margin: "0 0 6px" }}>{title}</h3>
       <p style={{ fontSize: 13, color: "var(--voids-ink-muted)", margin: "0 0 16px" }}>{sub}</p>
-      <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
-        <div>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 10 }}>
+      <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18, alignItems: "stretch" }}>
+        <div style={{ background: leftBg, borderRadius: "var(--radius-md)", padding: 18, display: "flex", flexDirection: "column" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 12 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: leftColor }}>
               {leftIcon} {leftHeading}
             </div>
-            <span className={`badge ${leftBadgeClass}`} style={{ whiteSpace: "nowrap" }}>{leftDuration}</span>
+            <span className={`badge ${leftBadgeClass}`} style={{ whiteSpace: "nowrap", background: "#fff" }}>{leftDuration}</span>
           </div>
           {leftBullets.map((b) => (
-            <div key={b} style={{ fontSize: 13, color: "var(--voids-ink-soft)", lineHeight: 1.5, marginBottom: 8 }}>✓ {b}</div>
+            <div key={b} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--voids-ink-soft)", lineHeight: 1.5, marginBottom: 8 }}>
+              <CheckIcon color={leftColor} />
+              <span>{b}</span>
+            </div>
           ))}
         </div>
-        <div>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 10 }}>
+        <div style={{ background: rightBg, borderRadius: "var(--radius-md)", padding: 18, display: "flex", flexDirection: "column" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 12 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: rightColor }}>
               {rightIcon} {rightHeading}
             </div>
-            <span className={`badge ${rightBadgeClass}`} style={{ whiteSpace: "nowrap" }}>{rightDuration}</span>
+            <span className={`badge ${rightBadgeClass}`} style={{ whiteSpace: "nowrap", background: "#fff" }}>{rightDuration}</span>
           </div>
           {rightBullets.map((b) => (
-            <div key={b} style={{ fontSize: 13, color: "var(--voids-ink-soft)", lineHeight: 1.5, marginBottom: 8 }}>✓ {b}</div>
+            <div key={b} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--voids-ink-soft)", lineHeight: 1.5, marginBottom: 8 }}>
+              <CheckIcon color={rightColor} />
+              <span>{b}</span>
+            </div>
           ))}
         </div>
       </div>
