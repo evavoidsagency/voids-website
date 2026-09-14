@@ -146,17 +146,17 @@ export function HomePage({ lang }: { lang: Lang }) {
               </Button>
             </div>
             <div style={{ display: "flex", gap: 22, marginTop: 40, flexWrap: "nowrap" }}>
-              <div>
+              <div style={{ minWidth: 80 }}>
                 <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}><CountUp value={c.stat1Value} /></div>
-                <div style={{ fontSize: 12.5, color: "var(--voids-purple-100)" }}>{c.stat1Label}</div>
+                <div style={{ fontSize: 12.5, lineHeight: 1.4, color: "var(--voids-purple-100)" }}>{c.stat1Label}</div>
               </div>
-              <div>
+              <div style={{ minWidth: 140 }}>
                 <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}><CountUp value={c.stat2Value} /></div>
-                <div style={{ fontSize: 12.5, color: "var(--voids-purple-100)" }}>{c.stat2Label}</div>
+                <div style={{ fontSize: 12.5, lineHeight: 1.4, color: "var(--voids-purple-100)" }}>{c.stat2Label}</div>
               </div>
-              <div>
+              <div style={{ minWidth: 80 }}>
                 <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}><CountUp value={c.stat3Value} /></div>
-                <div style={{ fontSize: 12.5, color: "var(--voids-purple-100)" }}>{c.stat3Label}</div>
+                <div style={{ fontSize: 12.5, lineHeight: 1.4, color: "var(--voids-purple-100)" }}>{c.stat3Label}</div>
               </div>
             </div>
           </div>
