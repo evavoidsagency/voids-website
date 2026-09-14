@@ -29,6 +29,10 @@ const COPY: Record<
     whyWsEyebrow: string;
     whyWsTitle: string;
     whyWsIntro: string;
+    altOptionsEyebrow: string;
+    altOptionsTitle: string;
+    stageEyebrow: string;
+    stageTitle: string;
     calcEyebrow: string;
     calcTitle: string;
     calcIntro: string;
@@ -125,6 +129,10 @@ const COPY: Record<
     whyWsEyebrow: "Onze voorkeur",
     whyWsTitle: "DE WERKSTUDENT IS ONZE EERSTE KEUZE.",
     whyWsIntro: "Werkstudentrollen invullen is niet zomaar één van de dingen die we doen: het is waar VOIDS voor staat en verreweg de meeste plaatsingen die we doen. Voor de meeste vragen is het ook simpelweg de beste oplossing, hieronder waarom, en wanneer een stagiair of starter juist beter past.",
+    altOptionsEyebrow: "Toch twijfels?",
+    altOptionsTitle: "WANNEER EEN STAGIAIR OF STARTER BETER PAST.",
+    stageEyebrow: "Stagevergoeding",
+    stageTitle: "OOK STAGIAIRS BETALEN WE EERLIJK.",
     calcEyebrow: "Voorbeeldsom",
     calcTitle: "WERKSTUDENT, STAGIAIR OF STARTER?",
     calcIntro: "Indicatieve kosten voor de werkgever per maand, inclusief werkgeverslasten, geen nettosalaris. Schuif de balk en vergelijk.",
@@ -222,6 +230,10 @@ const COPY: Record<
     whyWsEyebrow: "Our preference",
     whyWsTitle: "THE WORKING STUDENT IS OUR FIRST CHOICE.",
     whyWsIntro: "Filling working-student roles isn't just one of the things we do: it's what VOIDS stands for, and by far the majority of the placements we make. For most hiring needs it's simply the best fit too, here's why, and when an intern or starter fits better instead.",
+    altOptionsEyebrow: "Still deciding?",
+    altOptionsTitle: "WHEN AN INTERN OR STARTER FITS BETTER.",
+    stageEyebrow: "Intern pay",
+    stageTitle: "WE PAY INTERNS FAIRLY TOO.",
     calcEyebrow: "Example calculation",
     calcTitle: "WORKING STUDENT, INTERN OR STARTER?",
     calcIntro: "Indicative cost to the employer per month, including employer contributions, not take-home pay. Slide the bar to compare.",
@@ -346,7 +358,10 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
 
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "64px 32px", maxWidth: 1104 }}>
-          <div style={{ display: "flex", flexDirection: "column", gap: 20, maxWidth: 1040 }}>
+          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.altOptionsEyebrow}</span>
+          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 24px", maxWidth: 760 }}>{c.altOptionsTitle}</h2>
+
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, alignItems: "start", maxWidth: 1040, marginBottom: 48 }}>
             <ComparisonCard
               title={c.checklistTitle}
               sub={c.checklistSub}
@@ -380,55 +395,55 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
               rightBullets={c.ws2Bullets}
             />
           </div>
-        </div>
-      </section>
 
-      <section style={{ background: "#fff" }}>
-        <div className="wrap" style={{ padding: "52px 32px 60px", maxWidth: 1104 }}>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1.3fr .9fr", gap: 24, alignItems: "center", maxWidth: 1040 }}>
-            <div>
-              <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.prefIntro}</p>
-              <p style={{ fontSize: 13, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "8px 0 0" }}>{c.prefOutro}</p>
-              <p style={{ fontSize: 13, margin: "14px 0 0" }}>
-                <span style={{ color: "var(--voids-ink-muted)" }}>{c.compareBlogNote} </span>
-                <Link href={p(`/blog/werkstudent-stagiair-of-starter`)} style={{ fontWeight: 600, color: "var(--voids-purple)" }}>
-                  {c.compareBlogCta} →
-                </Link>
+          <div style={{ borderTop: "1px solid var(--border-hairline)", paddingTop: 40, maxWidth: 1040 }}>
+            <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.stageEyebrow}</span>
+            <h3 className="anton" style={{ fontSize: 22, margin: "8px 0 20px" }}>{c.stageTitle}</h3>
+            <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1.3fr .9fr", gap: 24, alignItems: "center" }}>
+              <div>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.prefIntro}</p>
+                <p style={{ fontSize: 13, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "8px 0 0" }}>{c.prefOutro}</p>
+                <p style={{ fontSize: 13, margin: "14px 0 0" }}>
+                  <span style={{ color: "var(--voids-ink-muted)" }}>{c.compareBlogNote} </span>
+                  <Link href={p(`/blog/werkstudent-stagiair-of-starter`)} style={{ fontWeight: 600, color: "var(--voids-purple)" }}>
+                    {c.compareBlogCta} →
+                  </Link>
+                </p>
+              </div>
+              <div className="card card--accent-purple" style={{ padding: "20px 22px", textAlign: "center", background: "var(--voids-purple-100)" }}>
+                <div className="anton" style={{ fontSize: 36, color: "var(--voids-purple)", lineHeight: 1 }}>{c.prefStatValue}</div>
+                <div style={{ fontSize: 12.5, lineHeight: 1.4, color: "var(--voids-ink-muted)", marginTop: 8 }}>{c.prefStatLabel}</div>
+              </div>
+            </div>
+            <div className="card" style={{ padding: 24, marginTop: 24 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 28, flexWrap: "wrap" }}>
+                <div style={{ flex: 1, minWidth: 260 }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".03em", textTransform: "uppercase", color: "var(--voids-purple)", marginBottom: 8 }}>
+                    {c.salaryLabel}
+                  </div>
+                  <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: 0 }}>{c.salaryAdviceExample}</p>
+                </div>
+                <div style={{ display: "flex", gap: 36, flex: "none" }}>
+                  <div style={{ textAlign: "right" }}>
+                    <div style={{ fontSize: 12, color: "var(--voids-ink-muted)", marginBottom: 2, whiteSpace: "nowrap" }}>{c.salaryMinLabel}</div>
+                    <div className="anton" style={{ fontSize: 24, color: "var(--voids-ink)" }}>{lang === "nl" ? "€ 14,99" : "€ 14.99"}</div>
+                  </div>
+                  <div style={{ textAlign: "right" }}>
+                    <div style={{ fontSize: 12, color: "var(--voids-purple)", fontWeight: 600, marginBottom: 2, whiteSpace: "nowrap" }}>{c.salaryAdviceLabel}</div>
+                    <div className="anton" style={{ fontSize: 24, color: "var(--voids-purple)" }}>+10–20%</div>
+                  </div>
+                </div>
+              </div>
+              <p style={{ fontSize: 11, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: "16px 0 0", paddingTop: 14, borderTop: "1px solid var(--border-hairline)" }}>
+                {c.salaryFootnote}
               </p>
             </div>
-            <div className="card card--accent-purple" style={{ padding: "20px 22px", textAlign: "center", background: "var(--voids-purple-100)" }}>
-              <div className="anton" style={{ fontSize: 36, color: "var(--voids-purple)", lineHeight: 1 }}>{c.prefStatValue}</div>
-              <div style={{ fontSize: 12.5, lineHeight: 1.4, color: "var(--voids-ink-muted)", marginTop: 8 }}>{c.prefStatLabel}</div>
-            </div>
-          </div>
-          <div className="card" style={{ padding: 24, marginTop: 24, maxWidth: 1040 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 28, flexWrap: "wrap" }}>
-              <div style={{ flex: 1, minWidth: 260 }}>
-                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".03em", textTransform: "uppercase", color: "var(--voids-purple)", marginBottom: 8 }}>
-                  {c.salaryLabel}
-                </div>
-                <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: 0 }}>{c.salaryAdviceExample}</p>
-              </div>
-              <div style={{ display: "flex", gap: 36, flex: "none" }}>
-                <div style={{ textAlign: "right" }}>
-                  <div style={{ fontSize: 12, color: "var(--voids-ink-muted)", marginBottom: 2, whiteSpace: "nowrap" }}>{c.salaryMinLabel}</div>
-                  <div className="anton" style={{ fontSize: 24, color: "var(--voids-ink)" }}>{lang === "nl" ? "€ 14,99" : "€ 14.99"}</div>
-                </div>
-                <div style={{ textAlign: "right" }}>
-                  <div style={{ fontSize: 12, color: "var(--voids-purple)", fontWeight: 600, marginBottom: 2, whiteSpace: "nowrap" }}>{c.salaryAdviceLabel}</div>
-                  <div className="anton" style={{ fontSize: 24, color: "var(--voids-purple)" }}>+10–20%</div>
-                </div>
-              </div>
-            </div>
-            <p style={{ fontSize: 11, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: "16px 0 0", paddingTop: 14, borderTop: "1px solid var(--border-hairline)" }}>
-              {c.salaryFootnote}
-            </p>
-          </div>
 
-          <div className="card card--accent-purple" style={{ padding: 24, marginTop: 32, maxWidth: 1040, display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
-            <HeartIcon />
-            <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1, minWidth: 260 }}>{c.impactNote}</p>
-            <Button variant="outline" size="md" href={p("/impact")}>{c.impactCta} →</Button>
+            <div className="card card--accent-purple" style={{ padding: 24, marginTop: 32, display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
+              <HeartIcon />
+              <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1, minWidth: 260 }}>{c.impactNote}</p>
+              <Button variant="outline" size="md" href={p("/impact")}>{c.impactCta} →</Button>
+            </div>
           </div>
         </div>
       </section>

@@ -277,7 +277,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
       <section className="wrap" style={{ padding: "72px 32px" }}>
         <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.resourcesEyebrow}</span>
         <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 10px" }}>{c.resourcesTitle}</h2>
-        <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 30px", maxWidth: 700 }}>{c.resourcesIntro}</p>
+        <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 30px", maxWidth: 780 }}>{c.resourcesIntro}</p>
         <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20, alignItems: "stretch" }}>
           {c.resources.map((r, i) => {
             const recommended = i === 0;
