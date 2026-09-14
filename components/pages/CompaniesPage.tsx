@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 import { CostCalculator } from "@/components/pages/CostCalculator";
 import { Photo } from "@/components/ui/Photo";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
+import { ComparisonCard } from "@/components/pages/ComparisonCard";
 import { CountUp } from "@/components/ui/CountUp";
 import { ServicesTabs } from "@/components/pages/ServicesTabs";
 import { localePath, type Lang } from "@/lib/i18n/common";
@@ -36,6 +37,8 @@ const COPY: Record<
     calcIntro: string;
     checklistTitle: string;
     checklistSub: string;
+    checkPrompt: string;
+    bestFitLabel: string;
     internHeading: string;
     internDuration: string;
     internBullets: string[];
@@ -135,6 +138,8 @@ const COPY: Record<
     calcIntro: "Indicatieve kosten voor de werkgever per maand, inclusief werkgeverslasten, geen nettosalaris. Schuif de balk en vergelijk.",
     checklistTitle: "STAGIAIR VS. WERKSTUDENT",
     checklistSub: "Toch niet elke rol is een werkstudentrol. Het kernverschil: een stagiair leert vooral een vak, een werkstudent draait structureel mee als volwaardig teamlid. Snelle checklist, wat past bij je vraag?",
+    checkPrompt: "Vink aan wat op jouw situatie van toepassing is.",
+    bestFitLabel: "Past het beste",
     internHeading: "Kies een stagiair als…",
     internDuration: "~3-6 maanden",
     internBullets: ["er een leerdoel/opdracht is", "je tijd hebt voor begeleiding", "het project 3–6 mnd duurt"],
@@ -235,6 +240,8 @@ const COPY: Record<
     calcIntro: "Indicative cost to the employer per month, including employer contributions, not take-home pay. Slide the bar to compare.",
     checklistTitle: "INTERN VS. WORKING STUDENT",
     checklistSub: "Still, not every role is a working-student role. The core difference: an intern is mainly there to learn a trade, a working student runs structurally as a full team member. Quick checklist, what fits your situation?",
+    checkPrompt: "Check whatever applies to your situation.",
+    bestFitLabel: "Best fit",
     internHeading: "Choose an intern if…",
     internDuration: "~3-6 months",
     internBullets: ["there’s a clear learning goal or project", "you have time for guidance", "the project runs 3–6 months"],
@@ -361,6 +368,8 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
             <ComparisonCard
               title={c.checklistTitle}
               sub={c.checklistSub}
+              checkPrompt={c.checkPrompt}
+              bestFitLabel={c.bestFitLabel}
               leftIcon={<CapIcon />}
               leftColor="var(--voids-purple)"
               leftBadgeClass="badge--purple"
@@ -377,6 +386,8 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
             <ComparisonCard
               title={c.compare2Title}
               sub={c.compare2Sub}
+              checkPrompt={c.checkPrompt}
+              bestFitLabel={c.bestFitLabel}
               leftIcon={<RocketIcon />}
               leftColor="var(--voids-purple)"
               leftBadgeClass="badge--purple"
@@ -566,83 +577,3 @@ const WHY_WS_ICONS: Record<"flex" | "trust" | "growth" | "spark", React.ReactNod
   growth: <GrowthIcon />,
   spark: <SparkIcon />,
 };
-
-function CheckIcon({ color }: { color: string }) {
-  return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ flex: "none", marginTop: 2 }}>
-      <circle cx="7" cy="7" r="6.25" stroke={color} strokeWidth="1.4" />
-      <path d="M4.3 7.1l1.9 1.9 3.5-3.9" stroke={color} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function ComparisonCard({
-  title,
-  sub,
-  leftIcon,
-  leftColor,
-  leftBadgeClass,
-  leftHeading,
-  leftDuration,
-  leftBullets,
-  rightIcon,
-  rightColor,
-  rightBadgeClass,
-  rightHeading,
-  rightDuration,
-  rightBullets,
-}: {
-  title: string;
-  sub: string;
-  leftIcon: React.ReactNode;
-  leftColor: string;
-  leftBadgeClass: string;
-  leftHeading: string;
-  leftDuration: string;
-  leftBullets: string[];
-  rightIcon: React.ReactNode;
-  rightColor: string;
-  rightBadgeClass: string;
-  rightHeading: string;
-  rightDuration: string;
-  rightBullets: string[];
-}) {
-  const leftBg = leftColor.includes("blue") ? "var(--voids-blue-100)" : "var(--voids-purple-100)";
-  const rightBg = rightColor.includes("blue") ? "var(--voids-blue-100)" : "var(--voids-purple-100)";
-  return (
-    <div className="card" style={{ padding: 28 }}>
-      <h3 className="anton" style={{ fontSize: 24, margin: "0 0 6px" }}>{title}</h3>
-      <p style={{ fontSize: 13, color: "var(--voids-ink-muted)", margin: "0 0 16px" }}>{sub}</p>
-      <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18, alignItems: "stretch" }}>
-        <div style={{ background: leftBg, borderRadius: "var(--radius-md)", padding: 18, display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 12 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: leftColor }}>
-              {leftIcon} {leftHeading}
-            </div>
-            <span className={`badge ${leftBadgeClass}`} style={{ whiteSpace: "nowrap", background: "#fff" }}>{leftDuration}</span>
-          </div>
-          {leftBullets.map((b) => (
-            <div key={b} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--voids-ink-soft)", lineHeight: 1.5, marginBottom: 8 }}>
-              <CheckIcon color={leftColor} />
-              <span>{b}</span>
-            </div>
-          ))}
-        </div>
-        <div style={{ background: rightBg, borderRadius: "var(--radius-md)", padding: 18, display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 12 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 700, color: rightColor }}>
-              {rightIcon} {rightHeading}
-            </div>
-            <span className={`badge ${rightBadgeClass}`} style={{ whiteSpace: "nowrap", background: "#fff" }}>{rightDuration}</span>
-          </div>
-          {rightBullets.map((b) => (
-            <div key={b} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--voids-ink-soft)", lineHeight: 1.5, marginBottom: 8 }}>
-              <CheckIcon color={rightColor} />
-              <span>{b}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
