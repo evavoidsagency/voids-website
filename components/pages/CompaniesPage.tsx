@@ -37,8 +37,6 @@ const COPY: Record<
     calcIntro: string;
     checklistTitle: string;
     checklistSub: string;
-    checkPrompt: string;
-    bestFitLabel: string;
     internHeading: string;
     internDuration: string;
     internBullets: string[];
@@ -138,8 +136,6 @@ const COPY: Record<
     calcIntro: "Indicatieve kosten voor de werkgever per maand, inclusief werkgeverslasten, geen nettosalaris. Schuif de balk en vergelijk.",
     checklistTitle: "STAGIAIR VS. WERKSTUDENT",
     checklistSub: "Toch niet elke rol is een werkstudentrol. Het kernverschil: een stagiair leert vooral een vak, een werkstudent draait structureel mee als volwaardig teamlid. Snelle checklist, wat past bij je vraag?",
-    checkPrompt: "Vink aan wat op jouw situatie van toepassing is.",
-    bestFitLabel: "Past het beste",
     internHeading: "Kies een stagiair als…",
     internDuration: "~3-6 maanden",
     internBullets: ["er een leerdoel/opdracht is", "je tijd hebt voor begeleiding", "het project 3–6 mnd duurt"],
@@ -240,8 +236,6 @@ const COPY: Record<
     calcIntro: "Indicative cost to the employer per month, including employer contributions, not take-home pay. Slide the bar to compare.",
     checklistTitle: "INTERN VS. WORKING STUDENT",
     checklistSub: "Still, not every role is a working-student role. The core difference: an intern is mainly there to learn a trade, a working student runs structurally as a full team member. Quick checklist, what fits your situation?",
-    checkPrompt: "Check whatever applies to your situation.",
-    bestFitLabel: "Best fit",
     internHeading: "Choose an intern if…",
     internDuration: "~3-6 months",
     internBullets: ["there’s a clear learning goal or project", "you have time for guidance", "the project runs 3–6 months"],
@@ -368,8 +362,6 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
             <ComparisonCard
               title={c.checklistTitle}
               sub={c.checklistSub}
-              checkPrompt={c.checkPrompt}
-              bestFitLabel={c.bestFitLabel}
               leftIcon={<CapIcon />}
               leftColor="var(--voids-purple)"
               leftBadgeClass="badge--purple"
@@ -386,8 +378,6 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
             <ComparisonCard
               title={c.compare2Title}
               sub={c.compare2Sub}
-              checkPrompt={c.checkPrompt}
-              bestFitLabel={c.bestFitLabel}
               leftIcon={<RocketIcon />}
               leftColor="var(--voids-purple)"
               leftBadgeClass="badge--purple"
