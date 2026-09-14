@@ -14,7 +14,11 @@ const COPY: Record<
     howTitle: string;
     how: { title: string; text: string; accent: "purple" | "blue" }[];
     pricingTitle: string;
-    pricingText: string;
+    pricingIntro: string;
+    pricingSubTitle: string;
+    pricingSubText: string;
+    pricingAdTitle: string;
+    pricingAdText: string;
     bandAlt: string;
     contactTitle: string;
     contactText: string;
@@ -22,7 +26,7 @@ const COPY: Record<
   }
 > = {
   nl: {
-    eyebrow: "Community & jobboard",
+    eyebrow: "Studenten bereiken",
     title: "ZET JE VACATURE VOOR\n4.000+ STUDENTEN EN STARTERS.",
     sub: "Naast onze werving & selectie-dienst kun je je vacature ook zelf onder de aandacht brengen: rechtstreeks in onze WhatsApp-community en op ons jobboard.",
     heroStats: [
@@ -44,14 +48,18 @@ const COPY: Record<
       },
     ],
     pricingTitle: "WAT KOST HET",
-    pricingText: "Een vacature plaatsen kan al, via een kort intakegesprek. Zelf plaatsen en direct online betalen volgt binnenkort.",
+    pricingIntro: "Een vacature plaatsen kan al, via een kort intakegesprek. Twee manieren om dat te doen:",
+    pricingSubTitle: "Abonnementsvorm",
+    pricingSubText: "Plaats doorlopend vacatures tegen een vast, voordeliger tarief. Handig als je regelmatig werft en niet per plaatsing wilt afrekenen.",
+    pricingAdTitle: "Losse plaatsing",
+    pricingAdText: "Vaste prijs per plaatsing, bepaald door het bereik van de gekozen kanalen op het moment van plaatsen. Tijdelijk extra boosten kan tegen meerprijs.",
     bandAlt: "Team aan het werk op kantoor",
     contactTitle: "VACATURE PLAATSEN?",
     contactText: "Stuur ons je vacature, dan zetten we die voor je live.",
     contactCta: "Neem contact op",
   },
   en: {
-    eyebrow: "Community & job board",
+    eyebrow: "Reach students",
     title: "PUT YOUR VACANCY IN FRONT OF\n4,000+ STUDENTS AND STARTERS.",
     sub: "Alongside our recruitment & selection service, you can also put your vacancy in front of candidates yourself: directly in our WhatsApp community and on our job board.",
     heroStats: [
@@ -73,7 +81,11 @@ const COPY: Record<
       },
     ],
     pricingTitle: "WHAT IT COSTS",
-    pricingText: "Posting a vacancy is already possible, via a short intake call. Self-service posting with online payment is coming soon.",
+    pricingIntro: "Posting a vacancy is already possible, via a short intake call. Two ways to do it:",
+    pricingSubTitle: "Subscription",
+    pricingSubText: "Post vacancies continuously at a fixed, better rate. Useful if you hire regularly and don't want to pay per placement.",
+    pricingAdTitle: "Single placement",
+    pricingAdText: "A fixed fee per placement, determined by the reach of the selected channels at the time of posting. Temporary boosting is available for an extra fee.",
     bandAlt: "The team at work in the office",
     contactTitle: "WANT TO POST A VACANCY?",
     contactText: "Send us your vacancy and we'll get it live for you.",
@@ -114,7 +126,7 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "56px 32px 64px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 20px" }}>{c.howTitle}</h2>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, alignItems: "stretch" }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20, alignItems: "stretch" }}>
             {c.how.map((h, i) =>
               i === 1 ? (
                 <Link key={h.title} href={p("/jobboard")} className={`card card--hoverable card--accent-${h.accent}`} style={{ padding: 24, display: "flex", flexDirection: "column", textDecoration: "none", color: "inherit" }}>
@@ -130,10 +142,24 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
                 </div>
               )
             )}
-            <div className="card" style={{ padding: 24, background: "var(--voids-beige)", display: "flex", flexDirection: "column" }}>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ background: "var(--voids-beige)" }}>
+        <div className="wrap" style={{ padding: "56px 32px 64px" }}>
+          <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 8px" }}>{c.pricingTitle}</h2>
+          <p style={{ fontSize: 14.5, color: "var(--voids-ink-muted)", margin: "0 0 24px", maxWidth: 700 }}>{c.pricingIntro}</p>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20, alignItems: "stretch" }}>
+            <div className="card card--accent-purple" style={{ padding: 24, display: "flex", flexDirection: "column" }}>
               <CoinIcon />
-              <div className="anton" style={{ fontSize: 18, margin: "12px 0 10px" }}>{c.pricingTitle}</div>
-              <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{c.pricingText}</p>
+              <div className="anton" style={{ fontSize: 18, margin: "12px 0 10px" }}>{c.pricingSubTitle}</div>
+              <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{c.pricingSubText}</p>
+            </div>
+            <div className="card" style={{ padding: 24, display: "flex", flexDirection: "column" }}>
+              <TagIcon />
+              <div className="anton" style={{ fontSize: 18, margin: "12px 0 10px" }}>{c.pricingAdTitle}</div>
+              <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{c.pricingAdText}</p>
             </div>
           </div>
         </div>
@@ -167,6 +193,15 @@ function BoardIcon() {
       <rect x="4" y="9" width="22" height="16" rx="2" stroke="var(--voids-blue)" strokeWidth="2" />
       <path d="M11 9V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="var(--voids-blue)" strokeWidth="2" strokeLinecap="round" />
       <path d="M4 15h22" stroke="var(--voids-blue)" strokeWidth="2" />
+    </svg>
+  );
+}
+
+function TagIcon() {
+  return (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+      <path d="M16.5 4h6a2 2 0 0 1 2 2v6a2 2 0 0 1-.6 1.4l-11 11a2 2 0 0 1-2.8 0l-6-6a2 2 0 0 1 0-2.8l11-11A2 2 0 0 1 16.5 4Z" stroke="var(--voids-purple)" strokeWidth="2" strokeLinejoin="round" />
+      <circle cx="20.5" cy="9.5" r="1.5" fill="var(--voids-purple)" />
     </svg>
   );
 }

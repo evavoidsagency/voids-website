@@ -12,7 +12,7 @@ const PRIMARY_ORDER = ["talent", "companies", "impact", "about", "blog", "jobboa
 
 const COMPANY_SERVICES: { id: string; nl: string; en: string; path: string }[] = [
   { id: "wns", nl: "Werving & selectie", en: "Recruitment & selection", path: "/companies/recruitment-selection" },
-  { id: "community", nl: "Community & jobboard", en: "Community & job board", path: "/companies/community-jobboard" },
+  { id: "community", nl: "Studenten bereiken", en: "Reach students", path: "/companies/community-jobboard" },
   { id: "branding", nl: "Advies & employer branding", en: "Advice & employer branding", path: "/companies/employer-branding" },
 ];
 

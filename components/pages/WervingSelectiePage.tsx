@@ -24,6 +24,16 @@ const COPY: Record<
     casesSub: string;
     profilesTitle: string;
     profilesSub: string;
+    taasEyebrow: string;
+    taasTitle: string;
+    taasSub: string;
+    taasPlacementBadge: string;
+    taasPlacementTitle: string;
+    taasPlacementBullets: string[];
+    taasSubBadge: string;
+    taasSubTitle: string;
+    taasSubBullets: string[];
+    taasCta: string;
     testimonialP1: string;
     testimonialP2: string;
     testimonialName: string;
@@ -52,10 +62,28 @@ const COPY: Record<
     casesSub: "Een kleine greep uit de vele bedrijven waar we mee hebben samengewerkt, van scale-up tot corporate.",
     profilesTitle: "HIGH ACHIEVERS, GESELECTEERD OP KWALITEIT EN CULTUUR.",
     profilesSub: "We sourcen voornamelijk hbo- en wo-studenten en young professionals: ambitieus, snel zelfstandig en gewend om te presteren naast hun studie. We matchen niet alleen op skills, maar vooral op cultuurfit, zodat wat we voorstellen ook echt past.",
+    taasEyebrow: "Twee manieren om samen te werken",
+    taasTitle: "VOIDS TALENT AS A SERVICE",
+    taasSub: "Zelfde zorgvuldige werving en selectie, twee manieren om af te rekenen. Kies wat past bij hoe vaak je werft.",
+    taasPlacementBadge: "Eenmalig",
+    taasPlacementTitle: "Per plaatsing",
+    taasPlacementBullets: [
+      "Eén tarief, alleen bij een succesvolle plaatsing",
+      "Geen doorlopende verplichting of vast contract",
+      "Ideaal voor een concrete, eenmalige vacature",
+    ],
+    taasSubBadge: "Doorlopend",
+    taasSubTitle: "Abonnement",
+    taasSubBullets: [
+      "Vast, voordeliger tarief per maand, ongeacht het aantal plaatsingen",
+      "Naadloze vervanging inbegrepen zodra een werkstudent stopt",
+      "Binnen 30 dagen versterking uit onze community van 4.000+ studenten",
+    ],
+    taasCta: "Vraag naar de abonnementsvorm",
     testimonialP1:
-      "We zochten een **vrij specifiek profiel** voor onze werkstudent: iemand met zowel theoretische als praktische kennis van marketing, en affiniteit met de energietransitie – met name netcongestie-oplossingen.",
+      "We zochten een vrij specifiek profiel voor onze werkstudent: iemand met zowel theoretische als praktische kennis van marketing, en affiniteit met de energietransitie, met name netcongestie-oplossingen.",
     testimonialP2:
-      "VOIDS vond **op korte termijn** vier kandidaten voor ons, en na onze eigen gesprekken **vonden we een uitstekende match**. Complimenten aan VOIDS voor hun professionaliteit en betrokkenheid.",
+      "VOIDS vond op korte termijn vier kandidaten voor ons, en na onze eigen gesprekken vonden we een uitstekende match. Complimenten aan VOIDS voor hun professionaliteit en betrokkenheid.",
     testimonialName: "Noortje Jonk",
     testimonialRole: "Commercial Manager bij Enerzien",
     googleRating: "5.0",
@@ -81,10 +109,28 @@ const COPY: Record<
     casesSub: "A small selection from the many companies we've worked with, from scale-up to corporate.",
     profilesTitle: "HIGH ACHIEVERS, SELECTED ON QUALITY AND CULTURE.",
     profilesSub: "We mainly source university and university-of-applied-sciences students and young professionals: ambitious, quick to work independently, and used to performing alongside their studies. We match not just on skills but on culture fit, so what we put forward actually fits.",
+    taasEyebrow: "Two ways to work with us",
+    taasTitle: "VOIDS TALENT AS A SERVICE",
+    taasSub: "Same careful recruitment and selection, two ways to pay for it. Pick what fits how often you hire.",
+    taasPlacementBadge: "One-off",
+    taasPlacementTitle: "Per placement",
+    taasPlacementBullets: [
+      "One fee, only when a placement succeeds",
+      "No ongoing commitment or fixed contract",
+      "Ideal for a single, concrete vacancy",
+    ],
+    taasSubBadge: "Ongoing",
+    taasSubTitle: "Subscription",
+    taasSubBullets: [
+      "Fixed, better-value monthly fee, regardless of how many placements",
+      "Seamless replacement included the moment a working student stops",
+      "Reinforcements within 30 days from our community of 4,000+ students",
+    ],
+    taasCta: "Ask about the subscription",
     testimonialP1:
-      "We were looking for a **fairly specific profile** for our working student: someone with both theoretical and practical knowledge of marketing, and affinity with the energy transition – especially grid congestion solutions.",
+      "We were looking for a fairly specific profile for our working student: someone with both theoretical and practical knowledge of marketing, and affinity with the energy transition, especially grid congestion solutions.",
     testimonialP2:
-      "VOIDS found four candidates for us **on short notice**, and after conducting our own interviews **we found a great fit**. Compliments to VOIDS for their professionalism and commitment.",
+      "VOIDS found four candidates for us on short notice, and after conducting our own interviews we found a great fit. Compliments to VOIDS for their professionalism and commitment.",
     testimonialName: "Noortje Jonk",
     testimonialRole: "Commercial Manager at Enerzien",
     googleRating: "5.0",
@@ -198,8 +244,8 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
             <div style={{ color: "var(--voids-purple-100)", fontSize: 13 }}>{c.testimonialRole}</div>
           </div>
           <div>
-            <p style={{ fontSize: 18, lineHeight: 1.6, color: "#fff", margin: "0 0 16px" }}>&ldquo;{renderEmphasis(c.testimonialP1)}</p>
-            <p style={{ fontSize: 18, lineHeight: 1.6, color: "#fff", margin: "0 0 28px" }}>{renderEmphasis(c.testimonialP2)}&rdquo;</p>
+            <p style={{ fontSize: 18, lineHeight: 1.6, color: "#fff", margin: "0 0 16px" }}>&ldquo;{c.testimonialP1}</p>
+            <p style={{ fontSize: 18, lineHeight: 1.6, color: "#fff", margin: "0 0 28px" }}>{c.testimonialP2}&rdquo;</p>
             <GoogleBadge rating={c.googleRating} count={c.googleReviewCount} href="https://share.google/Ki4rN5ZbP3TjyTBCI" />
           </div>
         </div>
@@ -223,6 +269,74 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
                 <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-soft)", margin: 0, fontStyle: "italic" }}>{pr.traits}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ background: "#fff" }}>
+        <div className="wrap" style={{ padding: "64px 32px" }}>
+          <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.taasEyebrow}</span>
+          <h2 className="anton" style={{ fontSize: 30, margin: "8px 0 12px" }}>
+            <span style={{ color: "var(--text-strong)" }}>VOIDS </span>
+            <span style={{ color: "var(--voids-purple)", fontStyle: "italic" }}>TALENT AS A SERVICE</span>
+          </h2>
+          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 36px", maxWidth: 640 }}>{c.taasSub}</p>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}>
+            <div className="card" style={{ padding: 28, height: "100%", display: "flex", flexDirection: "column" }}>
+              <span
+                style={{
+                  alignSelf: "flex-start",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  letterSpacing: ".03em",
+                  textTransform: "uppercase",
+                  color: "var(--voids-ink-muted)",
+                  background: "var(--voids-beige)",
+                  borderRadius: 999,
+                  padding: "4px 12px",
+                  marginBottom: 14,
+                }}
+              >
+                {c.taasPlacementBadge}
+              </span>
+              <div className="anton" style={{ fontSize: 20, marginBottom: 16 }}>{c.taasPlacementTitle}</div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12, flex: 1 }}>
+                {c.taasPlacementBullets.map((b) => (
+                  <div key={b} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                    <CheckIcon color="var(--voids-ink-muted)" />
+                    <span style={{ fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-muted)" }}>{b}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="card card--accent-purple" style={{ padding: 28, height: "100%", display: "flex", flexDirection: "column" }}>
+              <span
+                style={{
+                  alignSelf: "flex-start",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  letterSpacing: ".03em",
+                  textTransform: "uppercase",
+                  color: "var(--voids-purple)",
+                  background: "var(--voids-purple-100)",
+                  borderRadius: 999,
+                  padding: "4px 12px",
+                  marginBottom: 14,
+                }}
+              >
+                {c.taasSubBadge}
+              </span>
+              <div className="anton" style={{ fontSize: 20, marginBottom: 16, color: "var(--voids-purple)" }}>{c.taasSubTitle}</div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12, flex: 1, marginBottom: 20 }}>
+                {c.taasSubBullets.map((b) => (
+                  <div key={b} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                    <CheckIcon color="var(--voids-purple)" />
+                    <span style={{ fontSize: 14, lineHeight: 1.55, color: "var(--text-strong)" }}>{b}</span>
+                  </div>
+                ))}
+              </div>
+              <CalendlyButton label={c.taasCta} variant="secondary" size="md" />
+            </div>
           </div>
         </div>
       </section>
@@ -311,6 +425,15 @@ function SparkleIcon() {
   );
 }
 
+function CheckIcon({ color }: { color: string }) {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ flex: "none", marginTop: 2 }}>
+      <circle cx="7" cy="7" r="6.25" stroke={color} strokeWidth="1.4" />
+      <path d="M4.3 7.1l1.9 1.9 3.5-3.9" stroke={color} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 const FIELD_ICONS: Record<string, ReactNode> = {
   Marketing: <MarketingIcon />,
   Finance: <FinanceIcon />,
@@ -319,13 +442,6 @@ const FIELD_ICONS: Record<string, ReactNode> = {
   "Business development": <BizDevIcon />,
   "Business support": <BizSupportIcon />,
 };
-
-/** A hand-drawn, marker-circled step number — one signature touch on the one section of the site that's a real numbered sequence. */
-/** Renders **bold** markers in a copy string as <strong> — keeps emphasis translatable and data-driven. */
-function renderEmphasis(text: string): ReactNode {
-  const parts = text.split(/\*\*(.+?)\*\*/g);
-  return parts.map((part, i) => (i % 2 === 1 ? <strong key={i}>{part}</strong> : part));
-}
 
 function GoogleGIcon() {
   return (
@@ -376,6 +492,7 @@ function GoogleBadge({ rating, count, href }: { rating: string; count: string; h
   );
 }
 
+/** A hand-drawn, marker-circled step number — one signature touch on the one section of the site that's a real numbered sequence. */
 function HandCircleNumber({ n }: { n: number }) {
   return (
     <div style={{ position: "relative", width: 42, height: 42, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
