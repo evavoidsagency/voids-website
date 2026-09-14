@@ -6,7 +6,6 @@ import { localePath, type Lang } from "@/lib/i18n/common";
 import { TALENT_THRIVING } from "@/lib/content/talent-thriving";
 import { findTestimonialPhoto } from "@/lib/logos";
 import { FaqAccordion } from "@/components/pages/FaqAccordion";
-import { MatchBars } from "@/components/pages/MatchBars";
 import { CountUp } from "@/components/ui/CountUp";
 
 const HERO_AVATARS = ["thomke-tierolff", "anna-haasnoot", "charlotte-pallandt"];
@@ -35,12 +34,12 @@ const COPY: Record<
     fitEyebrow: string;
     fitTitleA: string;
     fitTitleB: string;
-    fitText: string;
     fitBenefits: string[];
     fitCardCaption: string;
     fitCta: string;
-    fitCardRole: string;
-    fitCriteria: { label: string; pct: number }[];
+    fitCardStat: string;
+    fitCardStatLabel: string;
+    fitPerks: string[];
     thrivingEyebrow: string;
     thrivingTitle: string;
     bandAlt: string;
@@ -70,7 +69,7 @@ const COPY: Record<
     resourcesTitle: "DRIE MANIEREN OM DICHTERBIJ TE KOMEN.",
     resourcesIntro: "Wij bieden meer dan losse vacatures: een jobboard om zelf te solliciteren, een WhatsApp-community met wekelijkse kansen, en een talentpool die je proactief matcht. Omdat we zo nauw met werkgevers samenwerken, kunnen we vaak breder met ze meedenken dan alleen de vacatures die online staan. Hoe actiever je meedoet, hoe meer we voor je kunnen doen.",
     resources: [
-      { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord één keer een paar vragen, en wij doen de rest: je wordt proactief voorgesteld bij offmarket-kansen, rollen waar we dankzij onze nauwe samenwerking met werkgevers al vroeg over meedenken, mét een matchscore per rol zodat je meteen ziet of het past.", cta: "Start je profiel", path: "/pager" },
+      { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord één keer een paar vragen, en wij doen de rest: je wordt proactief voorgesteld bij offmarket-kansen, rollen waar we dankzij onze nauwe samenwerking met werkgevers al vroeg over meedenken, en krijgt een plek in ons exclusieve netwerk met events.", cta: "Start je profiel", path: "/pager" },
       { tier: "Community", title: "WhatsApp-community", text: "Word lid van de community en krijg passende vacatures wekelijks rechtstreeks in je WhatsApp.", cta: "Join", whats: true },
       { tier: "Vrijblijvend", title: "Job board", text: "Bekijk open rollen en solliciteer direct per vacature, zonder account of profiel.", cta: "Bekijk jobs", path: "/jobboard" },
     ],
@@ -106,22 +105,16 @@ const COPY: Record<
     fitEyebrow: "Talentpool",
     fitTitleA: "DIT KRIJG JE ALS JE LID",
     fitTitleB: "WORDT VAN DE TALENTPOOL.",
-    fitText:
-      "Los solliciteren via het jobboard kan altijd, zonder profiel. Maak je een profiel aan in de talentpool, dan krijg je in je portal ook:",
     fitBenefits: [
-      "Een matchscore per rol: je ziet zelf welke criteria wel en niet aansluiten, in plaats van alleen te horen óf je gekozen bent.",
       "Proactieve voorstellen bij offmarket-kansen: rollen waar we dankzij onze nauwe samenwerking met werkgevers al vroeg over meedenken.",
       "Je gratis career pager: een persoonlijk loopbaanprofiel op basis van je antwoorden.",
-      "Eén klik solliciteren vanuit je portal, in plaats van los per vacature zoals op het jobboard.",
+      "Een plek in ons exclusieve netwerk: uitnodigingen voor events, persoonlijke introducties bij werkgevers waarmee we je in contact brengen, en een team dat continu met je meedenkt over nieuwe kansen.",
     ],
-    fitCardCaption: "Wat je ziet in je portal, als lid van de talentpool",
+    fitCardCaption: "Wat je krijgt als lid van de talentpool",
     fitCta: "Word nu lid",
-    fitCardRole: "Werkstudent Growth · Mila Health",
-    fitCriteria: [
-      { label: "Sluit aan op “Impact maken”", pct: 92 },
-      { label: "Zelfstandig werken", pct: 88 },
-      { label: "Data & uitzoeken", pct: 90 },
-    ],
+    fitCardStat: "4.000+",
+    fitCardStatLabel: "studenten en starters in de community",
+    fitPerks: ["Offmarket-kansen", "Gratis career pager", "Events & exclusief netwerk"],
     thrivingEyebrow: "Talent aan het woord",
     thrivingTitle: "ZO ZIET DAT ER IN DE PRAKTIJK UIT.",
     bandAlt: "Twee werkstudenten aan het werk",
@@ -155,7 +148,7 @@ const COPY: Record<
     resourcesTitle: "THREE WAYS TO GET CLOSER.",
     resourcesIntro: "We offer more than individual vacancies: a job board to apply yourself, a WhatsApp community with weekly opportunities, and a talent pool that proactively matches you. Because we work so closely with employers, we can often think along with them more broadly than just the vacancies that are posted. The more active you are, the more we can do for you.",
     resources: [
-      { tier: "Active in the talent pool", title: "Talent pool", text: "Answer a few questions once, and we do the rest: you get proactively put forward for off-market opportunities, roles we're already thinking through with employers early on thanks to our close working relationship, with a match score per role so you instantly see if it fits.", cta: "Join the talent pool", path: "/pager" },
+      { tier: "Active in the talent pool", title: "Talent pool", text: "Answer a few questions once, and we do the rest: you get proactively put forward for off-market opportunities, roles we're already thinking through with employers early on thanks to our close working relationship, plus a spot in our exclusive network with events.", cta: "Join the talent pool", path: "/pager" },
       { tier: "Community", title: "WhatsApp community", text: "Join the community and get matching vacancies sent straight to your WhatsApp every week.", cta: "Join", whats: true },
       { tier: "No strings attached", title: "Job board", text: "Browse open roles and apply directly to any vacancy, no account or profile needed.", cta: "View jobs", path: "/jobboard" },
     ],
@@ -191,22 +184,16 @@ const COPY: Record<
     fitEyebrow: "Talent pool",
     fitTitleA: "WHAT YOU GET AS A",
     fitTitleB: "TALENT POOL MEMBER.",
-    fitText:
-      "Applying via the job board works fine without a profile. Create a profile in the talent pool, and your portal also gives you:",
     fitBenefits: [
-      "A match score per role: you see for yourself which criteria do and don’t line up, instead of only hearing whether you were chosen.",
       "Proactive introductions to off-market opportunities: roles we're already thinking through with employers early on thanks to our close working relationship.",
       "Your free career pager: a personal career profile based on your answers.",
-      "One-click applying from your portal, instead of applying separately per vacancy like on the job board.",
+      "A spot in our exclusive network: invites to events, personal introductions to employers we connect you with, and a team that keeps thinking along about new opportunities for you.",
     ],
-    fitCardCaption: "What you see in your portal, as a talent pool member",
+    fitCardCaption: "What you get as a talent pool member",
     fitCta: "Join now",
-    fitCardRole: "Working student Growth · Mila Health",
-    fitCriteria: [
-      { label: "Fits “Making impact”", pct: 92 },
-      { label: "Working independently", pct: 88 },
-      { label: "Data & figuring things out", pct: 90 },
-    ],
+    fitCardStat: "4,000+",
+    fitCardStatLabel: "students and starters in the community",
+    fitPerks: ["Off-market opportunities", "Free career pager", "Events & exclusive network"],
     thrivingEyebrow: "Talent in their own words",
     thrivingTitle: "WHAT THAT LOOKS LIKE IN PRACTICE.",
     bandAlt: "Two working students collaborating",
@@ -321,26 +308,41 @@ export function TalentPage({ lang }: { lang: Lang }) {
           </h2>
           <div className="wrap g-collapse" style={{ padding: 0, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
             <div>
-              <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-muted)", maxWidth: 460, margin: "0 0 18px" }}>{c.fitText}</p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 460 }}>
-                {c.fitBenefits.map((b) => (
-                  <div key={b} style={{ display: "flex", gap: 10, fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-soft)" }}>
-                    <span style={{ flex: "none", marginTop: 2 }}>
-                      <CheckIcon />
-                    </span>
-                    <span>{b}</span>
-                  </div>
-                ))}
+              <div style={{ display: "flex", flexDirection: "column", gap: 22, maxWidth: 460 }}>
+                {c.fitBenefits.map((b, i) => {
+                  const sepIdx = b.indexOf(": ");
+                  const label = sepIdx === -1 ? b : b.slice(0, sepIdx);
+                  const detail = sepIdx === -1 ? "" : b.slice(sepIdx + 2);
+                  const Icon = [TargetIcon, PagerIcon, NetworkIcon][i % 3];
+                  return (
+                    <div key={b} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                      <div style={{ width: 38, height: 38, borderRadius: "50%", background: "var(--voids-blue-100)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
+                        <Icon />
+                      </div>
+                      <div>
+                        <div style={{ fontSize: 14.5, fontWeight: 700, color: "var(--voids-ink)", marginBottom: 3 }}>{label}</div>
+                        {detail && <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{detail}</p>}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <div className="card" style={{ padding: 20 }}>
             <div style={{ fontSize: 12.5, fontWeight: 600, color: "var(--voids-ink-muted)", marginBottom: 10 }}>{c.fitCardCaption}</div>
             <div style={{ background: "var(--voids-beige)", borderRadius: "var(--radius-md)", padding: 24 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-                <span style={{ fontWeight: 600, fontSize: 15 }}>{c.fitCardRole}</span>
-                <span className="anton" style={{ fontSize: 26, color: "var(--voids-blue)" }}><CountUp value="92%" /></span>
+              <div style={{ marginBottom: 18 }}>
+                <span className="anton" style={{ fontSize: 32, color: "var(--voids-blue)", display: "block" }}><CountUp value={c.fitCardStat} /></span>
+                <span style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>{c.fitCardStatLabel}</span>
               </div>
-              <MatchBars criteria={c.fitCriteria} />
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {c.fitPerks.map((perk) => (
+                  <div key={perk} style={{ display: "flex", gap: 8, fontSize: 13.5, fontWeight: 600, color: "var(--voids-ink-soft)" }}>
+                    <CheckIcon />
+                    <span>{perk}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             <div style={{ marginTop: 16 }}>
               <Button variant="secondary" size="md" fullWidth href={p("/pager")}>{c.fitCta}</Button>
@@ -449,6 +451,37 @@ function CheckIcon() {
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
       <circle cx="7" cy="7" r="6.25" stroke="var(--voids-blue)" strokeWidth="1.4" />
       <path d="M4.3 7.1l1.9 1.9 3.5-3.9" stroke="var(--voids-blue)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function TargetIcon() {
+  return (
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" stroke="var(--voids-blue)" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="5" stroke="var(--voids-blue)" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="1.4" fill="var(--voids-blue)" />
+    </svg>
+  );
+}
+
+function PagerIcon() {
+  return (
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="4" y="7" width="16" height="13" rx="2" stroke="var(--voids-blue)" strokeWidth="1.6" />
+      <path d="M8 7V5.5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2V7" stroke="var(--voids-blue)" strokeWidth="1.6" />
+      <path d="M7.5 11.5h9M7.5 15h5.5" stroke="var(--voids-blue)" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function NetworkIcon() {
+  return (
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="6" cy="7" r="2.4" stroke="var(--voids-blue)" strokeWidth="1.6" />
+      <circle cx="18" cy="7" r="2.4" stroke="var(--voids-blue)" strokeWidth="1.6" />
+      <circle cx="12" cy="18" r="2.4" stroke="var(--voids-blue)" strokeWidth="1.6" />
+      <path d="M8 8.3l2.3 7.4M16 8.3l-2.3 7.4M8.4 7h7.2" stroke="var(--voids-blue)" strokeWidth="1.4" strokeLinecap="round" />
     </svg>
   );
 }
