@@ -288,8 +288,8 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
 
           <div style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.18)", borderRadius: "var(--radius-lg)", padding: 26 }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-              {c.heroStats.map((s) => (
-                <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: "1px solid rgba(255,255,255,.14)", paddingTop: 14 }}>
+              {c.heroStats.map((s, i) => (
+                <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: i === 0 ? "none" : "1px solid rgba(255,255,255,.14)", paddingTop: i === 0 ? 0 : 14 }}>
                   <span className="anton" style={{ fontSize: 26, color: "#fff", flex: "none", whiteSpace: "nowrap" }}><CountUp value={s.value} /></span>
                   <span style={{ fontSize: 13, color: "var(--voids-purple-100)" }}>{s.label}</span>
                 </div>
@@ -330,7 +330,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyWsEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "8px 0 14px", maxWidth: 860 }}>{c.whyWsTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 860 }}>{c.whyWsIntro}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 16, marginBottom: 32, maxWidth: 1040, alignItems: "stretch" }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 16, maxWidth: 1040, alignItems: "stretch" }}>
             {WHY_WS[lang].map((w) => (
               <div key={w.title} className="card card--hoverable card--accent-purple" style={{ padding: 22, height: "100%", display: "flex", flexDirection: "column" }}>
                 <div style={{ width: 44, height: 44, borderRadius: "50%", background: "var(--voids-purple-100)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
@@ -341,7 +341,11 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
+      <section style={{ background: "#fff" }}>
+        <div className="wrap" style={{ padding: "64px 32px", maxWidth: 1104 }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 20, maxWidth: 1040 }}>
             <ComparisonCard
               title={c.checklistTitle}

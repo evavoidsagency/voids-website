@@ -263,8 +263,8 @@ export function TalentPage({ lang }: { lang: Lang }) {
                 { value: c.stat1Value, label: c.stat1Label },
                 { value: "100%", label: c.stat2Label },
                 { value: "10%", label: c.stat3Label },
-              ].map((s) => (
-                <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: "1px solid rgba(255,255,255,.14)", paddingTop: 14 }}>
+              ].map((s, i) => (
+                <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: i === 0 ? "none" : "1px solid rgba(255,255,255,.14)", paddingTop: i === 0 ? 0 : 14 }}>
                   <span className="anton" style={{ fontSize: 26, color: "#fff", flex: "none" }}><CountUp value={s.value} /></span>
                   <span style={{ fontSize: 13, color: "var(--voids-blue-100)" }}>{s.label}</span>
                 </div>
@@ -301,27 +301,27 @@ export function TalentPage({ lang }: { lang: Lang }) {
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "72px 32px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.fitEyebrow}</span>
-          <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 26px" }}>
+          <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 20px" }}>
             {c.fitTitleA}
             <br />
             {c.fitTitleB}
           </h2>
           <div className="wrap g-collapse" style={{ padding: 0, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
             <div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 22, maxWidth: 460 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, maxWidth: 460 }}>
                 {c.fitBenefits.map((b, i) => {
                   const sepIdx = b.indexOf(": ");
                   const label = sepIdx === -1 ? b : b.slice(0, sepIdx);
                   const detail = sepIdx === -1 ? "" : b.slice(sepIdx + 2);
                   const Icon = [TargetIcon, PagerIcon, NetworkIcon][i % 3];
                   return (
-                    <div key={b} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                    <div key={b} style={{ display: "flex", gap: 14, alignItems: "flex-start", minHeight: 88 }}>
                       <div style={{ width: 38, height: 38, borderRadius: "50%", background: "var(--voids-blue-100)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
                         <Icon />
                       </div>
                       <div>
                         <div style={{ fontSize: 14.5, fontWeight: 700, color: "var(--voids-ink)", marginBottom: 3 }}>{label}</div>
-                        {detail && <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{detail}</p>}
+                        {detail && <p style={{ fontSize: 13.5, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: 0 }}>{detail}</p>}
                       </div>
                     </div>
                   );
