@@ -45,9 +45,9 @@ export function ComparisonCard({
   const bullets = isLeft ? leftBullets : rightBullets;
 
   return (
-    <div className="card" style={{ padding: 28 }}>
+    <div className="card" style={{ padding: 28, height: "100%", display: "flex", flexDirection: "column" }}>
       <h3 className="anton" style={{ fontSize: 24, margin: "0 0 6px" }}>{title}</h3>
-      <p style={{ fontSize: 13, color: "var(--voids-ink-muted)", margin: "0 0 18px" }}>{sub}</p>
+      <p style={{ fontSize: 13, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: "0 0 18px", minHeight: 82 }}>{sub}</p>
 
       <div role="tablist" style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 16 }}>
         {(
@@ -85,7 +85,7 @@ export function ComparisonCard({
         })}
       </div>
 
-      <div key={active} className="services-tab-panel" style={{ background: bg, borderRadius: "var(--radius-md)", padding: 22 }}>
+      <div key={active} className="services-tab-panel" style={{ background: bg, borderRadius: "var(--radius-md)", padding: 22, flex: 1, display: "flex", flexDirection: "column" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, marginBottom: 16, flexWrap: "wrap" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <div style={{ width: 34, height: 34, borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>

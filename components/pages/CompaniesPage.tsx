@@ -361,7 +361,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.altOptionsEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 24px", maxWidth: 760 }}>{c.altOptionsTitle}</h2>
 
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, alignItems: "start", maxWidth: 1040, marginBottom: 48 }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, alignItems: "stretch", maxWidth: 1040, marginBottom: 48 }}>
             <ComparisonCard
               title={c.checklistTitle}
               sub={c.checklistSub}

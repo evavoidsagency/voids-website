@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Photo } from "@/components/ui/Photo";
+import { Button } from "@/components/ui/Button";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
 import { CountUp } from "@/components/ui/CountUp";
 import { findLogoFile } from "@/lib/logos";
@@ -178,9 +179,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
       <section style={{ background: "var(--voids-beige)" }}>
         <div className="wrap" style={{ padding: "48px 32px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
           <p style={{ fontSize: 15, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 700 }}>{c.calcNote}</p>
-          <Link href={localePath(lang, "/companies")} style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-purple)" }}>
-            {c.calcCta}
-          </Link>
+          <Button variant="outline" size="sm" href={localePath(lang, "/companies")}>{c.calcCta}</Button>
         </div>
       </section>
 
