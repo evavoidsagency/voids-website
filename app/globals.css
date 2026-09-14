@@ -402,6 +402,25 @@ button:focus-visible,
 .card--accent-purple {
   border-top: 3px solid var(--voids-purple);
 }
+
+/* Process step cards — a connecting line between consecutive steps within a
+   row, reinforcing that these are a real ordered sequence, not just a grid. */
+.process-card {
+  position: relative;
+}
+@media (min-width: 861px) {
+  .process-grid > .process-card:not(:nth-child(3n))::after {
+    content: "";
+    position: absolute;
+    top: 43px;
+    right: -18px;
+    width: 18px;
+    height: 2px;
+    background: var(--voids-purple);
+    opacity: 0.35;
+  }
+}
+
 .card--accent-blue {
   border-top: 3px solid var(--voids-blue);
 }

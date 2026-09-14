@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { Photo } from "@/components/ui/Photo";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
 import { CountUp } from "@/components/ui/CountUp";
@@ -101,9 +102,9 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
 
       <section className="wrap" style={{ padding: "56px 32px 20px" }}>
         <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 20px" }}>{c.processTitle}</h2>
-        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 18, alignItems: "stretch" }}>
+        <div className="g-collapse process-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 18, alignItems: "stretch" }}>
           {PROCESS[lang].map((s, i) => (
-            <div key={s.num} className="card card--accent-purple" style={{ padding: 22, height: "100%", display: "flex", flexDirection: "column" }}>
+            <div key={s.num} className="card card--accent-purple process-card" style={{ padding: 22, height: "100%", display: "flex", flexDirection: "column" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 }}>
                 <HandCircleNumber n={i + 1} />
                 <span className="badge badge--purple" style={{ whiteSpace: "nowrap" }}>{s.when}</span>
@@ -158,8 +159,13 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
           <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 24px", maxWidth: 1040 }}>{c.profilesSub}</p>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 16, alignItems: "stretch" }}>
             {TALENT_PROFILES[lang].map((pr) => (
-              <div key={pr.field} className="card" style={{ padding: 20, height: "100%", display: "flex", flexDirection: "column" }}>
-                <span className="badge badge--purple" style={{ marginBottom: 12, alignSelf: "flex-start" }}>{pr.field}</span>
+              <div key={pr.field} className="card card--hoverable" style={{ padding: 20, height: "100%", display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 14 }}>
+                  <div style={{ width: 38, height: 38, borderRadius: "50%", background: "var(--voids-purple-100)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
+                    {FIELD_ICONS[pr.field] ?? <SparkleIcon />}
+                  </div>
+                  <span className="badge badge--purple" style={{ whiteSpace: "nowrap" }}>{pr.field}</span>
+                </div>
                 <div style={{ fontSize: 14, fontWeight: 600, margin: "0 0 4px" }}>{pr.edu}</div>
                 <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", marginBottom: 12 }}>{pr.skills}</div>
                 <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-soft)", margin: 0, fontStyle: "italic" }}>{pr.traits}</p>
@@ -187,6 +193,82 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
     </>
   );
 }
+
+function MarketingIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M3 10v4h4l6 4V6L7 10H3Z" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M17 9.5c1 .8 1 4.2 0 5M20 7c2 2 2 8 0 10" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function FinanceIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M4 19h16" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M7 19v-6M12 19V7M17 19v-9" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function LegalIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 3v17M7 20h10" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M12 5 5 8l3.2 6.2a4 4 0 0 0 7.6 0L19 8l-7-3Z" stroke="var(--voids-purple)" strokeWidth="1.4" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function DataIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="8" y="8" width="8" height="8" rx="1.5" stroke="var(--voids-purple)" strokeWidth="1.6" />
+      <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" stroke="var(--voids-purple)" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function BizDevIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M3 21h18M5 21V10l5-4 5 4v11M13 21v-6h3v6" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M15 6l3-3 3 3M18 3v6" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function BizSupportIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="3" stroke="var(--voids-purple)" strokeWidth="1.6" />
+      <path
+        d="M12 4v2M12 18v2M4 12h2M18 12h2M6.3 6.3l1.4 1.4M16.3 16.3l1.4 1.4M17.7 6.3l-1.4 1.4M7.7 16.3l-1.4 1.4"
+        stroke="var(--voids-purple)"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function SparkleIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 3v6M12 15v6M3 12h6M15 12h6" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+const FIELD_ICONS: Record<string, ReactNode> = {
+  Marketing: <MarketingIcon />,
+  Finance: <FinanceIcon />,
+  Legal: <LegalIcon />,
+  "Data & AI": <DataIcon />,
+  "Business development": <BizDevIcon />,
+  "Business support": <BizSupportIcon />,
+};
 
 /** A hand-drawn, marker-circled step number — one signature touch on the one section of the site that's a real numbered sequence. */
 function HandCircleNumber({ n }: { n: number }) {
