@@ -308,14 +308,14 @@ export function TalentPage({ lang }: { lang: Lang }) {
           </h2>
           <div className="wrap g-collapse" style={{ padding: 0, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
             <div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 14, maxWidth: 460 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: 460 }}>
                 {c.fitBenefits.map((b, i) => {
                   const sepIdx = b.indexOf(": ");
                   const label = sepIdx === -1 ? b : b.slice(0, sepIdx);
                   const detail = sepIdx === -1 ? "" : b.slice(sepIdx + 2);
                   const Icon = [TargetIcon, PagerIcon, NetworkIcon][i % 3];
                   return (
-                    <div key={b} style={{ display: "flex", gap: 14, alignItems: "flex-start", minHeight: 88 }}>
+                    <div key={b} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
                       <div style={{ width: 38, height: 38, borderRadius: "50%", background: "var(--voids-blue-100)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
                         <Icon />
                       </div>
