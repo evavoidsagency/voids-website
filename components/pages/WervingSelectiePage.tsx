@@ -104,15 +104,15 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
 
       <section className="wrap" style={{ padding: "56px 32px 20px" }}>
         <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 20px" }}>{c.processTitle}</h2>
-        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 18, alignItems: "start" }}>
+        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 18, alignItems: "stretch" }}>
           {PROCESS[lang].map((s, i) => (
-            <div key={s.num} className="card card--accent-purple" style={{ padding: 22 }}>
+            <div key={s.num} className="card card--accent-purple" style={{ padding: 22, height: "100%", display: "flex", flexDirection: "column" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 }}>
                 <HandCircleNumber n={i + 1} />
                 <span className="badge badge--purple" style={{ whiteSpace: "nowrap" }}>{s.when}</span>
               </div>
               <div style={{ fontSize: 16, fontWeight: 600, margin: "14px 0 6px" }}>{s.title}</div>
-              <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{s.text}</p>
+              <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{s.text}</p>
             </div>
           ))}
         </div>
