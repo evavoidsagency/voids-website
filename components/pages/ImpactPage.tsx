@@ -13,6 +13,7 @@ const COPY: Record<
     intro: string;
     problemEyebrow: string;
     problemTitle: string;
+    problemHook: string;
     problemIntro: string;
     card1Badge: string;
     card1Title: string;
@@ -52,16 +53,17 @@ const COPY: Record<
       "VOIDS bestaat om de overgang van studie naar werk eerlijker te maken. De eerste baan bepaalt vaak de rest van een loopbaan, en die eerste stap is niet voor iedereen gelijk. Recruitment is ons middel; gelijke kansen zijn het doel.",
     problemEyebrow: "Het probleem",
     problemTitle: "WERKERVARING IS EEN VOORRECHT GEWORDEN.",
+    problemHook: "Talent zit overal. Toegang tot ervaring niet.",
     problemIntro:
-      "Relevante werkervaring is bijna een voorwaarde voor een goede baan na je studie. Maar vaak moet je kiezen: ervaring opdoen via een stage, of geld verdienen met een bijbaan die vaak los staat van je studie, en je dus weinig richting geeft. Wie dat inkomen nodig heeft, kan voor die ervaring dan ook niet zomaar kiezen.",
+      "Relevante werkervaring is bijna een voorwaarde voor een goede baan na je studie, maar de toegang daartoe is niet gelijk verdeeld. Vaak moet je kiezen: ervaring opdoen via een stage, of geld verdienen met een bijbaan die los staat van je studie. Wie het inkomen nodig heeft, kan voor die ervaring niet zomaar kiezen.",
     card1Badge: "Werkervaring",
     card1Title: "De stagevergoeding",
     card1Text:
-      "Een stage betaalt meestal een vergoeding, maar vaak te weinig om echt van rond te komen. Voor wie geen buffer of steun heeft, is maandenlang stage lopen daardoor lastig vol te houden.",
+      "Een stage betaalt meestal iets, maar vaak te weinig om van rond te komen. Zonder buffer of steun thuis is maandenlang stage lopen simpelweg niet vol te houden.",
     card2Badge: "Inkomen",
     card2Title: "De bijbaan uit noodzaak",
     card2Text:
-      "Horeca of retail om de huur te kunnen betalen. Het levert inkomen op, maar geen inhoudelijke ervaring: het staat los van de studie en draagt zelden bij aan een cv of aan professionele groei.",
+      "Horeca of retail om de huur te kunnen betalen: het levert inkomen op, maar geen inhoudelijke ervaring. Het staat los van de studie en telt zelden mee op een cv.",
     problemClose:
       "De één kan zich die keuze veroorloven, de ander niet. Ongelijke kansen, nog vóór de eerste sollicitatie.",
     solutionEyebrow: "De oplossing",
@@ -108,16 +110,17 @@ const COPY: Record<
       "VOIDS exists to make the transition from study to work fairer. The first job often shapes the rest of a career, and that first step isn’t equal for everyone. Recruitment is our means; equal opportunity is the goal.",
     problemEyebrow: "The problem",
     problemTitle: "WORK EXPERIENCE HAS BECOME A PRIVILEGE.",
+    problemHook: "Talent is everywhere. Access to experience isn't.",
     problemIntro:
-      "Relevant work experience is almost a requirement for a good job after your studies. But often you have to choose: gain experience through an internship, or earn money with a side job that's usually unrelated to your studies, and gives you little sense of direction. Anyone who needs that income can't just choose the experience instead.",
+      "Relevant work experience is almost a requirement for a good job after your studies, but access to it isn't equally distributed. Often you have to choose: gain experience through an internship, or earn money with a side job unrelated to your studies. Anyone who needs that income can't just choose the experience instead.",
     card1Badge: "Work experience",
     card1Title: "The internship allowance",
     card1Text:
-      "An internship usually pays an allowance, but often too little to really live on. For anyone without savings or support, months of interning is hard to sustain.",
+      "An internship usually pays something, but often too little to live on. Without savings or support at home, months of interning simply isn't sustainable.",
     card2Badge: "Income",
     card2Title: "The side job out of necessity",
     card2Text:
-      "Hospitality or retail just to cover the rent. It brings in income, but no relevant experience: it has nothing to do with their studies and rarely adds to a CV or professional growth.",
+      "Hospitality or retail just to cover the rent: it brings in income, but no relevant experience. It has nothing to do with their studies and rarely counts on a CV.",
     problemClose:
       "One person can afford to make that choice, another can’t. Unequal chances, before the first application is even sent.",
     solutionEyebrow: "The solution",
@@ -195,6 +198,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
       <section className="wrap" style={{ padding: "64px 32px 72px" }}>
         <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.problemEyebrow}</span>
         <h2 className="anton section-h2" style={{ fontSize: 38, margin: "14px 0 20px", maxWidth: 1040 }}>{c.problemTitle}</h2>
+        <p className="anton" style={{ fontSize: 21, lineHeight: 1.4, color: "var(--voids-ink)", textTransform: "none", margin: "0 0 16px", maxWidth: 900 }}>{c.problemHook}</p>
         <p style={{ fontSize: 16.5, lineHeight: 1.75, color: "var(--voids-ink-muted)", margin: "0 0 44px", maxWidth: 900 }}>{c.problemIntro}</p>
         <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }}>
           <div className="card card--hoverable card--accent-blue" style={{ padding: 32 }}>

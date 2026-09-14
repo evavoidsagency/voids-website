@@ -32,7 +32,7 @@ const COPY: Record<
     altOptionsEyebrow: string;
     altOptionsTitle: string;
     stageEyebrow: string;
-    stageTitle: string;
+    stageLinkText: string;
     calcEyebrow: string;
     calcTitle: string;
     calcIntro: string;
@@ -65,10 +65,8 @@ const COPY: Record<
     impactCta: string;
     compareBlogNote: string;
     compareBlogCta: string;
-    salaryLabel: string;
     salaryMinLabel: string;
     salaryAdviceLabel: string;
-    salaryAdviceExample: string;
     salaryFootnote: string;
     costBlogNote: string;
     costBlogCta: string;
@@ -132,7 +130,7 @@ const COPY: Record<
     altOptionsEyebrow: "Toch twijfels?",
     altOptionsTitle: "WANNEER EEN STAGIAIR OF STARTER BETER PAST.",
     stageEyebrow: "Stagevergoeding",
-    stageTitle: "OOK STAGIAIRS BETALEN WE EERLIJK.",
+    stageLinkText: "Toch een stagiair werven? Bekijk de stagevergoeding",
     calcEyebrow: "Voorbeeldsom",
     calcTitle: "WERKSTUDENT, STAGIAIR OF STARTER?",
     calcIntro: "Indicatieve kosten voor de werkgever per maand, inclusief werkgeverslasten, geen nettosalaris. Schuif de balk en vergelijk.",
@@ -147,7 +145,7 @@ const COPY: Record<
     prefIntro: "We werven ook stagiairs, maar alleen tegen een stagevergoeding die minimaal gelijk is aan de norm die de Rijksoverheid zelf hanteert.",
     prefOutro: "Onder dat bedrag matchen we niet. Meer betalen juichen we juist toe.",
     prefStatValue: "€800",
-    prefStatLabel: "bruto per maand, fulltime (naar rato bij minder uren)",
+    prefStatLabel: "Stagevergoeding-min.",
     compare2Title: "WERKSTUDENT VS. STARTER",
     compare2Sub: "En hoe verhoudt een werkstudent zich tot een starter? Het kernverschil: een starter is afgestudeerd en heeft geen studie meer naast het werk, een werkstudent combineert de rol nog met een opleiding. Snelle checklist, wat past bij je situatie?",
     starterHeading: "Kies een starter als…",
@@ -167,10 +165,8 @@ const COPY: Record<
     impactCta: "Lees over onze impact",
     compareBlogNote: "Dieper induiken in de vergelijking?",
     compareBlogCta: "Werkstudent, stagiair of starter: wat past bij jouw bedrijf?",
-    salaryLabel: "Salariskompas",
     salaryMinLabel: "Minimumloon",
     salaryAdviceLabel: "VOIDS-advies",
-    salaryAdviceExample: "Bijv. € 16,49–17,99 boven het wettelijk minimum hieronder. Geldt er een CAO? Reken dan vanaf dát bedrag, niet vanaf het wettelijk minimum.",
     salaryFootnote: "Per 1 juli 2026, o.b.v. het wettelijk minimumloon (21+, bron: rijksoverheid.nl). Voor jongere werkstudenten en CAO-functies gelden andere bedragen.",
     costBlogNote: "Benieuwd naar de volledige kostenvergelijking?",
     costBlogCta: "Wat kost een werkstudent vergeleken met een fulltime starter?",
@@ -233,7 +229,7 @@ const COPY: Record<
     altOptionsEyebrow: "Still deciding?",
     altOptionsTitle: "WHEN AN INTERN OR STARTER FITS BETTER.",
     stageEyebrow: "Intern pay",
-    stageTitle: "WE PAY INTERNS FAIRLY TOO.",
+    stageLinkText: "Hiring an intern instead? See the intern pay minimum",
     calcEyebrow: "Example calculation",
     calcTitle: "WORKING STUDENT, INTERN OR STARTER?",
     calcIntro: "Indicative cost to the employer per month, including employer contributions, not take-home pay. Slide the bar to compare.",
@@ -268,10 +264,8 @@ const COPY: Record<
     impactCta: "Read about our impact",
     compareBlogNote: "Want to dig deeper into the comparison?",
     compareBlogCta: "Working student, intern or starter: what fits your company?",
-    salaryLabel: "Salary compass",
     salaryMinLabel: "Minimum wage",
     salaryAdviceLabel: "VOIDS advice",
-    salaryAdviceExample: "E.g. € 16.49–17.99 above the statutory minimum below. If a CAO applies, calculate from that amount instead of the statutory minimum.",
     salaryFootnote: "As of 1 July 2026, based on the statutory minimum wage (21+, source: rijksoverheid.nl). Different amounts apply for younger working students and CAO roles.",
     costBlogNote: "Curious about the full cost comparison?",
     costBlogCta: "What does a working student cost compared to a full-time starter?",
@@ -396,54 +390,10 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
             />
           </div>
 
-          <div style={{ borderTop: "1px solid var(--border-hairline)", paddingTop: 40, maxWidth: 1040 }}>
-            <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.stageEyebrow}</span>
-            <h3 className="anton" style={{ fontSize: 22, margin: "8px 0 20px" }}>{c.stageTitle}</h3>
-            <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1.3fr .9fr", gap: 24, alignItems: "center" }}>
-              <div>
-                <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0 }}>{c.prefIntro}</p>
-                <p style={{ fontSize: 13, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "8px 0 0" }}>{c.prefOutro}</p>
-                <p style={{ fontSize: 13, margin: "14px 0 0" }}>
-                  <span style={{ color: "var(--voids-ink-muted)" }}>{c.compareBlogNote} </span>
-                  <Link href={p(`/blog/werkstudent-stagiair-of-starter`)} style={{ fontWeight: 600, color: "var(--voids-purple)" }}>
-                    {c.compareBlogCta} →
-                  </Link>
-                </p>
-              </div>
-              <div className="card card--accent-purple" style={{ padding: "20px 22px", textAlign: "center", background: "var(--voids-purple-100)" }}>
-                <div className="anton" style={{ fontSize: 36, color: "var(--voids-purple)", lineHeight: 1 }}>{c.prefStatValue}</div>
-                <div style={{ fontSize: 12.5, lineHeight: 1.4, color: "var(--voids-ink-muted)", marginTop: 8 }}>{c.prefStatLabel}</div>
-              </div>
-            </div>
-            <div className="card" style={{ padding: 24, marginTop: 24 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 28, flexWrap: "wrap" }}>
-                <div style={{ flex: 1, minWidth: 260 }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".03em", textTransform: "uppercase", color: "var(--voids-purple)", marginBottom: 8 }}>
-                    {c.salaryLabel}
-                  </div>
-                  <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: 0 }}>{c.salaryAdviceExample}</p>
-                </div>
-                <div style={{ display: "flex", gap: 36, flex: "none" }}>
-                  <div style={{ textAlign: "right" }}>
-                    <div style={{ fontSize: 12, color: "var(--voids-ink-muted)", marginBottom: 2, whiteSpace: "nowrap" }}>{c.salaryMinLabel}</div>
-                    <div className="anton" style={{ fontSize: 24, color: "var(--voids-ink)" }}>{lang === "nl" ? "€ 14,99" : "€ 14.99"}</div>
-                  </div>
-                  <div style={{ textAlign: "right" }}>
-                    <div style={{ fontSize: 12, color: "var(--voids-purple)", fontWeight: 600, marginBottom: 2, whiteSpace: "nowrap" }}>{c.salaryAdviceLabel}</div>
-                    <div className="anton" style={{ fontSize: 24, color: "var(--voids-purple)" }}>+10–20%</div>
-                  </div>
-                </div>
-              </div>
-              <p style={{ fontSize: 11, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: "16px 0 0", paddingTop: 14, borderTop: "1px solid var(--border-hairline)" }}>
-                {c.salaryFootnote}
-              </p>
-            </div>
-
-            <div className="card card--accent-purple" style={{ padding: 24, marginTop: 32, display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
-              <HeartIcon />
-              <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1, minWidth: 260 }}>{c.impactNote}</p>
-              <Button variant="outline" size="md" href={p("/impact")}>{c.impactCta} →</Button>
-            </div>
+          <div style={{ maxWidth: 1040, textAlign: "right" }}>
+            <a href="#stagevergoeding" style={{ fontSize: 13, fontWeight: 600, color: "var(--voids-purple)" }}>
+              {c.stageLinkText} →
+            </a>
           </div>
         </div>
       </section>
@@ -472,6 +422,42 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
               {c.costBlogCta} →
             </Link>
           </p>
+
+          <div id="stagevergoeding" className="card" style={{ padding: 24, marginTop: 32, scrollMarginTop: 90 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, flexWrap: "wrap" }}>
+              <div style={{ flex: 1, minWidth: 260 }}>
+                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".03em", textTransform: "uppercase", color: "var(--voids-purple)", marginBottom: 8 }}>
+                  {c.stageEyebrow}
+                </div>
+                <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>
+                  {c.prefIntro} {c.prefOutro}
+                </p>
+              </div>
+              <div style={{ display: "flex", gap: 28, flex: "none", flexWrap: "wrap" }}>
+                <div style={{ textAlign: "right" }}>
+                  <div style={{ fontSize: 11, color: "var(--voids-purple)", fontWeight: 600, marginBottom: 2, whiteSpace: "nowrap" }}>{c.prefStatLabel}</div>
+                  <div className="anton" style={{ fontSize: 22, color: "var(--voids-purple)" }}>{c.prefStatValue}</div>
+                </div>
+                <div style={{ textAlign: "right" }}>
+                  <div style={{ fontSize: 11, color: "var(--voids-ink-muted)", marginBottom: 2, whiteSpace: "nowrap" }}>{c.salaryMinLabel}</div>
+                  <div className="anton" style={{ fontSize: 22, color: "var(--voids-ink)" }}>{lang === "nl" ? "€ 14,99" : "€ 14.99"}</div>
+                </div>
+                <div style={{ textAlign: "right" }}>
+                  <div style={{ fontSize: 11, color: "var(--voids-purple)", fontWeight: 600, marginBottom: 2, whiteSpace: "nowrap" }}>{c.salaryAdviceLabel}</div>
+                  <div className="anton" style={{ fontSize: 22, color: "var(--voids-purple)" }}>+10–20%</div>
+                </div>
+              </div>
+            </div>
+            <p style={{ fontSize: 11, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: "14px 0 0", paddingTop: 12, borderTop: "1px solid var(--border-hairline)" }}>
+              {c.salaryFootnote}
+            </p>
+            <div style={{ marginTop: 16, paddingTop: 16, borderTop: "1px solid var(--border-hairline)", display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
+              <HeartIcon />
+              <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: 0, flex: 1, minWidth: 220 }}>
+                {c.impactNote} <Link href={p("/impact")} style={{ fontWeight: 600, color: "var(--voids-purple)" }}>{c.impactCta} →</Link>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
