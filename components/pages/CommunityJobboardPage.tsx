@@ -114,26 +114,26 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "56px 32px 64px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 20px" }}>{c.howTitle}</h2>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, alignItems: "start" }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, alignItems: "stretch" }}>
             {c.how.map((h, i) =>
               i === 1 ? (
-                <Link key={h.title} href={p("/jobboard")} className={`card card--hoverable card--accent-${h.accent}`} style={{ padding: 24, display: "block", textDecoration: "none", color: "inherit" }}>
+                <Link key={h.title} href={p("/jobboard")} className={`card card--hoverable card--accent-${h.accent}`} style={{ padding: 24, display: "flex", flexDirection: "column", textDecoration: "none", color: "inherit" }}>
                   <BoardIcon />
                   <div className="anton" style={{ fontSize: 18, margin: "12px 0 10px" }}>{h.title}</div>
-                  <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{h.text}</p>
+                  <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{h.text}</p>
                 </Link>
               ) : (
-                <div key={h.title} className={`card card--accent-${h.accent}`} style={{ padding: 24 }}>
+                <div key={h.title} className={`card card--accent-${h.accent}`} style={{ padding: 24, display: "flex", flexDirection: "column" }}>
                   <ChatIcon />
                   <div className="anton" style={{ fontSize: 18, margin: "12px 0 10px" }}>{h.title}</div>
-                  <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{h.text}</p>
+                  <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{h.text}</p>
                 </div>
               )
             )}
-            <div className="card" style={{ padding: 24, background: "var(--voids-beige)" }}>
+            <div className="card" style={{ padding: 24, background: "var(--voids-beige)", display: "flex", flexDirection: "column" }}>
               <CoinIcon />
               <div className="anton" style={{ fontSize: 18, margin: "12px 0 10px" }}>{c.pricingTitle}</div>
-              <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{c.pricingText}</p>
+              <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{c.pricingText}</p>
             </div>
           </div>
         </div>

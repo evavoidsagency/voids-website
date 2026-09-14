@@ -218,11 +218,11 @@ export function ImpactPage({ lang }: { lang: Lang }) {
           <p
             className="anton"
             style={{
-              fontSize: 20,
+              fontSize: 24,
               lineHeight: 1.4,
               color: "var(--voids-purple)",
               margin: "0 auto",
-              maxWidth: 950,
+              maxWidth: 1120,
               textTransform: "none",
             }}
           >
