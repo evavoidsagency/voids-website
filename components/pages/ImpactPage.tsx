@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Photo } from "@/components/ui/Photo";
 import { Button } from "@/components/ui/Button";
 import { CountUp } from "@/components/ui/CountUp";
@@ -249,17 +250,27 @@ export function ImpactPage({ lang }: { lang: Lang }) {
               <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.solutionEyebrow}</span>
               <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px", color: "#fff" }}>{c.solutionTitle}</h2>
               <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0, maxWidth: 520 }}>{c.solutionText}</p>
-              <div className="card" style={{ padding: 24, display: "flex", flexDirection: "column", gap: 14, maxWidth: 520, marginTop: "auto", background: "#fff", borderTop: "3px solid var(--voids-blue)" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <div style={{ width: 40, height: 40, borderRadius: "50%", background: "var(--voids-blue)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
-                    <BriefcaseIcon color="#fff" />
-                  </div>
-                  <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: ".04em", textTransform: "uppercase", color: "var(--voids-blue)" }}>{c.problemCloseLabel}</span>
-                </div>
+              <div
+                className="card"
+                style={{
+                  padding: "22px 26px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                  gap: 12,
+                  maxWidth: 480,
+                  marginTop: "auto",
+                  background: "#fff",
+                  borderLeft: "4px solid var(--voids-blue)",
+                }}
+              >
+                <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: ".04em", textTransform: "uppercase", color: "var(--voids-blue)" }}>{c.problemCloseLabel}</span>
                 <p className="anton" style={{ fontSize: 16, lineHeight: 1.4, textTransform: "none", color: "var(--voids-ink)", margin: 0 }}>
                   {c.problemClose}
                 </p>
-                <Button variant="primary" size="md" href={p("/companies")}>{c.problemCloseCta}</Button>
+                <Link href={p("/companies")} style={{ fontSize: 14, fontWeight: 700, color: "var(--voids-blue)" }}>
+                  {c.problemCloseCta}
+                </Link>
               </div>
             </div>
             <Photo
@@ -346,16 +357,6 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         </div>
       </section>
     </>
-  );
-}
-
-function BriefcaseIcon({ color = "var(--voids-blue)" }: { color?: string }) {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="3" y="8" width="18" height="12" rx="2" stroke={color} strokeWidth="1.6" />
-      <path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke={color} strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M3 13h18" stroke={color} strokeWidth="1.6" />
-    </svg>
   );
 }
 
