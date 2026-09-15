@@ -79,6 +79,7 @@ const COPY: Record<
     costBlogCta: string;
     finalTitle: string;
     finalCta: string;
+    finalInfoCta: string;
   }
 > = {
   nl: {
@@ -185,6 +186,7 @@ const COPY: Record<
     costBlogCta: "Wat kost een werkstudent vergeleken met een fulltime starter?",
     finalTitle: "KLAAR OM TE SCHALEN?",
     finalCta: "Plan een kennismaking",
+    finalInfoCta: "Vraag meer info aan",
   },
   en: {
     eyebrow: "For companies",
@@ -290,6 +292,7 @@ const COPY: Record<
     costBlogCta: "What does a working student cost compared to a full-time starter?",
     finalTitle: "READY TO SCALE?",
     finalCta: "Book an intro call",
+    finalInfoCta: "Request more info",
   },
 };
 
@@ -504,7 +507,12 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
       <section style={{ background: "var(--voids-blue)" }}>
         <div className="wrap" style={{ padding: "52px 32px", textAlign: "center", color: "#fff" }}>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "0 0 20px", color: "#fff" }}>{c.finalTitle}</h2>
-          <CalendlyButton label={c.finalCta} variant="primary" size="lg" />
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+            <Button variant="outline" size="lg" onDark href={`${localePath(lang, "/about")}#contact`}>
+              {c.finalInfoCta}
+            </Button>
+            <CalendlyButton label={c.finalCta} variant="primary" size="lg" />
+          </div>
         </div>
       </section>
     </>
