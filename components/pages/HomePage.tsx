@@ -145,7 +145,7 @@ export function HomePage({ lang }: { lang: Lang }) {
                 {c.ctaTalent}
               </Button>
             </div>
-            <div className="flex-collapse" style={{ display: "flex", gap: 28, marginTop: 40, flexWrap: "nowrap" }}>
+            <div className="flex-collapse" style={{ display: "flex", alignItems: "flex-start", gap: 28, marginTop: 40, flexWrap: "nowrap" }}>
               <div style={{ width: 100, flex: "none", textAlign: "center" }}>
                 <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}><CountUp value={c.stat1Value} /></div>
                 <div style={{ fontSize: 12.5, lineHeight: 1.45, color: "var(--voids-purple-100)", marginTop: 6 }}>{c.stat1Label}</div>

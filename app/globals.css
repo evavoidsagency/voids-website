@@ -569,9 +569,13 @@ a:hover .blog-thumb img {
   .g-collapse {
     grid-template-columns: 1fr !important;
   }
-  /* Any flex row tagged .flex-collapse stacks vertically. */
+  /* Any flex row tagged .flex-collapse stacks vertically. Centered, since
+     stacked children keep whatever fixed widths they had as row columns
+     (e.g. differing widths sized to each item's own content) — top/left
+     alignment would leave them zig-zagged instead of stacked cleanly. */
   .flex-collapse {
     flex-direction: column !important;
+    align-items: center !important;
   }
   /* A photo stretched to match a sibling grid column's height (aspect-ratio:
      auto + height:100%) has no intrinsic size once .g-collapse stacks that
