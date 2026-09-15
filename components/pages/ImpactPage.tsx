@@ -251,24 +251,24 @@ export function ImpactPage({ lang }: { lang: Lang }) {
               <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px", color: "#fff" }}>{c.solutionTitle}</h2>
               <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0, maxWidth: 520 }}>{c.solutionText}</p>
               <div
-                className="card"
                 style={{
-                  padding: "22px 26px",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "flex-start",
-                  gap: 12,
+                  gap: 8,
                   maxWidth: 480,
                   marginTop: 36,
-                  background: "#fff",
-                  borderLeft: "4px solid var(--voids-blue)",
+                  padding: "14px 18px",
+                  borderRadius: "var(--radius-md)",
+                  background: "rgba(255,255,255,.08)",
+                  border: "1px solid rgba(255,255,255,.18)",
                 }}
               >
-                <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: ".04em", textTransform: "uppercase", color: "var(--voids-blue)" }}>{c.problemCloseLabel}</span>
-                <p style={{ fontSize: 15, lineHeight: 1.6, fontWeight: 500, color: "var(--voids-ink)", margin: 0 }}>
+                <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.problemCloseLabel}</span>
+                <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-purple-100)", margin: 0 }}>
                   {c.problemClose}
                 </p>
-                <Link href={p("/companies")} style={{ fontSize: 14, fontWeight: 700, color: "var(--voids-blue)" }}>
+                <Link href={p("/companies")} style={{ fontSize: 13, fontWeight: 600, color: "#fff", textDecoration: "underline", textUnderlineOffset: "3px" }}>
                   {c.problemCloseCta}
                 </Link>
               </div>
