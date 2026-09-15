@@ -76,9 +76,9 @@ const COPY: Record<
     card3Text:
       "Die achterstand stapelt zich op na het afstuderen, en is later niet zomaar recht te trekken met een eerlijker wervingsproces alleen.",
     problemClose:
-      "En dit is niet alleen goed nieuws voor studenten: bedrijven die met werkstudenten werken, bouwen zelf een stabielere pijplijn aan junior talent op, tegen lagere kosten dan een fulltime starter.",
+      "En dit is niet alleen goed nieuws voor studenten: bedrijven die met werkstudenten werken, merken vaak dat ze er zelf ook een stabielere pijplijn aan junior talent mee opbouwen, tegen lagere kosten dan een fulltime starter.",
     problemCloseLabel: "Voor bedrijven",
-    problemCloseCta: "Bekijk wat dit voor jouw bedrijf betekent →",
+    problemCloseCta: "Benieuwd wat dit voor jouw bedrijf kan betekenen →",
     solutionEyebrow: "De oplossing",
     solutionTitle: "HET WERKSTUDENTSCHAP HEFT DE KEUZE OP.",
     solutionText:
@@ -139,9 +139,9 @@ const COPY: Record<
     card3Text:
       "That gap keeps compounding after graduation, and can't simply be undone later by a fairer hiring process alone.",
     problemClose:
-      "And this isn't only good news for students: companies that work with working students build a more stable junior pipeline themselves, at a lower cost than a full-time starter.",
+      "And this isn't only good news for students: companies that work with working students often find they build a more stable junior pipeline themselves too, at a lower cost than a full-time starter.",
     problemCloseLabel: "For companies",
-    problemCloseCta: "See what this means for your company →",
+    problemCloseCta: "Curious what this could mean for your company →",
     solutionEyebrow: "The solution",
     solutionTitle: "THE WORKING-STUDENT MODEL REMOVES THE TRADE-OFF.",
     solutionText:
