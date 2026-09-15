@@ -160,7 +160,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               </div>
             </div>
           </div>
-          <Photo src="/photography/home-hero-5.jpg" alt={c.heroAlt} ratio="3 / 2" priority />
+          <Photo src="/photography/home-hero-5.jpg" alt={c.heroAlt} ratio="16 / 9" objectPosition="center 25%" priority />
         </div>
       </section>
 
