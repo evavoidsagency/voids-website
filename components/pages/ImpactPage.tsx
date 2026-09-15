@@ -1,6 +1,7 @@
 import { Photo } from "@/components/ui/Photo";
 import { Button } from "@/components/ui/Button";
 import { CountUp } from "@/components/ui/CountUp";
+import { Reveal } from "@/components/ui/Reveal";
 import { findSdgIcon } from "@/lib/logos";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { SDGS } from "@/lib/content/sdgs";
@@ -185,6 +186,9 @@ const COPY: Record<
 export function ImpactPage({ lang }: { lang: Lang }) {
   const c = COPY[lang];
   const p = (path: string) => localePath(lang, path);
+  const lastSpace = c.title.lastIndexOf(" ");
+  const titleLead = c.title.slice(0, lastSpace + 1);
+  const titleLast = c.title.slice(lastSpace + 1);
 
   return (
     <>
@@ -192,7 +196,13 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "start", padding: "66px 32px 72px" }}>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
-            <h1 className="anton hero-h1" style={{ fontSize: 52, margin: "14px 0 18px", color: "#fff", whiteSpace: "pre-line" }}>{c.title}</h1>
+            <h1 className="anton hero-h1" style={{ fontSize: 52, margin: "14px 0 18px", color: "#fff", whiteSpace: "pre-line" }}>
+              {titleLead}
+              <span style={{ position: "relative", display: "inline-block" }}>
+                {titleLast}
+                <Squiggle />
+              </span>
+            </h1>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: 0, maxWidth: 520 }}>{c.intro}</p>
           </div>
 
@@ -216,98 +226,112 @@ export function ImpactPage({ lang }: { lang: Lang }) {
       </section>
 
       <section className="wrap" style={{ padding: "64px 32px 72px" }}>
-        <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.problemEyebrow}</span>
-        <h2 className="anton section-h2" style={{ fontSize: 38, margin: "14px 0 20px", maxWidth: 1040 }}>{c.problemTitle}</h2>
-        <p className="anton" style={{ fontSize: 21, lineHeight: 1.4, color: "var(--voids-ink)", textTransform: "none", margin: "0 0 16px", maxWidth: 900 }}>{c.problemHook}</p>
-        <p style={{ fontSize: 16.5, lineHeight: 1.75, color: "var(--voids-ink-muted)", margin: "0 0 44px", maxWidth: 900 }}>{c.problemIntro}</p>
-        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 24, alignItems: "stretch" }}>
+        <Reveal>
+          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.problemEyebrow}</span>
+          <h2 className="anton section-h2" style={{ fontSize: 38, margin: "14px 0 20px", maxWidth: 1040 }}>{c.problemTitle}</h2>
+          <p className="anton" style={{ fontSize: 21, lineHeight: 1.4, color: "var(--voids-ink)", textTransform: "none", margin: "0 0 16px", maxWidth: 900 }}>{c.problemHook}</p>
+          <p style={{ fontSize: 16.5, lineHeight: 1.75, color: "var(--voids-ink-muted)", margin: "0 0 44px", maxWidth: 900 }}>{c.problemIntro}</p>
+        </Reveal>
+        <div className="g-collapse problem-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 24, alignItems: "stretch" }}>
           {[
             { icon: <StipendIcon />, badge: c.card1Badge, title: c.card1Title, text: c.card1Text, answer: c.card1Answer },
             { icon: <ShiftIcon />, badge: c.card2Badge, title: c.card2Title, text: c.card2Text, answer: c.card2Answer },
             { icon: <CompoundIcon />, badge: c.card3Badge, title: c.card3Title, text: c.card3Text, answer: c.card3Answer },
-          ].map((card) => (
-            <div key={card.title} className="card card--hoverable card--accent-blue" style={{ padding: 28, display: "flex", flexDirection: "column" }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                {card.icon}
-                <span className="badge badge--purple">{card.badge}</span>
+          ].map((card, i) => (
+            <Reveal key={card.title} delay={i * 140} className="problem-card" style={{ height: "100%" }}>
+              <div className="card card--hoverable card--accent-blue" style={{ height: "100%", padding: 28, display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  {card.icon}
+                  <span className="badge badge--purple">{card.badge}</span>
+                </div>
+                <div className="anton" style={{ fontSize: 18, margin: "18px 0 10px", color: "var(--voids-blue)" }}>{card.title}</div>
+                <p style={{ fontSize: 14, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{card.text}</p>
+                <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-purple)", fontWeight: 600, margin: "16px 0 0", paddingTop: 14, borderTop: "1px solid var(--voids-line)" }}>{card.answer}</p>
               </div>
-              <div className="anton" style={{ fontSize: 18, margin: "18px 0 10px", color: "var(--voids-blue)" }}>{card.title}</div>
-              <p style={{ fontSize: 14, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{card.text}</p>
-              <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-purple)", fontWeight: 600, margin: "16px 0 0", paddingTop: 14, borderTop: "1px solid var(--voids-line)" }}>{card.answer}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
-        <div style={{ marginTop: 36 }}>
-          <p style={{ fontSize: 14.5, lineHeight: 1.65, color: "var(--voids-ink-soft)", margin: 0, maxWidth: 900 }}>
-            {c.problemClose}
-          </p>
-        </div>
+        <Reveal delay={420}>
+          <div style={{ marginTop: 36 }}>
+            <p style={{ fontSize: 14.5, lineHeight: 1.65, color: "var(--voids-ink-soft)", margin: 0, maxWidth: 900 }}>
+              {c.problemClose}
+            </p>
+          </div>
+        </Reveal>
       </section>
 
       <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
-        <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "start", padding: "64px 32px" }}>
-          <div>
-            <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.solutionEyebrow}</span>
-            <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px", color: "#fff" }}>{c.solutionTitle}</h2>
-            <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0, maxWidth: 520 }}>{c.solutionText}</p>
+        <Reveal>
+          <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "start", padding: "64px 32px" }}>
+            <div>
+              <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.solutionEyebrow}</span>
+              <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px", color: "#fff" }}>{c.solutionTitle}</h2>
+              <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0, maxWidth: 520 }}>{c.solutionText}</p>
+            </div>
+            <Photo src="/photography/impact-band.jpg" alt={c.bandAlt} ratio="4 / 5" />
           </div>
-          <Photo src="/photography/impact-band.jpg" alt={c.bandAlt} ratio="4 / 5" />
-        </div>
+        </Reveal>
       </section>
 
       <section style={{ background: "#fff" }}>
-        <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
-          <Photo src="/photography/impact-workshops.jpg" alt={c.workshopsAlt} ratio="4 / 3" />
-          <div>
-            <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.workshopsEyebrow}</span>
-            <h2 className="anton section-h2" style={{ fontSize: 32, margin: "10px 0 14px" }}>{c.workshopsTitle}</h2>
-            <p style={{ fontSize: 15.5, lineHeight: 1.7, color: "var(--voids-ink-muted)", margin: "0 0 22px", maxWidth: 480 }}>{c.workshopsText}</p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {c.workshopsTopics.map((topic) => (
-                <span key={topic} className="badge badge--purple">{topic}</span>
-              ))}
+        <Reveal>
+          <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
+            <Photo src="/photography/impact-workshops.jpg" alt={c.workshopsAlt} ratio="4 / 3" />
+            <div>
+              <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.workshopsEyebrow}</span>
+              <h2 className="anton section-h2" style={{ fontSize: 32, margin: "10px 0 14px" }}>{c.workshopsTitle}</h2>
+              <p style={{ fontSize: 15.5, lineHeight: 1.7, color: "var(--voids-ink-muted)", margin: "0 0 22px", maxWidth: 480 }}>{c.workshopsText}</p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {c.workshopsTopics.map((topic) => (
+                  <span key={topic} className="badge badge--purple">{topic}</span>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section style={{ background: "var(--voids-purple-100)" }}>
-        <div className="wrap" style={{ padding: "60px 32px" }}>
-          <h2 className="anton section-h2" style={{ fontSize: 32, margin: "0 0 8px" }}>{c.sdgTitle}</h2>
-          <p style={{ fontSize: 14, color: "var(--voids-ink-muted)", margin: "0 0 26px" }}>{c.sdgSub}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, alignItems: "stretch" }}>
-            {SDGS[lang].map((s) => {
-              const icon = findSdgIcon(s.num);
-              return (
-                <div key={s.num} style={{ height: "100%", display: "flex", flexDirection: "column", borderRadius: "var(--radius-md)", overflow: "hidden", boxShadow: "var(--shadow-sm)" }}>
-                  <div style={{ background: s.color, minHeight: 180, display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
-                    {icon ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={icon} alt={`SDG ${s.num}: ${s.title}`} style={{ width: 132, height: 132, borderRadius: 14, boxShadow: "0 6px 18px rgba(0,0,0,.18)" }} />
-                    ) : (
-                      <div className="anton" style={{ fontSize: 72, lineHeight: 0.9, color: "#fff" }}>{s.num}</div>
-                    )}
+        <Reveal>
+          <div className="wrap" style={{ padding: "60px 32px" }}>
+            <h2 className="anton section-h2" style={{ fontSize: 32, margin: "0 0 8px" }}>{c.sdgTitle}</h2>
+            <p style={{ fontSize: 14, color: "var(--voids-ink-muted)", margin: "0 0 26px" }}>{c.sdgSub}</p>
+            <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20, alignItems: "stretch" }}>
+              {SDGS[lang].map((s) => {
+                const icon = findSdgIcon(s.num);
+                return (
+                  <div key={s.num} style={{ height: "100%", display: "flex", flexDirection: "column", borderRadius: "var(--radius-md)", overflow: "hidden", boxShadow: "var(--shadow-sm)" }}>
+                    <div style={{ background: s.color, minHeight: 180, display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
+                      {icon ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={icon} alt={`SDG ${s.num}: ${s.title}`} style={{ width: 132, height: 132, borderRadius: 14, boxShadow: "0 6px 18px rgba(0,0,0,.18)" }} />
+                      ) : (
+                        <div className="anton" style={{ fontSize: 72, lineHeight: 0.9, color: "#fff" }}>{s.num}</div>
+                      )}
+                    </div>
+                    <div style={{ background: "#fff", padding: "18px 20px", flex: 1, display: "flex", flexDirection: "column", gap: 6, textAlign: "center", alignItems: "center" }}>
+                      <div style={{ fontSize: 15, fontWeight: 800, lineHeight: 1.25, color: s.color, overflowWrap: "anywhere" }}>{s.title}</div>
+                      <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{s.text}</p>
+                    </div>
                   </div>
-                  <div style={{ background: "#fff", padding: "18px 20px", flex: 1, display: "flex", flexDirection: "column", gap: 6, textAlign: "center", alignItems: "center" }}>
-                    <div style={{ fontSize: 15, fontWeight: 800, lineHeight: 1.25, color: s.color, overflowWrap: "anywhere" }}>{s.title}</div>
-                    <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{s.text}</p>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section style={{ background: "var(--voids-beige)" }}>
-        <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
-          <div>
-            <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.movementEyebrow}</span>
-            <h2 className="anton section-h2" style={{ fontSize: 34, margin: "10px 0 14px" }}>{c.movementTitle}</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.movementText}</p>
+        <Reveal>
+          <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
+            <div>
+              <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.movementEyebrow}</span>
+              <h2 className="anton section-h2" style={{ fontSize: 34, margin: "10px 0 14px" }}>{c.movementTitle}</h2>
+              <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.movementText}</p>
+            </div>
+            <Photo src="/photography/impact-employers.jpg" alt={c.movementAlt} ratio="4 / 3" />
           </div>
-          <Photo src="/photography/impact-employers.jpg" alt={c.movementAlt} ratio="4 / 3" />
-        </div>
+        </Reveal>
       </section>
 
       <section style={{ background: "var(--voids-purple)" }}>
@@ -321,6 +345,21 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         </div>
       </section>
     </>
+  );
+}
+
+function Squiggle() {
+  return (
+    <svg
+      width="100%"
+      height="12"
+      viewBox="0 0 160 12"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+      style={{ position: "absolute", left: 0, bottom: -8, width: "100%" }}
+    >
+      <path d="M2 8c14-8 26-8 40 0s26 8 40 0 26-8 40 0 26 8 38 0" stroke="var(--voids-blue)" strokeWidth="4" strokeLinecap="round" fill="none" />
+    </svg>
   );
 }
 

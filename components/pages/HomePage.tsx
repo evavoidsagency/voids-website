@@ -49,7 +49,7 @@ const COPY: Record<
     stat1Value: "4.000+",
     stat1Label: "in de community",
     stat2Value: "100%",
-    stat2Label: "transparante voorwaarden & eerlijke beloning",
+    stat2Label: "transparante voorwaarden & eerlijke beloning",
     stat3Value: "10%",
     stat3Label: "winst naar impact",
     trustedBy: "VERTROUWD DOOR",

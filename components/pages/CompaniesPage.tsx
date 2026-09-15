@@ -349,7 +349,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyWsEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "8px 0 14px", maxWidth: 860 }}>{c.whyWsTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 1040 }}>{c.whyWsIntro}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 16, maxWidth: 1040, alignItems: "stretch" }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gridAutoRows: "1fr", gap: 16, maxWidth: 1040, alignItems: "stretch" }}>
             {WHY_WS[lang].map((w) => (
               <div key={w.title} className="card card--hoverable card--accent-purple" style={{ padding: 22, height: "100%", display: "flex", flexDirection: "column" }}>
                 <div style={{ width: 44, height: 44, borderRadius: "50%", background: "var(--voids-purple-100)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
@@ -572,9 +572,29 @@ function GrowthIcon() {
   );
 }
 
-const WHY_WS_ICONS: Record<"flex" | "trust" | "growth" | "spark", React.ReactNode> = {
+const WHY_WS_ICONS: Record<"flex" | "trust" | "growth" | "spark" | "focus" | "pipeline", React.ReactNode> = {
   flex: <SwitchIcon />,
   trust: <TrustIcon />,
   growth: <GrowthIcon />,
   spark: <SparkIcon />,
+  focus: <FocusIcon />,
+  pipeline: <PipelineIcon />,
 };
+
+function FocusIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <circle cx="14" cy="14" r="10" stroke="var(--voids-purple)" strokeWidth="1.8" />
+      <circle cx="14" cy="14" r="5.5" stroke="var(--voids-purple)" strokeWidth="1.8" />
+      <circle cx="14" cy="14" r="1.5" fill="var(--voids-purple)" />
+    </svg>
+  );
+}
+
+function PipelineIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <path d="M4 8h20l-6 7v9l-8 2v-11L4 8Z" stroke="var(--voids-purple)" strokeWidth="1.8" strokeLinejoin="round" />
+    </svg>
+  );
+}

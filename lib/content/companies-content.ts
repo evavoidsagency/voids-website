@@ -44,7 +44,7 @@ export const ROLE_TYPES: Record<Lang, string[]> = {
   en: ["Business development", "Sales", "Marketing", "Communications", "Data", "AI & automation", "Finance", "Legal", "Founder's associate", "Operations", "and more"],
 };
 
-export const WHY_WS: Record<Lang, { title: string; text: string; icon: "flex" | "trust" | "growth" | "spark" }[]> = {
+export const WHY_WS: Record<Lang, { title: string; text: string; icon: "flex" | "trust" | "growth" | "spark" | "focus" | "pipeline" }[]> = {
   nl: [
     {
       title: "Flexibel & kostenefficiënt",
@@ -52,9 +52,19 @@ export const WHY_WS: Record<Lang, { title: string; text: string; icon: "flex" | 
       icon: "flex",
     },
     {
+      title: "Ruimte voor je kernteam",
+      text: "Operationeel werk gaat naar een werkstudent, zodat je kernteam zich kan richten op de strategische prioriteiten waar zij het verschil maken.",
+      icon: "focus",
+    },
+    {
       title: "Eerst goed leren kennen",
       text: "Je bouwt een langere relatie op dan bij een korte opdracht en leert iemand écht kennen vóórdat er een vast aanbod op tafel ligt.",
       icon: "trust",
+    },
+    {
+      title: "Continuïteit, geen constant verloop",
+      text: "Waar kortlopende stages steeds opnieuw inwerken betekenen, bouw je met werkstudenten aan een stabiele pijplijn aan junior talent die langer meedraait.",
+      icon: "pipeline",
     },
     {
       title: "Ruimte om door te groeien",
@@ -74,9 +84,19 @@ export const WHY_WS: Record<Lang, { title: string; text: string; icon: "flex" | 
       icon: "flex",
     },
     {
+      title: "Room for your core team",
+      text: "Operational work goes to a working student, so your core team can focus on the strategic priorities where they make the difference.",
+      icon: "focus",
+    },
+    {
       title: "Get to know them first",
       text: "You build a longer relationship than a short assignment gives you, and get to really know someone before any permanent offer is on the table.",
       icon: "trust",
+    },
+    {
+      title: "Continuity, not constant churn",
+      text: "Where short-cycle internships mean re-onboarding again and again, working students build a stable pipeline of junior talent that stays longer.",
+      icon: "pipeline",
     },
     {
       title: "Room to grow",

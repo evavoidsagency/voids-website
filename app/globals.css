@@ -421,6 +421,25 @@ button:focus-visible,
   }
 }
 
+/* Problem cards on the Impact page — an arrow between consecutive cards,
+   since each one is a consequence of the last (a causal chain, not just a
+   grid of unrelated facts). */
+.problem-card {
+  position: relative;
+}
+@media (min-width: 861px) {
+  .problem-grid > .problem-card:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    top: 24px;
+    right: -21px;
+    font-size: 20px;
+    line-height: 1;
+    color: var(--voids-blue);
+    opacity: 0.45;
+  }
+}
+
 .card--accent-blue {
   border-top: 3px solid var(--voids-blue);
 }
