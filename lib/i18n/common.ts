@@ -118,15 +118,15 @@ export const t = {
   contactLabel: { nl: "Contact", en: "Contact" },
   moreLabel: { nl: "Meer", en: "More" },
   whatsappCta: { nl: "💜 WhatsApp", en: "💜 WhatsApp" },
-  joinTalentPool: { nl: "Join de talentpool", en: "Join the talent pool" },
+  joinTalentPool: { nl: "Start je profiel", en: "Join the talent pool" },
   openMenu: { nl: "Open menu", en: "Open menu" },
   closeMenu: { nl: "Sluit menu", en: "Close menu" },
-  whatsModalTitle: { nl: "JOIN DE COMMUNITY 💜", en: "JOIN THE COMMUNITY 💜" },
+  whatsModalTitle: { nl: "WORD LID VAN DE COMMUNITY 💜", en: "JOIN THE COMMUNITY 💜" },
   whatsModalSub: {
     nl: "Kies je kanaal. Passende jobs landen direct in je WhatsApp.",
     en: "Pick your channel. Matching jobs land straight in your WhatsApp.",
   },
-  whatsJoin: { nl: "Join →", en: "Join →" },
+  whatsJoin: { nl: "Aansluiten →", en: "Join →" },
   whatsMaybeLater: { nl: "Misschien later", en: "Maybe later" },
   footerTagline: {
     nl: "Wij verbinden hoogopgeleid talent aan ambitieuze organisaties.",

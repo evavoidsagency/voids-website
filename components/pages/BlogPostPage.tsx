@@ -26,7 +26,7 @@ const CTA_COPY: Record<Lang, Record<BlogAud, { title: string; sub: string }>> = 
     },
     talent: {
       title: "OP ZOEK NAAR EEN ROL DIE BIJ JE PAST?",
-      sub: "Join de WhatsApp-community en krijg passende kansen rechtstreeks in je app.",
+      sub: "Sluit je aan bij de WhatsApp-community en krijg passende kansen rechtstreeks in je app.",
     },
     beide: {
       title: "KLAAR OM VERDER TE PRATEN?",

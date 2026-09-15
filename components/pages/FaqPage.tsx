@@ -8,7 +8,7 @@ const COPY: Record<Lang, { eyebrow: string; title: string; ctaTitle: string; cta
     eyebrow: "FAQ",
     title: "VEELGESTELDE VRAGEN.",
     ctaTitle: "STAAT JE VRAAG ER NIET BIJ?",
-    ctaText: "Join de WhatsApp-community of mail ons direct. We reageren zo snel mogelijk.",
+    ctaText: "Sluit je aan bij de WhatsApp-community of mail ons direct. We reageren zo snel mogelijk.",
     ctaWhats: "💜 Join WhatsApp",
     ctaMail: "Mail ons",
   },
