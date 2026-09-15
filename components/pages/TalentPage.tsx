@@ -130,7 +130,7 @@ const COPY: Record<
       "Bij een plaatsing ontvang jij een beloning.",
     ],
     finalTitle: "KLAAR OM GEZIEN TE WORDEN?",
-    finalText: "Beantwoord een paar vragen en je staat op de radar bij bedrijven die bij je passen.",
+    finalText: "Beantwoord een paar vragen en wij stellen je proactief voor bij bedrijven die bij je passen.",
     finalCta: "Meld je nu aan",
   },
   en: {
