@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Photo } from "@/components/ui/Photo";
 import { ContactForm } from "@/components/pages/ContactForm";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
-import { Disclosure } from "@/components/ui/Disclosure";
 import { SOCIALS, localePath, type Lang } from "@/lib/i18n/common";
 import { TEAM } from "@/lib/content/team";
 import { findTeamPhoto } from "@/lib/logos";
@@ -21,16 +20,6 @@ const COPY: Record<
     whatEyebrow: string;
     whatTitle: string;
     whatCards: { verb: string; title: string; text: string; path?: string; cta?: string }[];
-    recapWhyLabel: string;
-    recapWhyStatValue: string;
-    recapWhyText: string;
-    recapHowLabel: string;
-    recapHowStatValue: string;
-    recapHowText: string;
-    recapWhatLabel: string;
-    recapWhatText: string;
-    recapWhatTopics: string[];
-    recapWhatCta: string;
     foundersAlt: string;
     foundersPending: string;
     teamTitle: string;
@@ -80,16 +69,6 @@ const COPY: Record<
         cta: "Meer over advies & branding →",
       },
     ],
-    recapWhyLabel: "WAAROM VOIDS?",
-    recapWhyStatValue: "10%",
-    recapWhyText: "van onze winst gaat vanaf medio 2027 naar gelijke-kansen-initiatieven voor studenten. Onze voorkeur voor werkstudenten is onderdeel van die missie, geen verdienmodel.",
-    recapHowLabel: "HOE WE WERKEN",
-    recapHowStatValue: "81%",
-    recapHowText: "van de werkstudenten die we plaatsen blijft minimaal een jaar op zijn rol. Het bewijs dat verder kijken dan een cv daadwerkelijk tot betere matches leidt.",
-    recapWhatLabel: "WAT WE DOEN",
-    recapWhatText: "En dat stopt niet bij recruitment: we geven ook workshops, gastlessen en masterclasses op scholen en bij studieverenigingen, over de stap van studie naar werk.",
-    recapWhatTopics: ["Carrière-oriëntatie", "Solliciteren & je cv", "Personal branding", "Werkstudentschap als opstap"],
-    recapWhatCta: "Meer over onze impact →",
     foundersAlt: "Eva en Wieke, de oprichters van VOIDS",
     foundersPending: "Foto van Eva & Wieke volgt",
     teamTitle: "HET TEAM",
@@ -138,16 +117,6 @@ const COPY: Record<
         cta: "More on advice & branding →",
       },
     ],
-    recapWhyLabel: "WHY VOIDS?",
-    recapWhyStatValue: "10%",
-    recapWhyText: "of our profit goes to equal-opportunity initiatives for students from mid-2027. Our preference for working students is part of that mission, not a business model.",
-    recapHowLabel: "HOW WE WORK",
-    recapHowStatValue: "81%",
-    recapHowText: "of the working students we place stay in their role for at least a year. Proof that looking past a CV actually leads to better matches.",
-    recapWhatLabel: "WHAT WE DO",
-    recapWhatText: "And it doesn't stop at recruitment: we also run workshops, guest lectures and masterclasses at schools and study associations, on the step from study to work.",
-    recapWhatTopics: ["Career orientation", "Applying & your CV", "Personal branding", "Working student roles as a stepping stone"],
-    recapWhatCta: "More on our impact →",
     foundersAlt: "Eva and Wieke, the founders of VOIDS",
     foundersPending: "Photo of Eva & Wieke coming soon",
     teamTitle: "THE TEAM",
@@ -170,13 +139,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.eyebrow}</span>
           <h1 className="anton hero-h1" style={{ fontSize: 50, margin: "12px 0 16px" }}>{c.title}</h1>
           <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 14px" }}>{c.p1}</p>
-          <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 20px" }}>{c.p2}</p>
-          <Disclosure label={c.recapWhyLabel}>
-            <div style={{ display: "flex", alignItems: "baseline", gap: 12, maxWidth: 440 }}>
-              <span className="anton" style={{ fontSize: 34, color: "var(--voids-purple)", flex: "none" }}>{c.recapWhyStatValue}</span>
-              <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{c.recapWhyText}</p>
-            </div>
-          </Disclosure>
+          <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.p2}</p>
         </div>
         {foundersPhoto ? (
           <Photo src={foundersPhoto} alt={c.foundersAlt} ratio="1600 / 1695" priority />
@@ -227,14 +190,6 @@ export function AboutPage({ lang }: { lang: Lang }) {
               </span>
             ))}
           </div>
-          <div style={{ marginTop: 22 }}>
-            <Disclosure label={c.recapHowLabel}>
-              <div style={{ display: "flex", alignItems: "baseline", gap: 12, maxWidth: 560 }}>
-                <span className="anton" style={{ fontSize: 34, color: "var(--voids-purple)", flex: "none" }}>{c.recapHowStatValue}</span>
-                <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-soft)", margin: 0 }}>{c.recapHowText}</p>
-              </div>
-            </Disclosure>
-          </div>
         </div>
       </section>
 
@@ -263,21 +218,6 @@ export function AboutPage({ lang }: { lang: Lang }) {
                 </div>
               );
             })}
-          </div>
-          <div style={{ marginTop: 24 }}>
-            <Disclosure label={c.recapWhatLabel}>
-              <div style={{ maxWidth: 640 }}>
-                <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 12px" }}>{c.recapWhatText}</p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 12 }}>
-                  {c.recapWhatTopics.map((topic) => (
-                    <span key={topic} className="badge badge--blue">{topic}</span>
-                  ))}
-                </div>
-                <Link href={localePath(lang, "/impact")} style={{ fontSize: 13, fontWeight: 600, color: "var(--voids-blue)" }}>
-                  {c.recapWhatCta}
-                </Link>
-              </div>
-            </Disclosure>
           </div>
         </div>
       </section>
