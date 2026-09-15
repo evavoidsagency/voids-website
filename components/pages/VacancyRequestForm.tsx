@@ -62,7 +62,7 @@ export function VacancyRequestForm({ lang }: { lang: Lang }) {
 
   return (
     <form
-      className="card"
+      className="card card--accent-blue"
       style={{ padding: 26 }}
       onSubmit={async (e) => {
         e.preventDefault();

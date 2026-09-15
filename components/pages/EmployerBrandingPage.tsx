@@ -1,6 +1,7 @@
 import { CalendlyButton } from "@/components/site/CalendlyButton";
+import { Button } from "@/components/ui/Button";
 import { Photo } from "@/components/ui/Photo";
-import type { Lang } from "@/lib/i18n/common";
+import { localePath, type Lang } from "@/lib/i18n/common";
 
 const COPY: Record<
   Lang,
@@ -18,6 +19,7 @@ const COPY: Record<
     contactTitle: string;
     contactText: string;
     contactCta: string;
+    contactInfoCta: string;
   }
 > = {
   nl: {
@@ -75,6 +77,7 @@ const COPY: Record<
     contactTitle: "EENS SPARREN?",
     contactText: "Plan een vrijblijvend gesprek over je junior-strategie.",
     contactCta: "Plan een kennismaking",
+    contactInfoCta: "Vraag meer info aan",
   },
   en: {
     eyebrow: "Advice & employer branding",
@@ -131,6 +134,7 @@ const COPY: Record<
     contactTitle: "WANT TO SPAR?",
     contactText: "Book a free-form call about your junior strategy.",
     contactCta: "Book an intro call",
+    contactInfoCta: "Request more info",
   },
 };
 
@@ -224,7 +228,12 @@ export function EmployerBrandingPage({ lang }: { lang: Lang }) {
             <h2 className="anton section-h2" style={{ fontSize: 26, color: "#fff", margin: "0 0 6px" }}>{c.contactTitle}</h2>
             <p style={{ fontSize: 14.5, color: "var(--voids-purple-100)", margin: 0 }}>{c.contactText}</p>
           </div>
-          <CalendlyButton label={c.contactCta} variant="secondary" size="md" />
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <Button variant="outline" size="md" onDark href={`${localePath(lang, "/about")}#contact`}>
+              {c.contactInfoCta}
+            </Button>
+            <CalendlyButton label={c.contactCta} variant="secondary" size="md" />
+          </div>
         </div>
       </section>
     </>

@@ -26,6 +26,7 @@ const COPY: Record<
     contactText: string;
     contactCta: string;
     orCallLabel: string;
+    steps: { title: string; text: string }[];
   }
 > = {
   nl: {
@@ -61,6 +62,11 @@ const COPY: Record<
     contactText: "Laat hieronder weten wat voor rol je zoekt, dan nemen we contact op met meer info en de opties.",
     contactCta: "Neem contact op",
     orCallLabel: "Liever meteen sparren?",
+    steps: [
+      { title: "Jij vult het formulier in", text: "Twee minuten werk: vertel ons over de rol en wat je zoekt." },
+      { title: "Wij nemen contact op", text: "Binnen 1 werkdag hoor je van ons, met de opties en prijzen op maat." },
+      { title: "Jij kiest, wij regelen de rest", text: "Los per plaatsing of doorlopend: jij bepaalt wat past." },
+    ],
   },
   en: {
     eyebrow: "Advertise vacancies",
@@ -95,6 +101,11 @@ const COPY: Record<
     contactText: "Let us know what kind of role you're hiring for below, and we'll get in touch with more info and the options.",
     contactCta: "Get in touch",
     orCallLabel: "Rather talk it through?",
+    steps: [
+      { title: "You fill in the form", text: "Two minutes of work: tell us about the role and what you're after." },
+      { title: "We get in touch", text: "You'll hear from us within 1 business day, with tailored options and pricing." },
+      { title: "You choose, we handle the rest", text: "Per placement or ongoing: you decide what fits." },
+    ],
   },
 };
 
@@ -167,10 +178,38 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
       </section>
 
       <section style={{ background: "var(--voids-purple)" }}>
-        <div className="wrap g-collapse" style={{ padding: "56px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
+        <div className="wrap g-collapse" style={{ padding: "56px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "start" }}>
           <div>
             <h2 className="anton section-h2" style={{ fontSize: 30, color: "#fff", margin: "0 0 12px" }}>{c.contactTitle}</h2>
-            <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 22px", maxWidth: 420 }}>{c.contactText}</p>
+            <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 28px", maxWidth: 420 }}>{c.contactText}</p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 18, marginBottom: 28 }}>
+              {c.steps.map((s, i) => (
+                <div key={s.title} style={{ display: "flex", gap: 14 }}>
+                  <div
+                    className="anton"
+                    style={{
+                      width: 30,
+                      height: 30,
+                      borderRadius: "50%",
+                      background: "rgba(255,255,255,.1)",
+                      border: "1px solid rgba(255,255,255,.25)",
+                      color: "#fff",
+                      fontSize: 13,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flex: "none",
+                    }}
+                  >
+                    {i + 1}
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 14.5, fontWeight: 600, color: "#fff", marginBottom: 2 }}>{s.title}</div>
+                    <p style={{ fontSize: 13.5, lineHeight: 1.5, color: "var(--voids-purple-100)", margin: 0 }}>{s.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
             <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
               <span style={{ fontSize: 13.5, color: "var(--voids-purple-100)" }}>{c.orCallLabel}</span>
               <CalendlyButton label={c.contactCta} variant="outline" size="md" onDark />
