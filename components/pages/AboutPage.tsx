@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Photo } from "@/components/ui/Photo";
 import { ContactForm } from "@/components/pages/ContactForm";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
-import { AboutAccordion } from "@/components/pages/AboutAccordion";
+import { Disclosure } from "@/components/ui/Disclosure";
 import { SOCIALS, localePath, type Lang } from "@/lib/i18n/common";
 import { TEAM } from "@/lib/content/team";
 import { findTeamPhoto } from "@/lib/logos";
@@ -21,8 +21,6 @@ const COPY: Record<
     whatEyebrow: string;
     whatTitle: string;
     whatCards: { verb: string; title: string; text: string; path?: string; cta?: string }[];
-    recapEyebrow: string;
-    recapTitle: string;
     recapWhyLabel: string;
     recapWhyText: string;
     recapHowLabel: string;
@@ -78,8 +76,6 @@ const COPY: Record<
         cta: "Meer over advies & branding →",
       },
     ],
-    recapEyebrow: "In het kort",
-    recapTitle: "WAAROM, HOE EN WAT.",
     recapWhyLabel: "WAAROM VOIDS?",
     recapWhyText: "Talent zit overal. Toegang tot ervaring niet. Wij verbinden de juiste mensen aan de juiste plek, ongeacht wie ze kennen of wat ze zich konden veroorloven.",
     recapHowLabel: "HOE WE WERKEN",
@@ -134,8 +130,6 @@ const COPY: Record<
         cta: "More on advice & branding →",
       },
     ],
-    recapEyebrow: "In short",
-    recapTitle: "WHY, HOW AND WHAT.",
     recapWhyLabel: "WHY VOIDS?",
     recapWhyText: "Talent is everywhere. Access to experience isn't. We connect the right people to the right place, regardless of who they know or what they could afford.",
     recapHowLabel: "HOW WE WORK",
@@ -164,7 +158,10 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.eyebrow}</span>
           <h1 className="anton hero-h1" style={{ fontSize: 50, margin: "12px 0 16px" }}>{c.title}</h1>
           <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 14px" }}>{c.p1}</p>
-          <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.p2}</p>
+          <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 20px" }}>{c.p2}</p>
+          <Disclosure label={c.recapWhyLabel}>
+            <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 460 }}>{c.recapWhyText}</p>
+          </Disclosure>
         </div>
         {foundersPhoto ? (
           <Photo src={foundersPhoto} alt={c.foundersAlt} ratio="1600 / 1695" />
@@ -215,6 +212,11 @@ export function AboutPage({ lang }: { lang: Lang }) {
               </span>
             ))}
           </div>
+          <div style={{ marginTop: 22 }}>
+            <Disclosure label={c.recapHowLabel}>
+              <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: 0, maxWidth: 640 }}>{c.recapHowText}</p>
+            </Disclosure>
+          </div>
         </div>
       </section>
 
@@ -244,6 +246,11 @@ export function AboutPage({ lang }: { lang: Lang }) {
               );
             })}
           </div>
+          <div style={{ marginTop: 24 }}>
+            <Disclosure label={c.recapWhatLabel}>
+              <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 640 }}>{c.recapWhatText}</p>
+            </Disclosure>
+          </div>
         </div>
       </section>
 
@@ -265,20 +272,6 @@ export function AboutPage({ lang }: { lang: Lang }) {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section style={{ background: "var(--voids-purple)" }}>
-        <div className="wrap" style={{ padding: "52px 32px 8px" }}>
-          <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.recapEyebrow}</span>
-          <h2 className="anton section-h2" style={{ fontSize: 28, color: "#fff", margin: "8px 0 20px" }}>{c.recapTitle}</h2>
-          <AboutAccordion
-            items={[
-              { title: c.recapWhyLabel, icon: <RecapWhyIcon />, content: <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0 }}>{c.recapWhyText}</p> },
-              { title: c.recapHowLabel, icon: <RecapHowIcon />, content: <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0 }}>{c.recapHowText}</p> },
-              { title: c.recapWhatLabel, icon: <RecapWhatIcon />, content: <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0 }}>{c.recapWhatText}</p> },
-            ]}
-          />
         </div>
       </section>
 
@@ -314,34 +307,6 @@ function CheckIcon() {
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
       <circle cx="7" cy="7" r="6.25" stroke="var(--voids-purple)" strokeWidth="1.4" />
       <path d="M4.3 7.1l1.9 1.9 3.5-3.9" stroke="var(--voids-purple)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function RecapWhyIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path d="M10 17s-6.5-4-6.5-8.7A3.8 3.8 0 0 1 10 6a3.8 3.8 0 0 1 6.5 2.3C16.5 13 10 17 10 17Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function RecapHowIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path d="M10 3l7 3.5-7 3.5-7-3.5L10 3Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
-      <path d="M3 10.5l7 3.5 7-3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M3 14l7 3.5 7-3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function RecapWhatIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <rect x="3" y="7.5" width="14" height="9.5" rx="1.6" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M7.2 7.5V6a1.8 1.8 0 0 1 1.8-1.8h2a1.8 1.8 0 0 1 1.8 1.8v1.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M3 11.8h14" stroke="currentColor" strokeWidth="1.6" />
     </svg>
   );
 }
