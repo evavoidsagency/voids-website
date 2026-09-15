@@ -319,10 +319,10 @@ export function ImpactPage({ lang }: { lang: Lang }) {
                 const icon = findSdgIcon(s.num);
                 return (
                   <div key={s.num} style={{ height: "100%", display: "flex", flexDirection: "column", borderRadius: "var(--radius-md)", overflow: "hidden", boxShadow: "var(--shadow-sm)" }}>
-                    <div style={{ background: s.color, minHeight: 180, display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
+                    <div style={{ background: s.color, minHeight: 180, display: "flex", alignItems: "center", justifyContent: "center" }}>
                       {icon ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={icon} alt={`SDG ${s.num}: ${s.title}`} style={{ width: 132, height: 132, borderRadius: 14, boxShadow: "0 6px 18px rgba(0,0,0,.18)" }} />
+                        <img src={icon} alt={`SDG ${s.num}: ${s.title}`} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                       ) : (
                         <div className="anton" style={{ fontSize: 72, lineHeight: 0.9, color: "#fff" }}>{s.num}</div>
                       )}
