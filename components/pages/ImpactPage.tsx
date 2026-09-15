@@ -297,7 +297,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
             <h2 className="anton section-h2" style={{ fontSize: 34, margin: "10px 0 14px" }}>{c.movementTitle}</h2>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.movementText}</p>
           </div>
-          <Photo src="/photography/impact-movement.jpg" alt={c.movementAlt} ratio="4 / 3" />
+          <Photo src="/photography/impact-employers.jpg" alt={c.movementAlt} ratio="4 / 3" />
         </div>
       </section>
 

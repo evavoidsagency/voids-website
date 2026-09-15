@@ -280,7 +280,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
             <span style={{ color: "var(--text-strong)" }}>VOIDS </span>
             <span style={{ color: "var(--voids-purple)", fontStyle: "italic" }}>TALENT AS A SERVICE</span>
           </h2>
-          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 36px", maxWidth: 640 }}>{c.taasSub}</p>
+          <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 36px", maxWidth: 900 }}>{c.taasSub}</p>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}>
             <div className="card" style={{ padding: 28, height: "100%", display: "flex", flexDirection: "column" }}>
               <span
