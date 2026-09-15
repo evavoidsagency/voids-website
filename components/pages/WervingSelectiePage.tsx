@@ -4,6 +4,7 @@ import { Photo } from "@/components/ui/Photo";
 import { Button } from "@/components/ui/Button";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
 import { CountUp } from "@/components/ui/CountUp";
+import { Reveal } from "@/components/ui/Reveal";
 import { findLogoFile, findTestimonialPhoto } from "@/lib/logos";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { PROCESS } from "@/lib/content/companies-content";
@@ -265,20 +266,28 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "56px 32px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 26, margin: "0 0 4px", maxWidth: 760 }}>{c.profilesTitle}</h2>
           <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 24px", maxWidth: 1040 }}>{c.profilesSub}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 16, alignItems: "stretch" }}>
-            {TALENT_PROFILES[lang].map((pr) => (
-              <div key={pr.field} className="card card--hoverable" style={{ padding: 20, height: "100%", display: "flex", flexDirection: "column" }}>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 14 }}>
-                  <div style={{ width: 38, height: 38, borderRadius: "50%", background: "var(--voids-purple-100)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
-                    {FIELD_ICONS[pr.field] ?? <SparkleIcon />}
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gridAutoRows: "1fr", gap: 16, alignItems: "stretch" }}>
+            {TALENT_PROFILES[lang].map((pr, i) => {
+              const accent = i % 2 === 0 ? "purple" : "blue";
+              const color = accent === "purple" ? "var(--voids-purple)" : "var(--voids-blue)";
+              const bg = accent === "purple" ? "var(--voids-purple-100)" : "var(--voids-blue-100)";
+              const FieldIcon = FIELD_ICONS[pr.field] ?? SparkleIcon;
+              return (
+                <Reveal key={pr.field} delay={i * 60} style={{ height: "100%" }}>
+                  <div className={`card card--hoverable card--accent-${accent}`} style={{ padding: 20, height: "100%", display: "flex", flexDirection: "column" }}>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, marginBottom: 14 }}>
+                      <div style={{ width: 44, height: 44, borderRadius: "50%", background: bg, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
+                        <FieldIcon color={color} />
+                      </div>
+                      <span className={`badge badge--${accent}`} style={{ whiteSpace: "nowrap" }}>{pr.field}</span>
+                    </div>
+                    <div style={{ fontSize: 14, fontWeight: 600, margin: "0 0 4px" }}>{pr.edu}</div>
+                    <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", marginBottom: 14 }}>{pr.skills}</div>
+                    <p className="anton" style={{ fontSize: 14, lineHeight: 1.4, color, textTransform: "none", margin: "auto 0 0", paddingTop: 12, borderTop: "1px solid var(--voids-line)" }}>{pr.traits}</p>
                   </div>
-                  <span className="badge badge--purple" style={{ whiteSpace: "nowrap" }}>{pr.field}</span>
-                </div>
-                <div style={{ fontSize: 14, fontWeight: 600, margin: "0 0 4px" }}>{pr.edu}</div>
-                <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", marginBottom: 12 }}>{pr.skills}</div>
-                <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-soft)", margin: 0, fontStyle: "italic" }}>{pr.traits}</p>
-              </div>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -356,58 +365,58 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
   );
 }
 
-function MarketingIcon() {
+function MarketingIcon({ color = "var(--voids-purple)" }: { color?: string }) {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M3 10v4h4l6 4V6L7 10H3Z" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinejoin="round" />
-      <path d="M17 9.5c1 .8 1 4.2 0 5M20 7c2 2 2 8 0 10" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M3 10v4h4l6 4V6L7 10H3Z" stroke={color} strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M17 9.5c1 .8 1 4.2 0 5M20 7c2 2 2 8 0 10" stroke={color} strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   );
 }
 
-function FinanceIcon() {
+function FinanceIcon({ color = "var(--voids-purple)" }: { color?: string }) {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M4 19h16" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M7 19v-6M12 19V7M17 19v-9" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M4 19h16" stroke={color} strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M7 19v-6M12 19V7M17 19v-9" stroke={color} strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   );
 }
 
-function LegalIcon() {
+function LegalIcon({ color = "var(--voids-purple)" }: { color?: string }) {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M12 3v17M7 20h10" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M12 5 5 8l3.2 6.2a4 4 0 0 0 7.6 0L19 8l-7-3Z" stroke="var(--voids-purple)" strokeWidth="1.4" strokeLinejoin="round" />
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 3v17M7 20h10" stroke={color} strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M12 5 5 8l3.2 6.2a4 4 0 0 0 7.6 0L19 8l-7-3Z" stroke={color} strokeWidth="1.4" strokeLinejoin="round" />
     </svg>
   );
 }
 
-function DataIcon() {
+function DataIcon({ color = "var(--voids-purple)" }: { color?: string }) {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="8" y="8" width="8" height="8" rx="1.5" stroke="var(--voids-purple)" strokeWidth="1.6" />
-      <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" stroke="var(--voids-purple)" strokeWidth="1.4" strokeLinecap="round" />
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="8" y="8" width="8" height="8" rx="1.5" stroke={color} strokeWidth="1.6" />
+      <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" stroke={color} strokeWidth="1.4" strokeLinecap="round" />
     </svg>
   );
 }
 
-function BizDevIcon() {
+function BizDevIcon({ color = "var(--voids-purple)" }: { color?: string }) {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M3 21h18M5 21V10l5-4 5 4v11M13 21v-6h3v6" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinejoin="round" />
-      <path d="M15 6l3-3 3 3M18 3v6" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M3 21h18M5 21V10l5-4 5 4v11M13 21v-6h3v6" stroke={color} strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M15 6l3-3 3 3M18 3v6" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
-function BizSupportIcon() {
+function BizSupportIcon({ color = "var(--voids-purple)" }: { color?: string }) {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <circle cx="12" cy="12" r="3" stroke="var(--voids-purple)" strokeWidth="1.6" />
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="3" stroke={color} strokeWidth="1.6" />
       <path
         d="M12 4v2M12 18v2M4 12h2M18 12h2M6.3 6.3l1.4 1.4M16.3 16.3l1.4 1.4M17.7 6.3l-1.4 1.4M7.7 16.3l-1.4 1.4"
-        stroke="var(--voids-purple)"
+        stroke={color}
         strokeWidth="1.6"
         strokeLinecap="round"
       />
@@ -415,10 +424,10 @@ function BizSupportIcon() {
   );
 }
 
-function SparkleIcon() {
+function SparkleIcon({ color = "var(--voids-purple)" }: { color?: string }) {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M12 3v6M12 15v6M3 12h6M15 12h6" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 3v6M12 15v6M3 12h6M15 12h6" stroke={color} strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   );
 }
@@ -450,13 +459,13 @@ function RefreshIcon() {
   );
 }
 
-const FIELD_ICONS: Record<string, ReactNode> = {
-  Marketing: <MarketingIcon />,
-  Finance: <FinanceIcon />,
-  Legal: <LegalIcon />,
-  "Data & AI": <DataIcon />,
-  "Business development": <BizDevIcon />,
-  "Business support": <BizSupportIcon />,
+const FIELD_ICONS: Record<string, (props: { color?: string }) => ReactNode> = {
+  Marketing: MarketingIcon,
+  Finance: FinanceIcon,
+  Legal: LegalIcon,
+  "Data & AI": DataIcon,
+  "Business development": BizDevIcon,
+  "Business support": BizSupportIcon,
 };
 
 function GoogleGIcon() {
