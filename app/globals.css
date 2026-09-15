@@ -440,6 +440,27 @@ button:focus-visible,
   }
 }
 
+/* Client-case cards — a single horizontally-scrolling row instead of a
+   grid, so any number of cases reads as one clean line (no awkward
+   dangling last row) and stays easy to extend later. */
+.cases-scroll-mask {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, #000 92%, transparent);
+  mask-image: linear-gradient(to right, #000 92%, transparent);
+}
+.cases-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 4px 16px;
+  -webkit-overflow-scrolling: touch;
+}
+.cases-scroll-item {
+  flex: 0 0 340px;
+  scroll-snap-align: start;
+}
+
 .card--accent-blue {
   border-top: 3px solid var(--voids-blue);
 }

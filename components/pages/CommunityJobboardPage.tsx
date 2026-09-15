@@ -154,8 +154,10 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
           <PricingToggle
             leftLabel={c.pricingSubTitle}
             leftText={c.pricingSubText}
+            leftIcon={<CoinIcon />}
             rightLabel={c.pricingAdTitle}
             rightText={c.pricingAdText}
+            rightIcon={<TagIcon />}
           />
         </div>
       </section>
@@ -188,6 +190,25 @@ function BoardIcon() {
       <rect x="4" y="9" width="22" height="16" rx="2" stroke="var(--voids-blue)" strokeWidth="2" />
       <path d="M11 9V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="var(--voids-blue)" strokeWidth="2" strokeLinecap="round" />
       <path d="M4 15h22" stroke="var(--voids-blue)" strokeWidth="2" />
+    </svg>
+  );
+}
+
+function CoinIcon() {
+  return (
+    <svg width="26" height="26" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <circle cx="14" cy="14" r="10" stroke="var(--voids-purple)" strokeWidth="1.8" />
+      <path d="M17 10.8c-.6-.9-1.7-1.4-3-1.4-1.9 0-3.3 1.3-3.3 3s1.4 2.5 3.3 3c1.9.5 3.3 1.3 3.3 3s-1.4 3-3.3 3c-1.3 0-2.4-.5-3-1.4" stroke="var(--voids-purple)" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M14 7.5v13" stroke="var(--voids-purple)" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function TagIcon() {
+  return (
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12.5 3h6a2 2 0 0 1 2 2v6a2 2 0 0 1-.6 1.4l-9 9a2 2 0 0 1-2.8 0l-5.5-5.5a2 2 0 0 1 0-2.8l9-9A2 2 0 0 1 12.5 3Z" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinejoin="round" />
+      <circle cx="16.5" cy="7.5" r="1.3" fill="var(--voids-purple)" />
     </svg>
   );
 }

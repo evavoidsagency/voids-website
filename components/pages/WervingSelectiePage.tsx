@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 import { Photo } from "@/components/ui/Photo";
 import { Button } from "@/components/ui/Button";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
-import { ComparisonCard } from "@/components/pages/ComparisonCard";
 import { CountUp } from "@/components/ui/CountUp";
 import { findLogoFile, findTestimonialPhoto } from "@/lib/logos";
 import { localePath, type Lang } from "@/lib/i18n/common";
@@ -190,13 +189,14 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "56px 32px 40px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 26, margin: "0 0 4px" }}>{c.casesTitle}</h2>
           <p style={{ fontSize: 14.5, color: "var(--voids-ink-muted)", margin: "0 0 24px", maxWidth: 780 }}>{c.casesSub}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20 }}>
-            {CLIENT_CASES[lang].map((cs) => {
-              const logoUrl = findLogoFile(cs.slug);
-              return (
-                <div key={cs.company} className="card" style={{ padding: 0, overflow: "hidden" }}>
-                  <Photo src={cs.photo} alt={cs.company} ratio="16 / 10" radius="0" sizes="(max-width: 800px) 100vw, 33vw" />
-                  <div style={{ padding: 20 }}>
+          <div className="cases-scroll-mask">
+            <div className="cases-scroll">
+              {CLIENT_CASES[lang].map((cs) => {
+                const logoUrl = findLogoFile(cs.slug);
+                return (
+                  <div key={cs.company} className="card cases-scroll-item" style={{ padding: 0, overflow: "hidden", display: "flex", flexDirection: "column" }}>
+                  <Photo src={cs.photo} alt={cs.company} ratio="16 / 10" radius="0" flip={cs.flip} sizes="(max-width: 800px) 100vw, 33vw" />
+                  <div style={{ padding: 20, display: "flex", flexDirection: "column", flex: 1 }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
                       {logoUrl ? (
                         <div style={{ width: 36, height: 36, borderRadius: 8, background: "#fff", border: "1px solid var(--border-hairline)", display: "flex", alignItems: "center", justifyContent: "center", padding: 4 }}>
@@ -208,17 +208,26 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
                           {cs.logo}
                         </div>
                       )}
-                      <div>
-                        <div style={{ fontSize: 14, fontWeight: 600 }}>{cs.company}</div>
-                        <div style={{ fontSize: 12, color: "var(--voids-ink-muted)" }}>{cs.sector}</div>
+                      <div style={{ minHeight: 54 }}>
+                        <div style={{ fontSize: 14, fontWeight: 600, lineHeight: 1.3 }}>{cs.company}</div>
+                        <div style={{ fontSize: 12, lineHeight: 1.4, color: "var(--voids-ink-muted)" }}>{cs.sector}</div>
                       </div>
                     </div>
-                    <div className="badge badge--purple" style={{ marginBottom: 10 }}>{cs.metric}</div>
-                    <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{cs.text}</p>
+                    <div className="badge badge--purple" style={{ marginBottom: 10, alignSelf: "flex-start" }}>{cs.metric}</div>
+                    <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: "0 0 12px", minHeight: 63 }}>{cs.text}</p>
+                    <ul style={{ margin: 0, paddingLeft: 16, display: "flex", flexDirection: "column", gap: 4, flex: 1 }}>
+                      {cs.bullets.map((b) => (
+                        <li key={b} style={{ fontSize: 12.5, lineHeight: 1.5, color: "var(--voids-ink-muted)" }}>{b}</li>
+                      ))}
+                    </ul>
+                    <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-purple)", fontWeight: 600, margin: "14px 0 0", paddingTop: 12, borderTop: "1px solid var(--voids-line)" }}>
+                      → {cs.outcome}
+                    </p>
                   </div>
-                </div>
-              );
-            })}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
@@ -282,23 +291,50 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
             <span style={{ color: "var(--voids-purple)", fontStyle: "italic" }}>TALENT AS A SERVICE</span>
           </h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 36px", maxWidth: 900 }}>{c.taasSub}</p>
-          <div style={{ maxWidth: 900 }}>
-            <ComparisonCard
-              leftIcon={<TagIcon />}
-              leftColor="var(--voids-blue)"
-              leftBadgeClass="badge--blue"
-              leftHeading={c.taasPlacementTitle}
-              leftDuration={c.taasPlacementBadge}
-              leftBullets={c.taasPlacementBullets}
-              leftCta={<CalendlyButton label={c.taasPlacementCta} variant="outline" size="md" />}
-              rightIcon={<RefreshIcon />}
-              rightColor="var(--voids-purple)"
-              rightBadgeClass="badge--purple"
-              rightHeading={c.taasSubTitle}
-              rightDuration={c.taasSubBadge}
-              rightBullets={c.taasSubBullets}
-              rightCta={<CalendlyButton label={c.taasCta} variant="outline" size="md" />}
-            />
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}>
+            {[
+              {
+                icon: <TagIcon />,
+                color: "var(--voids-blue)",
+                accent: "blue" as const,
+                badgeClass: "badge--blue",
+                heading: c.taasPlacementTitle,
+                duration: c.taasPlacementBadge,
+                bullets: c.taasPlacementBullets,
+                cta: c.taasPlacementCta,
+              },
+              {
+                icon: <RefreshIcon />,
+                color: "var(--voids-purple)",
+                accent: "purple" as const,
+                badgeClass: "badge--purple",
+                heading: c.taasSubTitle,
+                duration: c.taasSubBadge,
+                bullets: c.taasSubBullets,
+                cta: c.taasCta,
+              },
+            ].map((side) => (
+              <div key={side.heading} className={`card card--accent-${side.accent}`} style={{ padding: 28, height: "100%", display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, marginBottom: 20, flexWrap: "wrap" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <div style={{ width: 34, height: 34, borderRadius: "50%", background: side.accent === "blue" ? "var(--voids-blue-100)" : "var(--voids-purple-100)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
+                      {side.icon}
+                    </div>
+                    <span className="anton" style={{ fontSize: 17, color: side.color }}>{side.heading}</span>
+                  </div>
+                  <span className={`badge ${side.badgeClass}`} style={{ whiteSpace: "nowrap" }}>{side.duration}</span>
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: 10, flex: 1, marginBottom: 20 }}>
+                  {side.bullets.map((b) => (
+                    <div key={b} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13.5, color: "var(--voids-ink-soft)", lineHeight: 1.5, background: "#fff", borderRadius: "var(--radius-sm)", padding: "12px 16px" }}>
+                      <TinyCheckIcon color={side.color} />
+                      <span>{b}</span>
+                    </div>
+                  ))}
+                </div>
+                <CalendlyButton label={side.cta} variant="outline" size="md" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -392,6 +428,15 @@ function TagIcon() {
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M12.5 3h6a2 2 0 0 1 2 2v6a2 2 0 0 1-.6 1.4l-9 9a2 2 0 0 1-2.8 0l-5.5-5.5a2 2 0 0 1 0-2.8l9-9A2 2 0 0 1 12.5 3Z" stroke="var(--voids-blue)" strokeWidth="1.6" strokeLinejoin="round" />
       <circle cx="16.5" cy="7.5" r="1.3" fill="var(--voids-blue)" />
+    </svg>
+  );
+}
+
+function TinyCheckIcon({ color }: { color: string }) {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ flex: "none" }}>
+      <circle cx="7" cy="7" r="6.25" stroke={color} strokeWidth="1.4" />
+      <path d="M4.3 7.1l1.9 1.9 3.5-3.9" stroke={color} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

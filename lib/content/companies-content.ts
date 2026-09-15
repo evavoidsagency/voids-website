@@ -58,12 +58,12 @@ export const WHY_WS: Record<Lang, { title: string; text: string; icon: "flex" | 
     },
     {
       title: "Meer focus",
-      text: "Operationeel werk uit handen bij je kernteam.",
+      text: "Ontlast je kernteam, zelfstandiger dan een stagiair.",
       icon: "focus",
     },
     {
       title: "Continuïteit",
-      text: "Geen eindeloos opnieuw inwerken.",
+      text: "Blijft langer dan een stagiair, geen steeds opnieuw inwerken.",
       icon: "pipeline",
     },
     {
@@ -85,12 +85,12 @@ export const WHY_WS: Record<Lang, { title: string; text: string; icon: "flex" | 
     },
     {
       title: "More focus",
-      text: "Operational work off your core team's plate.",
+      text: "Takes work off your core team, more independent than an intern.",
       icon: "focus",
     },
     {
       title: "Continuity",
-      text: "No endless re-onboarding.",
+      text: "Stays longer than an intern, no repeated re-onboarding.",
       icon: "pipeline",
     },
     {
