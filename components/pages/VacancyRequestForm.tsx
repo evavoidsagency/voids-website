@@ -1,0 +1,106 @@
+"use client";
+
+import { useState } from "react";
+import { Button } from "@/components/ui/Button";
+import type { Lang } from "@/lib/i18n/common";
+
+const COPY: Record<
+  Lang,
+  {
+    name: string;
+    company: string;
+    email: string;
+    role: string;
+    details: string;
+    submit: string;
+    submitting: string;
+    sentTitle: string;
+    sentBody: string;
+    errorBody: string;
+  }
+> = {
+  nl: {
+    name: "Naam",
+    company: "Bedrijf",
+    email: "E-mail",
+    role: "Titel van de vacature",
+    details: "Vertel ons meer: soort rol, uren per week, gewenste startdatum, etc.",
+    submit: "Verstuur aanvraag",
+    submitting: "Versturen…",
+    sentTitle: "AANVRAAG VERSTUURD.",
+    sentBody: "Dankjewel. We nemen op korte termijn contact met je op met meer info.",
+    errorBody: "Er ging iets mis bij het versturen. Probeer het nog eens, of mail ons direct op contact@voids.agency.",
+  },
+  en: {
+    name: "Name",
+    company: "Company",
+    email: "Email",
+    role: "Vacancy title",
+    details: "Tell us more: type of role, hours per week, desired start date, etc.",
+    submit: "Send request",
+    submitting: "Sending…",
+    sentTitle: "REQUEST SENT.",
+    sentBody: "Thank you. We'll be in touch shortly with more info.",
+    errorBody: "Something went wrong sending this. Please try again, or email us directly at contact@voids.agency.",
+  },
+};
+
+type Status = "idle" | "submitting" | "sent" | "error";
+
+export function VacancyRequestForm({ lang }: { lang: Lang }) {
+  const [status, setStatus] = useState<Status>("idle");
+  const c = COPY[lang];
+
+  if (status === "sent") {
+    return (
+      <div className="card" role="status" aria-live="polite" style={{ padding: 26, textAlign: "center" }}>
+        <div className="anton" style={{ fontSize: 24, marginBottom: 8 }}>{c.sentTitle}</div>
+        <p style={{ fontSize: 14, color: "var(--voids-ink-muted)", margin: 0 }}>{c.sentBody}</p>
+      </div>
+    );
+  }
+
+  return (
+    <form
+      className="card"
+      style={{ padding: 26 }}
+      onSubmit={async (e) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        const data = new FormData(form);
+        setStatus("submitting");
+        try {
+          const res = await fetch("/api/vacancy-request", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: data.get("name"),
+              company: data.get("company"),
+              email: data.get("email"),
+              role: data.get("role"),
+              details: data.get("details"),
+            }),
+          });
+          if (!res.ok) throw new Error("Request failed");
+          setStatus("sent");
+        } catch {
+          setStatus("error");
+        }
+      }}
+    >
+      <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
+        <input name="name" autoComplete="name" className="input" placeholder={c.name} aria-label={c.name} required />
+        <input name="company" autoComplete="organization" className="input" placeholder={c.company} aria-label={c.company} required />
+      </div>
+      <input name="email" autoComplete="email" className="input" type="email" placeholder={c.email} aria-label={c.email} required style={{ marginBottom: 12 }} />
+      <input name="role" className="input" placeholder={c.role} aria-label={c.role} style={{ marginBottom: 12 }} />
+      <textarea name="details" className="textarea" placeholder={c.details} aria-label={c.details} rows={4} required style={{ marginBottom: 14 }} />
+      {status === "error" && (
+        <p role="alert" aria-live="polite" style={{ fontSize: 13, color: "var(--voids-red, #c5192d)", margin: "0 0 12px" }}>{c.errorBody}</p>
+      )}
+      <Button variant="primary" size="md" fullWidth disabled={status === "submitting"}>
+        {status === "submitting" ? c.submitting : c.submit}
+      </Button>
+    </form>
+  );
+}

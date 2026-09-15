@@ -3,6 +3,7 @@ import { CalendlyButton } from "@/components/site/CalendlyButton";
 import { CountUp } from "@/components/ui/CountUp";
 import { Photo } from "@/components/ui/Photo";
 import { PricingToggle } from "@/components/pages/PricingToggle";
+import { VacancyRequestForm } from "@/components/pages/VacancyRequestForm";
 import { localePath, type Lang } from "@/lib/i18n/common";
 
 const COPY: Record<
@@ -24,6 +25,7 @@ const COPY: Record<
     contactTitle: string;
     contactText: string;
     contactCta: string;
+    orCallLabel: string;
   }
 > = {
   nl: {
@@ -56,8 +58,9 @@ const COPY: Record<
     pricingAdText: "Vaste prijs per plaatsing, bepaald door het bereik van de gekozen kanalen op het moment van plaatsen. Tijdelijk extra boosten kan tegen meerprijs.",
     bandAlt: "Team aan het werk op kantoor",
     contactTitle: "VACATURE PLAATSEN?",
-    contactText: "Stuur ons je vacature, dan zetten we die voor je live.",
+    contactText: "Laat hieronder weten wat voor rol je zoekt, dan nemen we contact op met meer info en de opties.",
     contactCta: "Neem contact op",
+    orCallLabel: "Liever meteen sparren?",
   },
   en: {
     eyebrow: "Advertise vacancies",
@@ -89,8 +92,9 @@ const COPY: Record<
     pricingAdText: "A fixed fee per placement, determined by the reach of the selected channels at the time of posting. Temporary boosting is available for an extra fee.",
     bandAlt: "The team at work in the office",
     contactTitle: "WANT TO POST A VACANCY?",
-    contactText: "Send us your vacancy and we'll get it live for you.",
+    contactText: "Let us know what kind of role you're hiring for below, and we'll get in touch with more info and the options.",
     contactCta: "Get in touch",
+    orCallLabel: "Rather talk it through?",
   },
 };
 
@@ -163,12 +167,16 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
       </section>
 
       <section style={{ background: "var(--voids-purple)" }}>
-        <div className="wrap" style={{ padding: "48px 32px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 20 }}>
+        <div className="wrap g-collapse" style={{ padding: "56px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }}>
           <div>
-            <h2 className="anton section-h2" style={{ fontSize: 26, color: "#fff", margin: "0 0 6px" }}>{c.contactTitle}</h2>
-            <p style={{ fontSize: 14.5, color: "var(--voids-purple-100)", margin: 0 }}>{c.contactText}</p>
+            <h2 className="anton section-h2" style={{ fontSize: 30, color: "#fff", margin: "0 0 12px" }}>{c.contactTitle}</h2>
+            <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 22px", maxWidth: 420 }}>{c.contactText}</p>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+              <span style={{ fontSize: 13.5, color: "var(--voids-purple-100)" }}>{c.orCallLabel}</span>
+              <CalendlyButton label={c.contactCta} variant="outline" size="md" onDark />
+            </div>
           </div>
-          <CalendlyButton label={c.contactCta} variant="secondary" size="md" />
+          <VacancyRequestForm lang={lang} />
         </div>
       </section>
     </>
