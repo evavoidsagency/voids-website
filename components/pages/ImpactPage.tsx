@@ -29,6 +29,7 @@ const COPY: Record<
     card3Text: string;
     card3Answer: string;
     problemClose: string;
+    problemCloseCta: string;
     solutionEyebrow: string;
     solutionTitle: string;
     solutionText: string;
@@ -67,19 +68,20 @@ const COPY: Record<
     card1Title: "Ongelijke toegang tot ervaring",
     card1Text:
       "Stages betalen vaak te weinig om van rond te komen. Studenten die dat gemis kunnen opvangen, met steun thuis of een buffer, hebben daarmee een voorsprong die niets met talent te maken heeft.",
-    card1Answer: "Ons antwoord: een eerlijke beloning, altijd boven het wettelijk minimum.",
+    card1Answer: "Ons antwoord: een salaris waar je van rond kunt komen, zodat inkomen geen keuze meer hoeft te zijn.",
     card2Badge: "Startpositie",
     card2Title: "Een beperkter startpunt",
     card2Text:
       "Wie die ervaring misloopt, betreedt de arbeidsmarkt met minder vaardigheden, minder zelfvertrouwen over waar hij of zij goed in is, en zonder netwerk om op terug te vallen.",
-    card2Answer: "Ons antwoord: echte verantwoordelijkheid, al tijdens de studie.",
+    card2Answer: "Ons antwoord: echte verantwoordelijkheid en een netwerk van 4.000+ studenten en werkgevers, al tijdens de studie.",
     card3Badge: "Lange termijn",
     card3Title: "Een nadeel dat blijft doorwerken",
     card3Text:
       "Die achterstand stapelt zich op na het afstuderen, en is later niet zomaar recht te trekken met een eerlijker wervingsproces alleen.",
-    card3Answer: "Ons antwoord: vroege, relevante ervaring die voor iedereen een sterkere start oplevert.",
+    card3Answer: "Ons antwoord: een voorsprong die je al opbouwt vóórdat de concurrentie begint.",
     problemClose:
-      "En dit raakt niet alleen studenten: bedrijven die vooral met kortlopende, onbetaalde stages werken, missen zelf ook de kans om een stabiele pijplijn aan junior talent op te bouwen.",
+      "En dit is niet alleen goed nieuws voor studenten: bedrijven die met werkstudenten werken, bouwen zelf een stabielere pijplijn aan junior talent op, tegen lagere kosten dan een fulltime starter.",
+    problemCloseCta: "Bekijk wat dit voor jouw bedrijf betekent →",
     solutionEyebrow: "De oplossing",
     solutionTitle: "HET WERKSTUDENTSCHAP HEFT DE KEUZE OP.",
     solutionText:
@@ -131,19 +133,20 @@ const COPY: Record<
     card1Title: "Unequal access to experience",
     card1Text:
       "Internships often pay too little to live on. Students who can absorb that gap, with support at home or savings to fall back on, get a head start that has nothing to do with talent.",
-    card1Answer: "Our answer: fair pay, always above the legal minimum.",
+    card1Answer: "Our answer: a salary you can actually live on, so income doesn't have to be the trade-off.",
     card2Badge: "Starting position",
     card2Title: "A narrower launchpad",
     card2Text:
       "Missing out on that experience means entering the job market with fewer skills, less confidence in what you're good at, and no network to fall back on.",
-    card2Answer: "Our answer: real responsibility, while still studying.",
+    card2Answer: "Our answer: real responsibility and a network of 4,000+ students and employers, while still studying.",
     card3Badge: "Long term",
     card3Title: "A disadvantage that compounds",
     card3Text:
       "That gap keeps compounding after graduation, and can't simply be undone later by a fairer hiring process alone.",
-    card3Answer: "Our answer: early, relevant experience that gives everyone a stronger start.",
+    card3Answer: "Our answer: a head start you build before the competition even begins.",
     problemClose:
-      "And this doesn't only affect students: companies that mainly rely on short, unpaid internships also miss the chance to build a stable pipeline of junior talent themselves.",
+      "And this isn't only good news for students: companies that work with working students build a more stable junior pipeline themselves, at a lower cost than a full-time starter.",
+    problemCloseCta: "See what this means for your company →",
     solutionEyebrow: "The solution",
     solutionTitle: "THE WORKING-STUDENT MODEL REMOVES THE TRADE-OFF.",
     solutionText:
@@ -252,10 +255,11 @@ export function ImpactPage({ lang }: { lang: Lang }) {
           ))}
         </div>
         <Reveal delay={420}>
-          <div style={{ marginTop: 36 }}>
-            <p style={{ fontSize: 14.5, lineHeight: 1.65, color: "var(--voids-ink-soft)", margin: 0, maxWidth: 900 }}>
+          <div className="card card--accent-purple" style={{ marginTop: 36, padding: 24, display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
+            <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink)", margin: 0, flex: 1, minWidth: 280 }}>
               {c.problemClose}
             </p>
+            <Button variant="outline" size="md" href={p("/companies")}>{c.problemCloseCta}</Button>
           </div>
         </Reveal>
       </section>
@@ -352,13 +356,13 @@ function Squiggle() {
   return (
     <svg
       width="100%"
-      height="12"
-      viewBox="0 0 160 12"
+      height="16"
+      viewBox="0 0 160 16"
       preserveAspectRatio="none"
       aria-hidden="true"
-      style={{ position: "absolute", left: 0, bottom: -8, width: "100%" }}
+      style={{ position: "absolute", left: 0, bottom: -16, width: "100%" }}
     >
-      <path d="M2 8c14-8 26-8 40 0s26 8 40 0 26-8 40 0 26 8 38 0" stroke="var(--voids-blue)" strokeWidth="4" strokeLinecap="round" fill="none" />
+      <path d="M2 9c26-11 52-11 78 0s52 11 78 0" stroke="var(--voids-blue)" strokeWidth="5" strokeLinecap="round" fill="none" />
     </svg>
   );
 }
