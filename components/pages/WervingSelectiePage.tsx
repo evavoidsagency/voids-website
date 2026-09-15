@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Photo } from "@/components/ui/Photo";
 import { Button } from "@/components/ui/Button";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
+import { ComparisonCard } from "@/components/pages/ComparisonCard";
 import { CountUp } from "@/components/ui/CountUp";
 import { findLogoFile, findTestimonialPhoto } from "@/lib/logos";
 import { localePath, type Lang } from "@/lib/i18n/common";
@@ -30,6 +31,7 @@ const COPY: Record<
     taasPlacementBadge: string;
     taasPlacementTitle: string;
     taasPlacementBullets: string[];
+    taasPlacementCta: string;
     taasSubBadge: string;
     taasSubTitle: string;
     taasSubBullets: string[];
@@ -71,6 +73,7 @@ const COPY: Record<
       "Geen doorlopende verplichting of vast contract",
       "Ideaal voor een concrete, eenmalige vacature",
     ],
+    taasPlacementCta: "Vraag naar het per-plaatsing tarief",
     taasSubBadge: "Doorlopend",
     taasSubTitle: "Abonnement",
     taasSubBullets: [
@@ -117,6 +120,7 @@ const COPY: Record<
       "No ongoing commitment or fixed contract",
       "Ideal for a single, concrete vacancy",
     ],
+    taasPlacementCta: "Ask about the per-placement rate",
     taasSubBadge: "Ongoing",
     taasSubTitle: "Subscription",
     taasSubBullets: [
@@ -278,62 +282,23 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
             <span style={{ color: "var(--voids-purple)", fontStyle: "italic" }}>TALENT AS A SERVICE</span>
           </h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 36px", maxWidth: 900 }}>{c.taasSub}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}>
-            <div className="card" style={{ padding: 28, height: "100%", display: "flex", flexDirection: "column" }}>
-              <span
-                style={{
-                  alignSelf: "flex-start",
-                  fontSize: 11,
-                  fontWeight: 700,
-                  letterSpacing: ".03em",
-                  textTransform: "uppercase",
-                  color: "var(--voids-ink-muted)",
-                  background: "var(--voids-beige)",
-                  borderRadius: 999,
-                  padding: "4px 12px",
-                  marginBottom: 14,
-                }}
-              >
-                {c.taasPlacementBadge}
-              </span>
-              <div className="anton" style={{ fontSize: 20, marginBottom: 16 }}>{c.taasPlacementTitle}</div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12, flex: 1 }}>
-                {c.taasPlacementBullets.map((b) => (
-                  <div key={b} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-                    <CheckIcon color="var(--voids-ink-muted)" />
-                    <span style={{ fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-muted)" }}>{b}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="card card--accent-purple" style={{ padding: 28, height: "100%", display: "flex", flexDirection: "column" }}>
-              <span
-                style={{
-                  alignSelf: "flex-start",
-                  fontSize: 11,
-                  fontWeight: 700,
-                  letterSpacing: ".03em",
-                  textTransform: "uppercase",
-                  color: "var(--voids-purple)",
-                  background: "var(--voids-purple-100)",
-                  borderRadius: 999,
-                  padding: "4px 12px",
-                  marginBottom: 14,
-                }}
-              >
-                {c.taasSubBadge}
-              </span>
-              <div className="anton" style={{ fontSize: 20, marginBottom: 16, color: "var(--voids-purple)" }}>{c.taasSubTitle}</div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12, flex: 1, marginBottom: 20 }}>
-                {c.taasSubBullets.map((b) => (
-                  <div key={b} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-                    <CheckIcon color="var(--voids-purple)" />
-                    <span style={{ fontSize: 14, lineHeight: 1.55, color: "var(--text-strong)" }}>{b}</span>
-                  </div>
-                ))}
-              </div>
-              <CalendlyButton label={c.taasCta} variant="secondary" size="md" />
-            </div>
+          <div style={{ maxWidth: 640 }}>
+            <ComparisonCard
+              leftIcon={<TagIcon />}
+              leftColor="var(--voids-blue)"
+              leftBadgeClass="badge--blue"
+              leftHeading={c.taasPlacementTitle}
+              leftDuration={c.taasPlacementBadge}
+              leftBullets={c.taasPlacementBullets}
+              leftCta={<CalendlyButton label={c.taasPlacementCta} variant="outline" size="md" />}
+              rightIcon={<RefreshIcon />}
+              rightColor="var(--voids-purple)"
+              rightBadgeClass="badge--purple"
+              rightHeading={c.taasSubTitle}
+              rightDuration={c.taasSubBadge}
+              rightBullets={c.taasSubBullets}
+              rightCta={<CalendlyButton label={c.taasCta} variant="outline" size="md" />}
+            />
           </div>
         </div>
       </section>
@@ -422,11 +387,20 @@ function SparkleIcon() {
   );
 }
 
-function CheckIcon({ color }: { color: string }) {
+function TagIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ flex: "none", marginTop: 2 }}>
-      <circle cx="7" cy="7" r="6.25" stroke={color} strokeWidth="1.4" />
-      <path d="M4.3 7.1l1.9 1.9 3.5-3.9" stroke={color} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12.5 3h6a2 2 0 0 1 2 2v6a2 2 0 0 1-.6 1.4l-9 9a2 2 0 0 1-2.8 0l-5.5-5.5a2 2 0 0 1 0-2.8l9-9A2 2 0 0 1 12.5 3Z" stroke="var(--voids-blue)" strokeWidth="1.6" strokeLinejoin="round" />
+      <circle cx="16.5" cy="7.5" r="1.3" fill="var(--voids-blue)" />
+    </svg>
+  );
+}
+
+function RefreshIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M4 12a8 8 0 0 1 13.66-5.66M20 12a8 8 0 0 1-13.66 5.66" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M17.5 3v3.5H14M6.5 21v-3.5H10" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

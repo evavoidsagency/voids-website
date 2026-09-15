@@ -12,27 +12,31 @@ export function ComparisonCard({
   leftHeading,
   leftDuration,
   leftBullets,
+  leftCta,
   rightIcon,
   rightColor,
   rightBadgeClass,
   rightHeading,
   rightDuration,
   rightBullets,
+  rightCta,
 }: {
-  title: string;
-  sub: string;
+  title?: string;
+  sub?: string;
   leftIcon: ReactNode;
   leftColor: string;
   leftBadgeClass: string;
   leftHeading: string;
   leftDuration: string;
   leftBullets: string[];
+  leftCta?: ReactNode;
   rightIcon: ReactNode;
   rightColor: string;
   rightBadgeClass: string;
   rightHeading: string;
   rightDuration: string;
   rightBullets: string[];
+  rightCta?: ReactNode;
 }) {
   const [active, setActive] = useState<"left" | "right">("left");
   const isLeft = active === "left";
@@ -43,11 +47,12 @@ export function ComparisonCard({
   const badgeClass = isLeft ? leftBadgeClass : rightBadgeClass;
   const duration = isLeft ? leftDuration : rightDuration;
   const bullets = isLeft ? leftBullets : rightBullets;
+  const cta = isLeft ? leftCta : rightCta;
 
   return (
     <div className="card" style={{ padding: 28, height: "100%", display: "flex", flexDirection: "column" }}>
-      <h3 className="anton" style={{ fontSize: 24, margin: "0 0 6px" }}>{title}</h3>
-      <p style={{ fontSize: 13, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: "0 0 18px", minHeight: 82 }}>{sub}</p>
+      {title && <h3 className="anton" style={{ fontSize: 24, margin: "0 0 6px" }}>{title}</h3>}
+      {sub && <p style={{ fontSize: 13, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: "0 0 18px", minHeight: 82 }}>{sub}</p>}
 
       <div role="tablist" style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 16 }}>
         {(
@@ -103,6 +108,7 @@ export function ComparisonCard({
             </div>
           ))}
         </div>
+        {cta && <div style={{ marginTop: 16 }}>{cta}</div>}
       </div>
     </div>
   );
