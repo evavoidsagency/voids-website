@@ -216,12 +216,12 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
                     </div>
                     <div className="badge badge--purple" style={{ marginBottom: 10, alignSelf: "flex-start", minHeight: 32, display: "flex", alignItems: "center" }}>{cs.metric}</div>
                     <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: "0 0 12px", minHeight: 84 }}>{cs.text}</p>
-                    <ul style={{ margin: 0, paddingLeft: 16, display: "flex", flexDirection: "column", gap: 4 }}>
+                    <ul style={{ margin: 0, paddingLeft: 16, display: "flex", flexDirection: "column", gap: 4, minHeight: 124 }}>
                       {cs.bullets.map((b) => (
                         <li key={b} style={{ fontSize: 12.5, lineHeight: 1.5, color: "var(--voids-ink-muted)" }}>{b}</li>
                       ))}
                     </ul>
-                    <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-purple)", fontWeight: 600, margin: "auto 0 0", paddingTop: 12, borderTop: "1px solid var(--voids-line)" }}>
+                    <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-purple)", fontWeight: 600, margin: "12px 0 0", paddingTop: 12, borderTop: "1px solid var(--voids-line)" }}>
                       → {cs.outcome}
                     </p>
                   </div>
