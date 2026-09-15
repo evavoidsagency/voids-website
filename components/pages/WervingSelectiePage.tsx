@@ -64,8 +64,8 @@ const COPY: Record<
     profilesTitle: "GEDREVEN TALENT, GESELECTEERD OP KWALITEIT EN CULTUUR.",
     profilesSub: "We sourcen voornamelijk wo- en hbo-studenten en jonge professionals: ambitieus, snel zelfstandig en gewend om te presteren naast hun studie. Die gedrevenheid zie je niet alleen terug in een bestuursjaar of torenhoge cijfers, maar net zo goed in doorzettingsvermogen, ondernemerschap of hoe iemand zich op eigen kracht heeft ontwikkeld. We matchen niet alleen op skills, maar vooral op cultuurfit, zodat wie we voorstellen ook echt past.",
     taasEyebrow: "Twee manieren om samen te werken",
-    taasTitle: "VOIDS TALENT AS A SERVICE",
-    taasSub: "Zelfde zorgvuldige werving en selectie, twee manieren om af te rekenen. Kies wat past bij hoe vaak je werft.",
+    taasTitle: "ZO WERKEN WE SAMEN.",
+    taasSub: "Zelfde zorgvuldige werving en selectie: kies de vorm die past bij hoe vaak je werft.",
     taasPlacementBadge: "Eenmalig",
     taasPlacementTitle: "Per plaatsing",
     taasPlacementBullets: [
@@ -111,8 +111,8 @@ const COPY: Record<
     profilesTitle: "DRIVEN TALENT, SELECTED ON QUALITY AND CULTURE.",
     profilesSub: "We mainly source university and university-of-applied-sciences students and young professionals: ambitious, quick to work independently, and used to performing alongside their studies. That drive doesn't only show up as a board year or a stellar GPA: it shows just as much in persistence, entrepreneurship, or how someone has developed under their own steam. We match not just on skills but on culture fit, so who we put forward actually fits.",
     taasEyebrow: "Two ways to work with us",
-    taasTitle: "VOIDS TALENT AS A SERVICE",
-    taasSub: "Same careful recruitment and selection, two ways to pay for it. Pick what fits how often you hire.",
+    taasTitle: "HOW WE WORK TOGETHER.",
+    taasSub: "Same careful recruitment and selection: pick the option that fits how often you hire.",
     taasPlacementBadge: "One-off",
     taasPlacementTitle: "Per placement",
     taasPlacementBullets: [
@@ -295,10 +295,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "64px 32px" }}>
           <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.taasEyebrow}</span>
-          <h2 className="anton" style={{ fontSize: 30, margin: "8px 0 12px" }}>
-            <span style={{ color: "var(--text-strong)" }}>VOIDS </span>
-            <span style={{ color: "var(--voids-purple)", fontStyle: "italic" }}>TALENT AS A SERVICE</span>
-          </h2>
+          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 12px" }}>{c.taasTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 36px", maxWidth: 900 }}>{c.taasSub}</p>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}>
             {[
