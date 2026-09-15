@@ -179,7 +179,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
           </Disclosure>
         </div>
         {foundersPhoto ? (
-          <Photo src={foundersPhoto} alt={c.foundersAlt} ratio="1600 / 1695" />
+          <Photo src={foundersPhoto} alt={c.foundersAlt} ratio="1600 / 1695" priority />
         ) : (
           <div
             style={{
