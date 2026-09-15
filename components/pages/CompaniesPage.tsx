@@ -357,14 +357,14 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyWsEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "8px 0 14px", maxWidth: 860 }}>{c.whyWsTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 1040 }}>{c.whyWsIntro}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gridAutoRows: "1fr", gap: 16, maxWidth: 1040, alignItems: "stretch" }}>
+          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(5, minmax(0, 1fr))", gap: 14, maxWidth: 1040, alignItems: "stretch" }}>
             {WHY_WS[lang].map((w) => (
-              <div key={w.title} className="card card--hoverable card--accent-purple" style={{ padding: 22, height: "100%", display: "flex", flexDirection: "column" }}>
-                <div style={{ width: 44, height: 44, borderRadius: "50%", background: "var(--voids-purple-100)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+              <div key={w.title} className="card card--hoverable card--accent-purple" style={{ padding: "20px 16px", height: "100%", display: "flex", flexDirection: "column" }}>
+                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "var(--voids-purple-100)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12 }}>
                   {WHY_WS_ICONS[w.icon]}
                 </div>
-                <div style={{ fontSize: 15, fontWeight: 700, margin: "0 0 6px" }}>{w.title}</div>
-                <p style={{ fontSize: 12.5, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{w.text}</p>
+                <div className="anton" style={{ fontSize: 15, margin: "0 0 6px" }}>{w.title}</div>
+                <p style={{ fontSize: 12, lineHeight: 1.45, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{w.text}</p>
               </div>
             ))}
           </div>
@@ -510,14 +510,6 @@ function SwitchIcon() {
   );
 }
 
-function SparkIcon() {
-  return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <path d="M14 3v6M14 19v6M3 14h6M19 14h6M6.5 6.5l4.2 4.2M17.3 17.3l4.2 4.2M6.5 21.5l4.2-4.2M17.3 10.7l4.2-4.2" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 function CapIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -569,25 +561,23 @@ function TrustIcon() {
   );
 }
 
-function GrowthIcon() {
+const WHY_WS_ICONS: Record<"flex" | "trust" | "focus" | "pipeline" | "coin", React.ReactNode> = {
+  flex: <SwitchIcon />,
+  trust: <TrustIcon />,
+  focus: <FocusIcon />,
+  pipeline: <PipelineIcon />,
+  coin: <CoinIcon />,
+};
+
+function CoinIcon() {
   return (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <path d="M4 20h20" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" />
-      <path d="M8 20v-5M14 20v-9M20 20v-13" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" />
-      <path d="M17 3.5h4v4" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M20.5 4L14 10.5l-3-3-4.5 4.5" stroke="var(--voids-purple)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="14" cy="14" r="10" stroke="var(--voids-purple)" strokeWidth="1.8" />
+      <path d="M17 10.8c-.6-.9-1.7-1.4-3-1.4-1.9 0-3.3 1.3-3.3 3s1.4 2.5 3.3 3c1.9.5 3.3 1.3 3.3 3s-1.4 3-3.3 3c-1.3 0-2.4-.5-3-1.4" stroke="var(--voids-purple)" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M14 7.5v13" stroke="var(--voids-purple)" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );
 }
-
-const WHY_WS_ICONS: Record<"flex" | "trust" | "growth" | "spark" | "focus" | "pipeline", React.ReactNode> = {
-  flex: <SwitchIcon />,
-  trust: <TrustIcon />,
-  growth: <GrowthIcon />,
-  spark: <SparkIcon />,
-  focus: <FocusIcon />,
-  pipeline: <PipelineIcon />,
-};
 
 function FocusIcon() {
   return (

@@ -44,69 +44,59 @@ export const ROLE_TYPES: Record<Lang, string[]> = {
   en: ["Business Development", "Sales", "Marketing", "Communications", "Data", "AI & Automation", "Finance", "Legal", "Founder's Associate", "Operations", "and more"],
 };
 
-export const WHY_WS: Record<Lang, { title: string; text: string; icon: "flex" | "trust" | "growth" | "spark" | "focus" | "pipeline" }[]> = {
+export const WHY_WS: Record<Lang, { title: string; text: string; icon: "flex" | "trust" | "focus" | "pipeline" | "coin" }[]> = {
   nl: [
     {
-      title: "Flexibel & kostenefficiënt",
-      text: "Werkstudenten zijn vaak flexibel in beschikbaarheid en denken makkelijk mee over uren en planning. Dat maakt op- en afschalen simpel, tegen lagere kosten dan een fulltime starter.",
+      title: "Flexibel",
+      text: "Schuift mee met uren en planning.",
       icon: "flex",
     },
     {
-      title: "Ruimte voor je kernteam",
-      text: "Operationeel werk gaat naar een werkstudent, zodat je kernteam zich kan richten op de strategische prioriteiten waar zij het verschil maken.",
+      title: "Kostenefficiënt",
+      text: "Voordeliger dan een fulltime starter.",
+      icon: "coin",
+    },
+    {
+      title: "Meer focus",
+      text: "Operationeel werk uit handen bij je kernteam.",
       icon: "focus",
     },
     {
-      title: "Eerst goed leren kennen",
-      text: "Je bouwt een langere relatie op dan bij een korte opdracht en leert iemand écht kennen vóórdat er een vast aanbod op tafel ligt.",
-      icon: "trust",
-    },
-    {
-      title: "Continuïteit, geen constant verloop",
-      text: "Waar kortlopende stages steeds opnieuw inwerken betekenen, bouw je met werkstudenten aan een stabiele pijplijn aan junior talent die langer meedraait.",
+      title: "Continuïteit",
+      text: "Geen eindeloos opnieuw inwerken.",
       icon: "pipeline",
     },
     {
-      title: "Ruimte om door te groeien",
-      text: "De optie blijft open om iemand door te laten groeien naar een structurele rol, wanneer dat bij jullie beiden past.",
-      icon: "growth",
-    },
-    {
-      title: "Extra gemotiveerd",
-      text: "Het werk telt mee voor hun studie én hun cv, niet alleen als bijbaantje: dat merk je terug in de betrokkenheid en de kwaliteit van het werk.",
-      icon: "spark",
+      title: "Risicoloos kennismaken",
+      text: "Eerst leren kennen, met ruimte om door te groeien.",
+      icon: "trust",
     },
   ],
   en: [
     {
-      title: "Flexible & cost-efficient",
-      text: "Working students tend to be flexible about their availability and happy to talk through hours and planning together. That makes scaling up or down easy, at a lower cost than a full-time starter.",
+      title: "Flexible",
+      text: "Scales with your hours and planning.",
       icon: "flex",
     },
     {
-      title: "Room for your core team",
-      text: "Operational work goes to a working student, so your core team can focus on the strategic priorities where they make the difference.",
+      title: "Cost-efficient",
+      text: "Better value than a full-time starter.",
+      icon: "coin",
+    },
+    {
+      title: "More focus",
+      text: "Operational work off your core team's plate.",
       icon: "focus",
     },
     {
-      title: "Get to know them first",
-      text: "You build a longer relationship than a short assignment gives you, and get to really know someone before any permanent offer is on the table.",
-      icon: "trust",
-    },
-    {
-      title: "Continuity, not constant churn",
-      text: "Where short-cycle internships mean re-onboarding again and again, working students build a stable pipeline of junior talent that stays longer.",
+      title: "Continuity",
+      text: "No endless re-onboarding.",
       icon: "pipeline",
     },
     {
-      title: "Room to grow",
-      text: "The option stays open to grow them into a structural role, whenever that fits you both.",
-      icon: "growth",
-    },
-    {
-      title: "Extra motivated",
-      text: "The work counts toward their studies and their CV, not just a side job: that shows up in how engaged they are and in the quality of the work.",
-      icon: "spark",
+      title: "Low-risk trial",
+      text: "Get to know them first, with room to grow.",
+      icon: "trust",
     },
   ],
 };
