@@ -81,11 +81,11 @@ const COPY: Record<
       },
       {
         label: "Hoe we werken",
-        text: "We wachten niet tot cv's binnenkomen: via studieverenigingen en events voor jong talent bouwen we zelf de kennis op om verder te kijken dan een cv.",
+        text: "We wachten niet tot cv's binnenkomen: via studieverenigingen en events voor jong talent bouwen we die kennis zelf op. Zo kijken we verder dan een cv, en brengen we bedrijven in contact met talent op basis van motivatie en potentie, niet alleen een lijstje ervaring.",
       },
       {
         label: "Wat we doen",
-        text: "Werving & selectie, studenten bereiken via community en jobboard, en advies over je junior-strategie: alles om jong talent en werkgevers samen te brengen.",
+        text: "Voor bedrijven: werving & selectie, zichtbaarheid via onze community en jobboard, en advies over je junior-strategie. Voor talent: een jobboard, een WhatsApp-community met wekelijkse kansen, en een talentpool die je proactief matcht.",
       },
     ],
     finalTitle: "STOP MET ZOEKEN, START MET ONTVANGEN.",
@@ -132,11 +132,11 @@ const COPY: Record<
       },
       {
         label: "How we work",
-        text: "We don't wait for CVs to land in an inbox: through study associations and young-talent events, we build the knowledge ourselves to see past a CV.",
+        text: "We don't wait for CVs to land in an inbox: through study associations and young-talent events, we build that knowledge ourselves. That way we see past a CV, and connect companies with talent based on motivation and potential, not just a list of experience.",
       },
       {
         label: "What we do",
-        text: "Recruitment & selection, reaching students through our community and job board, and advice on your junior strategy: everything to bring young talent and employers together.",
+        text: "For companies: recruitment & selection, visibility through our community and job board, and advice on your junior strategy. For talent: a job board, a WhatsApp community with weekly opportunities, and a talent pool that matches you proactively.",
       },
     ],
     finalTitle: "STOP SEARCHING, START RECEIVING.",
