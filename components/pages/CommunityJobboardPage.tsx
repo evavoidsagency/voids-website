@@ -64,7 +64,7 @@ const COPY: Record<
     orCallLabel: "Liever meteen sparren?",
     steps: [
       { title: "Jij vult het formulier in", text: "Twee minuten werk: vertel ons over de rol en wat je zoekt." },
-      { title: "Wij nemen contact op", text: "Binnen 1 werkdag hoor je van ons, met de opties en prijzen op maat." },
+      { title: "Wij nemen contact op", text: "Je hoort snel van ons, met de opties en prijzen op maat." },
       { title: "Jij kiest, wij regelen de rest", text: "Los per plaatsing of doorlopend: jij bepaalt wat past." },
     ],
   },
@@ -103,7 +103,7 @@ const COPY: Record<
     orCallLabel: "Rather talk it through?",
     steps: [
       { title: "You fill in the form", text: "Two minutes of work: tell us about the role and what you're after." },
-      { title: "We get in touch", text: "You'll hear from us within 1 business day, with tailored options and pricing." },
+      { title: "We get in touch", text: "You'll hear from us soon, with tailored options and pricing." },
       { title: "You choose, we handle the rest", text: "Per placement or ongoing: you decide what fits." },
     ],
   },
