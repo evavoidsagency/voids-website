@@ -22,11 +22,15 @@ const COPY: Record<
     whatTitle: string;
     whatCards: { verb: string; title: string; text: string; path?: string; cta?: string }[];
     recapWhyLabel: string;
+    recapWhyStatValue: string;
     recapWhyText: string;
     recapHowLabel: string;
+    recapHowStatValue: string;
     recapHowText: string;
     recapWhatLabel: string;
     recapWhatText: string;
+    recapWhatTopics: string[];
+    recapWhatCta: string;
     foundersAlt: string;
     foundersPending: string;
     teamTitle: string;
@@ -77,11 +81,15 @@ const COPY: Record<
       },
     ],
     recapWhyLabel: "WAAROM VOIDS?",
-    recapWhyText: "Talent zit overal. Toegang tot ervaring niet. Wij verbinden de juiste mensen aan de juiste plek, ongeacht wie ze kennen of wat ze zich konden veroorloven.",
+    recapWhyStatValue: "10%",
+    recapWhyText: "van onze winst gaat vanaf medio 2027 naar gelijke-kansen-initiatieven voor studenten. Onze voorkeur voor werkstudenten is onderdeel van die missie, geen verdienmodel.",
     recapHowLabel: "HOE WE WERKEN",
-    recapHowText: "We wachten niet tot cv's binnenkomen: via studieverenigingen en events voor jong talent bouwen we zelf de kennis op om verder te kijken dan een cv.",
+    recapHowStatValue: "81%",
+    recapHowText: "van de werkstudenten die we plaatsen blijft minimaal een jaar op zijn rol. Het bewijs dat verder kijken dan een cv daadwerkelijk tot betere matches leidt.",
     recapWhatLabel: "WAT WE DOEN",
-    recapWhatText: "Werving & selectie, studenten bereiken via community en jobboard, en advies over je junior-strategie: alles om jong talent en werkgevers samen te brengen.",
+    recapWhatText: "En dat stopt niet bij recruitment: we geven ook workshops, gastlessen en masterclasses op scholen en bij studieverenigingen, over de stap van studie naar werk.",
+    recapWhatTopics: ["Carrière-oriëntatie", "Solliciteren & je cv", "Personal branding", "Werkstudentschap als opstap"],
+    recapWhatCta: "Meer over onze impact →",
     foundersAlt: "Eva en Wieke, de oprichters van VOIDS",
     foundersPending: "Foto van Eva & Wieke volgt",
     teamTitle: "HET TEAM",
@@ -131,11 +139,15 @@ const COPY: Record<
       },
     ],
     recapWhyLabel: "WHY VOIDS?",
-    recapWhyText: "Talent is everywhere. Access to experience isn't. We connect the right people to the right place, regardless of who they know or what they could afford.",
+    recapWhyStatValue: "10%",
+    recapWhyText: "of our profit goes to equal-opportunity initiatives for students from mid-2027. Our preference for working students is part of that mission, not a business model.",
     recapHowLabel: "HOW WE WORK",
-    recapHowText: "We don't wait for CVs to land in an inbox: through study associations and young-talent events, we build the knowledge ourselves to see past a CV.",
+    recapHowStatValue: "81%",
+    recapHowText: "of the working students we place stay in their role for at least a year. Proof that looking past a CV actually leads to better matches.",
     recapWhatLabel: "WHAT WE DO",
-    recapWhatText: "Recruitment & selection, reaching students through our community and job board, and advice on your junior strategy: everything to bring young talent and employers together.",
+    recapWhatText: "And it doesn't stop at recruitment: we also run workshops, guest lectures and masterclasses at schools and study associations, on the step from study to work.",
+    recapWhatTopics: ["Career orientation", "Applying & your CV", "Personal branding", "Working student roles as a stepping stone"],
+    recapWhatCta: "More on our impact →",
     foundersAlt: "Eva and Wieke, the founders of VOIDS",
     foundersPending: "Photo of Eva & Wieke coming soon",
     teamTitle: "THE TEAM",
@@ -160,7 +172,10 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 14px" }}>{c.p1}</p>
           <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: "0 0 20px" }}>{c.p2}</p>
           <Disclosure label={c.recapWhyLabel}>
-            <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 460 }}>{c.recapWhyText}</p>
+            <div style={{ display: "flex", alignItems: "baseline", gap: 12, maxWidth: 440 }}>
+              <span className="anton" style={{ fontSize: 34, color: "var(--voids-purple)", flex: "none" }}>{c.recapWhyStatValue}</span>
+              <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{c.recapWhyText}</p>
+            </div>
           </Disclosure>
         </div>
         {foundersPhoto ? (
@@ -214,7 +229,10 @@ export function AboutPage({ lang }: { lang: Lang }) {
           </div>
           <div style={{ marginTop: 22 }}>
             <Disclosure label={c.recapHowLabel}>
-              <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: 0, maxWidth: 640 }}>{c.recapHowText}</p>
+              <div style={{ display: "flex", alignItems: "baseline", gap: 12, maxWidth: 560 }}>
+                <span className="anton" style={{ fontSize: 34, color: "var(--voids-purple)", flex: "none" }}>{c.recapHowStatValue}</span>
+                <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--voids-ink-soft)", margin: 0 }}>{c.recapHowText}</p>
+              </div>
             </Disclosure>
           </div>
         </div>
@@ -248,7 +266,17 @@ export function AboutPage({ lang }: { lang: Lang }) {
           </div>
           <div style={{ marginTop: 24 }}>
             <Disclosure label={c.recapWhatLabel}>
-              <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 640 }}>{c.recapWhatText}</p>
+              <div style={{ maxWidth: 640 }}>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 12px" }}>{c.recapWhatText}</p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 12 }}>
+                  {c.recapWhatTopics.map((topic) => (
+                    <span key={topic} className="badge badge--blue">{topic}</span>
+                  ))}
+                </div>
+                <Link href={localePath(lang, "/impact")} style={{ fontSize: 13, fontWeight: 600, color: "var(--voids-blue)" }}>
+                  {c.recapWhatCta}
+                </Link>
+              </div>
             </Disclosure>
           </div>
         </div>
