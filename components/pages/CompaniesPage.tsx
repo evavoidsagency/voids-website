@@ -487,12 +487,16 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
                 <p style={{ fontSize: 11.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{c.salaryFootnote}</p>
               </Disclosure>
             </div>
-            <div style={{ marginTop: 16, paddingTop: 16, borderTop: "1px solid var(--border-hairline)", display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
+          </div>
+
+          <div className="card card--accent-purple" style={{ marginTop: 20, padding: 26, display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap", background: "var(--voids-purple-100)" }}>
+            <div style={{ width: 48, height: 48, borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
               <HeartIcon />
-              <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: 0, flex: 1, minWidth: 220 }}>
-                {c.impactNote} <Link href={p("/impact")} style={{ fontWeight: 600, color: "var(--voids-purple)" }}>{c.impactCta} →</Link>
-              </p>
             </div>
+            <p className="anton" style={{ fontSize: 17, lineHeight: 1.4, textTransform: "none", color: "var(--voids-ink)", margin: 0, flex: 1, minWidth: 260 }}>
+              {c.impactNote}
+            </p>
+            <Button variant="outline" size="md" href={p("/impact")}>{c.impactCta} →</Button>
           </div>
         </div>
       </section>
