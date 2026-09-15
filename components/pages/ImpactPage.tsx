@@ -71,7 +71,7 @@ const COPY: Record<
     solutionText:
       "Wij helpen organisaties betaalde werkstudentfuncties te creëren waarin studenten al tijdens hun studie aan echte vraagstukken werken, verantwoordelijkheid dragen en zich ontwikkelen. Inkomen én relevante ervaring, tegelijk. Kiezen hoeft niet meer.",
     stats: [
-      { value: "100%", text: "transparante voorwaarden & fair wages voor elk talent", color: "blue" },
+      { value: "100%", text: "transparante voorwaarden & eerlijke beloning voor elk talent", color: "blue" },
       { value: "4.000+", text: "studenten met gelijke toegang tot kansen", color: "purple" },
     ],
     ambitionEyebrow: "Onze ambitie",

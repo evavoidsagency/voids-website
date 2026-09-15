@@ -49,7 +49,7 @@ const COPY: Record<
     stat1Value: "4.000+",
     stat1Label: "in de community",
     stat2Value: "100%",
-    stat2Label: "eerlijke voorwaarden & fair pay",
+    stat2Label: "transparante voorwaarden & eerlijke beloning",
     stat3Value: "10%",
     stat3Label: "winst naar impact",
     trustedBy: "VERTROUWD DOOR",
@@ -66,7 +66,7 @@ const COPY: Record<
     missionLabel: "Onze missie",
     missionTitle: "EERLIJK WERK, GELIJKE KANSEN.",
     missionText:
-      "We bouwen aan een eerlijkere arbeidsmarkt voor starters, met transparante voorwaarden, fair wages en gelijke kansen ongeacht netwerk of achtergrond. Het is onze ambitie om daar vanaf medio 2027 ook 10% van onze winst aan terug te geven.",
+      "We bouwen aan een eerlijkere arbeidsmarkt voor starters, met transparante voorwaarden, eerlijke beloning en gelijke kansen ongeacht netwerk of achtergrond. Het is onze ambitie om daar vanaf medio 2027 ook 10% van onze winst aan terug te geven.",
     missionCta: "Onze impact →",
     finalTitle: "STOP MET ZOEKEN, START MET ONTVANGEN.",
     finalText:
@@ -84,7 +84,7 @@ const COPY: Record<
     stat1Value: "4,000+",
     stat1Label: "in the community",
     stat2Value: "100%",
-    stat2Label: "fair terms & fair pay",
+    stat2Label: "transparent terms & fair pay",
     stat3Value: "10%",
     stat3Label: "profit to impact",
     trustedBy: "TRUSTED BY",
@@ -145,18 +145,18 @@ export function HomePage({ lang }: { lang: Lang }) {
                 {c.ctaTalent}
               </Button>
             </div>
-            <div style={{ display: "flex", gap: 22, marginTop: 40, flexWrap: "nowrap" }}>
-              <div style={{ minWidth: 80 }}>
+            <div className="flex-collapse" style={{ display: "flex", gap: 28, marginTop: 40, flexWrap: "nowrap" }}>
+              <div style={{ width: 100, flex: "none" }}>
                 <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}><CountUp value={c.stat1Value} /></div>
-                <div style={{ fontSize: 12.5, lineHeight: 1.4, color: "var(--voids-purple-100)" }}>{c.stat1Label}</div>
+                <div style={{ fontSize: 12.5, lineHeight: 1.45, color: "var(--voids-purple-100)", marginTop: 6 }}>{c.stat1Label}</div>
               </div>
-              <div style={{ minWidth: 140 }}>
+              <div style={{ width: 220, flex: "none" }}>
                 <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}><CountUp value={c.stat2Value} /></div>
-                <div style={{ fontSize: 12.5, lineHeight: 1.4, color: "var(--voids-purple-100)" }}>{c.stat2Label}</div>
+                <div style={{ fontSize: 12.5, lineHeight: 1.45, color: "var(--voids-purple-100)", marginTop: 6 }}>{c.stat2Label}</div>
               </div>
-              <div style={{ minWidth: 80 }}>
+              <div style={{ width: 110, flex: "none" }}>
                 <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}><CountUp value={c.stat3Value} /></div>
-                <div style={{ fontSize: 12.5, lineHeight: 1.4, color: "var(--voids-purple-100)" }}>{c.stat3Label}</div>
+                <div style={{ fontSize: 12.5, lineHeight: 1.45, color: "var(--voids-purple-100)", marginTop: 6 }}>{c.stat3Label}</div>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
 import { CountUp } from "@/components/ui/CountUp";
 import { Photo } from "@/components/ui/Photo";
+import { PricingToggle } from "@/components/pages/PricingToggle";
 import { localePath, type Lang } from "@/lib/i18n/common";
 
 const COPY: Record<
@@ -26,7 +27,7 @@ const COPY: Record<
   }
 > = {
   nl: {
-    eyebrow: "Studenten bereiken",
+    eyebrow: "Vacatures adverteren",
     title: "ZET JE VACATURE VOOR\n4.000+ STUDENTEN EN STARTERS.",
     sub: "Naast onze werving & selectie-dienst kun je je vacature ook zelf onder de aandacht brengen: rechtstreeks in onze WhatsApp-community en op ons jobboard.",
     heroStats: [
@@ -59,7 +60,7 @@ const COPY: Record<
     contactCta: "Neem contact op",
   },
   en: {
-    eyebrow: "Reach students",
+    eyebrow: "Advertise vacancies",
     title: "PUT YOUR VACANCY IN FRONT OF\n4,000+ STUDENTS AND STARTERS.",
     sub: "Alongside our recruitment & selection service, you can also put your vacancy in front of candidates yourself: directly in our WhatsApp community and on our job board.",
     heroStats: [
@@ -150,18 +151,12 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
         <div className="wrap" style={{ padding: "56px 32px 64px" }}>
           <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 8px" }}>{c.pricingTitle}</h2>
           <p style={{ fontSize: 14.5, color: "var(--voids-ink-muted)", margin: "0 0 24px", maxWidth: 700 }}>{c.pricingIntro}</p>
-          <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20, alignItems: "stretch" }}>
-            <div className="card card--accent-purple" style={{ padding: 24, display: "flex", flexDirection: "column" }}>
-              <CoinIcon />
-              <div className="anton" style={{ fontSize: 18, margin: "12px 0 10px" }}>{c.pricingSubTitle}</div>
-              <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{c.pricingSubText}</p>
-            </div>
-            <div className="card" style={{ padding: 24, display: "flex", flexDirection: "column" }}>
-              <TagIcon />
-              <div className="anton" style={{ fontSize: 18, margin: "12px 0 10px" }}>{c.pricingAdTitle}</div>
-              <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{c.pricingAdText}</p>
-            </div>
-          </div>
+          <PricingToggle
+            leftLabel={c.pricingSubTitle}
+            leftText={c.pricingSubText}
+            rightLabel={c.pricingAdTitle}
+            rightText={c.pricingAdText}
+          />
         </div>
       </section>
 
@@ -197,21 +192,3 @@ function BoardIcon() {
   );
 }
 
-function TagIcon() {
-  return (
-    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-      <path d="M16.5 4h6a2 2 0 0 1 2 2v6a2 2 0 0 1-.6 1.4l-11 11a2 2 0 0 1-2.8 0l-6-6a2 2 0 0 1 0-2.8l11-11A2 2 0 0 1 16.5 4Z" stroke="var(--voids-purple)" strokeWidth="2" strokeLinejoin="round" />
-      <circle cx="20.5" cy="9.5" r="1.5" fill="var(--voids-purple)" />
-    </svg>
-  );
-}
-
-function CoinIcon() {
-  return (
-    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-      <circle cx="15" cy="15" r="11" stroke="var(--voids-purple)" strokeWidth="2" />
-      <path d="M18 11.5c-.6-.9-1.7-1.5-3-1.5-2 0-3.5 1.4-3.5 3.2 0 1.8 1.5 2.6 3.5 3.2 2 .6 3.5 1.4 3.5 3.2 0 1.8-1.5 3.2-3.5 3.2-1.3 0-2.4-.6-3-1.5" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M15 8.5v13" stroke="var(--voids-purple)" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  );
-}

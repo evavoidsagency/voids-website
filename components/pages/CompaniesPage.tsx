@@ -87,7 +87,7 @@ const COPY: Record<
     ctaProcess: "Bekijk onze diensten",
     heroStats: [
       { value: "4.000+", label: "studenten en starters in onze community" },
-      { value: "100%", label: "transparante voorwaarden & fair pay" },
+      { value: "100%", label: "transparante voorwaarden & eerlijke beloning" },
       { value: "10%", label: "winst naar impact vanaf medio 2027" },
     ],
     servicesEyebrow: "Wat we doen",
@@ -104,7 +104,7 @@ const COPY: Record<
         photoAlt: "Een VOIDS-recruiter aan het werk",
       },
       {
-        verb: "Studenten bereiken",
+        verb: "Vacatures adverteren",
         title: "Community & jobboard",
         text: "Zet je vacature rechtstreeks voor 4.000+ studenten en starters: wekelijks in de WhatsApp-community en doorlopend op ons jobboard.",
         chips: ["WhatsApp-community", "Jobboard"],
@@ -127,7 +127,7 @@ const COPY: Record<
     bandAlt: "Een VOIDS-recruiter aan het werk",
     profilesEyebrow: "Ons talent",
     profilesTitle: "HIGH ACHIEVERS, GESELECTEERD OP KWALITEIT EN CULTUUR.",
-    profilesIntro: "We bereiken jong talent via meerdere kanalen: onze eigen talentpool, de community en het jobboard, en het bredere netwerk van studieverenigingen en samenwerkingspartners. Voor werving selecteren we gericht op cultuurfit en skills, voornamelijk onder hbo- en wo-studenten en young professionals die gewend zijn te presteren naast hun studie. Een greep uit de vakgebieden:",
+    profilesIntro: "We bereiken jong talent via meerdere kanalen: onze eigen talentpool, de community en het jobboard, en het bredere netwerk van studieverenigingen en samenwerkingspartners. Voor werving selecteren we gericht op cultuurfit en skills, voornamelijk onder hbo- en wo-studenten en jonge professionals die gewend zijn te presteren naast hun studie. Een greep uit de vakgebieden:",
     profilesCta: "Bekijk voorbeeldprofielen →",
     whyWsEyebrow: "Onze voorkeur",
     whyWsTitle: "DE WERKSTUDENT IS ONZE EERSTE KEUZE.",
@@ -207,7 +207,7 @@ const COPY: Record<
         photoAlt: "A VOIDS recruiter at work",
       },
       {
-        verb: "Reach",
+        verb: "Advertise vacancies",
         title: "Community & job board",
         text: "Put your vacancy directly in front of 4,000+ students and starters: weekly in the WhatsApp community and continuously on our job board.",
         chips: ["WhatsApp community", "Job board"],

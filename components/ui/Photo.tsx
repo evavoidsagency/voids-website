@@ -29,7 +29,10 @@ export function Photo({
   style?: CSSProperties;
   className?: string;
 }) {
-  const transforms = [flip ? "scaleX(-1)" : "", zoom !== 1 ? `scale(${zoom})` : ""].filter(Boolean).join(" ");
+  // A hair of extra scale so sub-pixel rounding of the container's height
+  // (from aspect-ratio, or a stretched grid row) never leaves a sliver of
+  // the placeholder background visible at an edge.
+  const transforms = [flip ? "scaleX(-1)" : "", `scale(${zoom * 1.004})`].filter(Boolean).join(" ");
   return (
     <div
       className={className}
@@ -48,7 +51,7 @@ export function Photo({
         fill
         priority={priority}
         sizes={sizes}
-        style={{ objectFit: "cover", objectPosition, transform: transforms || undefined }}
+        style={{ objectFit: "cover", objectPosition, transform: transforms }}
       />
     </div>
   );

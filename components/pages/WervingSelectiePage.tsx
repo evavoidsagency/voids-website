@@ -38,8 +38,7 @@ const COPY: Record<
     testimonialP2: string;
     testimonialName: string;
     testimonialRole: string;
-    googleRating: string;
-    googleReviewCount: string;
+    googleReviewsCta: string;
     calcNote: string;
     calcCta: string;
     finalTitle: string;
@@ -61,7 +60,7 @@ const COPY: Record<
     casesTitle: "MATCHES DIE WERKEN",
     casesSub: "Een kleine greep uit de vele bedrijven waar we mee hebben samengewerkt, van scale-up tot corporate.",
     profilesTitle: "HIGH ACHIEVERS, GESELECTEERD OP KWALITEIT EN CULTUUR.",
-    profilesSub: "We sourcen voornamelijk hbo- en wo-studenten en young professionals: ambitieus, snel zelfstandig en gewend om te presteren naast hun studie. We matchen niet alleen op skills, maar vooral op cultuurfit, zodat wat we voorstellen ook echt past.",
+    profilesSub: "We sourcen voornamelijk hbo- en wo-studenten en jonge professionals: ambitieus, snel zelfstandig en gewend om te presteren naast hun studie. We matchen niet alleen op skills, maar vooral op cultuurfit, zodat wat we voorstellen ook echt past.",
     taasEyebrow: "Twee manieren om samen te werken",
     taasTitle: "VOIDS TALENT AS A SERVICE",
     taasSub: "Zelfde zorgvuldige werving en selectie, twee manieren om af te rekenen. Kies wat past bij hoe vaak je werft.",
@@ -86,8 +85,7 @@ const COPY: Record<
       "VOIDS vond op korte termijn vier kandidaten voor ons, en na onze eigen gesprekken vonden we een uitstekende match. Complimenten aan VOIDS voor hun professionaliteit en betrokkenheid.",
     testimonialName: "Noortje Jonk",
     testimonialRole: "Commercial Manager bij Enerzien",
-    googleRating: "5.0",
-    googleReviewCount: "31 reviews",
+    googleReviewsCta: "Lees de andere reviews",
     calcNote: "Benieuwd wat een werkstudent, stagiair of starter kost, en wanneer je voor welke kiest?",
     calcCta: "Bekijk de calculator en checklist →",
     finalTitle: "KLAAR OM TE SCHALEN?",
@@ -133,8 +131,7 @@ const COPY: Record<
       "VOIDS found four candidates for us on short notice, and after conducting our own interviews we found a great fit. Compliments to VOIDS for their professionalism and commitment.",
     testimonialName: "Noortje Jonk",
     testimonialRole: "Commercial Manager at Enerzien",
-    googleRating: "5.0",
-    googleReviewCount: "31 reviews",
+    googleReviewsCta: "Read the other reviews",
     calcNote: "Curious what a working student, intern or starter costs, and when to choose which?",
     calcCta: "See the calculator and checklist →",
     finalTitle: "READY TO SCALE?",
@@ -171,7 +168,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
 
       <section className="wrap" style={{ padding: "56px 32px 20px" }}>
         <h2 className="anton section-h2" style={{ fontSize: 24, margin: "0 0 20px" }}>{c.processTitle}</h2>
-        <div className="g-collapse process-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 18, alignItems: "stretch" }}>
+        <div className="g-collapse process-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gridAutoRows: "1fr", gap: 18, alignItems: "stretch" }}>
           {PROCESS[lang].map((s, i) => (
             <div key={s.num} className="card card--accent-purple process-card" style={{ padding: 22, height: "100%", display: "flex", flexDirection: "column" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 }}>
@@ -246,7 +243,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
           <div>
             <p style={{ fontSize: 18, lineHeight: 1.6, color: "#fff", margin: "0 0 16px" }}>&ldquo;{c.testimonialP1}</p>
             <p style={{ fontSize: 18, lineHeight: 1.6, color: "#fff", margin: "0 0 28px" }}>{c.testimonialP2}&rdquo;</p>
-            <GoogleBadge rating={c.googleRating} count={c.googleReviewCount} href="https://share.google/Ki4rN5ZbP3TjyTBCI" />
+            <ReviewsLink label={c.googleReviewsCta} href="https://share.google/Ki4rN5ZbP3TjyTBCI" />
           </div>
         </div>
       </section>
@@ -454,15 +451,7 @@ function GoogleGIcon() {
   );
 }
 
-function StarIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBC04" aria-hidden="true">
-      <path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.8 1.6 7-6.2-3.7-6.2 3.7 1.6-7-5.4-4.8 7.1-.7Z" />
-    </svg>
-  );
-}
-
-function GoogleBadge({ rating, count, href }: { rating: string; count: string; href: string }) {
+function ReviewsLink({ label, href }: { label: string; href: string }) {
   return (
     <a
       href={href}
@@ -470,24 +459,18 @@ function GoogleBadge({ rating, count, href }: { rating: string; count: string; h
       rel="noopener noreferrer"
       style={{
         display: "inline-flex",
-        flexDirection: "column",
         alignItems: "center",
-        gap: 4,
+        gap: 10,
         background: "#fff",
-        borderRadius: "var(--radius-lg)",
-        padding: "16px 28px",
+        borderRadius: 999,
+        padding: "12px 20px",
         textDecoration: "none",
         boxShadow: "var(--shadow-md)",
       }}
     >
       <GoogleGIcon />
-      <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 2 }}>
-        <span className="anton" style={{ fontSize: 18, color: "var(--text-strong)" }}>{rating}</span>
-        <span style={{ display: "flex", gap: 1 }}>
-          {Array.from({ length: 5 }).map((_, i) => <StarIcon key={i} />)}
-        </span>
-      </div>
-      <span style={{ fontSize: 12, color: "var(--voids-ink-muted)" }}>{count}</span>
+      <span style={{ fontSize: 14, fontWeight: 600, color: "var(--text-strong)" }}>{label}</span>
+      <span aria-hidden="true" style={{ color: "var(--voids-purple)" }}>→</span>
     </a>
   );
 }

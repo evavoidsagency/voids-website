@@ -47,10 +47,10 @@ const COPY: Record<
     strengthEyebrow: "Onze kracht",
     strengthTitle: "WE KENNEN GEN Z VAN BINNENUIT.",
     strengthText:
-      "We wachten niet tot cv's binnenkomen. Via structurele samenwerkingen met studieverenigingen en de plekken waar young talent samenkomt, bouwen we die kennis zelf op. Daardoor zien we verder dan een cv: we prikken door tot wie iemand écht is, en of dat de gedrevenheid en potentie oplevert waar we naar zoeken.",
+      "We wachten niet tot cv's binnenkomen. Via structurele samenwerkingen met studieverenigingen en de plekken waar jong talent samenkomt, bouwen we die kennis zelf op. Daardoor zien we verder dan een cv: we prikken door tot wie iemand écht is, en of dat de gedrevenheid en potentie oplevert waar we naar zoeken.",
     strengthPoints: [
       "Studieverenigingen als partner",
-      "Aanwezig bij young talent events",
+      "Aanwezig bij events voor jong talent",
       "4.000+ studenten in de community",
     ],
     whatEyebrow: "Wat we doen",
@@ -64,7 +64,7 @@ const COPY: Record<
         cta: "Meer over werving & selectie →",
       },
       {
-        verb: "Studenten bereiken",
+        verb: "Vacatures adverteren",
         title: "Community & jobboard",
         text: "Wil je zelf actief werven? Zet je vacature rechtstreeks onder de aandacht van 4.000+ studenten en starters in onze WhatsApp-community en op ons jobboard, naast onze werving & selectie-dienst.",
         path: "/companies/community-jobboard",
@@ -83,7 +83,7 @@ const COPY: Record<
     recapWhyLabel: "WAAROM VOIDS?",
     recapWhyText: "Talent zit overal. Toegang tot ervaring niet. Wij verbinden de juiste mensen aan de juiste plek, ongeacht wie ze kennen of wat ze zich konden veroorloven.",
     recapHowLabel: "HOE WE WERKEN",
-    recapHowText: "We wachten niet tot cv's binnenkomen: via studieverenigingen en young-talent events bouwen we zelf de kennis op om verder te kijken dan een cv.",
+    recapHowText: "We wachten niet tot cv's binnenkomen: via studieverenigingen en events voor jong talent bouwen we zelf de kennis op om verder te kijken dan een cv.",
     recapWhatLabel: "WAT WE DOEN",
     recapWhatText: "Werving & selectie, studenten bereiken via community en jobboard, en advies over je junior-strategie: alles om jong talent en werkgevers samen te brengen.",
     foundersAlt: "Eva en Wieke, de oprichters van VOIDS",
@@ -120,7 +120,7 @@ const COPY: Record<
         cta: "More on recruitment & selection →",
       },
       {
-        verb: "Reach students",
+        verb: "Advertise vacancies",
         title: "Community & job board",
         text: "Want to recruit actively yourself? Put your vacancy directly in front of 4,000+ students and starters in our WhatsApp community and on our job board, alongside our recruitment & selection service.",
         path: "/companies/community-jobboard",

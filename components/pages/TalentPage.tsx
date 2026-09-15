@@ -71,7 +71,7 @@ const COPY: Record<
     resources: [
       { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord één keer een paar vragen, en wij doen de rest: je wordt proactief voorgesteld bij offmarket-kansen, rollen waar we dankzij onze nauwe samenwerking met werkgevers al vroeg over meedenken, en krijgt een plek in ons exclusieve netwerk met events.", cta: "Start je profiel", path: "/pager" },
       { tier: "Community", title: "WhatsApp-community", text: "Word lid van de community en krijg passende vacatures wekelijks rechtstreeks in je WhatsApp.", cta: "Join", whats: true },
-      { tier: "Vrijblijvend", title: "Job board", text: "Bekijk open rollen en solliciteer direct per vacature, zonder account of profiel.", cta: "Bekijk jobs", path: "/jobboard" },
+      { tier: "Los per vacature", title: "Job board", text: "Bekijk open rollen en solliciteer direct per vacature, zonder account of profiel.", cta: "Bekijk jobs", path: "/jobboard" },
     ],
     resourcesBadge: "Aanbevolen",
     faqEyebrow: "Veelgestelde vragen",
@@ -150,7 +150,7 @@ const COPY: Record<
     resources: [
       { tier: "Active in the talent pool", title: "Talent pool", text: "Answer a few questions once, and we do the rest: you get proactively put forward for off-market opportunities, roles we're already thinking through with employers early on thanks to our close working relationship, plus a spot in our exclusive network with events.", cta: "Join the talent pool", path: "/pager" },
       { tier: "Community", title: "WhatsApp community", text: "Join the community and get matching vacancies sent straight to your WhatsApp every week.", cta: "Join", whats: true },
-      { tier: "No strings attached", title: "Job board", text: "Browse open roles and apply directly to any vacancy, no account or profile needed.", cta: "View jobs", path: "/jobboard" },
+      { tier: "Per vacancy", title: "Job board", text: "Browse open roles and apply directly to any vacancy, no account or profile needed.", cta: "View jobs", path: "/jobboard" },
     ],
     resourcesBadge: "Recommended",
     faqEyebrow: "Frequently asked",
@@ -277,7 +277,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
       <section className="wrap" style={{ padding: "72px 32px" }}>
         <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.resourcesEyebrow}</span>
         <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 10px" }}>{c.resourcesTitle}</h2>
-        <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 30px", maxWidth: 780 }}>{c.resourcesIntro}</p>
+        <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 30px", maxWidth: 1040 }}>{c.resourcesIntro}</p>
         <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20, alignItems: "stretch" }}>
           {c.resources.map((r, i) => {
             const recommended = i === 0;
