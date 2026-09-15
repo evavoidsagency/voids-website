@@ -19,15 +19,12 @@ const COPY: Record<
     card1Badge: string;
     card1Title: string;
     card1Text: string;
-    card1Answer: string;
     card2Badge: string;
     card2Title: string;
     card2Text: string;
-    card2Answer: string;
     card3Badge: string;
     card3Title: string;
     card3Text: string;
-    card3Answer: string;
     problemClose: string;
     problemCloseLabel: string;
     problemCloseCta: string;
@@ -69,17 +66,14 @@ const COPY: Record<
     card1Title: "Ongelijke toegang tot ervaring",
     card1Text:
       "Stages betalen vaak te weinig om van rond te komen. Studenten die dat gemis kunnen opvangen, met steun thuis of een buffer, hebben daarmee een voorsprong die niets met talent te maken heeft.",
-    card1Answer: "Een salaris waar je van rond kunt komen, zodat inkomen geen keuze meer hoeft te zijn.",
     card2Badge: "Startpositie",
     card2Title: "Een beperkter startpunt",
     card2Text:
       "Wie die ervaring misloopt, betreedt de arbeidsmarkt met minder vaardigheden, minder zelfvertrouwen over waar hij of zij goed in is, en zonder netwerk om op terug te vallen.",
-    card2Answer: "Echte verantwoordelijkheid en een netwerk van 4.000+ studenten en werkgevers, al tijdens de studie.",
     card3Badge: "Lange termijn",
     card3Title: "Een nadeel dat blijft doorwerken",
     card3Text:
       "Die achterstand stapelt zich op na het afstuderen, en is later niet zomaar recht te trekken met een eerlijker wervingsproces alleen.",
-    card3Answer: "Een voorsprong die je al opbouwt vóórdat de concurrentie begint.",
     problemClose:
       "En dit is niet alleen goed nieuws voor studenten: bedrijven die met werkstudenten werken, bouwen zelf een stabielere pijplijn aan junior talent op, tegen lagere kosten dan een fulltime starter.",
     problemCloseLabel: "Voor bedrijven",
@@ -135,17 +129,14 @@ const COPY: Record<
     card1Title: "Unequal access to experience",
     card1Text:
       "Internships often pay too little to live on. Students who can absorb that gap, with support at home or savings to fall back on, get a head start that has nothing to do with talent.",
-    card1Answer: "A salary you can actually live on, so income doesn't have to be the trade-off.",
     card2Badge: "Starting position",
     card2Title: "A narrower launchpad",
     card2Text:
       "Missing out on that experience means entering the job market with fewer skills, less confidence in what you're good at, and no network to fall back on.",
-    card2Answer: "Real responsibility and a network of 4,000+ students and employers, while still studying.",
     card3Badge: "Long term",
     card3Title: "A disadvantage that compounds",
     card3Text:
       "That gap keeps compounding after graduation, and can't simply be undone later by a fairer hiring process alone.",
-    card3Answer: "A head start you build before the competition even begins.",
     problemClose:
       "And this isn't only good news for students: companies that work with working students build a more stable junior pipeline themselves, at a lower cost than a full-time starter.",
     problemCloseLabel: "For companies",
@@ -233,9 +224,9 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         </Reveal>
         <div className="g-collapse problem-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 24, alignItems: "stretch" }}>
           {[
-            { icon: <StipendIcon />, badge: c.card1Badge, title: c.card1Title, text: c.card1Text, answer: c.card1Answer },
-            { icon: <ShiftIcon />, badge: c.card2Badge, title: c.card2Title, text: c.card2Text, answer: c.card2Answer },
-            { icon: <CompoundIcon />, badge: c.card3Badge, title: c.card3Title, text: c.card3Text, answer: c.card3Answer },
+            { icon: <StipendIcon />, badge: c.card1Badge, title: c.card1Title, text: c.card1Text },
+            { icon: <ShiftIcon />, badge: c.card2Badge, title: c.card2Title, text: c.card2Text },
+            { icon: <CompoundIcon />, badge: c.card3Badge, title: c.card3Title, text: c.card3Text },
           ].map((card, i) => (
             <Reveal key={card.title} delay={i * 140} className="problem-card" style={{ height: "100%" }}>
               <div className="card card--hoverable card--accent-blue" style={{ height: "100%", padding: 28, display: "flex", flexDirection: "column" }}>
@@ -245,7 +236,6 @@ export function ImpactPage({ lang }: { lang: Lang }) {
                 </div>
                 <div className="anton" style={{ fontSize: 18, margin: "18px 0 10px", color: "var(--voids-blue)" }}>{card.title}</div>
                 <p style={{ fontSize: 14, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{card.text}</p>
-                <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-purple)", fontWeight: 600, margin: "16px 0 0", paddingTop: 14, borderTop: "1px solid var(--voids-line)", minHeight: 74 }}>{card.answer}</p>
               </div>
             </Reveal>
           ))}
@@ -269,7 +259,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
                 <p className="anton" style={{ fontSize: 16, lineHeight: 1.4, textTransform: "none", color: "var(--voids-ink)", margin: 0 }}>
                   {c.problemClose}
                 </p>
-                <Button variant="primary" size="md" fullWidth href={p("/companies")}>{c.problemCloseCta}</Button>
+                <Button variant="primary" size="md" href={p("/companies")}>{c.problemCloseCta}</Button>
               </div>
             </div>
             <Photo
@@ -312,10 +302,10 @@ export function ImpactPage({ lang }: { lang: Lang }) {
                 const icon = findSdgIcon(s.num);
                 return (
                   <div key={s.num} style={{ height: "100%", display: "flex", flexDirection: "column", borderRadius: "var(--radius-md)", overflow: "hidden", boxShadow: "var(--shadow-sm)" }}>
-                    <div style={{ position: "relative", background: s.color, height: 130, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <div style={{ background: s.color, padding: 24, display: "flex", alignItems: "center", justifyContent: "center" }}>
                       {icon ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={icon} alt={`SDG ${s.num}: ${s.title}`} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+                        <img src={icon} alt={`SDG ${s.num}: ${s.title}`} style={{ width: 96, height: 96 }} />
                       ) : (
                         <div className="anton" style={{ fontSize: 48, lineHeight: 0.9, color: "#fff" }}>{s.num}</div>
                       )}
