@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { WhyHowWhatAccordion } from "@/components/pages/WhyHowWhatAccordion";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { Photo } from "@/components/ui/Photo";
 import { CountUp } from "@/components/ui/CountUp";
@@ -34,9 +33,6 @@ const COPY: Record<
     missionTitle: string;
     missionText: string;
     missionCta: string;
-    whyHowWhatEyebrow: string;
-    whyHowWhatTitle: string;
-    whyHowWhat: { label: string; text: string }[];
     finalTitle: string;
     finalText: string;
     finalCta: string;
@@ -72,22 +68,6 @@ const COPY: Record<
     missionText:
       "We bouwen aan een eerlijkere arbeidsmarkt voor starters, met transparante voorwaarden, eerlijke beloning en gelijke kansen ongeacht netwerk of achtergrond. Het is onze ambitie om daar vanaf medio 2027 ook 10% van onze winst aan terug te geven.",
     missionCta: "Onze impact →",
-    whyHowWhatEyebrow: "In het kort",
-    whyHowWhatTitle: "WAAROM, HOE EN WAT.",
-    whyHowWhat: [
-      {
-        label: "Waarom VOIDS?",
-        text: "Talent zit overal. Toegang tot ervaring niet. Wij verbinden de juiste mensen aan de juiste plek, ongeacht wie ze kennen of wat ze zich konden veroorloven.",
-      },
-      {
-        label: "Hoe we werken",
-        text: "We wachten niet tot cv's binnenkomen: via studieverenigingen en events voor jong talent bouwen we die kennis zelf op. Zo kijken we verder dan een cv, en brengen we bedrijven in contact met talent op basis van motivatie en potentie, niet alleen een lijstje ervaring.",
-      },
-      {
-        label: "Wat we doen",
-        text: "Voor bedrijven: werving & selectie, zichtbaarheid via onze community en jobboard, en advies over je junior-strategie. Voor talent: een jobboard, een WhatsApp-community met wekelijkse kansen, en een talentpool die je proactief matcht.",
-      },
-    ],
     finalTitle: "STOP MET ZOEKEN, START MET ONTVANGEN.",
     finalText:
       "Sluit je aan bij 4.000+ studenten en starters in onze community. Passende kansen krijg je direct via WhatsApp.",
@@ -123,22 +103,6 @@ const COPY: Record<
     missionText:
       "We’re building a fairer job market for starters, with transparent terms, fair wages and equal chances regardless of network or background. It's our ambition to also give back 10% of our profit to that cause from mid-2027.",
     missionCta: "Our impact →",
-    whyHowWhatEyebrow: "In short",
-    whyHowWhatTitle: "WHY, HOW AND WHAT.",
-    whyHowWhat: [
-      {
-        label: "Why VOIDS?",
-        text: "Talent is everywhere. Access to experience isn't. We connect the right people to the right place, regardless of who they know or what they could afford.",
-      },
-      {
-        label: "How we work",
-        text: "We don't wait for CVs to land in an inbox: through study associations and young-talent events, we build that knowledge ourselves. That way we see past a CV, and connect companies with talent based on motivation and potential, not just a list of experience.",
-      },
-      {
-        label: "What we do",
-        text: "For companies: recruitment & selection, visibility through our community and job board, and advice on your junior strategy. For talent: a job board, a WhatsApp community with weekly opportunities, and a talent pool that matches you proactively.",
-      },
-    ],
     finalTitle: "STOP SEARCHING, START RECEIVING.",
     finalText:
       "Join 4,000+ students and starters in our community. Matching opportunities come straight to your WhatsApp.",
@@ -228,15 +192,6 @@ export function HomePage({ lang }: { lang: Lang }) {
               );
             })}
           </div>
-        </div>
-      </section>
-
-      {/* WHY / HOW / WHAT */}
-      <section style={{ background: "#fff" }}>
-        <div className="wrap" style={{ padding: "16px 32px 64px", maxWidth: 860 }}>
-          <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.whyHowWhatEyebrow}</span>
-          <h2 className="anton section-h2" style={{ fontSize: 28, margin: "10px 0 24px" }}>{c.whyHowWhatTitle}</h2>
-          <WhyHowWhatAccordion items={c.whyHowWhat} />
         </div>
       </section>
 
