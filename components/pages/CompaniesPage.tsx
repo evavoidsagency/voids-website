@@ -16,7 +16,6 @@ const COPY: Record<
     eyebrow: string;
     title: string;
     roleChips: string[];
-    heroHook: string;
     sub: string;
     ctaIntro: string;
     ctaProcess: string;
@@ -86,7 +85,6 @@ const COPY: Record<
     eyebrow: "Voor bedrijven",
     title: "JUNIOR TALENT,\nVAN WERVING TOT BEHOUD.",
     roleChips: ["Werkstudenten", "Stagiairs", "Starters"],
-    heroHook: "Adverteer zelf bij onze community, of geef het hele proces uit handen: hoe dan ook binnen 30 dagen versterking.",
     sub: "Van werving en selectie tot strategisch advies en zichtbaarheid bij 4.000+ studenten: wij dekken elk onderdeel van je junior-talent-aanpak.",
     ctaIntro: "Plan een kennismaking",
     ctaProcess: "Bekijk onze diensten",
@@ -192,7 +190,6 @@ const COPY: Record<
     eyebrow: "For companies",
     title: "JUNIOR TALENT,\nFROM HIRING TO RETENTION.",
     roleChips: ["Working students", "Interns", "Starters"],
-    heroHook: "Advertise it yourself in our community, or hand off the whole process: either way, reinforcement within 30 days.",
     sub: "From recruitment and selection to strategic advice and visibility with 4,000+ students: we cover every part of your junior talent approach.",
     ctaIntro: "Book an intro call",
     ctaProcess: "See our services",
@@ -312,7 +309,6 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
                 <span key={r} className="badge badge--on-dark">{r}</span>
               ))}
             </div>
-            <p className="anton" style={{ fontSize: 18, lineHeight: 1.45, textTransform: "none", color: "#fff", margin: "0 0 16px", maxWidth: 500 }}>{c.heroHook}</p>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 32px", maxWidth: 480 }}>{c.sub}</p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <CalendlyButton label={c.ctaIntro} variant="secondary" size="lg" />
@@ -496,7 +492,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
             <div style={{ width: 48, height: 48, borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
               <HeartIcon />
             </div>
-            <p className="anton" style={{ fontSize: 17, lineHeight: 1.4, textTransform: "none", color: "var(--voids-ink)", margin: 0, flex: 1, minWidth: 260 }}>
+            <p style={{ fontSize: 15, lineHeight: 1.6, fontWeight: 500, color: "var(--voids-ink)", margin: 0, flex: 1, minWidth: 260 }}>
               {c.impactNote}
             </p>
             <Button variant="outline" size="md" href={p("/impact")}>{c.impactCta} →</Button>
