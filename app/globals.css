@@ -576,7 +576,8 @@ a:hover .blog-thumb img {
   /* A photo stretched to match a sibling grid column's height (aspect-ratio:
      auto + height:100%) has no intrinsic size once .g-collapse stacks that
      column into its own zero-height row — give it back a fixed ratio. */
-  .formats-photo {
+  .formats-photo,
+  .stretch-photo {
     aspect-ratio: 4 / 5 !important;
     height: auto !important;
   }

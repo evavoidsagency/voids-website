@@ -29,6 +29,7 @@ const COPY: Record<
     card3Text: string;
     card3Answer: string;
     problemClose: string;
+    problemCloseLabel: string;
     problemCloseCta: string;
     solutionEyebrow: string;
     solutionTitle: string;
@@ -81,6 +82,7 @@ const COPY: Record<
     card3Answer: "Ons antwoord: een voorsprong die je al opbouwt vóórdat de concurrentie begint.",
     problemClose:
       "En dit is niet alleen goed nieuws voor studenten: bedrijven die met werkstudenten werken, bouwen zelf een stabielere pijplijn aan junior talent op, tegen lagere kosten dan een fulltime starter.",
+    problemCloseLabel: "Voor bedrijven",
     problemCloseCta: "Bekijk wat dit voor jouw bedrijf betekent →",
     solutionEyebrow: "De oplossing",
     solutionTitle: "HET WERKSTUDENTSCHAP HEFT DE KEUZE OP.",
@@ -94,7 +96,7 @@ const COPY: Record<
     ambitionText:
       "Onze ambitie: vanaf medio 2027 investeren we 10% van onze winst terug in gelijke-kansen-initiatieven voor studenten.",
     workshopsEyebrow: "Ook buiten recruitment",
-    workshopsTitle: "IMPACT BEGINT AL OP SCHOOL.",
+    workshopsTitle: "SCHOOL BEREIDT JE NIET VOOR OP DE ARBEIDSMARKT.",
     workshopsText:
       "Niet iedereen weet vanzelf wat bij hem of haar past, en die keuze is lastiger als je er nooit op voorbereid bent. Daarom geven we ook workshops, lezingen en masterclasses op scholen en bij (studenten)organisaties, over de overgang van school naar werk.",
     workshopsTopics: [
@@ -146,6 +148,7 @@ const COPY: Record<
     card3Answer: "Our answer: a head start you build before the competition even begins.",
     problemClose:
       "And this isn't only good news for students: companies that work with working students build a more stable junior pipeline themselves, at a lower cost than a full-time starter.",
+    problemCloseLabel: "For companies",
     problemCloseCta: "See what this means for your company →",
     solutionEyebrow: "The solution",
     solutionTitle: "THE WORKING-STUDENT MODEL REMOVES THE TRADE-OFF.",
@@ -159,7 +162,7 @@ const COPY: Record<
     ambitionText:
       "Our ambition: from mid-2027, we reinvest 10% of our profit into equal-opportunity initiatives for students.",
     workshopsEyebrow: "Beyond recruitment",
-    workshopsTitle: "IMPACT STARTS AT SCHOOL.",
+    workshopsTitle: "SCHOOL DOESN'T PREPARE YOU FOR THE JOB MARKET.",
     workshopsText:
       "Not everyone naturally knows what fits them, and that choice gets harder if you've never been prepared for it. That's why we also run workshops, talks and masterclasses at schools and (student) organisations, on the transition from school to work.",
     workshopsTopics: [
@@ -254,25 +257,29 @@ export function ImpactPage({ lang }: { lang: Lang }) {
             </Reveal>
           ))}
         </div>
-        <Reveal delay={420}>
-          <div className="card card--accent-purple" style={{ marginTop: 36, padding: 24, display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
-            <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--voids-ink)", margin: 0, flex: 1, minWidth: 280 }}>
-              {c.problemClose}
-            </p>
-            <Button variant="outline" size="md" href={p("/companies")}>{c.problemCloseCta}</Button>
-          </div>
-        </Reveal>
       </section>
 
       <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
         <Reveal>
-          <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "start", padding: "64px 32px" }}>
-            <div>
+          <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "stretch", padding: "64px 32px" }}>
+            <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
               <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.solutionEyebrow}</span>
               <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px", color: "#fff" }}>{c.solutionTitle}</h2>
               <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0, maxWidth: 520 }}>{c.solutionText}</p>
+              <div className="card card--accent-blue" style={{ padding: 22, display: "flex", flexDirection: "column", gap: 14, maxWidth: 520, marginTop: "auto" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                  <div style={{ width: 32, height: 32, borderRadius: "50%", background: "var(--voids-blue-100)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
+                    <BriefcaseIcon />
+                  </div>
+                  <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".03em", textTransform: "uppercase", color: "var(--voids-blue)" }}>{c.problemCloseLabel}</span>
+                </div>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink)", margin: 0 }}>
+                  {c.problemClose}
+                </p>
+                <Button variant="outline" size="sm" href={p("/companies")}>{c.problemCloseCta}</Button>
+              </div>
             </div>
-            <Photo src="/photography/impact-band.jpg" alt={c.bandAlt} ratio="4 / 5" />
+            <Photo src="/photography/impact-band.jpg" alt={c.bandAlt} className="stretch-photo" style={{ aspectRatio: "auto", height: "100%" }} />
           </div>
         </Reveal>
       </section>
@@ -363,6 +370,16 @@ function Squiggle() {
       style={{ position: "absolute", left: 0, bottom: -16, width: "100%" }}
     >
       <path d="M2 9c26-11 52-11 78 0s52 11 78 0" stroke="var(--voids-blue)" strokeWidth="5" strokeLinecap="round" fill="none" />
+    </svg>
+  );
+}
+
+function BriefcaseIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="8" width="18" height="12" rx="2" stroke="var(--voids-blue)" strokeWidth="1.6" />
+      <path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="var(--voids-blue)" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M3 13h18" stroke="var(--voids-blue)" strokeWidth="1.6" />
     </svg>
   );
 }

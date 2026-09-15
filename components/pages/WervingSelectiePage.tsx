@@ -214,14 +214,14 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
                         <div style={{ fontSize: 12, lineHeight: 1.4, color: "var(--voids-ink-muted)" }}>{cs.sector}</div>
                       </div>
                     </div>
-                    <div className="badge badge--purple" style={{ marginBottom: 10, alignSelf: "flex-start" }}>{cs.metric}</div>
-                    <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: "0 0 12px", minHeight: 63 }}>{cs.text}</p>
-                    <ul style={{ margin: 0, paddingLeft: 16, display: "flex", flexDirection: "column", gap: 4, flex: 1 }}>
+                    <div className="badge badge--purple" style={{ marginBottom: 10, alignSelf: "flex-start", minHeight: 32, display: "flex", alignItems: "center" }}>{cs.metric}</div>
+                    <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: "0 0 12px", minHeight: 84 }}>{cs.text}</p>
+                    <ul style={{ margin: 0, paddingLeft: 16, display: "flex", flexDirection: "column", gap: 4 }}>
                       {cs.bullets.map((b) => (
                         <li key={b} style={{ fontSize: 12.5, lineHeight: 1.5, color: "var(--voids-ink-muted)" }}>{b}</li>
                       ))}
                     </ul>
-                    <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-purple)", fontWeight: 600, margin: "14px 0 0", paddingTop: 12, borderTop: "1px solid var(--voids-line)" }}>
+                    <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-purple)", fontWeight: 600, margin: "auto 0 0", paddingTop: 12, borderTop: "1px solid var(--voids-line)" }}>
                       → {cs.outcome}
                     </p>
                   </div>
@@ -283,7 +283,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
                     </div>
                     <div style={{ fontSize: 14, fontWeight: 600, margin: "0 0 4px" }}>{pr.edu}</div>
                     <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", marginBottom: 14 }}>{pr.skills}</div>
-                    <p className="anton" style={{ fontSize: 14, lineHeight: 1.4, color, textTransform: "none", margin: "auto 0 0", paddingTop: 12, borderTop: "1px solid var(--voids-line)" }}>{pr.traits}</p>
+                    <p className="anton" style={{ fontSize: 14, lineHeight: 1.4, color, textTransform: "none", margin: "auto 0 0", paddingTop: 12, borderTop: "1px solid var(--voids-line)", minHeight: 52 }}>{pr.traits}</p>
                   </div>
                 </Reveal>
               );
@@ -333,15 +333,17 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
                   </div>
                   <span className={`badge ${side.badgeClass}`} style={{ whiteSpace: "nowrap" }}>{side.duration}</span>
                 </div>
-                <div style={{ display: "flex", flexDirection: "column", gap: 10, flex: 1, marginBottom: 20 }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 20 }}>
                   {side.bullets.map((b) => (
-                    <div key={b} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13.5, color: "var(--voids-ink-soft)", lineHeight: 1.5, background: "#fff", borderRadius: "var(--radius-sm)", padding: "12px 16px" }}>
+                    <div key={b} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13.5, color: "var(--voids-ink-soft)", lineHeight: 1.5, background: "#fff", borderRadius: "var(--radius-sm)", padding: "12px 16px", minHeight: 44 }}>
                       <TinyCheckIcon color={side.color} />
                       <span>{b}</span>
                     </div>
                   ))}
                 </div>
-                <CalendlyButton label={side.cta} variant="outline" size="md" />
+                <div style={{ marginTop: "auto" }}>
+                  <CalendlyButton label={side.cta} variant="outline" size="md" />
+                </div>
               </div>
             ))}
           </div>
