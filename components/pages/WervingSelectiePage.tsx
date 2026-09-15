@@ -282,7 +282,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
             <span style={{ color: "var(--voids-purple)", fontStyle: "italic" }}>TALENT AS A SERVICE</span>
           </h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 36px", maxWidth: 900 }}>{c.taasSub}</p>
-          <div style={{ maxWidth: 640 }}>
+          <div style={{ maxWidth: 900 }}>
             <ComparisonCard
               leftIcon={<TagIcon />}
               leftColor="var(--voids-blue)"
