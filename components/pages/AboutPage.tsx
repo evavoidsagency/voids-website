@@ -232,7 +232,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
                   className={`card card--hoverable card--accent-${accent}`}
                   style={{ padding: 26, display: "flex", flexDirection: "column" }}
                 >
-                  <div className="anton" style={{ fontSize: 26, color: accentColor, marginBottom: 4 }}>{card.verb}</div>
+                  <div className="anton" style={{ fontSize: 22, color: accentColor, marginBottom: 4 }}>{card.verb}</div>
                   <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: ".02em", textTransform: "uppercase", color: "var(--voids-ink-muted)", marginBottom: 14 }}>{card.title}</div>
                   <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{card.text}</p>
                   {card.path && card.cta && (
