@@ -31,7 +31,7 @@ const COPY: Record<
 > = {
   nl: {
     eyebrow: "Vacatures adverteren",
-    title: "ZET JE VACATURE VOOR\n4.000+ STUDENTEN EN STARTERS.",
+    title: "BRENG JE VACATURE ONDER DE AANDACHT VAN\n4.000+ STUDENTEN EN STARTERS.",
     sub: "Naast onze werving & selectie-dienst kun je je vacature ook zelf onder de aandacht brengen: rechtstreeks in onze WhatsApp-community en op ons jobboard.",
     heroStats: [
       { value: "4.000+", label: "studenten en starters bereikt" },
