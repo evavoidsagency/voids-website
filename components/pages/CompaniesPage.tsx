@@ -14,6 +14,7 @@ const COPY: Record<
   {
     eyebrow: string;
     title: string;
+    roleChips: string[];
     heroHook: string;
     sub: string;
     ctaIntro: string;
@@ -81,6 +82,7 @@ const COPY: Record<
   nl: {
     eyebrow: "Voor bedrijven",
     title: "JUNIOR TALENT,\nVAN WERVING TOT BEHOUD.",
+    roleChips: ["Werkstudenten", "Stagiairs", "Starters"],
     heroHook: "Adverteer zelf bij onze community, of geef het hele proces uit handen: hoe dan ook binnen 30 dagen versterking.",
     sub: "Van het vinden en selecteren van werkstudenten, stagiairs en starters tot advies over je junior-strategie en zichtbaarheid bij 4.000+ studenten: wij helpen op elk vlak van je junior-talent-aanpak.",
     ctaIntro: "Plan een kennismaking",
@@ -126,12 +128,12 @@ const COPY: Record<
     ],
     bandAlt: "Een VOIDS-recruiter aan het werk",
     profilesEyebrow: "Ons talent",
-    profilesTitle: "HIGH ACHIEVERS, GESELECTEERD OP KWALITEIT EN CULTUUR.",
-    profilesIntro: "We bereiken jong talent via meerdere kanalen: onze eigen talentpool, de community en het jobboard, en het bredere netwerk van studieverenigingen en samenwerkingspartners. Voor werving selecteren we gericht op cultuurfit en skills, voornamelijk onder hbo- en wo-studenten en jonge professionals die gewend zijn te presteren naast hun studie. Een greep uit de vakgebieden:",
+    profilesTitle: "GEDREVEN TALENT, GESELECTEERD OP KWALITEIT EN CULTUUR.",
+    profilesIntro: "We bereiken jong talent via meerdere kanalen: onze eigen talentpool, de community en het jobboard, en het bredere netwerk van studieverenigingen en samenwerkingspartners. Voor werving selecteren we gericht op cultuurfit en skills, voornamelijk onder wo- en hbo-studenten en jonge professionals die gewend zijn te presteren naast hun studie. Een greep uit de vakgebieden:",
     profilesCta: "Bekijk voorbeeldprofielen →",
     whyWsEyebrow: "Onze voorkeur",
-    whyWsTitle: "DE WERKSTUDENT IS ONZE EERSTE KEUZE.",
-    whyWsIntro: "Werkstudentrollen invullen is niet zomaar één van de dingen die we doen: het is waar VOIDS voor staat en verreweg de meeste plaatsingen die we doen. Voor de meeste vragen is het ook simpelweg de beste oplossing, hieronder waarom, en wanneer een stagiair of starter juist beter past.",
+    whyWsTitle: "WAAROM EEN WERKSTUDENT?",
+    whyWsIntro: "Onze focus ligt op werkstudentschappen. Niet toevallig: het is de reden waarom VOIDS is opgericht, en het antwoord op knelpunten die je vaak tegenkomt bij standaardrollen als stages en starters. Hieronder waarom het voor de meeste vragen de beste oplossing is, en wanneer een stagiair of starter juist beter past.",
     retentionLabel: "Wist je dat?",
     retentionStatValue: "81%",
     retentionStatText: "van de werkstudenten blijft minimaal een jaar op zijn rol; de helft mikt zelfs op 1–3 jaar, vaak met het oog op een vaste aanstelling.",
@@ -175,7 +177,7 @@ const COPY: Record<
     compareBlogCta: "Werkstudent, stagiair of starter: wat past bij jouw bedrijf?",
     salaryMinLabel: "Minimumloon",
     salaryAdviceLabel: "VOIDS-advies",
-    salaryFootnote: "Per 1 juli 2026, o.b.v. het wettelijk minimumloon (21+, bron: rijksoverheid.nl). Voor jongere werkstudenten en CAO-functies gelden andere bedragen.",
+    salaryFootnote: "Per 1 juli 2026, o.b.v. het wettelijk minimumloon (21+, bron: rijksoverheid.nl). Voor jongere werkstudenten en CAO-functies gelden andere bedragen. Ons advies van +10–20% hangt af van de complexiteit van de rol: hoe meer verantwoordelijkheid, hoe hoger in die bandbreedte.",
     costBlogNote: "Benieuwd naar de volledige kostenvergelijking?",
     costBlogCta: "Wat kost een werkstudent vergeleken met een fulltime starter?",
     finalTitle: "KLAAR OM TE SCHALEN?",
@@ -184,6 +186,7 @@ const COPY: Record<
   en: {
     eyebrow: "For companies",
     title: "JUNIOR TALENT,\nFROM HIRING TO RETENTION.",
+    roleChips: ["Working students", "Interns", "Starters"],
     heroHook: "Advertise it yourself in our community, or hand off the whole process: either way, reinforcement within 30 days.",
     sub: "From finding and selecting working students, interns and starters, to advice on your junior strategy and visibility with 4,000+ students: we help across every part of your junior talent approach.",
     ctaIntro: "Book an intro call",
@@ -229,12 +232,12 @@ const COPY: Record<
     ],
     bandAlt: "A VOIDS recruiter at work",
     profilesEyebrow: "Our talent",
-    profilesTitle: "HIGH ACHIEVERS, SELECTED ON QUALITY AND CULTURE.",
+    profilesTitle: "DRIVEN TALENT, SELECTED ON QUALITY AND CULTURE.",
     profilesIntro: "We reach young talent through multiple channels: our own talent pool, the community and job board, and our wider network of study associations and partner organisations. For recruitment, we select specifically on culture fit and skills, mainly among university and university-of-applied-sciences students and young professionals used to performing alongside their studies. A selection of the fields:",
     profilesCta: "See example profiles →",
     whyWsEyebrow: "Our preference",
-    whyWsTitle: "THE WORKING STUDENT IS OUR FIRST CHOICE.",
-    whyWsIntro: "Filling working-student roles isn't just one of the things we do: it's what VOIDS stands for, and by far the majority of the placements we make. For most hiring needs it's simply the best fit too, here's why, and when an intern or starter fits better instead.",
+    whyWsTitle: "WHY A WORKING STUDENT?",
+    whyWsIntro: "Our focus is on working-student roles. Not by accident: it's the reason VOIDS was founded, and the answer to pain points you often run into with standard roles like internships and starters. Here's why it's the best fit for most hiring needs, and when an intern or starter fits better instead.",
     retentionLabel: "Did you know?",
     retentionStatValue: "81%",
     retentionStatText: "of working students stay in their role for at least a year; half of them aim for 1–3 years, often hoping to move into a permanent position.",
@@ -278,7 +281,7 @@ const COPY: Record<
     compareBlogCta: "Working student, intern or starter: what fits your company?",
     salaryMinLabel: "Minimum wage",
     salaryAdviceLabel: "VOIDS advice",
-    salaryFootnote: "As of 1 July 2026, based on the statutory minimum wage (21+, source: rijksoverheid.nl). Different amounts apply for younger working students and CAO roles.",
+    salaryFootnote: "As of 1 July 2026, based on the statutory minimum wage (21+, source: rijksoverheid.nl). Different amounts apply for younger working students and CAO roles. Our +10–20% advice depends on the complexity of the role: the more responsibility, the higher in that range.",
     costBlogNote: "Curious about the full cost comparison?",
     costBlogCta: "What does a working student cost compared to a full-time starter?",
     finalTitle: "READY TO SCALE?",
@@ -297,6 +300,11 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
             <h1 className="anton hero-h1" style={{ fontSize: 50, margin: "14px 0 16px", color: "#fff", whiteSpace: "pre-line" }}>{c.title}</h1>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "0 0 18px" }}>
+              {c.roleChips.map((r) => (
+                <span key={r} className="badge badge--on-dark">{r}</span>
+              ))}
+            </div>
             <p className="anton" style={{ fontSize: 18, lineHeight: 1.45, textTransform: "none", color: "#fff", margin: "0 0 14px", maxWidth: 520 }}>{c.heroHook}</p>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 28px", maxWidth: 520 }}>{c.sub}</p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>

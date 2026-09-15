@@ -10,7 +10,7 @@ export const PROCESS: Record<Lang, { num: string; title: string; text: string; w
       when: "Dag 1-7",
     },
     { num: "03", title: "Voorselectie & check", text: "Een recruiter beoordeelt elke match handmatig. Alleen de sterkste gaan door.", when: "Dag 8-14" },
-    { num: "04", title: "Shortlist i.p.v. cv-stapel", text: "Jullie ontvangen 2-4 voorgeselecteerde kandidaten met onderbouwing.", when: "Week 3" },
+    { num: "04", title: "Shortlist i.p.v. cv-stapel", text: "Geen stapel om zelf uit te pluizen: alleen kandidaten die al streng zijn getoetst op fit, met onderbouwing waarom.", when: "Week 3" },
     {
       num: "05",
       title: "Gesprekken & match",
@@ -28,7 +28,7 @@ export const PROCESS: Record<Lang, { num: string; title: string; text: string; w
       when: "Day 1-7",
     },
     { num: "03", title: "Pre-selection & review", text: "A recruiter reviews every match personally. Only the strongest make the cut.", when: "Day 8-14" },
-    { num: "04", title: "Shortlist, not a CV pile", text: "You receive 2-4 pre-selected candidates, with the reasoning behind each one.", when: "Week 3" },
+    { num: "04", title: "Shortlist, not a CV pile", text: "No pile to sift through yourself: only candidates already rigorously tested for fit, with the reasoning behind each one.", when: "Week 3" },
     {
       num: "05",
       title: "Interviews & match",
