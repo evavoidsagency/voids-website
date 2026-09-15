@@ -259,13 +259,13 @@ export function ImpactPage({ lang }: { lang: Lang }) {
                   alignItems: "flex-start",
                   gap: 12,
                   maxWidth: 480,
-                  marginTop: "auto",
+                  marginTop: 36,
                   background: "#fff",
                   borderLeft: "4px solid var(--voids-blue)",
                 }}
               >
                 <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: ".04em", textTransform: "uppercase", color: "var(--voids-blue)" }}>{c.problemCloseLabel}</span>
-                <p className="anton" style={{ fontSize: 16, lineHeight: 1.4, textTransform: "none", color: "var(--voids-ink)", margin: 0 }}>
+                <p style={{ fontSize: 15, lineHeight: 1.6, fontWeight: 500, color: "var(--voids-ink)", margin: 0 }}>
                   {c.problemClose}
                 </p>
                 <Link href={p("/companies")} style={{ fontSize: 14, fontWeight: 700, color: "var(--voids-blue)" }}>
