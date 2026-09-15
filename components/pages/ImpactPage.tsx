@@ -69,17 +69,17 @@ const COPY: Record<
     card1Title: "Ongelijke toegang tot ervaring",
     card1Text:
       "Stages betalen vaak te weinig om van rond te komen. Studenten die dat gemis kunnen opvangen, met steun thuis of een buffer, hebben daarmee een voorsprong die niets met talent te maken heeft.",
-    card1Answer: "Ons antwoord: een salaris waar je van rond kunt komen, zodat inkomen geen keuze meer hoeft te zijn.",
+    card1Answer: "Een salaris waar je van rond kunt komen, zodat inkomen geen keuze meer hoeft te zijn.",
     card2Badge: "Startpositie",
     card2Title: "Een beperkter startpunt",
     card2Text:
       "Wie die ervaring misloopt, betreedt de arbeidsmarkt met minder vaardigheden, minder zelfvertrouwen over waar hij of zij goed in is, en zonder netwerk om op terug te vallen.",
-    card2Answer: "Ons antwoord: echte verantwoordelijkheid en een netwerk van 4.000+ studenten en werkgevers, al tijdens de studie.",
+    card2Answer: "Echte verantwoordelijkheid en een netwerk van 4.000+ studenten en werkgevers, al tijdens de studie.",
     card3Badge: "Lange termijn",
     card3Title: "Een nadeel dat blijft doorwerken",
     card3Text:
       "Die achterstand stapelt zich op na het afstuderen, en is later niet zomaar recht te trekken met een eerlijker wervingsproces alleen.",
-    card3Answer: "Ons antwoord: een voorsprong die je al opbouwt vóórdat de concurrentie begint.",
+    card3Answer: "Een voorsprong die je al opbouwt vóórdat de concurrentie begint.",
     problemClose:
       "En dit is niet alleen goed nieuws voor studenten: bedrijven die met werkstudenten werken, bouwen zelf een stabielere pijplijn aan junior talent op, tegen lagere kosten dan een fulltime starter.",
     problemCloseLabel: "Voor bedrijven",
@@ -96,7 +96,7 @@ const COPY: Record<
     ambitionText:
       "Onze ambitie: vanaf medio 2027 investeren we 10% van onze winst terug in gelijke-kansen-initiatieven voor studenten.",
     workshopsEyebrow: "Ook buiten recruitment",
-    workshopsTitle: "SCHOOL BEREIDT JE NIET VOOR OP DE ARBEIDSMARKT.",
+    workshopsTitle: "WE BEREIDEN JE VOOR OP DE ARBEIDSMARKT.",
     workshopsText:
       "Niet iedereen weet vanzelf wat bij hem of haar past, en die keuze is lastiger als je er nooit op voorbereid bent. Daarom geven we ook workshops, lezingen en masterclasses op scholen en bij (studenten)organisaties, over de overgang van school naar werk.",
     workshopsTopics: [
@@ -135,17 +135,17 @@ const COPY: Record<
     card1Title: "Unequal access to experience",
     card1Text:
       "Internships often pay too little to live on. Students who can absorb that gap, with support at home or savings to fall back on, get a head start that has nothing to do with talent.",
-    card1Answer: "Our answer: a salary you can actually live on, so income doesn't have to be the trade-off.",
+    card1Answer: "A salary you can actually live on, so income doesn't have to be the trade-off.",
     card2Badge: "Starting position",
     card2Title: "A narrower launchpad",
     card2Text:
       "Missing out on that experience means entering the job market with fewer skills, less confidence in what you're good at, and no network to fall back on.",
-    card2Answer: "Our answer: real responsibility and a network of 4,000+ students and employers, while still studying.",
+    card2Answer: "Real responsibility and a network of 4,000+ students and employers, while still studying.",
     card3Badge: "Long term",
     card3Title: "A disadvantage that compounds",
     card3Text:
       "That gap keeps compounding after graduation, and can't simply be undone later by a fairer hiring process alone.",
-    card3Answer: "Our answer: a head start you build before the competition even begins.",
+    card3Answer: "A head start you build before the competition even begins.",
     problemClose:
       "And this isn't only good news for students: companies that work with working students build a more stable junior pipeline themselves, at a lower cost than a full-time starter.",
     problemCloseLabel: "For companies",
@@ -162,7 +162,7 @@ const COPY: Record<
     ambitionText:
       "Our ambition: from mid-2027, we reinvest 10% of our profit into equal-opportunity initiatives for students.",
     workshopsEyebrow: "Beyond recruitment",
-    workshopsTitle: "SCHOOL DOESN'T PREPARE YOU FOR THE JOB MARKET.",
+    workshopsTitle: "WE PREPARE YOU FOR THE JOB MARKET.",
     workshopsText:
       "Not everyone naturally knows what fits them, and that choice gets harder if you've never been prepared for it. That's why we also run workshops, talks and masterclasses at schools and (student) organisations, on the transition from school to work.",
     workshopsTopics: [
@@ -192,9 +192,6 @@ const COPY: Record<
 export function ImpactPage({ lang }: { lang: Lang }) {
   const c = COPY[lang];
   const p = (path: string) => localePath(lang, path);
-  const lastSpace = c.title.lastIndexOf(" ");
-  const titleLead = c.title.slice(0, lastSpace + 1);
-  const titleLast = c.title.slice(lastSpace + 1);
 
   return (
     <>
@@ -203,11 +200,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
             <h1 className="anton hero-h1" style={{ fontSize: 52, margin: "14px 0 18px", color: "#fff", whiteSpace: "pre-line" }}>
-              {titleLead}
-              <span style={{ position: "relative", display: "inline-block" }}>
-                {titleLast}
-                <Squiggle />
-              </span>
+              {c.title}
             </h1>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: 0, maxWidth: 520 }}>{c.intro}</p>
           </div>
@@ -235,8 +228,8 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         <Reveal>
           <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.problemEyebrow}</span>
           <h2 className="anton section-h2" style={{ fontSize: 38, margin: "14px 0 20px", maxWidth: 1040 }}>{c.problemTitle}</h2>
-          <p className="anton" style={{ fontSize: 21, lineHeight: 1.4, color: "var(--voids-ink)", textTransform: "none", margin: "0 0 16px", maxWidth: 900 }}>{c.problemHook}</p>
-          <p style={{ fontSize: 16.5, lineHeight: 1.75, color: "var(--voids-ink-muted)", margin: "0 0 44px", maxWidth: 900 }}>{c.problemIntro}</p>
+          <p className="anton" style={{ fontSize: 21, lineHeight: 1.4, color: "var(--voids-ink)", textTransform: "none", margin: "0 0 16px", maxWidth: 1040 }}>{c.problemHook}</p>
+          <p style={{ fontSize: 16.5, lineHeight: 1.75, color: "var(--voids-ink-muted)", margin: "0 0 44px", maxWidth: 1040 }}>{c.problemIntro}</p>
         </Reveal>
         <div className="g-collapse problem-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 24, alignItems: "stretch" }}>
           {[
@@ -252,7 +245,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
                 </div>
                 <div className="anton" style={{ fontSize: 18, margin: "18px 0 10px", color: "var(--voids-blue)" }}>{card.title}</div>
                 <p style={{ fontSize: 14, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{card.text}</p>
-                <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-purple)", fontWeight: 600, margin: "16px 0 0", paddingTop: 14, borderTop: "1px solid var(--voids-line)" }}>{card.answer}</p>
+                <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-purple)", fontWeight: 600, margin: "16px 0 0", paddingTop: 14, borderTop: "1px solid var(--voids-line)", minHeight: 74 }}>{card.answer}</p>
               </div>
             </Reveal>
           ))}
@@ -261,7 +254,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
 
       <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
         <Reveal>
-          <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "stretch", padding: "64px 32px" }}>
+          <div className="wrap g-collapse" style={{ display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 44, alignItems: "stretch", padding: "96px 32px" }}>
             <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
               <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.solutionEyebrow}</span>
               <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px", color: "#fff" }}>{c.solutionTitle}</h2>
@@ -276,7 +269,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
                 <p className="anton" style={{ fontSize: 16, lineHeight: 1.4, textTransform: "none", color: "var(--voids-ink)", margin: 0 }}>
                   {c.problemClose}
                 </p>
-                <Button variant="primary" size="sm" href={p("/companies")}>{c.problemCloseCta}</Button>
+                <Button variant="primary" size="md" fullWidth href={p("/companies")}>{c.problemCloseCta}</Button>
               </div>
             </div>
             <Photo
@@ -319,12 +312,12 @@ export function ImpactPage({ lang }: { lang: Lang }) {
                 const icon = findSdgIcon(s.num);
                 return (
                   <div key={s.num} style={{ height: "100%", display: "flex", flexDirection: "column", borderRadius: "var(--radius-md)", overflow: "hidden", boxShadow: "var(--shadow-sm)" }}>
-                    <div style={{ background: s.color, minHeight: 180, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <div style={{ position: "relative", background: s.color, height: 130, display: "flex", alignItems: "center", justifyContent: "center" }}>
                       {icon ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={icon} alt={`SDG ${s.num}: ${s.title}`} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                        <img src={icon} alt={`SDG ${s.num}: ${s.title}`} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
                       ) : (
-                        <div className="anton" style={{ fontSize: 72, lineHeight: 0.9, color: "#fff" }}>{s.num}</div>
+                        <div className="anton" style={{ fontSize: 48, lineHeight: 0.9, color: "#fff" }}>{s.num}</div>
                       )}
                     </div>
                     <div style={{ background: "#fff", padding: "18px 20px", flex: 1, display: "flex", flexDirection: "column", gap: 6, textAlign: "center", alignItems: "center" }}>
@@ -363,21 +356,6 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         </div>
       </section>
     </>
-  );
-}
-
-function Squiggle() {
-  return (
-    <svg
-      width="100%"
-      height="16"
-      viewBox="0 0 160 16"
-      preserveAspectRatio="none"
-      aria-hidden="true"
-      style={{ position: "absolute", left: 0, bottom: -16, width: "100%" }}
-    >
-      <path d="M2 9c26-11 52-11 78 0s52 11 78 0" stroke="var(--voids-blue)" strokeWidth="5" strokeLinecap="round" fill="none" />
-    </svg>
   );
 }
 
