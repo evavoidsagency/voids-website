@@ -18,9 +18,15 @@ const COPY: Record<
     card1Badge: string;
     card1Title: string;
     card1Text: string;
+    card1Answer: string;
     card2Badge: string;
     card2Title: string;
     card2Text: string;
+    card2Answer: string;
+    card3Badge: string;
+    card3Title: string;
+    card3Text: string;
+    card3Answer: string;
     problemClose: string;
     solutionEyebrow: string;
     solutionTitle: string;
@@ -50,22 +56,29 @@ const COPY: Record<
     eyebrow: "Impact",
     title: "RECRUITMENT IS HET MIDDEL,\nNIET HET DOEL.",
     intro:
-      "VOIDS bestaat om de overgang van studie naar werk eerlijker te maken. De eerste baan bepaalt vaak de rest van een loopbaan, en die eerste stap is niet voor iedereen gelijk. Recruitment is ons middel; gelijke kansen zijn het doel.",
+      "De eerste baan bepaalt vaak de rest van een loopbaan, en die eerste stap is niet voor iedereen gelijk. VOIDS bestaat om de overgang van studie naar werk eerlijker te maken. Recruitment is ons middel, gelijke kansen zijn het doel.",
     problemEyebrow: "Het probleem",
     problemTitle: "WERKERVARING IS EEN VOORRECHT GEWORDEN.",
     problemHook: "Talent zit overal. Toegang tot ervaring niet.",
     problemIntro:
-      "Relevante werkervaring is bijna een voorwaarde voor een goede baan na je studie, maar de toegang daartoe is niet gelijk verdeeld. Vaak moet je kiezen: ervaring opdoen via een stage, of geld verdienen met een bijbaan die los staat van je studie. Wie het inkomen nodig heeft, kan voor die ervaring niet zomaar kiezen.",
-    card1Badge: "Werkervaring",
-    card1Title: "De stagevergoeding",
+      "Relevante werkervaring is in de praktijk een voorwaarde geworden voor een goede start op de arbeidsmarkt. Maar die ervaring opdoen is niet voor iedereen even makkelijk: waar de ene student de ruimte heeft voor een stage, moet de andere student een bijbaan nemen die weinig bijdraagt aan die ervaring.",
+    card1Badge: "Toegang",
+    card1Title: "Ongelijke toegang tot ervaring",
     card1Text:
-      "Een stage betaalt meestal iets, maar vaak te weinig om van rond te komen. Zonder buffer of steun thuis is maandenlang stage lopen simpelweg niet vol te houden.",
-    card2Badge: "Inkomen",
-    card2Title: "De bijbaan uit noodzaak",
+      "Stages betalen vaak te weinig om van rond te komen. Studenten die dat gemis kunnen opvangen, met steun thuis of een buffer, hebben daarmee een voorsprong die niets met talent te maken heeft.",
+    card1Answer: "Ons antwoord: een eerlijke beloning, altijd boven het wettelijk minimum.",
+    card2Badge: "Startpositie",
+    card2Title: "Een beperkter startpunt",
     card2Text:
-      "Horeca of retail om de huur te kunnen betalen: het levert inkomen op, maar geen inhoudelijke ervaring. Het staat los van de studie en telt zelden mee op een cv.",
+      "Wie die ervaring misloopt, betreedt de arbeidsmarkt met minder vaardigheden, minder zelfvertrouwen over waar hij of zij goed in is, en zonder netwerk om op terug te vallen.",
+    card2Answer: "Ons antwoord: echte verantwoordelijkheid, al tijdens de studie.",
+    card3Badge: "Lange termijn",
+    card3Title: "Een nadeel dat blijft doorwerken",
+    card3Text:
+      "Die achterstand stapelt zich op na het afstuderen, en is later niet zomaar recht te trekken met een eerlijker wervingsproces alleen.",
+    card3Answer: "Ons antwoord: vroege, relevante ervaring die voor iedereen een sterkere start oplevert.",
     problemClose:
-      "De één kan zich die keuze veroorloven, de ander niet. Ongelijke kansen, nog vóór de eerste sollicitatie.",
+      "En dit raakt niet alleen studenten: bedrijven die vooral met kortlopende, onbetaalde stages werken, missen zelf ook de kans om een stabiele pijplijn aan junior talent op te bouwen.",
     solutionEyebrow: "De oplossing",
     solutionTitle: "HET WERKSTUDENTSCHAP HEFT DE KEUZE OP.",
     solutionText:
@@ -107,22 +120,29 @@ const COPY: Record<
     eyebrow: "Impact",
     title: "RECRUITMENT IS THE MEANS,\nNOT THE GOAL.",
     intro:
-      "VOIDS exists to make the transition from study to work fairer. The first job often shapes the rest of a career, and that first step isn’t equal for everyone. Recruitment is our means; equal opportunity is the goal.",
+      "The first job often shapes the rest of a career, and that first step isn't equal for everyone. VOIDS exists to make the transition from study to work fairer. Recruitment is our means, equal opportunity is the goal.",
     problemEyebrow: "The problem",
     problemTitle: "WORK EXPERIENCE HAS BECOME A PRIVILEGE.",
     problemHook: "Talent is everywhere. Access to experience isn't.",
     problemIntro:
-      "Relevant work experience is almost a requirement for a good job after your studies, but access to it isn't equally distributed. Often you have to choose: gain experience through an internship, or earn money with a side job unrelated to your studies. Anyone who needs that income can't just choose the experience instead.",
-    card1Badge: "Work experience",
-    card1Title: "The internship allowance",
+      "Relevant work experience has become a de facto requirement for a good start in the job market. But gaining that experience isn't equally easy for everyone: where one student has the room to take an internship, another has to take a side job that adds little to that experience.",
+    card1Badge: "Access",
+    card1Title: "Unequal access to experience",
     card1Text:
-      "An internship usually pays something, but often too little to live on. Without savings or support at home, months of interning simply isn't sustainable.",
-    card2Badge: "Income",
-    card2Title: "The side job out of necessity",
+      "Internships often pay too little to live on. Students who can absorb that gap, with support at home or savings to fall back on, get a head start that has nothing to do with talent.",
+    card1Answer: "Our answer: fair pay, always above the legal minimum.",
+    card2Badge: "Starting position",
+    card2Title: "A narrower launchpad",
     card2Text:
-      "Hospitality or retail just to cover the rent: it brings in income, but no relevant experience. It has nothing to do with their studies and rarely counts on a CV.",
+      "Missing out on that experience means entering the job market with fewer skills, less confidence in what you're good at, and no network to fall back on.",
+    card2Answer: "Our answer: real responsibility, while still studying.",
+    card3Badge: "Long term",
+    card3Title: "A disadvantage that compounds",
+    card3Text:
+      "That gap keeps compounding after graduation, and can't simply be undone later by a fairer hiring process alone.",
+    card3Answer: "Our answer: early, relevant experience that gives everyone a stronger start.",
     problemClose:
-      "One person can afford to make that choice, another can’t. Unequal chances, before the first application is even sent.",
+      "And this doesn't only affect students: companies that mainly rely on short, unpaid internships also miss the chance to build a stable pipeline of junior talent themselves.",
     solutionEyebrow: "The solution",
     solutionTitle: "THE WORKING-STUDENT MODEL REMOVES THE TRADE-OFF.",
     solutionText:
@@ -200,36 +220,25 @@ export function ImpactPage({ lang }: { lang: Lang }) {
         <h2 className="anton section-h2" style={{ fontSize: 38, margin: "14px 0 20px", maxWidth: 1040 }}>{c.problemTitle}</h2>
         <p className="anton" style={{ fontSize: 21, lineHeight: 1.4, color: "var(--voids-ink)", textTransform: "none", margin: "0 0 16px", maxWidth: 900 }}>{c.problemHook}</p>
         <p style={{ fontSize: 16.5, lineHeight: 1.75, color: "var(--voids-ink-muted)", margin: "0 0 44px", maxWidth: 900 }}>{c.problemIntro}</p>
-        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }}>
-          <div className="card card--hoverable card--accent-blue" style={{ padding: 32 }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <StipendIcon />
-              <span className="badge badge--purple">{c.card1Badge}</span>
+        <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 24, alignItems: "stretch" }}>
+          {[
+            { icon: <StipendIcon />, badge: c.card1Badge, title: c.card1Title, text: c.card1Text, answer: c.card1Answer },
+            { icon: <ShiftIcon />, badge: c.card2Badge, title: c.card2Title, text: c.card2Text, answer: c.card2Answer },
+            { icon: <CompoundIcon />, badge: c.card3Badge, title: c.card3Title, text: c.card3Text, answer: c.card3Answer },
+          ].map((card) => (
+            <div key={card.title} className="card card--hoverable card--accent-blue" style={{ padding: 28, display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                {card.icon}
+                <span className="badge badge--purple">{card.badge}</span>
+              </div>
+              <div className="anton" style={{ fontSize: 18, margin: "18px 0 10px", color: "var(--voids-blue)" }}>{card.title}</div>
+              <p style={{ fontSize: 14, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0, flex: 1 }}>{card.text}</p>
+              <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-purple)", fontWeight: 600, margin: "16px 0 0", paddingTop: 14, borderTop: "1px solid var(--voids-line)" }}>{card.answer}</p>
             </div>
-            <div className="anton" style={{ fontSize: 19, margin: "20px 0 12px", color: "var(--voids-blue)" }}>{c.card1Title}</div>
-            <p style={{ fontSize: 14.5, lineHeight: 1.7, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card1Text}</p>
-          </div>
-          <div className="card card--hoverable card--accent-blue" style={{ padding: 32 }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <ShiftIcon />
-              <span className="badge badge--blue">{c.card2Badge}</span>
-            </div>
-            <div className="anton" style={{ fontSize: 19, margin: "20px 0 12px", color: "var(--voids-blue)" }}>{c.card2Title}</div>
-            <p style={{ fontSize: 14.5, lineHeight: 1.7, color: "var(--voids-ink-muted)", margin: 0 }}>{c.card2Text}</p>
-          </div>
+          ))}
         </div>
-        <div style={{ marginTop: 64, textAlign: "center" }}>
-          <p
-            className="anton"
-            style={{
-              fontSize: 24,
-              lineHeight: 1.4,
-              color: "var(--voids-purple)",
-              margin: "0 auto",
-              maxWidth: 1120,
-              textTransform: "none",
-            }}
-          >
+        <div style={{ marginTop: 36 }}>
+          <p style={{ fontSize: 14.5, lineHeight: 1.65, color: "var(--voids-ink-soft)", margin: 0, maxWidth: 900 }}>
             {c.problemClose}
           </p>
         </div>
@@ -339,6 +348,15 @@ function ShiftIcon() {
       <path d="M6 9H28L26.5 28C26.5 29 25.5 30 24.5 30H9.5C8.5 30 7.5 29 7.5 28L6 9Z" stroke="var(--voids-blue)" strokeWidth="2" strokeLinejoin="round" />
       <path d="M13 14V17" stroke="var(--voids-blue)" strokeWidth="2" strokeLinecap="round" />
       <path d="M21 14V17" stroke="var(--voids-blue)" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function CompoundIcon() {
+  return (
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+      <path d="M4 26h5v-6H4v6ZM13 26h5v-12h-5v12ZM22 26h5v-18h-5v18Z" stroke="var(--voids-blue)" strokeWidth="2" strokeLinejoin="round" />
+      <path d="M6 16l7-7 5 4 8-9" stroke="var(--voids-blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
