@@ -68,7 +68,7 @@ function FaqItem({
 }
 
 export function FaqAccordion({ items }: { items: { q: string; a: string; ul?: string[] }[] }) {
-  const [open, setOpen] = useState(0);
+  const [open, setOpen] = useState(-1);
   const mid = Math.ceil(items.length / 2);
   const columns = [items.slice(0, mid), items.slice(mid)];
 
