@@ -69,9 +69,9 @@ const COPY: Record<
     resourcesTitle: "DRIE WEGEN NAAR JE VOLGENDE ROL.",
     resourcesIntro: "Wij bieden meer dan losse vacatures: een jobboard om zelf te solliciteren, een WhatsApp-community met wekelijkse kansen, en een talentpool die je proactief matcht. Omdat we zo nauw met werkgevers samenwerken, kunnen we vaak breder met ze meedenken dan alleen de vacatures die online staan. Hoe actiever je meedoet, hoe meer we voor je kunnen doen.",
     resources: [
-      { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord één keer een paar vragen, en wij doen de rest: je wordt proactief voorgesteld bij offmarket-kansen, rollen waar we dankzij onze nauwe samenwerking met werkgevers al vroeg over meedenken, en krijgt een plek in ons exclusieve netwerk met events.", cta: "Start je profiel", path: "/pager" },
+      { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord één keer een paar vragen om lid te worden, en ons team gaat voor je aan de slag: we stellen je proactief voor bij offmarket-kansen, denken dankzij onze nauwe samenwerking met werkgevers al vroeg met je mee, en geven je een plek in ons exclusieve netwerk met events.", cta: "Start je profiel", path: "/pager" },
       { tier: "Community", title: "WhatsApp-community", text: "Word lid van de community en krijg passende vacatures wekelijks rechtstreeks in je WhatsApp.", cta: "Join", whats: true },
-      { tier: "Los per vacature", title: "Job board", text: "Bekijk open rollen en solliciteer direct per vacature, zonder account of profiel.", cta: "Bekijk jobs", path: "/jobboard" },
+      { tier: "Los per vacature", title: "Job board", text: "Bekijk open rollen en solliciteer direct per vacature.", cta: "Bekijk jobs", path: "/jobboard" },
     ],
     resourcesBadge: "Aanbevolen",
     faqEyebrow: "Veelgestelde vragen",
@@ -148,9 +148,9 @@ const COPY: Record<
     resourcesTitle: "THREE PATHS TO YOUR NEXT ROLE.",
     resourcesIntro: "We offer more than individual vacancies: a job board to apply yourself, a WhatsApp community with weekly opportunities, and a talent pool that proactively matches you. Because we work so closely with employers, we can often think along with them more broadly than just the vacancies that are posted. The more active you are, the more we can do for you.",
     resources: [
-      { tier: "Active in the talent pool", title: "Talent pool", text: "Answer a few questions once, and we do the rest: you get proactively put forward for off-market opportunities, roles we're already thinking through with employers early on thanks to our close working relationship, plus a spot in our exclusive network with events.", cta: "Join the talent pool", path: "/pager" },
+      { tier: "Active in the talent pool", title: "Talent pool", text: "Answer a few questions once to join, and our team gets to work for you: we proactively put you forward for off-market opportunities, advocate for you with employers early on thanks to our close working relationship, and give you a spot in our exclusive network with events.", cta: "Join the talent pool", path: "/pager" },
       { tier: "Community", title: "WhatsApp community", text: "Join the community and get matching vacancies sent straight to your WhatsApp every week.", cta: "Join", whats: true },
-      { tier: "Per vacancy", title: "Job board", text: "Browse open roles and apply directly to any vacancy, no account or profile needed.", cta: "View jobs", path: "/jobboard" },
+      { tier: "Per vacancy", title: "Job board", text: "Browse open roles and apply directly to any vacancy.", cta: "View jobs", path: "/jobboard" },
     ],
     resourcesBadge: "Recommended",
     faqEyebrow: "Frequently asked",

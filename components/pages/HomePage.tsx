@@ -49,7 +49,7 @@ const COPY: Record<
     stat1Value: "4.000+",
     stat1Label: "in de community",
     stat2Value: "100%",
-    stat2Label: "transparante voorwaarden & eerlijke beloning",
+    stat2Label: "transparante voorwaarden & eerlijke beloning",
     stat3Value: "10%",
     stat3Label: "winst naar impact",
     trustedBy: "VERTROUWD DOOR",
@@ -84,7 +84,7 @@ const COPY: Record<
     stat1Value: "4,000+",
     stat1Label: "in the community",
     stat2Value: "100%",
-    stat2Label: "transparent terms & fair pay",
+    stat2Label: "transparent terms & fair pay",
     stat3Value: "10%",
     stat3Label: "profit to impact",
     trustedBy: "TRUSTED BY",
@@ -146,15 +146,15 @@ export function HomePage({ lang }: { lang: Lang }) {
               </Button>
             </div>
             <div className="flex-collapse" style={{ display: "flex", gap: 28, marginTop: 40, flexWrap: "nowrap" }}>
-              <div style={{ width: 100, flex: "none" }}>
+              <div style={{ width: 100, flex: "none", textAlign: "center" }}>
                 <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}><CountUp value={c.stat1Value} /></div>
                 <div style={{ fontSize: 12.5, lineHeight: 1.45, color: "var(--voids-purple-100)", marginTop: 6 }}>{c.stat1Label}</div>
               </div>
-              <div style={{ width: 220, flex: "none" }}>
+              <div style={{ width: 220, flex: "none", textAlign: "center" }}>
                 <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}><CountUp value={c.stat2Value} /></div>
                 <div style={{ fontSize: 12.5, lineHeight: 1.45, color: "var(--voids-purple-100)", marginTop: 6 }}>{c.stat2Label}</div>
               </div>
-              <div style={{ width: 110, flex: "none" }}>
+              <div style={{ width: 110, flex: "none", textAlign: "center" }}>
                 <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}><CountUp value={c.stat3Value} /></div>
                 <div style={{ fontSize: 12.5, lineHeight: 1.45, color: "var(--voids-purple-100)", marginTop: 6 }}>{c.stat3Label}</div>
               </div>
