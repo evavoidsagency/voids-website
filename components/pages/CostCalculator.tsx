@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Disclosure } from "@/components/ui/Disclosure";
 import type { Lang } from "@/lib/i18n/common";
 
 const RATES = { werkstudent: 20, starter: 24 };
@@ -15,6 +16,7 @@ const COPY: Record<
     hoursUnit: string;
     costLabel: string;
     cards: { key: "stagiair" | keyof typeof RATES; label: string; note: string }[];
+    footnoteLabel: string;
     footnote: string;
   }
 > = {
@@ -27,6 +29,7 @@ const COPY: Record<
       { key: "werkstudent", label: "Werkstudent", note: "Draait mee, flexibel" },
       { key: "starter", label: "Starter (pro-rata)", note: "Volledig zelfstandig" },
     ],
+    footnoteLabel: "Hoe rekenen we dit uit?",
     footnote:
       "Indicatie van de totale loonkosten voor de werkgever per maand: bruto uurtarief plús werkgeverslasten (zoals vakantiegeld en pensioenafdracht), dus geen nettosalaris voor de werkstudent/starter zelf. Stagiair: vanaf €800 bruto/maand fulltime, naar rato bij minder uren, gelijk aan de Rijksoverheidsnorm (meer betalen juichen we toe). Werkstudent: ± €20 bruto p/u incl. werkgeverslasten, op basis van ons salariskompas-advies (minimumloon +10 tot 20%) plus circa 20% werkgeverslasten. Starter: ± €24 bruto p/u incl. werkgeverslasten. Een starter werkt normaal fulltime; hier pro-rata getoond ter vergelijking. Dit is een indicatie, geen offerte: vraag ons gerust om een exacte berekening voor jouw situatie.",
   },
@@ -39,6 +42,7 @@ const COPY: Record<
       { key: "werkstudent", label: "Working student", note: "Hands-on, flexible" },
       { key: "starter", label: "Starter (pro-rata)", note: "Fully independent" },
     ],
+    footnoteLabel: "How do we calculate this?",
     footnote:
       "An estimate of total monthly labour cost to the employer: gross hourly rate plus employer costs (such as holiday allowance and pension contributions), so this is not the take-home pay of the working student/starter. Intern: from €800 gross/month full-time, pro-rata for fewer hours, matching the Dutch government standard (we welcome paying more). Working student: ± €20 gross/hr incl. employer costs, based on our salary-compass advice (minimum wage +10 to 20%) plus roughly 20% employer costs. Starter: ± €24 gross/hr incl. employer costs. A starter normally works full-time; shown pro-rata here for comparison. This is an estimate, not a quote: feel free to ask us for an exact calculation for your situation.",
   },
@@ -89,7 +93,11 @@ export function CostCalculator({ lang }: { lang: Lang }) {
           </div>
         ))}
       </div>
-      <p style={{ fontSize: 11.5, color: "var(--voids-ink-muted)", margin: "14px 0 0" }}>{c.footnote}</p>
+      <div style={{ marginTop: 18 }}>
+        <Disclosure label={c.footnoteLabel}>
+          <p style={{ fontSize: 12, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0, maxWidth: 640 }}>{c.footnote}</p>
+        </Disclosure>
+      </div>
     </div>
   );
 }

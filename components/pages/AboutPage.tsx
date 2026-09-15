@@ -274,9 +274,9 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <h2 className="anton section-h2" style={{ fontSize: 28, color: "#fff", margin: "8px 0 20px" }}>{c.recapTitle}</h2>
           <AboutAccordion
             items={[
-              { title: c.recapWhyLabel, content: <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0 }}>{c.recapWhyText}</p> },
-              { title: c.recapHowLabel, content: <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0 }}>{c.recapHowText}</p> },
-              { title: c.recapWhatLabel, content: <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0 }}>{c.recapWhatText}</p> },
+              { title: c.recapWhyLabel, icon: <RecapWhyIcon />, content: <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0 }}>{c.recapWhyText}</p> },
+              { title: c.recapHowLabel, icon: <RecapHowIcon />, content: <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0 }}>{c.recapHowText}</p> },
+              { title: c.recapWhatLabel, icon: <RecapWhatIcon />, content: <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0 }}>{c.recapWhatText}</p> },
             ]}
           />
         </div>
@@ -314,6 +314,34 @@ function CheckIcon() {
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
       <circle cx="7" cy="7" r="6.25" stroke="var(--voids-purple)" strokeWidth="1.4" />
       <path d="M4.3 7.1l1.9 1.9 3.5-3.9" stroke="var(--voids-purple)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function RecapWhyIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M10 17s-6.5-4-6.5-8.7A3.8 3.8 0 0 1 10 6a3.8 3.8 0 0 1 6.5 2.3C16.5 13 10 17 10 17Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function RecapHowIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M10 3l7 3.5-7 3.5-7-3.5L10 3Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M3 10.5l7 3.5 7-3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M3 14l7 3.5 7-3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function RecapWhatIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <rect x="3" y="7.5" width="14" height="9.5" rx="1.6" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M7.2 7.5V6a1.8 1.8 0 0 1 1.8-1.8h2a1.8 1.8 0 0 1 1.8 1.8v1.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M3 11.8h14" stroke="currentColor" strokeWidth="1.6" />
     </svg>
   );
 }

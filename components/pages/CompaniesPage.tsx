@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { CostCalculator } from "@/components/pages/CostCalculator";
+import { Disclosure } from "@/components/ui/Disclosure";
 import { Photo } from "@/components/ui/Photo";
 import { CalendlyButton } from "@/components/site/CalendlyButton";
 import { ComparisonCard } from "@/components/pages/ComparisonCard";
@@ -72,6 +73,7 @@ const COPY: Record<
     compareBlogCta: string;
     salaryMinLabel: string;
     salaryAdviceLabel: string;
+    salaryFootnoteLabel: string;
     salaryFootnote: string;
     costBlogNote: string;
     costBlogCta: string;
@@ -84,7 +86,7 @@ const COPY: Record<
     title: "JUNIOR TALENT,\nVAN WERVING TOT BEHOUD.",
     roleChips: ["Werkstudenten", "Stagiairs", "Starters"],
     heroHook: "Adverteer zelf bij onze community, of geef het hele proces uit handen: hoe dan ook binnen 30 dagen versterking.",
-    sub: "Van het vinden en selecteren van werkstudenten, stagiairs en starters tot advies over je junior-strategie en zichtbaarheid bij 4.000+ studenten: wij helpen op elk vlak van je junior-talent-aanpak.",
+    sub: "Van werving en selectie tot strategisch advies en zichtbaarheid bij 4.000+ studenten: wij dekken elk onderdeel van je junior-talent-aanpak.",
     ctaIntro: "Plan een kennismaking",
     ctaProcess: "Bekijk onze diensten",
     heroStats: [
@@ -177,6 +179,7 @@ const COPY: Record<
     compareBlogCta: "Werkstudent, stagiair of starter: wat past bij jouw bedrijf?",
     salaryMinLabel: "Minimumloon",
     salaryAdviceLabel: "VOIDS-advies",
+    salaryFootnoteLabel: "Bronnen & details",
     salaryFootnote: "Per 1 juli 2026, o.b.v. het wettelijk minimumloon (21+, bron: rijksoverheid.nl). Voor jongere werkstudenten en CAO-functies gelden andere bedragen. Ons advies van +10–20% hangt af van de complexiteit van de rol: hoe meer verantwoordelijkheid, hoe hoger in die bandbreedte.",
     costBlogNote: "Benieuwd naar de volledige kostenvergelijking?",
     costBlogCta: "Wat kost een werkstudent vergeleken met een fulltime starter?",
@@ -188,7 +191,7 @@ const COPY: Record<
     title: "JUNIOR TALENT,\nFROM HIRING TO RETENTION.",
     roleChips: ["Working students", "Interns", "Starters"],
     heroHook: "Advertise it yourself in our community, or hand off the whole process: either way, reinforcement within 30 days.",
-    sub: "From finding and selecting working students, interns and starters, to advice on your junior strategy and visibility with 4,000+ students: we help across every part of your junior talent approach.",
+    sub: "From recruitment and selection to strategic advice and visibility with 4,000+ students: we cover every part of your junior talent approach.",
     ctaIntro: "Book an intro call",
     ctaProcess: "See our services",
     heroStats: [
@@ -281,6 +284,7 @@ const COPY: Record<
     compareBlogCta: "Working student, intern or starter: what fits your company?",
     salaryMinLabel: "Minimum wage",
     salaryAdviceLabel: "VOIDS advice",
+    salaryFootnoteLabel: "Sources & details",
     salaryFootnote: "As of 1 July 2026, based on the statutory minimum wage (21+, source: rijksoverheid.nl). Different amounts apply for younger working students and CAO roles. Our +10–20% advice depends on the complexity of the role: the more responsibility, the higher in that range.",
     costBlogNote: "Curious about the full cost comparison?",
     costBlogCta: "What does a working student cost compared to a full-time starter?",
@@ -300,13 +304,13 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.eyebrow}</span>
             <h1 className="anton hero-h1" style={{ fontSize: 50, margin: "14px 0 16px", color: "#fff", whiteSpace: "pre-line" }}>{c.title}</h1>
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "0 0 18px" }}>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "0 0 22px" }}>
               {c.roleChips.map((r) => (
                 <span key={r} className="badge badge--on-dark">{r}</span>
               ))}
             </div>
-            <p className="anton" style={{ fontSize: 18, lineHeight: 1.45, textTransform: "none", color: "#fff", margin: "0 0 14px", maxWidth: 520 }}>{c.heroHook}</p>
-            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 28px", maxWidth: 520 }}>{c.sub}</p>
+            <p className="anton" style={{ fontSize: 18, lineHeight: 1.45, textTransform: "none", color: "#fff", margin: "0 0 16px", maxWidth: 500 }}>{c.heroHook}</p>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--voids-purple-100)", margin: "0 0 32px", maxWidth: 480 }}>{c.sub}</p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <CalendlyButton label={c.ctaIntro} variant="secondary" size="lg" />
               <Button variant="outline" size="lg" onDark href={`${p("/companies")}#diensten`}>{c.ctaProcess}</Button>
@@ -359,7 +363,7 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-soft)", margin: "0 0 26px", maxWidth: 1040 }}>{c.whyWsIntro}</p>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "repeat(5, minmax(0, 1fr))", gap: 14, maxWidth: 1040, alignItems: "stretch" }}>
             {WHY_WS[lang].map((w) => (
-              <div key={w.title} className="card card--hoverable card--accent-purple" style={{ padding: "20px 16px", height: "100%", display: "flex", flexDirection: "column" }}>
+              <div key={w.title} className="card card--hoverable card--accent-purple" style={{ padding: "20px 16px", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
                 <div style={{ width: 36, height: 36, borderRadius: "50%", background: "var(--voids-purple-100)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12 }}>
                   {WHY_WS_ICONS[w.icon]}
                 </div>
@@ -478,9 +482,11 @@ export function CompaniesPage({ lang }: { lang: Lang }) {
                 </div>
               </div>
             </div>
-            <p style={{ fontSize: 11, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: "14px 0 0", paddingTop: 12, borderTop: "1px solid var(--border-hairline)" }}>
-              {c.salaryFootnote}
-            </p>
+            <div style={{ marginTop: 14, paddingTop: 12, borderTop: "1px solid var(--border-hairline)" }}>
+              <Disclosure label={c.salaryFootnoteLabel}>
+                <p style={{ fontSize: 11.5, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: 0 }}>{c.salaryFootnote}</p>
+              </Disclosure>
+            </div>
             <div style={{ marginTop: 16, paddingTop: 16, borderTop: "1px solid var(--border-hairline)", display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
               <HeartIcon />
               <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-ink-muted)", margin: 0, flex: 1, minWidth: 220 }}>

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { ReactNode } from "react";
 
-export function AboutAccordion({ items }: { items: { title: string; content: ReactNode }[] }) {
+export function AboutAccordion({ items }: { items: { title: string; icon: ReactNode; content: ReactNode }[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
@@ -22,7 +22,7 @@ export function AboutAccordion({ items }: { items: { title: string; content: Rea
                 alignItems: "center",
                 justifyContent: "space-between",
                 gap: 16,
-                padding: "24px 0",
+                padding: "22px 0",
                 background: "transparent",
                 border: "none",
                 cursor: "pointer",
@@ -30,10 +30,28 @@ export function AboutAccordion({ items }: { items: { title: string; content: Rea
                 color: "#fff",
               }}
             >
-              <span className="anton" style={{ fontSize: 22 }}>{item.title}</span>
+              <span style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                <span
+                  style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: "50%",
+                    background: open ? "#fff" : "rgba(255,255,255,.12)",
+                    color: open ? "var(--voids-purple)" : "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flex: "none",
+                    transition: "background 0.15s ease, color 0.15s ease",
+                  }}
+                >
+                  {item.icon}
+                </span>
+                <span className="anton" style={{ fontSize: 22, color: "#fff" }}>{item.title}</span>
+              </span>
               <ChevronIcon open={open} />
             </button>
-            {open && <div style={{ paddingBottom: 28, maxWidth: 760 }}>{item.content}</div>}
+            {open && <div style={{ paddingBottom: 28, paddingLeft: 54, maxWidth: 760 }}>{item.content}</div>}
           </div>
         );
       })}

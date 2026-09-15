@@ -52,7 +52,7 @@ export function ComparisonCard({
   return (
     <div className="card" style={{ padding: 28, height: "100%", display: "flex", flexDirection: "column" }}>
       {title && <h3 className="anton" style={{ fontSize: 24, margin: "0 0 6px" }}>{title}</h3>}
-      {sub && <p style={{ fontSize: 13, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: "0 0 18px", minHeight: 82 }}>{sub}</p>}
+      {sub && <p style={{ fontSize: 13, lineHeight: 1.55, color: "var(--voids-ink-muted)", margin: "0 0 18px", minHeight: 105 }}>{sub}</p>}
 
       <div role="tablist" style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 16 }}>
         {(
