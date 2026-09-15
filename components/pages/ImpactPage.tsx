@@ -266,20 +266,27 @@ export function ImpactPage({ lang }: { lang: Lang }) {
               <span className="voids-eyebrow" style={{ color: "var(--voids-purple-100)" }}>{c.solutionEyebrow}</span>
               <h2 className="anton section-h2" style={{ fontSize: 36, margin: "10px 0 14px", color: "#fff" }}>{c.solutionTitle}</h2>
               <p style={{ fontSize: 17, lineHeight: 1.65, color: "var(--voids-purple-100)", margin: 0, maxWidth: 520 }}>{c.solutionText}</p>
-              <div className="card card--accent-blue" style={{ padding: 22, display: "flex", flexDirection: "column", gap: 14, maxWidth: 520, marginTop: "auto" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <div style={{ width: 32, height: 32, borderRadius: "50%", background: "var(--voids-blue-100)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
-                    <BriefcaseIcon />
+              <div className="card" style={{ padding: 24, display: "flex", flexDirection: "column", gap: 14, maxWidth: 520, marginTop: "auto", background: "#fff", borderTop: "3px solid var(--voids-blue)" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <div style={{ width: 40, height: 40, borderRadius: "50%", background: "var(--voids-blue)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
+                    <BriefcaseIcon color="#fff" />
                   </div>
-                  <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".03em", textTransform: "uppercase", color: "var(--voids-blue)" }}>{c.problemCloseLabel}</span>
+                  <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: ".04em", textTransform: "uppercase", color: "var(--voids-blue)" }}>{c.problemCloseLabel}</span>
                 </div>
-                <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--voids-ink)", margin: 0 }}>
+                <p className="anton" style={{ fontSize: 16, lineHeight: 1.4, textTransform: "none", color: "var(--voids-ink)", margin: 0 }}>
                   {c.problemClose}
                 </p>
-                <Button variant="outline" size="sm" href={p("/companies")}>{c.problemCloseCta}</Button>
+                <Button variant="primary" size="sm" href={p("/companies")}>{c.problemCloseCta}</Button>
               </div>
             </div>
-            <Photo src="/photography/impact-band.jpg" alt={c.bandAlt} className="stretch-photo" style={{ aspectRatio: "auto", height: "100%" }} />
+            <Photo
+              src="/photography/impact-band.jpg"
+              alt={c.bandAlt}
+              className="stretch-photo"
+              style={{ aspectRatio: "auto", height: "100%" }}
+              objectPosition="center 30%"
+              zoom={1.12}
+            />
           </div>
         </Reveal>
       </section>
@@ -374,12 +381,12 @@ function Squiggle() {
   );
 }
 
-function BriefcaseIcon() {
+function BriefcaseIcon({ color = "var(--voids-blue)" }: { color?: string }) {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="3" y="8" width="18" height="12" rx="2" stroke="var(--voids-blue)" strokeWidth="1.6" />
-      <path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="var(--voids-blue)" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M3 13h18" stroke="var(--voids-blue)" strokeWidth="1.6" />
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="8" width="18" height="12" rx="2" stroke={color} strokeWidth="1.6" />
+      <path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke={color} strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M3 13h18" stroke={color} strokeWidth="1.6" />
     </svg>
   );
 }
