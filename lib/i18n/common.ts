@@ -118,7 +118,7 @@ export const t = {
   contactLabel: { nl: "Contact", en: "Contact" },
   moreLabel: { nl: "Meer", en: "More" },
   whatsappCta: { nl: "💜 WhatsApp", en: "💜 WhatsApp" },
-  joinTalentPool: { nl: "Word lid van de talentpool", en: "Join the talent pool" },
+  joinTalentPool: { nl: "Word lid van de pool", en: "Join the talent pool" },
   openMenu: { nl: "Open menu", en: "Open menu" },
   closeMenu: { nl: "Sluit menu", en: "Close menu" },
   whatsModalTitle: { nl: "WORD LID VAN DE COMMUNITY 💜", en: "JOIN THE COMMUNITY 💜" },
