@@ -185,7 +185,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               </div>
             </div>
           </div>
-          <Photo src="/photography/home-hero-6.jpg" alt={c.heroAlt} ratio="2000 / 1313" priority />
+          <Photo src="/photography/home-hero-7.jpg" alt={c.heroAlt} ratio="2000 / 1344" priority />
         </div>
       </section>
 
@@ -312,7 +312,15 @@ export function HomePage({ lang }: { lang: Lang }) {
           <div className="vacancy-bubble-stack">
             {VACANCY_BUBBLES[lang].map((v, i) => (
               <div key={v.company} className="vacancy-bubble" style={{ animationDelay: `${i * 4}s` }}>
-                <span className="vacancy-bubble-icon" aria-hidden="true" />
+                <span className="vacancy-bubble-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="12" fill="#25D366" />
+                    <path
+                      fill="#fff"
+                      d="M12 5.5c-3.6 0-6.5 2.9-6.5 6.5 0 1.15.3 2.24.87 3.2L5.5 18.5l3.42-.85c.93.5 1.98.77 3.08.77 3.6 0 6.5-2.9 6.5-6.5s-2.9-6.42-6.5-6.42zm3.8 9.18c-.16.45-.94.86-1.3.91-.33.05-.75.07-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.8-3.3-2.93-.1-.13-.79-1.05-.79-2 0-.95.5-1.42.68-1.61.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.02.43.33.16.37.54 1.28.59 1.37.05.1.08.21.02.34-.06.13-.09.21-.18.32-.09.11-.19.25-.27.33-.09.09-.18.19-.08.37.1.19.46.76.98 1.23.68.6 1.24.79 1.43.88.19.09.3.08.41-.05.11-.13.47-.55.6-.74.13-.19.25-.15.42-.09.17.06 1.08.51 1.27.6.19.09.31.14.36.21.05.08.05.44-.11.89z"
+                    />
+                  </svg>
+                </span>
                 <span className="vacancy-bubble-content">
                   <span className="vacancy-bubble-eyebrow">{c.vacancyBubbleLabel}</span>
                   <span className="vacancy-bubble-text">

@@ -25,7 +25,6 @@ const COPY: Record<
     casesSub: string;
     profilesTitle: string;
     profilesSub: string;
-    taasEyebrow: string;
     taasTitle: string;
     taasSub: string;
     taasPlacementBadge: string;
@@ -64,9 +63,9 @@ const COPY: Record<
     casesSub: "Een kleine greep uit de vele bedrijven waar we mee hebben samengewerkt, van scale-up tot corporate.",
     profilesTitle: "GEDREVEN TALENT, GESELECTEERD OP KWALITEIT EN CULTUUR.",
     profilesSub: "We sourcen voornamelijk wo- en hbo-studenten en jonge professionals: ambitieus, snel zelfstandig en gewend om te presteren naast hun studie. Die gedrevenheid zie je niet alleen terug in een bestuursjaar of torenhoge cijfers, maar net zo goed in doorzettingsvermogen, ondernemerschap of hoe iemand zich op eigen kracht heeft ontwikkeld. We matchen niet alleen op skills, maar vooral op cultuurfit, zodat wie we voorstellen ook echt past.",
-    taasEyebrow: "Twee opties, kies wat bij je past",
     taasTitle: "ZO WERKEN WE SAMEN.",
-    taasSub: "Zelfde zorgvuldige werving en selectie: kies de vorm die past bij hoe vaak je werft.",
+    taasSub:
+      "Twee opties, kies wat bij je past: dezelfde zorgvuldige werving en selectie, afgestemd op hoe vaak je werft.",
     taasPlacementBadge: "Eenmalig",
     taasPlacementTitle: "Per plaatsing",
     taasPlacementBullets: [
@@ -112,9 +111,9 @@ const COPY: Record<
     casesSub: "A small selection from the many companies we've worked with, from scale-up to corporate.",
     profilesTitle: "DRIVEN TALENT, SELECTED ON QUALITY AND CULTURE.",
     profilesSub: "We mainly source university and university-of-applied-sciences students and young professionals: ambitious, quick to work independently, and used to performing alongside their studies. That drive doesn't only show up as a board year or a stellar GPA: it shows just as much in persistence, entrepreneurship, or how someone has developed under their own steam. We match not just on skills but on culture fit, so who we put forward actually fits.",
-    taasEyebrow: "Two ways to work with us",
     taasTitle: "HOW WE WORK TOGETHER.",
-    taasSub: "Same careful recruitment and selection: pick the option that fits how often you hire.",
+    taasSub:
+      "Two options, pick what fits: the same careful recruitment and selection, matched to how often you hire.",
     taasPlacementBadge: "One-off",
     taasPlacementTitle: "Per placement",
     taasPlacementBullets: [
@@ -162,8 +161,15 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
 
           <div style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.18)", borderRadius: "var(--radius-lg)", padding: 26 }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-              {c.heroStats.map((s) => (
-                <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: "1px solid rgba(255,255,255,.14)", paddingTop: 14 }}>
+              {c.heroStats.map((s, i) => (
+                <div
+                  key={s.label}
+                  style={
+                    i === 0
+                      ? { display: "flex", alignItems: "baseline", gap: 12 }
+                      : { display: "flex", alignItems: "baseline", gap: 12, borderTop: "1px solid rgba(255,255,255,.14)", paddingTop: 14 }
+                  }
+                >
                   <span className="anton" style={{ fontSize: 26, color: "#fff", flex: "none", whiteSpace: "nowrap" }}><CountUp value={s.value} /></span>
                   <span style={{ fontSize: 13, color: "var(--voids-purple-100)" }}>{s.label}</span>
                 </div>
@@ -297,8 +303,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
 
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "64px 32px" }}>
-          <span className="voids-eyebrow" style={{ color: "var(--voids-blue)" }}>{c.taasEyebrow}</span>
-          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "8px 0 12px" }}>{c.taasTitle}</h2>
+          <h2 className="anton section-h2" style={{ fontSize: 30, margin: "0 0 12px" }}>{c.taasTitle}</h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 36px", maxWidth: 900 }}>{c.taasSub}</p>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}>
             {[
