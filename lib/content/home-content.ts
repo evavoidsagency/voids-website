@@ -1,37 +1,40 @@
 import type { Lang } from "@/lib/i18n/common";
 
 /** name, slug, url — drop a matching file in /public/logos/{slug}.svg|.png to replace the placeholder. url is optional; omit for companies we couldn't confidently verify. */
-/** Order is deliberately shuffled so same-color logos (the orange/coral cluster: hubby, writify,
-    dropp, wepartynow, monsterscore) don't bunch together — spread roughly every 4-5 slots. */
+/** Order is deliberately interleaved by dominant logo color (checked each
+    file directly) so same-color logos never sit next to each other: black
+    logos are the largest single group (11 of 28), so they're spaced against
+    orange/purple/blue clusters throughout — only the very end has one
+    unavoidable black-black pair once the other colors run out. */
 export const TRUSTED: { name: string; slug: string; url?: string }[] = [
-  { name: "De Kiesmannen", slug: "de-kiesmannen", url: "https://www.dekiesmannen.nl/" },
-  { name: "Hubby", slug: "hubby", url: "https://hubbyesim.com/" },
-  { name: "Onestone", slug: "onestone", url: "https://www.1stoneadvisory.com/" },
-  { name: "Van Oort & Van Oort", slug: "van-oort-van-oort", url: "https://www.vanoortenvanoort.nl/" },
   { name: "Joulz", slug: "joulz", url: "https://joulz.nl/" },
-  { name: "Writify", slug: "writify", url: "https://www.writify.co/" },
-  { name: "HotelPlanner", slug: "hotelplanner", url: "https://www.hotelplanner.com/" },
+  { name: "Hubby", slug: "hubby", url: "https://hubbyesim.com/" },
+  { name: "Van Oort & Van Oort", slug: "van-oort-van-oort", url: "https://www.vanoortenvanoort.nl/" },
+  { name: "De Kiesmannen", slug: "de-kiesmannen", url: "https://www.dekiesmannen.nl/" },
   { name: "Relive", slug: "relive", url: "https://www.relive.com/" },
+  { name: "Writify", slug: "writify", url: "https://www.writify.co/" },
   { name: "Structural Collective", slug: "structural-collective", url: "https://www.structuralcollective.nl/" },
-  { name: "Dropp", slug: "dropp", url: "https://dropp.amsterdam/" },
-  { name: "CribConnects", slug: "cribconnects", url: "https://www.cribconnects.com/" },
+  { name: "Onestone", slug: "onestone", url: "https://www.1stoneadvisory.com/" },
   { name: "M&G", slug: "mg", url: "https://www.michael-giso.com/" },
-  { name: "Go Delphi", slug: "go-delphi", url: "https://www.godelphi.nl/" },
-  { name: "Enerzien", slug: "enerzien", url: "https://www.enerzien.nl/" },
-  { name: "WePartyNow", slug: "wepartynow", url: "https://wepartynow.com/nl" },
-  { name: "Meute", slug: "meute", url: "https://www.meute.nl/" },
+  { name: "Dropp", slug: "dropp", url: "https://dropp.amsterdam/" },
   { name: "Mila Health", slug: "mila-health", url: "https://milahealth.co/" },
+  { name: "HotelPlanner", slug: "hotelplanner", url: "https://www.hotelplanner.com/" },
+  { name: "Meute", slug: "meute", url: "https://www.meute.nl/" },
+  { name: "WePartyNow", slug: "wepartynow", url: "https://wepartynow.com/nl" },
   { name: "Stuwr", slug: "stuwr", url: "https://www.stuwr.nl/" },
+  { name: "CribConnects", slug: "cribconnects", url: "https://www.cribconnects.com/" },
   { name: "De Huismeesters", slug: "de-huismeesters", url: "https://dehuismeesters.com/" },
-  { name: "Monsterscore", slug: "monsterscore", url: "https://monsterscore.nl/" },
+  { name: "Go Delphi", slug: "go-delphi", url: "https://www.godelphi.nl/" },
   { name: "#MasterJeCijfers", slug: "masterjecijfers", url: "https://www.masterjecijfers.nl/" },
+  { name: "Monsterscore", slug: "monsterscore", url: "https://monsterscore.nl/" },
   { name: "House of Inclusion", slug: "house-of-inclusion", url: "https://www.house-of-inclusion.com/" },
   { name: "The Cirqle", slug: "the-cirqle", url: "https://thecirqle.com/" },
   { name: "Check and Charge", slug: "check-and-charge", url: "https://www.checkandcharge.com/" },
+  { name: "Enerzien", slug: "enerzien", url: "https://www.enerzien.nl/" },
   { name: "Bit", slug: "bit", url: "https://wearebit.com/" },
+  { name: "Green Team", slug: "green-team", url: "https://greenteam.energy/" },
   { name: "Doing Goods", slug: "doing-goods", url: "https://www.doing-goods.com/" },
   { name: "The Longevity Store", slug: "the-longevity-store", url: "https://thelongevitystore.com/" },
-  { name: "Green Team", slug: "green-team", url: "https://greenteam.energy/" },
 ];
 
 export const TESTIMONIALS: Record<Lang, { quote: string; name: string; role: string; photo?: string }[]> = {
