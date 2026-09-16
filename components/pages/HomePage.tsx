@@ -202,7 +202,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       {/* TRUSTED BY */}
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "48px 32px 0" }}>
-          <div className="anton" style={{ fontSize: 13, letterSpacing: ".08em", textAlign: "center", color: "var(--voids-ink-muted)" }}>
+          <div className="anton" style={{ fontSize: 13, letterSpacing: ".08em", textAlign: "center", color: "var(--voids-purple)" }}>
             {c.trustedBy}
           </div>
         </div>
@@ -281,7 +281,7 @@ export function HomePage({ lang }: { lang: Lang }) {
           on this page, with a staggered layout instead of a flat grid. */}
       <section style={{ background: "var(--voids-beige)" }}>
         <div className="wrap" style={{ padding: "68px 32px" }}>
-          <div className="anton" style={{ fontSize: 15, letterSpacing: ".06em", color: "var(--voids-ink-muted)", marginBottom: 34 }}>
+          <div className="anton" style={{ fontSize: 15, letterSpacing: ".06em", color: "var(--voids-purple)", marginBottom: 34 }}>
             {c.testimonialsLabel}
           </div>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 26 }}>
