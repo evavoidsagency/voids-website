@@ -352,7 +352,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <Photo src="/photography/talent-band.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" objectPosition="center 26%" sizes="100vw" />
+      <Photo src="/photography/talent-band-2.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" objectPosition="center 26%" sizes="100vw" />
 
       <section style={{ background: "var(--voids-beige)" }}>
         <div className="wrap" style={{ padding: "72px 32px" }}>

@@ -84,8 +84,7 @@ export const CLIENT_CASES: Record<
         "Meedenken met de founders over strategische vraagstukken",
       ],
       outcome: "Twee plaatsingen, waarvan er één binnen 3 maanden een vast aanbod kreeg.",
-      photo: "/photography/employer-branding-band.jpg",
-      flip: true,
+      photo: "/photography/case-longevity-store.jpg",
     },
   ],
   en: [
@@ -168,8 +167,7 @@ export const CLIENT_CASES: Record<
         "Working directly with the founders on strategic questions",
       ],
       outcome: "Two placements, one of which received a full-time offer within 3 months.",
-      photo: "/photography/employer-branding-band.jpg",
-      flip: true,
+      photo: "/photography/case-longevity-store.jpg",
     },
   ],
 };
