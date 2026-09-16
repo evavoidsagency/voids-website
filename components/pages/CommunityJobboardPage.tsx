@@ -137,7 +137,19 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <Photo src="/photography/community-jobboard-band-2.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" objectPosition="center 10%" sizes="100vw" />
+      {/* Poster-style headline stacked directly on the photo — example
+          treatment inspired by vacaturevia's card thumbnails. */}
+      <div style={{ position: "relative" }}>
+        <Photo src="/photography/community-jobboard-band-2.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" objectPosition="center 10%" sizes="100vw" />
+        <div style={{ position: "absolute", left: 24, bottom: 24, display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 2 }}>
+          <span className="anton poster-line" style={{ background: "var(--voids-purple)", color: "#fff", fontSize: "clamp(22px, 4vw, 40px)", padding: "2px 10px" }}>
+            {c.heroStats[0].value}
+          </span>
+          <span className="anton poster-line" style={{ background: "#000", color: "#fff", fontSize: "clamp(22px, 4vw, 40px)", padding: "2px 10px" }}>
+            {c.heroStats[0].label.split(" ")[0].toUpperCase()}
+          </span>
+        </div>
+      </div>
 
       <section style={{ background: "#fff" }}>
         <div className="wrap" style={{ padding: "56px 32px 64px" }}>

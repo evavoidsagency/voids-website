@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { Photo } from "@/components/ui/Photo";
+import { DoodleSquiggle, DoodleSparkle } from "@/components/ui/Doodle";
 import { CountUp } from "@/components/ui/CountUp";
 import { findLogoFile } from "@/lib/logos";
 import { localePath, type Lang } from "@/lib/i18n/common";
@@ -41,6 +42,7 @@ const COPY: Record<
     stat3Value: string;
     stat3Label: string;
     trustedBy: string;
+    statement: string;
     doorTalentTitle: string;
     doorTalentText: string;
     doorTalentCta: string;
@@ -78,6 +80,7 @@ const COPY: Record<
     stat3Value: "10%",
     stat3Label: "winst naar impact",
     trustedBy: "VERTROUWD DOOR",
+    statement: "Geen cv-stapels. Gewoon matches.",
     doorTalentTitle: "VOOR TALENT",
     doorTalentText:
       "Vind een rol via ons jobboard, sluit je aan bij de WhatsApp-community voor nieuwe kansen, of vertel ons wat je drijft en ontvang een gratis career pager op maat.",
@@ -118,6 +121,7 @@ const COPY: Record<
     stat3Value: "10%",
     stat3Label: "profit to impact",
     trustedBy: "TRUSTED BY",
+    statement: "No stacks of CVs. Just matches.",
     doorTalentTitle: "FOR TALENT",
     doorTalentText:
       "Find a role on our job board, join the WhatsApp community for new opportunities, or tell us what drives you and get a free, personalised career pager.",
@@ -227,6 +231,27 @@ export function HomePage({ lang }: { lang: Lang }) {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* STATEMENT — a playful interstitial between the logo proof and the
+          two doors, in the spirit of vacaturevia's oversized rotated pull-quotes. */}
+      <section style={{ background: "#fff", position: "relative", overflow: "hidden" }}>
+        <div className="wrap" style={{ padding: "12px 32px 36px", textAlign: "center", position: "relative" }}>
+          <DoodleSquiggle color="var(--voids-blue-200)" style={{ position: "absolute", top: -6, left: "8%", width: 110, transform: "rotate(-8deg)" }} />
+          <DoodleSparkle color="var(--voids-purple-200)" style={{ position: "absolute", bottom: 4, right: "10%", width: 28 }} />
+          <span
+            className="anton statement-text"
+            style={{
+              display: "inline-block",
+              fontSize: 34,
+              color: "transparent",
+              WebkitTextStroke: "1.5px var(--voids-purple)",
+              transform: "rotate(-2deg)",
+            }}
+          >
+            {c.statement}
+          </span>
         </div>
       </section>
 

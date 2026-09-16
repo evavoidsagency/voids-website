@@ -482,6 +482,62 @@ a:hover .blog-thumb img {
     transition: none;
   }
 }
+.contact-icon-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  flex: none;
+}
+.poster-line {
+  display: inline-block;
+  line-height: 1.15;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.floating-whatsapp-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+.floating-whatsapp-btn:hover {
+  transform: scale(1.08);
+}
+@media (prefers-reduced-motion: reduce) {
+  .floating-whatsapp-btn {
+    transition: none;
+  }
+}
+.blog-thumb-arrow {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--voids-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(20, 8, 90, 0.35);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+a:hover .blog-thumb-arrow {
+  transform: scale(1.1) rotate(45deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .blog-thumb-arrow {
+    transition: none;
+  }
+}
 .door-cta {
   transition: transform 0.2s ease;
 }

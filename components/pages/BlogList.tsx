@@ -102,8 +102,13 @@ export function BlogList({ lang }: { lang: Lang }) {
             className="card flex-collapse"
             style={{ padding: 0, display: "flex", overflow: "hidden", textDecoration: "none", color: "inherit" }}
           >
-            <div className="blog-thumb" style={{ width: 150, flex: "none" }}>
+            <div className="blog-thumb" style={{ width: 150, flex: "none", position: "relative" }}>
               <Photo src={post.photo} alt={post.title[lang]} ratio="1 / 1" radius="0" sizes="150px" flip={variant.flip} zoom={variant.zoom} />
+              <span className="blog-thumb-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
             </div>
             <div style={{ padding: 20 }}>
               <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>

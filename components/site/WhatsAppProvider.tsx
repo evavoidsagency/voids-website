@@ -23,8 +23,30 @@ export function WhatsAppProvider({ children }: { children: ReactNode }) {
   return (
     <WhatsAppContext.Provider value={value}>
       {children}
+      {!isOpen && <FloatingWhatsAppButton onClick={value.openModal} />}
       <WhatsAppModal open={isOpen} onClose={value.closeModal} />
     </WhatsAppContext.Provider>
+  );
+}
+
+/** Persistent floating entry point to the WhatsApp community, always one tap
+    away — example of the "always-visible pill CTA" pattern from vacaturevia. */
+function FloatingWhatsAppButton({ onClick }: { onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label="WhatsApp"
+      className="floating-whatsapp-btn"
+      style={{ position: "fixed", bottom: 22, right: 22, zIndex: 45, border: "none", cursor: "pointer" }}
+    >
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill="#fff"
+          d="M12 2.5c-5.25 0-9.5 4.25-9.5 9.5 0 1.68.44 3.26 1.21 4.63L2.5 21.5l5.02-1.32a9.46 9.46 0 0 0 4.48 1.14c5.25 0 9.5-4.25 9.5-9.5s-4.25-9.32-9.5-9.32Zm5.56 13.4c-.23.65-1.37 1.26-1.9 1.33-.48.07-1.09.1-1.76-.11-.4-.13-.93-.3-1.6-.58-2.82-1.22-4.66-4.07-4.8-4.26-.14-.19-1.15-1.53-1.15-2.92 0-1.38.73-2.06.99-2.34.26-.28.57-.35.76-.35l.54.01c.17 0 .4-.03.63.48.23.54.79 1.87.86 2 .07.15.12.31.02.5-.09.19-.14.31-.27.47-.13.16-.28.36-.4.48-.13.13-.27.28-.12.54.15.28.67 1.11 1.43 1.8.99.87 1.81 1.15 2.08 1.28.28.13.44.11.6-.07.16-.19.68-.8.87-1.08.19-.28.37-.22.62-.13.25.09 1.57.74 1.85.87.28.13.46.2.53.31.07.11.07.64-.15 1.3Z"
+        />
+      </svg>
+    </button>
   );
 }
 

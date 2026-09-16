@@ -5,6 +5,7 @@ import { CalendlyButton } from "@/components/site/CalendlyButton";
 import { SOCIALS, localePath, type Lang } from "@/lib/i18n/common";
 import { TEAM } from "@/lib/content/team";
 import { findTeamPhoto } from "@/lib/logos";
+import { DoodleSparkle, DoodleSquiggle } from "@/components/ui/Doodle";
 
 const COPY: Record<
   Lang,
@@ -265,17 +266,32 @@ export function AboutPage({ lang }: { lang: Lang }) {
 
       <section id="contact" style={{ background: "#fff", scrollMarginTop: 90 }}>
         <div className="wrap g-collapse" style={{ padding: "56px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "start" }}>
-          <div>
+          <div style={{ position: "relative" }}>
+            <DoodleSparkle color="var(--voids-purple-200)" style={{ position: "absolute", top: -18, left: -8, width: 26 }} />
             <h2 className="anton section-h2" style={{ fontSize: 34, margin: "0 0 12px" }}>{c.contactTitle}</h2>
             <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 22px" }}>{c.contactSub}</p>
-            <div style={{ marginBottom: 22 }}>
-              <CalendlyButton label={c.bookCall} />
+            <div style={{ position: "relative", display: "inline-block", marginBottom: 26 }}>
+              <DoodleSquiggle color="var(--voids-blue-300)" style={{ position: "absolute", left: "100%", top: -30, width: 70, transform: "scaleX(-1) rotate(6deg)" }} />
+              <CalendlyButton label={c.bookCall} variant="primary" size="lg" />
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               <a href="mailto:contact@voids.agency" style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink)", fontWeight: 400 }}>
-                📧 contact@voids.agency
+                <span className="contact-icon-badge" style={{ background: "var(--voids-purple-100)", color: "var(--voids-purple)" }}>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 6.5 12 13l9-6.5M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+                contact@voids.agency
               </a>
-              <div style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink-soft)" }}>📍 {c.location}</div>
+              <div style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 15, color: "var(--voids-ink-soft)" }}>
+                <span className="contact-icon-badge" style={{ background: "var(--voids-blue-100)", color: "var(--voids-blue)" }}>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+                    <circle cx="12" cy="9.5" r="2.3" stroke="currentColor" strokeWidth="1.8" />
+                  </svg>
+                </span>
+                {c.location}
+              </div>
               <div style={{ display: "flex", gap: 14, marginTop: 6 }}>
                 <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" style={{ fontSize: 14, fontWeight: 600 }}>LinkedIn</a>
                 <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" style={{ fontSize: 14, fontWeight: 600 }}>Instagram</a>
