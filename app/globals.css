@@ -646,6 +646,12 @@ a:hover .blog-thumb-arrow {
     aspect-ratio: 4 / 5 !important;
     height: auto !important;
   }
+  /* Same fix, but the homepage hero photo's own crop is landscape, so it
+     gets its natural ratio back instead of the generic portrait fallback. */
+  .hero-stretch-photo {
+    aspect-ratio: 2000 / 1344 !important;
+    height: auto !important;
+  }
   /* Page hero <h1> — the biggest text on the page, needs to shrink most. */
   .hero-h1 {
     font-size: 34px !important;

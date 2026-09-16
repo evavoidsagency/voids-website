@@ -161,7 +161,6 @@ export function HomePage({ lang }: { lang: Lang }) {
             display: "grid",
             gridTemplateColumns: ".5fr 1.6fr",
             gap: 40,
-            alignItems: "flex-start",
             padding: "70px 32px 76px",
           }}
         >
@@ -195,7 +194,14 @@ export function HomePage({ lang }: { lang: Lang }) {
               </div>
             </div>
           </div>
-          <Photo src="/photography/home-hero-7.jpg" alt={c.heroAlt} ratio="2000 / 1344" priority />
+          <Photo
+            src="/photography/home-hero-7.jpg"
+            alt={c.heroAlt}
+            ratio="2000 / 1344"
+            className="hero-stretch-photo"
+            style={{ aspectRatio: "auto", height: "100%" }}
+            priority
+          />
         </div>
       </section>
 
