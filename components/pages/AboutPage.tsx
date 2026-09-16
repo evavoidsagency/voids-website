@@ -5,7 +5,7 @@ import { CalendlyButton } from "@/components/site/CalendlyButton";
 import { SOCIALS, localePath, type Lang } from "@/lib/i18n/common";
 import { TEAM } from "@/lib/content/team";
 import { findTeamPhoto } from "@/lib/logos";
-import { DoodleSparkle, DoodleSquiggle } from "@/components/ui/Doodle";
+import { DoodleSquiggle } from "@/components/ui/Doodle";
 
 const COPY: Record<
   Lang,
@@ -267,7 +267,6 @@ export function AboutPage({ lang }: { lang: Lang }) {
       <section id="contact" style={{ background: "#fff", scrollMarginTop: 90 }}>
         <div className="wrap g-collapse" style={{ padding: "56px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "start" }}>
           <div style={{ position: "relative" }}>
-            <DoodleSparkle color="var(--voids-purple-200)" style={{ position: "absolute", top: -18, left: -8, width: 26 }} />
             <h2 className="anton section-h2" style={{ fontSize: 34, margin: "0 0 12px" }}>{c.contactTitle}</h2>
             <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 22px" }}>{c.contactSub}</p>
             <div style={{ position: "relative", display: "inline-block", marginBottom: 26 }}>

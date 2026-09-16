@@ -22,6 +22,8 @@ const COPY: Record<
     pricingAdTitle: string;
     pricingAdText: string;
     bandAlt: string;
+    bandLine1: string;
+    bandLine2: string;
     contactTitle: string;
     contactText: string;
     contactCta: string;
@@ -58,6 +60,8 @@ const COPY: Record<
     pricingAdTitle: "Losse plaatsing",
     pricingAdText: "Vaste prijs per plaatsing, bepaald door het bereik van de gekozen kanalen op het moment van plaatsen. Tijdelijk extra boosten kan tegen meerprijs.",
     bandAlt: "Team aan het werk op kantoor",
+    bandLine1: "ZIJ ZIEN",
+    bandLine2: "JOUW VACATURE",
     contactTitle: "VACATURE PLAATSEN?",
     contactText: "Laat hieronder weten wat voor rol je zoekt, dan nemen we contact op met meer info en de opties.",
     contactCta: "Neem contact op",
@@ -97,6 +101,8 @@ const COPY: Record<
     pricingAdTitle: "Single placement",
     pricingAdText: "A fixed fee per placement, determined by the reach of the selected channels at the time of posting. Temporary boosting is available for an extra fee.",
     bandAlt: "The team at work in the office",
+    bandLine1: "THEY SEE",
+    bandLine2: "YOUR VACANCY",
     contactTitle: "WANT TO POST A VACANCY?",
     contactText: "Let us know what kind of role you're hiring for below, and we'll get in touch with more info and the options.",
     contactCta: "Get in touch",
@@ -143,10 +149,10 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
         <Photo src="/photography/community-jobboard-band-2.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" objectPosition="center 10%" sizes="100vw" />
         <div style={{ position: "absolute", left: 24, bottom: 24, display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 2 }}>
           <span className="anton poster-line" style={{ background: "var(--voids-purple)", color: "#fff", fontSize: "clamp(22px, 4vw, 40px)", padding: "2px 10px" }}>
-            {c.heroStats[0].value}
+            {c.bandLine1}
           </span>
           <span className="anton poster-line" style={{ background: "#000", color: "#fff", fontSize: "clamp(22px, 4vw, 40px)", padding: "2px 10px" }}>
-            {c.heroStats[0].label.split(" ")[0].toUpperCase()}
+            {c.bandLine2}
           </span>
         </div>
       </div>

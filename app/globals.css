@@ -501,15 +501,16 @@ a:hover .blog-thumb img {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #25d366;
+  background: var(--voids-purple);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s ease;
+  box-shadow: 0 10px 24px rgba(20, 8, 90, 0.4);
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 .floating-whatsapp-btn:hover {
   transform: scale(1.08);
+  background: var(--voids-purple-700);
 }
 @media (prefers-reduced-motion: reduce) {
   .floating-whatsapp-btn {
@@ -518,20 +519,24 @@ a:hover .blog-thumb img {
 }
 .blog-thumb-arrow {
   position: absolute;
-  right: 10px;
-  bottom: 10px;
-  width: 32px;
-  height: 32px;
+  right: 8px;
+  bottom: 8px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  background: var(--voids-purple);
+  background: rgba(58, 12, 163, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(20, 8, 90, 0.35);
+  box-shadow: 0 2px 6px rgba(20, 8, 90, 0.2);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.blog-thumb-arrow svg {
+  width: 12px;
+  height: 12px;
+}
 a:hover .blog-thumb-arrow {
-  transform: scale(1.1) rotate(45deg);
+  transform: scale(1.1);
 }
 @media (prefers-reduced-motion: reduce) {
   .blog-thumb-arrow {
