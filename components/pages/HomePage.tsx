@@ -7,22 +7,23 @@ import { findLogoFile } from "@/lib/logos";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { TRUSTED, TESTIMONIALS } from "@/lib/content/home-content";
 
-/** Real client names pulled from TRUSTED so the "new vacancy" bubbles on the
-    final CTA feel like genuine notifications, not placeholder copy. This
-    mirrors how the WhatsApp community actually works: a feed of new
-    vacancies for everyone, not a personalised match. */
+/** Only companies with a full worked-out case on the W&S page (lib/content/cases.ts)
+    so the "new vacancy" bubbles on the final CTA point to a real, substantiated
+    example rather than just any logo from the trusted-by row. This mirrors how
+    the WhatsApp community actually works: a feed of new vacancies for everyone,
+    not a personalised match. */
 const VACANCY_BUBBLES: Record<Lang, { role: string; company: string }[]> = {
   nl: [
-    { role: "Werkstudent Marketing", company: "Joulz" },
-    { role: "Stagiair Data", company: "Bit" },
-    { role: "Trainee Sales", company: "Dropp" },
-    { role: "Werkstudent Finance", company: "Enerzien" },
+    { role: "Werkstudent Finance", company: "Joulz" },
+    { role: "Werkstudent Marketing", company: "Enerzien" },
+    { role: "Werkstudent Business Development", company: "HotelPlanner" },
+    { role: "Founder's Associate", company: "The Longevity Store" },
   ],
   en: [
-    { role: "Working student Marketing", company: "Joulz" },
-    { role: "Data intern", company: "Bit" },
-    { role: "Sales trainee", company: "Dropp" },
-    { role: "Working student Finance", company: "Enerzien" },
+    { role: "Working student Finance", company: "Joulz" },
+    { role: "Working student Marketing", company: "Enerzien" },
+    { role: "Working student Business Development", company: "HotelPlanner" },
+    { role: "Founder's Associate", company: "The Longevity Store" },
   ],
 };
 
@@ -57,6 +58,7 @@ const COPY: Record<
     finalCta: string;
     vacancyBubbleLabel: string;
     vacancyBubbleAt: string;
+    vacancyBubbleNow: string;
     heroAlt: string;
     missionAlt: string;
   }
@@ -95,6 +97,7 @@ const COPY: Record<
     finalCta: "💜 Sluit je aan bij de WhatsApp-community",
     vacancyBubbleLabel: "Nieuwe vacature",
     vacancyBubbleAt: "bij",
+    vacancyBubbleNow: "nu",
     heroAlt: "Twee collega's aan het werk op kantoor",
     missionAlt: "Het VOIDS-team op kantoor",
   },
@@ -132,6 +135,7 @@ const COPY: Record<
     finalCta: "💜 Join the WhatsApp community",
     vacancyBubbleLabel: "New vacancy",
     vacancyBubbleAt: "at",
+    vacancyBubbleNow: "now",
     heroAlt: "Two colleagues working together in the office",
     missionAlt: "The VOIDS team at the office",
   },
@@ -149,9 +153,9 @@ export function HomePage({ lang }: { lang: Lang }) {
           className="wrap g-collapse"
           style={{
             display: "grid",
-            gridTemplateColumns: ".6fr 1.5fr",
+            gridTemplateColumns: ".5fr 1.6fr",
             gap: 40,
-            alignItems: "center",
+            alignItems: "flex-start",
             padding: "70px 32px 76px",
           }}
         >
@@ -322,11 +326,15 @@ export function HomePage({ lang }: { lang: Lang }) {
                   </svg>
                 </span>
                 <span className="vacancy-bubble-content">
-                  <span className="vacancy-bubble-eyebrow">{c.vacancyBubbleLabel}</span>
+                  <span className="vacancy-bubble-eyebrow">
+                    {c.vacancyBubbleLabel}
+                    <time>{c.vacancyBubbleNow}</time>
+                  </span>
                   <span className="vacancy-bubble-text">
                     <strong>{v.role}</strong> {c.vacancyBubbleAt} <strong>{v.company}</strong>
                   </span>
                 </span>
+                <span className="vacancy-bubble-chevron" aria-hidden="true">›</span>
               </div>
             ))}
           </div>
