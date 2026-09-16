@@ -64,7 +64,7 @@ const COPY: Record<
     casesSub: "Een kleine greep uit de vele bedrijven waar we mee hebben samengewerkt, van scale-up tot corporate.",
     profilesTitle: "GEDREVEN TALENT, GESELECTEERD OP KWALITEIT EN CULTUUR.",
     profilesSub: "We sourcen voornamelijk wo- en hbo-studenten en jonge professionals: ambitieus, snel zelfstandig en gewend om te presteren naast hun studie. Die gedrevenheid zie je niet alleen terug in een bestuursjaar of torenhoge cijfers, maar net zo goed in doorzettingsvermogen, ondernemerschap of hoe iemand zich op eigen kracht heeft ontwikkeld. We matchen niet alleen op skills, maar vooral op cultuurfit, zodat wie we voorstellen ook echt past.",
-    taasEyebrow: "Twee manieren om samen te werken",
+    taasEyebrow: "Twee opties, kies wat bij je past",
     taasTitle: "ZO WERKEN WE SAMEN.",
     taasSub: "Zelfde zorgvuldige werving en selectie: kies de vorm die past bij hoe vaak je werft.",
     taasPlacementBadge: "Eenmalig",

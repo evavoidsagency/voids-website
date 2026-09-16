@@ -7,6 +7,25 @@ import { findLogoFile } from "@/lib/logos";
 import { localePath, type Lang } from "@/lib/i18n/common";
 import { TRUSTED, TESTIMONIALS } from "@/lib/content/home-content";
 
+/** Real client names pulled from TRUSTED so the "new vacancy" bubbles on the
+    final CTA feel like genuine notifications, not placeholder copy. This
+    mirrors how the WhatsApp community actually works: a feed of new
+    vacancies for everyone, not a personalised match. */
+const VACANCY_BUBBLES: Record<Lang, { role: string; company: string }[]> = {
+  nl: [
+    { role: "Werkstudent Marketing", company: "Joulz" },
+    { role: "Stagiair Data", company: "Bit" },
+    { role: "Trainee Sales", company: "Dropp" },
+    { role: "Werkstudent Finance", company: "Enerzien" },
+  ],
+  en: [
+    { role: "Working student Marketing", company: "Joulz" },
+    { role: "Data intern", company: "Bit" },
+    { role: "Sales trainee", company: "Dropp" },
+    { role: "Working student Finance", company: "Enerzien" },
+  ],
+};
+
 const COPY: Record<
   Lang,
   {
@@ -36,6 +55,8 @@ const COPY: Record<
     finalTitle: string;
     finalText: string;
     finalCta: string;
+    vacancyBubbleLabel: string;
+    vacancyBubbleAt: string;
     heroAlt: string;
     missionAlt: string;
   }
@@ -43,7 +64,7 @@ const COPY: Record<
   nl: {
     heroTitle: "AMBITIEUS TALENT.\nAMBITIEUZE BEDRIJVEN.\nÉÉN MATCH.",
     heroSub:
-      "Wij verbinden hoogopgeleid talent aan ambitieuze organisaties, voorbij het cv, met oog voor drijfveren, werkstijl en ambitie.",
+      "Wij verbinden hoogopgeleid jong talent aan ambitieuze organisaties, voorbij het cv, met oog voor drijfveren, werkstijl en ambitie.",
     ctaCompanies: "Voor bedrijven →",
     ctaTalent: "Voor talent",
     stat1Value: "4.000+",
@@ -70,15 +91,17 @@ const COPY: Record<
     missionCta: "Onze impact →",
     finalTitle: "STOP MET ZOEKEN, START MET ONTVANGEN.",
     finalText:
-      "Sluit je aan bij 4.000+ studenten en starters in onze community. Passende kansen krijg je direct via WhatsApp.",
+      "Sluit je aan bij 4.000+ studenten en starters in onze community. Nieuwe vacatures krijg je direct via WhatsApp.",
     finalCta: "💜 Sluit je aan bij de WhatsApp-community",
+    vacancyBubbleLabel: "Nieuwe vacature:",
+    vacancyBubbleAt: "bij",
     heroAlt: "Twee collega's aan het werk op kantoor",
     missionAlt: "Het VOIDS-team op kantoor",
   },
   en: {
     heroTitle: "AMBITIOUS TALENT.\nAMBITIOUS COMPANIES.\nONE MATCH.",
     heroSub:
-      "We connect highly-educated talent with ambitious organisations, beyond the CV, with an eye for motivation, working style and ambition.",
+      "We connect highly-educated young talent with ambitious organisations, beyond the CV, with an eye for motivation, working style and ambition.",
     ctaCompanies: "For companies →",
     ctaTalent: "For talent",
     stat1Value: "4,000+",
@@ -105,8 +128,10 @@ const COPY: Record<
     missionCta: "Our impact →",
     finalTitle: "STOP SEARCHING, START RECEIVING.",
     finalText:
-      "Join 4,000+ students and starters in our community. Matching opportunities come straight to your WhatsApp.",
+      "Join 4,000+ students and starters in our community. New vacancies land straight in your WhatsApp.",
     finalCta: "💜 Join the WhatsApp community",
+    vacancyBubbleLabel: "New vacancy:",
+    vacancyBubbleAt: "at",
     heroAlt: "Two colleagues working together in the office",
     missionAlt: "The VOIDS team at the office",
   },
@@ -124,7 +149,7 @@ export function HomePage({ lang }: { lang: Lang }) {
           className="wrap g-collapse"
           style={{
             display: "grid",
-            gridTemplateColumns: ".7fr 1.4fr",
+            gridTemplateColumns: ".6fr 1.5fr",
             gap: 40,
             alignItems: "center",
             padding: "70px 32px 76px",
@@ -160,7 +185,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               </div>
             </div>
           </div>
-          <Photo src="/photography/home-hero-5.jpg" alt={c.heroAlt} ratio="16 / 9" objectPosition="center 25%" priority />
+          <Photo src="/photography/home-hero-5.jpg" alt={c.heroAlt} ratio="5 / 4" objectPosition="center 10%" priority />
         </div>
       </section>
 
@@ -216,7 +241,7 @@ export function HomePage({ lang }: { lang: Lang }) {
           >
             <div className="anton" style={{ fontSize: 28 }}>{c.doorCompaniesTitle}</div>
             <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "12px 0 18px", flex: 1 }}>
-              <strong style={{ color: "var(--voids-purple)", fontWeight: 700 }}>{c.doorCompaniesTalentTypes}</strong> {c.doorCompaniesText}
+              {c.doorCompaniesTalentTypes} {c.doorCompaniesText}
             </p>
             <span className="door-cta" style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-purple)", display: "inline-block" }}>{c.doorCompaniesCta}</span>
           </Link>
@@ -271,12 +296,29 @@ export function HomePage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      {/* FINAL CTA — a stack of "new vacancy" bubbles cycles behind the ask,
+          showing the actual WhatsApp mechanic (a feed of new vacancies for
+          everyone) instead of overpromising a personalised match. */}
       <section style={{ background: "var(--voids-blue)" }}>
-        <div className="wrap" style={{ padding: "56px 32px", textAlign: "center", color: "#fff" }}>
-          <h2 className="anton" style={{ fontSize: 38, margin: "0 0 12px", color: "#fff" }}>{c.finalTitle}</h2>
-          <p style={{ fontSize: 16, color: "var(--voids-blue-100)", maxWidth: 540, margin: "0 auto 24px" }}>{c.finalText}</p>
-          <WhatsAppButton variant="primary" size="lg">{c.finalCta}</WhatsAppButton>
+        <div
+          className="wrap g-collapse"
+          style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1.1fr .9fr", gap: 48, alignItems: "center" }}
+        >
+          <div style={{ color: "#fff" }}>
+            <h2 className="anton" style={{ fontSize: 38, margin: "0 0 12px", color: "#fff" }}>{c.finalTitle}</h2>
+            <p style={{ fontSize: 16, color: "var(--voids-blue-100)", maxWidth: 440, margin: "0 0 24px" }}>{c.finalText}</p>
+            <WhatsAppButton variant="primary" size="lg">{c.finalCta}</WhatsAppButton>
+          </div>
+          <div className="vacancy-bubble-stack">
+            {VACANCY_BUBBLES[lang].map((v, i) => (
+              <div key={v.company} className="vacancy-bubble" style={{ animationDelay: `${i * 4}s` }}>
+                <span className="vacancy-bubble-icon" aria-hidden="true">🆕</span>
+                <span className="vacancy-bubble-text">
+                  {c.vacancyBubbleLabel} <strong>{v.role}</strong> {c.vacancyBubbleAt} <strong>{v.company}</strong>
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

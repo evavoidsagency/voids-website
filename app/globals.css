@@ -733,6 +733,72 @@ a:hover .blog-thumb img {
   }
 }
 
+/* Homepage final-CTA "incoming match" notification stack: bubbles cycle
+   through the same slot to feel like live WhatsApp notifications arriving,
+   literalizing "stop met zoeken, start met ontvangen". */
+.vacancy-bubble-stack {
+  position: relative;
+  height: 100px;
+}
+.vacancy-bubble {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  transform: translateY(14px);
+  animation: vacancy-bubble-cycle 16s ease-in-out infinite;
+}
+.vacancy-bubble-icon {
+  font-size: 22px;
+  flex: none;
+}
+.vacancy-bubble-text {
+  font-size: 14.5px;
+  line-height: 1.4;
+  color: var(--voids-ink);
+  text-align: left;
+}
+.vacancy-bubble-text strong {
+  color: var(--voids-purple);
+}
+@keyframes vacancy-bubble-cycle {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  3% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  25%,
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vacancy-bubble {
+    animation: none;
+  }
+  .vacancy-bubble:not(:first-child) {
+    display: none;
+  }
+  .vacancy-bubble:first-child {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* About page team grid: the two founder cards sit edge-to-edge on desktop
    and read as one merged pill (inner corners squared off, shared border
    dropped). Below the .g-collapse breakpoint they stack full-width, so each
