@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Anton, Fraunces, Inter } from "next/font/google";
+import { Anton, Inter } from "next/font/google";
 import "@/app/globals.css";
 import { WhatsAppProvider } from "@/components/site/WhatsAppProvider";
 import { SOCIALS, type Lang } from "@/lib/i18n/common";
@@ -30,14 +30,6 @@ const anton = Anton({
   display: "swap",
 });
 
-const fraunces = Fraunces({
-  weight: ["600", "700"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-  display: "swap",
-});
-
 const inter = Inter({
   weight: ["400", "500", "600"],
   style: ["normal", "italic"],
@@ -54,7 +46,7 @@ const inter = Inter({
  */
 export function RootHtml({ lang, children }: { lang: Lang; children: ReactNode }) {
   return (
-    <html lang={lang} className={`${anton.variable} ${fraunces.variable} ${inter.variable}`}>
+    <html lang={lang} className={`${anton.variable} ${inter.variable}`}>
       <body>
         <script
           type="application/ld+json"

@@ -166,7 +166,7 @@ export function HomePage({ lang }: { lang: Lang }) {
           }}
         >
           <div>
-            <h1 className="font-alt hero-h1" style={{ fontSize: 44, lineHeight: 1.12, margin: "0 0 20px", color: "#fff", whiteSpace: "pre-line" }}>
+            <h1 className="anton hero-h1" style={{ fontSize: 44, lineHeight: 1.12, margin: "0 0 20px", color: "#fff", whiteSpace: "pre-line" }}>
               {c.heroTitle}
             </h1>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-purple-100)", maxWidth: 520, margin: "0 0 30px" }}>
