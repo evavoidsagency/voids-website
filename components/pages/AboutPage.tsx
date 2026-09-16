@@ -24,6 +24,8 @@ const COPY: Record<
     foundersPending: string;
     teamTitle: string;
     coFounder: string;
+    emailLabel: string;
+    linkedinLabel: string;
     contactTitle: string;
     contactSub: string;
     bookCall: string;
@@ -73,6 +75,8 @@ const COPY: Record<
     foundersPending: "Foto van Eva & Wieke volgt",
     teamTitle: "HET TEAM",
     coFounder: "Co-founder",
+    emailLabel: "E-mail",
+    linkedinLabel: "LinkedIn van",
     contactTitle: "SNEL SCHAKELEN?",
     contactSub: "Plan direct een kennismaking of stuur een bericht.",
     bookCall: "Plan een kennismaking",
@@ -121,6 +125,8 @@ const COPY: Record<
     foundersPending: "Photo of Eva & Wieke coming soon",
     teamTitle: "THE TEAM",
     coFounder: "Co-founder",
+    emailLabel: "Email",
+    linkedinLabel: "LinkedIn for",
     contactTitle: "WANT TO MOVE FAST?",
     contactSub: "Book an intro call or drop us a message.",
     bookCall: "Book an intro call",
@@ -232,7 +238,21 @@ export function AboutPage({ lang }: { lang: Lang }) {
                 className={`card ${i === 0 ? "team-card--left" : i === 1 ? "team-card--right" : ""}`}
                 style={{ padding: 0, overflow: "hidden" }}
               >
-                <Photo src={m.photo} alt={m.name} ratio="4 / 5" radius="0" objectPosition={m.objectPosition} sizes="(max-width: 860px) 100vw, 340px" />
+                <div className="team-card-photo-wrap">
+                  <Photo src={m.photo} alt={m.name} ratio="4 / 5" radius="0" objectPosition={m.objectPosition} sizes="(max-width: 860px) 100vw, 340px" />
+                  <div className="team-card-hover">
+                    <a href={`mailto:${m.email}`} className="team-card-icon" aria-label={`${c.emailLabel} ${m.name}`}>
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 6.5 12 13l9-6.5M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </a>
+                    <a href={m.linkedin} target="_blank" rel="noopener noreferrer" className="team-card-icon" aria-label={`${c.linkedinLabel} ${m.name}`}>
+                      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.94 8.5H3.56V20H6.94V8.5ZM5.25 7.03A1.96 1.96 0 1 0 5.25 3.1a1.96 1.96 0 0 0 0 3.93ZM20.44 20h.01v-6.4c0-3.13-.67-5.54-4.33-5.54-1.76 0-2.94.96-3.42 1.88h-.05V8.5H9.4V20h3.38v-5.72c0-1.51.29-2.97 2.15-2.97 1.84 0 1.87 1.72 1.87 3.06V20h3.64Z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
                 <div style={{ padding: "20px 22px" }}>
                   <div style={{ fontSize: 21, fontWeight: 600 }}>{m.name}</div>
                   <div style={{ fontSize: 13.5, color: "var(--voids-ink-muted)" }}>{c.coFounder}</div>

@@ -285,13 +285,13 @@ export function HomePage({ lang }: { lang: Lang }) {
             {c.testimonialsLabel}
           </div>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 26 }}>
-            {TESTIMONIALS[lang].map((t, i) => {
+            {TESTIMONIALS[lang].map((t) => {
               const color = t.side === "company" ? "var(--voids-purple)" : "var(--voids-blue)";
               const tag = t.side === "company" ? c.testimonialCompanyTag : c.testimonialTalentTag;
               return (
                 <div
                   key={t.name + t.quote}
-                  className={i === 1 ? "testimonial-card testimonial-card--offset" : "testimonial-card"}
+                  className="testimonial-card"
                   style={{ position: "relative", background: "#fff", borderRadius: "var(--radius-lg)", padding: "30px 28px 26px", overflow: "hidden" }}
                 >
                   <svg aria-hidden="true" className="testimonial-quote-mark" style={{ color }} viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">

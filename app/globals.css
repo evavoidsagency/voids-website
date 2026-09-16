@@ -742,6 +742,7 @@ a:hover .blog-thumb img {
   width: 100%;
   max-width: 380px;
   margin-left: auto;
+  margin-right: 32px;
 }
 .vacancy-bubble {
   position: absolute;
@@ -885,6 +886,67 @@ a:hover .blog-thumb img {
   }
 }
 
+/* About page team photos: hover reveals quick email/LinkedIn actions,
+   inspired by vacaturevia's team-card pattern. Touch devices get no hover
+   affordance, so the icons stay reachable via keyboard focus too. */
+.team-card-photo-wrap {
+  position: relative;
+}
+.team-card-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 16px;
+  padding-bottom: 26px;
+  background: linear-gradient(to top, rgba(58, 12, 163, 0.82) 0%, rgba(58, 12, 163, 0) 58%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.team-card-photo-wrap:hover .team-card-hover,
+.team-card-photo-wrap:focus-within .team-card-hover {
+  opacity: 1;
+}
+.team-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--voids-purple);
+  box-shadow: 0 8px 18px rgba(20, 8, 90, 0.3);
+  transform: translateY(12px);
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.15s ease, color 0.15s ease;
+}
+.team-card-photo-wrap:hover .team-card-icon,
+.team-card-photo-wrap:focus-within .team-card-icon {
+  transform: translateY(0);
+  opacity: 1;
+}
+.team-card-icon:hover,
+.team-card-icon:focus-visible {
+  background: var(--voids-purple);
+  color: #fff;
+}
+@media (hover: none) {
+  .team-card-hover {
+    position: static;
+    background: none;
+    opacity: 1;
+    padding: 12px 0 0;
+  }
+  .team-card-icon {
+    transform: none;
+    opacity: 1;
+    box-shadow: none;
+    background: var(--voids-purple-100);
+  }
+}
+
 /* Homepage testimonials: a staggered pair instead of a flat grid, since the
    two quotes are literally the two sides of a match (a company, a talent). */
 .testimonial-card {
@@ -903,9 +965,4 @@ a:hover .blog-thumb img {
   height: auto;
   opacity: 0.12;
   pointer-events: none;
-}
-@media (min-width: 861px) {
-  .testimonial-card--offset {
-    margin-top: 40px;
-  }
 }
