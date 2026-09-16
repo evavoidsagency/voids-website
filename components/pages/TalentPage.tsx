@@ -69,7 +69,7 @@ const COPY: Record<
     resourcesTitle: "DRIE WEGEN NAAR JE VOLGENDE ROL.",
     resourcesIntro: "Wij bieden meer dan losse vacatures: een jobboard om zelf te solliciteren, een WhatsApp-community met wekelijkse kansen, en een talentpool die je proactief matcht. Omdat we zo nauw met werkgevers samenwerken, kunnen we vaak breder met ze meedenken dan alleen de vacatures die online staan. Hoe actiever je meedoet, hoe meer we voor je kunnen doen.",
     resources: [
-      { tier: "Actief in de talentpool", title: "Talentpool", text: "Beantwoord één keer een paar vragen om lid te worden, en ons team gaat voor je aan de slag: we stellen je proactief voor bij offmarket-kansen, denken dankzij onze nauwe samenwerking met werkgevers al vroeg met je mee, en geven je een plek in ons exclusieve netwerk met events.", cta: "Start je profiel", path: "/pager" },
+      { tier: "Actief in de talentpool", title: "Talentpool", text: "Vertel meer over jezelf en meld je aan bij onze talentpool, en ons team gaat voor je aan de slag: we stellen je proactief voor bij offmarket-kansen, denken dankzij onze nauwe samenwerking met werkgevers al vroeg met je mee, en geven je een plek in ons exclusieve netwerk met events.", cta: "Word lid van de pool", path: "/pager" },
       { tier: "Community", title: "WhatsApp-community", text: "Word lid van de community en krijg passende vacatures wekelijks rechtstreeks in je WhatsApp.", cta: "Join", whats: true },
       { tier: "Los per vacature", title: "Job board", text: "Bekijk open rollen en solliciteer direct per vacature.", cta: "Bekijk jobs", path: "/jobboard" },
     ],
@@ -148,7 +148,7 @@ const COPY: Record<
     resourcesTitle: "THREE PATHS TO YOUR NEXT ROLE.",
     resourcesIntro: "We offer more than individual vacancies: a job board to apply yourself, a WhatsApp community with weekly opportunities, and a talent pool that proactively matches you. Because we work so closely with employers, we can often think along with them more broadly than just the vacancies that are posted. The more active you are, the more we can do for you.",
     resources: [
-      { tier: "Active in the talent pool", title: "Talent pool", text: "Answer a few questions once to join, and our team gets to work for you: we proactively put you forward for off-market opportunities, advocate for you with employers early on thanks to our close working relationship, and give you a spot in our exclusive network with events.", cta: "Join the talent pool", path: "/pager" },
+      { tier: "Active in the talent pool", title: "Talent pool", text: "Tell us more about yourself and sign up to our talent pool, and our team gets to work for you: we proactively put you forward for off-market opportunities, advocate for you with employers early on thanks to our close working relationship, and give you a spot in our exclusive network with events.", cta: "Join the talent pool", path: "/pager" },
       { tier: "Community", title: "WhatsApp community", text: "Join the community and get matching vacancies sent straight to your WhatsApp every week.", cta: "Join", whats: true },
       { tier: "Per vacancy", title: "Job board", text: "Browse open roles and apply directly to any vacancy.", cta: "View jobs", path: "/jobboard" },
     ],
@@ -352,7 +352,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <Photo src="/photography/talent-band.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" sizes="100vw" />
+      <Photo src="/photography/talent-band.jpg" alt={c.bandAlt} ratio="2 / 1" radius="0" objectPosition="center 26%" sizes="100vw" />
 
       <section style={{ background: "var(--voids-beige)" }}>
         <div className="wrap" style={{ padding: "72px 32px" }}>

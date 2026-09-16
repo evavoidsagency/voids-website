@@ -124,7 +124,7 @@ export function HomePage({ lang }: { lang: Lang }) {
           className="wrap g-collapse"
           style={{
             display: "grid",
-            gridTemplateColumns: ".8fr 1.3fr",
+            gridTemplateColumns: ".7fr 1.4fr",
             gap: 40,
             alignItems: "center",
             padding: "70px 32px 76px",

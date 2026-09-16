@@ -142,7 +142,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <p style={{ fontSize: 16, lineHeight: 1.65, color: "var(--voids-ink-muted)", margin: 0 }}>{c.p2}</p>
         </div>
         {foundersPhoto ? (
-          <Photo src={foundersPhoto} alt={c.foundersAlt} ratio="1600 / 1695" priority />
+          <Photo src={foundersPhoto} alt={c.foundersAlt} ratio="1600 / 1695" objectPosition="center 68%" priority />
         ) : (
           <div
             style={{

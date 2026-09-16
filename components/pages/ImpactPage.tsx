@@ -278,7 +278,7 @@ export function ImpactPage({ lang }: { lang: Lang }) {
               alt={c.bandAlt}
               className="stretch-photo"
               style={{ aspectRatio: "auto", height: "100%" }}
-              objectPosition="center 30%"
+              objectPosition="center 55%"
               zoom={1.12}
             />
           </div>
