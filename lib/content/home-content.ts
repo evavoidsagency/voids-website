@@ -37,19 +37,21 @@ export const TRUSTED: { name: string; slug: string; url?: string }[] = [
   { name: "The Longevity Store", slug: "the-longevity-store", url: "https://thelongevitystore.com/" },
 ];
 
-export const TESTIMONIALS: Record<Lang, { quote: string; name: string; role: string; photo?: string }[]> = {
+export const TESTIMONIALS: Record<Lang, { quote: string; name: string; role: string; photo?: string; side: "company" | "talent" }[]> = {
   nl: [
     {
       quote: "VOIDS leverde binnen twee weken kandidaten die precies bij onze vraag pasten.",
       name: "Bas Lemmens",
       role: "Co-founder Booking.com · President HotelPlanner",
       photo: "/testimonials/bas-lemmens.jpg",
+      side: "company",
     },
     {
       quote: "VOIDS matchte mijn sterke punten met de juiste kans: een baan die ik anders nooit was tegengekomen.",
       name: "Anna Haasnoot",
       role: "Werkstudent bij Van Oort & Van Oort",
       photo: "/testimonials/anna-haasnoot.jpg",
+      side: "talent",
     },
   ],
   en: [
@@ -58,12 +60,14 @@ export const TESTIMONIALS: Record<Lang, { quote: string; name: string; role: str
       name: "Bas Lemmens",
       role: "Co-founder Booking.com · President HotelPlanner",
       photo: "/testimonials/bas-lemmens.jpg",
+      side: "company",
     },
     {
       quote: "VOIDS matched my strengths with the right opportunity: a job I’d never have found otherwise.",
       name: "Anna Haasnoot",
       role: "Working student at Van Oort & Van Oort",
       photo: "/testimonials/anna-haasnoot.jpg",
+      side: "talent",
     },
   ],
 };
