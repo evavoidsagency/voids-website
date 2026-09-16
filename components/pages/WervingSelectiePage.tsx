@@ -45,6 +45,7 @@ const COPY: Record<
     calcCta: string;
     finalTitle: string;
     finalCta: string;
+    finalInfoCta: string;
   }
 > = {
   nl: {
@@ -93,6 +94,7 @@ const COPY: Record<
     calcCta: "Bekijk de calculator en checklist →",
     finalTitle: "KLAAR OM TE SCHALEN?",
     finalCta: "Plan een kennismaking",
+    finalInfoCta: "Vraag meer info aan",
   },
   en: {
     eyebrow: "Recruitment & selection",
@@ -140,6 +142,7 @@ const COPY: Record<
     calcCta: "See the calculator and checklist →",
     finalTitle: "READY TO SCALE?",
     finalCta: "Book an intro call",
+    finalInfoCta: "Request more info",
   },
 };
 
@@ -357,7 +360,12 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
       <section style={{ background: "var(--voids-blue)" }}>
         <div className="wrap" style={{ padding: "52px 32px", textAlign: "center", color: "#fff" }}>
           <h2 className="anton section-h2" style={{ fontSize: 34, margin: "0 0 20px", color: "#fff" }}>{c.finalTitle}</h2>
-          <CalendlyButton label={c.finalCta} variant="primary" size="lg" />
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+            <Button variant="outline" size="lg" onDark href={`${localePath(lang, "/about")}#contact`}>
+              {c.finalInfoCta}
+            </Button>
+            <CalendlyButton label={c.finalCta} variant="primary" size="lg" />
+          </div>
         </div>
       </section>
     </>
