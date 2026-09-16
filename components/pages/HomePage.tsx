@@ -93,7 +93,7 @@ const COPY: Record<
     finalText:
       "Sluit je aan bij 4.000+ studenten en starters in onze community. Nieuwe vacatures krijg je direct via WhatsApp.",
     finalCta: "💜 Sluit je aan bij de WhatsApp-community",
-    vacancyBubbleLabel: "Nieuwe vacature:",
+    vacancyBubbleLabel: "Nieuwe vacature",
     vacancyBubbleAt: "bij",
     heroAlt: "Twee collega's aan het werk op kantoor",
     missionAlt: "Het VOIDS-team op kantoor",
@@ -130,7 +130,7 @@ const COPY: Record<
     finalText:
       "Join 4,000+ students and starters in our community. New vacancies land straight in your WhatsApp.",
     finalCta: "💜 Join the WhatsApp community",
-    vacancyBubbleLabel: "New vacancy:",
+    vacancyBubbleLabel: "New vacancy",
     vacancyBubbleAt: "at",
     heroAlt: "Two colleagues working together in the office",
     missionAlt: "The VOIDS team at the office",
@@ -185,7 +185,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               </div>
             </div>
           </div>
-          <Photo src="/photography/home-hero-5.jpg" alt={c.heroAlt} ratio="5 / 4" objectPosition="center 10%" priority />
+          <Photo src="/photography/home-hero-6.jpg" alt={c.heroAlt} ratio="2000 / 1313" priority />
         </div>
       </section>
 
@@ -312,9 +312,12 @@ export function HomePage({ lang }: { lang: Lang }) {
           <div className="vacancy-bubble-stack">
             {VACANCY_BUBBLES[lang].map((v, i) => (
               <div key={v.company} className="vacancy-bubble" style={{ animationDelay: `${i * 4}s` }}>
-                <span className="vacancy-bubble-icon" aria-hidden="true">🆕</span>
-                <span className="vacancy-bubble-text">
-                  {c.vacancyBubbleLabel} <strong>{v.role}</strong> {c.vacancyBubbleAt} <strong>{v.company}</strong>
+                <span className="vacancy-bubble-icon" aria-hidden="true" />
+                <span className="vacancy-bubble-content">
+                  <span className="vacancy-bubble-eyebrow">{c.vacancyBubbleLabel}</span>
+                  <span className="vacancy-bubble-text">
+                    <strong>{v.role}</strong> {c.vacancyBubbleAt} <strong>{v.company}</strong>
+                  </span>
                 </span>
               </div>
             ))}

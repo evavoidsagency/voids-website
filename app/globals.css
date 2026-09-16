@@ -745,27 +745,61 @@ a:hover .blog-thumb img {
   inset: 0;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   background: #fff;
   border-radius: 16px;
-  padding: 16px 20px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  padding: 16px 22px;
+  box-shadow: 0 16px 32px -8px rgba(20, 8, 90, 0.35);
   opacity: 0;
   transform: translateY(14px);
   animation: vacancy-bubble-cycle 16s ease-in-out infinite;
 }
 .vacancy-bubble-icon {
-  font-size: 22px;
+  position: relative;
   flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--voids-blue);
+}
+.vacancy-bubble-icon::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: var(--voids-blue);
+  opacity: 0.35;
+  animation: vacancy-bubble-ping 1.8s ease-out infinite;
+}
+.vacancy-bubble-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: left;
+}
+.vacancy-bubble-eyebrow {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--voids-blue);
 }
 .vacancy-bubble-text {
   font-size: 14.5px;
-  line-height: 1.4;
+  line-height: 1.35;
   color: var(--voids-ink);
-  text-align: left;
 }
 .vacancy-bubble-text strong {
   color: var(--voids-purple);
+}
+@keyframes vacancy-bubble-ping {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }
 @keyframes vacancy-bubble-cycle {
   0% {
@@ -789,6 +823,10 @@ a:hover .blog-thumb img {
 @media (prefers-reduced-motion: reduce) {
   .vacancy-bubble {
     animation: none;
+  }
+  .vacancy-bubble-icon::before {
+    animation: none;
+    display: none;
   }
   .vacancy-bubble:not(:first-child) {
     display: none;
