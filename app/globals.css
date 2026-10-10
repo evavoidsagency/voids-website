@@ -543,11 +543,96 @@ a:hover .blog-thumb-arrow {
     transition: none;
   }
 }
-.door-cta {
-  transition: transform 0.2s ease;
+/* Homepage "two doors": solid brand-colour blocks instead of white cards.
+   Blue block uses ink text (white on #4476f2 is only ~4.1:1), purple uses white. */
+.door-block {
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  padding: 40px 36px 34px;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
 }
-.card--hoverable:hover .door-cta {
-  transform: translateX(4px);
+.door-block--blue {
+  background: var(--voids-blue);
+  color: var(--voids-ink);
+  box-shadow: 0 14px 34px -14px rgba(38, 83, 201, 0.55);
+}
+.door-block--purple {
+  background: var(--voids-purple);
+  color: #fff;
+  box-shadow: 0 14px 34px -14px rgba(20, 8, 90, 0.6);
+}
+.door-block:hover {
+  transform: translateY(-4px);
+}
+.door-block--blue:hover {
+  box-shadow: 0 22px 40px -14px rgba(38, 83, 201, 0.65);
+}
+.door-block--purple:hover {
+  box-shadow: 0 22px 40px -14px rgba(20, 8, 90, 0.75);
+}
+.door-block:focus-visible {
+  outline: 3px solid var(--voids-ink);
+  outline-offset: 4px;
+}
+.door-block-title {
+  margin: 0;
+  font-size: clamp(40px, 5vw, 60px);
+  line-height: 1;
+  letter-spacing: -0.005em;
+  color: inherit;
+}
+.door-block-text {
+  flex: 1;
+  margin: 16px 0 28px;
+  max-width: 460px;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+  color: inherit;
+}
+.door-block-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  align-self: flex-start;
+  font-size: 15px;
+  font-weight: 700;
+}
+.door-block-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.2s ease, color 0.2s ease;
+}
+.door-block:hover .door-block-arrow {
+  transform: translateX(6px);
+}
+.door-block--blue:hover .door-block-arrow {
+  background: var(--voids-ink);
+  color: var(--voids-blue);
+}
+.door-block--purple:hover .door-block-arrow {
+  background: #fff;
+  color: var(--voids-purple);
+}
+@media (prefers-reduced-motion: reduce) {
+  .door-block,
+  .door-block-arrow {
+    transition: none;
+  }
+  .door-block:hover,
+  .door-block:hover .door-block-arrow {
+    transform: none;
+  }
 }
 
 /* FAQ accordion: two fixed, independently-flowing columns (not CSS

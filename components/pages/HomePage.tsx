@@ -81,12 +81,12 @@ const COPY: Record<
     doorTalentTitle: "VOOR TALENT",
     doorTalentText:
       "Vind een rol via ons jobboard, sluit je aan bij de WhatsApp-community voor nieuwe kansen, of vertel ons wat je drijft en ontvang een gratis career pager op maat.",
-    doorTalentCta: "Ontdek de talentkant →",
+    doorTalentCta: "Ontdek de talentkant",
     doorCompaniesTitle: "VOOR BEDRIJVEN",
     doorCompaniesTalentTypes: "Werkstudenten, stagiairs, starters én trainees:",
     doorCompaniesText:
       "een voorgeselecteerde shortlist in plaats van een stapel cv’s, gematcht op cultuur en groeifase.",
-    doorCompaniesCta: "Bekijk het aanbod →",
+    doorCompaniesCta: "Bekijk het aanbod",
     testimonialsLabel: "Wat opdrachtgevers en talent zeggen",
     testimonialCompanyTag: "Opdrachtgever",
     testimonialTalentTag: "Talent",
@@ -121,12 +121,12 @@ const COPY: Record<
     doorTalentTitle: "FOR TALENT",
     doorTalentText:
       "Find a role on our job board, join the WhatsApp community for new opportunities, or tell us what drives you and get a free, personalised career pager.",
-    doorTalentCta: "Explore the talent side →",
+    doorTalentCta: "Explore the talent side",
     doorCompaniesTitle: "FOR COMPANIES",
     doorCompaniesTalentTypes: "Working students, interns, starters and trainees:",
     doorCompaniesText:
       "a pre-selected shortlist instead of a stack of CVs, matched on culture and growth stage.",
-    doorCompaniesCta: "See what we offer →",
+    doorCompaniesCta: "See what we offer",
     testimonialsLabel: "What clients and talent say",
     testimonialCompanyTag: "Client",
     testimonialTalentTag: "Talent",
@@ -239,27 +239,21 @@ export function HomePage({ lang }: { lang: Lang }) {
       {/* TWO DOORS */}
       <section style={{ background: "var(--voids-beige)" }}>
         <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
-          <Link
-            href={p("/talent")}
-            className="card card--hoverable"
-            style={{ display: "flex", flexDirection: "column", borderTop: "3px solid var(--voids-blue)", padding: 32, textDecoration: "none" }}
-          >
-            <div className="anton" style={{ fontSize: 28 }}>{c.doorTalentTitle}</div>
-            <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "12px 0 18px", flex: 1 }}>
-              {c.doorTalentText}
-            </p>
-            <span className="door-cta" style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-blue)", display: "inline-block" }}>{c.doorTalentCta}</span>
+          <Link href={p("/talent")} className="door-block door-block--blue">
+            <h2 className="anton door-block-title">{c.doorTalentTitle}</h2>
+            <p className="door-block-text">{c.doorTalentText}</p>
+            <span className="door-block-cta">
+              {c.doorTalentCta}
+              <span className="door-block-arrow" aria-hidden="true">→</span>
+            </span>
           </Link>
-          <Link
-            href={p("/companies")}
-            className="card card--hoverable"
-            style={{ display: "flex", flexDirection: "column", borderTop: "3px solid var(--voids-purple)", padding: 32, textDecoration: "none" }}
-          >
-            <div className="anton" style={{ fontSize: 28 }}>{c.doorCompaniesTitle}</div>
-            <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "12px 0 18px", flex: 1 }}>
-              {c.doorCompaniesTalentTypes} {c.doorCompaniesText}
-            </p>
-            <span className="door-cta" style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-purple)", display: "inline-block" }}>{c.doorCompaniesCta}</span>
+          <Link href={p("/companies")} className="door-block door-block--purple">
+            <h2 className="anton door-block-title">{c.doorCompaniesTitle}</h2>
+            <p className="door-block-text">{c.doorCompaniesTalentTypes} {c.doorCompaniesText}</p>
+            <span className="door-block-cta">
+              {c.doorCompaniesCta}
+              <span className="door-block-arrow" aria-hidden="true">→</span>
+            </span>
           </Link>
         </div>
       </section>
