@@ -1204,43 +1204,11 @@ a:hover .blog-thumb-arrow {
   }
 }
 .hero-mark {
-  position: relative;
-  display: inline-block;
-  isolation: isolate;
-  padding: 0 0.18em 0 0.14em;
-  margin-left: -0.14em;
-  color: #fff;
-}
-.hero-mark::before {
-  content: "";
-  position: absolute;
-  inset: 0.1em 0 0.02em;
-  z-index: -1;
-  border-radius: 4px;
-  background: var(--voids-blue);
-  transform-origin: left center;
-  animation: hero-mark-wipe 0.7s 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-}
-@keyframes hero-mark-wipe {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
+  color: var(--voids-blue-300);
 }
 .hero-photo-wrap {
   position: relative;
   isolation: isolate;
-}
-.hero-photo-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: var(--radius-lg);
-  background: var(--voids-blue);
-  transform: translate(-14px, 14px);
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-rise,
@@ -1249,38 +1217,46 @@ a:hover .blog-thumb-arrow {
   }
 }
 
-/* Hero layout: full-width oversized headline, copy bottom-left, photo
-   bottom-right rising into the empty space beside the short last line.
-   --hero-fs drives both the type size and the photo's upward overlap. */
+/* Hero layout: restrained two-column. Moderate-size Anton headline and copy
+   on the left, photo on the right spanning the full height of the text block. */
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 40px;
-  padding: 56px 32px 64px;
-  --hero-fs: min(9vw, 120px);
-  --hero-lh: 1.11;
+  grid-template-columns: 1.1fr 0.9fr;
+  column-gap: 48px;
+  padding: 72px 32px 80px;
+  --hero-fs: clamp(40px, 4.6vw, 62px);
+  --hero-lh: 1.1;
 }
 .hero-title {
-  grid-column: 1 / -1;
+  grid-column: 1;
+  white-space: nowrap;
   margin: 0;
   font-size: var(--hero-fs);
   line-height: var(--hero-lh);
-  letter-spacing: -0.005em;
+  letter-spacing: 0;
   color: #fff;
 }
 .hero-copy {
-  padding-top: 34px;
+  grid-column: 1;
+  padding-top: 24px;
 }
 .hero-photo-wrap {
-  margin-top: calc(var(--hero-fs) * var(--hero-lh) * -1);
+  grid-column: 2;
+  grid-row: 1 / span 2;
 }
 @media (max-width: 860px) {
   .hero-grid {
     grid-template-columns: 1fr;
     padding: 40px 20px 48px;
   }
+  .hero-title,
+  .hero-copy,
+  .hero-photo-wrap {
+    grid-column: 1;
+    grid-row: auto;
+  }
   .hero-title.hero-h1 {
-    font-size: min(9.8vw, 56px) !important;
+    font-size: min(9vw, 44px) !important;
   }
   .hero-copy {
     padding-top: 22px;
