@@ -93,7 +93,7 @@ const COPY: Record<
     missionLabel: "Onze missie",
     missionTitle: "EERLIJK WERK, GELIJKE KANSEN.",
     missionText:
-      "We bouwen aan een eerlijkere arbeidsmarkt voor starters, met transparante voorwaarden, eerlijke beloning en gelijke kansen ongeacht netwerk of achtergrond. Het is onze ambitie om daar vanaf medio 2027 ook 10% van onze winst aan terug te geven.",
+      "We bouwen aan een eerlijkere arbeidsmarkt voor starters, met transparante voorwaarden, eerlijke beloning en gelijke kansen ongeacht netwerk of achtergrond.",
     missionCta: "Onze impact →",
     finalTitle: "STOP MET ZOEKEN, START MET ONTVANGEN.",
     finalText:
@@ -133,7 +133,7 @@ const COPY: Record<
     missionLabel: "Our mission",
     missionTitle: "FAIR WORK, EQUAL CHANCES.",
     missionText:
-      "We’re building a fairer job market for starters, with transparent terms, fair wages and equal chances regardless of network or background. It's our ambition to also give back 10% of our profit to that cause from mid-2027.",
+      "We’re building a fairer job market for starters, with transparent terms, fair wages and equal chances regardless of network or background.",
     missionCta: "Our impact →",
     finalTitle: "STOP SEARCHING, START RECEIVING.",
     finalText:
