@@ -1248,3 +1248,44 @@ a:hover .blog-thumb-arrow {
     animation: none;
   }
 }
+
+/* Hero layout: full-width oversized headline, copy bottom-left, photo
+   bottom-right rising into the empty space beside the short last line.
+   --hero-fs drives both the type size and the photo's upward overlap. */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  padding: 56px 32px 64px;
+  --hero-fs: min(9vw, 120px);
+  --hero-lh: 1.11;
+}
+.hero-title {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: var(--hero-fs);
+  line-height: var(--hero-lh);
+  letter-spacing: -0.005em;
+  color: #fff;
+}
+.hero-copy {
+  padding-top: 34px;
+}
+.hero-photo-wrap {
+  margin-top: calc(var(--hero-fs) * var(--hero-lh) * -1);
+}
+@media (max-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding: 40px 20px 48px;
+  }
+  .hero-title.hero-h1 {
+    font-size: min(9.8vw, 56px) !important;
+  }
+  .hero-copy {
+    padding-top: 22px;
+  }
+  .hero-photo-wrap {
+    margin-top: 40px;
+  }
+}

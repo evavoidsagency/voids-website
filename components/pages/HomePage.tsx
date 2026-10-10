@@ -154,33 +154,27 @@ export function HomePage({ lang }: { lang: Lang }) {
 
   return (
     <>
-      {/* HERO */}
+      {/* HERO — oversized Anton headline across the full width; the photo
+          rises into the empty space beside the short last line so type and
+          image interlock without covering any words. */}
       <section
         style={{
-          background: "radial-gradient(70% 90% at 78% 45%, rgba(68, 118, 242, 0.32) 0%, rgba(68, 118, 242, 0) 70%), var(--voids-purple)",
+          background: "radial-gradient(70% 90% at 78% 55%, rgba(68, 118, 242, 0.32) 0%, rgba(68, 118, 242, 0) 70%), var(--voids-purple)",
           color: "#fff",
         }}
       >
-        <div
-          className="wrap g-collapse"
-          style={{
-            display: "grid",
-            gridTemplateColumns: ".5fr 1.6fr",
-            gap: 40,
-            padding: "70px 32px 76px",
-          }}
-        >
-          <div>
-            <h1 className="anton hero-h1" style={{ fontSize: 44, lineHeight: 1.12, margin: "0 0 20px", color: "#fff" }}>
-              {titleLines.map((line, i) => {
-                const last = i === titleLines.length - 1;
-                return (
-                  <span key={line} className="hero-rise" style={{ display: "block", animationDelay: `${i * 90}ms` }}>
-                    {last ? <span className="hero-mark">{line}</span> : <>{line} </>}
-                  </span>
-                );
-              })}
-            </h1>
+        <div className="wrap hero-grid">
+          <h1 className="anton hero-h1 hero-title">
+            {titleLines.map((line, i) => {
+              const last = i === titleLines.length - 1;
+              return (
+                <span key={line} className="hero-rise" style={{ display: "block", animationDelay: `${i * 90}ms` }}>
+                  {last ? <span className="hero-mark">{line}</span> : <>{line} </>}
+                </span>
+              );
+            })}
+          </h1>
+          <div className="hero-copy">
             <p className="hero-rise" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-purple-100)", maxWidth: 520, margin: "0 0 30px", animationDelay: "280ms" }}>
               {c.heroSub}
             </p>
