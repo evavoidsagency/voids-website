@@ -150,11 +150,17 @@ const COPY: Record<
 export function HomePage({ lang }: { lang: Lang }) {
   const c = COPY[lang];
   const p = (path: string) => localePath(lang, path);
+  const titleLines = c.heroTitle.split("\n");
 
   return (
     <>
       {/* HERO */}
-      <section style={{ background: "var(--voids-purple)", color: "#fff" }}>
+      <section
+        style={{
+          background: "radial-gradient(70% 90% at 78% 45%, rgba(68, 118, 242, 0.32) 0%, rgba(68, 118, 242, 0) 70%), var(--voids-purple)",
+          color: "#fff",
+        }}
+      >
         <div
           className="wrap g-collapse"
           style={{
@@ -165,13 +171,20 @@ export function HomePage({ lang }: { lang: Lang }) {
           }}
         >
           <div>
-            <h1 className="anton hero-h1" style={{ fontSize: 44, lineHeight: 1.12, margin: "0 0 20px", color: "#fff", whiteSpace: "pre-line" }}>
-              {c.heroTitle}
+            <h1 className="anton hero-h1" style={{ fontSize: 44, lineHeight: 1.12, margin: "0 0 20px", color: "#fff" }}>
+              {titleLines.map((line, i) => {
+                const last = i === titleLines.length - 1;
+                return (
+                  <span key={line} className="hero-rise" style={{ display: "block", animationDelay: `${i * 90}ms` }}>
+                    {last ? <span className="hero-mark">{line}</span> : <>{line} </>}
+                  </span>
+                );
+              })}
             </h1>
-            <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-purple-100)", maxWidth: 520, margin: "0 0 30px" }}>
+            <p className="hero-rise" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--voids-purple-100)", maxWidth: 520, margin: "0 0 30px", animationDelay: "280ms" }}>
               {c.heroSub}
             </p>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <div className="hero-rise" style={{ display: "flex", gap: 12, flexWrap: "wrap", animationDelay: "360ms" }}>
               <Button variant="secondary" size="lg" href={p("/companies")}>
                 {c.ctaCompanies}
               </Button>
@@ -179,7 +192,7 @@ export function HomePage({ lang }: { lang: Lang }) {
                 {c.ctaTalent}
               </Button>
             </div>
-            <div className="flex-collapse" style={{ display: "flex", alignItems: "flex-start", gap: 28, marginTop: 40, flexWrap: "nowrap" }}>
+            <div className="flex-collapse hero-rise" style={{ display: "flex", alignItems: "flex-start", gap: 28, marginTop: 40, flexWrap: "nowrap", animationDelay: "440ms" }}>
               <div style={{ width: 100, flex: "none", textAlign: "center" }}>
                 <div className="anton" style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "#fff", whiteSpace: "nowrap" }}><CountUp value={c.stat1Value} /></div>
                 <div style={{ fontSize: 12.5, lineHeight: 1.45, color: "var(--voids-purple-100)", marginTop: 6 }}>{c.stat1Label}</div>
@@ -194,14 +207,16 @@ export function HomePage({ lang }: { lang: Lang }) {
               </div>
             </div>
           </div>
-          <Photo
-            src="/photography/home-hero-7.jpg"
-            alt={c.heroAlt}
-            ratio="2000 / 1344"
-            className="hero-stretch-photo"
-            style={{ aspectRatio: "auto", height: "100%" }}
-            priority
-          />
+          <div className="hero-photo-wrap">
+            <Photo
+              src="/photography/home-hero-7.jpg"
+              alt={c.heroAlt}
+              ratio="2000 / 1344"
+              className="hero-stretch-photo"
+              style={{ aspectRatio: "auto", height: "100%" }}
+              priority
+            />
+          </div>
         </div>
       </section>
 

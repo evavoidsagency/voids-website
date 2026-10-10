@@ -1118,3 +1118,65 @@ a:hover .blog-thumb-arrow {
   opacity: 0.12;
   pointer-events: none;
 }
+
+/* Homepage hero: staggered load-in, a blue "marker" behind the key line, and
+   a solid blue offset block behind the photo. Only transform/opacity animate;
+   the photo itself never fades so it can't delay LCP. */
+.hero-rise {
+  animation: hero-rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero-mark {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+  padding: 0 0.18em 0 0.14em;
+  margin-left: -0.14em;
+  color: #fff;
+}
+.hero-mark::before {
+  content: "";
+  position: absolute;
+  inset: 0.1em 0 0.02em;
+  z-index: -1;
+  border-radius: 4px;
+  background: var(--voids-blue);
+  transform-origin: left center;
+  animation: hero-mark-wipe 0.7s 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes hero-mark-wipe {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.hero-photo-wrap {
+  position: relative;
+  isolation: isolate;
+}
+.hero-photo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: var(--radius-lg);
+  background: var(--voids-blue);
+  transform: translate(-14px, 14px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise,
+  .hero-mark::before {
+    animation: none;
+  }
+}
