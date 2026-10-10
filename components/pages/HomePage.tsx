@@ -301,40 +301,33 @@ export function HomePage({ lang }: { lang: Lang }) {
           </div>
           <div className="g-collapse" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 26 }}>
             {TESTIMONIALS[lang].map((t) => {
-              const color = t.side === "company" ? "var(--voids-purple)" : "var(--voids-blue)";
               const tag = t.side === "company" ? c.testimonialCompanyTag : c.testimonialTalentTag;
               return (
                 <div
                   key={t.name + t.quote}
-                  className="testimonial-card"
-                  style={{ position: "relative", background: "#fff", borderRadius: "var(--radius-lg)", padding: "30px 28px 26px", overflow: "hidden" }}
+                  className={`testimonial-card testimonial-card--${t.side === "company" ? "purple" : "blue"}`}
                 >
-                  <svg aria-hidden="true" className="testimonial-quote-mark" style={{ color }} viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      fill="currentColor"
-                      d="M0 30.5C0 15.5 9.5 4.8 25 0l3.6 7.4C18.9 11 14 17.4 13.4 25.3c1.4-.7 3-1 4.8-1 6.6 0 11.4 4.7 11.4 11.4 0 6.8-5 12.3-12 12.3C7.9 48 0 40.8 0 30.5Zm34.4 0C34.4 15.5 43.9 4.8 59.4 0L63 7.4C53.3 11 48.4 17.4 47.8 25.3c1.4-.7 3-1 4.8-1 6.6 0 11.4 4.7 11.4 11.4 0 6.8-5 12.3-12 12.3-9.7 0-17.6-7.2-17.6-17.5Z"
-                    />
-                  </svg>
-                  <span
-                    className="anton"
-                    style={{ position: "relative", display: "inline-block", fontSize: 11, letterSpacing: ".08em", color, background: `color-mix(in srgb, ${color} 12%, transparent)`, padding: "5px 10px", borderRadius: 999, marginBottom: 16 }}
-                  >
-                    {tag}
-                  </span>
-                  <p style={{ position: "relative", fontFamily: "var(--font-sans)", fontSize: 18, fontWeight: 500, lineHeight: 1.5, color: "var(--voids-ink)", margin: "0 0 20px" }}>
-                    {t.quote}
-                  </p>
-                  <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 13 }}>
+                  <div className="testimonial-top">
+                    <svg aria-hidden="true" className="testimonial-quote-mark" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        fill="currentColor"
+                        d="M0 30.5C0 15.5 9.5 4.8 25 0l3.6 7.4C18.9 11 14 17.4 13.4 25.3c1.4-.7 3-1 4.8-1 6.6 0 11.4 4.7 11.4 11.4 0 6.8-5 12.3-12 12.3C7.9 48 0 40.8 0 30.5Zm34.4 0C34.4 15.5 43.9 4.8 59.4 0L63 7.4C53.3 11 48.4 17.4 47.8 25.3c1.4-.7 3-1 4.8-1 6.6 0 11.4 4.7 11.4 11.4 0 6.8-5 12.3-12 12.3-9.7 0-17.6-7.2-17.6-17.5Z"
+                      />
+                    </svg>
+                    <span className="anton testimonial-tag">{tag}</span>
+                  </div>
+                  <p className="testimonial-quote">{t.quote}</p>
+                  <div className="testimonial-author">
                     {t.photo ? (
-                      <div style={{ width: 46, height: 46, borderRadius: "50%", flex: "none", overflow: "hidden", position: "relative", boxShadow: `0 0 0 2px #fff, 0 0 0 3.5px ${color}` }}>
-                        <Photo src={t.photo} alt={t.name} ratio="1 / 1" radius="0" sizes="46px" />
+                      <div className="testimonial-avatar">
+                        <Photo src={t.photo} alt={t.name} ratio="1 / 1" radius="0" sizes="56px" />
                       </div>
                     ) : (
-                      <div style={{ width: 46, height: 46, borderRadius: "50%", flex: "none", background: "var(--voids-line-soft)" }} />
+                      <div className="testimonial-avatar" style={{ background: "var(--voids-line-soft)" }} />
                     )}
                     <div>
-                      <div style={{ fontSize: 14, fontWeight: 600, color: "var(--voids-ink)" }}>{t.name}</div>
-                      <div style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>{t.role}</div>
+                      <div className="testimonial-name">{t.name}</div>
+                      <div className="testimonial-role">{t.role}</div>
                     </div>
                   </div>
                 </div>
