@@ -172,7 +172,7 @@ export function EmployerBrandingPage({ lang }: { lang: Lang }) {
                     gap: 24,
                     alignItems: "start",
                     padding: "28px 0",
-                    borderTop: i === 0 ? "none" : "1px solid var(--border-hairline)",
+                    
                   }}
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: 16 }}>

@@ -133,7 +133,7 @@ export function CommunityJobboardPage({ lang }: { lang: Lang }) {
           <div style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.18)", borderRadius: "var(--radius-lg)", padding: 26 }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               {c.heroStats.map((s, i) => (
-                <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: i === 0 ? "none" : "1px solid rgba(255,255,255,.14)", paddingTop: i === 0 ? 0 : 14 }}>
+                <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, paddingTop: i === 0 ? 0 : 14 }}>
                   <span className="anton" style={{ fontSize: 24, color: "#fff", flex: "none", whiteSpace: "nowrap" }}><CountUp value={s.value} /></span>
                   <span style={{ fontSize: 13, color: "var(--voids-purple-100)" }}>{s.label}</span>
                 </div>

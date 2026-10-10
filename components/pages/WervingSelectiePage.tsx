@@ -167,7 +167,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
                   style={
                     i === 0
                       ? { display: "flex", alignItems: "baseline", gap: 12 }
-                      : { display: "flex", alignItems: "baseline", gap: 12, borderTop: "1px solid rgba(255,255,255,.14)", paddingTop: 14 }
+                      : { display: "flex", alignItems: "baseline", gap: 12, paddingTop: 14 }
                   }
                 >
                   <span className="anton" style={{ fontSize: 26, color: "#fff", flex: "none", whiteSpace: "nowrap" }}><CountUp value={s.value} /></span>
@@ -230,7 +230,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
                         <li key={b} style={{ fontSize: 12.5, lineHeight: 1.5, color: "var(--voids-ink-muted)" }}>{b}</li>
                       ))}
                     </ul>
-                    <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-purple)", fontWeight: 600, margin: "12px 0 0", paddingTop: 12, borderTop: "1px solid var(--voids-line)" }}>
+                    <p style={{ fontSize: 13, lineHeight: 1.5, color: "var(--voids-purple)", fontWeight: 600, margin: "12px 0 0", paddingTop: 12 }}>
                       → {cs.outcome}
                     </p>
                   </div>
@@ -292,7 +292,7 @@ export function WervingSelectiePage({ lang }: { lang: Lang }) {
                     </div>
                     <div style={{ fontSize: 14, fontWeight: 600, margin: "0 0 4px" }}>{pr.edu}</div>
                     <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)", marginBottom: 14 }}>{pr.skills}</div>
-                    <p className="anton" style={{ fontSize: 14, lineHeight: 1.4, color, textTransform: "none", margin: "auto 0 0", paddingTop: 12, borderTop: "1px solid var(--voids-line)", minHeight: 52 }}>{pr.traits}</p>
+                    <p className="anton" style={{ fontSize: 14, lineHeight: 1.4, color, textTransform: "none", margin: "auto 0 0", paddingTop: 12, minHeight: 52 }}>{pr.traits}</p>
                   </div>
                 </Reveal>
               );

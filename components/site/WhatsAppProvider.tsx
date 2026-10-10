@@ -116,7 +116,6 @@ function WhatsAppModal({ open, onClose }: { open: boolean; onClose: () => void }
                 alignItems: "center",
                 gap: 12,
                 padding: "13px 4px",
-                borderBottom: "1px solid var(--voids-line-soft)",
                 textDecoration: "none",
               }}
             >

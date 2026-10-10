@@ -1159,7 +1159,6 @@ a:hover .blog-thumb-arrow {
   align-items: center;
   gap: 14px;
   padding-top: 20px;
-  border-top: 1px solid color-mix(in srgb, var(--t-color) 22%, transparent);
 }
 .testimonial-avatar {
   position: relative;

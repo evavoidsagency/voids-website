@@ -56,7 +56,6 @@ export function Header({ lang }: { lang: Lang }) {
         top: 0,
         zIndex: 40,
         background: "var(--voids-beige)",
-        borderBottom: "1px solid var(--border-hairline)",
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: 18, minHeight: 70, flexWrap: "wrap", padding: "10px 32px", maxWidth: 1320, margin: "0 auto" }}>
@@ -248,7 +247,7 @@ export function Header({ lang }: { lang: Lang }) {
             </Link>
           </nav>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 14, borderTop: "1px solid var(--border-hairline)", paddingTop: 18 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 18 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
               <span style={{ fontSize: 13, color: "var(--voids-ink-muted)" }}>Taal</span>
               <div style={{ display: "flex", alignItems: "center", border: "1px solid var(--border-hairline)", borderRadius: 999, overflow: "hidden" }}>

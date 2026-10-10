@@ -74,7 +74,7 @@ export function Footer({ lang }: { lang: Lang }) {
         </div>
       </div>
 
-      <div style={{ borderTop: "1px solid rgba(255,255,255,.12)" }}>
+      <div>
         <div
           className="wrap"
           style={{

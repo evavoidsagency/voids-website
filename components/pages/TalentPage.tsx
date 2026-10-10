@@ -264,7 +264,7 @@ export function TalentPage({ lang }: { lang: Lang }) {
                 { value: "100%", label: c.stat2Label },
                 { value: "10%", label: c.stat3Label },
               ].map((s, i) => (
-                <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, borderTop: i === 0 ? "none" : "1px solid rgba(255,255,255,.14)", paddingTop: i === 0 ? 0 : 14 }}>
+                <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: 12, paddingTop: i === 0 ? 0 : 14 }}>
                   <span className="anton" style={{ fontSize: 26, color: "#fff", flex: "none" }}><CountUp value={s.value} /></span>
                   <span style={{ fontSize: 13, color: "var(--voids-blue-100)" }}>{s.label}</span>
                 </div>
