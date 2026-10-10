@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   lang: "nl",
   path: "/",
-  title: "VOIDS · Junior talent agency Amsterdam",
+  title: "VOIDS | Junior talent agency Amsterdam",
   description:
     "VOIDS verbindt hoogopgeleid junior talent aan ambitieuze bedrijven via werkstudentschappen, stages en starterrollen. Voorbij het cv, met oog voor drijfveren en werkstijl.",
   image: "/photography/home-hero.jpg",

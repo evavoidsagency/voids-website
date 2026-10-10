@@ -142,5 +142,5 @@ export const t = {
     nl: "Vacaturemeldingen & community-updates.",
     en: "Job alerts & community updates.",
   },
-  footerCopyright: { nl: "© 2026 VOIDS.agency · Amsterdam", en: "© 2026 VOIDS.agency · Amsterdam" },
+  footerCopyright: { nl: "© 2026 VOIDS.agency, Amsterdam", en: "© 2026 VOIDS.agency, Amsterdam" },
 } satisfies Record<string, { nl: string; en: string }>;

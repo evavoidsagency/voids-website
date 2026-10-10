@@ -26,7 +26,7 @@ const AUD_LABEL: Record<Lang, Record<BlogAud, string>> = {
   en: { bedrijf: "For companies", talent: "For talent", beide: "For everyone" },
 };
 
-const READ_MORE: Record<Lang, string> = { nl: "leestijd · Lees meer →", en: "read · Read more →" };
+const READ_MORE: Record<Lang, string> = { nl: "leestijd. Lees meer →", en: "read. Read more →" };
 
 // Reorders items so repeats of the same key land at least `minGap` slots apart
 // wherever the remaining pool allows it. Used to keep reused blog photos from

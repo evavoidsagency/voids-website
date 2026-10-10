@@ -8,14 +8,14 @@ export const SITE_NAME = "VOIDS";
 export const BASE_METADATA: Record<Lang, Metadata> = {
   nl: {
     metadataBase: new URL(SITE_URL),
-    title: { default: "VOIDS · Junior talent agency Amsterdam", template: "%s · VOIDS" },
+    title: { default: "VOIDS | Junior talent agency Amsterdam", template: "%s | VOIDS" },
     description: "Wij verbinden hoogopgeleid talent aan ambitieuze organisaties.",
     openGraph: { siteName: SITE_NAME, type: "website", locale: "nl_NL" },
     twitter: { card: "summary_large_image" },
   },
   en: {
     metadataBase: new URL(SITE_URL),
-    title: { default: "VOIDS · Junior talent agency Amsterdam", template: "%s · VOIDS" },
+    title: { default: "VOIDS | Junior talent agency Amsterdam", template: "%s | VOIDS" },
     description: "We connect highly-educated talent with ambitious organisations.",
     openGraph: { siteName: SITE_NAME, type: "website", locale: "en_US" },
     twitter: { card: "summary_large_image" },
@@ -44,9 +44,9 @@ export function pageMetadata({
   const enPath = path === "/" ? "/en" : `/en${path}`;
   const canonical = lang === "en" ? enPath : nlPath;
   const url = `${SITE_URL}${canonical}`;
-  const ogTitle = title.includes(SITE_NAME) ? title : `${title} · ${SITE_NAME}`;
+  const ogTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   // A title that already spells out "VOIDS" (e.g. the homepage) is shown as-is,
-  // bypassing the root layout's "%s · VOIDS" template so it isn't suffixed twice.
+  // bypassing the root layout's "%s | VOIDS" template so it isn't suffixed twice.
   const resolvedTitle = title.includes(SITE_NAME) ? { absolute: title } : title;
 
   return {

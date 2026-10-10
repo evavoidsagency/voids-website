@@ -42,7 +42,7 @@ export const TESTIMONIALS: Record<Lang, { quote: string; name: string; role: str
     {
       quote: "VOIDS leverde binnen twee weken kandidaten die precies bij onze vraag pasten.",
       name: "Bas Lemmens",
-      role: "Co-founder Booking.com · President HotelPlanner",
+      role: "Co-founder Booking.com, President HotelPlanner",
       photo: "/testimonials/bas-lemmens.jpg",
       side: "company",
     },
@@ -58,7 +58,7 @@ export const TESTIMONIALS: Record<Lang, { quote: string; name: string; role: str
     {
       quote: "VOIDS delivered candidates that fit our need exactly, within two weeks.",
       name: "Bas Lemmens",
-      role: "Co-founder Booking.com · President HotelPlanner",
+      role: "Co-founder Booking.com, President HotelPlanner",
       photo: "/testimonials/bas-lemmens.jpg",
       side: "company",
     },

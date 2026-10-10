@@ -25,7 +25,7 @@ const COPY: Record<
     hoursUnit: "u",
     costLabel: "kosten / maand",
     cards: [
-      { key: "stagiair", label: "Stagiair", note: "Stagevergoeding · leert mee" },
+      { key: "stagiair", label: "Stagiair", note: "Stagevergoeding, leert mee" },
       { key: "werkstudent", label: "Werkstudent", note: "Draait mee, flexibel" },
       { key: "starter", label: "Starter (pro-rata)", note: "Volledig zelfstandig" },
     ],
@@ -38,7 +38,7 @@ const COPY: Record<
     hoursUnit: "hrs",
     costLabel: "cost / month",
     cards: [
-      { key: "stagiair", label: "Intern", note: "Allowance · learning on the job" },
+      { key: "stagiair", label: "Intern", note: "Allowance, learning on the job" },
       { key: "werkstudent", label: "Working student", note: "Hands-on, flexible" },
       { key: "starter", label: "Starter (pro-rata)", note: "Fully independent" },
     ],
