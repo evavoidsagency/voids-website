@@ -62,7 +62,6 @@ export function ServicesTabs({ services }: { services: ServiceTab[] }) {
           style={{
             borderRadius: "var(--radius-lg)",
             background: "var(--voids-beige)",
-            borderLeft: `4px solid ${color}`,
             padding: "30px 32px",
             display: "flex",
             flexDirection: "column",

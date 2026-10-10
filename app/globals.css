@@ -399,8 +399,11 @@ button:focus-visible,
   box-shadow: var(--shadow-sm);
   transition: box-shadow var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
 }
-.card--accent-purple {
-  border-top: 3px solid var(--voids-purple);
+/* Accent bars on cards were removed site-wide (design rule: no thick coloured
+   bars). The classes stay as no-ops so existing markup keeps working. */
+.card--accent-purple,
+.card--accent-blue {
+  border-top: 1px solid var(--border-hairline);
 }
 
 /* Process step cards — a connecting line between consecutive steps within a
@@ -461,9 +464,6 @@ button:focus-visible,
   scroll-snap-align: start;
 }
 
-.card--accent-blue {
-  border-top: 3px solid var(--voids-blue);
-}
 .card--hoverable:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
