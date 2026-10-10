@@ -1289,3 +1289,22 @@ a:hover .blog-thumb-arrow {
     margin-top: 40px;
   }
 }
+
+/* Mission section: a three-tile photo mosaic instead of one photo. The grid
+   owns the aspect ratio, so tiles can fill it (height: 100%) at any width. */
+.mission-mosaic {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+  aspect-ratio: 1 / 1.04;
+}
+.mission-mosaic > div {
+  position: relative;
+  min-height: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.mosaic-a {
+  grid-row: 1 / 3;
+}

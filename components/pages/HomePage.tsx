@@ -151,6 +151,7 @@ export function HomePage({ lang }: { lang: Lang }) {
   const c = COPY[lang];
   const p = (path: string) => localePath(lang, path);
   const titleLines = c.heroTitle.split("\n");
+  const [missionLead, missionAccent] = c.missionTitle.split(", ");
 
   return (
     <>
@@ -270,10 +271,28 @@ export function HomePage({ lang }: { lang: Lang }) {
       {/* MISSION / IMPACT TEASER */}
       <section style={{ background: "var(--voids-purple-100)" }}>
         <div className="wrap g-collapse" style={{ padding: "64px 32px", display: "grid", gridTemplateColumns: ".9fr 1.1fr", gap: 44, alignItems: "center" }}>
-          <Photo src="/photography/home-mission.jpg" alt={c.missionAlt} ratio="1 / 1" />
+          <div className="mission-mosaic">
+            <div className="mosaic-a">
+              <Photo src="/photography/home-mission.jpg" alt={c.missionAlt} ratio="1 / 1" radius="0" style={{ aspectRatio: "auto", height: "100%" }} sizes="(max-width: 860px) 60vw, 360px" />
+            </div>
+            <div className="mosaic-b">
+              <Photo src="/photography/home-mission-b.jpg" alt="" ratio="1 / 1" radius="0" style={{ aspectRatio: "auto", height: "100%" }} sizes="(max-width: 860px) 40vw, 240px" />
+            </div>
+            <div className="mosaic-c">
+              <Photo src="/photography/home-mission-c.jpg" alt="" ratio="1 / 1" radius="0" objectPosition="center 72%" style={{ aspectRatio: "auto", height: "100%" }} sizes="(max-width: 860px) 40vw, 240px" />
+            </div>
+          </div>
           <div>
             <span className="voids-eyebrow" style={{ color: "var(--voids-purple)" }}>{c.missionLabel}</span>
-            <h2 className="anton section-h2" style={{ fontSize: 40, margin: "10px 0 16px" }}>{c.missionTitle}</h2>
+            <h2 className="anton section-h2" style={{ fontSize: 40, margin: "10px 0 16px" }}>
+              {missionAccent ? (
+                <>
+                  {missionLead}, <span style={{ color: "var(--voids-purple)" }}>{missionAccent}</span>
+                </>
+              ) : (
+                c.missionTitle
+              )}
+            </h2>
             <p style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-soft)", maxWidth: 520, margin: "0 0 22px" }}>
               {c.missionText}
             </p>
