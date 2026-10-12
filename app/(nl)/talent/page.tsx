@@ -7,7 +7,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/talent",
   title: "Voor talent",
   description:
-    "Vul één keer in wat je drijft en krijg gratis je career pager. Passende werkstudent-, stage- en starterrollen krijg je daarna direct via WhatsApp.",
+    "Vul één keer in wat je drijft en word gratis lid van de talentpool. Passende werkstudent-, stage- en starterrollen krijg je daarna direct via WhatsApp.",
 });
 
 export default function Page() {

@@ -7,7 +7,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/talent",
   title: "For talent",
   description:
-    "Tell us once what drives you and get your free career pager. Matching working-student, internship and starter roles then come straight to your WhatsApp.",
+    "Tell us once what drives you and join the talent pool for free. Matching working-student, internship and starter roles then come straight to your WhatsApp.",
 });
 
 export default function Page() {

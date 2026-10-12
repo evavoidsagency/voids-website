@@ -1,0 +1,1802 @@
+[
+ {
+  "slug": "wat-is-een-werkstudent",
+  "title": "Wat is een werkstudent? Contract, uren en salaris",
+  "description": "Wat is een werkstudent, welk contract hoort erbij en wat betekent dat voor minimumloon, uren en studie? Uitleg met bronnen, stand oktober 2026.",
+  "photo": "/photography/hg-03.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Wat staat er in een arbeidsovereenkomst?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/arbeidsovereenkomst-en-cao/vraag-en-antwoord/wat-staat-er-in-een-arbeidsovereenkomst",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Ik heb een nulurencontract. Heb ik recht op vakantiedagen en vakantiegeld? (vakantie-uren: 4 keer de uren per week, vakantiegeld minimaal 8%)",
+    "url": "https://rijksoverheid.nl/onderwerpen/vakantiedagen-en-vakantiegeld/vraag-en-antwoord/nulurencontract-en-vakantiedagen-en-vakantiegeld",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 667, geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel667/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668a (ketenregeling), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668a/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668 (aanzegplicht), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Scholieren voortgezet onderwijs werkten derde kwartaal 11 uur per week (met tabellen gebruikelijke arbeidsduur en top 3 beroepen)",
+    "url": "https://www.cbs.nl/nl-nl/nieuws/2023/49/scholieren-voortgezet-onderwijs-werkten-derde-kwartaal-11-uur-per-week",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Heb ik recht op het minimumloon als ik stage loop?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/vraag-en-antwoord/minimumloon-stage",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Kabinet wil stagevergoeding verplichten",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/07/03/kabinet-wil-stagevergoeding-verplichten",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Werk: Jaarrapport Landelijke Jeugdmonitor 2025",
+    "url": "https://longreads.cbs.nl/jeugdmonitor-2025/werk/",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Stage-informatie voor stagiairs (stagevergoeding bij het Rijk)",
+    "url": "https://www.p-direkt.nl/informatie-rijkspersoneel-2020/mijn-werk/loopbaan-en-ontwikkeling/specifieke-doelgroepen/stage-informatie-voor-stagiairs",
+    "publisher": "P-Direkt (Rijksoverheid)"
+   }
+  ]
+ },
+ {
+  "slug": "werkstudent-stagiair-of-starter",
+  "title": "Werkstudent, stagiair of starter: wat past bij jou?",
+  "description": "Werkstudent, stagiair of starter? Wanneer kies je wat, wat betekent het voor kosten en risico en wat zeggen de regels? Afwegingskader met bronnen.",
+  "photo": "/photography/mariselle-1.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Heb ik recht op het minimumloon als ik stage loop?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/vraag-en-antwoord/minimumloon-stage",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Checklist werken met een stagiair of stagiaire",
+    "url": "https://ondernemersplein.overheid.nl/personeel/aannemen/een-stagiair-aannemen/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Kabinet wil stagevergoeding verplichten",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/07/03/kabinet-wil-stagevergoeding-verplichten",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Voor bedrijven: werkstudenten, cases en werkwijze",
+    "url": "https://voids.agency/companies",
+    "publisher": "VOIDS"
+   },
+   {
+    "title": "Scholieren voortgezet onderwijs werkten derde kwartaal 11 uur per week (met tabellen gebruikelijke arbeidsduur en top 3 beroepen)",
+    "url": "https://www.cbs.nl/nl-nl/nieuws/2023/49/scholieren-voortgezet-onderwijs-werkten-derde-kwartaal-11-uur-per-week",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668a (ketenregeling), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668a/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Wanneer eindigt mijn arbeidsovereenkomst?",
+    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/arbeidsovereenkomst-en-cao/wanneer-wordt-mijn-arbeidsovereenkomst-beeindigd",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "junior-instroom-die-blijft-plakken",
+  "title": "Junior talent vasthouden: bouwstenen voor werkgevers",
+  "description": "Junior talent aannemen is het makkelijke deel. Vijf bouwstenen om werkstudenten en starters te laten blijven en groeien, met CBS-cijfers.",
+  "photo": "/photography/hg-12.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 667, geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel667/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Werk: Jaarrapport Landelijke Jeugdmonitor 2025",
+    "url": "https://longreads.cbs.nl/jeugdmonitor-2025/werk/",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Birds of a Feather: Homophily in Social Networks (McPherson, Smith-Lovin & Cook), Annual Review of Sociology 27, 415-444",
+    "url": "https://doi.org/10.1146/annurev.soc.27.1.415",
+    "publisher": "Annual Review of Sociology"
+   },
+   {
+    "title": "Community & jobboard",
+    "url": "https://voids.agency/companies/community-jobboard",
+    "publisher": "VOIDS"
+   },
+   {
+    "title": "Voor bedrijven: werkstudenten, cases en werkwijze",
+    "url": "https://voids.agency/companies",
+    "publisher": "VOIDS"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668a (ketenregeling), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668a/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   }
+  ]
+ },
+ {
+  "slug": "eerlijk-uurtarief-werkstudent",
+  "title": "Eerlijk uurtarief werkstudent: zo bepaal je het",
+  "description": "Wat is een eerlijk uurtarief voor een werkstudent? Minimumloon per 1 juli 2026 als ondergrens, daarna het werk als maatstaf. Met bronnen.",
+  "photo": "/photography/mariselle-2.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Heb ik recht op het minimumloon als ik stage loop?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/vraag-en-antwoord/minimumloon-stage",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Richtlijn (EU) 2023/970 ter versterking van het beginsel van gelijke beloning (artikel 5)",
+    "url": "https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX:32023L0970",
+    "publisher": "EUR-Lex (Europese Unie)"
+   },
+   {
+    "title": "Meer openheid over loonkloof tussen mannen en vrouwen",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/05/21/meer-openheid-over-loonkloof-tussen-mannen-en-vrouwen",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Impact: onze missie en ambitie",
+    "url": "https://voids.agency/impact",
+    "publisher": "VOIDS"
+   },
+   {
+    "title": "Stage-informatie voor stagiairs (stagevergoeding bij het Rijk)",
+    "url": "https://www.p-direkt.nl/informatie-rijkspersoneel-2020/mijn-werk/loopbaan-en-ontwikkeling/specifieke-doelgroepen/stage-informatie-voor-stagiairs",
+    "publisher": "P-Direkt (Rijksoverheid)"
+   },
+   {
+    "title": "Kabinet wil stagevergoeding verplichten",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/07/03/kabinet-wil-stagevergoeding-verplichten",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "matchprofiel-dat-opvalt",
+  "title": "Zo schrijf je een matchprofiel dat opvalt",
+  "description": "Geen standaard motivatiebrief, maar een profiel dat laat zien wie je bent en hoe je werkt. Praktische tips voor een matchprofiel dat opvalt.",
+  "photo": "/photography/hg-05.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Werving & selectie (incl. cases)",
+    "url": "https://voids.agency/companies/recruitment-selection",
+    "publisher": "VOIDS"
+   }
+  ]
+ },
+ {
+  "slug": "betaald-werken-naast-je-studie",
+  "title": "Betaald werken naast je studie: wat levert het op?",
+  "description": "Wat levert betaald, relevant werk naast je studie op, hoeveel uur werken studenten gemiddeld en voor wie is het bereikbaar? Met CBS- en SEO-onderzoek.",
+  "photo": "/photography/mariselle-3.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Werk: Jaarrapport Landelijke Jeugdmonitor 2020",
+    "url": "https://longreads.cbs.nl/jeugdmonitor-2020/werk/",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Studie & Werk HO: de arbeidsmarktpositie van hbo- en wo-alumni (Bussink, Van der Ven & Klinker, in opdracht van EW Magazine)",
+    "url": "https://www.seo.nl/wp-content/uploads/2023/07/2023-74-Studie-Werk-HO.pdf",
+    "publisher": "SEO Economisch Onderzoek"
+   },
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Scholieren voortgezet onderwijs werkten derde kwartaal 11 uur per week (met tabellen gebruikelijke arbeidsduur en top 3 beroepen)",
+    "url": "https://www.cbs.nl/nl-nl/nieuws/2023/49/scholieren-voortgezet-onderwijs-werkten-derde-kwartaal-11-uur-per-week",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Werk: Jaarrapport Landelijke Jeugdmonitor 2025",
+    "url": "https://longreads.cbs.nl/jeugdmonitor-2025/werk/",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Bijverdienen",
+    "url": "https://duo.nl/particulier/studiefinanciering/bijverdienen.jsp",
+    "publisher": "DUO"
+   },
+   {
+    "title": "Stijgende lijn stagevergoedingen voor studenten",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2025/03/12/stijgende-lijn-stagevergoedingen-voor-studenten",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "van-studie-naar-eerste-baan",
+  "title": "Van studie naar eerste baan in 5 stappen",
+  "description": "Vijf stappen van studie naar eerste baan, met CBS- en SEO-onderzoek over de zoektijd van afgestudeerden en de rol van een relevante bijbaan.",
+  "photo": "/photography/hg-10.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Studie & Werk HO: de arbeidsmarktpositie van hbo- en wo-alumni (Bussink, Van der Ven & Klinker, in opdracht van EW Magazine)",
+    "url": "https://www.seo.nl/wp-content/uploads/2023/07/2023-74-Studie-Werk-HO.pdf",
+    "publisher": "SEO Economisch Onderzoek"
+   },
+   {
+    "title": "Voor bedrijven: werkstudenten, cases en werkwijze",
+    "url": "https://voids.agency/companies",
+    "publisher": "VOIDS"
+   },
+   {
+    "title": "Talent: community, jobboard en talentpool",
+    "url": "https://voids.agency/talent",
+    "publisher": "VOIDS"
+   }
+  ]
+ },
+ {
+  "slug": "gen-z-matcht-op-karakter",
+  "title": "Gen Z en karakter: waar letten jonge kandidaten op?",
+  "description": "Wat vinden jonge werknemers belangrijk in een baan? CBS-cijfers over salaris, leidinggevenden en werktijden, en hoe VOIDS matcht op karakter en werkstijl.",
+  "photo": "/photography/mariselle-4.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Werk: Jaarrapport Landelijke Jeugdmonitor 2025",
+    "url": "https://longreads.cbs.nl/jeugdmonitor-2025/werk/",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Werving & selectie (incl. cases)",
+    "url": "https://voids.agency/companies/recruitment-selection",
+    "publisher": "VOIDS"
+   },
+   {
+    "title": "Stijgende lijn stagevergoedingen voor studenten",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2025/03/12/stijgende-lijn-stagevergoedingen-voor-studenten",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Afgestudeerden in het hoger onderwijs (inleiding verwijst naar SER-advies 2021)",
+    "url": "https://www.cbs.nl/nl-nl/longread/rapportages/2024/afgestudeerden-in-het-hoger-onderwijs?onepage=true",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Studie & Werk HO: de arbeidsmarktpositie van hbo- en wo-alumni (Bussink, Van der Ven & Klinker, in opdracht van EW Magazine)",
+    "url": "https://www.seo.nl/wp-content/uploads/2023/07/2023-74-Studie-Werk-HO.pdf",
+    "publisher": "SEO Economisch Onderzoek"
+   }
+  ]
+ },
+ {
+  "slug": "werkstudentovereenkomst-wat-moet-erin",
+  "title": "Werkstudentovereenkomst: wat moet erin staan?",
+  "description": "Werkstudent is geen aparte contractvorm. Wat de wet vraagt (proeftijd, einde, minimumloon) en een checklist voor je tekent. Met bronnen.",
+  "photo": "/photography/hg-00.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Wat staat er in een arbeidsovereenkomst?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/arbeidsovereenkomst-en-cao/vraag-en-antwoord/wat-staat-er-in-een-arbeidsovereenkomst",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Werkvergunning werkstudent",
+    "url": "https://www.uwv.nl/nl/werkvergunning/werkstudent",
+    "publisher": "UWV"
+   },
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Ik heb een nulurencontract. Heb ik recht op vakantiedagen en vakantiegeld? (vakantie-uren: 4 keer de uren per week, vakantiegeld minimaal 8%)",
+    "url": "https://rijksoverheid.nl/onderwerpen/vakantiedagen-en-vakantiegeld/vraag-en-antwoord/nulurencontract-en-vakantiedagen-en-vakantiegeld",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Welke contracten zijn er voor oproepkrachten?",
+    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/arbeidsovereenkomst-en-cao/welke-contracten-zijn-er-voor-oproepkrachten",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Meer zekerheid voor mensen met een flexcontract",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/07/08/meer-zekerheid-voor-mensen-met-een-flexcontract",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Reiskostenvergoeding betalen aan werknemers",
+    "url": "https://ondernemersplein.overheid.nl/reiskostenvergoeding-betalen-aan-werknemers/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 652 (proeftijd), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling5/Artikel652/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 667, geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel667/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668 (aanzegplicht), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668a (ketenregeling), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668a/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   }
+  ]
+ },
+ {
+  "slug": "werkstudent-duitsland-vs-nederland",
+  "title": "Werkstudent in Duitsland en Nederland vergeleken",
+  "description": "Wat is het Duitse Werkstudentenprivileg, hoeveel studenten werken er in Duitsland en wat kunnen Nederlandse werkgevers ervan leren? Met Duitse bronnen.",
+  "photo": "/photography/mariselle-5.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Lexikon: Werkstudentenprivileg",
+    "url": "https://www.deutsche-rentenversicherung.de/DRV/DE/Experten/Arbeitgeber-und-Steuerberater/summa-summarum/Lexikon/W/werkstudentenprivileg",
+    "publisher": "Deutsche Rentenversicherung"
+   },
+   {
+    "title": "Ergebnisse der „Studierendenbefragung in Deutschland“ (22. Sozialerhebung), Presseinformation BMBF/DZHW/DSW",
+    "url": "https://www.dzhw.eu/services/material/pressemitteilungen/2023_05_24_pm_sid.pdf",
+    "publisher": "DZHW"
+   },
+   {
+    "title": "Sozialgesetzbuch (SGB) Fünftes Buch (V), § 6 Versicherungsfreiheit",
+    "url": "https://www.gesetze-im-internet.de/sgb_5/__6.html",
+    "publisher": "Gesetze im Internet (Bundesministerium der Justiz)"
+   },
+   {
+    "title": "Ik werk in loondienst",
+    "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/jongeren/content/ik-werk-in-loondienst",
+    "publisher": "Belastingdienst"
+   },
+   {
+    "title": "Scholieren voortgezet onderwijs werkten derde kwartaal 11 uur per week (met tabellen gebruikelijke arbeidsduur en top 3 beroepen)",
+    "url": "https://www.cbs.nl/nl-nl/nieuws/2023/49/scholieren-voortgezet-onderwijs-werkten-derde-kwartaal-11-uur-per-week",
+    "publisher": "CBS"
+   }
+  ]
+ },
+ {
+  "slug": "werkstudent-onboarden-eerste-maand",
+  "title": "Werkstudent onboarden: de eerste maand in 4 stappen",
+  "description": "Een onboardingplan voor de eerste maand van een werkstudent: toegang, buddy, eerste resultaat en feedback, plus wat je wettelijk regelt.",
+  "photo": "/photography/hg-14.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "ID-bewijs controleren en bewaren",
+    "url": "https://ondernemersplein.overheid.nl/wetten-en-regels/identiteitsbewijs-controleren-en-bewaren/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Stappenplan personeel aannemen",
+    "url": "https://ondernemersplein.overheid.nl/personeel/aannemen/stappenplan-personeel-aannemen/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Wat staat er in een arbeidsovereenkomst?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/arbeidsovereenkomst-en-cao/vraag-en-antwoord/wat-staat-er-in-een-arbeidsovereenkomst",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 652 (proeftijd), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling5/Artikel652/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   }
+  ]
+ },
+ {
+  "slug": "red-flags-bij-een-jobaanbod",
+  "title": "5 red flags bij een jobaanbod als student",
+  "description": "Vijf signalen voor je tekent: salaris, taken, contract, flexibiliteit en haast. Met wat de Rijksoverheid zegt over minimumloon en contract.",
+  "photo": "/photography/mariselle-6.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Heb ik recht op het minimumloon als ik stage loop?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/vraag-en-antwoord/minimumloon-stage",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Wat staat er in een arbeidsovereenkomst?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/arbeidsovereenkomst-en-cao/vraag-en-antwoord/wat-staat-er-in-een-arbeidsovereenkomst",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Welke contracten zijn er voor oproepkrachten?",
+    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/arbeidsovereenkomst-en-cao/welke-contracten-zijn-er-voor-oproepkrachten",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Ik heb gereageerd op een vacature",
+    "url": "https://www.fraudehelpdesk.nl/fraude/ik-heb-gereageerd-op-een-vacature/",
+    "publisher": "Fraudehelpdesk"
+   }
+  ]
+ },
+ {
+  "slug": "eerste-junior-hire-founders",
+  "title": "Je eerste junior hire: waarom founders te lang wachten",
+  "description": "Wanneer is een startup klaar voor een eerste junior hire of werkstudent? Signalen, een afgebakende start en wat het kost, voor founders.",
+  "photo": "/photography/hg-11.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668a (ketenregeling), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668a/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   }
+  ]
+ },
+ {
+  "slug": "bijbaan-of-relevante-ervaring",
+  "title": "Bijbaan of relevante werkervaring: wat telt zwaarder?",
+  "description": "Telt een bijbaan mee op je cv, en wat zegt onderzoek over relevante werkervaring? Met CBS- en SEO-cijfers, en hoe je betaald én relevant werk herkent.",
+  "photo": "/photography/mariselle-8.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Scholieren voortgezet onderwijs werkten derde kwartaal 11 uur per week (met tabellen gebruikelijke arbeidsduur en top 3 beroepen)",
+    "url": "https://www.cbs.nl/nl-nl/nieuws/2023/49/scholieren-voortgezet-onderwijs-werkten-derde-kwartaal-11-uur-per-week",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Studie & Werk HO: de arbeidsmarktpositie van hbo- en wo-alumni (Bussink, Van der Ven & Klinker, in opdracht van EW Magazine)",
+    "url": "https://www.seo.nl/wp-content/uploads/2023/07/2023-74-Studie-Werk-HO.pdf",
+    "publisher": "SEO Economisch Onderzoek"
+   },
+   {
+    "title": "Stijgende lijn stagevergoedingen voor studenten",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2025/03/12/stijgende-lijn-stagevergoedingen-voor-studenten",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Voor bedrijven: werkstudenten, cases en werkwijze",
+    "url": "https://voids.agency/companies",
+    "publisher": "VOIDS"
+   },
+   {
+    "title": "Impact: onze missie en ambitie",
+    "url": "https://voids.agency/impact",
+    "publisher": "VOIDS"
+   }
+  ]
+ },
+ {
+  "slug": "proeftijd-werkstudentcontract",
+  "title": "Proeftijd bij een werkstudentcontract: wat mag?",
+  "description": "Hoeveel proeftijd mag in een tijdelijk contract? Wat artikel 7:652 BW toestaat, wat bij een ongeldige proeftijd en wat je checkt voor je tekent.",
+  "photo": "/photography/hg-13.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 652 (proeftijd), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling5/Artikel652/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Welke regels gelden er bij een proeftijd?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/arbeidsovereenkomst-en-cao/vraag-en-antwoord/regels-bij-proeftijd",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Algemene voorwaarden",
+    "url": "https://voids.agency/terms",
+    "publisher": "VOIDS"
+   }
+  ]
+ },
+ {
+  "slug": "ziek-als-werkstudent",
+  "title": "Ziek als werkstudent: word je doorbetaald?",
+  "description": "Word je als werkstudent doorbetaald bij ziekte? Minstens 70% van je loon, in het eerste ziektejaar met het minimumloon als ondergrens. Bron: Rijksoverheid.",
+  "photo": "/photography/mariselle-9.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Loon (salaris) doorbetalen bij ziekte",
+    "url": "https://ondernemersplein.overheid.nl/wetten-en-regels/loon-doorbetalen-bij-ziekte/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Hoeveel loon krijg ik doorbetaald als ik ziek ben?",
+    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/ziekteverzuim-van-het-werk/hoeveel-loon-krijg-ik-doorbetaald-als-ik-ziek-ben",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Welke contracten zijn er voor oproepkrachten?",
+    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/arbeidsovereenkomst-en-cao/welke-contracten-zijn-er-voor-oproepkrachten",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "vakantiedagen-opbouwen-als-werkstudent",
+  "title": "Vakantiedagen opbouwen als werkstudent: zo werkt het",
+  "description": "Hoeveel vakantiedagen bouw je op als werkstudent? Vier keer je wekelijkse uren per jaar, minstens 8% vakantiegeld en wanneer dagen vervallen.",
+  "photo": "/photography/hg-02.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Ik heb een nulurencontract. Heb ik recht op vakantiedagen en vakantiegeld? (vakantie-uren: 4 keer de uren per week, vakantiegeld minimaal 8%)",
+    "url": "https://rijksoverheid.nl/onderwerpen/vakantiedagen-en-vakantiegeld/vraag-en-antwoord/nulurencontract-en-vakantiedagen-en-vakantiegeld",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Hoe kan ik mijn vakantiedagen opnemen?",
+    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/vakantiedagen-en-vakantiegeld/hoe-kan-ik-mijn-vakantiedagen-opnemen",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "studiefinanciering-en-werken-combineren",
+  "title": "Studiefinanciering en werken: belasting en toeslagen",
+  "description": "Raakt werken je studiefinanciering? Nee, DUO kent geen bijverdiengrens. Wat wel telt: loonheffing, teruggave en toeslagen. Zo geef je je inkomen goed door.",
+  "photo": "/photography/mariselle-10.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Bijverdienen",
+    "url": "https://duo.nl/particulier/studiefinanciering/bijverdienen.jsp",
+    "publisher": "DUO"
+   },
+   {
+    "title": "Ik werk in loondienst",
+    "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/jongeren/content/ik-werk-in-loondienst",
+    "publisher": "Belastingdienst"
+   },
+   {
+    "title": "Het inkomen dat telt voor toeslagen is het ‘toetsingsinkomen’",
+    "url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/toeslagen/hoe_werken_toeslagen/kan_ik_toeslag_krijgen/inkomen/",
+    "publisher": "Dienst Toeslagen (Belastingdienst)"
+   },
+   {
+    "title": "Hoe zorg ik dat jullie mijn toeslag met het juiste inkomen berekenen?",
+    "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/toeslagen/content/hoe-zorg-ik-dat-jullie-mijn-toeslag-met-het-juiste-inkomen-berekenen",
+    "publisher": "Dienst Toeslagen (Belastingdienst)"
+   }
+  ]
+ },
+ {
+  "slug": "zzp-of-werkstudent",
+  "title": "ZZP of werkstudent: wat is het verschil?",
+  "description": "Zzp'er of werkstudent? Wie draagt het risico, wanneer is een zzp-opdracht een baan en wat verandert er op 31 december 2026 bij een uurtarief onder € 38?",
+  "photo": "/photography/hg-17.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Ik heb een nulurencontract. Heb ik recht op vakantiedagen en vakantiegeld? (vakantie-uren: 4 keer de uren per week, vakantiegeld minimaal 8%)",
+    "url": "https://rijksoverheid.nl/onderwerpen/vakantiedagen-en-vakantiegeld/vraag-en-antwoord/nulurencontract-en-vakantiedagen-en-vakantiegeld",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Loon (salaris) doorbetalen bij ziekte",
+    "url": "https://ondernemersplein.overheid.nl/wetten-en-regels/loon-doorbetalen-bij-ziekte/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "U heeft personeelstekort of tijdelijk veel werk",
+    "url": "https://ondernemersplein.overheid.nl/personeel/inhuren/u-heeft-personeelstekort-of-te-veel-werk/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Hoeveel loon krijg ik doorbetaald als ik ziek ben?",
+    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/ziekteverzuim-van-het-werk/hoeveel-loon-krijg-ik-doorbetaald-als-ik-ziek-ben",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Laag uurtarief van zzp'er kan leiden tot arbeidsovereenkomst",
+    "url": "https://ondernemersplein.overheid.nl/wetswijzigingen/laag-uurtarief-van-zzper-kan-leiden-tot-arbeidsovereenkomst/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Wat staat er in een arbeidsovereenkomst?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/arbeidsovereenkomst-en-cao/vraag-en-antwoord/wat-staat-er-in-een-arbeidsovereenkomst",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "nulurencontract-vs-werkstudentcontract",
+  "title": "0-urencontract vs. werkstudentcontract: verschil",
+  "description": "Wat is een 0-urencontract en welke rechten heb je (oproeptermijn 4 dagen, 3 uur loon, vaste uren na een jaar)? En wat verandert er in 2028? Met bronnen.",
+  "photo": "/photography/mariselle-11.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Welke contracten zijn er voor oproepkrachten?",
+    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/arbeidsovereenkomst-en-cao/welke-contracten-zijn-er-voor-oproepkrachten",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Meer zekerheid voor mensen met een flexcontract",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/07/08/meer-zekerheid-voor-mensen-met-een-flexcontract",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "hoeveel-uur-mag-een-werkstudent-maximaal-werken",
+  "title": "Hoeveel uur mag een werkstudent maximaal werken?",
+  "description": "Wat is het wettelijke maximum aan werkuren (Arbeidstijdenwet) en hoeveel uur werken studenten in de praktijk? Met cijfers van het CBS en de Rijksoverheid.",
+  "photo": "/photography/hg-04.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Scholieren voortgezet onderwijs werkten derde kwartaal 11 uur per week (met tabellen gebruikelijke arbeidsduur en top 3 beroepen)",
+    "url": "https://www.cbs.nl/nl-nl/nieuws/2023/49/scholieren-voortgezet-onderwijs-werkten-derde-kwartaal-11-uur-per-week",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Werk: Jaarrapport Landelijke Jeugdmonitor 2025",
+    "url": "https://longreads.cbs.nl/jeugdmonitor-2025/werk/",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Wat zijn de wettelijke regels voor mijn werktijden en rusttijden?",
+    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/werktijden/wettelijke-regels-werktijden-en-rusttijden",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Wat staat er in de Arbeidstijdenwet over mijn werktijden?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/werktijden/vraag-en-antwoord/wat-staat-er-in-de-arbeidstijdenwet-over-mijn-werktijden",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "wat-verdient-een-werkstudent-gemiddeld",
+  "title": "Wat verdient een werkstudent? Minimumloon en tarief",
+  "description": "Er is geen vast werkstudentsalaris, wel een ondergrens: € 14,99 per uur per 1 juli 2026 vanaf 21 jaar. Zo check je of een aanbod eerlijk is.",
+  "photo": "/photography/hg-21.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "werkstudent-worden-zonder-ervaring",
+  "title": "Werkstudent worden zonder ervaring: kan dat?",
+  "description": "Kun je werkstudent worden zonder relevante ervaring? Wat bedrijven met “ervaring gewenst” bedoelen en hoe je toch overtuigt.",
+  "photo": "/photography/hg-01.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Talent: community, jobboard en talentpool",
+    "url": "https://voids.agency/talent",
+    "publisher": "VOIDS"
+   },
+   {
+    "title": "Werving & selectie (incl. cases)",
+    "url": "https://voids.agency/companies/recruitment-selection",
+    "publisher": "VOIDS"
+   }
+  ]
+ },
+ {
+  "slug": "hoe-kies-je-een-sector-als-student",
+  "title": "Sector kiezen als student zonder idee: zo begin je",
+  "description": "“Wat wil je later worden” is een lastige vraag. Een praktische manier om een richting te vinden door te proberen, met een werkstudentrol als start.",
+  "photo": "/photography/hg-18.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 667, geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel667/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Talent: community, jobboard en talentpool",
+    "url": "https://voids.agency/talent",
+    "publisher": "VOIDS"
+   }
+  ]
+ },
+ {
+  "slug": "bedrijfscultuur-herkennen-in-een-sollicitatiegesprek",
+  "title": "Bedrijfscultuur herkennen in een sollicitatiegesprek",
+  "description": "Hoe herken je de cultuur van een bedrijf in een sollicitatiegesprek? Concrete signalen en vragen om te stellen voordat je tekent.",
+  "photo": "/photography/hg-20.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Werving & selectie (incl. cases)",
+    "url": "https://voids.agency/companies/recruitment-selection",
+    "publisher": "VOIDS"
+   }
+  ]
+ },
+ {
+  "slug": "van-werkstudent-naar-vaste-baan",
+  "title": "Van werkstudent naar vaste baan: zo pak je het aan",
+  "description": "Doorstromen naar een vaste baan gaat niet vanzelf. Wat je zelf kunt doen, wat ketenregeling en transitievergoeding betekenen en wanneer je elders kijkt.",
+  "photo": "/photography/hg-15.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Voor bedrijven: werkstudenten, cases en werkwijze",
+    "url": "https://voids.agency/companies",
+    "publisher": "VOIDS"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668 (aanzegplicht), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668a (ketenregeling), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668a/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 673 (transitievergoeding), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel673/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Heb ik recht op een transitievergoeding als ik word ontslagen?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/ontslag/vraag-en-antwoord/heb-ik-recht-op-een-vergoeding-als-ik-word-ontslagen",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "kosten-werkstudent-vs-starter",
+  "title": "Kosten werkstudent vs. fulltime starter vergeleken",
+  "description": "Wat kost een werkstudent vergeleken met een starter? Minimumloon, vakantiegeld, hoge of lage WW-premie en transitievergoeding in een eerlijke rekensom.",
+  "photo": "/photography/hg-08.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Stappenplan personeel aannemen",
+    "url": "https://ondernemersplein.overheid.nl/personeel/aannemen/stappenplan-personeel-aannemen/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Premiedifferentiatie WW: lage en hoge AWf-premie",
+    "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/personeel-en-loon/content/premiedifferentiatie-ww-lage-en-hoge-ww-premie",
+    "publisher": "Belastingdienst"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 667, geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel667/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Wanneer eindigt mijn arbeidsovereenkomst?",
+    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/arbeidsovereenkomst-en-cao/wanneer-wordt-mijn-arbeidsovereenkomst-beeindigd",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 673 (transitievergoeding), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel673/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668a (ketenregeling), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668a/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668 (aanzegplicht), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 672 (opzegtermijnen), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel672/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   }
+  ]
+ },
+ {
+  "slug": "vacaturetekst-die-junior-talent-aanspreekt",
+  "title": "Vacaturetekst voor junior talent: zo schrijf je hem",
+  "description": "Een vacaturetekst die werkstudenten en starters aanspreekt: werk, salaris en uren concreet. Met de loontransparantierichtlijn en CBS-cijfers.",
+  "photo": "/photography/hg-09.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Richtlijn (EU) 2023/970 ter versterking van het beginsel van gelijke beloning (artikel 5)",
+    "url": "https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX:32023L0970",
+    "publisher": "EUR-Lex (Europese Unie)"
+   },
+   {
+    "title": "Meer openheid over loonkloof tussen mannen en vrouwen",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/05/21/meer-openheid-over-loonkloof-tussen-mannen-en-vrouwen",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Werk: Jaarrapport Landelijke Jeugdmonitor 2025",
+    "url": "https://longreads.cbs.nl/jeugdmonitor-2025/werk/",
+    "publisher": "CBS"
+   }
+  ]
+ },
+ {
+  "slug": "werkstudenten-inzetten-tijdens-een-groeifase",
+  "title": "Werkstudenten inzetten tijdens een groeifase",
+  "description": "Passen werkstudenten bij een scale-up in groeifase? Waar het werkt, de risico's (ketenregeling, kennisverlies) en wanneer je overstapt op starters.",
+  "photo": "/photography/hg-16.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 667, geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel667/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668a (ketenregeling), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668a/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Voor bedrijven: werkstudenten, cases en werkwijze",
+    "url": "https://voids.agency/companies",
+    "publisher": "VOIDS"
+   }
+  ]
+ },
+ {
+  "slug": "employer-branding-voor-gen-z",
+  "title": "Employer branding voor Gen Z: wat zeggen de cijfers?",
+  "description": "Wat vinden jonge werknemers belangrijk in een baan en wat betekent dat voor je employer branding? CBS-cijfers over leidinggevenden, salaris en werktijden.",
+  "photo": "/photography/hg-19.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Werk: Jaarrapport Landelijke Jeugdmonitor 2025",
+    "url": "https://longreads.cbs.nl/jeugdmonitor-2025/werk/",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Richtlijn (EU) 2023/970 ter versterking van het beginsel van gelijke beloning (artikel 5)",
+    "url": "https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX:32023L0970",
+    "publisher": "EUR-Lex (Europese Unie)"
+   },
+   {
+    "title": "Meer openheid over loonkloof tussen mannen en vrouwen",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/05/21/meer-openheid-over-loonkloof-tussen-mannen-en-vrouwen",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "diversiteit-in-junior-recruitment",
+  "title": "Diversiteit in junior recruitment: breder werven",
+  "description": "Hoe voorkom je dat je steeds dezelfde junior kandidaten aantrekt? Wat onderzoek zegt over netwerken en toegang tot kansen, en wat je kunt veranderen.",
+  "photo": "/photography/hg-07.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Birds of a Feather: Homophily in Social Networks (McPherson, Smith-Lovin & Cook), Annual Review of Sociology 27, 415-444",
+    "url": "https://doi.org/10.1146/annurev.soc.27.1.415",
+    "publisher": "Annual Review of Sociology"
+   },
+   {
+    "title": "Stijgende lijn stagevergoedingen voor studenten",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2025/03/12/stijgende-lijn-stagevergoedingen-voor-studenten",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Afgestudeerden in het hoger onderwijs (inleiding verwijst naar SER-advies 2021)",
+    "url": "https://www.cbs.nl/nl-nl/longread/rapportages/2024/afgestudeerden-in-het-hoger-onderwijs?onepage=true",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Community & jobboard",
+    "url": "https://voids.agency/companies/community-jobboard",
+    "publisher": "VOIDS"
+   }
+  ]
+ },
+ {
+  "slug": "wanneer-is-het-tijd-voor-een-tweede-werkstudent",
+  "title": "Wanneer is het tijd voor een tweede werkstudent?",
+  "description": "Signalen dat één werkstudent te veel draagt en hoe je uitbreidt naar twee zonder chaos: overdracht, takenverdeling en budget.",
+  "photo": "/photography/hg-03.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Werving & selectie (incl. cases)",
+    "url": "https://voids.agency/companies/recruitment-selection",
+    "publisher": "VOIDS"
+   }
+  ]
+ },
+ {
+  "slug": "trends-nederlandse-arbeidsmarkt-starters",
+  "title": "Trends arbeidsmarkt starters: wat zeggen de cijfers?",
+  "description": "Werkende jongeren, vacatures per werkloze, zoektijd van afgestudeerden en loontransparantie: wat CBS-cijfers en wetgeving zeggen over starters.",
+  "photo": "/photography/mariselle-1.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Werk: Jaarrapport Landelijke Jeugdmonitor 2025",
+    "url": "https://longreads.cbs.nl/jeugdmonitor-2025/werk/",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Werk: Jaarrapport Landelijke Jeugdmonitor 2020",
+    "url": "https://longreads.cbs.nl/jeugdmonitor-2020/werk/",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Scholieren voortgezet onderwijs werkten derde kwartaal 11 uur per week (met tabellen gebruikelijke arbeidsduur en top 3 beroepen)",
+    "url": "https://www.cbs.nl/nl-nl/nieuws/2023/49/scholieren-voortgezet-onderwijs-werkten-derde-kwartaal-11-uur-per-week",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Studie & Werk HO: de arbeidsmarktpositie van hbo- en wo-alumni (Bussink, Van der Ven & Klinker, in opdracht van EW Magazine)",
+    "url": "https://www.seo.nl/wp-content/uploads/2023/07/2023-74-Studie-Werk-HO.pdf",
+    "publisher": "SEO Economisch Onderzoek"
+   },
+   {
+    "title": "Werkloosheid gedaald in tweede kwartaal 2026",
+    "url": "https://www.cbs.nl/nl-nl/nieuws/2026/31/werkloosheid-gedaald-in-tweede-kwartaal-2026",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Richtlijn (EU) 2023/970 ter versterking van het beginsel van gelijke beloning (artikel 5)",
+    "url": "https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX:32023L0970",
+    "publisher": "EUR-Lex (Europese Unie)"
+   },
+   {
+    "title": "Meer openheid over loonkloof tussen mannen en vrouwen",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/05/21/meer-openheid-over-loonkloof-tussen-mannen-en-vrouwen",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "remote-hybride-werken-als-werkstudent",
+  "title": "Remote of hybride werken als werkstudent",
+  "description": "Wat is realistisch voor een werkstudent: remote, hybride of op kantoor? Wat onderzoek zegt over leren op afstand en wat jongeren belangrijk vinden (CBS).",
+  "photo": "/photography/hg-12.jpg",
+  "published": "2026-08-09",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "The Power of Proximity to Coworkers (Emanuel, Harrington & Pallais), NBER Working Paper 31880; gepubliceerd in The Quarterly Journal of Economics 141(3), 2026",
+    "url": "https://www.nber.org/papers/w31880",
+    "publisher": "NBER"
+   },
+   {
+    "title": "Werk: Jaarrapport Landelijke Jeugdmonitor 2025",
+    "url": "https://longreads.cbs.nl/jeugdmonitor-2025/werk/",
+    "publisher": "CBS"
+   }
+  ]
+ },
+ {
+  "slug": "waarom-werken-met-werkstudenten",
+  "title": "Waarom werken met werkstudenten? Voordelen en grenzen",
+  "description": "Wat levert een werkstudent een werkgever op, voor welk werk past het en waar niet? Een eerlijke afweging met bronnen en de belangrijkste contractregels.",
+  "photo": "/photography/mariselle-2.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Scholieren voortgezet onderwijs werkten derde kwartaal 11 uur per week (met tabellen gebruikelijke arbeidsduur en top 3 beroepen)",
+    "url": "https://www.cbs.nl/nl-nl/nieuws/2023/49/scholieren-voortgezet-onderwijs-werkten-derde-kwartaal-11-uur-per-week",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Heb ik recht op het minimumloon als ik stage loop?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/vraag-en-antwoord/minimumloon-stage",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Hoger onderwijs; ingeschrevenen, onderwijssoort, opleidingsfase en -vorm (tabel 85423NED)",
+    "url": "https://www.cbs.nl/nl-nl/cijfers/detail/85423NED",
+    "publisher": "CBS StatLine"
+   },
+   {
+    "title": "Studie & Werk HO: de arbeidsmarktpositie van hbo- en wo-alumni (Bussink, Van der Ven & Klinker, in opdracht van EW Magazine)",
+    "url": "https://www.seo.nl/wp-content/uploads/2023/07/2023-74-Studie-Werk-HO.pdf",
+    "publisher": "SEO Economisch Onderzoek"
+   },
+   {
+    "title": "Werkloosheid gedaald in tweede kwartaal 2026",
+    "url": "https://www.cbs.nl/nl-nl/nieuws/2026/31/werkloosheid-gedaald-in-tweede-kwartaal-2026",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Stappenplan personeel aannemen",
+    "url": "https://ondernemersplein.overheid.nl/personeel/aannemen/stappenplan-personeel-aannemen/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Wat staat er in een arbeidsovereenkomst?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/arbeidsovereenkomst-en-cao/vraag-en-antwoord/wat-staat-er-in-een-arbeidsovereenkomst",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668a (ketenregeling), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668a/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668 (aanzegplicht), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   }
+  ]
+ },
+ {
+  "slug": "werkstudent-aannemen-checklist-werkgever",
+  "title": "Werkstudent aannemen: checklist voor werkgevers",
+  "description": "Welke stappen moet een werkgever zetten voordat een werkstudent begint? Identiteitscheck, contract, loonheffingen, minimumloon en arbo in één checklist.",
+  "photo": "/photography/hg-05.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "ID-bewijs controleren en bewaren",
+    "url": "https://ondernemersplein.overheid.nl/wetten-en-regels/identiteitsbewijs-controleren-en-bewaren/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Stappenplan personeel aannemen",
+    "url": "https://ondernemersplein.overheid.nl/personeel/aannemen/stappenplan-personeel-aannemen/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Wat staat er in een arbeidsovereenkomst?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/arbeidsovereenkomst-en-cao/vraag-en-antwoord/wat-staat-er-in-een-arbeidsovereenkomst",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Werkvergunning werkstudent",
+    "url": "https://www.uwv.nl/nl/werkvergunning/werkstudent",
+    "publisher": "UWV"
+   },
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Ik werk in loondienst",
+    "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/jongeren/content/ik-werk-in-loondienst",
+    "publisher": "Belastingdienst"
+   },
+   {
+    "title": "Algemene voorwaarden",
+    "url": "https://voids.agency/terms",
+    "publisher": "VOIDS"
+   }
+  ]
+ },
+ {
+  "slug": "contract-werkstudent-verlengen-ketenregeling",
+  "title": "Tijdelijk contract verlengen: ketenregeling uitgelegd",
+  "description": "Hoe vaak mag je een tijdelijk contract verlengen? Ketenregeling, aanzegplicht en transitievergoeding voor werkgevers, met bronnen en wijzigingen in 2028.",
+  "photo": "/photography/mariselle-3.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668a (ketenregeling), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668a/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Wanneer gaat mijn tijdelijke contract over in een vast contract?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/arbeidsovereenkomst-en-cao/vraag-en-antwoord/wanneer-verandert-mijn-tijdelijke-arbeidscontract-in-een-vast-contract",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 668 (aanzegplicht), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel668/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Wat is een aanzegtermijn?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/arbeidsovereenkomst-en-cao/vraag-en-antwoord/wat-is-een-aanzegtermijn",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 673 (transitievergoeding), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel673/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Heb ik recht op een transitievergoeding als ik word ontslagen?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/ontslag/vraag-en-antwoord/heb-ik-recht-op-een-vergoeding-als-ik-word-ontslagen",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Meer zekerheid voor mensen met een flexcontract",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/07/08/meer-zekerheid-voor-mensen-met-een-flexcontract",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "minimumloon-werkstudent-2026",
+  "title": "Minimumloon werkstudent 2026: bedragen per 1 juli",
+  "description": "Wat is het minimumloon voor een werkstudent per 1 juli 2026? Bedragen per leeftijd, hoe je het per week berekent en wat er in 2027 verandert voor jongeren.",
+  "photo": "/photography/hg-10.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Stappenplan personeel aannemen",
+    "url": "https://ondernemersplein.overheid.nl/personeel/aannemen/stappenplan-personeel-aannemen/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Hoger minimumjeugdloon vanaf 2027",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/04/17/hoger-minimumjeugdloon-vanaf-2027",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Heb ik recht op het minimumloon als ik stage loop?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/vraag-en-antwoord/minimumloon-stage",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "stagevergoeding-wat-geldt-er-wettelijk",
+  "title": "Stagevergoeding verplicht? Regels en plannen 2026",
+  "description": "Is een stagevergoeding verplicht? Wat nu geldt, hoe vaak studenten een vergoeding krijgen en wat het kabinet wil veranderen. Stand oktober 2026.",
+  "photo": "/photography/mariselle-4.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Heb ik recht op het minimumloon als ik stage loop?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/vraag-en-antwoord/minimumloon-stage",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Checklist werken met een stagiair of stagiaire",
+    "url": "https://ondernemersplein.overheid.nl/personeel/aannemen/een-stagiair-aannemen/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Kabinet wil stagevergoeding verplichten",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/07/03/kabinet-wil-stagevergoeding-verplichten",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Stagevergoeding",
+    "url": "https://www.nlarbeidsinspectie.nl/onderwerpen/wet-minimumloon-en-minimumvakantiebijslag/stagevergoeding",
+    "publisher": "Nederlandse Arbeidsinspectie"
+   },
+   {
+    "title": "Stijgende lijn stagevergoedingen voor studenten",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2025/03/12/stijgende-lijn-stagevergoedingen-voor-studenten",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "sollicitatiegesprek-welke-vragen-mag-een-werkgever-stellen",
+  "title": "Sollicitatiegesprek: welke vragen zijn niet toegestaan?",
+  "description": "Welke vragen mag een werkgever niet stellen bij een sollicitatie? Gezondheid, kinderwens, BSN, kopie ID en vorig salaris volgens AP en Rijksoverheid.",
+  "photo": "/photography/hg-00.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Stappenplan personeel aannemen",
+    "url": "https://ondernemersplein.overheid.nl/personeel/aannemen/stappenplan-personeel-aannemen/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Job applications (quick answers for applicants)",
+    "url": "https://www.autoriteitpersoonsgegevens.nl/en/themes/employment-and-benefits/job-applications",
+    "publisher": "Autoriteit Persoonsgegevens"
+   },
+   {
+    "title": "Personal data of applicants",
+    "url": "https://www.autoriteitpersoonsgegevens.nl/en/themes/employment-and-benefits/job-applications/personal-data-of-applicants",
+    "publisher": "Autoriteit Persoonsgegevens"
+   },
+   {
+    "title": "Meer openheid over loonkloof tussen mannen en vrouwen",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/05/21/meer-openheid-over-loonkloof-tussen-mannen-en-vrouwen",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Personal data during screening",
+    "url": "https://www.autoriteitpersoonsgegevens.nl/en/themes/employment-and-benefits/screening/personal-data-during-screening",
+    "publisher": "Autoriteit Persoonsgegevens"
+   },
+   {
+    "title": "Screening",
+    "url": "https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/werk-uitkering/screening",
+    "publisher": "Autoriteit Persoonsgegevens"
+   },
+   {
+    "title": "Richtlijn (EU) 2023/970 ter versterking van het beginsel van gelijke beloning (artikel 5)",
+    "url": "https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX:32023L0970",
+    "publisher": "EUR-Lex (Europese Unie)"
+   }
+  ]
+ },
+ {
+  "slug": "salaris-in-vacature-loontransparantie-richtlijn",
+  "title": "Loontransparantie: salaris in je vacature vermelden?",
+  "description": "Wat vraagt de Europese loontransparantierichtlijn van werkgevers bij vacatures, wat is de stand in Nederland (oktober 2026) en wat kun je nu al doen?",
+  "photo": "/photography/mariselle-5.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Richtlijn (EU) 2023/970 ter versterking van het beginsel van gelijke beloning (artikel 5)",
+    "url": "https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX:32023L0970",
+    "publisher": "EUR-Lex (Europese Unie)"
+   },
+   {
+    "title": "Meer openheid over loonkloof tussen mannen en vrouwen",
+    "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/05/21/meer-openheid-over-loonkloof-tussen-mannen-en-vrouwen",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "waar-vind-je-een-werkstudent",
+  "title": "Werkstudent vinden: kanalen voor werkgevers vergeleken",
+  "description": "Waar vind je als werkgever een werkstudent? Opleidingen, vacatureplatforms, communities en bureaus vergeleken, met aandachtspunten voor je vacature.",
+  "photo": "/photography/hg-14.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Hoger onderwijs; ingeschrevenen, onderwijssoort, opleidingsfase en -vorm (tabel 85423NED)",
+    "url": "https://www.cbs.nl/nl-nl/cijfers/detail/85423NED",
+    "publisher": "CBS StatLine"
+   },
+   {
+    "title": "Checklist werken met een stagiair of stagiaire",
+    "url": "https://ondernemersplein.overheid.nl/personeel/aannemen/een-stagiair-aannemen/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Community & jobboard",
+    "url": "https://voids.agency/companies/community-jobboard",
+    "publisher": "VOIDS"
+   },
+   {
+    "title": "Werving & selectie (incl. cases)",
+    "url": "https://voids.agency/companies/recruitment-selection",
+    "publisher": "VOIDS"
+   },
+   {
+    "title": "Scholieren voortgezet onderwijs werkten derde kwartaal 11 uur per week (met tabellen gebruikelijke arbeidsduur en top 3 beroepen)",
+    "url": "https://www.cbs.nl/nl-nl/nieuws/2023/49/scholieren-voortgezet-onderwijs-werkten-derde-kwartaal-11-uur-per-week",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Werkvergunning werkstudent",
+    "url": "https://www.uwv.nl/nl/werkvergunning/werkstudent",
+    "publisher": "UWV"
+   }
+  ]
+ },
+ {
+  "slug": "werving-selectie-uitzendbureau-of-zelf-werven",
+  "title": "Werving en selectie of uitzendbureau: het verschil",
+  "description": "Wat is het verschil tussen arbeidsbemiddeling, uitzenden, detacheren en zelf werven? Wie is werkgever, welke regels gelden en wat past bij een werkstudent?",
+  "photo": "/photography/mariselle-6.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Inhuren en uitlenen van arbeidskrachten (Wet allocatie arbeidskrachten door intermediairs)",
+    "url": "https://www.nlarbeidsinspectie.nl/onderwerpen/wet-allocatie-arbeidskrachten-door-intermediairs/inhuren-en-uitlenen-van-arbeidskrachten",
+    "publisher": "Nederlandse Arbeidsinspectie"
+   },
+   {
+    "title": "U heeft personeelstekort of tijdelijk veel werk",
+    "url": "https://ondernemersplein.overheid.nl/personeel/inhuren/u-heeft-personeelstekort-of-te-veel-werk/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Gelijke behandeling (ter beschikking gestelde arbeidskrachten)",
+    "url": "https://www.nlarbeidsinspectie.nl/onderwerpen/gelijke-behandeling",
+    "publisher": "Nederlandse Arbeidsinspectie"
+   },
+   {
+    "title": "ID-bewijs controleren en bewaren",
+    "url": "https://ondernemersplein.overheid.nl/wetten-en-regels/identiteitsbewijs-controleren-en-bewaren/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Werving & selectie (incl. cases)",
+    "url": "https://voids.agency/companies/recruitment-selection",
+    "publisher": "VOIDS"
+   },
+   {
+    "title": "Algemene voorwaarden",
+    "url": "https://voids.agency/terms",
+    "publisher": "VOIDS"
+   }
+  ]
+ },
+ {
+  "slug": "aansprakelijkheid-werkstudent-fout-schade",
+  "title": "Schade door een fout op het werk: wie is aansprakelijk?",
+  "description": "Wie betaalt de schade als een werkstudent een fout maakt? Artikel 7:661 BW uitgelegd: opzet, bewuste roekeloosheid en wat het voor beide kanten betekent.",
+  "photo": "/photography/hg-11.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 661 (schade door de werknemer), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling7/Artikel661/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Gerechtshof 's-Hertogenbosch, 23 februari 2016, ECLI:NL:GHSHE:2016:636 (toepassing artikel 7:661 BW)",
+    "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI%3ANL%3AGHSHE%3A2016%3A636",
+    "publisher": "Rechtspraak.nl"
+   },
+   {
+    "title": "Checklist werken met een stagiair of stagiaire",
+    "url": "https://ondernemersplein.overheid.nl/personeel/aannemen/een-stagiair-aannemen/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   }
+  ]
+ },
+ {
+  "slug": "reiskostenvergoeding-werkstudent",
+  "title": "Reiskostenvergoeding werkstudent: moet dat? Regels 2026",
+  "description": "Moet een werkgever reiskosten vergoeden? Wat is verplicht, wat is in 2026 belastingvrij per kilometer en wat betekent je studentenreisproduct?",
+  "photo": "/photography/mariselle-8.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Reiskostenvergoeding betalen aan werknemers",
+    "url": "https://ondernemersplein.overheid.nl/reiskostenvergoeding-betalen-aan-werknemers/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Verhoging onbelaste kilometervergoeding: hoe verwerkt u dit in de loonaangifte?",
+    "url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/berichten/nieuws/verhoging-onbelaste-kilometervergoeding-hoe-verwerkt-u-dit-in-de-loonaangifte",
+    "publisher": "Belastingdienst"
+   },
+   {
+    "title": "Wat is het studentenreisproduct",
+    "url": "https://duo.nl/particulier/ov-en-reizen/",
+    "publisher": "DUO"
+   },
+   {
+    "title": "Bijverdienen",
+    "url": "https://duo.nl/particulier/studiefinanciering/bijverdienen.jsp",
+    "publisher": "DUO"
+   }
+  ]
+ },
+ {
+  "slug": "hoe-vind-je-een-werkstudentpositie",
+  "title": "Werkstudentpositie vinden: stappen, kanalen en tips",
+  "description": "Hoe vind je een werkstudentpositie die bij je studie past? Waar je zoekt, wat je vooraf vraagt over uren en salaris en hoe je nepvacatures herkent.",
+  "photo": "/photography/hg-13.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Scholieren voortgezet onderwijs werkten derde kwartaal 11 uur per week (met tabellen gebruikelijke arbeidsduur en top 3 beroepen)",
+    "url": "https://www.cbs.nl/nl-nl/nieuws/2023/49/scholieren-voortgezet-onderwijs-werkten-derde-kwartaal-11-uur-per-week",
+    "publisher": "CBS"
+   },
+   {
+    "title": "Studie & Werk HO: de arbeidsmarktpositie van hbo- en wo-alumni (Bussink, Van der Ven & Klinker, in opdracht van EW Magazine)",
+    "url": "https://www.seo.nl/wp-content/uploads/2023/07/2023-74-Studie-Werk-HO.pdf",
+    "publisher": "SEO Economisch Onderzoek"
+   },
+   {
+    "title": "Talent: community, jobboard en talentpool",
+    "url": "https://voids.agency/talent",
+    "publisher": "VOIDS"
+   },
+   {
+    "title": "Bedragen minimumloon 2026",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/minimumloon/bedragen-minimumloon/bedragen-minimumloon-2026",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Bijverdienen",
+    "url": "https://duo.nl/particulier/studiefinanciering/bijverdienen.jsp",
+    "publisher": "DUO"
+   },
+   {
+    "title": "Ik heb gereageerd op een vacature",
+    "url": "https://www.fraudehelpdesk.nl/fraude/ik-heb-gereageerd-op-een-vacature/",
+    "publisher": "Fraudehelpdesk"
+   },
+   {
+    "title": "Personal data of applicants",
+    "url": "https://www.autoriteitpersoonsgegevens.nl/en/themes/employment-and-benefits/job-applications/personal-data-of-applicants",
+    "publisher": "Autoriteit Persoonsgegevens"
+   }
+  ]
+ },
+ {
+  "slug": "internationale-student-werken-nederland",
+  "title": "Internationale student werken in Nederland: de regels",
+  "description": "Mag een internationale student werken in Nederland? EER-studenten zonder vergunning, studenten van buiten de EER met een TWV en urenlimiet. De regels.",
+  "photo": "/photography/mariselle-9.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Vergunningen buitenlandse werknemers",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/buitenlandse-werknemers/vergunningen-buitenlandse-werknemers",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Werkvergunning werkstudent",
+    "url": "https://www.uwv.nl/nl/werkvergunning/werkstudent",
+    "publisher": "UWV"
+   },
+   {
+    "title": "Voorwaarden tewerkstellingsvergunning",
+    "url": "https://www.uwv.nl/nl/werkvergunning/twv-voorwaarden",
+    "publisher": "UWV"
+   },
+   {
+    "title": "Residence permit for orientation year for highly educated persons",
+    "url": "https://ind.nl/en/residence-permits/work/residence-permit-for-orientation-year",
+    "publisher": "IND"
+   }
+  ]
+ },
+ {
+  "slug": "tentamenweek-vrij-van-werk-werkstudent",
+  "title": "Tentamenweek vrij van werk? Je opties als werkstudent",
+  "description": "Recht op vrij voor tentamens als werkstudent? Studieverlof, vakantiedagen, minder uren en afspraken in je contract: wat de Rijksoverheid zegt.",
+  "photo": "/photography/hg-02.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Hoe kan ik leren naast mijn werk?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/leven-lang-ontwikkelen/vraag-en-antwoord/hoe-kan-ik-leren-naast-mijn-werk",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Hoe kan ik mijn vakantiedagen opnemen?",
+    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/vakantiedagen-en-vakantiegeld/hoe-kan-ik-mijn-vakantiedagen-opnemen",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Wanneer mag ik meer of minder uren werken?",
+    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/arbeidsovereenkomst-en-cao/wanneer-mag-ik-meer-of-minder-uren-werken",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Ik heb een nulurencontract. Heb ik recht op vakantiedagen en vakantiegeld? (vakantie-uren: 4 keer de uren per week, vakantiegeld minimaal 8%)",
+    "url": "https://rijksoverheid.nl/onderwerpen/vakantiedagen-en-vakantiegeld/vraag-en-antwoord/nulurencontract-en-vakantiedagen-en-vakantiegeld",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "werkstudentcontract-opzeggen-tussentijds",
+  "title": "Tijdelijk contract opzeggen: mag dat en hoe?",
+  "description": "Mag je een werkstudentcontract tussentijds opzeggen? Tijdelijk of vast contract, proeftijd, opzegtermijn, WW en vakantie-uren volgens de Rijksoverheid.",
+  "photo": "/photography/mariselle-10.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 667, geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel667/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Ik wil ontslag nemen. Wat is mijn opzegtermijn?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/ontslag/vraag-en-antwoord/ontslag-nemen-opzegtermijn-werknemer",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Welke regels gelden er bij een proeftijd?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/arbeidsovereenkomst-en-cao/vraag-en-antwoord/regels-bij-proeftijd",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Wanneer eindigt mijn arbeidsovereenkomst?",
+    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/arbeidsovereenkomst-en-cao/wanneer-wordt-mijn-arbeidsovereenkomst-beeindigd",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 672 (opzegtermijnen), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling9/Artikel672/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Heb ik recht op een transitievergoeding als ik word ontslagen?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/ontslag/vraag-en-antwoord/heb-ik-recht-op-een-vergoeding-als-ik-word-ontslagen",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Hoe kan ik mijn vakantiedagen opnemen?",
+    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/vakantiedagen-en-vakantiegeld/hoe-kan-ik-mijn-vakantiedagen-opnemen",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ },
+ {
+  "slug": "twee-bijbanen-tegelijk-nevenwerkzaamheden",
+  "title": "Twee bijbanen tegelijk: wat mag en wat moet je regelen",
+  "description": "Mag je meerdere banen tegelijk hebben? Wat artikel 7:653a BW zegt, hoe de loonheffingskorting werkt en hoe je werkuren worden opgeteld.",
+  "photo": "/photography/hg-17.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Burgerlijk Wetboek Boek 7, artikel 653a (nevenwerkzaamheden), geldend per 1 juli 2026",
+    "url": "https://wetten.overheid.nl/BWBR0005290/2026-07-01/0/Boek7/Titeldeel10/Afdeling5/Artikel653a/afdrukken",
+    "publisher": "wetten.overheid.nl"
+   },
+   {
+    "title": "Ik werk in loondienst",
+    "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/jongeren/content/ik-werk-in-loondienst",
+    "publisher": "Belastingdienst"
+   },
+   {
+    "title": "Wat staat er in de Arbeidstijdenwet over mijn werktijden?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/werktijden/vraag-en-antwoord/wat-staat-er-in-de-arbeidstijdenwet-over-mijn-werktijden",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Wat zijn de wettelijke regels voor mijn werktijden en rusttijden?",
+    "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/werktijden/wettelijke-regels-werktijden-en-rusttijden",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Bijverdienen",
+    "url": "https://duo.nl/particulier/studiefinanciering/bijverdienen.jsp",
+    "publisher": "DUO"
+   }
+  ]
+ },
+ {
+  "slug": "nepvacature-herkennen-signalen",
+  "title": "Nepvacature herkennen: signalen en wat te doen",
+  "description": "Hoe herken je een nepvacature? De signalen volgens de Fraudehelpdesk, wat een echte werkgever wel en niet vraagt en wat je doet als je betaald hebt.",
+  "photo": "/photography/mariselle-11.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Ik heb gereageerd op een vacature",
+    "url": "https://www.fraudehelpdesk.nl/fraude/ik-heb-gereageerd-op-een-vacature/",
+    "publisher": "Fraudehelpdesk"
+   },
+   {
+    "title": "Gereageerd op vacature: waarom moet ik voorschot betalen? (waarschuwing werkaanbod via telefoon en WhatsApp)",
+    "url": "https://www.fraudehelpdesk.nl/fraude-abc/gereageerd-op-vacature-waarom-moet-voorschot-betalen/",
+    "publisher": "Fraudehelpdesk"
+   },
+   {
+    "title": "Personal data of applicants",
+    "url": "https://www.autoriteitpersoonsgegevens.nl/en/themes/employment-and-benefits/job-applications/personal-data-of-applicants",
+    "publisher": "Autoriteit Persoonsgegevens"
+   },
+   {
+    "title": "Wat staat er in een arbeidsovereenkomst?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/arbeidsovereenkomst-en-cao/vraag-en-antwoord/wat-staat-er-in-een-arbeidsovereenkomst",
+    "publisher": "Rijksoverheid"
+   },
+   {
+    "title": "Verklein je risico: check het uittreksel Handelsregister",
+    "url": "https://www.kvk.nl/over-het-handelsregister/check-via-uittreksel/",
+    "publisher": "KVK"
+   }
+  ]
+ },
+ {
+  "slug": "recruitmentbureau-talentpool-kosten-en-gegevens",
+  "title": "Talentpool of recruitmentbureau: kosten en privacy",
+  "description": "Wat kost solliciteren via een recruitmentbureau of talentpool, hoe lang bewaart een bureau je gegevens en welke rechten heb je? Regels en VOIDS-beleid.",
+  "photo": "/photography/hg-04.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Ik heb gereageerd op een vacature",
+    "url": "https://www.fraudehelpdesk.nl/fraude/ik-heb-gereageerd-op-een-vacature/",
+    "publisher": "Fraudehelpdesk"
+   },
+   {
+    "title": "Talent: community, jobboard en talentpool",
+    "url": "https://voids.agency/talent",
+    "publisher": "VOIDS"
+   },
+   {
+    "title": "Job applications (quick answers for applicants)",
+    "url": "https://www.autoriteitpersoonsgegevens.nl/en/themes/employment-and-benefits/job-applications",
+    "publisher": "Autoriteit Persoonsgegevens"
+   },
+   {
+    "title": "Privacybeleid",
+    "url": "https://voids.agency/privacy",
+    "publisher": "VOIDS"
+   },
+   {
+    "title": "Boete voor recruitmentbedrijf om negeren verwijderverzoeken",
+    "url": "https://www.autoriteitpersoonsgegevens.nl/nl/actueel/boete-voor-recruitmentbedrijf-om-negeren-verwijderverzoeken",
+    "publisher": "Autoriteit Persoonsgegevens"
+   }
+  ]
+ },
+ {
+  "slug": "loonheffingskorting-student-eerste-baan",
+  "title": "Eerste baan als student: loonheffingskorting regelen",
+  "description": "Wat regel je bij je eerste baan als student? Loonheffingsformulier, loonheffingskorting, studenten- en scholierenregeling, ID en belasting terugvragen.",
+  "photo": "/photography/hg-21.jpg",
+  "published": "2026-10-11",
+  "updated": "2026-10-11",
+  "sources": [
+   {
+    "title": "Ik werk in loondienst",
+    "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/jongeren/content/ik-werk-in-loondienst",
+    "publisher": "Belastingdienst"
+   },
+   {
+    "title": "ID-bewijs controleren en bewaren",
+    "url": "https://ondernemersplein.overheid.nl/wetten-en-regels/identiteitsbewijs-controleren-en-bewaren/",
+    "publisher": "Ondernemersplein (Rijksoverheid)"
+   },
+   {
+    "title": "Personal data of applicants",
+    "url": "https://www.autoriteitpersoonsgegevens.nl/en/themes/employment-and-benefits/job-applications/personal-data-of-applicants",
+    "publisher": "Autoriteit Persoonsgegevens"
+   },
+   {
+    "title": "Bijverdienen",
+    "url": "https://duo.nl/particulier/studiefinanciering/bijverdienen.jsp",
+    "publisher": "DUO"
+   },
+   {
+    "title": "Wat staat er in een arbeidsovereenkomst?",
+    "url": "https://www.rijksoverheid.nl/onderwerpen/arbeidsovereenkomst-en-cao/vraag-en-antwoord/wat-staat-er-in-een-arbeidsovereenkomst",
+    "publisher": "Rijksoverheid"
+   }
+  ]
+ }
+]

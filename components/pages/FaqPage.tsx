@@ -44,7 +44,7 @@ const QA: Record<Lang, { q: string; a: string; ul?: string[] }[]> = {
     },
     {
       q: "Hoe kan ik me aanmelden bij VOIDS?",
-      a: "Maak gratis je career pager aan, join onze WhatsApp-community, of mail ons op contact@voids.agency om kansen of samenwerking te bespreken. We reageren zo snel mogelijk.",
+      a: "Word gratis lid van de talentpool, join onze WhatsApp-community, of mail ons op contact@voids.agency om kansen of samenwerking te bespreken. We reageren zo snel mogelijk.",
     },
     {
       q: "Wat kost het om met VOIDS te werken?",
@@ -60,7 +60,7 @@ const QA: Record<Lang, { q: string; a: string; ul?: string[] }[]> = {
     },
     {
       q: "Is VOIDS gratis voor studenten en starters?",
-      a: "Ja, altijd. Een career pager aanmaken, lid worden van de talentpool en de WhatsApp-community kost je niets, wat er ook uit voortkomt.",
+      a: "Ja, altijd. Lid worden van de talentpool en de WhatsApp-community kost je niets, wat er ook uit voortkomt.",
     },
   ],
   en: [
@@ -83,7 +83,7 @@ const QA: Record<Lang, { q: string; a: string; ul?: string[] }[]> = {
     },
     {
       q: "How can I sign up with VOIDS?",
-      a: "Build your free career pager, join our WhatsApp community, or email us at contact@voids.agency to discuss opportunities or collaboration. We'll get back to you as soon as possible.",
+      a: "Join the talent pool for free, join our WhatsApp community, or email us at contact@voids.agency to discuss opportunities or collaboration. We'll get back to you as soon as possible.",
     },
     {
       q: "What does it cost to work with VOIDS?",
@@ -99,7 +99,7 @@ const QA: Record<Lang, { q: string; a: string; ul?: string[] }[]> = {
     },
     {
       q: "Is VOIDS free for students and starters?",
-      a: "Yes, always. Building a career pager, joining the talent pool and the WhatsApp community cost you nothing, whatever comes of it.",
+      a: "Yes, always. Joining the talent pool and the WhatsApp community cost you nothing, whatever comes of it.",
     },
   ],
 };

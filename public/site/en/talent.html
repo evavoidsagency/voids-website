@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!--seo-->
+<title>For talent | VOIDS</title>
+<meta name="description" content="Tell us once what drives you and join the talent pool for free. Matching working-student, internship and starter roles then come straight to your WhatsApp.">
+<link rel="canonical" href="https://voids.agency/en/talent">
+<link rel="alternate" hreflang="nl" href="https://voids.agency/talent">
+<link rel="alternate" hreflang="en" href="https://voids.agency/en/talent">
+<link rel="alternate" hreflang="x-default" href="https://voids.agency/talent">
+<meta property="og:title" content="For talent | VOIDS">
+<meta property="og:description" content="Tell us once what drives you and join the talent pool for free. Matching working-student, internship and starter roles then come straight to your WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://voids.agency/en/talent">
+<meta property="og:site_name" content="VOIDS">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://voids.agency/photography/home-hero-8.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="For talent | VOIDS">
+<meta name="twitter:description" content="Tell us once what drives you and join the talent pool for free. Matching working-student, internship and starter roles then come straight to your WhatsApp.">
+<meta name="twitter:image" content="https://voids.agency/photography/home-hero-8.jpg">
+<link rel="icon" href="/favicon.ico">
+<meta name="theme-color" content="#fffaec">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "VOIDS", "legalName": "VOIDS vof", "url": "https://voids.agency", "logo": "https://voids.agency/logo.svg", "description": "VOIDS is een junior talent agency in Amsterdam die hoogopgeleid junior talent verbindt aan ambitieuze bedrijven via werkstudentschappen, stages en starterrollen.", "founder": [{"@type": "Person", "name": "Eva van Raaij"}, {"@type": "Person", "name": "Wieke Sleutjes"}], "address": {"@type": "PostalAddress", "addressLocality": "Amsterdam", "addressCountry": "NL"}, "email": "contact@voids.agency", "sameAs": ["https://www.linkedin.com/company/voidsagency", "https://www.instagram.com/voids_agency/", "https://www.tiktok.com/@voidstalentagency"]}</script>
+<!--/seo-->
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site/kit.css?v=6cff9d56">
+<style>
+.t-hero-photo{aspect-ratio:5/4}
+.t-hero-photo img{object-position:50% 40%}
+.t-wrap-narrow{overflow-wrap:anywhere}
+
+/* PATTERN: big-type stats (count-up), tinted blocks, equal height, numbers and labels aligned */
+.t-stats{display:grid;grid-template-columns:.9fr 1fr 1fr 1fr;gap:18px;align-items:stretch}
+.t-stats .lbl{display:flex;align-items:center;padding:8px 20px 8px 0;font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(21.2px,2.3vw,34px);line-height:1.06;color:var(--purple);text-transform:uppercase}
+.t-sbox{display:flex;flex-direction:column;justify-content:space-between;gap:36px;padding:32px 30px;border-radius:22px;min-height:210px}
+.t-sbox.a{background:#fff}.t-sbox.b{background:var(--purple-100)}.t-sbox.c{background:var(--blue-100)}
+.t-sbox .n{font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(30px,3.7vw,60px);line-height:.95;color:var(--purple)}
+.t-sbox p{font-size:17px;font-weight:600;line-height:1.35;max-width:14em}
+
+/* PATTERN: key paragraph, scroll-scrubbed word reveal (the single deliberate reading block) */
+.t-reveal{font-size:clamp(17.3px,1.9vw,28.8px);line-height:1.3;font-weight:500;letter-spacing:-.012em;color:var(--ink);margin:0 0 64px;text-wrap:pretty}
+
+/* PATTERN: split selector (routes) */
+.t-sel{display:grid;grid-template-columns:minmax(300px,.78fr) 1.75fr;gap:22px;align-items:stretch}
+.t-sel-list{display:grid;gap:12px;grid-auto-rows:1fr}
+.t-sel-list button{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;text-align:left;padding:22px 24px;border:0;border-radius:18px;background:var(--beige);color:var(--ink);font:inherit;cursor:pointer;transition:background .25s,color .25s,transform .25s}
+.t-sel-list button:hover{transform:translateX(4px)}
+.t-sel-list button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.t-sel-list .num{font-family:Anton,sans-serif;font-size:28px;line-height:1;opacity:.45}
+.t-sel-list .tier{display:block;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px;opacity:.75}
+.t-sel-list .ttl{display:block;font-family:Inter,sans-serif;font-size:clamp(21px,2vw,28px);line-height:1.05;font-weight:600;letter-spacing:-.01em;text-transform:none}
+
+.t-sel-list .badge-w{transition:background .25s,color .25s}
+.t-sel-list button[aria-selected="true"]{background:var(--purple);color:#fff}
+.t-sel-list button[aria-selected="true"] .num{opacity:.7}
+.t-sel-list button[aria-selected="true"] .badge-w{background:#fff;color:var(--purple)}
+.t-stage{display:grid}
+.t-panel{grid-area:1/1;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);border-radius:26px;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .45s,transform .45s,visibility 0s .45s}
+.t-panel.on{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.t-panel.purple{background:var(--purple);color:#fff}.t-panel.sky{background:var(--blue-100)}.t-panel.sand{background:var(--beige-2)}
+.t-panel .ph{position:relative;min-height:380px;background:var(--purple-100)}
+.t-panel .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.t-panel .tx{display:flex;flex-direction:column;padding:44px 44px 40px}
+.t-panel .tier{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-bottom:12px}
+.t-panel .ttl{font-family:Anton,sans-serif;font-size:clamp(29.4px,3.2vw,50px);line-height:1;margin-bottom:20px}
+.t-panel .k-p{font-size:16.5px;line-height:1.6;max-width:34em;text-wrap:pretty}
+.t-panel.purple .k-p{color:rgba(255,255,255,.88)}
+.t-panel .k-tile-foot{padding-top:28px}
+.t-panel.purple .k-go:hover i b{color:var(--purple)}
+
+/* PATTERN: pinned scroll steps (benefits) */
+.ps{--n:3;position:relative;height:calc(var(--ph) + var(--n)*45vh)}
+.ps-pin{position:sticky;top:var(--pt);height:var(--ph);display:flex;flex-direction:column;justify-content:center;gap:5vh;padding:2vh 0}
+.ps-pin>.k-wrap{width:100%}
+.ps-stage{display:grid}
+.ps-step{grid-area:1/1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center;opacity:0;transform:translateY(44px);transition:opacity .55s cubic-bezier(.2,.8,.2,1),transform .55s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.ps-step.on{opacity:1;transform:none;pointer-events:auto}
+.ps-step.past{transform:translateY(-44px)}
+.ps-word{font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(24.7px,3.7vw,60px);line-height:.96;color:var(--purple);text-transform:uppercase;overflow-wrap:anywhere}
+.ps-body{display:grid;gap:16px;justify-items:start;align-content:center;padding:38px;border-radius:26px;background:#fff;min-height:320px}
+.ps-body .ic{width:52px;height:52px;border-radius:14px;background:var(--purple-100);color:var(--purple);display:grid;place-items:center}
+.ps-body .ic svg{width:26px;height:26px}
+.ps-body h3{font-size:clamp(14.4px,1.4vw,19.4px);font-weight:500;line-height:1.25;letter-spacing:-.01em}
+.ps-body p{font-size:16.5px;line-height:1.6;color:var(--soft);text-wrap:pretty}
+.ps-rail{display:flex;gap:10px;justify-content:flex-start}
+.ps-rail i{display:grid;place-items:center;min-width:56px;height:44px;padding:0 14px;border-radius:99px;background:rgba(255,255,255,.7);color:var(--purple);font:400 20px/1 Anton,sans-serif;font-style:normal;transition:background .3s,color .3s}
+.ps-rail i.on{background:var(--purple);color:#fff}
+
+/* benefits: three equal cards, no pinned screens */
+.ps{height:auto!important;padding:0 0 88px}
+.ps-pin{position:static;height:auto;display:block;padding:0}
+.ps-stage{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ps-step,.ps-step.past,.ps-step.on{grid-area:auto;display:flex;flex-direction:column;gap:0;opacity:1;transform:none;pointer-events:auto;background:#fff;border-radius:24px;padding:32px;transition:none}
+.ps-step .ps-body{order:2;padding:0;border-radius:0;background:none;min-height:0;gap:10px;margin-top:18px}
+.ps-step .ps-body .ic{position:absolute}
+.ps-step{position:relative}
+.ps-word{order:1;text-align:left;font-size:clamp(22px,2.2vw,30px);line-height:1.02;margin-top:68px}.ps-step{align-items:flex-start}.ps-step .ps-body{justify-items:start;text-align:left}
+.ps-body .ic{top:28px;left:32px;width:44px;height:44px}
+.ps-body h3{font-size:16px;font-weight:600;line-height:1.3}
+.ps-body p{font-size:15px;color:var(--soft)}
+
+.tb-card{padding:14px 14px 26px}
+.tb-ph{position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;margin-bottom:20px}
+.tb-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.tb-card:hover .tb-ph img{transform:scale(1.05)}
+.tb-b{position:absolute;left:12px;bottom:12px;background:#fff;color:var(--purple);box-shadow:0 10px 24px -12px rgba(24,6,80,.5)}
+.tb-card .bn-t,.tb-card p{padding:0 12px}
+.tz{display:grid;gap:clamp(36px,5vw,64px)}
+.tz-row{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center}
+.tz-row.rev .tz-ph{order:2}
+.tz-ph{aspect-ratio:3/2;border-radius:28px;overflow:hidden;position:relative;box-shadow:0 30px 50px -30px rgba(40,10,120,.5)}
+.tz-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.tz-row:hover .tz-ph img{transform:scale(1.04)}
+.tz-tx{display:grid;gap:14px;justify-items:start;max-width:30em}
+.tz-tx .k-badge{background:#fff;color:var(--purple);padding:7px 14px}
+.tz-tx h3{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(30px,3.4vw,50px);line-height:1;color:var(--purple);margin:0}
+.tz-tx p{margin:0;font-size:clamp(16px,1.2vw,18px);line-height:1.65;color:var(--ink);opacity:.82}
+@media(max-width:860px){.tz-row{grid-template-columns:minmax(0,1fr)}.tz-row.rev .tz-ph{order:0}}
+.tq5{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch}.tq5 .k-rev{grid-template-columns:minmax(0,1fr);align-content:start;gap:26px}.tq5 .k-rev .rv-ph{width:clamp(110px,10vw,140px)}.tq5 .k-rev blockquote{font-size:clamp(17px,1.5vw,21px);max-width:none}@media(max-width:860px){.tq5{grid-template-columns:1fr}}
+.tq4-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,3vw,44px);align-items:start;padding-top:46px}
+.tq4-c{position:relative;margin:0;padding:68px clamp(26px,3vw,40px) 34px;border-radius:30px;background:var(--purple-100);display:grid;gap:22px;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
+.tq4-c.b{background:var(--blue-100,#e4ecff);margin-top:72px}
+.tq4-c:hover{transform:translateY(-6px);box-shadow:0 30px 44px -30px rgba(40,10,120,.5)}
+.tq4-ph{position:absolute;top:-46px;left:clamp(26px,3vw,40px);width:100px;height:100px;border-radius:26px;overflow:hidden;border:5px solid #fff;background:#ddd;box-shadow:0 16px 28px -16px rgba(30,10,90,.5)}
+.tq4-ph img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.04);transition:filter .5s}
+.tq4-c:hover .tq4-ph img{filter:none}
+.tq4-c blockquote{margin:0;font-size:clamp(18px,1.55vw,22px);line-height:1.42;font-weight:500;letter-spacing:-.014em;color:var(--ink);text-wrap:pretty}
+.tq4-c mark{background:none;color:var(--purple)}
+.tq4-c.b mark{color:#2653c9}
+.tq4-c figcaption{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:14.5px}
+.tq4-c figcaption b{font-size:15.5px;color:var(--ink)}
+.tq4-c figcaption .k-badge{background:#fff;color:var(--purple)}
+@media(max-width:860px){.tq4-grid{grid-template-columns:1fr;padding-top:50px;gap:64px}.tq4-c.b{margin-top:0}}
+.tq3-list{gap:clamp(40px,5vw,72px)}
+.tq3-q{display:grid;grid-template-columns:clamp(110px,11vw,160px) minmax(0,1fr);gap:clamp(20px,2.6vw,36px);align-items:start}
+.tq3-q.rev{margin-left:clamp(0px,5vw,72px)}
+.tq3-ph{aspect-ratio:1;border-radius:24px;overflow:hidden;background:#e8e8ea;box-shadow:0 26px 40px -28px rgba(30,10,90,.45);transform:translateY(0);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.tq3-q:hover .tq3-ph{transform:translateY(-6px) rotate(0)}
+.tq3-ph img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.04);transition:filter .5s}
+.tq3-q:hover .tq3-ph img{filter:none}
+.tq3-body{display:grid;gap:20px}
+.tq3-q blockquote{margin:0;font-size:clamp(19px,1.9vw,27px);line-height:1.34;font-weight:500;letter-spacing:-.016em;color:var(--ink);text-wrap:pretty}
+.tq3-q mark{background:none;color:var(--purple)}
+.tq3-q figcaption{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:14.5px}
+.tq3-q figcaption b{font-size:15.5px;color:var(--ink)}
+@media(max-width:700px){.tq3-q,.tq3-q.rev{grid-template-columns:84px minmax(0,1fr);margin-left:0}}
+.tq3{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:start}
+.tq3-head{position:sticky;top:110px}
+.tq3-list{display:grid;gap:clamp(56px,7vw,96px)}
+.tq3-q{margin:0;display:grid;gap:26px}
+.tq3-q blockquote{margin:0;font-size:clamp(20px,2vw,28px);line-height:1.38;font-weight:500;letter-spacing:-.014em;color:var(--ink);text-wrap:pretty}
+.tq3-q figcaption{display:flex;align-items:center;gap:14px;font-size:14.5px;color:var(--soft);line-height:1.4}
+.tq3-q figcaption b{display:block;font-size:15.5px;color:var(--ink);font-weight:600}
+.tq3-q figcaption img{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:50% 30%;flex:none;filter:grayscale(1)}
+@media(max-width:860px){.tq3{grid-template-columns:minmax(0,1fr)}.tq3-head{position:static}}
+.tq2{display:grid;gap:clamp(48px,6vw,88px)}
+.tq2-row{margin:0;display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center}
+.tq2-row.rev{grid-template-columns:minmax(0,1fr) minmax(0,340px);padding-left:clamp(0px,8vw,120px)}
+.tq2-row.rev .tq2-ph{order:2}
+.tq2-ph{aspect-ratio:1;border-radius:30px;overflow:hidden;box-shadow:0 40px 60px -34px rgba(8,0,50,.7);transform:translateY(var(--py,0px));will-change:transform}
+.tq2-ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.tq2-row:hover .tq2-ph img{transform:scale(1.05)}
+.tq2-tx{display:grid;gap:26px;max-width:34em}
+.tq2-tx blockquote{margin:0;color:#fff}
+.tq2-tx .ctx{display:block;font-size:clamp(15px,1.1vw,17px);line-height:1.6;color:rgba(255,255,255,.72);margin-bottom:14px}
+.tq2-tx strong{display:block;font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(28px,3.4vw,50px);line-height:1.02;letter-spacing:.005em;text-wrap:balance}
+.tq2-tx figcaption{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.tq2-tx figcaption b{font-size:16px;color:#fff}
+.tq2-tx figcaption .k-badge{background:rgba(255,255,255,.14);color:#fff}
+@media(max-width:860px){.tq2-row,.tq2-row.rev{grid-template-columns:minmax(0,1fr);padding-left:0}.tq2-row.rev .tq2-ph{order:0}.tq2-ph{max-width:280px}}
+.tq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,56px);align-items:stretch}
+.tq-card{margin:0;display:flex;flex-direction:column;gap:22px}
+.tq-ph{aspect-ratio:16/10;border-radius:24px;overflow:hidden;background:var(--purple-700,#27097a)}
+.tq-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.tq-card blockquote{margin:0;flex:1;font-size:clamp(17px,1.5vw,21px);line-height:1.5;font-weight:500;letter-spacing:-.01em;color:#fff;text-wrap:pretty}
+.tq-card figcaption b{display:block;font-size:16px;color:#fff}
+.tq-card figcaption span{display:block;margin-top:3px;font-size:14px;color:rgba(255,255,255,.72)}
+@media(max-width:860px){.tq-grid{grid-template-columns:1fr}}
+.tq-row{margin:0;display:grid;grid-template-columns:150px minmax(0,1fr) 200px;gap:clamp(24px,4vw,56px);align-items:center;padding:28px 0}
+.tq-row+.tq-row{margin-top:8px}
+.tq-row.rev{grid-template-columns:200px minmax(0,1fr) 150px}
+.tq-row.rev img{order:3}.tq-row.rev blockquote{order:2}.tq-row.rev figcaption{order:1;text-align:left}
+.tq-row img{width:150px;height:190px;border-radius:24px;object-fit:cover;display:block}
+.tq-row blockquote{margin:0;font-size:clamp(19px,2vw,28px);line-height:1.35;font-weight:500;letter-spacing:-.012em;color:#fff;text-wrap:balance}
+.tq-row figcaption b{display:block;font-size:16px;color:#fff}
+.tq-row figcaption span{display:block;margin-top:4px;font-size:14px;color:rgba(255,255,255,.7)}
+@media(max-width:860px){.tq-row,.tq-row.rev{grid-template-columns:90px minmax(0,1fr);gap:18px}.tq-row img,.tq-row.rev img{order:0;width:90px;height:110px;border-radius:16px}.tq-row blockquote,.tq-row.rev blockquote{order:1;grid-column:1/-1}.tq-row figcaption,.tq-row.rev figcaption{order:0}}
+/* benefit cards with live mini-visuals */
+.ps-step{padding:20px!important}
+.ps-step .vis{order:0;position:relative;width:100%;height:190px;border-radius:16px;background:var(--purple-100);overflow:hidden;margin-bottom:22px}
+.ps-word{margin-top:0!important}
+.v-jobs{display:grid;align-content:center;gap:8px;padding:18px}
+.vj{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-radius:10px;background:#fff;font-size:13px;font-weight:600;color:var(--soft);opacity:.6;transition:none}
+.vj i{font-style:normal}.vj b{font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--purple-100);color:var(--purple)}
+.vj.hot{opacity:1;color:var(--ink);animation:vj 4.8s ease-in-out infinite}
+.vj.hot b{background:var(--purple);color:#fff}
+.vj.hot+.vj.hot{animation-delay:.6s}
+@keyframes vj{0%,100%{transform:translateX(0);box-shadow:0 0 0 0 rgba(58,12,163,0)}35%,60%{transform:translateX(8px);box-shadow:0 10px 24px -10px rgba(58,12,163,.45)}}
+.v-pager{display:flex;align-items:center;gap:18px;padding:0 22px}
+.vp-av{flex:none;width:72px;height:72px;border-radius:50%;background:radial-gradient(circle at 30% 28%,#b8a2f5,var(--purple) 70%);animation:vpav 5s ease-in-out infinite}
+@keyframes vpav{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.vp-c{display:grid;gap:8px}
+.vp-c span{display:inline-flex;align-items:center;gap:8px;width:max-content;padding:7px 14px;border-radius:99px;background:#fff;color:var(--purple);font-size:13px;font-weight:600;opacity:0;animation:vpc 6s ease-in-out infinite}
+.vp-c span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--purple)}
+.vp-c span:nth-child(2){animation-delay:.9s}.vp-c span:nth-child(3){animation-delay:1.8s}
+@keyframes vpc{0%{opacity:0;transform:translateX(-10px)}12%,78%{opacity:1;transform:none}92%,100%{opacity:0;transform:translateX(6px)}}
+.v-net{display:flex;align-items:center;justify-content:space-between;padding:0 26px}
+.vn{position:relative;z-index:1;padding:10px 18px;border-radius:99px;font-size:13px;font-weight:600}
+.vn.a{background:var(--purple);color:#fff}.vn.b{background:#fff;color:var(--purple)}
+.vn-dot{position:absolute;left:84px;top:calc(50% - 5px);width:10px;height:10px;border-radius:50%;background:var(--purple);animation:vnd 3.4s ease-in-out infinite}
+@keyframes vnd{0%{transform:translateX(0);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateX(clamp(60px,10vw,150px));opacity:0}}
+.vn-t{position:absolute;left:26px;bottom:18px;font-size:12.5px;font-weight:600;color:var(--purple);opacity:.85}
+@media(prefers-reduced-motion:reduce){.vj.hot,.vp-av,.vp-c span,.vn-dot{animation:none}.vp-c span{opacity:1}}
+.ps-rail{display:none}.ps-word{font-family:Inter,sans-serif;font-weight:600;letter-spacing:-.01em;text-transform:none;font-size:clamp(19px,1.7vw,23px);line-height:1.2;margin-top:64px}.ps-body h3{font-weight:500;color:var(--soft)}
+@media(max-width:960px){.ps-stage{grid-template-columns:1fr}.ps-word{margin-top:64px}}
+.t-join{display:grid;grid-template-columns:auto 1fr auto;gap:44px;align-items:center;padding:36px 44px;border-radius:26px;background:#fff}
+.t-join .big{font-family:Anton,sans-serif;font-size:clamp(34.1px,3.7vw,56px);line-height:1;color:var(--purple)}
+.t-join .big-l{font-size:14.5px;font-weight:600;color:var(--muted);margin-top:6px}
+.t-join .cap{font-family:Inter,sans-serif;font-weight:600;font-size:clamp(17px,1.5vw,21px);line-height:1.3;color:var(--ink);text-transform:none}
+
+.t-band{position:relative;width:100%;aspect-ratio:3/1;max-height:460px;overflow:hidden;background:var(--purple-100)}
+.t-band img{width:100%;height:100%;object-fit:cover;object-position:center 26%}
+
+/* PATTERN: big pull-quote, one at a time (segmented control) */
+.t-qtabs.k-tabs{margin-bottom:22px}
+.t-qtabs.k-tabs button{display:flex;align-items:center;gap:12px;padding:8px 22px 8px 8px}
+.t-qtabs img{width:38px;height:38px;border-radius:50%;object-fit:cover;flex:none}
+.t-stack{display:grid}
+
+.t-stack>.k-panel,.t-stack>.k-panel.on{display:block;grid-area:1/1}
+.t-stack>.k-panel{opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .45s,transform .45s,visibility 0s .45s}
+.t-stack>.k-panel.on{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.t-qcard{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);border-radius:30px;overflow:hidden;background:var(--purple);color:#fff;min-height:400px}
+.t-qcard .ph{position:relative;min-height:320px;background:var(--purple-700)}
+.t-qcard .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.t-qcard .tx{display:flex;flex-direction:column;justify-content:space-between;gap:36px;padding:56px 56px 48px}
+.t-qcard blockquote{font-size:clamp(16px,1.35vw,20px);line-height:1.6;font-weight:400;letter-spacing:0;text-wrap:pretty}
+.t-qcard .who b{display:block;font-family:Inter,sans-serif;font-weight:600;font-size:17px;letter-spacing:0;text-transform:none}
+.t-qcard .who span{display:block;margin-top:4px;font-size:15px;color:var(--blue-200)}
+
+/* testimonials: both visible as two compact cards (no tabs, no empty fields) */
+.t-qtabs{display:none}
+.t-stack{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:stretch}
+.t-stack>.k-panel,.t-stack>.k-panel.on{display:block;grid-area:auto;opacity:1!important;visibility:visible!important;transform:none!important;transition:none}
+.t-qcard{grid-template-columns:1fr;min-height:0;height:100%;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:22px}
+.t-qcard .ph{flex:none;position:relative;width:84px;height:84px;min-height:0;border-radius:18px;overflow:hidden}
+.t-qcard .tx{padding:0;flex:1;gap:26px;justify-content:space-between}
+.t-qcard blockquote{font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.6}
+.t-stack>.k-panel[data-panel=q2] .t-qcard{background:var(--purple-100);color:var(--ink)}
+.t-stack>.k-panel[data-panel=q2] .t-qcard .who span{color:var(--purple)}
+@media(max-width:860px){.t-stack{grid-template-columns:1fr}}
+
+.k-split.top>.k-head{position:sticky;top:calc(var(--hh,72px) + 28px);align-self:start}
+
+/* hero collage with floating chips */
+@media(min-width:961px){.k-hero .k-wrap{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;gap:44px!important}}
+.t-collage{position:relative;display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:clamp(380px,37vw,520px)}
+.t-collage figure{margin:0;border-radius:20px;overflow:hidden;position:relative;background:var(--purple-100)}
+.t-collage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.t-collage figure:hover img{transform:scale(1.05)}
+.tc1{grid-row:1/3}
+.tc-chip{position:absolute;display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:99px;font-size:13px;font-weight:600;box-shadow:0 14px 30px -14px rgba(24,6,80,.5);animation:tcf 5s ease-in-out infinite}
+.tc-chip i{width:8px;height:8px;border-radius:50%;background:#fff}
+.tc-chip.a{left:-14px;top:auto;bottom:16%;background:var(--purple);color:#fff}
+.tc-chip.b{right:14px;bottom:-12px;background:#fff;color:var(--purple);animation-delay:1.4s}
+@keyframes tcf{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@media(prefers-reduced-motion:reduce){.tc-chip{animation:none}}
+@media(max-width:960px){.t-collage{height:320px}.tc-chip.a{left:6px}}
+/* dark statement */
+.t-dark{padding:0}
+.t-dark-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,96px);align-items:center;padding-top:72px;padding-bottom:72px}
+.t-dark-ph{position:relative;height:clamp(360px,36vw,500px);border-radius:22px;overflow:hidden}.t-dark-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.t-dark .k-h2{color:#fff;margin:12px 0 18px;max-width:14em}
+.t-dark .k-lead{color:rgba(255,255,255,.72);margin-bottom:28px}
+@media(max-width:860px){.t-dark-in{grid-template-columns:1fr;padding-top:48px;padding-bottom:48px}.t-dark-ph{height:320px}}
+/* testimonials: photo on top */
+.t-qcard .ph{width:100%!important;height:200px!important;border-radius:16px!important}
+.t-qcard .ph img{object-position:50% 22%}
+/* referral */
+.t-ref{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:stretch;padding:56px;border-radius:24px;background:var(--purple);color:#fff}
+.t-ref>div:first-child{display:flex;flex-direction:column;align-items:flex-start}.t-ref>div:first-child .k-btn{margin-top:auto}.t-ref .k-eyebrow{color:var(--purple-200)}
+.t-ref .k-p{color:rgba(255,255,255,.88)}
+.t-ref .step{display:flex;gap:22px;align-items:center;padding:22px 26px;border-radius:16px;background:rgba(255,255,255,.1);font-size:16.5px;line-height:1.5}
+.t-ref .step b{font-family:Anton,sans-serif;font-weight:400;font-size:40px;line-height:1;color:var(--blue-200);flex:none;width:36px;text-align:center}
+.t-ref .steps{display:grid;gap:14px;grid-auto-rows:1fr}
+
+@media(max-width:1100px){
+  .t-stats{grid-template-columns:1fr 1fr 1fr}.t-stats .lbl{grid-column:1/-1;padding:0 0 4px}
+  .t-sbox{min-height:190px}
+}
+@media(max-width:960px){
+  .t-ref{grid-template-columns:1fr;padding:32px 24px;gap:32px}
+  .t-band{aspect-ratio:4/3}
+  .t-sel{grid-template-columns:1fr}
+  .t-sel-list{grid-auto-rows:auto}
+  .t-join{grid-template-columns:1fr;gap:22px;padding:28px 24px}
+  .t-join .k-btn{width:100%;justify-content:center}
+}
+@media(max-width:760px){
+  .t-stats{grid-template-columns:1fr}
+  .t-sbox{min-height:0;gap:22px}
+  .t-panel{grid-template-columns:1fr}
+  .t-panel .ph{min-height:0;aspect-ratio:4/3}
+  .t-panel .tx{padding:28px 24px}
+  .t-qcard{grid-template-columns:1fr;min-height:0}
+  .t-qcard .ph{min-height:0;aspect-ratio:4/3}
+  .t-qcard .tx{padding:30px 24px;gap:24px}
+  .t-sel-list button{padding:18px 18px;gap:12px}
+  .t-sel-list .badge-w{display:none}
+}
+/* static stacked fallback: narrow screens and reduced motion */
+@media(max-width:859px),(prefers-reduced-motion:reduce){
+  .ps{height:auto}
+  .ps-pin{position:static;height:auto;padding:0}
+  .ps-rail{display:none}
+  .ps-stage{gap:16px}
+  .ps-step,.ps-step.on,.ps-step.past{grid-area:auto;opacity:1;transform:none;pointer-events:auto;padding:30px;border-radius:26px;background:rgba(255,255,255,.55);transition:none}
+  .ps-body{min-height:0}
+  .t-panel,.t-stack>.k-panel{transition:none}
+}
+@media(max-width:859px){
+  .ps-step,.ps-step.on,.ps-step.past{grid-template-columns:1fr;gap:18px;padding:22px}
+  .ps-word{font-size:clamp(27.8px,8.3vw,50px)}
+  .ps-body{padding:24px}
+}
+
+/* whatsapp channels (talent) */
+.wc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.wc-t{position:relative;display:flex;flex-direction:column;gap:4px;min-height:176px;padding:22px 22px 20px;border-radius:22px;background:#fff;color:var(--ink);text-decoration:none;overflow:hidden;transition:background .3s,transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.wc-t:hover,.wc-t:focus-visible{background:#e3f8ec;transform:translateY(-5px);box-shadow:0 24px 36px -28px rgba(20,60,120,.55)}
+.wc-t:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wc-i{display:block;width:34px;height:34px;margin-bottom:auto}.wc-i svg{width:100%;height:100%;display:block}
+.wc-ar{position:absolute;right:18px;top:18px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--blue-100);color:var(--purple);transition:background .3s,color .3s,transform .4s cubic-bezier(.2,.8,.2,1)}
+.wc-ar svg{width:16px;height:16px}
+.wc-t:hover .wc-ar,.wc-t:focus-visible .wc-ar{background:#25d366;color:#fff;transform:rotate(45deg)}
+.wc-t b{margin-top:22px;font:600 19px/1.2 Inter,sans-serif;letter-spacing:-.01em}
+.wc-s{font-size:14px;line-height:1.4;color:var(--soft)}
+.wc-foot{display:flex;flex-wrap:wrap;align-items:center;gap:18px 32px;margin-top:40px}
+.wc-more{color:var(--purple);font-weight:600;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1.5px}
+.wc-more:hover{color:var(--purple-700)}
+@media(max-width:960px){.wc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.wc-t{min-height:150px;padding:18px}.wc-t b{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.wc-t,.wc-ar{transition:none}}
+</style>
+</head>
+<body data-nav="talent">
+<div id="k-header"></div>
+
+<!-- HERO -->
+<section class="k-hero k-beige">
+  <div class="k-wrap">
+    <div>
+      <span class="k-eyebrow">For talent</span>
+      <h1 class="k-h1">JOBS COME TO YOU.</h1>
+      <p class="k-lead">Answer a few questions about yourself and become part of our talent pool: personal matches, off-market opportunities and exclusive events. Free, no strings.</p>
+      <div class="k-cta-row">
+        <a class="k-btn" href="/en/pager">Join the talent pool</a>
+        <a class="k-btn ghost" href="https://linktr.ee/voidscommunity" target="_blank" rel="noopener">Join WhatsApp</a>
+      </div>
+    </div>
+    <div class="t-collage" data-reveal>
+      <figure class="tc1"><img src="/photography/hg-20-c.jpg" alt="Colleague working focused at a laptop" style="object-position:50% 30%"></figure>
+      <figure class="tc2"><img src="/photography/hg-17.jpg" alt="Colleague laughing behind his laptop" style="object-position:72% 40%"></figure>
+      <figure class="tc3"><img src="/photography/hg-13.jpg" alt="Two colleagues laughing while talking at a laptop" style="object-position:62% 35%"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER (pattern: marquee of short claims) -->
+<section class="k-usp" aria-label="Benefits of the talent pool"><div class="k-wrap"><ul><li><span class="u-i"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="3.5"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg></span><span class="u-t">Personal matches</span></li><li><span class="u-i"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"></path></svg></span><span class="u-t">Off-market opportunities</span></li><li><span class="u-i"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M8 3v4M16 3v4M3 11h18"></path></svg></span><span class="u-t">Exclusive events</span></li><li><span class="u-i"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="m8 12.5 2.8 2.8L16.5 9.5"></path></svg></span><span class="u-t">Free and low-threshold</span></li></ul></div></section>
+
+<!-- STATS (pattern: big-type numbers with count-up) -->
+<section class="k-sec tight k-beige">
+  <div class="k-wrap">
+    <div class="t-stats">
+      <p class="lbl" data-reveal>What you're joining</p>
+      <div class="t-sbox a k-stat" data-reveal data-delay="60"><div class="n" data-count="4000" data-suffix="+">4,000+</div><p>students in the community</p></div>
+      <div class="t-sbox b k-stat" data-reveal data-delay="140"><div class="n" data-count="100" data-suffix="%">100%</div><p>transparent terms</p></div>
+      <div class="t-sbox c k-stat" data-reveal data-delay="220"><div class="n" data-count="10" data-suffix="%">10%</div><p>of our profit to equal opportunities, from mid-2027</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTES (patterns: scroll-scrubbed word reveal, then split selector) -->
+<section class="k-sec k-white">
+  <div class="k-wrap">
+    <div class="k-head" data-reveal>
+      <span class="k-eyebrow">Your route</span>
+      <h2 class="k-h2">THREE PATHS TO YOUR NEXT ROLE.</h2>
+      <p class="k-lead">Job board, WhatsApp community or talent pool: the more actively you take part, the more we can do for you.</p>
+    </div>
+
+    <div class="t-sel" data-sel data-reveal>
+      <div class="t-sel-list" role="tablist" aria-label="Your route" aria-orientation="vertical">
+        <button type="button" role="tab" id="rt1" aria-controls="rp1" aria-selected="true"><span class="num">01</span><span><span class="tier">Active in the talent pool</span><span class="ttl">Talent pool</span></span><span class="badge-w">Recommended</span></button>
+        <button type="button" role="tab" id="rt2" aria-controls="rp2" aria-selected="false" tabindex="-1"><span class="num">02</span><span><span class="tier">Community</span><span class="ttl">WhatsApp community</span></span><span></span></button>
+        <button type="button" role="tab" id="rt3" aria-controls="rp3" aria-selected="false" tabindex="-1"><span class="num">03</span><span><span class="tier">Per vacancy</span><span class="ttl">Job board</span></span><span></span></button>
+      </div>
+      <div class="t-stage">
+        <div class="t-panel purple on" role="tabpanel" id="rp1" aria-labelledby="rt1">
+          <div class="ph"><img src="/photography/sheet-d.jpg" alt="Colleagues talking at a table"></div>
+          <div class="tx">
+            <span class="tier">Active in the talent pool</span>
+            <div class="ttl">Talent pool</div>
+            <p class="k-p">Tell us more about yourself and sign up to our talent pool, and our team gets to work for you: we proactively put you forward for off-market opportunities, advocate for you with employers early on thanks to our close working relationship, and give you a spot in our exclusive network with events.</p>
+            <div class="k-tile-foot"><a class="k-go" href="/en/pager">Join the talent pool <i><b>&rarr;</b></i></a></div>
+          </div>
+        </div>
+        <div class="t-panel sky" role="tabpanel" id="rp2" aria-labelledby="rt2">
+          <div class="ph"><img src="/photography/sheet-c.jpg" alt="Colleagues looking along on the laptop"></div>
+          <div class="tx">
+            <span class="tier">Community</span>
+            <div class="ttl">WhatsApp community</div>
+            <p class="k-p">Join the community and get matching vacancies sent straight to your WhatsApp every week.</p>
+            <div class="k-tile-foot"><a class="k-go" href="https://linktr.ee/voidscommunity" target="_blank" rel="noopener">Join <i><b>&rarr;</b></i></a></div>
+          </div>
+        </div>
+        <div class="t-panel sand" role="tabpanel" id="rp3" aria-labelledby="rt3">
+          <div class="ph"><img src="/photography/sheet-a-c.jpg" alt="A colleague laughing during a meeting" style="object-position:50% 20%"></div>
+          <div class="tx">
+            <span class="tier">Per vacancy</span>
+            <div class="ttl">Job board</div>
+            <p class="k-p">Browse open roles and apply directly to any vacancy.</p>
+            <div class="k-tile-foot"><a class="k-go" href="/en/jobboard">View jobs <i><b>&rarr;</b></i></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIT -->
+<section class="k-lav">
+  <div class="k-wrap" style="padding-top:80px;padding-bottom:88px">
+    <div class="k-head" data-reveal style="margin-bottom:52px">
+      <span class="k-eyebrow">Talent pool</span>
+      <h2 class="k-h2">WHAT YOU GET AS A<br>TALENT POOL MEMBER.</h2>
+    </div>
+    <div class="tz">
+      <article class="tz-row" data-reveal>
+        <div class="tz-ph"><img src="/photography/hg-03.jpg" alt="Two colleagues looking at a vacancy together on a laptop" style="object-position:50% 40%" loading="lazy"></div>
+        <div class="tz-tx"><span class="k-badge">Off-market</span><h3>Off-market opportunities</h3><p>Roles we get involved in early thanks to our close collaboration with employers. We introduce them to you proactively.</p></div>
+      </article>
+      <article class="tz-row rev" data-reveal>
+        <div class="tz-ph"><img src="/photography/hg-21.jpg" alt="Colleague working calmly at her laptop" style="object-position:55% 40%" loading="lazy"></div>
+        <div class="tz-tx"><span class="k-badge">Personal</span><h3>Matching on who you are</h3><p>You tell us what drives you, how you like to work and what you would like to do. That way we look at more than your CV and can match you more precisely.</p></div>
+      </article>
+      <article class="tz-row" data-reveal>
+        <div class="tz-ph"><img src="/photography/hg-07.jpg" alt="Three young professionals laughing together on a bench" style="object-position:50% 25%" loading="lazy"></div>
+        <div class="tz-tx"><span class="k-badge">Network</span><h3>Events &amp; exclusive network</h3><p>Invitations to events, personal introductions to employers and a team that keeps thinking along about new opportunities.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="k-sec k-white tq4-sec" style="padding:88px 0">
+  <div class="k-wrap">
+    <div class="k-head" data-reveal style="margin-bottom:44px">
+      <span class="k-eyebrow">Experiences</span>
+      <h2 class="k-h2">WHAT TALENT SAYS.</h2>
+    </div>
+    <div class="tq5">
+      <div class="k-rev" data-reveal>
+        <div class="rv-ph"><img src="/testimonials/thomke-tierolff.jpg" alt="Thomke Tierolff" loading="lazy"></div>
+        <div>
+          <blockquote>“At Meute, a creative campaign agency in Amsterdam, I support the marketing team in preparing and coordinating regional and national campaigns. Without VOIDS I would never have come across this relevant part-time role.”</blockquote>
+          <div class="rv-who"><b>Thomke Tierolff</b><span>Working student at Meute</span></div>
+        </div>
+      </div>
+      <div class="k-rev blue" data-reveal data-delay="100">
+        <div class="rv-ph"><img src="/testimonials/charlotte-pallandt.jpg" alt="Charlotte Pallandt" loading="lazy"></div>
+        <div>
+          <blockquote>“As a working student I was the sidekick of business coach Olivier Zeestraten at #MasterJeCijfers: I helped prepare trainings and kept everything on schedule during sessions. A great way to learn from real clients.”</blockquote>
+          <div class="rv-who"><b>Charlotte Pallandt</b><span>Working student at #MasterJeCijfers</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="k-strip" style="background:#fff"><div class="k-strip-in"><figure><img src="/photography/mariselle-1.jpg" alt="Colleague writing at a table with a radio beside her" style="object-position:50% 40%" loading="lazy"></figure><figure><img src="/photography/mariselle-4.jpg" alt="Two colleagues working together at a table" style="object-position:50% 45%" loading="lazy"></figure><figure><img src="/photography/mariselle-8.jpg" alt="Colleague with coffee at his desk" style="object-position:50% 45%" loading="lazy"></figure><figure><img src="/photography/mariselle-11.jpg" alt="Colleague writing at a table" style="object-position:50% 40%" loading="lazy"></figure><figure><img src="/photography/mariselle-9.jpg" alt="Colleague laughing at his desk" style="object-position:50% 28%" loading="lazy"></figure></div></section>
+<section class="k-sec k-ink t-dark">
+  <div class="k-wrap t-dark-in">
+    <div class="k-photo t-dark-ph" data-reveal><img src="/photography/hg-15.jpg" alt="A colleague in a blazer looking into the camera" style="object-position:50% 25%" loading="lazy"></div>
+    <div data-reveal data-delay="120">
+      <span class="k-eyebrow">Talent pool</span>
+      <h2 class="k-h2">We connect highly-educated talent with ambitious organisations.</h2>
+      <p class="k-lead">Free and low-threshold. Answer a few questions and become part of our talent pool.</p>
+      <a class="k-btn light" href="/en/pager">Join the talent pool</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- REFERRAL -->
+<section class="k-sec k-white" style="padding:80px 0">
+  <div class="k-wrap">
+    <div class="t-ref" data-reveal>
+      <div>
+        <span class="k-eyebrow">Referral</span>
+        <h2 class="k-h2" style="margin:12px 0 18px">GOOD PEOPLE KNOW<br>GOOD PEOPLE.</h2>
+        <p class="k-p" style="font-size:17px;margin-bottom:26px;max-width:520px">Know someone who fits an ambitious organisation? Refer them. If it turns into a match, you get rewarded and the community gets stronger.</p>
+        <a class="k-btn light" href="https://linktr.ee/voidscommunity" target="_blank" rel="noopener">Invite a friend</a>
+      </div>
+      <div class="steps">
+        <div class="step"><b>1</b><span>Share your personal link from the community.</span></div>
+        <div class="step"><b>2</b><span>Your friend creates a profile and gets matched.</span></div>
+        <div class="step"><b>3</b><span>When they’re placed, you receive a reward.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ (pattern: accordion, first open) -->
+<section class="k-sec k-beige">
+  <div class="k-wrap">
+    <div class="k-split top" style="grid-template-columns:.8fr 1.2fr">
+      <div class="k-head" style="margin-bottom:0" data-reveal>
+        <span class="k-eyebrow">Frequently asked</span>
+        <h2 class="k-h2">HOW THE PROCESS WORKS.</h2>
+      </div>
+      <div class="k-acc" data-reveal>
+        <details open><summary>How does applying through VOIDS work?</summary><div class="k-a">Via the job board or a vacancy in the WhatsApp community, you apply per role. You can also sign up generally for the talent pool: we then actively match you, including to roles we're already thinking through with employers early on. What happens next depends on the vacancy: sometimes the employer runs the selection themselves, sometimes we handle the first selection and interviews ourselves. If that goes well, we connect you and the employer takes it from there.</div></details>
+        <details><summary>How do I get into the talent pool?</summary><div class="k-a">Answer a few questions about yourself and you're in. From there we proactively put you forward for off-market opportunities, think along with you, and invite you to exclusive events.</div></details>
+        <details><summary>Why does VOIDS ask so many questions?</summary><div class="k-a">The questions are about what drives you, how you like to work and what you would like to do. That helps us match you more precisely than on your CV alone. A few words per question is often enough, and there are no wrong answers.</div></details>
+        <details><summary>Does joining the talent pool cost anything?</summary><div class="k-a">No, it's always free for you. We're paid by the companies we place people with, not by the students and starters in our community.</div></details>
+        <details><summary>I don't have any work experience yet, can I still sign up?</summary><div class="k-a">Yes, especially then. The talent pool is for students and starters still looking for their first relevant experience. We match on motivation, working style and ambition, not just a long CV.</div></details>
+        <details><summary>What happens to my data?</summary><div class="k-a">We only share your profile with an employer when there's a concrete match, never broadly. You can ask us to update or delete your data at any time.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="k-sec k-white k-blogrow">
+  <div class="k-wrap">
+    <div class="k-head" data-reveal><h2 class="k-h2" style="margin-top:0">SMARTER START: KEEP READING.</h2><p class="k-lead">Practical guides for your start: from becoming a working student without experience to moving into a permanent job.</p></div>
+    <div class="br-grid">
+      <a class="br-card" href="/en/blog/werkstudent-worden-zonder-ervaring" data-reveal data-delay="0"><div class="br-ph"><img src="/photography/hg-01.jpg" alt="" style="object-position:50% 40%" loading="lazy"></div><div class="br-tx"><span class="br-m">6 min</span><h3>Becoming a working student with no experience: is it possible?</h3><span class="br-go">Read the article →</span></div></a>
+      <a class="br-card" href="/en/blog/betaald-werken-naast-je-studie" data-reveal data-delay="100"><div class="br-ph"><img src="/photography/mariselle-3.jpg" alt="" style="object-position:50% 40%" loading="lazy"></div><div class="br-tx"><span class="br-m">6 min</span><h3>Paid work alongside your studies: what does it bring?</h3><span class="br-go">Read the article →</span></div></a>
+      <a class="br-card" href="/en/blog/van-werkstudent-naar-vaste-baan" data-reveal data-delay="200"><div class="br-ph"><img src="/photography/mariselle-8.jpg" alt="" style="object-position:62% 40%" loading="lazy"></div><div class="br-tx"><span class="br-m">6 min</span><h3>From working student to permanent job: how do you make that jump?</h3><span class="br-go">Read the article →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- WHATSAPP CHANNELS -->
+<section class="k-sec k-sky wc-sec">
+  <div class="k-wrap">
+    <div class="k-head" data-reveal>
+      <span class="k-eyebrow">The WhatsApp community</span>
+      <h2 class="k-h2">EVERY TYPE OF ROLE GETS ITS OWN CHAT.</h2>
+      <p class="k-lead">Pick what you are looking for and land straight in the right WhatsApp chat. You get new vacancies there right away.</p>
+    </div>
+    <div class="wc-grid"><a class="wc-t" href="https://chat.whatsapp.com/IaN0kEeuDjb341rExEmUm2?mode=gi_t" target="_blank" rel="noopener" data-reveal data-delay="0"><span class="wc-i"><svg viewbox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#25D366"></circle><path fill="#fff" d="M12 5.5c-3.6 0-6.5 2.9-6.5 6.5 0 1.15.3 2.24.87 3.2L5.5 18.5l3.42-.85c.93.5 1.98.77 3.08.77 3.6 0 6.5-2.9 6.5-6.5s-2.9-6.42-6.5-6.42zm3.8 9.18c-.16.45-.94.86-1.3.91-.33.05-.75.07-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.8-3.3-2.93-.1-.13-.79-1.05-.79-2 0-.95.5-1.42.68-1.61.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.02.43.33.16.37.54 1.28.59 1.37.05.1.08.21.02.34-.06.13-.09.21-.18.32-.09.11-.19.25-.27.33-.09.09-.18.19-.08.37.1.19.46.76.98 1.23.68.6 1.24.79 1.43.88.19.09.3.08.41-.05.11-.13.47-.55.6-.74.13-.19.25-.15.42-.09.17.06 1.08.51 1.27.6.19.09.31.14.36.21.05.08.05.44-.11.89z"></path></svg></span><span class="wc-ar" aria-hidden="true"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span><b>Starter roles</b><span class="wc-s">Full-time &amp; part-time jobs</span></a><a class="wc-t" href="https://chat.whatsapp.com/LWCJAz0ftTaCOAOFqmw9jW?mode=gi_t" target="_blank" rel="noopener" data-reveal data-delay="80"><span class="wc-i"><svg viewbox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#25D366"></circle><path fill="#fff" d="M12 5.5c-3.6 0-6.5 2.9-6.5 6.5 0 1.15.3 2.24.87 3.2L5.5 18.5l3.42-.85c.93.5 1.98.77 3.08.77 3.6 0 6.5-2.9 6.5-6.5s-2.9-6.42-6.5-6.42zm3.8 9.18c-.16.45-.94.86-1.3.91-.33.05-.75.07-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.8-3.3-2.93-.1-.13-.79-1.05-.79-2 0-.95.5-1.42.68-1.61.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.02.43.33.16.37.54 1.28.59 1.37.05.1.08.21.02.34-.06.13-.09.21-.18.32-.09.11-.19.25-.27.33-.09.09-.18.19-.08.37.1.19.46.76.98 1.23.68.6 1.24.79 1.43.88.19.09.3.08.41-.05.11-.13.47-.55.6-.74.13-.19.25-.15.42-.09.17.06 1.08.51 1.27.6.19.09.31.14.36.21.05.08.05.44-.11.89z"></path></svg></span><span class="wc-ar" aria-hidden="true"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span><b>Internships</b><span class="wc-s">Internship spots</span></a><a class="wc-t" href="https://chat.whatsapp.com/Gr2K2NIcyybDPOBG7ODV2T?mode=gi_t" target="_blank" rel="noopener" data-reveal data-delay="160"><span class="wc-i"><svg viewbox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#25D366"></circle><path fill="#fff" d="M12 5.5c-3.6 0-6.5 2.9-6.5 6.5 0 1.15.3 2.24.87 3.2L5.5 18.5l3.42-.85c.93.5 1.98.77 3.08.77 3.6 0 6.5-2.9 6.5-6.5s-2.9-6.42-6.5-6.42zm3.8 9.18c-.16.45-.94.86-1.3.91-.33.05-.75.07-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.8-3.3-2.93-.1-.13-.79-1.05-.79-2 0-.95.5-1.42.68-1.61.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.02.43.33.16.37.54 1.28.59 1.37.05.1.08.21.02.34-.06.13-.09.21-.18.32-.09.11-.19.25-.27.33-.09.09-.18.19-.08.37.1.19.46.76.98 1.23.68.6 1.24.79 1.43.88.19.09.3.08.41-.05.11-.13.47-.55.6-.74.13-.19.25-.15.42-.09.17.06 1.08.51 1.27.6.19.09.31.14.36.21.05.08.05.44-.11.89z"></path></svg></span><span class="wc-ar" aria-hidden="true"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span><b>Working-student jobs</b><span class="wc-s">Work alongside your studies</span></a><a class="wc-t" href="https://chat.whatsapp.com/LMpEUdegNr42uZm7tgRMWk?mode=gi_t" target="_blank" rel="noopener" data-reveal data-delay="240"><span class="wc-i"><svg viewbox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#25D366"></circle><path fill="#fff" d="M12 5.5c-3.6 0-6.5 2.9-6.5 6.5 0 1.15.3 2.24.87 3.2L5.5 18.5l3.42-.85c.93.5 1.98.77 3.08.77 3.6 0 6.5-2.9 6.5-6.5s-2.9-6.42-6.5-6.42zm3.8 9.18c-.16.45-.94.86-1.3.91-.33.05-.75.07-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.8-3.3-2.93-.1-.13-.79-1.05-.79-2 0-.95.5-1.42.68-1.61.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.02.43.33.16.37.54 1.28.59 1.37.05.1.08.21.02.34-.06.13-.09.21-.18.32-.09.11-.19.25-.27.33-.09.09-.18.19-.08.37.1.19.46.76.98 1.23.68.6 1.24.79 1.43.88.19.09.3.08.41-.05.11-.13.47-.55.6-.74.13-.19.25-.15.42-.09.17.06 1.08.51 1.27.6.19.09.31.14.36.21.05.08.05.44-.11.89z"></path></svg></span><span class="wc-ar" aria-hidden="true"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span><b>Side jobs</b><span class="wc-s">Flexible extra income</span></a><a class="wc-t" href="https://chat.whatsapp.com/Fv1kBc7Ex6v0B6CnF6HP57?mode=gi_t" target="_blank" rel="noopener" data-reveal data-delay="0"><span class="wc-i"><svg viewbox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#25D366"></circle><path fill="#fff" d="M12 5.5c-3.6 0-6.5 2.9-6.5 6.5 0 1.15.3 2.24.87 3.2L5.5 18.5l3.42-.85c.93.5 1.98.77 3.08.77 3.6 0 6.5-2.9 6.5-6.5s-2.9-6.42-6.5-6.42zm3.8 9.18c-.16.45-.94.86-1.3.91-.33.05-.75.07-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.8-3.3-2.93-.1-.13-.79-1.05-.79-2 0-.95.5-1.42.68-1.61.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.02.43.33.16.37.54 1.28.59 1.37.05.1.08.21.02.34-.06.13-.09.21-.18.32-.09.11-.19.25-.27.33-.09.09-.18.19-.08.37.1.19.46.76.98 1.23.68.6 1.24.79 1.43.88.19.09.3.08.41-.05.11-.13.47-.55.6-.74.13-.19.25-.15.42-.09.17.06 1.08.51 1.27.6.19.09.31.14.36.21.05.08.05.44-.11.89z"></path></svg></span><span class="wc-ar" aria-hidden="true"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span><b>Freelance work</b><span class="wc-s">Gigs &amp; projects</span></a><a class="wc-t" href="https://chat.whatsapp.com/HoDEZyDnNzVHLBuXU8e96N?mode=gi_t" target="_blank" rel="noopener" data-reveal data-delay="80"><span class="wc-i"><svg viewbox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#25D366"></circle><path fill="#fff" d="M12 5.5c-3.6 0-6.5 2.9-6.5 6.5 0 1.15.3 2.24.87 3.2L5.5 18.5l3.42-.85c.93.5 1.98.77 3.08.77 3.6 0 6.5-2.9 6.5-6.5s-2.9-6.42-6.5-6.42zm3.8 9.18c-.16.45-.94.86-1.3.91-.33.05-.75.07-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.8-3.3-2.93-.1-.13-.79-1.05-.79-2 0-.95.5-1.42.68-1.61.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.02.43.33.16.37.54 1.28.59 1.37.05.1.08.21.02.34-.06.13-.09.21-.18.32-.09.11-.19.25-.27.33-.09.09-.18.19-.08.37.1.19.46.76.98 1.23.68.6 1.24.79 1.43.88.19.09.3.08.41-.05.11-.13.47-.55.6-.74.13-.19.25-.15.42-.09.17.06 1.08.51 1.27.6.19.09.31.14.36.21.05.08.05.44-.11.89z"></path></svg></span><span class="wc-ar" aria-hidden="true"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span><b>Career opportunities</b><span class="wc-s">Volunteering &amp; board roles</span></a><a class="wc-t" href="https://chat.whatsapp.com/LMoQg9Wzao5HpC3KyQvV2Q?mode=gi_t" target="_blank" rel="noopener" data-reveal data-delay="160"><span class="wc-i"><svg viewbox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#25D366"></circle><path fill="#fff" d="M12 5.5c-3.6 0-6.5 2.9-6.5 6.5 0 1.15.3 2.24.87 3.2L5.5 18.5l3.42-.85c.93.5 1.98.77 3.08.77 3.6 0 6.5-2.9 6.5-6.5s-2.9-6.42-6.5-6.42zm3.8 9.18c-.16.45-.94.86-1.3.91-.33.05-.75.07-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.8-3.3-2.93-.1-.13-.79-1.05-.79-2 0-.95.5-1.42.68-1.61.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.02.43.33.16.37.54 1.28.59 1.37.05.1.08.21.02.34-.06.13-.09.21-.18.32-.09.11-.19.25-.27.33-.09.09-.18.19-.08.37.1.19.46.76.98 1.23.68.6 1.24.79 1.43.88.19.09.3.08.41-.05.11-.13.47-.55.6-.74.13-.19.25-.15.42-.09.17.06 1.08.51 1.27.6.19.09.31.14.36.21.05.08.05.44-.11.89z"></path></svg></span><span class="wc-ar" aria-hidden="true"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span><b>Studentwork in NL (EN)</b><span class="wc-s">For English speakers</span></a><a class="wc-t" href="https://chat.whatsapp.com/LeIgU0MEPUv6FbaIYnpZqu?mode=gi_t" target="_blank" rel="noopener" data-reveal data-delay="240"><span class="wc-i"><svg viewbox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#25D366"></circle><path fill="#fff" d="M12 5.5c-3.6 0-6.5 2.9-6.5 6.5 0 1.15.3 2.24.87 3.2L5.5 18.5l3.42-.85c.93.5 1.98.77 3.08.77 3.6 0 6.5-2.9 6.5-6.5s-2.9-6.42-6.5-6.42zm3.8 9.18c-.16.45-.94.86-1.3.91-.33.05-.75.07-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.8-3.3-2.93-.1-.13-.79-1.05-.79-2 0-.95.5-1.42.68-1.61.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.02.43.33.16.37.54 1.28.59 1.37.05.1.08.21.02.34-.06.13-.09.21-.18.32-.09.11-.19.25-.27.33-.09.09-.18.19-.08.37.1.19.46.76.98 1.23.68.6 1.24.79 1.43.88.19.09.3.08.41-.05.11-.13.47-.55.6-.74.13-.19.25-.15.42-.09.17.06 1.08.51 1.27.6.19.09.31.14.36.21.05.08.05.44-.11.89z"></path></svg></span><span class="wc-ar" aria-hidden="true"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span><b>Impact work</b><span class="wc-s">Purpose-driven roles</span></a></div>
+    <div class="wc-foot" data-reveal>
+      <a class="k-btn" href="https://linktr.ee/voidscommunity" target="_blank" rel="noopener">Join the WhatsApp community</a>
+      <a class="wc-more" href="https://linktr.ee/voidsagency" target="_blank" rel="noopener">This week's vacancies →</a>
+    </div>
+  </div>
+</section>
+
+<section class="k-cta">
+  <div class="k-wrap">
+    <div data-reveal>
+      <h2 class="k-h2">READY TO GET NOTICED?</h2>
+      <p>Answer a few questions and you're on the radar of companies that fit you.</p>
+    </div>
+    <div><a class="k-btn" href="/en/pager">Join the talent pool</a></div>
+  </div>
+</section>
+
+<div id="k-footer"></div>
+<script src="/site/kit.js?v=6cff9d56"></script>
+<script>
+(function(){
+  var $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+  var clamp=function(v){return Math.max(0,Math.min(1,v))};
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var narrow=matchMedia('(max-width:859px)');
+
+  /* split selector: click or arrow keys, all panels stay in the DOM */
+  $$('[data-sel]').forEach(function(sel){
+    var tabs=$$('[role=tab]',sel),panels=$$('[role=tabpanel]',sel);
+    function go(i,focus){
+      tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===i?'true':'false');t.tabIndex=k===i?0:-1});
+      panels.forEach(function(p,k){p.classList.toggle('on',k===i)});
+      if(focus)tabs[i].focus();
+    }
+    tabs.forEach(function(t,i){
+      t.addEventListener('click',function(){go(i)});
+      t.addEventListener('keydown',function(e){
+        var k=e.key,n=tabs.length;
+        if(k==='ArrowDown'||k==='ArrowRight'){e.preventDefault();go((i+1)%n,true)}
+        else if(k==='ArrowUp'||k==='ArrowLeft'){e.preventDefault();go((i-1+n)%n,true)}
+        else if(k==='Home'){e.preventDefault();go(0,true)}
+        else if(k==='End'){e.preventDefault();go(n-1,true)}
+      });
+    });
+  });
+
+  /* quote switch: keep aria-pressed in sync (kit.js toggles the panels) */
+  $$('.t-qtabs').forEach(function(box){
+    var btns=$$('button',box);
+    btns.forEach(function(b){b.addEventListener('click',function(){btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')})})});
+  });
+
+  /* pinned scroll steps: scroll progress picks the active step (opacity/transform only) */
+  var pss=$$('[data-ps]');
+  function upd(){
+    var hdr=document.getElementById('kh'),hh=hdr?hdr.offsetHeight:56;
+    document.documentElement.style.setProperty('--hh',hh+'px');
+    if(reduce||narrow.matches)return;
+    pss.forEach(function(s){
+      var steps=$$('.ps-step',s),dots=$$('.ps-rail i',s),n=steps.length,pin=s.querySelector('.ps-pin');
+      var range=s.offsetHeight-pin.offsetHeight;if(range<=0)return;
+      var q=clamp((hh-s.getBoundingClientRect().top)/range),idx=Math.min(n-1,Math.floor(q*n));
+      steps.forEach(function(el,i){el.classList.toggle('on',i===idx);el.classList.toggle('past',i<idx)});
+      dots.forEach(function(d,i){d.classList.toggle('on',i===idx)});
+    });
+  }
+  var qd=false;function sched(){if(!qd){qd=true;requestAnimationFrame(function(){qd=false;upd()})}}
+  addEventListener('scroll',sched,{passive:true});addEventListener('resize',sched);upd();
+})();
+
+/* testimonial portraits: gentle parallax */
+(function(){var p=[].slice.call(document.querySelectorAll('.tq2-ph'));if(!p.length||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+function u(){var h=innerHeight;p.forEach(function(e){var r=e.parentNode.getBoundingClientRect();var d=(r.top+r.height/2-h/2)/h;e.style.setProperty('--py',(d*-36).toFixed(1)+'px')})}
+addEventListener('scroll',u,{passive:true});addEventListener('resize',u);u()})();
+</script>
+</body>
+</html>

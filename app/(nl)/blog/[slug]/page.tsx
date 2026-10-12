@@ -16,9 +16,9 @@ export async function generateMetadata({
   const post = getBlogPost(slug);
   if (!post) return {};
   return {
-    title: post.title.nl,
-    description: post.excerpt.nl,
-    keywords: [post.tag.nl],
+    title: post.metaTitle?.nl ?? post.title.nl,
+    description: post.metaDescription?.nl ?? post.excerpt.nl,
+    keywords: post.keywords?.nl ?? [post.tag.nl],
     alternates: {
       canonical: `/blog/${slug}`,
       languages: { nl: `/blog/${slug}`, en: `/en/blog/${slug}` },

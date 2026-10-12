@@ -1,0 +1,142 @@
+{
+ "/": {
+  "nl": {
+   "title": "VOIDS | Junior talent agency Amsterdam",
+   "description": "VOIDS verbindt hoogopgeleid junior talent aan ambitieuze bedrijven via werkstudentschappen, stages en starterrollen. Voorbij het cv, met oog voor drijfveren en werkstijl."
+  },
+  "en": {
+   "title": "VOIDS | Junior talent agency Amsterdam",
+   "description": "VOIDS connects highly-educated junior talent with ambitious companies through working-student roles, internships and starter positions. Beyond the CV, with an eye for motivation and working style."
+  }
+ },
+ "/privacy": {
+  "nl": {
+   "title": "Privacy",
+   "description": "Privacybeleid van VOIDS: welke gegevens we verzamelen, waarom, en welke rechten je hebt."
+  },
+  "en": {
+   "title": "Privacy",
+   "description": "VOIDS privacy policy: what data we collect, why, and what rights you have."
+  }
+ },
+ "/faq": {
+  "nl": {
+   "title": "FAQ",
+   "description": "Veelgestelde vragen over VOIDS: wat we doen, hoe we matchen, en hoe je je aanmeldt als bedrijf of talent."
+  },
+  "en": {
+   "title": "FAQ",
+   "description": "Frequently asked questions about VOIDS: what we do, how we match, and how to sign up as a company or talent."
+  }
+ },
+ "/terms": {
+  "nl": {
+   "title": "Voorwaarden",
+   "description": "Algemene voorwaarden van VOIDS."
+  },
+  "en": {
+   "title": "Terms",
+   "description": "VOIDS general terms and conditions."
+  }
+ },
+ "/jobboard": {
+  "nl": {
+   "title": "Jobboard",
+   "description": "Open werkstudent-, stage- en starterrollen bij ambitieuze organisaties, met uren, salaris en een directe manier om te solliciteren. Join ook de WhatsApp-community voor nieuwe kansen."
+  },
+  "en": {
+   "title": "Job board",
+   "description": "Open working-student, internship and starter roles at ambitious organisations, with hours, salary and a direct way to apply. Join the WhatsApp community for new opportunities too."
+  }
+ },
+ "/about": {
+  "nl": {
+   "title": "Over ons",
+   "description": "VOIDS is opgericht door Eva van Raaij en Wieke Sleutjes in Amsterdam. We fill the voids: de gaten tussen studie en werk."
+  },
+  "en": {
+   "title": "About",
+   "description": "VOIDS was founded by Eva van Raaij and Wieke Sleutjes in Amsterdam. We fill the voids: the gaps between study and work."
+  }
+ },
+ "/blog": {
+  "nl": {
+   "title": "Blog",
+   "description": "Praktische gidsen voor bedrijven en studenten over junior talent, werkstudentschappen en werven van starters."
+  },
+  "en": {
+   "title": "Blog",
+   "description": "Practical guides for companies and students on junior talent, working-student roles and hiring starters."
+  }
+ },
+ "/impact": {
+  "nl": {
+   "title": "Impact",
+   "description": "VOIDS bestaat om de overgang van studie naar werk eerlijker te maken. Recruitment is ons middel, gelijke kansen zijn het doel."
+  },
+  "en": {
+   "title": "Impact",
+   "description": "VOIDS exists to make the transition from study to work fairer. Recruitment is our means; equal opportunity is the goal."
+  }
+ },
+ "/companies": {
+  "nl": {
+   "title": "Voor bedrijven",
+   "description": "Werkstudenten, stagiairs en starters werven zonder gedoe. Wij nemen het hele wervingsproces uit handen, van briefing tot getekende match: een shortlist in plaats van een cv-stapel."
+  },
+  "en": {
+   "title": "For companies",
+   "description": "Hire working students, interns and starters without the hassle. We take the entire hiring process off your hands, from briefing to signed match: a shortlist instead of a CV pile."
+  }
+ },
+ "/companies/recruitment-selection": {
+  "nl": {
+   "title": "Werving & selectie",
+   "description": "Zes stappen. Wij doen het werk, jullie beslissen. Van intake tot ondertekende match, voor werkstudenten, stagiairs en starters."
+  },
+  "en": {
+   "title": "Recruitment & selection",
+   "description": "Six steps. We do the work, you decide. From intake to signed match, for working students, interns and starters."
+  }
+ },
+ "/companies/employer-branding": {
+  "nl": {
+   "title": "Advies & employer branding",
+   "description": "We denken mee over je hele junior-strategie: van recruitment en het behouden van jong talent tot employer branding die aanslaat bij studenten en starters."
+  },
+  "en": {
+   "title": "Advice & employer branding",
+   "description": "We think along on your whole junior strategy: from recruitment and retention to employer branding that actually lands with students and starters."
+  }
+ },
+ "/companies/community-jobboard": {
+  "nl": {
+   "title": "Community & jobboard",
+   "description": "Zet je vacature rechtstreeks onder de aandacht van 4.000+ studenten en starters in onze WhatsApp-community en op ons jobboard."
+  },
+  "en": {
+   "title": "Community & job board",
+   "description": "Put your vacancy directly in front of 4,000+ students and starters in our WhatsApp community and on our job board."
+  }
+ },
+ "/talent": {
+  "nl": {
+   "title": "Voor talent",
+   "description": "Vul één keer in wat je drijft en word gratis lid van de talentpool. Passende werkstudent-, stage- en starterrollen krijg je daarna direct via WhatsApp."
+  },
+  "en": {
+   "title": "For talent",
+   "description": "Tell us once what drives you and join the talent pool for free. Matching working-student, internship and starter roles then come straight to your WhatsApp."
+  }
+ },
+ "/pager": {
+  "nl": {
+   "title": "Talentpool",
+   "description": "Word lid van de VOIDS talentpool: vertel ons wat je drijft, hoe je het liefst werkt en waar je naartoe wilt, voeg je cv toe en we matchen je met passende kansen."
+  },
+  "en": {
+   "title": "Talent pool",
+   "description": "Join the VOIDS talent pool: tell us what drives you, how you like to work and where you want to go, add your CV and we match you with fitting opportunities."
+  }
+ }
+}

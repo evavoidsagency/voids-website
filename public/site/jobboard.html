@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!--seo-->
+<title>Jobboard | VOIDS</title>
+<meta name="description" content="Open werkstudent-, stage- en starterrollen bij ambitieuze organisaties, met uren, salaris en een directe manier om te solliciteren. Join ook de WhatsApp-community voor nieuwe kansen.">
+<link rel="canonical" href="https://voids.agency/jobboard">
+<link rel="alternate" hreflang="nl" href="https://voids.agency/jobboard">
+<link rel="alternate" hreflang="en" href="https://voids.agency/en/jobboard">
+<link rel="alternate" hreflang="x-default" href="https://voids.agency/jobboard">
+<meta property="og:title" content="Jobboard | VOIDS">
+<meta property="og:description" content="Open werkstudent-, stage- en starterrollen bij ambitieuze organisaties, met uren, salaris en een directe manier om te solliciteren. Join ook de WhatsApp-community voor nieuwe kansen.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://voids.agency/jobboard">
+<meta property="og:site_name" content="VOIDS">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:image" content="https://voids.agency/photography/home-hero-8.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jobboard | VOIDS">
+<meta name="twitter:description" content="Open werkstudent-, stage- en starterrollen bij ambitieuze organisaties, met uren, salaris en een directe manier om te solliciteren. Join ook de WhatsApp-community voor nieuwe kansen.">
+<meta name="twitter:image" content="https://voids.agency/photography/home-hero-8.jpg">
+<link rel="icon" href="/favicon.ico">
+<meta name="theme-color" content="#fffaec">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "VOIDS", "legalName": "VOIDS vof", "url": "https://voids.agency", "logo": "https://voids.agency/logo.svg", "description": "VOIDS is een junior talent agency in Amsterdam die hoogopgeleid junior talent verbindt aan ambitieuze bedrijven via werkstudentschappen, stages en starterrollen.", "founder": [{"@type": "Person", "name": "Eva van Raaij"}, {"@type": "Person", "name": "Wieke Sleutjes"}], "address": {"@type": "PostalAddress", "addressLocality": "Amsterdam", "addressCountry": "NL"}, "email": "contact@voids.agency", "sameAs": ["https://www.linkedin.com/company/voidsagency", "https://www.instagram.com/voids_agency/", "https://www.tiktok.com/@voidstalentagency"]}</script>
+<!--/seo-->
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site/kit.css?v=6cff9d56">
+<style>
+/* jobboard */
+.jb-hero{padding:56px 0 48px;overflow:hidden}
+.jb-hero .k-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:56px;align-items:center}
+.jb-hero .k-h1{font-size:clamp(34px,4.6vw,68px);margin:12px 0 18px}
+.jb-search{display:flex;align-items:center;gap:12px;margin-top:28px;background:#fff;border-radius:99px;padding:8px 8px 8px 22px;box-shadow:0 22px 40px -28px rgba(40,10,120,.45);max-width:520px}
+.jb-search svg{flex:none;width:20px;height:20px;color:var(--purple)}
+.jb-search input{flex:1;border:0;outline:0;background:none;font:500 16px Inter,sans-serif;color:var(--ink);padding:12px 0;min-width:0}
+.jb-search button{flex:none;border:0;border-radius:99px;background:var(--purple);color:#fff;font:600 14.5px Inter,sans-serif;padding:13px 22px;cursor:pointer}
+.jb-note{margin-top:22px;display:inline-flex;gap:10px;align-items:center;font-size:13.5px;color:var(--soft)}
+.jb-note[hidden]{display:none}
+.jb-note i{font-style:normal;padding:4px 10px;border-radius:99px;background:var(--purple-100);color:var(--purple);font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+/* hero collage: three photos in three shapes */
+.jb-col{position:relative;width:100%;max-width:560px;margin-left:auto;aspect-ratio:1/.92}
+.jb-col figure{position:absolute;margin:0;overflow:hidden;background:var(--purple-100)}
+.jb-col img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.jb-col figure:hover img{transform:scale(1.05)}
+.jb-col .c1{left:0;top:0;width:48%;height:82%;border-radius:130px 130px 30px 30px}
+.jb-col .c2{right:0;top:4%;width:42%;aspect-ratio:1;border-radius:50%}
+.jb-col .c3{right:5%;bottom:0;width:50%;height:44%;border-radius:30px 90px 30px 30px}
+.jb-chip[hidden]{display:none}
+.jb-chip{position:absolute;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;background:#fff;color:var(--ink);font-size:13.5px;box-shadow:0 18px 30px -18px rgba(40,10,120,.5)}
+.jb-chip b{font-weight:700}
+.jb-chip i{width:8px;height:8px;border-radius:50%;background:#25d366}
+.jb-chip.a{left:6%;bottom:6%}
+.jb-chip.b{right:2%;top:52%;transform:translateY(-50%)}
+/* filter bar */
+.jb-bar{position:sticky;top:var(--hh,56px);z-index:20;background:rgba(255,250,236,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding:14px 0;transition:box-shadow .3s}
+.jb-bar.stuck{box-shadow:0 18px 30px -26px rgba(40,10,120,.4)}
+.jb-bar .k-wrap{display:flex;gap:12px 16px;flex-wrap:wrap;align-items:center}
+.jb-tabs{display:flex;gap:8px;flex-wrap:wrap}
+.jb-tabs button,.jb-sel select,.jb-toggle{font:600 14px Inter,sans-serif}
+.jb-tabs button{border:0;border-radius:99px;padding:10px 18px;background:#fff;color:var(--ink);cursor:pointer;transition:background .2s,color .2s}
+.jb-tabs button:hover{background:var(--purple-100)}
+.jb-tabs button.on{background:var(--purple);color:#fff}
+.jb-sel{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto;align-items:center}
+.jb-sel select{appearance:none;-webkit-appearance:none;border:0;border-radius:99px;padding:10px 34px 10px 16px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%233a0ca3' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;color:var(--ink);cursor:pointer}
+.jb-toggle{display:inline-flex;align-items:center;gap:8px;border:0;background:none;color:var(--ink);cursor:pointer;padding:8px 4px}
+.jb-toggle i{width:38px;height:22px;border-radius:99px;background:#d9d2ee;position:relative;transition:background .25s}
+.jb-toggle i::after{content:"";position:absolute;left:3px;top:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .25s}
+.jb-toggle[aria-pressed=true] i{background:var(--purple)}.jb-toggle[aria-pressed=true] i::after{transform:translateX(16px)}
+/* list */
+.jb-list{padding:28px 0 80px}
+.jb-crow{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;margin:0 0 20px}
+.jb-count{margin:0;font-size:14.5px;color:var(--soft)}
+.jb-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.jb-card{position:relative;display:flex;flex-direction:column;text-align:left;border:0;width:100%;padding:10px 10px 22px;border-radius:30px;background:#fff;cursor:pointer;font-family:inherit;color:var(--ink);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.jb-card:hover,.jb-card:focus-visible{transform:translateY(-5px);box-shadow:0 30px 44px -30px rgba(40,10,120,.5)}
+.jb-card:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.jb-ph{position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:22px 22px 70px 22px;background:var(--purple-100)}
+.jb-card:nth-child(3n+2) .jb-ph{border-radius:70px 22px 22px 22px}
+.jb-card:nth-child(3n) .jb-ph{border-radius:22px 70px 22px 22px}
+.jb-ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.jb-card:hover .jb-ph img{transform:scale(1.06)}
+.jb-tag{position:absolute;left:12px;top:12px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:99px;white-space:nowrap;background:#fff;color:var(--purple)}
+.jb-tag.push{color:#2653c9}
+.jb-new{position:absolute;right:12px;top:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:99px;background:#fff;color:#0f7a3f;font-size:12px;font-weight:700}
+.jb-new i{width:7px;height:7px;border-radius:50%;background:#25d366}
+.jb-logo{flex:none;width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid #ece7f7;display:grid;place-items:center;overflow:hidden}
+.jb-logo img{max-width:70%;max-height:62%;object-fit:contain}
+.jb-ini{display:grid;place-items:center;width:100%;height:100%;font:700 18px Inter,sans-serif;color:var(--purple);background:var(--purple-100)}
+.jb-phw{position:relative}
+.jb-phw>.jb-logo{position:absolute;left:18px;bottom:-24px;z-index:2;box-shadow:0 10px 18px -10px rgba(40,10,120,.5)}
+.jb-body{display:flex;flex-direction:column;gap:12px;padding:30px 16px 0}
+.jb-co{font-size:13.5px;font-weight:600;color:var(--soft)}
+.jb-card h3{margin:0;font:600 clamp(19px,1.5vw,22px)/1.2 Inter,sans-serif;letter-spacing:-.015em}
+.jb-meta{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--soft)}
+.jb-meta span{display:inline-flex;align-items:center;gap:6px}
+.jb-meta svg{width:15px;height:15px;color:var(--purple);flex:none}
+.jb-type{align-self:flex-start;padding:5px 12px;border-radius:99px;background:var(--purple-100);color:var(--purple);font-size:12.5px;font-weight:700}
+.jb-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding:4px 16px 0;font-size:14.5px}
+.jb-sal{font-weight:700}
+.jb-go{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--purple-100);color:var(--purple);transition:background .3s,color .3s,transform .4s cubic-bezier(.2,.8,.2,1)}
+.jb-go svg{width:16px;height:16px}
+.jb-card:hover .jb-go,.jb-card:focus-visible .jb-go{background:var(--purple);color:#fff;transform:rotate(45deg)}
+.jb-card .jb-body+.jb-foot{padding-top:18px}
+.jb-empty{display:flex;align-items:center;gap:28px;padding:28px;border-radius:30px;background:#fff;color:var(--soft)}
+.jb-empty img{flex:none;width:132px;height:132px;border-radius:50%;object-fit:cover;object-position:50% 45%}
+.jb-empty b{display:block;font:400 30px Anton,sans-serif;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
+.jb-sk{height:360px;border-radius:30px;background:linear-gradient(100deg,#fff 30%,#f3effc 50%,#fff 70%) 0 0/220% 100%;animation:jbSk 1.4s linear infinite}
+@keyframes jbSk{to{background-position:-120% 0}}
+.jb-card.rv{opacity:0;transform:translateY(18px)}
+.jb-card.in{animation:jbIn .6s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:var(--d,0ms)}
+@keyframes jbIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.jb-err{margin:0;font-size:13.5px;font-weight:600;color:#b3261e}
+/* detail drawer */
+.jb-ov{position:fixed;inset:0;z-index:80;background:rgba(20,8,60,.5);opacity:0;pointer-events:none;transition:opacity .3s}
+.jb-ov.on{opacity:1;pointer-events:auto}
+.jb-dr{position:fixed;top:0;right:0;bottom:0;z-index:90;width:min(640px,100%);background:var(--beige,#fffaec);transform:translateX(100%);transition:transform .45s cubic-bezier(.2,.8,.2,1);overflow:auto;box-shadow:-30px 0 60px -30px rgba(20,8,60,.5)}
+.jb-dr.on{transform:none}
+.jb-dr-in{padding:28px 34px 40px}
+.jb-x{position:sticky;top:0;float:right;margin:-6px -10px 0 0;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:var(--ink);font-size:22px;cursor:pointer;box-shadow:0 10px 20px -12px rgba(20,8,60,.5)}
+.jb-dr h2{font:400 clamp(30px,3.4vw,44px)/1 Anton,"Arial Narrow",sans-serif;text-transform:uppercase;margin:18px 0 14px}
+.jb-dr .jb-top{margin-bottom:6px}
+.jb-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:22px 0}
+.jb-fact{padding:14px 16px;border-radius:16px;background:#fff}
+.jb-fact small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#7a7690)}
+.jb-fact b{display:block;margin-top:4px;font-size:16px}
+.jb-dr h4{margin:26px 0 10px;font:700 12px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--purple)}
+.jb-dr p{margin:0 0 10px;font-size:16px;line-height:1.6;color:var(--ink)}
+.jb-dr ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.jb-dr li{position:relative;padding-left:26px;font-size:15.5px;line-height:1.5}
+.jb-dr li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--purple)}
+.jb-apply{margin-top:28px;padding:22px;border-radius:22px;background:#fff}
+.jb-apply .k-btn{width:100%;justify-content:center}
+.jb-apply small{display:block;margin-top:12px;font-size:13px;color:var(--soft)}
+.jb-form{display:grid;gap:10px;margin-top:6px}
+.jb-form input,.jb-form textarea{width:100%;border:0;border-radius:12px;background:var(--beige,#fffaec);padding:13px 14px;font:500 15px Inter,sans-serif;color:var(--ink)}
+.jb-form textarea{min-height:84px;resize:vertical}
+.jb-form label{font-size:13px;font-weight:600;color:var(--soft)}
+.jb-ok{padding:18px;border-radius:16px;background:var(--purple-100);color:var(--purple);font-weight:600}
+
+
+.jb-dphw{margin-top:18px}
+.jb-dph{position:relative;aspect-ratio:16/8;overflow:hidden;border-radius:26px 26px 80px 26px;background:var(--purple-100)}
+.jb-dph img{width:100%;height:100%;object-fit:cover;display:block}
+.jb-corow{display:flex;align-items:center;gap:12px;margin-top:38px}
+.jb-corow .jb-co{font-size:14px}
+.jb-corow .jb-tag{position:static}
+.jb-dr h2{margin-top:12px}
+.jb-join{padding:64px 0;background:var(--purple);color:#fff}
+.jb-join .k-wrap{display:flex;gap:24px 48px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.jb-join .k-h2{color:#fff;font-size:clamp(28px,3.2vw,48px);margin:0}
+.jb-join p{margin:10px 0 0;color:rgba(255,255,255,.82);max-width:34em}
+.jb-join .k-btn{background:#fff;color:var(--purple)}
+@media(max-width:960px){.jb-hero .k-wrap{grid-template-columns:minmax(0,1fr)!important;gap:32px}.jb-hero .k-wrap>*{min-width:0}.jb-grid{grid-template-columns:1fr}.jb-sel{margin-left:0}.jb-bar{position:static}}
+@media(max-width:560px){.jb-facts{grid-template-columns:1fr}.jb-dr-in{padding:22px 20px 32px}.jb-stats{grid-template-columns:1fr 1fr 1fr}}
+@media(prefers-reduced-motion:reduce){.jb-card,.jb-dr,.jb-ov{transition:none}}
+
+
+@media(max-width:1100px){.jb-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:960px){.jb-hero .k-wrap{grid-template-columns:minmax(0,1fr)!important;gap:32px}.jb-hero .k-wrap>*{min-width:0}.jb-col{margin:0 auto;max-width:440px}.jb-sel{margin-left:0}.jb-bar{position:static}}
+@media(max-width:640px){.jb-grid{grid-template-columns:1fr}.jb-dr-in{padding:22px 20px 32px}.jb-facts{grid-template-columns:1fr}.jb-empty{flex-direction:column;text-align:center}}
+@media(prefers-reduced-motion:reduce){.jb-card,.jb-dr,.jb-ov,.jb-col img,.jb-ph img{transition:none}.jb-card.in{animation:none}.jb-card.rv{opacity:1;transform:none}.jb-sk{animation:none}}
+</style>
+</head>
+<body data-nav="jobboard">
+<div id="k-header"></div>
+
+<section class="k-hero k-beige jb-hero">
+  <div class="k-wrap">
+    <div>
+      <span class="k-eyebrow">Jobboard</span>
+      <h1 class="k-h1">JOUW EERSTE ROL <span class="k-accent">STAAT HIER.</span></h1>
+      <p class="k-lead">Rollen voor werkstudenten, stagiairs en starters bij ambitieuze organisaties. Met uren en salaris erbij, en een directe manier om te solliciteren.</p>
+      <form class="jb-search" id="jb-form" role="search" aria-label="Zoek vacatures">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="jb-q" type="search" placeholder="Zoek op functie of bedrijf" aria-label="Zoek op functie of bedrijf" autocomplete="off">
+        <button type="submit">Zoek</button>
+      </form>
+      <p class="jb-note" id="jb-note" hidden><i>Voorbeeld</i><span>De vacatures hieronder zijn voorbeelden voor het ontwerp.</span></p>
+    </div>
+    <div class="jb-col">
+      <figure class="c1"><img src="/photography/jb-hg-21.jpg" alt="" style="object-position:70% 40%"></figure>
+      <figure class="c2"><img src="/photography/jb-mariselle-8.jpg" alt="" style="object-position:74% 36%"></figure>
+      <figure class="c3"><img src="/photography/jb-hg-10.jpg" alt="" style="object-position:46% 40%"></figure>
+      <span class="jb-chip a"><i></i><b id="jb-n">0</b> open vacatures</span>
+      <span class="jb-chip b"><b>4.000+</b> studenten in de community</span>
+    </div>
+  </div>
+</section>
+
+<div class="jb-bar" id="jb-bar">
+  <div class="k-wrap">
+    <div class="jb-tabs" id="jb-tabs" role="group" aria-label="Soort rol"></div>
+    <div class="jb-sel">
+      <select id="jb-field" aria-label="Vakgebied"></select>
+      <select id="jb-hours" aria-label="Uren per week"></select>
+      <select id="jb-loc" aria-label="Locatie"></select>
+    </div>
+  </div>
+</div>
+
+<section class="k-sec k-beige jb-list" style="padding-top:28px">
+  <div class="k-wrap">
+    <div class="jb-crow"><p class="jb-count" id="jb-count" aria-live="polite"></p>
+<button class="jb-toggle" id="jb-own" type="button" aria-pressed="false"><i></i><span>Alleen rollen waar wij zelf voor werven</span></button></div>
+    <div class="jb-grid" id="jb-grid" aria-busy="true"><div class="jb-sk"></div><div class="jb-sk"></div><div class="jb-sk"></div></div>
+  </div>
+</section>
+
+<section class="jb-join">
+  <div class="k-wrap">
+    <div>
+      <h2 class="k-h2">MIS GEEN ENKELE ROL.</h2>
+      <p>Nieuwe vacatures sturen we elke week naar onze community op WhatsApp, verdeeld over kanalen per vakgebied.</p>
+    </div>
+    <a class="k-btn" href="https://linktr.ee/voidscommunity" target="_blank" rel="noopener">Join de WhatsApp-community</a>
+  </div>
+</section>
+
+<div class="jb-ov" id="jb-ov"></div>
+<aside class="jb-dr" id="jb-dr" role="dialog" aria-modal="true" aria-labelledby="jb-dt" aria-hidden="true"><div class="jb-dr-in" id="jb-dc"></div></aside>
+
+<div id="k-footer"></div>
+<script src="/site/kit.js?v=6cff9d56"></script>
+<script>
+(function(){
+var EN=document.documentElement.lang==='en';
+var T=EN?{
+all:'All',types:{werkstudent:'Working student',stage:'Internship',starter:'Starter',trainee:'Trainee'},field:'All fields',hours:'All hours',loc:'All locations',h1:'Up to 16 h',h2:'16 to 24 h',h3:'24+ h',own:'We recruit',push:'Featured',
+count:function(n){return n+(n===1?' vacancy':' vacancies')},empty:'No vacancies match yet',emptyS:'Change a filter or join the WhatsApp community: we share new roles every week.',perh:'per hour',
+fh:'Hours',fl:'Location',fs:'Salary',ft:'Type',fp:'Posted',about:'About the role',tasks:'What you will do',want:'What we are looking for',offer:'What you get',
+apply:'Apply via VOIDS',applyP:'Apply at the employer',sm:'Your application goes to the VOIDS recruiter, who contacts you quickly.',sp:'This vacancy is featured by the employer. You apply on their own site.',
+name:'Full name',email:'Email',study:'Study and year',msg:'Short note (optional)',send:'Send application',ok:'Thank you! A VOIDS recruiter will be in touch. (Demo: nothing was sent.)',close:'Close',
+days:function(d){return d===0?'today':d===1?'1 day ago':d+' days ago'},hours_s:function(a,b){return a+' to '+b+' hours a week'},remote:'Hybrid'}:{
+all:'Alles',types:{werkstudent:'Werkstudent',stage:'Stage',starter:'Starter',trainee:'Trainee'},field:'Alle vakgebieden',hours:'Alle uren',loc:'Alle locaties',h1:'Tot 16 uur',h2:'16 tot 24 uur',h3:'24+ uur',own:'Wij werven',push:'Uitgelicht',
+count:function(n){return n+(n===1?' vacature':' vacatures')},empty:'Nog geen passende vacatures',emptyS:'Pas een filter aan of sluit je aan bij de WhatsApp-community: elke week delen we nieuwe rollen.',perh:'per uur',
+fh:'Uren',fl:'Locatie',fs:'Salaris',ft:'Soort',fp:'Geplaatst',about:'Over de rol',tasks:'Wat ga je doen',want:'Wat zoeken we',offer:'Wat krijg je',
+apply:'Solliciteer via VOIDS',applyP:'Solliciteer bij het bedrijf',sm:'Je sollicitatie gaat naar de VOIDS-recruiter, die snel contact met je opneemt.',sp:'Deze vacature wordt uitgelicht door het bedrijf. Je solliciteert op hun eigen site.',
+name:'Volledige naam',email:'E-mailadres',study:'Studie en jaar',msg:'Korte toelichting (optioneel)',send:'Verstuur sollicitatie',ok:'Bedankt! Een VOIDS-recruiter neemt contact met je op. (Demo: er is niets verstuurd.)',close:'Sluiten',
+days:function(d){return d===0?'vandaag':d===1?'1 dag geleden':d+' dagen geleden'},hours_s:function(a,b){return a+' tot '+b+' uur per week'},remote:'Hybride'};
+var SAMPLE=[
+{id:'hp-bd',co:'HotelPlanner',logo:'hotelplanner.png',type:'werkstudent',field:'Business Development',h:[24,32],loc:'Amsterdam',lt:{nl:'Amsterdam, hybride',en:'Amsterdam, hybrid'},sal:[16,20],own:true,d:1,
+ t:{nl:'Werkstudent Business Development',en:'Working student Business Development'},
+ about:{nl:'Je versterkt het commerciële team van een internationale travel-tech scale-up. Je werkt mee aan nieuwe leads en groeit uit tot vaste teamspeler.',en:'You strengthen the commercial team of an international travel-tech scale-up. You work on new leads and grow into a permanent team member.'},
+ tasks:{nl:['Leads identificeren en kwalificeren via deskresearch','Cold outreach via telefoon en e-mail','CRM-beheer en opvolging van de pipeline'],en:['Identify and qualify leads through desk research','Cold outreach by phone and email','Manage the CRM and follow up on the pipeline']},
+ want:{nl:['Wo- of hbo-student, bij voorkeur economie, business of communicatie','Commercieel, sociaal en doorzettend','Beschikbaar voor minimaal 24 uur per week, voor langere tijd'],en:['University or applied-sciences student, preferably economics, business or communication','Commercial, sociable and persistent','Available at least 24 hours a week, for a longer period']},
+ offer:{nl:['Een betaalde rol met echte verantwoordelijkheid','Begeleiding door een ervaren team','Kans om door te groeien naar een vaste rol'],en:['A paid role with real responsibility','Guidance from an experienced team','A chance to grow into a permanent role']}},
+{id:'en-mkt',co:'Enerzien',logo:'enerzien.png',type:'werkstudent',field:'Marketing',h:[16,24],loc:'Amsterdam',lt:{nl:'Amsterdam, hybride',en:'Amsterdam, hybrid'},sal:[15,19],own:true,d:2,
+ t:{nl:'Werkstudent Marketing',en:'Working student Marketing'},
+ about:{nl:'Je ondersteunt het marketingteam rond de energietransitie en netcongestie-oplossingen. Je combineert theorie uit je studie met de praktijk.',en:'You support the marketing team around the energy transition and grid-congestion solutions. You combine theory from your studies with practice.'},
+ tasks:{nl:['Content en campagnes voorbereiden en plannen','Marktonderzoek en analyse van resultaten','Meedenken over positionering en boodschap'],en:['Prepare and plan content and campaigns','Market research and analysis of results','Think along on positioning and messaging']},
+ want:{nl:['Student marketing, communicatie of aanverwant','Affiniteit met de energietransitie','Zelfstandig, nieuwsgierig en nauwkeurig'],en:['Marketing, communication or related student','Affinity with the energy transition','Independent, curious and accurate']},
+ offer:{nl:['Een betaalde rol naast je studie','Flexibel te combineren met je rooster','Veel eigen verantwoordelijkheid'],en:['A paid role alongside your studies','Easy to combine with your schedule','Plenty of ownership']}},
+{id:'jl-fin',co:'Joulz',logo:'joulz.svg',type:'werkstudent',field:'Finance',h:[16,20],loc:'Utrecht',lt:{nl:'Utrecht, hybride',en:'Utrecht, hybrid'},sal:[15,18],own:false,d:3,
+ t:{nl:'Werkstudent Finance',en:'Working student Finance'},
+ about:{nl:'Je ondersteunt het financiële team bij rapportages, analyses en de maandafsluiting.',en:'You support the finance team with reporting, analyses and the monthly close.'},
+ tasks:{nl:['Financiële rapportages opstellen','Analyses uitvoeren in Excel','Meewerken aan de maandafsluiting'],en:['Prepare financial reports','Run analyses in Excel','Help with the monthly close']},
+ want:{nl:['Student finance, economie of accountancy','Nauwkeurig en gestructureerd','Sterk in Excel'],en:['Finance, economics or accountancy student','Accurate and structured','Strong in Excel']},
+ offer:{nl:['Betaald, met doorgroeimogelijkheden','Inzicht in een bedrijf met veel activiteit','Een vaste begeleider'],en:['Paid, with room to grow','Insight into a busy company','A dedicated mentor']}},
+{id:'tls-fa',co:'The Longevity Store',logo:'the-longevity-store.svg',type:'starter',field:'Operations',h:[36,40],loc:'Amsterdam',lt:{nl:'Amsterdam, hybride',en:'Amsterdam, hybrid'},sal:[2900,3400],month:true,own:true,d:4,
+ t:{nl:"Founder's Associate",en:"Founder's Associate"},
+ about:{nl:'Je werkt direct met de oprichters aan strategie, operatie en groei van een snelgroeiend merk.',en:'You work directly with the founders on strategy, operations and growth of a fast-growing brand.'},
+ tasks:{nl:['Strategische projecten van begin tot eind trekken','Meedenken over processen en groei','Rapporteren aan de oprichters'],en:['Run strategic projects end to end','Think along on processes and growth','Report to the founders']},
+ want:{nl:['Recent afgestudeerd met wo- of hbo-diploma','Ondernemend en zelfstandig','Je pakt eigenaarschap'],en:['Recent graduate with a university or applied-sciences degree','Entrepreneurial and independent','You take ownership']},
+ offer:{nl:['Een volledige baan met veel verantwoordelijkheid','Directe lijn met de oprichters','Salaris op basis van ervaring'],en:['A full-time job with a lot of responsibility','Direct line to the founders','Salary based on experience']}},
+{id:'sc-ops',co:'Structural Collective',logo:'structural-collective.png',type:'stage',field:'Operations',h:[32,40],loc:'Amsterdam',lt:{nl:'Amsterdam, op kantoor',en:'Amsterdam, on site'},sal:[550,750],month:true,own:false,push:true,d:5,
+ t:{nl:'Stagiair Operations',en:'Operations intern'},
+ about:{nl:'Je loopt mee met het operationele team en helpt bij planning, coördinatie en procesverbetering.',en:'You join the operations team and help with planning, coordination and process improvement.'},
+ tasks:{nl:['Planning en coördinatie ondersteunen','Processen in kaart brengen','Meewerken aan verbeterprojecten'],en:['Support planning and coordination','Map out processes','Help with improvement projects']},
+ want:{nl:['Student in de afstudeer- of stagefase','Georganiseerd en proactief','Een duidelijk leerdoel'],en:['Student in the graduation or internship phase','Organised and proactive','A clear learning goal']},
+ offer:{nl:['Een stagevergoeding','Begeleiding op de werkvloer','Echte projecten in plaats van losse klusjes'],en:['An internship allowance','Mentoring on the floor','Real projects instead of odd jobs']}},
+{id:'hp-data',co:'HotelPlanner',logo:'hotelplanner.png',type:'werkstudent',field:'Data',h:[16,24],loc:'Remote',lt:{nl:'Remote',en:'Remote'},sal:[16,20],own:true,d:6,
+ t:{nl:'Werkstudent Data & Analytics',en:'Working student Data & Analytics'},
+ about:{nl:'Je helpt het team beslissingen te nemen op basis van data: je bouwt dashboards en analyseert klantgedrag.',en:'You help the team make decisions based on data: you build dashboards and analyse customer behaviour.'},
+ tasks:{nl:['Dashboards bouwen en onderhouden','Data opschonen en analyseren','Inzichten delen met het team'],en:['Build and maintain dashboards','Clean and analyse data','Share insights with the team']},
+ want:{nl:['Student data, informatica of econometrie','Ervaring met SQL of Python is een pré','Analytisch en scherp'],en:['Data, computer science or econometrics student','Experience with SQL or Python is a plus','Analytical and sharp']},
+ offer:{nl:['Betaald en flexibel','Werk dat meetelt in de organisatie','Veel leermomenten'],en:['Paid and flexible','Work that counts within the organisation','Plenty to learn']}},
+{id:'en-trn',co:'Enerzien',logo:'enerzien.png',type:'trainee',field:'Sales',h:[36,40],loc:'Amsterdam',lt:{nl:'Amsterdam, hybride',en:'Amsterdam, hybrid'},sal:[2800,3300],month:true,own:false,push:true,d:8,
+ t:{nl:'Trainee Sales',en:'Trainee Sales'},
+ about:{nl:'In een traineeship van twaalf maanden leer je het commerciële vak van binnenuit.',en:'In a twelve-month traineeship you learn the commercial trade from the inside.'},
+ tasks:{nl:['Mee in gesprekken met klanten','Offertes en voorstellen schrijven','Je eigen portefeuille opbouwen'],en:['Join customer conversations','Write quotes and proposals','Build your own portfolio']},
+ want:{nl:['Net afgestudeerd, wo of hbo','Commercieel gedreven','Je wilt snel leren'],en:['Recent graduate, university or applied sciences','Commercially driven','You want to learn fast']},
+ offer:{nl:['Een opleidingsprogramma','Salaris op basis van ervaring','Doorgroei naar een vaste rol'],en:['A training programme','Salary based on experience','A path to a permanent role']}}
+];
+var HB=[[0,8],[8,16],[16,24],[24,32],[32,41]];
+var CITIES=['Amsterdam','Rotterdam','Utrecht','Den Haag','Eindhoven','Groningen','Leiden','Delft','Haarlem','Nijmegen','Tilburg','Breda','Arnhem','Maastricht','Remote'];
+var FIELDS=['Business Development','Communicatie','Consultancy','Data','Design','Finance','HR','Juridisch','Marketing','Operations','Sales','Tech'];
+var TX=EN?{ho:['Up to 8 hours','8 to 16 hours','16 to 24 hours','24 to 32 hours','32 to 40 hours (full time)'],
+ nw:'New',salNone:'Salary on request',noneT:'No vacancies online right now',noneB:'We share new roles every week in our WhatsApp community and in the list of this week\'s vacancies. <a href="https://linktr.ee/voidsagency" target="_blank" rel="noopener">This week\'s vacancies &rarr;</a>',
+ err:'We could not load the roles right now. Try again in a moment or join the WhatsApp community.',
+ sent:'Thank you! A VOIDS recruiter will be in touch.',sendErr:'Sending failed. Try again or email contact@voids.agency.'
+}:{ho:['Tot 8 uur','8 tot 16 uur','16 tot 24 uur','24 tot 32 uur','32 tot 40 uur (fulltime)'],
+ nw:'Nieuw',salNone:'Salaris in overleg',noneT:'Nu geen vacatures online',noneB:'Elke week delen we nieuwe rollen in onze WhatsApp-community en in de lijst met vacatures van deze week. <a href="https://linktr.ee/voidsagency" target="_blank" rel="noopener">Vacatures van deze week &rarr;</a>',
+ err:'We kunnen de vacatures nu niet laden. Probeer het zo opnieuw of sluit je aan bij de WhatsApp-community.',
+ sent:'Bedankt! Een VOIDS-recruiter neemt contact met je op.',sendErr:'Versturen is niet gelukt. Probeer het opnieuw of mail naar contact@voids.agency.'
+};
+function L(o){return EN?o.en:o.nl}
+var local=/^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+var V=[],usingSample=false;
+var state={type:'all',field:'all',hours:'all',loc:'all',own:false,q:''};
+var $=function(id){return document.getElementById(id)};
+var tabs=$('jb-tabs'),grid=$('jb-grid'),cnt=$('jb-count'),nEl=$('jb-n'),fSel=$('jb-field'),hSel=$('jb-hours'),lSel=$('jb-loc'),ownB=$('jb-own'),bar=$('jb-bar');
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function uniq(a){return a.filter(function(x,i){return x&&a.indexOf(x)===i})}
+/* photography: decorative team photos from our shoots, assigned in a stable order so neighbours differ */
+var PH=[['hg-21','70% 40%'],['hg-17','60% 30%'],['mariselle-8','74% 36%'],['hg-13','56% 34%'],['hg-10','46% 40%'],['home-hero-7','54% 34%'],['mariselle-4','56% 40%'],['hg-03','62% 34%'],['hg-12','50% 36%'],['hg-05','62% 36%'],['hg-02','56% 30%'],['mariselle-11','52% 52%']];
+function phImg(v,cls){var p=v.ph||PH[0];return '<img src="/photography/jb-'+p[0]+'.jpg" alt="" loading="lazy" decoding="async" style="object-position:'+p[1]+'">'}
+/* logos: only the company name is known; try svg/png/jpg/webp, then fall back to the initial */
+window.jbLogo=function(img){var ex=['svg','png','jpg','webp'],i=+img.getAttribute('data-i'),s=img.getAttribute('data-s');
+ if(s&&i<ex.length-1){i++;img.setAttribute('data-i',i);img.src='/logos/'+s+'.'+ex[i];return}
+ var b=document.createElement('b');b.className='jb-ini';b.textContent=(img.getAttribute('data-n')||'?').charAt(0);img.replaceWith(b)};
+function logo(v){var n=esc(v.co);
+ if(/\.[a-z]{2,4}$/i.test(v.logo))return '<img src="/logos/'+esc(v.logo)+'" alt="" data-i="9" data-n="'+n+'" onerror="jbLogo(this)">';
+ return '<img src="/logos/'+esc(v.logo)+'.svg" alt="" data-s="'+esc(v.logo)+'" data-i="0" data-n="'+n+'" onerror="jbLogo(this)">'}
+function nf(n){return n.toLocaleString(EN?'en-US':'nl-NL')}
+function sal(v){if(v.hasSal===false)return TX.salNone;
+ return v.month?('€ '+nf(v.sal[0])+(v.sal[1]!==v.sal[0]?' – € '+nf(v.sal[1]):'')+(EN?' a month':' per maand')):('€ '+v.sal[0]+(v.sal[1]!==v.sal[0]?' – € '+v.sal[1]:'')+' '+T.perh)}
+function hrs(v){return (v.h[1]&&v.h[1]!==v.h[0]?v.h[0]+'–'+v.h[1]:v.h[0])+(EN?' h':' uur')}
+function daysOf(v){if(v.posted){var d=Math.floor((Date.now()-new Date(v.posted+'T00:00:00'))/864e5);return Math.max(0,d)}return v.d||0}
+function match(v){
+  if(state.type!=='all'&&v.type!==state.type)return false;
+  if(state.field!=='all'&&v.field!==state.field)return false;
+  if(state.loc!=='all'&&v.loc!==state.loc)return false;
+  if(state.own&&v.push)return false;
+  if(state.hours!=='all'){var b=HB[+state.hours],h0=v.h[0],h1=v.h[1]||v.h[0];if(!(h0===h1?(h0>b[0]&&h0<=b[1]):(h1>b[0]&&h0<b[1])))return false}
+  if(state.q){var s=(L(v.t)+' '+v.co+' '+v.field).toLowerCase();if(s.indexOf(state.q.toLowerCase())<0)return false}
+  return true}
+var ICO={clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>'};
+
+/* filters + tabs */
+var types=['all','werkstudent','stage','starter','trainee'];
+function buildTabs(){tabs.innerHTML=types.map(function(t){var on=state.type===t;return '<button type="button" data-t="'+t+'" class="'+(on?'on':'')+'" aria-pressed="'+on+'">'+(t==='all'?T.all:T.types[t])+'</button>'}).join('')}
+function buildFilters(){
+ function opts(fixed,key){
+  var all=uniq(fixed.concat(V.map(function(v){return v[key]})));
+  var main=all.filter(function(x){return x!=='Remote'}).sort(function(a,b){return a.localeCompare(b)});
+  if(all.indexOf('Remote')>-1)main.push('Remote');
+  return main.map(function(x){return '<option value="'+esc(x)+'">'+esc(x)+'</option>'}).join('')}
+ fSel.innerHTML='<option value="all">'+T.field+'</option>'+opts(FIELDS,'field');
+ hSel.innerHTML='<option value="all">'+T.hours+'</option>'+TX.ho.map(function(t,i){return '<option value="'+i+'">'+t+'</option>'}).join('');
+ lSel.innerHTML='<option value="all">'+T.loc+'</option>'+opts(CITIES,'loc')}
+
+/* cards */
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){
+ var k=0;es.forEach(function(e){if(!e.isIntersecting)return;var c=e.target;c.style.setProperty('--d',(k++*60)+'ms');c.classList.remove('rv');c.classList.add('in');io.unobserve(c)})},{rootMargin:'0px 0px -6% 0px',threshold:.05}):null;
+function emptyBox(title,body){return '<div class="jb-empty" style="grid-column:1/-1"><img src="/photography/jb-hg-18.jpg" alt="" loading="lazy"><div><b>'+title+'</b>'+body+'</div></div>'}
+function render(){
+  var list=V.filter(match);
+  cnt.textContent=T.count(list.length);grid.removeAttribute('aria-busy');
+  if(!list.length){grid.innerHTML=V.length?emptyBox(T.empty,T.emptyS):emptyBox(TX.noneT,TX.noneB);return}
+  grid.innerHTML=list.map(function(v){
+    var nw=daysOf(v)<=3?'<span class="jb-new"><i></i>'+TX.nw+'</span>':'';
+    return '<button type="button" class="jb-card'+(reduce||!io?'':' rv')+'" data-id="'+esc(v.id)+'"><div class="jb-phw"><div class="jb-ph">'+phImg(v)+'<span class="jb-tag '+(v.push?'push':'own')+'">'+(v.push?T.push:T.own)+'</span>'+nw+'</div><span class="jb-logo">'+logo(v)+'</span></div>'
+     +'<div class="jb-body"><span class="jb-co">'+esc(v.co)+'</span><h3>'+esc(L(v.t))+'</h3><span class="jb-type">'+T.types[v.type]+'</span><div class="jb-meta"><span>'+ICO.clock+hrs(v)+'</span>'+(L(v.lt)?'<span>'+ICO.pin+esc(L(v.lt))+'</span>':'')+'</div></div>'
+     +'<div class="jb-foot"><span class="jb-sal">'+sal(v)+'</span><span class="jb-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></div></button>'}).join('');
+  if(io&&!reduce)[].forEach.call(grid.querySelectorAll('.jb-card.rv'),function(c){io.observe(c)})}
+
+tabs.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;state.type=b.getAttribute('data-t');[].forEach.call(tabs.querySelectorAll('button'),function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on)});render()});
+fSel.addEventListener('change',function(){state.field=fSel.value;render()});
+hSel.addEventListener('change',function(){state.hours=hSel.value;render()});
+lSel.addEventListener('change',function(){state.loc=lSel.value;render()});
+ownB.addEventListener('click',function(){state.own=!state.own;ownB.setAttribute('aria-pressed',state.own);render()});
+$('jb-form').addEventListener('submit',function(e){e.preventDefault();state.q=$('jb-q').value.trim();render();bar.scrollIntoView({behavior:'smooth'})});
+$('jb-q').addEventListener('input',function(e){state.q=e.target.value.trim();render()});
+var raf=0;function onScroll(){var hh=parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hh'))||56;bar.classList.toggle('stuck',bar.getBoundingClientRect().top<=hh+1&&window.innerWidth>960)}
+window.addEventListener('scroll',function(){if(!raf)raf=requestAnimationFrame(function(){raf=0;onScroll()})},{passive:true});
+
+/* drawer */
+var dr=$('jb-dr'),ov=$('jb-ov'),dc=$('jb-dc'),last=null;
+function open(id){
+  var v=V.filter(function(x){return x.id===id})[0];if(!v)return;last=document.activeElement;
+  function ul(a){return a&&a.length?'<ul>'+a.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>':''}
+  function sec(h,b){return b?'<h4>'+h+'</h4>'+b:''}
+  var applyHtml=v.push?(v.applyUrl?'<a class="k-btn" href="'+esc(v.applyUrl)+'" target="_blank" rel="noopener nofollow sponsored">'+T.applyP+' ↗</a><small>'+T.sp+'</small>':'<small>'+T.sp+'</small>'):'<button class="k-btn" type="button" id="jb-open">'+T.apply+'</button><small>'+T.sm+'</small>';
+  dc.innerHTML='<button class="jb-x" type="button" aria-label="'+T.close+'">×</button>'
+   +'<div class="jb-phw jb-dphw"><div class="jb-dph">'+phImg(v)+'</div><span class="jb-logo">'+logo(v)+'</span></div>'
+   +'<div class="jb-corow"><span class="jb-co">'+esc(v.co)+'</span><span class="jb-tag '+(v.push?'push':'own')+'">'+(v.push?T.push:T.own)+'</span></div><h2 id="jb-dt">'+esc(L(v.t))+'</h2>'
+   +'<div class="jb-facts"><div class="jb-fact"><small>'+T.fs+'</small><b>'+sal(v)+'</b></div><div class="jb-fact"><small>'+T.fh+'</small><b>'+T.hours_s(v.h[0],v.h[1])+'</b></div><div class="jb-fact"><small>'+T.fl+'</small><b>'+esc(L(v.lt))+'</b></div><div class="jb-fact"><small>'+T.ft+'</small><b>'+T.types[v.type]+'</b></div></div>'
+   +sec(T.about,L(v.about)?'<p>'+esc(L(v.about))+'</p>':'')+sec(T.tasks,ul(L(v.tasks)))+sec(T.want,ul(L(v.want)))+sec(T.offer,ul(L(v.offer)))
+   +'<div class="jb-apply" id="jb-ap">'+applyHtml+'</div>';
+  dr.classList.add('on');ov.classList.add('on');dr.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';dr.scrollTop=0;
+  dc.querySelector('.jb-x').focus();
+  var ob=$('jb-open');
+  if(ob)ob.addEventListener('click',function(){
+    $('jb-ap').innerHTML='<form class="jb-form" id="jb-f"><label>'+T.name+'<input name="name" required autocomplete="name"></label><label>'+T.email+'<input name="email" type="email" required autocomplete="email"></label><label>'+T.study+'<input name="study"></label><label>'+T.msg+'<textarea name="note"></textarea></label><button class="k-btn" type="submit">'+T.send+'</button><p class="jb-err" id="jb-fe" hidden></p></form>';
+    $('jb-f').addEventListener('submit',function(e){e.preventDefault();var f=e.target,btn=f.querySelector('button'),fe=$('jb-fe');btn.disabled=true;fe.hidden=true;
+      var body={name:f.name.value.trim(),email:f.email.value.trim(),study:f.study.value.trim(),note:f.note.value.trim(),vacancy:L(v.t),company:v.co};
+      fetch('/api/apply',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){if(!r.ok)throw 0;$('jb-ap').innerHTML='<div class="jb-ok">'+TX.sent+'</div>'}).catch(function(){
+        btn.disabled=false;fe.textContent=TX.sendErr;fe.hidden=false})})})}
+function close(){dr.classList.remove('on');ov.classList.remove('on');dr.setAttribute('aria-hidden','true');document.body.style.overflow='';if(last)last.focus()}
+grid.addEventListener('click',function(e){var c=e.target.closest('.jb-card');if(c)open(c.getAttribute('data-id'))});
+dc.addEventListener('click',function(e){if(e.target.closest('.jb-x'))close()});
+ov.addEventListener('click',close);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&dr.classList.contains('on'))close()});
+
+/* data: the Notion database via /api/vacancies; on a local preview without a token the sample roles show */
+function use(list,failed){
+  V=list.filter(function(v){return !EN||v.hasEn!==false});
+  V.forEach(function(v,i){v.ph=PH[i%PH.length]});
+  nEl.textContent=V.length;var chip=document.querySelector('.jb-chip.a');if(chip)chip.hidden=!V.length;
+  buildTabs();buildFilters();
+  $('jb-note').hidden=!usingSample;
+  if(failed){grid.removeAttribute('aria-busy');grid.innerHTML=emptyBox(T.empty,TX.err);cnt.textContent='';return}
+  render();onScroll()}
+function useSample(){usingSample=true;use(SAMPLE.slice(),false)}
+fetch('/api/vacancies').then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j}})}).then(function(x){
+  var j=x.j;
+  if(!j.configured){if(local)useSample();else use([],false);return}
+  if(!x.ok||j.error){use([],true);return}
+  use(j.vacancies,false)}).catch(function(){if(local)useSample();else use([],true)});
+})();
+</script>
+</body>
+</html>

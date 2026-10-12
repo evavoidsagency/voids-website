@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!--seo-->
+<title>Community &amp; jobboard | VOIDS</title>
+<meta name="description" content="Zet je vacature rechtstreeks onder de aandacht van 4.000+ studenten en starters in onze WhatsApp-community en op ons jobboard.">
+<link rel="canonical" href="https://voids.agency/companies/community-jobboard">
+<link rel="alternate" hreflang="nl" href="https://voids.agency/companies/community-jobboard">
+<link rel="alternate" hreflang="en" href="https://voids.agency/en/companies/community-jobboard">
+<link rel="alternate" hreflang="x-default" href="https://voids.agency/companies/community-jobboard">
+<meta property="og:title" content="Community &amp; jobboard | VOIDS">
+<meta property="og:description" content="Zet je vacature rechtstreeks onder de aandacht van 4.000+ studenten en starters in onze WhatsApp-community en op ons jobboard.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://voids.agency/companies/community-jobboard">
+<meta property="og:site_name" content="VOIDS">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:image" content="https://voids.agency/photography/home-hero-8.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Community &amp; jobboard | VOIDS">
+<meta name="twitter:description" content="Zet je vacature rechtstreeks onder de aandacht van 4.000+ studenten en starters in onze WhatsApp-community en op ons jobboard.">
+<meta name="twitter:image" content="https://voids.agency/photography/home-hero-8.jpg">
+<link rel="icon" href="/favicon.ico">
+<meta name="theme-color" content="#fffaec">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "VOIDS", "legalName": "VOIDS vof", "url": "https://voids.agency", "logo": "https://voids.agency/logo.svg", "description": "VOIDS is een junior talent agency in Amsterdam die hoogopgeleid junior talent verbindt aan ambitieuze bedrijven via werkstudentschappen, stages en starterrollen.", "founder": [{"@type": "Person", "name": "Eva van Raaij"}, {"@type": "Person", "name": "Wieke Sleutjes"}], "address": {"@type": "PostalAddress", "addressLocality": "Amsterdam", "addressCountry": "NL"}, "email": "contact@voids.agency", "sameAs": ["https://www.linkedin.com/company/voidsagency", "https://www.instagram.com/voids_agency/", "https://www.tiktok.com/@voidstalentagency"]}</script>
+<!--/seo-->
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site/kit.css?v=6cff9d56">
+<style>
+/* page-local */
+.k-h1,.k-h2{text-transform:uppercase}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.cj-hero .k-h1{font-size:clamp(27.3px,3.6vw,56px)}
+.cj-hero .k-lead{max-width:560px}
+.cj-board{padding:34px;border-radius:24px;background:var(--purple);color:#fff;display:grid;gap:0}
+.cj-board .row{display:grid;grid-template-columns:minmax(150px,auto) 1fr;gap:22px;align-items:center;padding:22px 0}
+.cj-board .row:first-child{padding-top:0}.cj-board .row:last-child{padding-bottom:0}
+.cj-board .n{font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(31.2px,3.4vw,50px);line-height:1;white-space:nowrap}
+.cj-board .l{font-size:15px;line-height:1.45;color:var(--purple-100);font-weight:500}
+
+/* poster band: photo + words that appear as you scroll */
+.cj-poster{aspect-ratio:2.4/1;border-radius:24px}
+.cj-poster img{object-position:center 12%}
+.cj-poster::after{display:none}
+.cj-poster .t{position:absolute;z-index:2;left:clamp(22px,4vw,56px);bottom:clamp(18px,3.4vw,46px);color:#fff;font-family:Anton,"Arial Narrow",sans-serif;line-height:.96;font-size:clamp(18.8px,3.8vw,60px)}
+.cj-poster .t span.l1,.cj-poster .t span.l2{display:block}
+.cj-poster .t .l2{color:var(--blue-200)}
+
+/* how it works: pinned scroll steps */
+.hs{position:relative;height:calc(var(--ph) + 130vh);background:#fff}
+.hs-pin{position:sticky;top:var(--pt);height:var(--ph);display:flex;flex-direction:column;gap:clamp(14px,2.4vh,28px);padding:clamp(18px,3vh,36px) 0 clamp(22px,4vh,44px);overflow:hidden}
+.hs-top{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.hs-top .k-h2{font-size:clamp(23.1px,2.8vw,40px)}
+.hs-rail{display:flex;gap:10px}
+.hs-rail button{width:52px;height:52px;border-radius:50%;border:0;background:var(--purple-100);color:var(--purple);font:400 20px Anton,sans-serif;cursor:pointer;transition:background .3s,color .3s,transform .3s}
+.hs-rail button.on{background:var(--purple);color:#fff;transform:scale(1.08)}
+.hs-rail button.past{background:var(--purple-200);color:var(--purple-700)}
+.hs-steps{flex:1;min-height:0;display:grid}
+.hs-step{grid-area:1/1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,72px);align-items:center;padding:clamp(26px,4vw,64px);border-radius:28px;background:var(--purple-100);opacity:0;transform:translateY(28px);pointer-events:none;transition:opacity .55s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.hs-step.sky{background:var(--blue-100)}
+.hs-step.on{opacity:1;transform:none;pointer-events:auto}
+.hs-step.past{transform:translateY(-28px)}
+.hs-vis{display:flex;flex-direction:column;justify-content:center;gap:12px;color:var(--purple)}
+.hs-step.sky .hs-vis{color:var(--blue-700)}
+.hs-big{font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(34px,min(5.4vw,11vh),84px);line-height:.92}
+.hs-cap{font-size:clamp(14.4px,1.4vw,19.8px);font-weight:500;color:var(--soft)}
+.hs-words{display:grid;gap:2px}
+.hs-words span{display:block;font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(20.5px,min(3.1vw,6.1vh),50px);line-height:1.04;text-transform:uppercase}
+.hs-words span:nth-child(2){color:var(--blue-700)}
+.hs-txt{display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.hs-txt .k-icon{width:64px;height:64px;border-radius:50%;margin-bottom:clamp(14px,2.6vh,26px)}
+.hs-txt .k-icon svg{width:30px;height:30px}
+.hs-step.sky .k-icon{color:var(--blue-700)}
+.hs-txt h3{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(21.4px,2.6vw,40px);line-height:1;text-transform:uppercase;color:var(--ink);margin-bottom:clamp(10px,2vh,18px)}
+.hs-txt p{font-size:clamp(14.4px,1.2vw,18px);line-height:1.6;color:var(--soft);max-width:30em}
+.hs-link{display:inline-flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
+.hs-link .arrow{flex:none;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--blue-700);display:grid;place-items:center;transition:transform .3s}
+.hs-link:hover .arrow{transform:translateX(6px)}
+@media(max-width:860px),(prefers-reduced-motion:reduce){
+  .hs{height:auto;padding:72px 0}
+  .hs-pin{position:static;height:auto;overflow:visible;padding:0;gap:28px}
+  .hs-rail{display:none}
+  .hs-steps{display:grid;gap:16px}
+  .hs-step{grid-area:auto;opacity:1!important;transform:none!important;pointer-events:auto!important;transition:none}
+}
+@media(max-width:860px){
+  .hs-step{grid-template-columns:1fr;gap:22px;padding:28px 22px}
+  .hs-big{font-size:clamp(33.2px,12vw,60px)}
+  .hs-words span{font-size:clamp(24.3px,7.1vw,40px)}
+}
+
+/* pricing: big two-option switch */
+.pp{margin-top:0}
+.pp-switch{position:relative;display:grid;grid-template-columns:1fr 1fr;width:min(520px,100%);margin:0 auto 22px;padding:6px;border-radius:99px;background:#fff}
+.pp-thumb{position:absolute;top:6px;bottom:6px;left:6px;width:calc(50% - 6px);border-radius:99px;background:var(--purple);transition:transform .4s cubic-bezier(.2,.8,.2,1),background .3s;pointer-events:none}
+.pp-switch.los .pp-thumb{transform:translateX(100%);background:var(--purple-700,#27097a)}
+.pp-switch button{position:relative;z-index:1;border:0;background:none;padding:14px 12px;font:400 clamp(14px,1.2vw,16px) Anton,"Arial Narrow",sans-serif;letter-spacing:.04em;text-transform:uppercase;color:var(--purple);cursor:pointer;transition:color .3s}
+.pp-switch button[aria-selected=true]{color:#fff}
+.pp-stage{display:grid}
+.pp-panel{grid-area:1/1;display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .45s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
+.pp-panel.on{opacity:1;transform:none;pointer-events:auto}
+.pp-big{display:flex;flex-direction:column;justify-content:space-between;gap:34px;min-height:260px;padding:clamp(24px,2.6vw,36px);border-radius:22px;background:var(--purple);color:#fff}
+.pp-panel.los .pp-big{background:var(--ink)}
+.pp-big .ic{width:64px;height:64px;border-radius:50%;background:#fff;color:var(--purple);display:grid;place-items:center}
+.pp-panel.los .pp-big .ic{color:var(--blue-700)}
+.pp-big .ic svg{width:32px;height:32px}
+.pp-big b{font:400 clamp(30px,3.2vw,46px)/1 Anton,"Arial Narrow",sans-serif;text-transform:uppercase}
+.pp-txt{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:22px;padding:clamp(24px,3vw,40px);border-radius:22px;background:#fff}
+.pp-txt .k-p{font-size:clamp(15px,1.2vw,17px);line-height:1.6;max-width:30em}
+.pp-txt .k-go{color:var(--purple)}
+@media(max-width:860px){
+  .pp-panel{grid-template-columns:1fr}
+  .pp-big{min-height:240px}
+}
+@media(max-width:520px){.pp-switch button{padding:16px 6px;font-size:15px}}
+/* pricing: two compact cards, both visible */
+.pp-switch{display:none}
+.pp-stage{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.pp-panel,.pp-panel.on{grid-area:auto;opacity:1;transform:none;pointer-events:auto;display:flex;flex-direction:column;gap:18px;padding:clamp(24px,2.6vw,34px);border-radius:24px;background:#fff;transition:none}
+.pp-panel.abo{background:var(--purple);color:#fff}
+.pp-panel.abo .pp-txt .k-p{color:rgba(255,255,255,.86)}.pp-panel.abo .pp-txt .k-go{color:#fff}
+.pp-panel .pp-big,.pp-panel.los .pp-big{flex-direction:row;align-items:center;justify-content:flex-start;gap:16px;min-height:0;padding:0;background:none;color:inherit}
+.pp-panel.los .pp-big{color:var(--purple)}
+.pp-big .ic{width:48px;height:48px;flex:none}.pp-big .ic svg{width:24px;height:24px}
+.pp-panel.abo .pp-big .ic{background:#fff}.pp-panel.los .pp-big .ic{background:var(--purple-100);color:var(--purple)}
+.pp-big b{font-size:clamp(26px,2.6vw,36px)}
+.pp-txt{padding:0;background:none;border-radius:0;justify-content:space-between;flex:1;gap:20px}
+/* pricing: photo + two stacked options */
+.pp{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:16px;align-items:stretch}
+.pp-ph{margin:0;position:relative;border-radius:26px;overflow:hidden;min-height:360px}
+.pp-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.pp:hover .pp-ph img{transform:scale(1.04)}
+.pp-stage{grid-template-columns:1fr!important;grid-auto-rows:1fr;align-content:stretch}
+.pp-panel,.pp-panel.on{justify-content:center}
+@media(max-width:860px){.pp{grid-template-columns:1fr}.pp-ph{min-height:0;aspect-ratio:4/3}}
+
+@media(prefers-reduced-motion:reduce){.pp-thumb,.pp-panel{transition:none}.pp-panel{transform:none}}
+
+/* contact: stepper + stepped form */
+.cj-contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,72px);align-items:start}
+.cj-side{position:sticky;top:calc(var(--hh,56px) + 24px);display:grid;gap:30px}
+.cj-flow{display:grid;gap:12px}
+.cj-flow button{display:grid;grid-template-columns:44px 1fr;gap:4px 16px;align-items:center;text-align:left;width:100%;padding:20px 22px;border:0;border-radius:18px;background:rgba(255,255,255,.08);color:#fff;font:inherit;cursor:pointer;transition:background .25s,color .25s}
+.cj-flow button:hover{background:rgba(255,255,255,.14)}
+.cj-flow i{grid-row:1;width:42px;height:42px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font:400 18px Anton,sans-serif;font-style:normal;transition:background .25s}
+.cj-flow b{font-size:17px;font-weight:600;line-height:1.3}
+.cj-flow .det{grid-column:2;display:none;font-size:15px;line-height:1.55;color:var(--soft)}
+.cj-flow button.on{background:#fff;color:var(--ink)}
+.cj-flow button.on i{background:var(--purple)}
+.cj-flow button.on .det{display:block}
+.cj-or{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.cj-or span{font-weight:500;color:var(--purple-100)}
+.cj-form{color:var(--ink);padding:36px;gap:20px}
+.cj-prog{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--muted)}
+.cj-prog .d{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--purple-100);color:var(--purple);font:400 16px Anton,sans-serif;transition:background .3s,color .3s}
+.cj-prog .d.on{background:var(--purple);color:#fff}
+.cj-prog .lbl{margin-left:6px;color:var(--ink)}
+.cj-step{display:grid;gap:16px}
+.cj-form .k-btn{justify-content:center;width:100%}
+.cj-actions{display:grid;grid-template-columns:auto 1fr;gap:12px}
+.cj-actions .cj-back{width:auto;background:var(--purple-100);color:var(--purple)}
+.cj-actions .cj-back:hover{background:var(--purple-200)}
+.cj-err{padding:14px 16px;border-radius:10px;background:var(--beige-2);color:var(--ink);font-size:14px;line-height:1.5}
+.cj-sent{background:#fff;color:var(--ink);border-radius:20px;padding:56px 34px;text-align:center}
+.cj-sent .anton{font-size:clamp(23.2px,2.6vw,34px);color:var(--purple);margin-bottom:10px}
+.cj-sent p{font-size:16px;color:var(--soft)}
+[hidden]{display:none!important}
+@media(max-width:960px){
+  .cj-contact{grid-template-columns:1fr;gap:32px}
+  .cj-side{position:static}
+  .cj-poster{aspect-ratio:4/3}
+  .cj-board{padding:26px}
+  .cj-board .row{grid-template-columns:1fr;gap:6px}
+  .cj-form{padding:26px}
+}
+@media(prefers-reduced-motion:reduce){.cj-flow button,.cj-prog .d{transition:none}}
+
+/* how it works: two live cards instead of a pinned stage */
+.cw2{gap:16px}
+.cw2-p{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:clamp(380px,34vw,480px);padding:28px;border-radius:28px;overflow:hidden;color:#fff;isolation:isolate;background:var(--purple-700,#27097a)}
+.cw2-p>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.cw2-p:hover>img{transform:scale(1.05)}
+.cw2-p::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(24,6,90,.92),rgba(24,6,90,.45) 42%,rgba(24,6,90,0) 70%)}
+.cw2-top{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start}
+.cw2-top .k-badge{background:#fff;color:var(--purple)}
+.cw2-num{display:grid;gap:2px;padding:14px 18px;border-radius:18px;background:rgba(255,255,255,.94);color:var(--purple)}
+.cw2-num b{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(34px,3.6vw,52px);line-height:1}.cw2-num span{font-size:13px;font-weight:600;color:var(--soft)}
+.cw2-tx h3{font-size:clamp(22px,2vw,28px);font-weight:600;letter-spacing:-.012em;margin:0 0 10px;color:#fff}
+.cw2-tx p{margin:0;font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.88);max-width:34em}
+.cw2 .hs-link{display:inline-flex;align-items:center;gap:12px;color:#fff;text-decoration:none;margin-bottom:10px}
+.cw2 .hs-link .arrow{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fff;color:var(--purple)}
+@media(max-width:860px){.cw2-p{min-height:420px}}
+.cw-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.cw-card{display:flex;flex-direction:column;padding:22px 22px 30px;border-radius:24px;background:var(--purple-100)}
+.cw-card.a{background:var(--purple);color:#fff}
+.cw-vis{height:220px;border-radius:16px;margin-bottom:26px;position:relative;overflow:hidden;display:flex;align-items:center}
+.cw-card.a .cw-vis{background:rgba(255,255,255,.08);padding:0 26px;gap:26px}
+.cw-card.b .cw-vis{background:#fff;padding:0 22px}
+.cw-count{display:grid;gap:2px}.cw-count b{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(44px,5vw,68px);line-height:1}.cw-count span{font-size:13px;opacity:.75}
+.cw-chat{margin-left:auto;display:grid;gap:8px;justify-items:end}
+.cw-chat i{font-style:normal;display:block;height:26px;border-radius:13px 13px 3px 13px;background:rgba(255,255,255,.22)}
+.cw-chat .m1{width:120px}.cw-chat .m2{width:84px}
+.cw-chat .you{height:auto;padding:9px 16px;background:#fff;color:var(--purple);font-size:13px;font-weight:600;animation:cwp 3.6s ease-in-out infinite}
+@keyframes cwp{0%,100%{transform:translateY(0) scale(1)}40%,60%{transform:translateY(-4px) scale(1.04)}}
+.cw-rows{width:100%;display:grid;gap:8px}
+.cw-rows span{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-radius:12px;background:var(--purple-100);font-size:14px;font-weight:600;color:var(--soft)}
+.cw-rows .you{background:var(--purple);color:#fff;animation:cwp 3.6s ease-in-out infinite}
+.cw-rows em{font-style:normal;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:99px;background:rgba(255,255,255,.2)}
+.cw-card .k-icon{width:48px;height:48px;border-radius:14px;margin-bottom:16px;background:rgba(255,255,255,.16);color:inherit}
+.cw-card.b .k-icon{background:#fff;color:var(--purple)}
+.cw-card h3{font-size:clamp(20px,1.8vw,24px);font-weight:600;letter-spacing:-.01em;margin-bottom:10px}
+.cw-card p{margin:0;font-size:15.5px;line-height:1.6;opacity:.88;max-width:34em}
+.cw-card .hs-link{display:inline-flex;align-items:center;gap:12px;color:inherit;text-decoration:none;margin-bottom:10px}
+@media(max-width:860px){.cw-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.cw-chat .you,.cw-rows .you{animation:none}}
+.pp-switch button,.pp-tabs button{font-family:Inter,sans-serif!important;text-transform:none!important;font-weight:600!important;font-size:14.5px!important;letter-spacing:0!important}
+.k-blogrow .k-head{align-items:center}.k-blogrow .k-head .k-lead{margin-top:0}
+</style>
+</head>
+<body data-nav="companies">
+<div id="k-header"></div>
+
+<!-- 1 hero -->
+<section class="k-hero cj-hero">
+  <div class="k-wrap">
+    <div>
+      <span class="k-eyebrow" data-reveal>Vacatures adverteren</span>
+      <h1 class="k-h1" data-reveal data-delay="60">Breng je vacature onder de aandacht van <span class="k-accent">4.000+ studenten en starters.</span></h1>
+      <p class="k-lead" data-reveal data-delay="120">Naast onze werving &amp; selectie-dienst kun je je vacature ook zelf onder de aandacht brengen: rechtstreeks in onze WhatsApp-community en op ons jobboard.</p>
+      <div class="k-cta-row" data-reveal data-delay="180">
+        <a class="k-btn" href="https://calendly.com/wieke-voids/introduction" target="_blank" rel="noopener">Neem contact op</a>
+      </div>
+    </div>
+    <div class="cj-board" data-reveal data-delay="140">
+      <div class="row"><span class="n" data-count="4000" data-suffix="+">4.000+</span><span class="l">studenten en starters bereikt</span></div>
+      <div class="row"><span class="n">Wekelijks</span><span class="l">een nieuwe update naar de community</span></div>
+      <div class="row"><span class="n">2 kanalen</span><span class="l">WhatsApp-community en jobboard</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 poster band: one loud move, words appear on scroll -->
+<section class="k-sec tight k-beige" style="padding-top:0">
+  <div class="k-wrap">
+    <div class="k-photo px cj-poster" data-reveal>
+      <img src="/photography/community-jobboard-band-2.jpg" alt="Team aan het werk op kantoor">
+      
+    </div>
+  </div>
+</section>
+
+<!-- 3 how it works: pinned scroll steps -->
+<section class="k-sec k-white cj-ways" id="hoe">
+  <div class="k-wrap">
+    <div class="k-head" data-reveal>
+      <h2 class="k-h2" style="margin-top:0">Hoe het werkt</h2>
+    </div>
+    <div class="cw-grid cw2">
+      <article class="cw2-p a" data-reveal>
+        <img src="/photography/hg-05.jpg" alt="Twee collega's bekijken samen een overzicht en lachen" style="object-position:50% 22%" loading="lazy">
+        <div class="cw2-top"><div class="cw2-num"><b data-count="4000" data-suffix="+">4.000+</b><span>studenten en starters</span></div></div>
+        <div class="cw2-tx"><h3>WhatsApp-community</h3><p>Je vacature gaat wekelijks mee in de update naar 4.000+ studenten en starters die actief op zoek zijn, verdeeld over kanalen per vakgebied.</p></div>
+      </article>
+      <article class="cw2-p b" data-reveal data-delay="120">
+        <img src="/photography/hg-10.jpg" alt="Drie collega's overleggen samen bij een laptop" style="object-position:50% 40%" loading="lazy">
+        <div class="cw2-top"><span class="k-badge">Werkstudentpositie</span><span class="k-badge">Stage</span><span class="k-badge">Starterfunctie</span></div>
+        <div class="cw2-tx"><a class="hs-link" href="/jobboard"><h3 style="margin:0">Jobboard</h3><span class="arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span></a><p>Je rol staat tussen onze andere openstaande posities, zichtbaar voor iedereen die ons jobboard bezoekt op zoek naar een werkstudentpositie, stage of starterfunctie.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="k-strip" aria-hidden="false" style="background:#fff"><div class="k-strip-in"><figure><img src="/photography/mariselle-8.jpg" alt="Collega met koffie aan zijn bureau" style="object-position:50% 45%" loading="lazy"></figure><figure><img src="/photography/mariselle-4.jpg" alt="Twee collega's werken samen aan tafel" style="object-position:50% 45%" loading="lazy"></figure><figure><img src="/photography/mariselle-11.jpg" alt="Collega schrijft aan tafel" style="object-position:50% 40%" loading="lazy"></figure><figure><img src="/photography/mariselle-3.jpg" alt="Twee collega's in overleg op de bank" style="object-position:50% 32%" loading="lazy"></figure><figure><img src="/photography/mariselle-5-c.jpg" alt="Drie collega's werken samen aan tafel" style="object-position:50% 40%" loading="lazy"></figure></div></section>
+
+
+<!-- 4 pricing: big two-option switch -->
+<section class="k-sec k-lav">
+  <div class="k-wrap">
+    <div class="k-head">
+      <h2 class="k-h2" data-reveal>Wat kost het</h2>
+      <p class="k-lead" data-reveal data-delay="80">Twee vormen, afhankelijk van hoe vaak je werft. Neem contact op voor de prijzen.</p>
+    </div>
+    <div class="pp" id="pp" data-reveal data-delay="120">
+      <figure class="pp-ph"><img src="/photography/mariselle-9.jpg" alt="Collega lacht aan zijn bureau" style="object-position:50% 30%" loading="lazy"></figure>
+      <div class="pp-stage">
+        <div class="pp-panel abo">
+          <div class="pp-big">
+            <span class="ic"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M17 10.8c-.6-.9-1.7-1.4-3-1.4-1.9 0-3.3 1.3-3.3 3s1.4 2.5 3.3 3c1.9.5 3.3 1.3 3.3 3s-1.4 3-3.3 3c-1.3 0-2.4-.5-3-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M14 7.5v13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <b>Doorlopend</b>
+          </div>
+          <div class="pp-txt">
+            <p class="k-p">Plaats doorlopend vacatures tegen een vast, kostenefficiënt tarief. Handig als je regelmatig werft en niet per plaatsing wilt afrekenen.</p>
+            <a class="k-go" href="#vacature">Vacature plaatsen?<i><b>&rarr;</b></i></a>
+          </div>
+        </div>
+        <div class="pp-panel los">
+          <div class="pp-big">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12.5 3h6a2 2 0 0 1 2 2v6a2 2 0 0 1-.6 1.4l-9 9a2 2 0 0 1-2.8 0l-5.5-5.5a2 2 0 0 1 0-2.8l9-9A2 2 0 0 1 12.5 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="16.5" cy="7.5" r="1.3" fill="currentColor"/></svg></span>
+            <b>Per plaatsing</b>
+          </div>
+          <div class="pp-txt">
+            <p class="k-p">Vaste prijs per plaatsing, bepaald door het bereik van de gekozen kanalen op het moment van plaatsen. Tijdelijk extra boosten kan tegen meerprijs.</p>
+            <a class="k-go" href="#vacature">Vacature plaatsen?<i><b>&rarr;</b></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 contact: stepper + stepped form -->
+<section class="k-sec k-white k-blogrow">
+  <div class="k-wrap">
+    <div class="k-head" data-reveal><h2 class="k-h2" style="margin-top:0">TARIEF, OVEREENKOMST EN UREN.</h2><p class="k-lead">Praktische antwoorden voor werkgevers die een werkstudent willen aannemen.</p></div>
+    <div class="br-grid">
+      <a class="br-card" href="/blog/eerlijk-uurtarief-werkstudent" data-reveal data-delay="0"><div class="br-ph"><img src="/photography/hg-03.jpg" alt="" style="object-position:50% 40%" loading="lazy"></div><div class="br-tx"><span class="br-m">6 min</span><h3>Wat is een eerlijk uurtarief voor een werkstudent?</h3><span class="br-go">Lees het artikel →</span></div></a>
+      <a class="br-card" href="/blog/werkstudentovereenkomst-wat-moet-erin" data-reveal data-delay="100"><div class="br-ph"><img src="/photography/hg-02.jpg" alt="" style="object-position:50% 40%" loading="lazy"></div><div class="br-tx"><span class="br-m">7 min</span><h3>De werkstudentovereenkomst: wat moet er (juridisch) in staan?</h3><span class="br-go">Lees het artikel →</span></div></a>
+      <a class="br-card" href="/blog/hoeveel-uur-mag-een-werkstudent-maximaal-werken" data-reveal data-delay="200"><div class="br-ph"><img src="/photography/mariselle-11.jpg" alt="" style="object-position:50% 40%" loading="lazy"></div><div class="br-tx"><span class="br-m">5 min</span><h3>Hoeveel uur mag een werkstudent maximaal werken?</h3><span class="br-go">Lees het artikel →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="k-sec k-purple" id="vacature">
+  <div class="k-wrap">
+    <div class="k-head">
+      <h2 class="k-h2" data-reveal>Vacature plaatsen?</h2>
+      <p class="k-lead" data-reveal data-delay="80">Laat hieronder weten wat voor rol je zoekt, dan nemen we contact op met meer info en de opties.</p>
+    </div>
+    <div class="cj-contact">
+      <div class="cj-side" data-reveal>
+        <div class="cj-flow" id="flow">
+          <button type="button" class="on" aria-current="step"><i>1</i><b>Jij vult het formulier in</b><span class="det">Twee minuten werk: vertel ons over de rol en wat je zoekt.</span></button>
+          <button type="button"><i>2</i><b>Wij nemen contact op</b><span class="det">Je hoort snel van ons, met de opties en prijzen op maat.</span></button>
+          <button type="button"><i>3</i><b>Jij kiest, wij regelen de rest</b><span class="det">Los per plaatsing of doorlopend: jij bepaalt wat past.</span></button>
+        </div>
+        <div class="cj-or">
+          <span>Liever meteen sparren?</span>
+          <a class="k-btn ghost" href="https://calendly.com/wieke-voids/introduction" target="_blank" rel="noopener">Neem contact op</a>
+        </div>
+      </div>
+      <div data-reveal data-delay="100">
+        <form class="k-form cj-form" id="vform" novalidate>
+          <div class="cj-prog" aria-live="polite"><span class="d on">1</span><span class="d">2</span><span class="lbl">Stap 1 van 2</span></div>
+          <div class="cj-step" data-s="1">
+            <div class="k-row2">
+              <label class="k-field">Naam<input name="name" autocomplete="name" required></label>
+              <label class="k-field">Bedrijf<input name="company" autocomplete="organization" required></label>
+            </div>
+            <label class="k-field">E-mail<input name="email" type="email" autocomplete="email" required></label>
+            <button class="k-btn" type="button" data-next>Volgende</button>
+          </div>
+          <div class="cj-step" data-s="2" hidden>
+            <label class="k-field">Titel van de vacature<input name="role"></label>
+            <label class="k-field">Vertel ons meer: soort rol, uren per week, gewenste startdatum, etc.<textarea name="details" rows="4" required></textarea></label>
+            <p class="cj-err" role="alert" hidden>Er ging iets mis bij het versturen. Probeer het nog eens, of mail ons direct op contact@voids.agency.</p>
+            <div class="cj-actions">
+              <button class="k-btn cj-back" type="button" data-back>Terug</button>
+              <button class="k-btn" type="submit" data-sending="Versturen…">Verstuur aanvraag</button>
+            </div>
+          </div>
+        </form>
+        <div class="cj-sent" role="status" aria-live="polite" hidden>
+          <div class="anton">Aanvraag verstuurd.</div>
+          <p>Dankjewel. We nemen op korte termijn contact met je op met meer info.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="k-footer"></div>
+<script src="/site/kit.js?v=6cff9d56"></script>
+<script>
+(function(){
+  var clamp=function(v){return Math.max(0,Math.min(1,v))};
+  var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+
+  /* 3: pinned scroll steps (static stack on mobile and reduced motion is handled in CSS) */
+  var hs=document.getElementById('hs'),steps=$$('.hs-step',hs),dots=$$('.hs-rail button',hs),N=steps.length;
+  var mq=matchMedia('(max-width:860px)'),rm=matchMedia('(prefers-reduced-motion: reduce)');
+  function hh(){var h=document.getElementById('kh'),v=h?h.offsetHeight:56;document.documentElement.style.setProperty('--hh',v+'px');return v}
+  function span(){var p=hs&&hs.querySelector('.hs-pin');return p?hs.offsetHeight-p.offsetHeight:1}
+  function upd(){if(!hs)return;
+    var h=hh(),still=mq.matches||rm.matches;
+    steps.forEach(function(s,i){if(still){s.classList.remove('on','past');s.removeAttribute('aria-hidden')}});
+    if(still)return;
+    var r=hs.getBoundingClientRect(),q=clamp((h-r.top)/span()),idx=Math.min(N-1,Math.floor(q*N));
+    steps.forEach(function(s,i){s.classList.toggle('on',i===idx);s.classList.toggle('past',i<idx);s.setAttribute('aria-hidden',i===idx?'false':'true')});
+    dots.forEach(function(d,i){d.classList.toggle('on',i===idx);d.classList.toggle('past',i<idx)});
+  }
+  dots.forEach(function(d,i){d.addEventListener('click',function(){
+    var top=hs.getBoundingClientRect().top+scrollY-hh()+(i+.5)/N*span();
+    scrollTo({top:top,behavior:rm.matches?'auto':'smooth'});
+  })});
+  var tk=false;function on(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd()})}}
+  addEventListener('scroll',on,{passive:true});addEventListener('resize',on);upd();
+
+  /* 5: stepper + stepped form */
+  var f=document.getElementById('vform'),sent=$('.cj-sent'),s1=$('[data-s="1"]',f),s2=$('[data-s="2"]',f),ds=$$('.cj-prog .d',f),lbl=$('.cj-prog .lbl',f);
+  var flow=$$('#flow button');
+  function setFlow(i){flow.forEach(function(b,k){b.classList.toggle('on',k===i);if(k===i)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')})}
+  flow.forEach(function(b,k){b.addEventListener('click',function(){setFlow(k)})});
+  function go(n){
+    s1.hidden=n!==1;s2.hidden=n!==2;
+    ds.forEach(function(d,i){d.classList.toggle('on',i<n)});
+    lbl.textContent=n===1?'Stap 1 van 2':'Stap 2 van 2';
+    var first=$((n===1?'input':'input,textarea'),n===1?s1:s2);if(first)first.focus({preventScroll:true});
+  }
+  function next(){
+    var inp=$$('input',s1);
+    for(var i=0;i<inp.length;i++){if(!inp[i].checkValidity()){inp[i].reportValidity();return false}}
+    go(2);return true;
+  }
+  $('[data-next]',f).addEventListener('click',next);
+  $('[data-back]',f).addEventListener('click',function(){go(1)});
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!s1.hidden){next();return}
+    if(!f.checkValidity()){f.reportValidity();return}
+    var b=f.querySelector('[type=submit]'),err=$('.cj-err',f),label=b.textContent,d=new FormData(f);
+    b.disabled=true;b.textContent=b.getAttribute('data-sending')||label;err.hidden=true;
+    fetch('/api/vacancy-request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:d.get('name'),company:d.get('company'),email:d.get('email'),role:d.get('role'),details:d.get('details')})})
+      .then(function(r){if(!r.ok)throw 0;f.hidden=true;sent.hidden=false;setFlow(1)})
+      .catch(function(){b.disabled=false;b.textContent=label;err.hidden=false});
+  });
+})();
+</script>
+</body>
+</html>

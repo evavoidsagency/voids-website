@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!--seo-->
+<title>Impact | VOIDS</title>
+<meta name="description" content="VOIDS exists to make the transition from study to work fairer. Recruitment is our means; equal opportunity is the goal.">
+<link rel="canonical" href="https://voids.agency/en/impact">
+<link rel="alternate" hreflang="nl" href="https://voids.agency/impact">
+<link rel="alternate" hreflang="en" href="https://voids.agency/en/impact">
+<link rel="alternate" hreflang="x-default" href="https://voids.agency/impact">
+<meta property="og:title" content="Impact | VOIDS">
+<meta property="og:description" content="VOIDS exists to make the transition from study to work fairer. Recruitment is our means; equal opportunity is the goal.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://voids.agency/en/impact">
+<meta property="og:site_name" content="VOIDS">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://voids.agency/photography/home-hero-8.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Impact | VOIDS">
+<meta name="twitter:description" content="VOIDS exists to make the transition from study to work fairer. Recruitment is our means; equal opportunity is the goal.">
+<meta name="twitter:image" content="https://voids.agency/photography/home-hero-8.jpg">
+<link rel="icon" href="/favicon.ico">
+<meta name="theme-color" content="#fffaec">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "VOIDS", "legalName": "VOIDS vof", "url": "https://voids.agency", "logo": "https://voids.agency/logo.svg", "description": "VOIDS is een junior talent agency in Amsterdam die hoogopgeleid junior talent verbindt aan ambitieuze bedrijven via werkstudentschappen, stages en starterrollen.", "founder": [{"@type": "Person", "name": "Eva van Raaij"}, {"@type": "Person", "name": "Wieke Sleutjes"}], "address": {"@type": "PostalAddress", "addressLocality": "Amsterdam", "addressCountry": "NL"}, "email": "contact@voids.agency", "sameAs": ["https://www.linkedin.com/company/voidsagency", "https://www.instagram.com/voids_agency/", "https://www.tiktok.com/@voidstalentagency"]}</script>
+<!--/seo-->
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site/kit.css?v=6cff9d56">
+<style>
+/* page-local: impact (reworked: scannable, one chunk at a time) */
+body{overflow-x:clip}
+[hidden]{display:none!important}
+
+/* HERO: headline + two big numbers */
+.im-hero .k-h1{font-size:clamp(25.7px,3.6vw,56px)}
+.im-hero .k-lead{max-width:560px}
+.im-hero .k-wrap{align-items:stretch}
+.im-hero .k-wrap>div:first-child{display:flex;flex-direction:column;justify-content:center}
+.im-side{display:grid;grid-template-rows:1fr 1fr;gap:18px}
+.im-side .k-tile{justify-content:center;padding:clamp(26px,3vw,44px)}
+.im-side .k-stat .n{font-size:clamp(41.1px,5.1vw,80px)}
+.im-side .k-stat p{max-width:none;font-size:clamp(15px,1.3vw,18px);line-height:1.45;margin-top:12px}
+
+/* PROBLEM: head + pinned scroll steps */
+.im-ph{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:64px;align-items:end;margin-bottom:56px}
+.im-ph .k-h2{margin-top:12px}
+.im-hook{font-family:Inter,sans-serif;font-size:clamp(22.1px,2.4vw,34px);line-height:1.15;color:var(--purple);margin-bottom:16px;font-weight:600;letter-spacing:-.01em;text-transform:none}
+.im-intro{font-size:clamp(16px,1.35vw,18px);line-height:1.65;color:var(--soft);max-width:36em}
+.im-scene{position:relative;height:calc(var(--ph) + 3*45vh)}
+.im-pin{position:sticky;top:var(--pt);height:var(--ph);min-height:440px;border-radius:28px;overflow:hidden;background:var(--purple-100)}
+.im-step{position:absolute;inset:0;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;column-gap:4vw;padding:0 clamp(80px,9vw,140px) 0 clamp(28px,5vw,80px);opacity:0;visibility:hidden;transition:opacity .55s,visibility .55s}
+.im-step.on{opacity:1;visibility:visible;z-index:2}
+.im-step.past{opacity:0}
+.im-step.s1{background:var(--purple-100)}
+.im-step.s2{background:var(--blue-100)}
+.im-step.s3{background:var(--purple);color:#fff}
+.im-big{font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(30.9px,4.9vw,80px);line-height:.95;color:var(--purple);text-transform:uppercase;transform:translateX(-48px);opacity:0;transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .6s}
+.im-big small{display:block;font:700 12px Inter,sans-serif;letter-spacing:.14em;color:var(--blue-700);margin-bottom:18px}
+.s3 .im-big{color:#fff}.s3 .im-big small{color:var(--purple-200)}
+.im-txt{max-width:470px;transform:translateY(28px);opacity:0;transition:transform .8s .12s cubic-bezier(.2,.8,.2,1),opacity .6s .12s}
+.im-step.on .im-big,.im-step.on .im-txt{transform:none;opacity:1}
+.im-step.past .im-big,.im-step.past .im-txt{transform:translateY(-28px)}
+.im-txt .k-icon{margin-bottom:20px;width:54px;height:54px;border-radius:14px}
+.im-txt .k-icon svg{width:28px;height:28px}
+.im-txt .k-h3{font-size:clamp(17.3px,1.7vw,24.5px);line-height:1.15;margin-bottom:14px}
+.im-txt p{font-size:clamp(16px,1.3vw,18px);line-height:1.6;color:var(--soft)}
+.s3 .im-txt p{color:rgba(255,255,255,.88)}
+.im-rail{position:absolute;right:clamp(18px,2.6vw,40px);top:50%;transform:translateY(-50%);z-index:5;display:grid;gap:14px}
+.im-rail button{width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.7);color:var(--purple);font:400 18px Anton,sans-serif;cursor:pointer;transition:background .25s,color .25s,transform .25s}
+.im-rail button.on{background:var(--purple);color:#fff;transform:scale(1.12)}
+.im-pin.dark .im-rail button{background:rgba(255,255,255,.18);color:#fff}
+.im-pin.dark .im-rail button.on{background:#fff;color:var(--purple)}
+.im-scroll{position:absolute;left:clamp(28px,5vw,80px);bottom:24px;z-index:5;font:600 12px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--purple)}
+.im-pin.dark .im-scroll{color:var(--purple-200)}
+@media (max-width:859px),(prefers-reduced-motion:reduce){
+  .im-scene{height:auto}
+  .im-pin{position:static;height:auto;min-height:0;background:none;border-radius:0;display:grid;gap:16px;overflow:visible}
+  .im-step{position:relative;inset:auto;opacity:1;visibility:visible;border-radius:24px;padding:clamp(28px,4vw,44px);transition:none;row-gap:22px}
+  .im-big,.im-txt{transform:none!important;opacity:1;transition:none}
+  .im-rail,.im-scroll{display:none}
+  .im-big{font-size:clamp(26.2px,4.1vw,60px)}
+}
+@media (max-width:859px){.im-step{grid-template-columns:1fr}.im-ph{grid-template-columns:1fr;row-gap:20px;margin-bottom:36px}}
+
+/* SOLUTION: split with tabs */
+.im-sol .k-split{align-items:stretch;gap:56px}
+.im-sol .k-photo{min-height:460px;height:100%;border-radius:24px}
+.im-sol .col{display:flex;flex-direction:column;justify-content:center}
+.im-sol .k-h2{margin:12px 0 28px}
+.im-sol .k-tabs{margin-bottom:22px}
+.im-sol .k-tabs button{background:rgba(255,255,255,.14);color:#fff}
+.im-sol .k-tabs button.on{background:#fff;color:var(--purple)}
+.im-panels{display:grid}
+.im-panels>.k-panel{grid-area:1/1;display:block;visibility:hidden;opacity:0;transition:opacity .35s,visibility .35s}
+.im-panels>.k-panel.on{visibility:visible;opacity:1}
+.im-eq{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:22px;font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(23.1px,2.8vw,40px);line-height:1;text-transform:uppercase}
+.im-eq span{padding:12px 20px 10px;border-radius:14px;background:var(--purple);color:#fff}
+.im-eq span+span{background:#fff;color:var(--purple)}
+.im-eq i{font-style:normal;color:var(--blue-200)}
+.im-sol .k-lead{font-size:clamp(14.4px,1.3vw,17.1px)}
+.im-for{background:rgba(255,255,255,.12);border-radius:20px;padding:30px;display:grid;gap:16px;justify-items:start}
+.im-for p{font-size:clamp(15.3px,1.4vw,18px);line-height:1.6;color:#fff}
+.im-for .k-eyebrow{color:var(--purple-200)}
+@media(max-width:960px){.im-sol .k-photo{min-height:0;height:auto;aspect-ratio:4/5}.im-sol .k-split{gap:32px}}
+
+/* WORKSHOPS: photo + lead + ticker of topics */
+.im-ws{padding-bottom:88px}
+.im-ws .k-split{align-items:center;gap:56px}
+.im-ws .k-photo{aspect-ratio:4/5;max-height:640px;width:100%;border-radius:24px}
+.im-ws .k-h2{margin:12px 0 22px}
+@media(min-width:861px){.im-ws .k-split{align-items:stretch}.im-ws .k-split>div:last-child{display:flex;flex-direction:column;justify-content:space-between;gap:28px}.im-ws .k-lead{margin:0}.im-ws .im-wt{margin-top:0}.im-ws .ws-top .k-h2{margin-bottom:22px}.im-ws .ws-top .k-lead{margin:0}}
+.im-ws .k-lead{max-width:none}.im-ws .im-wt-c li{justify-content:flex-start;text-align:left;padding-left:20px;min-height:48px;font-size:14.5px}
+.im-tick{margin-top:84px;padding:26px 0}
+.im-tick div{text-transform:uppercase;font-size:clamp(21.5px,2.8vw,40px)}
+@media(prefers-reduced-motion:reduce){.im-tick{white-space:normal}.im-tick div{flex-wrap:wrap;gap:12px 40px;padding:0 32px;white-space:normal}.im-tick [aria-hidden]{display:none}}
+
+/* SDG: big tiles, line revealed on hover, focus or tap */
+.im-sdgs{gap:22px}
+.im-sdg-t{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:380px;padding:30px;border-radius:24px;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent}
+.im-sdg-t.a{background:var(--purple-100)}.im-sdg-t.b{background:var(--blue-100)}.im-sdg-t.c{background:var(--beige-2)}
+.im-sdg-t img{width:150px;height:150px;border-radius:20px;margin-bottom:26px}
+.im-sdg-t .k-h3{font-family:Inter,sans-serif;font-size:clamp(20.6px,2vw,28px);line-height:1.05;color:var(--purple);max-width:11em;font-weight:600;letter-spacing:-.01em;text-transform:none}
+.im-sdg-more{position:absolute;top:26px;right:26px;width:42px;height:42px;border-radius:50%;background:#fff;color:var(--purple);display:grid;place-items:center;font-size:19.8px;font-weight:500;transition:transform .35s,background .25s,color .25s}
+.im-sdg-r{position:absolute;left:0;right:0;bottom:0;padding:26px 30px 30px;background:var(--purple);color:#fff;transform:translateY(101%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.im-sdg-r p{font-size:clamp(16.2px,1.4vw,19.8px);line-height:1.4;font-weight:500}
+.im-sdg-t:hover .im-sdg-r,.im-sdg-t:focus-visible .im-sdg-r,.im-sdg-t.open .im-sdg-r{transform:none}
+.im-sdg-t:hover .im-sdg-more,.im-sdg-t:focus-visible .im-sdg-more,.im-sdg-t.open .im-sdg-more{transform:rotate(45deg);background:var(--purple);color:#fff}
+.im-sdg-t:focus-visible{box-shadow:0 0 0 3px var(--purple)}
+@media (max-width:859px),(prefers-reduced-motion:reduce){
+  .im-sdg-t{min-height:0;cursor:default}
+  .im-sdg-t img{width:120px;height:120px}
+  .im-sdg-r{position:static;transform:none;margin:22px -30px -30px;transition:none}
+  .im-sdg-more{display:none}
+}
+
+
+/* workshop topics as labelled chips (was a ticker) */
+.im-wt{margin-top:30px}
+.im-wt-l{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--purple);margin-bottom:16px}
+.im-wt-c{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}@media(max-width:860px){.im-wt-c{grid-template-columns:1fr 1fr}}@media(max-width:520px){.im-wt-c{grid-template-columns:1fr}}
+.im-wt-c li{display:flex;align-items:center;justify-content:center;text-align:center;min-height:52px;background:#fff;color:var(--purple);transition:background .2s,color .2s,transform .2s}
+.im-wt-c li:hover{background:var(--purple);color:#fff;transform:translateY(-2px)}
+
+
+/* hero v3: progress ring + dot field (each dot = 40 students) */
+.im-side{grid-template-rows:auto 1fr;gap:16px}
+.im-card{border-radius:24px;padding:clamp(22px,2.4vw,34px);position:relative;overflow:hidden}
+.im-ring{background:#fff;display:grid;grid-template-columns:auto 1fr;gap:6px 26px;align-items:center}
+.im-r{grid-row:1/3;width:clamp(96px,9vw,132px);height:auto;transform:rotate(-90deg)}
+.im-r circle{fill:none;stroke-width:10;stroke-linecap:round}
+.im-r .bg{stroke:var(--purple-100)}.im-r .fg{stroke:var(--purple);stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 1.6s cubic-bezier(.2,.8,.2,1) .3s}
+.im-ring.in .im-r .fg{stroke-dashoffset:0}
+.im-ring .n{grid-column:2;font-size:clamp(34px,3.6vw,54px);line-height:1;color:var(--purple)}
+.im-ring p{grid-column:2;margin:0;font-size:15px;line-height:1.45;color:var(--soft)}
+.im-dots{background:var(--purple);color:#fff;display:flex;flex-direction:column}
+.im-dots .n{font-size:clamp(34px,3.6vw,54px);line-height:1}
+.im-dots p{margin:6px 0 18px;font-size:15px;color:rgba(255,255,255,.86)}
+.im-grid{display:grid;grid-template-columns:repeat(20,1fr);gap:clamp(5px,.6vw,9px);margin-top:auto}
+.im-grid i{display:block;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.18);transition:background .5s,transform .25s}
+.im-grid i.on{background:#fff}
+.im-grid i.hot{background:var(--blue-200,#bcd0ff);transform:scale(1.5)}
+@media(prefers-reduced-motion:reduce){.im-r .fg{transition:none;stroke-dashoffset:0}}
+
+
+/* SDG cards: always readable, compact (no hover-only content) */
+.im-sdg-t{min-height:0;cursor:default;padding:28px;gap:0;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:20px;align-items:center}
+.im-sdg-t img{width:84px;height:84px;border-radius:16px;margin:0;grid-row:1}
+.im-sdg-t .k-h3{grid-column:2;grid-row:1;font-size:clamp(19px,1.7vw,24px);max-width:none}
+.im-sdg-p{grid-column:1/-1;grid-row:2;margin:18px 0 0;font-size:clamp(15px,1.25vw,17px);line-height:1.5;color:var(--ink)}
+.im-sdg-more,.im-sdg-r{display:none}
+@media(max-width:960px){.im-sdg-t{padding:22px}}
+
+
+/* SDG: dark stage, UN icons as the only colour */
+.im-sdgx .k-h2,.im-sdgx h3{color:#fff}.im-sdgx .k-lead{color:rgba(255,255,255,.72)}
+.sdgx{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.sdgx-c{display:flex;flex-direction:column;gap:0;min-height:300px;padding:30px;border-radius:22px;background:rgba(255,255,255,.06);transition:background .3s,transform .3s}
+.sdgx-c:hover{background:rgba(255,255,255,.1);transform:translateY(-4px)}
+.sdgx-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:auto;padding-bottom:36px}
+.sdgx-top img{width:88px;height:88px;border-radius:18px;transition:transform .35s}
+.sdgx-c:hover .sdgx-top img{transform:scale(1.05)}
+.sdgx-n{font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(80px,9vw,128px);line-height:.8;color:rgba(255,255,255,.1)}
+.sdgx-c h3{font-size:clamp(19px,1.7vw,23px);font-weight:600;letter-spacing:-.01em;line-height:1.25;margin-bottom:10px}
+@media(min-width:861px){.sdgx-c h3{min-height:2.5em}}
+.sdgx-c p{margin:0;font-size:15px;line-height:1.55;color:rgba(255,255,255,.72)}
+@media(max-width:860px){.sdgx{grid-template-columns:1fr}.sdgx-c{min-height:0}}
+
+/* SDG v3: light, colour wash rises on hover */
+.im-sdgx .k-h2,.im-sdgx h3{color:var(--ink)}.im-sdgx .k-lead{color:var(--soft)}
+.sdgx{gap:16px}
+.sdgx-c{position:relative;isolation:isolate;overflow:hidden;min-height:340px;padding:30px;border-radius:24px;background:#fff;color:var(--ink);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.sdgx-c::before{content:"";position:absolute;left:0;right:0;bottom:0;height:100%;z-index:-1;background:var(--c);transform:translateY(100%);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.sdgx-c:hover{background:#fff;transform:translateY(-6px);box-shadow:0 24px 40px -24px var(--c)}
+.sdgx-c:hover::before{transform:translateY(0)}
+.sdgx-c:hover h3,.sdgx-c:hover p{color:#fff}
+.sdgx-c:hover .sdgx-n{color:rgba(255,255,255,.2)}
+.sdgx-n{color:color-mix(in srgb,var(--c) 16%,transparent);transition:color .4s}
+.sdgx-top img{animation:sdgf 6s ease-in-out infinite}
+.sdgx-c:nth-child(2) .sdgx-top img{animation-delay:.8s}.sdgx-c:nth-child(3) .sdgx-top img{animation-delay:1.6s}
+@keyframes sdgf{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-6px)}}
+.sdgx-c p{color:var(--soft);transition:color .3s}
+.sdgx-c:hover .sdgx-top img{animation-play-state:paused;transform:scale(1.06)}
+@media(hover:none){.sdgx-c::before{transform:translateY(0);opacity:.0}}
+@media(prefers-reduced-motion:reduce){.sdgx-top img{animation:none}}
+
+
+
+/* hero v4: photo with two floating stat chips */
+.im-hero .k-wrap{align-items:center!important}
+.im-hv{position:relative;height:clamp(380px,36vw,500px);margin:0}
+.im-hv-ph{position:absolute;inset:0;border-radius:26px;overflow:hidden}.im-hv-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.im-chip{position:absolute;z-index:2;border-radius:20px;box-shadow:0 26px 44px -22px rgba(24,6,80,.55);animation:imf 6s ease-in-out infinite}
+.im-chip.c1{left:-28px;bottom:34px;width:min(270px,47%);display:grid;grid-template-columns:auto 1fr;gap:4px 16px;align-items:center;padding:18px 20px;background:#fff}
+.im-chip.c1 .im-r{grid-row:1/3;width:56px;height:56px}
+.im-chip.c1 .n{grid-column:2;font-size:30px;line-height:1;color:var(--purple)}
+.im-chip.c1 p{grid-column:2;margin:0;font-size:12.5px;line-height:1.4;color:var(--soft)}
+.im-chip.c2{right:-20px;bottom:-26px;width:min(300px,52%);padding:20px 22px 22px;background:var(--purple);color:#fff;animation-delay:1.6s}
+.im-chip.c2 .n{font-size:40px;line-height:1}
+.im-chip.c2 p{margin:6px 0 14px;font-size:12.5px;color:rgba(255,255,255,.82)}
+.im-chip .im-grid{grid-template-columns:repeat(20,1fr);gap:5px;margin:0}
+.im-chip .im-grid i{background:rgba(255,255,255,.22)}.im-chip .im-grid i.on{background:#fff}
+@keyframes imf{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){.im-chip{animation:none}}
+@media(max-width:960px){.im-hv{height:380px;margin:0}.im-chip.c1{left:10px}.im-chip.c2{right:10px}}
+
+/* problem head: tops aligned */
+.im-ph{align-items:start!important}
+.im-ph>div:last-child{padding-top:34px}
+@media(min-width:860px){.im-ph{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)!important;column-gap:20px!important}.im-ph>div:first-child{padding-right:36px}.im-ph>div:last-child{padding-left:28px}.im-intro{text-wrap:pretty!important;max-width:none!important}.im-intro{max-width:none}}
+.im-hook{font-size:clamp(19px,1.8vw,24px)!important;line-height:1.25;margin-bottom:14px!important}
+/* solution: balanced heading + equation row */
+.im-sol .k-h2{text-wrap:balance}
+@media(min-width:961px){.im-sol{padding:60px 0!important}.im-sol .k-split{align-items:center}.im-sol .k-photo{height:clamp(360px,30vw,430px);min-height:0}.im-sol .k-photo img{object-position:50% 30%}}
+.im-eq2{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:4px 0 22px}
+.im-eq2 .t{padding:14px 22px;border-radius:14px;background:rgba(255,255,255,.14);color:#fff;font-size:clamp(15px,1.3vw,18px);font-weight:600;letter-spacing:-.005em;opacity:0;animation:eqin .6s cubic-bezier(.2,.8,.2,1) forwards}
+.im-eq2 .t.res{background:#fff;color:var(--purple)}
+.im-eq2 .op{font-style:normal;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.18);color:#fff;font-size:16px;font-weight:600;opacity:0;animation:eqin .5s ease forwards}
+.im-eq2>*:nth-child(1){animation-delay:.1s}.im-eq2>*:nth-child(2){animation-delay:.25s}.im-eq2>*:nth-child(3){animation-delay:.4s}.im-eq2>*:nth-child(4){animation-delay:.55s}.im-eq2>*:nth-child(5){animation-delay:.7s}
+@keyframes eqin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.im-eq2 .t,.im-eq2 .op{animation:none;opacity:1}}
+
+/* movement: head + photo + two contrasting statement cards */
+/* movement: two equal columns, clear comparison */
+.mv2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.mv2-c{display:flex;flex-direction:column;gap:14px;padding:clamp(30px,3.4vw,48px);border-radius:30px;min-height:360px}
+.mv2-c.de{background:var(--purple-100);color:var(--ink)}
+.mv2-c.nl{background:var(--purple);color:#fff}
+.mv2-k{font:700 12.5px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.mv2-stat{display:flex;align-items:baseline;min-height:clamp(72px,8vw,120px);gap:10px;font-family:Anton,"Arial Narrow",sans-serif;line-height:.9;color:var(--purple);margin-top:8px}
+.mv2-stat b{font-weight:400;font-size:clamp(72px,8vw,120px)}.mv2-stat i{font-style:normal;font-size:clamp(40px,4.6vw,64px);opacity:.5}
+.mv2-cap{margin:0;font-size:clamp(17px,1.5vw,21px);font-weight:600;letter-spacing:-.01em}
+.mv2-t{margin:12px 0 0;font-size:16px;line-height:1.55;color:var(--soft);max-width:30em}
+.mv2-c .mv-src{margin-top:auto;position:static;font-size:12px;opacity:.6}
+.mv2-c.de .mv2-stat b{font-size:clamp(48px,5.4vw,80px);text-transform:uppercase;letter-spacing:.01em}.mv2-c.de .mv2-stat{line-height:.95}.mv2-c.nl .mv2-stat{color:var(--purple-200,#c9b8f5)}.mv2-c.nl .mv2-stat b{font-size:clamp(48px,5.4vw,80px);letter-spacing:.01em;text-transform:uppercase}.mv2-c.nl .mv2-t{color:rgba(255,255,255,.85)}.mv2-c.nl .mv2-cap{color:#fff}
+.mv2-lead{margin:8px 0 0;font:400 clamp(26px,2.6vw,40px)/1 Anton,"Arial Narrow",sans-serif;text-transform:uppercase;color:var(--purple-200,#c9b8f5)}
+.mv2-big{margin:0;font-size:clamp(20px,2vw,28px);line-height:1.3;font-weight:500;letter-spacing:-.016em;max-width:20em}
+@media(max-width:860px){.mv2{grid-template-columns:1fr}.mv2-c{min-height:0}}
+.mv-head{margin-bottom:36px}.mv-head .k-h2{margin-top:12px}
+.mv-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.25fr);gap:16px;align-items:stretch}
+.mv-ph{position:relative;min-height:380px;border-radius:22px;overflow:hidden}.mv-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mv-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:380px;padding:32px;border-radius:22px;overflow:hidden}
+.mv-card.de{background:var(--purple-100);color:var(--ink)}
+.mv-card.nl{background:var(--purple);color:#fff}
+.mv-code{position:absolute;top:14px;right:22px;font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(56px,6vw,84px);line-height:1;opacity:.12}
+.mv-s{margin:0;font-size:clamp(17px,1.5vw,21px);line-height:1.45;font-weight:500;letter-spacing:-.01em;position:relative}
+.mv-card.nl strong{color:var(--purple-200,#c9b8f5);font-weight:600}
+@media(max-width:960px){.mv-grid{grid-template-columns:1fr}.mv-ph{min-height:260px}.mv-card{min-height:0;padding:28px 24px 28px;padding-top:84px}}
+
+
+/* problem: three steps that grow (advantage compounds) */
+.stairs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:end}
+.stair{display:flex;flex-direction:column;padding:30px;border-radius:22px;transition:transform .35s}
+.stair:hover{transform:translateY(-6px)}
+.stair.s1{min-height:330px;background:var(--purple-100);color:var(--ink)}
+.stair.s2{min-height:410px;background:var(--purple-200,#c9b8f5);color:var(--ink)}
+.stair.s3{min-height:490px;background:var(--purple);color:#fff}
+.st-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:auto;padding-bottom:28px}
+.st-top small{font-size:12px;letter-spacing:.14em;font-weight:700;opacity:.7}
+.st-top .k-icon{width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.55);color:inherit}
+.stair.s3 .k-icon{background:rgba(255,255,255,.14)}
+.st-word{font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(34px,3.6vw,52px);line-height:1;text-transform:uppercase;margin-bottom:14px}
+.stair h3{font-size:clamp(16px,1.3vw,19px);font-weight:600;letter-spacing:-.01em;margin-bottom:10px}
+.stair p{margin:0;font-size:15px;line-height:1.55;opacity:.85}
+@media(max-width:860px){.stairs{grid-template-columns:1fr;align-items:stretch}.stair,.stair.s1,.stair.s2,.stair.s3{min-height:0}}
+
+
+/* problem: calm photo + three steps */
+.pb-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:20px;align-items:stretch}
+.pb-ph{position:relative;min-height:420px;border-radius:22px;overflow:hidden}.pb-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pb-rows{display:grid;gap:14px;grid-auto-rows:1fr}
+.pb-row{display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;padding:24px 28px;border-radius:20px;background:var(--purple-100)}
+.pb-n{font-family:Anton,"Arial Narrow",sans-serif;font-size:30px;line-height:1;color:var(--purple)}
+.pb-row h3{font-size:clamp(17px,1.5vw,20px);font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+.pb-row p{margin:0;font-size:15px;line-height:1.6;color:var(--soft);max-width:44em}
+@media(max-width:860px){.pb-grid{grid-template-columns:1fr}.pb-ph{min-height:260px}.pb-row{grid-template-columns:44px 1fr;padding:20px}}
+
+/* MOVEMENT: pull quote + photo */
+.im-mv .k-split{align-items:stretch;gap:56px;grid-template-columns:1fr 1fr}.im-mv .k-split>div:first-child{align-self:center}
+.im-mv .k-h2{margin:12px 0 30px}
+.im-pull{font-family:Inter,sans-serif;font-size:clamp(21px,2.4vw,34px);line-height:1.15;color:var(--purple);margin-bottom:26px;font-weight:600;letter-spacing:-.01em;text-transform:none}
+.im-mv .k-lead{max-width:34em;font-size:clamp(15.3px,1.4vw,18px)}
+.im-mv .k-lead strong{color:var(--purple);font-weight:700}
+.im-mv .k-photo{position:relative;aspect-ratio:auto;height:100%;min-height:380px;max-height:460px;width:100%;border-radius:24px;overflow:hidden}.im-mv .k-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* AMBITION: big number + word-reveal statement */
+.im-amb{text-align:center}
+.im-amb .big{font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(56px,7.2vw,104px);line-height:.9;color:var(--purple);margin:14px 0 18px}
+.im-amb .st{font-size:clamp(17.3px,2.2vw,30.2px);line-height:1.25;font-weight:500;letter-spacing:-.01em;color:var(--ink);max-width:24em;margin:0 auto}
+.im-two{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:960px){.im-mv .k-split{grid-template-columns:1fr;gap:36px}}
+@media(max-width:520px){.k-cta .k-h2{font-size:clamp(24.1px,7.1vw,34px)}}
+
+.mv-src{position:relative;margin-top:12px;font-size:11.5px;opacity:.65}
+/* ambition: small and calm (it is an intention, not a result yet) */
+.im-amb{padding:64px 0!important;text-align:left}
+.amb2{display:grid;gap:18px;justify-items:center}
+.amb2-row{display:flex;align-items:center;gap:clamp(20px,3vw,44px);max-width:900px}
+.amb2-n{flex:none;font-size:clamp(64px,7vw,100px);line-height:.9;color:var(--purple)}
+.amb2-t{margin:0;font-size:clamp(18px,1.7vw,24px);line-height:1.35;font-weight:500;letter-spacing:-.015em;color:var(--ink);text-wrap:balance}
+@media(max-width:700px){.amb2{justify-items:start}.amb2-row{flex-direction:column;align-items:flex-start;gap:10px}}
+
+.im-amb .big{font-size:clamp(34px,3.4vw,46px)!important;margin:8px 0 10px!important}
+.im-amb .st{font-size:clamp(16px,1.5vw,19px)!important;line-height:1.5!important;max-width:none!important;font-weight:500;text-wrap:balance}
+/* de oplossing: calmer */
+.im-sol .k-tabs button{padding:9px 18px;font-size:14px;background:transparent;border:1.5px solid rgba(255,255,255,.35);color:#fff}
+.im-sol .k-tabs button.on{background:#fff;border-color:#fff;color:var(--purple)}
+.im-eq2{gap:14px 18px!important;margin:10px 0 22px!important}
+.im-eq2 .t{padding:0!important;border-radius:0!important;background:none!important;font:400 clamp(26px,2.6vw,38px)/1 Anton,"Arial Narrow",sans-serif!important;text-transform:uppercase;letter-spacing:.01em!important;color:#fff!important}
+.im-eq2 .t.res{color:var(--purple-200,#c9b8f5)!important}
+.im-eq2 .op{width:auto!important;height:auto!important;background:none!important;font:400 clamp(22px,2.2vw,30px)/1 Anton,sans-serif!important;color:rgba(255,255,255,.55)!important}
+</style>
+</head>
+<body data-nav="impact">
+<div id="k-header"></div>
+
+<!-- HERO -->
+<section class="k-hero im-hero k-beige">
+  <div class="k-wrap">
+    <div>
+      <span class="k-eyebrow">Impact</span>
+      <h1 class="k-h1">RECRUITMENT IS THE MEANS,<br>NOT THE GOAL.</h1>
+      <p class="k-lead">The first job often shapes the rest of a career, and that first step isn't equal for everyone. VOIDS exists to make the transition from study to work fairer. Recruitment is our means, equal opportunity is the goal.</p>
+    </div>
+    <div class="im-hv" data-reveal>
+      <div class="k-photo im-hv-ph"><img src="/photography/hg-14.jpg" alt="Two colleagues talking at a laptop" style="object-position:50% 8%"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM: pinned scroll steps -->
+<section class="k-sec k-white" id="probleem">
+  <div class="k-wrap">
+    <div class="im-ph" data-reveal>
+      <div>
+        <span class="k-eyebrow">The problem</span>
+        <h2 class="k-h2">WORK EXPERIENCE HAS BECOME A PRIVILEGE.</h2>
+      </div>
+      <div>
+        <p class="im-hook">Talent is everywhere. Access to experience isn't.</p>
+        <p class="im-intro">Relevant work experience has become a de facto requirement for a good start in the job market. But gaining that experience isn't equally easy for everyone: where one student has the room to take an internship, another has to take a side job that adds little to that experience.</p>
+      </div>
+    </div>
+    <div class="pb-grid">
+      <div class="k-photo pb-ph" data-reveal><img src="/photography/hg-17.jpg" alt="Colleague laughing behind his laptop" style="object-position:50% 40%" loading="lazy"></div>
+      <div class="pb-rows">
+      <article class="pb-row" data-reveal data-delay="0"><span class="pb-n">01</span><div><h3>Unequal access to experience</h3><p>Internships often pay too little to live on. Students who can absorb that gap, with support at home or savings to fall back on, get a head start that has nothing to do with talent.</p></div></article>
+      <article class="pb-row" data-reveal data-delay="100"><span class="pb-n">02</span><div><h3>A narrower launchpad</h3><p>Missing out on that experience means entering the job market with fewer skills, less confidence in what you're good at, and no network to fall back on.</p></div></article>
+      <article class="pb-row" data-reveal data-delay="200"><span class="pb-n">03</span><div><h3>A disadvantage that compounds</h3><p>That gap keeps compounding after graduation, and can't simply be undone later by a fairer hiring process alone.</p></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION: tabs -->
+<section class="k-sec k-purple im-sol" id="oplossing">
+  <div class="k-wrap">
+    <div class="k-split">
+      <div class="col" data-reveal>
+        <span class="k-eyebrow">The solution</span>
+        <h2 class="k-h2">THE WORKING-STUDENT MODEL REMOVES THE TRADE-OFF.</h2>
+        <div>
+          <div class="k-tabs" role="group" aria-label="Who it's for">
+            <button type="button" class="on" data-tab="stud" aria-pressed="true">For students</button>
+            <button type="button" data-tab="bedr" aria-pressed="false">For companies</button>
+          </div>
+          <div class="im-panels">
+            <div class="k-panel on" data-panel="stud">
+              <div class="im-eq2" aria-hidden="true"><span class="t">Income</span><i class="op">+</i><span class="t">Experience</span><i class="op">=</i><span class="t res">Working student role</span></div>
+              <p class="k-lead">We help organisations create paid working-student roles where students work on real challenges during their studies, take responsibility and develop. Income and relevant experience at the same time. No more trade-off.</p>
+            </div>
+            <div class="k-panel" data-panel="bedr">
+              <div class="im-for">
+                <span class="k-eyebrow">For companies</span>
+                <p>And this isn't only good news for students: companies that work with working students build a more stable junior pipeline themselves, at a lower cost than a full-time starter.</p>
+                <a class="k-btn light" href="/en/companies">Discover the benefits for companies →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="k-photo" data-reveal data-delay="150"><img src="/photography/impact-band.jpg" alt="Working students at work in the office" style="object-position:center 42%" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKSHOPS: photo + ticker -->
+<section class="k-sec k-sky im-ws" id="workshops">
+  <div class="k-wrap">
+    <div class="k-split">
+      <div class="k-photo" data-reveal><img src="/photography/mariselle-9.jpg" alt="Colleague at a table with a notebook" style="object-position:center 35%" loading="lazy"></div>
+      <div data-reveal data-delay="120">
+        <div class="ws-top"><span class="k-eyebrow">Beyond recruitment</span>
+        <h2 class="k-h2">WE PREPARE YOU FOR THE JOB MARKET.</h2>
+        <p class="k-lead">Not everyone naturally knows what fits them, and that choice gets harder if you've never been prepared for it. That's why we also run workshops, talks and masterclasses at schools and (student) organisations, on the transition from school to work.</p></div>
+        <div class="im-wt"><p class="im-wt-l">Topics of our workshops</p><ul class="im-wt-c"><li>Career orientation</li><li>Discovering your drivers</li><li>Applying &amp; your CV</li><li>Personal branding &amp; LinkedIn</li><li>Working student roles as a stepping stone</li><li>Networking without a network</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SDGs: hover / tap reveal tiles -->
+<section class="k-sec k-beige im-sdgx" id="sdg">
+  <div class="k-wrap">
+    <div class="k-head" data-reveal>
+      <h2 class="k-h2" style="margin-top:0">THREE UN GOALS, ONE MISSION.</h2>
+      <p class="k-lead">What we do aligns with the UN Sustainable Development Goals (SDGs). This is how we put them into practice.</p>
+    </div>
+    <div class="sdgx">
+      <article class="sdgx-c" style="--c:#c5192d" data-reveal>
+        <div class="sdgx-top"><img src="/sdg-icons/4.png" alt="SDG 4: Quality education"><span class="sdgx-n" aria-hidden="true">4</span></div>
+        <h3>Quality education</h3>
+        <p>You learn the most when theory and practice meet. That's why we provide work experience that truly counts during your studies.</p>
+      </article>
+      <article class="sdgx-c" style="--c:#a21942" data-reveal data-delay="120">
+        <div class="sdgx-top"><img src="/sdg-icons/8.png" alt="SDG 8: Decent work and economic growth"><span class="sdgx-n" aria-hidden="true">8</span></div>
+        <h3>Decent work &amp; economic growth</h3>
+        <p>Fair pay, clear agreements and no small print: work you are rightfully paid for.</p>
+      </article>
+      <article class="sdgx-c" style="--c:#dd1367" data-reveal data-delay="240">
+        <div class="sdgx-top"><img src="/sdg-icons/10.png" alt="SDG 10: Reduced inequalities"><span class="sdgx-n" aria-hidden="true">10</span></div>
+        <h3>Reduced inequalities</h3>
+        <p>Who you know should not decide what you can become. Everyone gets the same chance, regardless of network or background.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MOVEMENT: pull quote -->
+<section class="k-sec k-white im-mv" id="beweging" style="padding:64px 0 72px">
+  <div class="k-wrap">
+    <div class="k-head" data-reveal style="margin-bottom:0">
+      <span class="k-eyebrow">The movement</span>
+      <h2 class="k-h2" style="font-size:clamp(24px,2.6vw,38px)">IN COUNTRIES LIKE GERMANY, BEING A WORKING STUDENT IS NORMAL. WE WANT THAT FOR THE NETHERLANDS TOO.</h2>
+      <p class="k-lead">In Germany, working student is a recognised status with its own arrangement within the social insurance system. We want students in the Netherlands to be able to work alongside their studies and gain experience too, as a natural part of the transition to work.</p>
+    </div>
+    <p class="mv-src" style="margin-top:14px">Source: § 6 SGB V</p>
+  </div>
+</section>
+
+<!-- AMBITION: big number + word reveal -->
+<section class="k-strip" aria-hidden="false" style="background:#fff"><div class="k-strip-in"><figure><img src="/photography/mariselle-6-c.jpg" alt="Two colleagues working together at a table" style="object-position:50% 45%" loading="lazy"></figure><figure><img src="/photography/hg-21.jpg" alt="A colleague working with a red cup by the window" style="object-position:62% 40%" loading="lazy"></figure><figure><img src="/photography/hg-00.jpg" alt="Colleague laughing on the sofa" style="object-position:60% 40%" loading="lazy"></figure><figure><img src="/photography/mariselle-11.jpg" alt="Colleague writing at a table" style="object-position:50% 40%" loading="lazy"></figure><figure><img src="/photography/hg-18.jpg" alt="Colleague on a red beanbag" style="object-position:50% 40%" loading="lazy"></figure></div></section>
+<section class="k-sec k-beige im-amb" id="ambitie">
+  <div class="k-wrap">
+    <div class="amb2" data-reveal>
+      <span class="k-eyebrow">Our ambition</span>
+      <div class="amb2-row">
+        <div class="amb2-n anton" aria-hidden="true" data-count="10" data-suffix="%">10%</div>
+        <p class="amb2-t">of our profit, from mid-2027, we reinvest in equal-opportunity initiatives for students.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="k-sec k-white k-blogrow">
+  <div class="k-wrap">
+    <div class="k-head" data-reveal><h2 class="k-h2" style="margin-top:0">WHY THIS MATTERS.</h2><p class="k-lead">More reading on experience, paid work and the German example.</p></div>
+    <div class="br-grid">
+      <a class="br-card" href="/en/blog/werkstudent-duitsland-vs-nederland" data-reveal data-delay="0"><div class="br-ph"><img src="/photography/mariselle-2.jpg" alt="" style="object-position:50% 40%" loading="lazy"></div><div class="br-tx"><span class="br-m">7 min</span><h3>Working students in Germany vs. the Netherlands: what can we learn?</h3><span class="br-go">Read the article →</span></div></a>
+      <a class="br-card" href="/en/blog/bijbaan-of-relevante-ervaring" data-reveal data-delay="100"><div class="br-ph"><img src="/photography/hg-07.jpg" alt="" style="object-position:50% 30%" loading="lazy"></div><div class="br-tx"><span class="br-m">6 min</span><h3>Side job or relevant work experience: what counts more for your CV?</h3><span class="br-go">Read the article →</span></div></a>
+      <a class="br-card" href="/en/blog/hoe-kies-je-een-sector-als-student" data-reveal data-delay="200"><div class="br-ph"><img src="/photography/talent-band-2.jpg" alt="" style="object-position:50% 28%" loading="lazy"></div><div class="br-tx"><span class="br-m">6 min</span><h3>How do you pick a sector when you have no idea what you want?</h3><span class="br-go">Read the article →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="k-cta">
+  <div class="k-wrap">
+    <div data-reveal>
+      <h2 class="k-h2">READY TO MAKE A DIFFERENCE?</h2>
+      <p>Whether you're talent looking for a fair start, or a company that wants to invest in the next generation: we'd love to hear from you.</p>
+    </div>
+    <div class="im-two" data-reveal data-delay="120">
+      <a class="k-btn" href="/en/talent">For talent →</a>
+      <a class="k-btn light" href="/en/companies">For companies →</a>
+    </div>
+  </div>
+</section>
+
+<div id="k-footer"></div>
+<script src="/site/kit.js?v=6cff9d56"></script>
+<script>
+(function(){
+  var clamp=function(v){return Math.max(0,Math.min(1,v))};
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+
+  /* pinned problem steps */
+  var scene=$('#imScene'),pin=$('#imPin');
+  if(scene&&pin){
+    var steps=$$('.im-step',pin),btns=$$('#imRail button'),cur=-1,ticking=false;
+    var stat=function(){return getComputedStyle(pin).position!=='sticky'};
+    var hh=function(){var h=document.querySelector('header');var v=h?h.offsetHeight:56;document.documentElement.style.setProperty('--hh',v+'px');return v};
+    function set(i){
+      if(i===cur)return;cur=i;
+      steps.forEach(function(s,k){s.classList.toggle('on',k===i);s.classList.toggle('past',k<i)});
+      btns.forEach(function(b,k){b.classList.toggle('on',k===i)});
+      pin.classList.toggle('dark',i===2);
+    }
+    function upd(){
+      var top=hh()+12;
+      if(stat()){steps.forEach(function(s){s.classList.add('on')});cur=-1;return}
+      var r=scene.getBoundingClientRect(),dist=scene.offsetHeight-pin.offsetHeight;
+      var q=clamp((top-r.top)/Math.max(1,dist));
+      set(Math.min(steps.length-1,Math.floor(q*steps.length)));
+    }
+    function req(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;upd()})}}
+    addEventListener('scroll',req,{passive:true});addEventListener('resize',req);upd();
+    btns.forEach(function(b,i){b.addEventListener('click',function(){
+      var top=hh()+12,r=scene.getBoundingClientRect(),dist=scene.offsetHeight-pin.offsetHeight;
+      scrollTo({top:scrollY+r.top-top+dist*(i+.5)/steps.length,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+    })});
+  }
+
+  /* tabs: aria state (kit.js swaps the panels) */
+  $$('.k-tabs button').forEach(function(b){b.addEventListener('click',function(){
+    $$('button',b.parentNode).forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+  })});
+
+  /* SDG tiles: tap or Enter toggles on touch devices; hover and focus work through CSS */
+  $$('.im-sdg-t').forEach(function(t){
+    t.addEventListener('click',function(){var o=!t.classList.contains('open');$$('.im-sdg-t').forEach(function(x){x.classList.remove('open')});t.classList.toggle('open',o)});
+    t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t.click()}});
+  });
+})();
+</script>
+<script>
+(function(){
+  var g=document.getElementById('imgrid');if(!g)return;var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var N=100,d=[];for(var i=0;i<N;i++){var e=document.createElement('i');g.appendChild(e);d.push(e)}
+  /* 20 x 5 grid = 100 dots */
+  function fill(){d.forEach(function(e,i){setTimeout(function(){e.classList.add('on')},rm?0:i*18+Math.random()*120)})}
+  var ring=document.querySelector('.im-ring');
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){ring.classList.add('in');fill();io.disconnect()}})},{threshold:.3});io.observe(g);
+  if(rm)return;
+  g.addEventListener('pointermove',function(ev){var r=g.getBoundingClientRect();var x=ev.clientX,y=ev.clientY;d.forEach(function(e){var b=e.getBoundingClientRect(),dx=b.left+b.width/2-x,dy=b.top+b.height/2-y;e.classList.toggle('hot',dx*dx+dy*dy<1800)})});
+  g.addEventListener('pointerleave',function(){d.forEach(function(e){e.classList.remove('hot')})});
+})();
+</script>
+</body>
+</html>

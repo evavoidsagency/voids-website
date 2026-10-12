@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!--seo-->
+<title>Talentpool | VOIDS</title>
+<meta name="description" content="Word lid van de VOIDS talentpool: vertel ons wat je drijft, hoe je het liefst werkt en waar je naartoe wilt, voeg je cv toe en we matchen je met passende kansen.">
+<link rel="canonical" href="https://voids.agency/pager">
+<link rel="alternate" hreflang="nl" href="https://voids.agency/pager">
+<link rel="alternate" hreflang="en" href="https://voids.agency/en/pager">
+<link rel="alternate" hreflang="x-default" href="https://voids.agency/pager">
+<meta property="og:title" content="Talentpool | VOIDS">
+<meta property="og:description" content="Word lid van de VOIDS talentpool: vertel ons wat je drijft, hoe je het liefst werkt en waar je naartoe wilt, voeg je cv toe en we matchen je met passende kansen.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://voids.agency/pager">
+<meta property="og:site_name" content="VOIDS">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:image" content="https://voids.agency/photography/home-hero-8.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Talentpool | VOIDS">
+<meta name="twitter:description" content="Word lid van de VOIDS talentpool: vertel ons wat je drijft, hoe je het liefst werkt en waar je naartoe wilt, voeg je cv toe en we matchen je met passende kansen.">
+<meta name="twitter:image" content="https://voids.agency/photography/home-hero-8.jpg">
+<link rel="icon" href="/favicon.ico">
+<meta name="theme-color" content="#fffaec">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "VOIDS", "legalName": "VOIDS vof", "url": "https://voids.agency", "logo": "https://voids.agency/logo.svg", "description": "VOIDS is een junior talent agency in Amsterdam die hoogopgeleid junior talent verbindt aan ambitieuze bedrijven via werkstudentschappen, stages en starterrollen.", "founder": [{"@type": "Person", "name": "Eva van Raaij"}, {"@type": "Person", "name": "Wieke Sleutjes"}], "address": {"@type": "PostalAddress", "addressLocality": "Amsterdam", "addressCountry": "NL"}, "email": "contact@voids.agency", "sameAs": ["https://www.linkedin.com/company/voidsagency", "https://www.instagram.com/voids_agency/", "https://www.tiktok.com/@voidstalentagency"]}</script>
+<!--/seo-->
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site/kit.css?v=6cff9d56">
+<style>
+.p-hero .k-h1{font-size:clamp(25.6px,3.8vw,60px)}
+.p-photo{aspect-ratio:10/7}
+.p-soon{display:inline-block;padding:7px 12px;border-radius:6px;background:var(--purple-100);color:var(--purple);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+
+/* PATTERN: tap/hover reveal tiles (big label, details slide in) */
+.p-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rt{position:relative;overflow:hidden;border-radius:24px;background:var(--beige-2);min-height:380px;display:flex}
+.rt-btn{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;gap:24px;width:100%;padding:32px 30px;color:var(--ink)}
+.rt-btn:focus-visible{outline:3px solid var(--blue);outline-offset:-3px;border-radius:24px}
+.rt .ic{width:56px;height:56px;border-radius:16px;background:#fff;color:var(--purple);display:grid;place-items:center}
+.rt .ic svg{width:28px;height:28px}
+.rt .lab{font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(25.3px,2.7vw,40px);line-height:1;color:var(--purple);text-transform:uppercase}
+.rt .more{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--purple);color:#fff;font-size:19.8px;margin-top:18px;transition:transform .3s}
+.rt-detail{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:14px;padding:32px 30px;background:var(--purple);color:#fff;transform:translateY(101%);transition:transform .5s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.rt-detail h3{font-size:clamp(18px,1.6vw,22.5px);font-weight:500;line-height:1.25;color:#fff}
+.rt-detail p{font-size:16px;line-height:1.6;color:rgba(255,255,255,.9)}
+.rt:hover .rt-detail,.rt:focus-within .rt-detail,.rt.open .rt-detail{transform:none}
+.rt:hover .more,.rt.open .more{transform:rotate(45deg)}
+
+/* PATTERN: stepped form (segmented control) with live career pager preview */
+.p-form-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:stretch}
+.p-left{display:flex;flex-direction:column;gap:32px}
+.p-left .k-head{margin-bottom:0}
+.p-prev{flex:1;display:flex;flex-direction:column;gap:18px;padding:30px;border-radius:24px;background:var(--purple);color:#fff}
+.p-prev .who{display:flex;align-items:center;gap:16px}
+.p-prev .av{flex:none;width:60px;height:60px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-family:Anton,sans-serif;font-size:24px}
+.p-prev .nm{font-family:Inter,sans-serif;font-size:clamp(20.2px,2vw,28px);line-height:1.05;font-weight:600;letter-spacing:-.01em;text-transform:none}
+.p-prev .tag{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--purple-200)}
+.p-prev .rows{display:grid;gap:12px;margin-top:6px;flex:1;grid-auto-rows:1fr}
+.p-prev .row{display:flex;flex-direction:column;justify-content:center;gap:5px;padding:14px 18px;border-radius:14px;background:rgba(255,255,255,.1)}
+.p-prev .row small{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-200)}
+.p-prev .row span{font-size:16px;font-weight:500;line-height:1.35;color:#fff;overflow-wrap:anywhere;min-height:1.35em}
+.p-prev .row span:empty::before{content:"";display:block;width:55%;height:14px;border-radius:7px;background:rgba(255,255,255,.18)}
+.p-form h3{font-family:Anton,sans-serif;font-weight:400;font-size:28px;letter-spacing:.01em;margin-bottom:4px}
+.p-form .k-field span{font-weight:600}
+.p-form.k-form{align-content:start}
+.p-steps.k-tabs{margin-bottom:6px;flex-wrap:nowrap}
+.p-steps.k-tabs button{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 14px;background:var(--beige)}
+.p-steps.k-tabs button.on{background:var(--purple);color:#fff}
+.p-steps b{font-family:Anton,sans-serif;font-weight:400;font-size:18px}
+.p-form .k-panel{min-height:236px}
+.p-form .k-panel.on{display:grid;gap:16px;align-content:start}
+.p-nav{display:flex;gap:12px;justify-content:space-between;align-items:center;margin-top:6px}
+.p-nav .k-btn{justify-content:center}
+.p-nav .k-btn.back{background:var(--purple-100);color:var(--purple)}
+.p-nav .k-btn.back:hover{background:var(--purple-200)}
+.p-nav .k-btn[hidden]{display:none}
+@media(max-width:960px){
+  .p-tiles{grid-template-columns:1fr}.rt{min-height:300px}
+  .p-form-wrap{grid-template-columns:1fr;gap:32px}.p-form.k-form{padding:24px 20px}
+  .p-steps.k-tabs button span{display:none}
+}
+@media(prefers-reduced-motion:reduce){.rt-detail,.rt .more{transition:none}}
+.pg-band{position:relative;width:100%;aspect-ratio:3/1;max-height:420px;overflow:hidden;background:var(--purple-100)}.pg-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}@media(max-width:860px){.pg-band{aspect-ratio:4/3}}
+
+/* talent pool sign-up (intake form) */
+.p-form-wrap{align-items:start}
+
+.p-right{min-width:0}
+.p-steps{display:flex;gap:6px;margin:4px 0 8px}
+.p-steps button{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 8px;border:0;border-radius:99px;background:var(--beige);color:var(--soft);font:600 13.5px Inter,sans-serif;cursor:pointer;transition:background .2s,color .2s}
+.p-steps button.on{background:var(--purple);color:#fff}
+.p-steps b{font-family:Anton,sans-serif;font-weight:400;font-size:17px}
+.p-panel{display:none}.p-panel.on{display:grid;gap:18px;align-content:start}
+.p-ph h4{margin:0;font:700 12px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--purple)}
+.p-ph p{margin:6px 0 0;font-size:15px;color:var(--soft)}
+.p-opt{margin-left:8px;font-style:normal;font-weight:500;font-size:12px;color:var(--muted,#7a7690)}
+.p-hint{display:block;margin-top:2px;font-size:13px;font-weight:400;line-height:1.45;color:var(--soft)}
+.p-q{display:inline-grid;place-items:center;min-width:24px;height:24px;margin-right:8px;padding:0 6px;border-radius:99px;background:var(--purple-100);color:var(--purple);font:700 12px Inter,sans-serif}
+.p-qf textarea{min-height:96px}
+.p-set{border:0;margin:0;padding:0;display:grid;gap:8px;min-width:0}
+.p-set legend{padding:0;font-size:13.5px;font-weight:600}
+.p-count{margin-left:8px;font-style:normal;font-size:12px;font-weight:700;color:var(--purple)}
+.p-chips{display:flex;flex-wrap:wrap;gap:8px}
+.p-chip{position:relative;cursor:pointer}
+.p-chip input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.p-chip span{display:inline-block;padding:9px 15px;border-radius:99px;background:var(--beige);color:var(--ink);font:500 14px Inter,sans-serif;transition:background .2s,color .2s,transform .2s}
+.p-chip:hover span{background:var(--purple-100)}
+.p-chip input:checked+span{background:var(--purple);color:#fff}
+.p-chip input:focus-visible+span{outline:3px solid var(--blue);outline-offset:2px}
+.p-chip input:disabled+span{opacity:.4;cursor:not-allowed}
+.p-qt{margin:0;font-size:13.5px;font-weight:600}
+.p-q5,.p-q10{display:grid;gap:10px}
+.p-pair{border:0;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:stretch;min-width:0}
+.p-opt2{position:relative;display:flex;cursor:pointer}
+.p-opt2 input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.p-opt2 span{display:flex;align-items:center;width:100%;padding:12px 14px;border-radius:14px;background:var(--beige);font-size:14px;line-height:1.35;transition:background .2s,color .2s}
+.p-opt2:hover span{background:var(--purple-100)}
+.p-opt2 input:checked+span{background:var(--purple);color:#fff}
+.p-opt2 input:focus-visible+span{outline:3px solid var(--blue);outline-offset:2px}
+.p-or{align-self:center;font-style:normal;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#7a7690)}
+.p-task{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 16px;align-items:center;padding:12px 14px;border-radius:14px;background:var(--beige)}
+.p-tt b{display:block;font-size:14.5px}
+.p-tt small{display:block;margin-top:2px;font-size:13px;line-height:1.35;color:var(--soft)}
+.p-seg3{display:flex;gap:4px;padding:4px;border-radius:99px;background:#fff}
+.p-seg3 label{position:relative;cursor:pointer}
+.p-seg3 input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.p-seg3 span{display:block;padding:7px 12px;border-radius:99px;font-size:12.5px;font-weight:600;white-space:nowrap;color:var(--soft);transition:background .2s,color .2s}
+.p-seg3 input:checked+span{background:var(--purple);color:#fff}
+.p-seg3 input:focus-visible+span{outline:3px solid var(--blue);outline-offset:1px}
+.p-file input[type=file]{padding:12px 14px;font-size:14px}
+.p-consent{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;font-size:13.5px;line-height:1.5;color:var(--soft);cursor:pointer}
+.p-consent input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--purple)}
+.p-links{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:13.5px}
+.p-links a{color:var(--purple);font-weight:600;text-underline-offset:4px}
+.p-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.p-file input[type=file]{color:var(--soft)}
+.p-file input[type=file]::file-selector-button{margin-right:14px;padding:9px 16px;border:0;border-radius:99px;background:var(--purple);color:#fff;font:600 13.5px Inter,sans-serif;cursor:pointer}
+.p-file input[type=file]::file-selector-button:hover{background:var(--purple-700)}
+.p-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.p-err{margin:0;padding:12px 16px;border-radius:10px;background:#fdeceb;color:#b3261e;font-size:14px;font-weight:600;line-height:1.45}
+.p-err[hidden]{display:none}
+.p-sent h3{font-size:34px}
+.p-sent p{margin:0;font-size:16px;line-height:1.6;color:var(--soft)}
+.p-sent[hidden]{display:none}
+.p-form[hidden]{display:none}
+@media(max-width:960px){.p-left{position:static}.p-steps button span{display:none}.p-steps button{padding:11px 6px}}
+@media(max-width:640px){.p-pair{grid-template-columns:1fr;gap:6px}.p-or{text-align:center}.p-task{grid-template-columns:1fr}.p-seg3{justify-self:start}}
+
+/* left column: headline, photo and a live career pager card that overlaps the photo */
+.p-form-wrap{align-items:stretch;gap:64px}
+.p-left{display:flex;flex-direction:column;gap:30px}
+.p-head .k-h2{margin:12px 0 16px;font-size:clamp(34px,4vw,56px)}
+.p-head .k-lead{max-width:30em;margin:0}
+.p-vis{position:sticky;top:96px}
+.p-pic{margin:0;aspect-ratio:16/10;overflow:hidden;border-radius:30px 30px 110px 30px;background:var(--purple-200)}
+.p-pic img{width:100%;height:100%;object-fit:cover;display:block}
+.p-prev{position:relative;margin:-84px 22px 0 22px;padding:26px 26px 28px;border-radius:26px;background:var(--purple);color:#fff;box-shadow:0 34px 50px -30px rgba(40,10,120,.7);flex:none}
+.p-prev .who{display:flex;align-items:center;gap:16px}
+.p-prev .av{background:linear-gradient(140deg,var(--blue),#8a63e8);width:56px;height:56px;font-size:23px}
+.p-prev .wn{min-width:0}
+.p-prev .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.p-prev .pr{position:relative;flex:none;margin-left:auto;width:54px;height:54px;border-radius:50%;background:conic-gradient(#fff calc(var(--p)*1%),rgba(255,255,255,.18) 0);display:grid;place-items:center;transition:background .4s}
+.p-prev .pr::before{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--purple)}
+.p-prev .pr b{position:relative;font:700 12px Inter,sans-serif}
+.p-prev .rows{display:grid;gap:10px;margin-top:20px;grid-auto-rows:auto;flex:none}
+.p-prev .row{padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.09);gap:6px}
+.p-prev .row span{font-size:15px;min-height:0}
+.p-prev .row span:empty::before,.p-prev .pchips:empty::before{content:"";display:block;width:46%;height:12px;border-radius:6px;background:rgba(255,255,255,.18)}
+.p-prev .pchips{display:flex;flex-wrap:wrap;gap:6px}
+.p-prev .pchips i{font-style:normal;padding:5px 12px;border-radius:99px;background:rgba(255,255,255,.16);font-size:13.5px;font-weight:600;color:#fff;animation:pchip .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes pchip{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:none}}
+@media(max-width:640px){.p-vis{display:none}.p-left{gap:0}}
+@media(prefers-reduced-motion:reduce){.p-prev .pchips i{animation:none}.p-prev .pr{transition:none}}
+@media(max-width:960px){.p-vis{position:static}.p-pic{aspect-ratio:16/9}.p-prev{margin:-56px 14px 0}.p-form-wrap{gap:32px}}
+
+/* refinement: calmer, more editorial */
+.p-form-wrap{gap:72px}
+.p-head .k-h2{letter-spacing:.005em}
+.p-pic{border-radius:22px;aspect-ratio:16/10}
+.p-prev{margin:-52px 20px 0;padding:28px 30px 30px;border-radius:20px;background:#fff;color:var(--ink);box-shadow:0 30px 50px -34px rgba(40,10,120,.45)}
+.p-prev .who{gap:16px;align-items:center}
+.p-prev .av{width:50px;height:50px;border-radius:50%;background:var(--ink);color:#fff;font-size:22px}
+.p-prev .tag{font-size:11px;letter-spacing:.16em;color:var(--purple)}
+.p-prev .nm{font:400 clamp(26px,2.6vw,34px)/1.05 Anton,"Arial Narrow",sans-serif;letter-spacing:.01em;text-transform:uppercase;color:var(--ink);white-space:normal;overflow:visible}
+.p-prev .pr{width:auto;height:auto;border-radius:0;background:none;display:block;text-align:right}
+.p-prev .pr::before{display:none}
+.p-prev .pr b{font:600 12px Inter,sans-serif;letter-spacing:.06em;color:var(--purple)}
+.p-prev .pbar{height:4px;margin:20px 0 4px;border-radius:99px;background:#ece7f7;overflow:hidden}
+.p-prev .pbar i{display:block;height:100%;width:0;background:var(--purple);border-radius:99px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.p-prev .rows{gap:18px;margin-top:20px}
+.p-prev .row{padding:0;border-radius:0;background:none;gap:7px}
+.p-prev .row small{font-size:11px;letter-spacing:.14em;color:#8a8578}
+.p-prev .row span{font-size:15.5px;line-height:1.45;color:var(--ink)}
+.p-prev .row span:empty::before,.p-prev .pchips:empty::before{width:38%;height:10px;border-radius:5px;background:#efeaf9}
+.p-prev .pchips{gap:6px}
+.p-prev .pchips i{padding:5px 11px;border-radius:8px;background:var(--purple-100);color:var(--purple);font-size:13px;font-weight:600}
+/* stepper: numbers and labels, a single progress bar */
+.p-prog{height:4px;margin:2px 0 14px;border-radius:99px;background:#ece7f7;overflow:hidden}
+.p-prog i{display:block;height:100%;width:0;background:var(--purple);border-radius:99px;transition:width .45s cubic-bezier(.2,.8,.2,1)}
+.p-steps{gap:4px;margin:0 0 10px}
+.p-steps button{flex:1;justify-content:flex-start;gap:8px;padding:8px 6px;background:none;border-radius:8px;color:#8a8578;font:600 13px Inter,sans-serif;transition:color .2s}
+.p-steps button:hover{color:var(--ink)}
+.p-steps button.on{background:none;color:var(--purple)}
+.p-steps b{font:600 12px Inter,sans-serif;letter-spacing:.06em}
+.p-steps b::before{content:"0"}
+.p-form{padding:36px 36px 34px;border-radius:22px;box-shadow:0 30px 50px -40px rgba(40,10,120,.35)}
+.p-form h3{font-size:30px;letter-spacing:.01em;margin-bottom:10px}
+.p-ph h4{letter-spacing:.16em}
+.k-form .k-field input,.k-form .k-field textarea,.k-form .k-field select{padding:15px 16px;border-radius:12px;background:#faf6ea}
+.k-form .k-field input:focus,.k-form .k-field textarea:focus{background:#fff;box-shadow:inset 0 0 0 2px var(--purple)}
+.p-chip span{padding:10px 16px;border-radius:12px;background:#faf6ea;font-weight:500}
+.p-chip:hover span{background:var(--purple-100)}
+.p-chip input:checked+span{background:var(--ink);color:#fff}
+.p-chip input:checked+span::before{content:"\2713";margin-right:8px;font-size:12px}
+.p-opt2 span{border-radius:12px;background:#faf6ea}
+.p-opt2 input:checked+span{background:var(--ink);color:#fff}
+.p-or{font-size:11px}
+.p-task{border-radius:14px;background:#faf6ea}
+.p-seg3{border-radius:12px;background:#fff;padding:3px}
+.p-seg3 span{border-radius:9px}
+.p-seg3 input:checked+span{background:var(--ink);color:#fff}
+.p-q{border-radius:8px;background:var(--purple-100);color:var(--purple)}
+.p-nav .k-btn{border-radius:12px;padding:15px 26px}
+.p-nav .k-btn.back{background:#f3eefc}
+.p-file input[type=file]::file-selector-button{border-radius:10px;background:var(--ink)}
+.p-file input[type=file]::file-selector-button:hover{background:#2b2b2b}
+@media(max-width:960px){.p-prev{margin:-40px 14px 0}.p-form{padding:26px 22px}}
+</style>
+</head>
+<body data-nav="talent">
+<div id="k-header"></div>
+
+<section class="k-hero k-beige p-hero">
+  <div class="k-wrap">
+    <div>
+      <span class="p-soon">Talentpool</span>
+      <h1 class="k-h1">WORD LID VAN DE <span class="k-accent">TALENTPOOL.</span></h1>
+      <p class="k-lead">Vertel ons wie je bent en hoe je het liefst werkt, dan kunnen we je gericht helpen in plaats van je een generieke lijst met vacatures te sturen.</p>
+      <div class="k-cta-row">
+        <a class="k-btn" href="#aanmelden">Naar het formulier</a>
+      </div>
+    </div>
+    <div class="k-photo p-photo" data-reveal><img src="/photography/hg-14.jpg" alt="Twee collega's kijken samen naar een laptop" style="object-position:50% 35%"></div>
+  </div>
+</section>
+
+<!-- TICKER (pattern: marquee of short claims) -->
+<!-- WAT JE KRIJGT (pattern: tap / hover reveal tiles) -->
+<section class="k-sec k-white">
+  <div class="k-wrap">
+    <div class="k-head" data-reveal>
+      <span class="k-eyebrow">Talentpool</span>
+      <h2 class="k-h2">DIT KRIJG JE ALS JE LID<br>WORDT VAN DE TALENTPOOL.</h2>
+    </div>
+    <div class="tz">
+      <article class="tz-row" data-reveal>
+        <div class="tz-ph"><img src="/photography/mariselle-4.jpg" alt="Twee collega's werken samen aan tafel" style="object-position:50% 45%" loading="lazy"></div>
+        <div class="tz-tx"><span class="k-badge">Offmarket</span><h3>Offmarket-kansen</h3><p>Rollen waar we dankzij onze nauwe samenwerking met werkgevers al vroeg over meedenken. Wij stellen ze proactief aan je voor.</p></div>
+      </article>
+      <article class="tz-row rev" data-reveal>
+        <div class="tz-ph"><img src="/photography/mariselle-11.jpg" alt="Collega schrijft aan tafel" style="object-position:50% 40%" loading="lazy"></div>
+        <div class="tz-tx"><span class="k-badge">Persoonlijk</span><h3>Matching op wie je bent</h3><p>Je vult in wat je drijft, hoe je het liefst werkt en wat je graag doet. Zo kijken we naar meer dan je cv en kunnen we je gerichter matchen.</p></div>
+      </article>
+      <article class="tz-row" data-reveal>
+        <div class="tz-ph"><img src="/photography/mariselle-3.jpg" alt="Twee collega's in overleg op de bank" style="object-position:50% 32%" loading="lazy"></div>
+        <div class="tz-tx"><span class="k-badge">Netwerk</span><h3>Events &amp; exclusief netwerk</h3><p>Uitnodigingen voor events, persoonlijke introducties bij werkgevers en een team dat continu met je meedenkt over nieuwe kansen.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+<div class="pg-band"><img src="/photography/mariselle-4.jpg" alt="Twee collega's werken samen aan tafel" style="object-position:50% 42%" loading="lazy"></div>
+
+
+<!-- Talentpool-aanmelding: de intake (Why, How & What). Het formulier post naar /api/talent-signup en komt als regel in de ATS in Notion terecht. -->
+<section class="k-sec k-lav" id="aanmelden">
+  <div class="k-wrap">
+    <div class="p-form-wrap">
+      <div class="p-left">
+        <div class="p-head" data-reveal>
+          <span class="k-eyebrow">Talentpool</span>
+          <h2 class="k-h2">BEANTWOORD EEN PAAR VRAGEN.</h2>
+          <p class="k-lead">Beantwoord een paar vragen over jezelf en je bent lid. Meedoen is voor jou altijd gratis.</p>
+        </div>
+        <div class="p-vis" data-reveal>
+          <figure class="p-pic"><img src="/photography/jb-hg-12.jpg" alt="" style="object-position:50% 36%" loading="lazy"></figure>
+          <div class="p-prev" aria-hidden="true">
+            <div class="who">
+              <div class="av" id="pvAv">V</div>
+              <div class="wn"><div class="tag">Talentprofiel</div><div class="nm" id="pvName">Voornaam Achternaam</div></div>
+              <div class="pr" id="pvRing" style="--p:0"><b id="pvPct">0%</b></div>
+            </div>
+            <div class="pbar"><i id="pvBar"></i></div>
+            <div class="rows">
+              <div class="row"><small>Op zoek naar</small><div class="pchips" data-pv="looking"></div></div>
+              <div class="row"><small>Opleiding</small><span data-pv="study"></span></div>
+              <div class="row"><small>Drie belangrijkste dingen</small><div class="pchips" data-pv="values"></div></div>
+              <div class="row"><small>Hier ben ik goed in</small><span data-pv="strength"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-right" data-reveal>
+        <form class="k-form p-form" id="pForm" novalidate>
+          <h3>Word lid van de talentpool</h3>
+          <div class="p-prog" aria-hidden="true"><i id="pProg"></i></div>
+          <div class="p-steps" role="group" aria-label="Stappen"><button type="button" data-step="0" class="on" aria-pressed="true"><b>1</b><span>Over jou</span></button><button type="button" data-step="1" class="" aria-pressed="false"><b>2</b><span>Studie</span></button><button type="button" data-step="2" class="" aria-pressed="false"><b>3</b><span>Waarom</span></button><button type="button" data-step="3" class="" aria-pressed="false"><b>4</b><span>Hoe</span></button><button type="button" data-step="4" class="" aria-pressed="false"><b>5</b><span>Wat</span></button><button type="button" data-step="5" class="" aria-pressed="false"><b>6</b><span>Afronden</span></button></div>
+          <div class="p-panel on" data-panel="0"><div class="p-ph"><h4>Over jou</h4><p>Dit formulier hoort bij je aanmelding voor de VOIDS talentpool.</p></div><div class="k-row2"><label class="k-field"><span>Voornaam</span><input type="text" name="first" required autocomplete="given-name"></label><label class="k-field"><span>Achternaam</span><input type="text" name="last" required autocomplete="family-name"></label></div><div class="k-row2"><label class="k-field"><span>E-mailadres</span><input type="email" name="email" required autocomplete="email"></label><label class="k-field"><span>Telefoonnummer</span><input type="tel" name="phone" required autocomplete="tel"></label></div><label class="k-field"><span>Geboortedatum<em class="p-opt">Optioneel</em></span><input type="date" name="birth" autocomplete="bday"></label></div><div class="p-panel" data-panel="1"><div class="p-ph"><h4>Studie en werk</h4><p>Waar sta je nu en wat zoek je?</p></div><div class="k-row2"><label class="k-field"><span>Bachelor</span><input type="text" name="bachelor" required ></label><label class="k-field"><span>Master<em class="p-opt">Optioneel</em></span><input type="text" name="master" ></label></div><label class="k-field"><span>Onderwijsinstelling</span><input type="text" name="school" required autocomplete="organization"></label><div class="k-row2"><label class="k-field"><span>(Verwacht) afstudeerjaar</span><input type="number" name="gradyear" required min="1990" max="2045" step="1" inputmode="numeric" placeholder="2027"></label><label class="k-field"><span>Beschikbare uren per week</span><input type="number" name="hours" required min="1" max="40" step="1" inputmode="numeric"></label></div><label class="k-field"><span>Gewenste startdatum</span><input type="date" name="start" required ></label><fieldset class="p-set" data-group="looking"><legend>Waar ben je naar op zoek?</legend><small class="p-hint">Kies alles wat past.</small><div class="p-chips"><label class="p-chip"><input type="checkbox" name="looking" value="stage"><span>Stage</span></label><label class="p-chip"><input type="checkbox" name="looking" value="workstudent"><span>Werkstudentschap</span></label><label class="p-chip"><input type="checkbox" name="looking" value="starter"><span>Startersfunctie</span></label><label class="p-chip"><input type="checkbox" name="looking" value="trainee"><span>Traineeship</span></label><label class="p-chip"><input type="checkbox" name="looking" value="sidejob"><span>Bijbaan</span></label><label class="p-chip"><input type="checkbox" name="looking" value="freelance"><span>Freelance werk</span></label><label class="p-chip"><input type="checkbox" name="looking" value="board"><span>Bestuurs- of vrijwilligersrol</span></label><label class="p-chip"><input type="checkbox" name="looking" value="impact"><span>Impactwerk</span></label></div></fieldset><fieldset class="p-set" data-group="field"><legend>In welk vakgebied?</legend><small class="p-hint">Optioneel, kies maximaal drie.</small><div class="p-chips"><label class="p-chip"><input type="checkbox" name="field" value="bizdev"><span>Business development</span></label><label class="p-chip"><input type="checkbox" name="field" value="comms"><span>Communicatie</span></label><label class="p-chip"><input type="checkbox" name="field" value="consulting"><span>Consultancy</span></label><label class="p-chip"><input type="checkbox" name="field" value="data"><span>Data</span></label><label class="p-chip"><input type="checkbox" name="field" value="design"><span>Design</span></label><label class="p-chip"><input type="checkbox" name="field" value="finance"><span>Finance</span></label><label class="p-chip"><input type="checkbox" name="field" value="hr"><span>HR</span></label><label class="p-chip"><input type="checkbox" name="field" value="legal"><span>Juridisch</span></label><label class="p-chip"><input type="checkbox" name="field" value="marketing"><span>Marketing</span></label><label class="p-chip"><input type="checkbox" name="field" value="operations"><span>Operations</span></label><label class="p-chip"><input type="checkbox" name="field" value="sales"><span>Sales</span></label><label class="p-chip"><input type="checkbox" name="field" value="tech"><span>Tech</span></label></div></fieldset></div><div class="p-panel" data-panel="2"><div class="p-ph"><h4>Deel 1: waarom je werkt</h4><p>Dit gaat niet over salaris, maar over de drijfveer achter de keuzes die je maakt.</p></div><label class="k-field p-qf"><span><b class="p-q">1</b>Noem een moment waarop je volledig in je element was.</span><small class="p-hint">Een project, bestuurstaak, vrijwilligerswerk of bijbaan. Wat gebeurde er, en wat maakte het zo goed?</small><textarea name="q1" maxlength="1800" required></textarea></label><fieldset class="p-set" data-group="values"><legend>Welke drie dingen vind jij het belangrijkst in werk?</legend><small class="p-hint">Kies er precies drie.</small><div class="p-chips"><label class="p-chip"><input type="checkbox" name="values" value="freedom"><span>Vrijheid</span></label><label class="p-chip"><input type="checkbox" name="values" value="security"><span>Zekerheid</span></label><label class="p-chip"><input type="checkbox" name="values" value="growth"><span>Groei</span></label><label class="p-chip"><input type="checkbox" name="values" value="impact"><span>Impact maken</span></label><label class="p-chip"><input type="checkbox" name="values" value="appreciation"><span>Waardering krijgen</span></label><label class="p-chip"><input type="checkbox" name="values" value="creativity"><span>Creativiteit</span></label><label class="p-chip"><input type="checkbox" name="values" value="build"><span>Zelf iets opbouwen</span></label><label class="p-chip"><input type="checkbox" name="values" value="together"><span>Samen met anderen</span></label><label class="p-chip"><input type="checkbox" name="values" value="calm"><span>Rust en overzicht</span></label><label class="p-chip"><input type="checkbox" name="values" value="status"><span>Aanzien</span></label></div></fieldset><label class="k-field p-qf"><span><b class="p-q">3</b>Is er een onderwerp waar jij vanzelf nieuwsgierig naar bent?<em class="p-opt">Optioneel</em></span><small class="p-hint">Duurzaamheid, gelijke kansen, gezondheid, technologie, onderwijs, of iets heel anders.</small><textarea name="q3" maxlength="1800"></textarea></label><label class="k-field p-qf"><span><b class="p-q">4</b>Heb je al een beeld van waar je over een paar jaar wil staan?<em class="p-opt">Optioneel</em></span><small class="p-hint">Mag heel concreet zijn: een vaardigheid die je onder de knie wil hebben, een rol die je aanspreekt, een ervaring die je wil opdoen. Heb je dit nog niet scherp, sla deze gerust over.</small><textarea name="q4" maxlength="1800"></textarea></label></div><div class="p-panel" data-panel="3"><div class="p-ph"><h4>Deel 2: hoe jij het liefst werkt</h4><p>Dit zegt niets over een functie, wel over jou.</p></div><div class="p-q5"><p class="p-qt"><b class="p-q">5</b>Welke kant past het best bij jou? Kies er telkens 1.</p><small class="p-hint">Vink het vakje aan bij de omschrijving die bij jou past. Ga op je eerste gevoel af.</small><fieldset class="p-pair"><legend class="p-sr">Alleen aan iets werken / Samen met anderen aan iets werken</legend><label class="p-opt2"><input type="radio" name="q5_1" value="a" required><span>Alleen aan iets werken</span></label><i class="p-or">of</i><label class="p-opt2"><input type="radio" name="q5_1" value="b" required><span>Samen met anderen aan iets werken</span></label></fieldset><fieldset class="p-pair"><legend class="p-sr">Elke dag ongeveer hetzelfde / Elke dag iets anders</legend><label class="p-opt2"><input type="radio" name="q5_2" value="a" required><span>Elke dag ongeveer hetzelfde</span></label><i class="p-or">of</i><label class="p-opt2"><input type="radio" name="q5_2" value="b" required><span>Elke dag iets anders</span></label></fieldset><fieldset class="p-pair"><legend class="p-sr">Een klein team waar je iedereen kent / Een grotere organisatie met veel mensen</legend><label class="p-opt2"><input type="radio" name="q5_3" value="a" required><span>Een klein team waar je iedereen kent</span></label><i class="p-or">of</i><label class="p-opt2"><input type="radio" name="q5_3" value="b" required><span>Een grotere organisatie met veel mensen</span></label></fieldset><fieldset class="p-pair"><legend class="p-sr">Snel schakelen, ook als het niet perfect is / Rustig en zorgvuldig, ook als het langer duurt</legend><label class="p-opt2"><input type="radio" name="q5_4" value="a" required><span>Snel schakelen, ook als het niet perfect is</span></label><i class="p-or">of</i><label class="p-opt2"><input type="radio" name="q5_4" value="b" required><span>Rustig en zorgvuldig, ook als het langer duurt</span></label></fieldset><fieldset class="p-pair"><legend class="p-sr">Zelf bedenken hoe je iets aanpakt / Een duidelijke opdracht en die goed uitvoeren</legend><label class="p-opt2"><input type="radio" name="q5_5" value="a" required><span>Zelf bedenken hoe je iets aanpakt</span></label><i class="p-or">of</i><label class="p-opt2"><input type="radio" name="q5_5" value="b" required><span>Een duidelijke opdracht en die goed uitvoeren</span></label></fieldset><fieldset class="p-pair"><legend class="p-sr">Op kantoor, tussen mensen / Thuis of op wisselende plekken</legend><label class="p-opt2"><input type="radio" name="q5_6" value="a" required><span>Op kantoor, tussen mensen</span></label><i class="p-or">of</i><label class="p-opt2"><input type="radio" name="q5_6" value="b" required><span>Thuis of op wisselende plekken</span></label></fieldset></div><label class="k-field p-qf"><span><b class="p-q">6</b>Bij wie werkte of leerde jij tot nu toe het prettigst?</span><small class="p-hint">Een docent, coach, begeleider of teamgenoot. Wat deed die persoon waardoor het zo goed werkte?</small><textarea name="q6" maxlength="1800" required></textarea></label><label class="k-field p-qf"><span><b class="p-q">7</b>Hoeveel wil je in het begin zelf mogen beslissen?</span><small class="p-hint">Sommigen pakken liever snel zelf dingen op, anderen willen eerst goed ingewerkt worden. Wat past bij jou nu?</small><textarea name="q7" maxlength="1800" required></textarea></label><label class="k-field p-qf"><span><b class="p-q">8</b>Wat heb je nodig van de mensen om je heen om je op je best te voelen?</span><small class="p-hint">Denk aan hoe je het liefst feedback krijgt, hoeveel begeleiding fijn is, of hoe een team het beste met jou omgaat.</small><textarea name="q8" maxlength="1800" required></textarea></label><label class="k-field p-qf"><span><b class="p-q">9</b>Wat zou voor jou een dealbreaker zijn in een team of organisatie?</span><small class="p-hint">Iets waarvan je nu al weet: dat wil ik niet, ook niet als de rest van de rol leuk is.</small><textarea name="q9" maxlength="1800" required></textarea></label></div><div class="p-panel" data-panel="4"><div class="p-ph"><h4>Deel 3: wat je graag zou doen</h4><p>Je hoeft dit nog nooit gedaan te hebben.</p></div><div class="p-q10"><p class="p-qt"><b class="p-q">10</b>Wat spreekt je aan? Zet per taak een vinkje: leuk, niet leuk, of maakt niet uit.</p><small class="p-hint">Je hoeft dit nog nooit gedaan te hebben, ga af op wat je aanspreekt.</small><div class="p-task"><div class="p-tt"><b>Schrijven</b><small>teksten, posts of verhalen maken</small></div><div class="p-seg3" role="radiogroup" aria-label="Schrijven"><label><input type="radio" name="q10_writing" value="+"><span>Leuk</span></label><label><input type="radio" name="q10_writing" value="0" checked><span>Maakt niet uit</span></label><label><input type="radio" name="q10_writing" value="-"><span>Niet leuk</span></label></div></div><div class="p-task"><div class="p-tt"><b>Uitzoeken</b><small>onderzoeken hoe iets werkt of klopt</small></div><div class="p-seg3" role="radiogroup" aria-label="Uitzoeken"><label><input type="radio" name="q10_research" value="+"><span>Leuk</span></label><label><input type="radio" name="q10_research" value="0" checked><span>Maakt niet uit</span></label><label><input type="radio" name="q10_research" value="-"><span>Niet leuk</span></label></div></div><div class="p-task"><div class="p-tt"><b>Cijfers en data</b><small>patronen zoeken, analyses maken</small></div><div class="p-seg3" role="radiogroup" aria-label="Cijfers en data"><label><input type="radio" name="q10_data" value="+"><span>Leuk</span></label><label><input type="radio" name="q10_data" value="0" checked><span>Maakt niet uit</span></label><label><input type="radio" name="q10_data" value="-"><span>Niet leuk</span></label></div></div><div class="p-task"><div class="p-tt"><b>Bouwen of programmeren</b><small>iets technisch maken</small></div><div class="p-seg3" role="radiogroup" aria-label="Bouwen of programmeren"><label><input type="radio" name="q10_building" value="+"><span>Leuk</span></label><label><input type="radio" name="q10_building" value="0" checked><span>Maakt niet uit</span></label><label><input type="radio" name="q10_building" value="-"><span>Niet leuk</span></label></div></div><div class="p-task"><div class="p-tt"><b>Ontwerpen</b><small>iets visueel vormgeven</small></div><div class="p-seg3" role="radiogroup" aria-label="Ontwerpen"><label><input type="radio" name="q10_design" value="+"><span>Leuk</span></label><label><input type="radio" name="q10_design" value="0" checked><span>Maakt niet uit</span></label><label><input type="radio" name="q10_design" value="-"><span>Niet leuk</span></label></div></div><div class="p-task"><div class="p-tt"><b>Anderen helpen of adviseren</b><small>meedenken met iemands vraag of probleem</small></div><div class="p-seg3" role="radiogroup" aria-label="Anderen helpen of adviseren"><label><input type="radio" name="q10_advising" value="+"><span>Leuk</span></label><label><input type="radio" name="q10_advising" value="0" checked><span>Maakt niet uit</span></label><label><input type="radio" name="q10_advising" value="-"><span>Niet leuk</span></label></div></div><div class="p-task"><div class="p-tt"><b>Presenteren</b><small>iets vertellen of laten zien aan een groep</small></div><div class="p-seg3" role="radiogroup" aria-label="Presenteren"><label><input type="radio" name="q10_presenting" value="+"><span>Leuk</span></label><label><input type="radio" name="q10_presenting" value="0" checked><span>Maakt niet uit</span></label><label><input type="radio" name="q10_presenting" value="-"><span>Niet leuk</span></label></div></div><div class="p-task"><div class="p-tt"><b>Verkopen of overtuigen</b><small>iemand meekrijgen in een idee of product</small></div><div class="p-seg3" role="radiogroup" aria-label="Verkopen of overtuigen"><label><input type="radio" name="q10_selling" value="+"><span>Leuk</span></label><label><input type="radio" name="q10_selling" value="0" checked><span>Maakt niet uit</span></label><label><input type="radio" name="q10_selling" value="-"><span>Niet leuk</span></label></div></div><div class="p-task"><div class="p-tt"><b>Organiseren</b><small>een evenement of planning regelen</small></div><div class="p-seg3" role="radiogroup" aria-label="Organiseren"><label><input type="radio" name="q10_organising" value="+"><span>Leuk</span></label><label><input type="radio" name="q10_organising" value="0" checked><span>Maakt niet uit</span></label><label><input type="radio" name="q10_organising" value="-"><span>Niet leuk</span></label></div></div><div class="p-task"><div class="p-tt"><b>Gesprekken voeren</b><small>met klanten, deelnemers of andere mensen buiten je team</small></div><div class="p-seg3" role="radiogroup" aria-label="Gesprekken voeren"><label><input type="radio" name="q10_talking" value="+"><span>Leuk</span></label><label><input type="radio" name="q10_talking" value="0" checked><span>Maakt niet uit</span></label><label><input type="radio" name="q10_talking" value="-"><span>Niet leuk</span></label></div></div></div><label class="k-field p-qf"><span><b class="p-q">11</b>Waar krijg je vaak complimenten over, of waar ben je zelf goed in?</span><small class="p-hint">Dit hoeft niet werkgerelateerd te zijn. Iets dat mensen om je heen opvalt, of waar je zelf trots op bent.</small><textarea name="q11" maxlength="1800" required></textarea></label><label class="k-field p-qf"><span><b class="p-q">12</b>Is er een soort organisatie die je aanspreekt?<em class="p-opt">Optioneel</em></span><small class="p-hint">Bijvoorbeeld een startup, een grotere scale-up, een non-profit, of juist een gevestigde organisatie. Waarom die?</small><textarea name="q12" maxlength="1800"></textarea></label><label class="k-field p-qf"><span><b class="p-q">13</b>Welke taak zou je liever niet doen?<em class="p-opt">Optioneel</em></span><textarea name="q13" maxlength="1800"></textarea></label><label class="k-field p-qf"><span><b class="p-q">14</b>Nog iets dat we van jou zouden moeten weten?<em class="p-opt">Optioneel</em></span><textarea name="q14" maxlength="1800"></textarea></label></div><div class="p-panel" data-panel="5"><div class="p-ph"><h4>Afronden</h4><p>Voeg je cv toe en rond je aanmelding af.</p></div><label class="k-field p-file"><span>Je cv</span><input type="file" name="cv" accept=".pdf,.doc,.docx" required><small class="p-hint">PDF of Word. Verplicht.</small></label><label class="k-field p-file"><span>Portfolio<em class="p-opt">Optioneel</em></span><input type="file" name="portfolio" accept=".pdf,.doc,.docx,.ppt,.pptx,.png,.jpg,.jpeg"><small class="p-hint">Heb je werk dat je wil laten zien? Voeg het hier toe. Je cv en portfolio samen mogen maximaal 4 MB zijn.</small></label><label class="k-field"><span>Of een link naar je portfolio<em class="p-opt">Optioneel</em></span><input type="text" name="portfolioLink" inputmode="url" placeholder="https://"><small class="p-hint">Bijvoorbeeld je website, Behance of een gedeelde map. Handig als je portfolio groter is dan 4 MB.</small></label><label class="p-consent"><input type="checkbox" name="consent" required><span>Ik heb het privacybeleid gelezen en geef VOIDS toestemming om mijn persoonsgegevens te verwerken voor werving en talentmatching, waaronder het bewaren van mijn profiel voor maximaal 12 maanden om mij te kunnen benaderen over relevante kansen.</span></label><div class="p-links"><a href="/privacy" target="_blank" rel="noopener">Privacybeleid</a><a href="/terms" target="_blank" rel="noopener">Algemene voorwaarden</a></div></div>
+          <input type="text" name="website" class="p-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="p-err" id="pErr" role="alert" hidden></p>
+          <div class="p-nav">
+            <button class="k-btn back" type="button" id="pBack" hidden>Vorige</button>
+            <button class="k-btn" type="button" id="pNext">Volgende</button>
+            <button class="k-btn" type="submit" id="pSubmit" hidden>Word lid van de talentpool</button>
+          </div>
+        </form>
+        <div class="k-form p-sent" id="pSent" role="status" aria-live="polite" hidden>
+          <h3>BEDANKT!</h3>
+          <p>Je aanmelding is binnen. We gaan ermee aan de slag: waar mogelijk matchen we je meteen met kansen in ons netwerk, en anders houden we je op de hoogte van relevante vacatures.</p>
+                  </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="k-footer"></div>
+<script src="/site/kit.js?v=6cff9d56"></script>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+
+  /* reveal tiles: hover and focus handled in CSS, tap toggles for touch */
+  $$('[data-rt]').forEach(function(t){
+    var b=t.querySelector('.rt-btn');
+    b.addEventListener('click',function(){var o=t.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
+    t.addEventListener('mouseleave',function(){t.classList.remove('open');b.setAttribute('aria-expanded','false')});
+  });
+
+  })();
+</script>
+<script>
+(function(){
+  var EN=document.documentElement.lang==='en';
+  var TX=EN?{req:"Fill in all required fields to continue.",looking:"Pick at least one option under \"What are you looking for?\".",values:"Pick exactly three things that matter most to you in work.",size:"Your CV and portfolio together are larger than 4 MB. Use a smaller file or paste a link to your portfolio.",fail:"Sending failed. Try again or email contact@voids.agency.",sending:"Sending…",chosen:"chosen"}:{req:"Vul alle verplichte velden in om verder te gaan.",looking:"Kies minstens één optie bij \"Waar ben je naar op zoek?\".",values:"Kies precies drie dingen die je het belangrijkst vindt in werk.",size:"Je cv en portfolio samen zijn groter dan 4 MB. Gebruik een kleiner bestand of plak een link naar je portfolio.",fail:"Versturen is niet gelukt. Probeer het opnieuw of mail naar contact@voids.agency.",sending:"Versturen…",chosen:"gekozen"};
+  var $=function(i){return document.getElementById(i)};
+  var form=$('pForm'),sent=$('pSent'),err=$('pErr'),back=$('pBack'),next=$('pNext'),submit=$('pSubmit');
+  var steps=[].slice.call(form.querySelectorAll('.p-steps button')),panels=[].slice.call(form.querySelectorAll('.p-panel')),cur=0,LAST=panels.length-1;
+  function say(m){err.textContent=m;err.hidden=false}
+  function show(i,focus){
+    cur=i;err.hidden=true;
+    panels.forEach(function(p,k){p.classList.toggle('on',k===i)});
+    steps.forEach(function(b,k){b.classList.toggle('on',k===i);b.setAttribute('aria-pressed',k===i?'true':'false')});
+    back.hidden=i===0;next.hidden=i===LAST;submit.hidden=i!==LAST;
+    var pb=$('pProg');if(pb)pb.style.width=((i+1)/panels.length*100)+'%';
+    if(focus){var r=form.getBoundingClientRect();if(r.top<0||r.top>window.innerHeight*.5)form.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'})}
+  }
+  (function(){var pb=$('pProg');if(pb)pb.style.width=(100/panels.length)+'%'})();
+  function checked(name){return [].slice.call(form.querySelectorAll('input[name="'+name+'"]:checked'))}
+  function validate(i){
+    var p=panels[i],els=[].slice.call(p.querySelectorAll('input,textarea,select'));
+    for(var k=0;k<els.length;k++){if(!els[k].checkValidity()){els[k].reportValidity();return TX.req}}
+    if(i===1&&!checked('looking').length)return TX.looking;
+    if(i===2&&checked('values').length!==3)return TX.values;
+    if(i===LAST){var tot=0;['cv','portfolio'].forEach(function(n){var f=form.elements[n].files[0];if(f)tot+=f.size});if(tot>4*1024*1024)return TX.size}
+    return '';
+  }
+  next.addEventListener('click',function(){var m=validate(cur);if(m){say(m);return}show(cur+1,true)});
+  back.addEventListener('click',function(){show(cur-1,true)});
+  steps.forEach(function(b,k){b.addEventListener('click',function(){if(k<cur)show(k,true);else if(k===cur+1)next.click()})});
+  /* chips: exactly three values, at most three fields, with a live count */
+  function limit(name,max,exact){
+    var boxes=[].slice.call(form.querySelectorAll('input[name="'+name+'"]')),lg=boxes[0].closest('fieldset').querySelector('legend'),c=document.createElement('em');c.className='p-count';lg.appendChild(c);
+    function upd(){var n=boxes.filter(function(b){return b.checked}).length;c.textContent=n+(exact?'/'+max:' / '+max);boxes.forEach(function(b){b.disabled=!b.checked&&n>=max})}
+    boxes.forEach(function(b){b.addEventListener('change',upd)});upd();
+  }
+  limit('values',3,true);limit('field',3,false);
+  /* live career pager preview */
+  function label(i){return i.parentNode.textContent.trim()}
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function pv(k,v){var e=document.querySelector('[data-pv="'+k+'"]');if(!e)return;if(e.classList.contains('pchips'))e.innerHTML=v.map(function(t){return '<i>'+esc(t)+'</i>'}).join('');else e.textContent=v}
+  function name(){var f=form.first.value.trim(),l=form.last.value.trim();$('pvName').textContent=(f+' '+l).trim()||$('pvName').getAttribute('data-ph');$('pvAv').textContent=(f||l||'V').charAt(0).toUpperCase()}
+  $('pvName').setAttribute('data-ph',$('pvName').textContent);
+  /* profile completeness: counts the required answers */
+  function progress(){
+    var need=['first','last','email','phone','bachelor','school','gradyear','hours','start','q1','q6','q7','q8','q9','q11'],done=0,total=need.length+4;
+    need.forEach(function(n){if(form.elements[n].value.trim())done++});
+    if(checked('looking').length)done++;if(checked('values').length===3)done++;
+    if(form.elements.cv.files.length)done++;if(form.elements.consent.checked)done++;
+    var pct=Math.round(100*done/total);$('pvRing').style.setProperty('--p',pct);$('pvPct').textContent=pct+'%';$('pvBar').style.width=pct+'%';
+  }
+  function study(){var b=form.bachelor.value.trim(),s=form.school.value.trim();pv('study',[b,s].filter(Boolean).join(', '))}
+  form.addEventListener('input',function(e){
+    if(e.target===form.first||e.target===form.last)name();
+    if(e.target===form.bachelor||e.target===form.school)study();
+    if(e.target===form.q11){var t=e.target.value.trim();pv('strength',t.length>90?t.slice(0,90)+'…':t)}
+    progress();
+  });
+  form.addEventListener('change',function(e){
+    if(e.target.name==='looking')pv('looking',checked('looking').map(label));
+    if(e.target.name==='values')pv('values',checked('values').map(label));
+    progress();
+  });
+  /* submit: validate every step, then post the form (with CV) to the ATS */
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    for(var i=0;i<=LAST;i++){var m=validate(i);if(m){show(i,true);say(m);return}}
+    var fd=new FormData(form);fd.append('lang',EN?'en':'nl');
+    submit.disabled=true;var lab=submit.textContent;submit.textContent=TX.sending;err.hidden=true;
+    fetch('/api/talent-signup',{method:'POST',body:fd}).then(function(r){
+      if(!r.ok)throw 0;
+      form.hidden=true;sent.hidden=false;sent.scrollIntoView({behavior:'smooth',block:'center'});
+    }).catch(function(){submit.disabled=false;submit.textContent=lab;say(TX.fail)});
+  });
+})();
+</script>
+</body>
+</html>

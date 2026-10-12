@@ -80,7 +80,7 @@ const COPY: Record<
     trustedBy: "VERTROUWD DOOR",
     doorTalentTitle: "VOOR TALENT",
     doorTalentText:
-      "Vind een rol via ons jobboard, sluit je aan bij de WhatsApp-community voor nieuwe kansen, of vertel ons wat je drijft en ontvang een gratis career pager op maat.",
+      "Vind een rol via ons jobboard, sluit je aan bij de WhatsApp-community voor nieuwe kansen, of word lid van de talentpool en vertel ons wat je drijft.",
     doorTalentCta: "Ontdek de talentkant",
     doorCompaniesTitle: "VOOR BEDRIJVEN",
     doorCompaniesTalentTypes: "Werkstudenten, stagiairs, starters én trainees:",
@@ -120,7 +120,7 @@ const COPY: Record<
     trustedBy: "TRUSTED BY",
     doorTalentTitle: "FOR TALENT",
     doorTalentText:
-      "Find a role on our job board, join the WhatsApp community for new opportunities, or tell us what drives you and get a free, personalised career pager.",
+      "Find a role on our job board, join the WhatsApp community for new opportunities, or join the talent pool and tell us what drives you.",
     doorTalentCta: "Explore the talent side",
     doorCompaniesTitle: "FOR COMPANIES",
     doorCompaniesTalentTypes: "Working students, interns, starters and trainees:",

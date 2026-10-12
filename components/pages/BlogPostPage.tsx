@@ -21,38 +21,69 @@ const LEGAL_NOTICE: Record<Lang, string> = {
 const CTA_COPY: Record<Lang, Record<BlogAud, { title: string; sub: string }>> = {
   nl: {
     bedrijf: {
-      title: "OP ZOEK NAAR JUNIOR TALENT?",
-      sub: "Vertel ons wat je nodig hebt, wij regelen een shortlist van gescreende kandidaten.",
+      title: "EEN JUNIOR ERBIJ IN JE TEAM?",
+      sub: "We denken graag met je mee. Vertel ons waar je naar op zoek bent, dan kijken we samen wat past.",
     },
     talent: {
       title: "OP ZOEK NAAR EEN ROL DIE BIJ JE PAST?",
-      sub: "Sluit je aan bij de WhatsApp-community en krijg passende kansen rechtstreeks in je app.",
+      sub: "Sluit je aan bij onze WhatsApp-community en ontvang passende kansen direct in je app.",
     },
     beide: {
-      title: "KLAAR OM VERDER TE PRATEN?",
-      sub: "Of je nu bedrijf bent of op zoek naar je volgende stap: we denken graag mee.",
+      title: "ZIN OM VERDER TE PRATEN?",
+      sub: "Of je nu een bedrijf bent of op zoek naar je volgende stap: we denken graag met je mee.",
     },
   },
   en: {
     bedrijf: {
-      title: "LOOKING FOR JUNIOR TALENT?",
-      sub: "Tell us what you need, we'll put together a shortlist of screened candidates.",
+      title: "ADDING A JUNIOR TO YOUR TEAM?",
+      sub: "We're happy to think along. Tell us what you're looking for and we'll work out together what fits.",
     },
     talent: {
       title: "LOOKING FOR A ROLE THAT FITS YOU?",
       sub: "Join the WhatsApp community and get matching opportunities straight in your app.",
     },
     beide: {
-      title: "READY TO TALK FURTHER?",
+      title: "WANT TO TALK FURTHER?",
       sub: "Whether you're a company or looking for your next step, we're happy to think along.",
     },
   },
 };
 
 const WHATSAPP_CTA: Record<Lang, string> = { nl: "💜 Join WhatsApp", en: "💜 Join WhatsApp" };
-const COMPANIES_CTA: Record<Lang, string> = { nl: "Praat met ons", en: "Talk to us" };
-const TALENT_CTA: Record<Lang, string> = { nl: "Bekijk voor talent", en: "See it for talent" };
+const COMPANIES_CTA: Record<Lang, string> = { nl: "Laten we kennismaken", en: "Let's get to know each other" };
+const TALENT_CTA: Record<Lang, string> = { nl: "Naar de talentpagina", en: "Go to the talent page" };
 const RELATED_TITLE: Record<Lang, string> = { nl: "OOK INTERESSANT", en: "ALSO WORTH READING" };
+const SOURCES_TITLE: Record<Lang, string> = { nl: "Bronnen", en: "Sources" };
+const PUBLISHED_LABEL: Record<Lang, string> = { nl: "Gepubliceerd", en: "Published" };
+const UPDATED_LABEL: Record<Lang, string> = { nl: "Bijgewerkt", en: "Updated" };
+const ACCESSED_LABEL: Record<Lang, string> = { nl: "geraadpleegd", en: "accessed" };
+const INTEREST_NOTICE: Record<Lang, string> = {
+  nl: "Transparantie: VOIDS bemiddelt tussen werkstudenten en organisaties en heeft dus een belang bij dit onderwerp. We onderbouwen feiten met bronnen en koppelen onderzoek en trends aan onze eigen ervaringen uit de praktijk.",
+  en: "Transparency: VOIDS connects working students with organisations and therefore has an interest in this topic. We back up facts with sources and connect research and trends to our own experience from practice.",
+};
+
+/** Renders "[1]" style citation markers as superscript links to the source list. */
+function Inline({ text }: { text: string }) {
+  const parts = text.split(/(\[\d+\])/g);
+  return (
+    <>
+      {parts.map((part, i) => {
+        const m = part.match(/^\[(\d+)\]$/);
+        return m ? (
+          <sup key={i}>
+            <a href={`#bron-${m[1]}`} style={{ textDecoration: "none", color: "var(--voids-purple)" }}>[{m[1]}]</a>
+          </sup>
+        ) : (
+          <span key={i}>{part}</span>
+        );
+      })}
+    </>
+  );
+}
+
+function fmtDate(iso: string, lang: Lang) {
+  return new Date(iso + "T12:00:00").toLocaleDateString(lang === "nl" ? "nl-NL" : "en-GB", { day: "numeric", month: "long", year: "numeric" });
+}
 
 const SITE_URL = "https://voids.agency";
 /** Date all launch articles were published; update per-post if the content file ever tracks real dates. */
@@ -72,8 +103,9 @@ export function BlogPostPage({ lang, slug }: { lang: Lang; slug: string }) {
     headline: post.title[lang],
     description: post.excerpt[lang],
     image: `${SITE_URL}${post.photo}`,
-    datePublished: PUBLISHED_DATE,
-    dateModified: PUBLISHED_DATE,
+    datePublished: post.published ?? PUBLISHED_DATE,
+    dateModified: post.updated ?? post.published ?? PUBLISHED_DATE,
+    ...(post.sources?.length ? { citation: post.sources.map((s) => ({ "@type": "CreativeWork", name: s.title, url: s.url, publisher: { "@type": "Organization", name: s.publisher } })) } : {}),
     inLanguage: lang === "nl" ? "nl-NL" : "en-US",
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     author: { "@type": "Organization", name: "VOIDS", url: SITE_URL },
@@ -114,7 +146,11 @@ export function BlogPostPage({ lang, slug }: { lang: Lang; slug: string }) {
         <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--voids-ink-muted)", margin: "0 0 12px" }}>
           {post.excerpt[lang]}
         </p>
-        <div style={{ fontSize: 12.5, color: "var(--voids-ink-muted)" }}>{post.read[lang]}</div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "4px 16px", fontSize: 12.5, color: "var(--voids-ink-muted)" }}>
+          <span>{post.read[lang]}</span>
+          <span>{PUBLISHED_LABEL[lang]} {fmtDate(post.published ?? PUBLISHED_DATE, lang)}</span>
+          {post.updated ? <span>{UPDATED_LABEL[lang]} {fmtDate(post.updated, lang)}</span> : null}
+        </div>
       </section>
 
       <section className="wrap" style={{ padding: "0 32px 40px" }}>
@@ -140,17 +176,34 @@ export function BlogPostPage({ lang, slug }: { lang: Lang; slug: string }) {
               <ul style={{ margin: "0 0 14px", paddingLeft: 20 }}>
                 {block.ul.map((li, j) => (
                   <li key={j} style={{ fontSize: 15, lineHeight: 1.65, color: "var(--voids-ink-soft)", marginBottom: 8 }}>
-                    {li}
+                    <Inline text={li} />
                   </li>
                 ))}
               </ul>
             ) : block.p ? (
               <p style={{ fontSize: 15, lineHeight: 1.75, color: "var(--voids-ink-soft)", margin: "0 0 14px" }}>
-                {block.p}
+                <Inline text={block.p} />
               </p>
             ) : null}
           </div>
         ))}
+
+        {post.sources && post.sources.length > 0 && (
+          <div style={{ marginTop: 28 }}>
+            <h2 className="anton section-h2" style={{ fontSize: 18, margin: "0 0 12px", textTransform: "none" }}>{SOURCES_TITLE[lang]}</h2>
+            <ol style={{ margin: 0, paddingLeft: 20 }}>
+              {post.sources.map((s, i) => (
+                <li key={i} id={`bron-${i + 1}`} style={{ fontSize: 13.5, lineHeight: 1.6, color: "var(--voids-ink-soft)", marginBottom: 6 }}>
+                  {s.publisher}{s.year ? ` (${s.year})` : ""}: <a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a>, {ACCESSED_LABEL[lang]} {fmtDate(s.accessed, lang)}.
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+
+        {post.commercialInterest && (
+          <p style={{ marginTop: 18, fontSize: 12.5, lineHeight: 1.55, color: "var(--voids-ink-muted)" }}>{INTEREST_NOTICE[lang]}</p>
+        )}
 
         {post.legalTopic && (
           <div

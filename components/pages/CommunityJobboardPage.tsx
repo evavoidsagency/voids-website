@@ -49,7 +49,7 @@ const COPY: Record<
       },
       {
         title: "Jobboard",
-        text: "Je rol staat tussen onze andere openstaande posities, zichtbaar voor iedereen die ons jobboard bezoekt op zoek naar een werkstudentenbaan, stage of starterfunctie.",
+        text: "Je rol staat tussen onze andere openstaande posities, zichtbaar voor iedereen die ons jobboard bezoekt op zoek naar een werkstudentpositie, stage of starterfunctie.",
         accent: "blue",
       },
     ],

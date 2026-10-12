@@ -5,16 +5,16 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   lang: "en",
   path: "/pager",
-  title: "Career pager",
-  description: "The VOIDS career pager, your personal career-advice intake, is coming.",
+  title: "Talent pool",
+  description: "Signing up for the VOIDS talent pool is coming.",
 });
 
 export default function Page() {
   return (
     <StubPage
       lang="en"
-      title="THE CAREER PAGER IS COMING."
-      body="The intake flow and your personal career-advice generator land in Phase 2 of the platform."
+      title="TALENT POOL SIGN-UP IS COMING."
+      body="The talent pool intake lands in Phase 2 of the platform."
     />
   );
 }

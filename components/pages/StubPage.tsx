@@ -8,7 +8,7 @@ const COPY: Record<Lang, { back: string }> = {
 
 /**
  * Placeholder for a route that's on the site map (per the platform
- * briefing's phasing) but not built yet — career pager is Phase 2,
+ * briefing's phasing) but not built yet — the talent pool intake is Phase 2,
  * jobboard Phase 3, self-service pricing/payment Phase 4. Portal is
  * deferred with no scheduled phase (see briefing section 5) — its stub
  * stays unlinked and noindexed rather than removed, so it can be

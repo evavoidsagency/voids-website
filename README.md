@@ -5,7 +5,14 @@ Claude Design source (`VOIDS Website (editable source).dc.html`) and
 `VOIDS-Platform-Briefing.md`, which is the source of truth for the data
 model, matching logic and build phasing.
 
-## Status: Phase 1 — static marketing pages
+## Site architecture (read this first)
+
+The live site is the set of static pages in `public/site/` (NL) and `public/site/en/` (EN), served at clean URLs by the
+rewrites in `next.config.ts`. How to edit, regenerate the English pages and the blog, and the environment variables:
+see [`scripts/site/README.md`](scripts/site/README.md). The React pages described below are the earlier version of the
+site; they are no longer served except `/portal`.
+
+## Status: Phase 1 — static marketing pages (earlier React version)
 
 Live content: Home, Talent, Companies, Impact, Cases, Blog, About — in
 Dutch (default, unprefixed) and English (`/en/...`). `/jobboard`,

@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!--seo-->
+<title>About | VOIDS</title>
+<meta name="description" content="VOIDS was founded by Eva van Raaij and Wieke Sleutjes in Amsterdam. We fill the voids: the gaps between study and work.">
+<link rel="canonical" href="https://voids.agency/en/about">
+<link rel="alternate" hreflang="nl" href="https://voids.agency/about">
+<link rel="alternate" hreflang="en" href="https://voids.agency/en/about">
+<link rel="alternate" hreflang="x-default" href="https://voids.agency/about">
+<meta property="og:title" content="About | VOIDS">
+<meta property="og:description" content="VOIDS was founded by Eva van Raaij and Wieke Sleutjes in Amsterdam. We fill the voids: the gaps between study and work.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://voids.agency/en/about">
+<meta property="og:site_name" content="VOIDS">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://voids.agency/photography/home-hero-8.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About | VOIDS">
+<meta name="twitter:description" content="VOIDS was founded by Eva van Raaij and Wieke Sleutjes in Amsterdam. We fill the voids: the gaps between study and work.">
+<meta name="twitter:image" content="https://voids.agency/photography/home-hero-8.jpg">
+<link rel="icon" href="/favicon.ico">
+<meta name="theme-color" content="#fffaec">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "VOIDS", "legalName": "VOIDS vof", "url": "https://voids.agency", "logo": "https://voids.agency/logo.svg", "description": "VOIDS is een junior talent agency in Amsterdam die hoogopgeleid junior talent verbindt aan ambitieuze bedrijven via werkstudentschappen, stages en starterrollen.", "founder": [{"@type": "Person", "name": "Eva van Raaij"}, {"@type": "Person", "name": "Wieke Sleutjes"}], "address": {"@type": "PostalAddress", "addressLocality": "Amsterdam", "addressCountry": "NL"}, "email": "contact@voids.agency", "sameAs": ["https://www.linkedin.com/company/voidsagency", "https://www.instagram.com/voids_agency/", "https://www.tiktok.com/@voidstalentagency"]}</script>
+<!--/seo-->
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site/kit.css?v=6cff9d56">
+<style>
+/* page-local: about (reworked: big photo, scannable blocks) */
+body{overflow-x:clip}
+[hidden]{display:none!important}
+
+/* HERO: text left, founders photo dominant and bleeding to the right edge */
+.ab-hero{padding:48px 0 56px;overflow:hidden}
+.ab-hero-in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,4vw,72px);align-items:center;padding:0 max(32px,calc((100vw - 1320px)/2 + 32px))}
+.ab-hero .k-h1{font-size:clamp(28.9px,3.6vw,60px);margin:14px 0 26px}
+.ab-hero .k-p{font-size:clamp(15.3px,1.3vw,17.1px);line-height:1.65;max-width:30em}
+.ab-hero .k-p+.k-p{margin-top:14px;color:var(--purple)}
+.ab-hero-photo{position:relative;aspect-ratio:1.119/1;width:min(100%,600px);justify-self:end;border-radius:28px;overflow:hidden;background:var(--purple-100)}
+.ab-hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+
+/* ONZE KRACHT: word-reveal paragraph + three big-type tiles */
+.ab-s2{padding-bottom:clamp(72px,7vw,104px)}
+.s2-ban{height:clamp(300px,32vw,470px);border-radius:28px;margin-top:8px;position:relative;overflow:hidden}
+.s2-ban>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.s2-ban:hover>img{transform:scale(1.03)}
+.s2-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.s2-t{display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-height:240px;padding:24px 26px 26px;border-radius:24px;background:#fff;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.s2-t:hover{transform:translateY(-5px);box-shadow:0 24px 36px -26px rgba(40,10,120,.55)}
+.s2-t.t1{background:var(--purple);color:#fff}.s2-t.t3{background:var(--ink);color:#fff}
+.s2-ic{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--purple-100);color:var(--purple);flex:none}
+.s2-t.t1 .s2-ic,.s2-t.t3 .s2-ic{background:rgba(255,255,255,.16);color:#fff}
+.s2-ic svg{width:22px;height:22px}
+.s2-big{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(30px,3.2vw,46px);line-height:1;text-transform:uppercase;letter-spacing:.005em;margin-top:6px}
+.s2-t p{margin:0;font-size:15px;line-height:1.45;color:var(--soft)}
+.s2-t.t1 p,.s2-t.t3 p{color:rgba(255,255,255,.8)}
+@media(max-width:860px){.s2-tiles{grid-template-columns:1fr}}
+.ab-str .k-split{align-items:center;gap:72px;grid-template-columns:1.1fr .9fr}
+.ab-str .k-h2{margin:12px 0 28px}
+
+/* strength: points live under the copy, equal-height with the photo */
+.ab-str .k-split{align-items:stretch}
+.ab-str .k-split>div:first-child{display:flex;flex-direction:column;justify-content:center}
+.ab-str .k-photo{max-height:none;aspect-ratio:auto;min-height:480px;height:100%;position:relative}.ab-str .k-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ab-points{display:grid;grid-template-columns:1fr!important;gap:10px;margin-top:34px}
+.ab-point{display:flex!important;flex-direction:row!important;text-align:left!important;justify-content:flex-start!important;align-items:center;gap:16px;padding:14px 20px!important;border-radius:16px;background:#fff;min-height:0!important}
+.ab-point .k-icon{flex:none;width:44px;height:44px;border-radius:12px;margin:0!important}
+.ab-pt{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px}
+.ab-pt .ab-pre,.ab-pt .ab-post{font-size:14.5px;font-weight:500;color:var(--soft)}
+.ab-pt .ab-big{margin:0!important;font-size:clamp(19px,1.6vw,23px)!important;line-height:1.1!important}
+.ab-str-text{font-size:clamp(14.4px,1.4vw,20.2px);line-height:1.45;font-weight:500;letter-spacing:-.01em;color:var(--ink);max-width:28em}
+.ab-str .k-photo{aspect-ratio:4/5;max-height:620px;width:100%;border-radius:24px}
+.ab-points{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:64px}
+.ab-point{display:flex;flex-direction:column;padding:30px;border-radius:22px;background:#fff;transition:transform .3s}
+.ab-point:hover{transform:translateY(-6px)}
+.ab-point .k-icon{background:var(--purple-100);margin-bottom:26px}
+.ab-pre{display:block;min-height:1.5em;font-size:15px;font-weight:600;color:var(--muted)}
+.ab-big{display:block;font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(23.8px,2.4vw,34px);line-height:1.05;text-transform:uppercase;color:var(--purple);margin:2px 0 8px;overflow-wrap:anywhere}
+.ab-post{display:block;font-size:16px;font-weight:600;color:var(--soft)}
+
+/* WAT WE DOEN: split selector */
+.ab-what .ab-sel{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:stretch}
+.ab-what .k-eyebrow{display:block}
+.ab-what .k-h2{margin:12px 0 30px}
+.ab-list{display:grid;gap:12px}
+.ab-opt{display:flex;flex-direction:column;align-items:flex-start;gap:6px;width:100%;text-align:left;padding:22px 26px;border:0;border-radius:18px;background:var(--beige);color:var(--ink);cursor:pointer;font:inherit;transition:background .25s,color .25s,transform .25s}
+.ab-opt .v{font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(19.2px,1.9vw,28px);line-height:1.05;text-transform:uppercase}
+.ab-opt .t{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .25s}
+.ab-opt:hover{background:var(--purple-100)}
+.ab-opt[aria-pressed="true"]{background:var(--purple);color:#fff;transform:translateX(10px)}
+.ab-opt[aria-pressed="true"] .t{color:var(--purple-200)}
+.ab-opt:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.ab-pn{display:none;position:relative;flex-direction:column;justify-content:flex-end;min-height:420px;padding:clamp(30px,4vw,56px);border-radius:28px;overflow:hidden;background:var(--purple-100)}
+.ab-pn.sky{background:var(--blue-100)}.ab-pn.sand{background:var(--beige-2)}
+.ab-pn.on{display:flex;animation:ab-in .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes ab-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.ab-pn .num{position:absolute;top:clamp(22px,3vw,40px);right:clamp(26px,3.4vw,48px);font-family:Anton,sans-serif;font-size:clamp(56px,5.6vw,80px);line-height:1;color:rgba(58,12,163,.1);pointer-events:none}
+.ab-pn.sky .num{color:rgba(68,118,242,.16)}.ab-pn.sand .num{color:rgba(58,12,163,.08)}
+.ab-pn .k-icon{width:64px;height:64px;border-radius:18px;margin-bottom:auto}
+.ab-pn .k-icon svg{width:32px;height:32px}
+.ab-pn p{font-size:clamp(13.7px,1.4vw,18.7px);line-height:1.45;font-weight:500;letter-spacing:-.005em;color:var(--ink);max-width:25em;margin:36px 0 28px}
+.ab-pn .k-go{color:var(--purple)}.ab-pn.sky .k-go{color:var(--blue-700)}
+
+
+
+/* contact v2: photo + details left, form right */
+.ab-ct2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,4vw,64px);align-items:stretch}.ab-ct2 .ab-fwrap{display:flex;flex-direction:column}.ab-ct2 .ab-fwrap>form,.ab-ct2 .ab-fwrap>.ab-sent{flex:1}.ab-ct2 .ab-form{display:flex;flex-direction:column;gap:16px}.ab-ct2 .ab-form .k-field:has(textarea){flex:1;display:flex!important;flex-direction:column;gap:7px}.ab-ct2 .ab-form textarea{flex:1;min-height:140px}
+.ab-ct-l{display:flex;flex-direction:column;align-items:flex-start;gap:0}
+.ab-ct-ph{position:relative;width:100%;height:clamp(220px,20vw,300px);border-radius:22px;overflow:hidden;margin-bottom:28px}.ab-ct-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ab-ct-l .k-h2{margin:0 0 12px}.ab-ct-l .ab-sub{margin:0 0 22px;text-align:left}
+.ab-info-l{background:none!important;color:var(--ink)!important;padding:26px 0 0!important;gap:16px!important;justify-content:flex-start!important;min-height:0!important;width:100%}
+.ab-info-l .ab-il{color:var(--purple)!important;margin:0}
+.ab-info-l a,.ab-info-l .row{color:var(--ink)!important}
+.ab-info-l .ab-badge{background:#fff!important;color:var(--purple)!important}
+.ab-info-l .ab-soc a{background:#fff!important;color:var(--purple)!important}
+@media(max-width:960px){.ab-ct2{grid-template-columns:1fr}}
+
+/* services panels: photo-led, text on a calm gradient */
+.ab-pn{color:#fff;background-color:var(--purple);background-size:cover;background-position:center;isolation:isolate}
+.ab-pn::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(24,6,80,.9) 0%,rgba(24,6,80,.55) 45%,rgba(24,6,80,.12) 100%)}
+#p1{background-image:url(/photography/hg-03.jpg);background-position:50% 35%}
+#p2{background-image:url(/photography/hg-21.jpg);background-position:50% 35%}
+#p3{background-image:url(/photography/hg-10.jpg);background-position:50% 40%}
+.ab-pn .num,.ab-pn.sky .num,.ab-pn.sand .num{color:rgba(255,255,255,.9);font-size:clamp(34px,3.4vw,48px)!important;opacity:.95}
+.ab-pn .k-icon{background:rgba(24,6,80,.55);color:#fff;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.ab-pn p{color:#fff}
+.ab-pn .k-go,.ab-pn.sky .k-go{color:#fff}
+
+@media(min-width:861px){.ab-pn{aspect-ratio:3/2;min-height:0!important}}
+#p1,#p2,#p3{background-size:cover;background-repeat:no-repeat}
+#p1{background-position:50% 35%}#p2{background-position:50% 35%}#p3{background-position:50% 45%}
+/* TEAM: large portrait cards with reveal */
+.ab-team{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.ab-card{position:relative;overflow:hidden;border-radius:28px;background:var(--purple-100);aspect-ratio:5/6}
+.ab-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.ab-card:hover img,.ab-card:focus-within img{transform:scale(1.04)}
+.ab-card::after{content:"";position:absolute;inset:auto 0 0 0;height:60%;background:linear-gradient(to top,rgba(44,10,122,.92),rgba(44,10,122,0));pointer-events:none}
+.ab-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:clamp(22px,3vw,40px)}
+.ab-name{font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(22.7px,2.7vw,40px);line-height:1;text-transform:uppercase;color:#fff}
+.ab-role{font-size:15px;font-weight:600;color:var(--purple-200);margin:8px 0 20px}
+.ab-links{display:flex;gap:10px;flex-wrap:wrap}
+.ab-card:hover .ab-links,.ab-card:focus-within .ab-links,.ab-card.open .ab-links{transform:none;opacity:1}
+.ab-ic{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;background:#fff;color:var(--purple);font-size:14px;font-weight:600;text-decoration:none;transition:background .2s,color .2s}
+.ab-ic:hover{background:var(--purple-100)}
+.ab-ic svg{width:16px;height:16px}
+.ab-hint{position:absolute;top:22px;right:22px;z-index:2;width:42px;height:42px;border-radius:50%;background:#fff;color:var(--purple);display:grid;place-items:center;font-size:19.8px;transition:transform .35s}
+.ab-card:hover .ab-hint,.ab-card:focus-within .ab-hint,.ab-card.open .ab-hint{transform:rotate(45deg)}
+@media(hover:none),(prefers-reduced-motion:reduce){.ab-links{transform:none;opacity:1;transition:none}.ab-hint{display:none}}
+
+/* CONTACT: centrepiece */
+#contact{scroll-margin-top:84px}
+.ab-ct-head{text-align:center;display:flex;flex-direction:column;align-items:center;margin-bottom:48px}
+.ab-ct-head .k-h2{font-size:clamp(22.7px,2.9vw,40px);line-height:.98;margin-bottom:18px}
+.ab-sub{font-size:clamp(16.2px,1.4vw,19.8px);line-height:1.5;color:var(--soft);margin-bottom:28px}
+.ab-ct-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:22px;align-items:stretch}
+.ab-fwrap{display:flex;flex-direction:column}
+.ab-fwrap .k-form{flex:1;align-content:space-between;padding:clamp(26px,3vw,40px)}
+.ab-info{display:flex;flex-direction:column;justify-content:center;gap:34px;padding:clamp(26px,3vw,40px);border-radius:20px;background:var(--purple);color:#fff}
+.ab-info a,.ab-info .row{display:flex;align-items:center;gap:14px;font-size:clamp(15px,1.3vw,17px);font-weight:500;text-decoration:none;color:#fff;word-break:break-word}
+.ab-info .rows{display:grid;gap:18px}.ab-il{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--purple-200,#c9b8f5);margin-bottom:-12px}
+.ab-badge{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.14);color:#fff}
+.ab-badge svg{width:20px;height:20px}
+.ab-soc{display:flex;gap:10px;flex-wrap:wrap}
+.ab-soc a{padding:10px 18px;border-radius:99px;background:#fff;color:var(--purple);font-weight:600;font-size:14px;transition:background .2s,color .2s}
+.ab-soc a:hover{background:var(--blue-200)}
+.ab-form .k-btn{justify-content:center;width:100%}
+.ab-form .k-btn[disabled]{opacity:.7;cursor:progress}
+.ab-err{font-size:14px;line-height:1.5;color:var(--purple);background:var(--purple-100);padding:12px 16px;border-radius:10px}
+.ab-sent{text-align:center;padding:56px 32px;border-radius:20px;background:#fff;height:100%;display:flex;flex-direction:column;justify-content:center}
+.ab-sent .k-h2{font-size:clamp(23.2px,2.6vw,34px);margin-bottom:12px}
+
+@media(max-width:960px){
+  .ab-hero{padding:24px 0 40px}
+  .ab-hero-in{grid-template-columns:1fr;padding:0 20px;gap:32px}
+  .ab-hero-txt{padding:0 24px}
+  .ab-hero-photo{height:auto;aspect-ratio:1/1.05;border-radius:20px}
+  .ab-str .k-split{grid-template-columns:1fr;gap:36px}
+  .ab-points{grid-template-columns:1fr;margin-top:36px}
+  .ab-what .ab-sel{grid-template-columns:1fr;gap:28px}
+  .ab-pn{min-height:340px}
+  .ab-opt[aria-pressed="true"]{transform:none}
+  .ab-team{grid-template-columns:1fr}
+  .ab-ct-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){.k-form{padding:22px}.ab-card{aspect-ratio:4/5}}
+</style>
+</head>
+<body data-nav="about">
+<div id="k-header"></div>
+
+<!-- HERO -->
+<section class="ab-hero k-beige">
+  <div class="ab-hero-in">
+    <div class="ab-hero-txt">
+      <span class="k-eyebrow">About</span>
+      <h1 class="k-h1">WE FILL THE VOIDS.</h1>
+      <p class="k-p">The job market is full of gaps. Students with talent companies never see. Companies with opportunities students never come across. Those empty spaces, those voids, we fill by connecting the right people to the right place.</p>
+      <p class="k-p">We look beyond the CV: at motivation, working style and ambition. Personal, selective and on a mission to give everyone a fairer start.</p>
+    </div>
+    <div class="ab-hero-photo" data-reveal><img src="/team/together-8-c.jpg" alt="Eva and Wieke, the founders of VOIDS"></div>
+  </div>
+</section>
+
+<!-- ONZE KRACHT -->
+<section class="k-sec k-lav ab-s2">
+  <div class="k-wrap">
+    <div class="k-head" data-reveal data-wide>
+      <span class="k-eyebrow">Our edge</span>
+      <h2 class="k-h2">WE GET TO KNOW YOUNG TALENT PERSONALLY.</h2>
+      <p class="k-lead">We don't wait for CVs to come in. Through partnerships with student associations and other student organisations, and at the places where young talent meets, we get to know students in person. That way we see more than a CV shows: what drives someone, how they work, and whether that fits what an organisation is looking for.</p>
+    </div>
+    <div class="s2-ban" data-reveal>
+      <img src="/photography/hg-10.jpg" alt="Three young professionals talking and laughing at a laptop" style="object-position:50% 62%" loading="lazy">
+    </div>
+    <div class="s2-tiles">
+      <div class="s2-t t1" data-reveal><span class="s2-ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 2.5 9 12 14l9.5-5L12 4Z"></path><path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"></path></svg></span><div class="s2-big">Partners</div><p>Student associations and other student organisations: together we join forces to reach young talent.</p></div>
+      <div class="s2-t t2" data-reveal data-delay="80"><span class="s2-ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"></rect><path d="M8 3v4M16 3v4M3.5 10h17"></path></svg></span><div class="s2-big">Events</div><p>We host events for young talent ourselves and attend events run by others, to meet students in person.</p></div>
+      <div class="s2-t t3" data-reveal data-delay="160"><span class="s2-ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"></circle><circle cx="17" cy="9.5" r="2.5"></circle><path d="M3 19c0-3.2 2.7-5.5 6-5.5s6 2.3 6 5.5M15.5 14.5c2.7 0 5 1.8 5 4.5"></path></svg></span><div class="s2-big" data-count="4000" data-suffix="+">4,000+</div><p>students and starters in our community, with whom we share vacancies and opportunities directly.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WAT WE DOEN: split selector -->
+<section class="k-sec k-white ab-what">
+  <div class="k-wrap">
+    <div class="ab-sel">
+      <div data-reveal>
+        <span class="k-eyebrow">What we do</span>
+        <h2 class="k-h2">WHAT WE ACTUALLY DELIVER.</h2>
+        <div class="ab-list" role="group" aria-label="Our services">
+          <button type="button" class="ab-opt" aria-pressed="true" data-pn="p1"><span class="v">Find</span><span class="t">Recruitment &amp; selection</span></button>
+          <button type="button" class="ab-opt" aria-pressed="false" data-pn="p2"><span class="v">Advertise vacancies</span><span class="t">Community &amp; job board</span></button>
+          <button type="button" class="ab-opt" aria-pressed="false" data-pn="p3"><span class="v">Strengthen</span><span class="t">Advice &amp; employer branding</span></button>
+        </div>
+      </div>
+      <div data-reveal data-delay="150" style="display:flex;flex-direction:column">
+        <article class="ab-pn on" id="p1" style="flex:1">
+          <span class="num" aria-hidden="true">01</span>
+          <div class="k-icon" aria-hidden="true"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6"></circle><path d="m15 15 5 5"></path></svg></div>
+          <p>We take the full hiring process off your hands: from intake to shortlist to signed match, for working students, interns and starters.</p>
+          <div><a class="k-go" href="/en/companies/recruitment-selection">More on recruitment &amp; selection →</a></div>
+        </article>
+        <article class="ab-pn sky" id="p2" style="flex:1">
+          <span class="num" aria-hidden="true">02</span>
+          <div class="k-icon" aria-hidden="true"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l7 4V6L7 10H4Z"></path><path d="M17.5 9.5a4 4 0 0 1 0 5"></path></svg></div>
+          <p>Want to recruit actively yourself? Put your vacancy directly in front of 4,000+ students and starters in our WhatsApp community and on our job board, alongside our recruitment &amp; selection service.</p>
+          <div><a class="k-go" href="/en/companies/community-jobboard">See the options →</a></div>
+        </article>
+        <article class="ab-pn sand" id="p3" style="flex:1">
+          <span class="num" aria-hidden="true">03</span>
+          <div class="k-icon" aria-hidden="true"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"></path><path d="m4 6 6-3 6 5 4-2"></path></svg></div>
+          <p>We think along on your whole junior strategy: from recruitment and retention to employer branding that actually lands with students and starters.</p>
+          <div><a class="k-go" href="/en/companies/employer-branding">More on advice &amp; branding →</a></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="k-sec k-beige" id="team">
+  <div class="k-wrap">
+    <div class="k-head" data-reveal>
+      <h2 class="k-h2" style="margin-top:0">THE TEAM</h2>
+    </div>
+    <div class="ab-team">
+      <article class="ab-card" tabindex="0" role="group" aria-label="Eva van Raaij" data-reveal>
+        <img src="/team/eva-14.jpg" alt="Eva van Raaij" loading="lazy" style="object-position:center 25%">
+        <div class="ab-cap">
+          <div class="ab-name">Eva van Raaij</div>
+          <div class="ab-role">Co-founder</div>
+          <div class="ab-links">
+            <a class="ab-ic" href="mailto:eva@voids.agency" aria-label="Email Eva van Raaij"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6.5 12 13l9-6.5M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>eva@voids.agency</a>
+            <a class="ab-ic" href="https://www.linkedin.com/in/evavanraaij/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn of Eva van Raaij"><svg viewbox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20H6.94V8.5ZM5.25 7.03A1.96 1.96 0 1 0 5.25 3.1a1.96 1.96 0 0 0 0 3.93ZM20.44 20h.01v-6.4c0-3.13-.67-5.54-4.33-5.54-1.76 0-2.94.96-3.42 1.88h-.05V8.5H9.4V20h3.38v-5.72c0-1.51.29-2.97 2.15-2.97 1.84 0 1.87 1.72 1.87 3.06V20h3.64Z"></path></svg>LinkedIn</a>
+          </div>
+        </div>
+      </article>
+      <article class="ab-card" tabindex="0" role="group" aria-label="Wieke Sleutjes" data-reveal data-delay="120">
+        <img src="/team/wieke-10.jpg" alt="Wieke Sleutjes" loading="lazy" style="object-position:center 25%">
+        <div class="ab-cap">
+          <div class="ab-name">Wieke Sleutjes</div>
+          <div class="ab-role">Co-founder</div>
+          <div class="ab-links">
+            <a class="ab-ic" href="mailto:wieke@voids.agency" aria-label="E-mail Wieke Sleutjes"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6.5 12 13l9-6.5M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>wieke@voids.agency</a>
+            <a class="ab-ic" href="https://www.linkedin.com/in/wiekesleutjes/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn of Wieke Sleutjes"><svg viewbox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20H6.94V8.5ZM5.25 7.03A1.96 1.96 0 1 0 5.25 3.1a1.96 1.96 0 0 0 0 3.93ZM20.44 20h.01v-6.4c0-3.13-.67-5.54-4.33-5.54-1.76 0-2.94.96-3.42 1.88h-.05V8.5H9.4V20h3.38v-5.72c0-1.51.29-2.97 2.15-2.97 1.84 0 1.87 1.72 1.87 3.06V20h3.64Z"></path></svg>LinkedIn</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="k-sec k-sky" id="contact">
+  <div class="k-wrap ab-ct2">
+    <div class="ab-ct-l" data-reveal>
+      <div class="k-photo ab-ct-ph"><img src="/photography/hg-11.jpg" alt="A colleague on a call at work" style="object-position:55% 30%" loading="lazy"></div>
+      <h2 class="k-h2">WANT TO MOVE FAST?</h2>
+      <p class="ab-sub">Book an intro call or drop us a message.</p>
+      <a class="k-btn" href="https://calendly.com/wieke-voids/introduction" target="_blank" rel="noopener noreferrer">Book an intro call</a>
+      <div class="ab-info ab-info-l">
+        <div class="ab-il">Direct contact</div>
+        <div class="rows">
+          <a href="mailto:contact@voids.agency"><span class="ab-badge"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6.5 12 13l9-6.5M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>contact@voids.agency</a>
+          <div class="row"><span class="ab-badge"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path><circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="1.8"></circle></svg></span>Amsterdam</div>
+        </div>
+        <div class="ab-soc">
+          <a href="https://www.linkedin.com/company/voidsagency" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.instagram.com/voids_agency/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.tiktok.com/@voidstalentagency" target="_blank" rel="noopener noreferrer">TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="ab-fwrap" data-reveal>
+        <form class="k-form ab-form" id="cform">
+          <div class="k-row2">
+            <label class="k-field">Name<input name="name" autocomplete="name" required></label>
+            <label class="k-field">Company<input name="company" autocomplete="organization"></label>
+          </div>
+          <label class="k-field">Email<input name="email" type="email" autocomplete="email" required></label>
+          <label class="k-field">What can we help you with?<textarea name="message" rows="4" required></textarea></label>
+          <p class="ab-err" role="alert" hidden>Something went wrong sending this. Please try again, or email us directly at contact@voids.agency.</p>
+          <button class="k-btn" type="submit">Send message</button>
+        </form>
+        <div class="ab-sent" id="csent" role="status" aria-live="polite" hidden>
+          <div class="k-h2">MESSAGE SENT.</div>
+          <p class="k-p">Thank you. We’ll get back to you soon.</p>
+        </div>
+      </div>
+  </div>
+</section>
+
+<div id="k-footer"></div>
+<script src="/site/kit.js?v=6cff9d56"></script>
+<script>
+/* contact form: posts to /api/contact (same endpoint and mailbox as the live site) */
+(function(){
+  var f=document.getElementById('cform'),s=document.getElementById('csent');
+  if(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var b=f.querySelector('button'),err=f.querySelector('.ab-err'),label=b.textContent;b.disabled=true;b.textContent='Sending…';err.hidden=true;
+      var d=new FormData(f);
+      fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:d.get('name'),company:d.get('company'),email:d.get('email'),message:d.get('message')})})
+        .then(function(r){if(!r.ok)throw 0;f.hidden=true;s.hidden=false})
+        .catch(function(){b.disabled=false;b.textContent=label;err.hidden=false});
+    });
+  }
+  /* split selector for "Wat we doen" */
+  var opts=[].slice.call(document.querySelectorAll('.ab-opt'));
+  function pick(o){
+    opts.forEach(function(x){x.setAttribute('aria-pressed',x===o?'true':'false')});
+    [].slice.call(document.querySelectorAll('.ab-pn')).forEach(function(p){p.classList.toggle('on',p.id===o.getAttribute('data-pn'))});
+  }
+  opts.forEach(function(o){
+    o.addEventListener('click',function(){pick(o)});
+    o.addEventListener('mouseenter',function(){if(matchMedia('(hover:hover)').matches)pick(o)});
+  });
+})();
+</script>
+</body>
+</html>
