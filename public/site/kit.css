@@ -381,9 +381,9 @@ p,li,dd,blockquote,figcaption{text-wrap:pretty}
 .tz-ph{aspect-ratio:3/2;border-radius:28px;overflow:hidden;position:relative;box-shadow:0 30px 50px -30px rgba(40,10,120,.5)}
 .tz-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
 .tz-row:hover .tz-ph img{transform:scale(1.04)}
-.tz-tx{display:grid;gap:14px;justify-items:start;max-width:30em}
+.tz-tx{display:grid;gap:14px;justify-items:start;max-width:30em;container-type:inline-size}
 .tz-tx .k-badge{background:#fff;color:var(--purple);padding:7px 14px}
-.tz-tx h3{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(30px,3.4vw,50px);line-height:1;color:var(--purple);margin:0}
+.tz-tx h3{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;font-size:min(50px,8.8cqw);white-space:nowrap;line-height:1;color:var(--purple);margin:0}
 .tz-tx p{margin:0;font-size:clamp(16px,1.2vw,18px);line-height:1.65;color:var(--ink);opacity:.82}
 @media(max-width:860px){.tz-row{grid-template-columns:minmax(0,1fr)}.tz-row.rev .tz-ph{order:0}}
 .tz-tx .k-badge{background:#fff;color:var(--purple);padding:7px 14px}
