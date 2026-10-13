@@ -7,9 +7,16 @@ import type { NextConfig } from "next";
  * See scripts/site/README.md for how the pages are generated and edited.
  */
 const FLAT_PAGES = ["talent", "companies", "impact", "blog", "about", "faq", "jobboard", "pager", "privacy", "terms"];
-const COMPANY_SUBPAGES = ["recruitment-selection", "community-jobboard", "employer-branding"];
+const COMPANY_SUBPAGES = ["recruitment-selection", "community-jobboard", "partnerships"];
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    // "Advies & employer branding" became Partnerships; keep old links working.
+    return [
+      { source: "/companies/employer-branding", destination: "/companies/partnerships", permanent: true },
+      { source: "/en/companies/employer-branding", destination: "/en/companies/partnerships", permanent: true },
+    ];
+  },
   async rewrites() {
     const beforeFiles = [
       { source: "/", destination: "/site/index.html" },

@@ -3,8 +3,8 @@ sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 import importlib,translate as T
 importlib.reload(T)
 ROOT=T.ROOT
-pages=['talent','companies','recruitment-selection','community-jobboard','employer-branding','impact','about','faq','terms','privacy','pager','jobboard']
-PAGE_PATHS={'/talent','/companies','/impact','/blog','/about','/faq','/jobboard','/pager','/privacy','/terms','/companies/recruitment-selection','/companies/community-jobboard','/companies/employer-branding'}
+pages=['talent','companies','recruitment-selection','community-jobboard','partnerships','impact','about','faq','terms','privacy','pager','jobboard']
+PAGE_PATHS={'/talent','/companies','/impact','/blog','/about','/faq','/jobboard','/pager','/privacy','/terms','/companies/recruitment-selection','/companies/community-jobboard','/companies/partnerships'}
 def _enlink(m):
     attr,val=m.group(1),m.group(2)
     base=re.split(r'[#?]',val,1)[0]
@@ -22,7 +22,7 @@ def relink(s):
     s=s.replace('Bedrijven &#9662;','Companies &#9662;').replace('Word lid van de pool','Join the talent pool').replace('Word lid van de talentpool','Join the talent pool').replace('Over ons','About')
     for a,b in (('Veelgestelde vragen | VOIDS','FAQ | VOIDS'),('Algemene voorwaarden | VOIDS','Terms and conditions | VOIDS'),('Privacybeleid | VOIDS','Privacy policy | VOIDS'),
         ('Werving &amp; selectie | VOIDS concept','Recruitment &amp; selection | VOIDS concept'),('Vacatures adverteren | VOIDS concept','Advertise vacancies | VOIDS concept'),
-        ('Advies &amp; employer branding | VOIDS concept','Advice &amp; employer branding | VOIDS concept'),
+        ('Partnerships | VOIDS concept','Partnerships | VOIDS concept'),
         ('<h3 class="anton">Vacatures adverteren.</h3>','<h3 class="anton">Advertise vacancies.</h3>'),
         ('AMBITIEUS TALENT.','AMBITIOUS TALENT.'),("'\\u00c9\\u00c9N MATCH.'","'ONE MATCH.'"),('<em>ÉÉN MATCH.</em>','<em>ONE MATCH.</em>'),('AMBITIEUZE BEDRIJVEN.','AMBITIOUS COMPANIES.'),
         ('4,000+ studenten krijgen nieuwe vacatures direct in WhatsApp.','4,000+ students get new vacancies straight in WhatsApp.'),

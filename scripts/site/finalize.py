@@ -22,7 +22,7 @@ DEFAULT_IMAGE = "/photography/home-hero-8.jpg"
 FILE_TO_PATH = {
     "recruitment-selection": "/companies/recruitment-selection",
     "community-jobboard": "/companies/community-jobboard",
-    "employer-branding": "/companies/employer-branding",
+    "partnerships": "/companies/partnerships",
 }
 
 meta = json.load(open(os.path.join(HERE, "meta.json"), encoding="utf-8"))
@@ -167,13 +167,13 @@ def seo_block(lang, nl_path, info, src):
 # ---------- header, menu and footer as static HTML (mirrors what kit.js used to inject) ----------
 LABELS = {
     "nl": dict(talent="Talent", companies="Bedrijven", impact="Impact", about="Over ons", blog="Blog", jobboard="Jobs",
-               s1="Werving & selectie", s2="Vacatures adverteren", s3="Advies & employer branding", contact="Contact",
+               s1="Werving & selectie", s2="Vacatures adverteren", s3="Partnerships", contact="Contact",
                pool="Word lid van de talentpool", tag="Wij verbinden hoogopgeleid talent aan ambitieuze organisaties.",
                menu="Menu", more="Meer", faq="FAQ", terms="Voorwaarden", privacy="Privacy", stay="Blijf op de hoogte",
                news="Vacaturemeldingen en community-updates via WhatsApp", vac="Vacatures van deze week",
                copy="© 2026 VOIDS.agency, Amsterdam", wa="WhatsApp"),
     "en": dict(talent="Talent", companies="Companies", impact="Impact", about="About", blog="Blog", jobboard="Jobs",
-               s1="Recruitment & selection", s2="Advertise vacancies", s3="Advice & employer branding", contact="Contact",
+               s1="Recruitment & selection", s2="Advertise vacancies", s3="Partnerships", contact="Contact",
                pool="Join the talent pool", tag="We connect highly-educated talent with ambitious organisations.",
                menu="Menu", more="More", faq="FAQ", terms="Terms", privacy="Privacy", stay="Stay in the loop",
                news="Job alerts & community updates.", vac="This week's vacancies",
@@ -195,7 +195,7 @@ def nav_items(lang):
            ("impact", L["impact"], U(lang, "impact")), ("about", L["about"], U(lang, "about")),
            ("blog", L["blog"], U(lang, "blog")), ("jobboard", L["jobboard"], U(lang, "jobboard"))]
     serv = [(L["s1"], U(lang, "companies/recruitment-selection")), (L["s2"], U(lang, "companies/community-jobboard")),
-            (L["s3"], U(lang, "companies/employer-branding"))]
+            (L["s3"], U(lang, "companies/partnerships"))]
     return nav, serv
 
 

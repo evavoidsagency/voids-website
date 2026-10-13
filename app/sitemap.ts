@@ -9,7 +9,7 @@ const STATIC_PATHS: { path: string; priority: number; changeFrequency: MetadataR
   { path: "/companies", priority: 0.8, changeFrequency: "monthly" },
   { path: "/companies/recruitment-selection", priority: 0.7, changeFrequency: "monthly" },
   { path: "/companies/community-jobboard", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/companies/employer-branding", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/companies/partnerships", priority: 0.6, changeFrequency: "monthly" },
   { path: "/impact", priority: 0.7, changeFrequency: "monthly" },
   { path: "/blog", priority: 0.8, changeFrequency: "weekly" },
   { path: "/about", priority: 0.6, changeFrequency: "monthly" },

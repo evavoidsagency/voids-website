@@ -99,16 +99,6 @@
    "description": "Six steps. We do the work, you decide. From intake to signed match, for working students, interns and starters."
   }
  },
- "/companies/employer-branding": {
-  "nl": {
-   "title": "Advies & employer branding",
-   "description": "We denken mee over je hele junior-strategie: van recruitment en het behouden van jong talent tot employer branding die aanslaat bij studenten en starters."
-  },
-  "en": {
-   "title": "Advice & employer branding",
-   "description": "We think along on your whole junior strategy: from recruitment and retention to employer branding that actually lands with students and starters."
-  }
- },
  "/companies/community-jobboard": {
   "nl": {
    "title": "Community & jobboard",
@@ -137,6 +127,16 @@
   "en": {
    "title": "Talent pool",
    "description": "Join the VOIDS talent pool: tell us what drives you, how you like to work and where you want to go, add your CV and we match you with fitting opportunities."
+  }
+ },
+ "/companies/partnerships": {
+  "nl": {
+   "title": "Partnerships",
+   "description": "Partnerships zijn employer branding via een lidmaatschap dat waarde biedt: geen losse projecten, maar een vaste plek in de VOIDS-community."
+  },
+  "en": {
+   "title": "Partnerships",
+   "description": "Partnerships are employer branding through a membership that delivers value: not one-off projects, but a permanent place in the VOIDS community."
   }
  }
 }
