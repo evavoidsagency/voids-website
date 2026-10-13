@@ -47,6 +47,12 @@
 .pm-found .k-h3{font-family:Inter,sans-serif;font-size:24px;color:var(--purple);font-weight:600;letter-spacing:-.01em;text-transform:none}
 .pm-found .b-t{color:var(--blue-700)}
 .pm-found .k-p{font-size:15.5px;line-height:1.65}
+.pm-list{list-style:none;margin:18px 0 0;padding:16px 0 0;display:grid;gap:8px;border-top:1.5px solid rgba(58,12,163,.14)}
+.pm-list li{position:relative;padding-left:20px;font-size:14.5px;line-height:1.5;color:var(--ink)}
+.pm-list li::before{content:"";position:absolute;left:2px;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--purple)}
+.pm-soon{display:inline-block;margin-left:6px;padding:2px 9px;border-radius:99px;background:#fff;color:var(--purple);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;vertical-align:1px}
+.pm-note{margin:28px 0 0;max-width:none;font-size:15.5px;line-height:1.65;color:var(--soft)}
+.pm-mo{align-self:flex-start;margin-bottom:12px}
 .pm-found.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .pm-found.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
 .pm-found .k-tile{padding:28px}
@@ -126,69 +132,57 @@
   </div>
 </section>
 
-<!-- 3 wat je krijgt -->
+<!-- 3 waarde -->
 <section class="k-sec k-white">
   <div class="k-wrap">
     <div class="k-head pm-intro">
-      <span class="k-eyebrow" data-reveal>Wat je krijgt</span>
-      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Een vaste plek bij talent dat je niet bereikt.</h2>
-      <p class="k-lead" data-reveal data-delay="120">Voor bedrijven die zichtbaar willen zijn bij junior talent dat ze zelf niet bereiken, en die toegang tot werkervaring breder willen maken.</p>
+      <span class="k-eyebrow" data-reveal>Wat het oplevert</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">De reden waarom iemand bij jullie wíl werken.</h2>
+      <p class="k-lead" data-reveal data-delay="120">Vacatures en werving &amp; selectie vullen een plek, op het moment dat die er is. Een partnership bouwt aan de reden waarom junior talent bij jullie wil werken: ze kennen jullie, geloven jullie verhaal omdat het van echte mensen komt, jullie leren wat ze zoeken en jullie staan ergens voor.</p>
     </div>
     <div class="pm-found c2">
-      <div class="k-tile" data-reveal>
+      <div class="k-tile " data-reveal>
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v4h3l7 4V6L7 10H4Z"/><path d="M17.5 9.5a4 4 0 0 1 0 5"/></svg></span>
-        <h3 class="k-h3">Uitgelicht in de community</h3>
-        <p class="k-p">Je bedrijf krijgt een vaste plek in de VOIDS-community, bij studenten en starters die je zelf niet bereikt.</p>
+        <h3 class="k-h3">Gekend worden</h3>
+        <p class="k-p">Studenten weten dat jullie bestaan, wat jullie doen en wat voor werk er is. Bij de volgende vacature reageren mensen die al een beeld hebben, in plaats van mensen die je naam voor het eerst zien.</p>
+        <ul class="pm-list"><li>Uitgelicht in de VOIDS-community</li><li>Vacatures inbegrepen</li></ul>
       </div>
       <div class="k-tile sky" data-reveal data-delay="80">
-        <span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.8 3.1-6.2 7-6.2s7 2.4 7 6.2"/></svg></span>
-        <h3 class="k-h3 b-t">Een gezicht van je team</h3>
-        <p class="k-p">Een portret van een werkstudent of junior bij jullie laat zien hoe het is om bij jullie te werken.</p>
+        <span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 4v-4h0A2.5 2.5 0 0 1 4 13.5v-7Z"/><path d="M8.5 9h7M8.5 12h4"/></svg></span>
+        <h3 class="k-h3 b-t">Geloofd worden</h3>
+        <p class="k-p">Een vacaturetekst zegt wat een bedrijf over zichzelf vindt. Een werkstudent die vertelt hoe het is, of een middag op kantoor, laat zien hoe het echt is.</p>
+        <ul class="pm-list"><li>Een portret van een werkstudent of junior bij jullie</li><li>Een kijkje in de keuken voor onze leden <span class=pm-soon>In opbouw</span></li><li>VOIDS-events <span class=pm-soon>In opbouw</span></li></ul>
       </div>
-      <div class="k-tile" data-reveal data-delay="160">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="7" width="17" height="12" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/><path d="M3.5 12.5h17"/></svg></span>
-        <h3 class="k-h3">Vacatures inbegrepen</h3>
-        <p class="k-p">Je vacatures zijn onderdeel van je partnerschap, dus je hoeft ze niet apart in te kopen.</p>
+      <div class="k-tile " data-reveal data-delay="160">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></svg></span>
+        <h3 class="k-h3">Leren wat junior talent zoekt</h3>
+        <p class="k-p">Jullie horen wat studenten aantrekt en waar ze afhaken, en kunnen daar je vacatures, voorwaarden en manier van werken op aanpassen. Zo word je een betere werkgever voor deze doelgroep, niet alleen een zichtbaardere.</p>
+        <ul class="pm-list"><li>Feedback op je vacatureteksten vanuit studentperspectief</li><li>Een studentenpanel <span class=pm-soon>In opbouw</span></li></ul>
       </div>
       <div class="k-tile sky" data-reveal data-delay="240">
-        <span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 4v-4h0A2.5 2.5 0 0 1 4 13.5v-7Z"/><path d="M8.5 9h7M8.5 12h4"/></svg></span>
-        <h3 class="k-h3 b-t">Feedback van studenten</h3>
-        <p class="k-p">We lezen je vacatureteksten mee vanuit studentperspectief, zodat ze aanspreken bij de mensen die je zoekt.</p>
+        <span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.3 3.1 7.9 7.5 9.5 4.4-1.6 7.5-5.2 7.5-9.5V6L12 3Z"/><path d="m8.8 12 2.4 2.4L15.5 10"/></svg></span>
+        <h3 class="k-h3 b-t">Ergens voor staan</h3>
+        <p class="k-p">Partner zijn betekent: werkgever die betaalde werkervaring biedt en toegang breder maakt. Dat is een associatie die je niet met een vacature koopt.</p>
+        <ul class="pm-list"><li>Het partnerlabel</li><li>Een impactrapportage <span class=pm-soon>In opbouw</span></li></ul>
       </div>
     </div>
+    <p class="pm-note" data-reveal>Voor bedrijven die zichtbaar willen zijn bij junior talent dat ze zelf niet bereiken, en die toegang tot werkervaring breder willen maken. Een deel van de waarde bouwen we nog op: wat nog niet af is, staat erbij als &lsquo;in opbouw&rsquo;.</p>
   </div>
 </section>
 
-<!-- 4 wat erbij komt -->
+<!-- 4 voorbeeld -->
 <section class="k-sec k-beige">
   <div class="k-wrap">
     <div class="k-head pm-intro">
-      <span class="k-eyebrow" data-reveal>In opbouw</span>
-      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Wat er de komende tijd bij komt.</h2>
-      <p class="k-lead" data-reveal data-delay="120">Een deel van de waarde bouwen we nog op. Partners denken mee over hoe we dit invullen, krijgen een gunstiger tarief en zijn er als eerste bij.</p>
+      <span class="k-eyebrow" data-reveal>Een voorbeeld</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Zo kan een partnership uitpakken.</h2>
     </div>
-    <div class="pm-found c4">
-      <div class="k-tile white" data-reveal>
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span>
-        <h3 class="k-h3">VOIDS-events</h3>
-        <p class="k-p">Ontmoetingen waar partners en studenten elkaar echt leren kennen.</p>
-      </div>
-      <div class="k-tile white" data-reveal data-delay="80">
-        <span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></svg></span>
-        <h3 class="k-h3 b-t">Een kijkje in de keuken</h3>
-        <p class="k-p">Onze leden zien hoe het is om bij jullie te werken, vanuit jullie eigen kantoor of team.</p>
-      </div>
-      <div class="k-tile white" data-reveal data-delay="160">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2.5 20c0-3.6 2.6-6 5.5-6s5.5 2.4 5.5 6"/><path d="M15 14.2c2.6.2 4.5 2.2 4.5 5.3"/></svg></span>
-        <h3 class="k-h3">Een studentenpanel</h3>
-        <p class="k-p">Een groep studenten die meedenkt over je ideeën en teksten, voordat je ze live zet.</p>
-      </div>
-      <div class="k-tile white" data-reveal data-delay="240">
-        <span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V4h10l4 4v12H5Z"/><path d="M14.5 4v4.5H19M8.5 15v-2.5M12 15v-5M15.5 15v-3.5"/></svg></span>
-        <h3 class="k-h3 b-t">Een impactrapportage</h3>
-        <p class="k-p">Een rapportage over wie er via jullie partnerschap bereikt is.</p>
-      </div>
+    <div class="pm-found">
+      <div class="k-tile white" data-reveal><span class="k-badge pm-mo">Maart</span><p class="k-p">Een student ziet het portret van jullie werkstudent.</p></div>
+      <div class="k-tile white" data-reveal data-delay="80"><span class="k-badge pm-mo">Juni</span><p class="k-p">Dezelfde student staat bij jullie op kantoor.</p></div>
+      <div class="k-tile white" data-reveal data-delay="160"><span class="k-badge pm-mo">September</span><p class="k-p">Ze solliciteert uit zichzelf.</p></div>
     </div>
+    <p class="pm-note" data-reveal>Dat is wat een partnership oplevert, en wat werving &amp; selectie en vacatures niet kunnen: die beginnen pas als de vacature er al is.</p>
   </div>
 </section>
 
@@ -231,7 +225,7 @@
       <span class="k-eyebrow" data-reveal>Zo werkt het</span>
       <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Duidelijk over wat we vragen.</h2>
     </div>
-    <div class="pm-found">
+    <div class="pm-found c4">
       <div class="k-tile white" data-reveal>
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.6A4.2 4.2 0 0 0 9 9.8M8.5 11h5.5M8.5 13.5h5.5M15.5 15.4A4.2 4.2 0 0 1 9 14.2"/></svg></span>
         <h3 class="k-h3">Betaalde werkervaring</h3>
@@ -246,6 +240,11 @@
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M15.5 12v2"/></svg></span>
         <h3 class="k-h3">Jaarlidmaatschap</h3>
         <p class="k-p">Een jaarlidmaatschap met een vaste plek. De prijs bespreken we in een gesprek.</p>
+      </div>
+      <div class="k-tile white" data-reveal data-delay="240">
+        <span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2.5 20c0-3.6 2.6-6 5.5-6s5.5 2.4 5.5 6"/><path d="M15 14.2c2.6.2 4.5 2.2 4.5 5.3"/></svg></span>
+        <h3 class="k-h3 b-t">Samen bouwen</h3>
+        <p class="k-p">Partners denken mee over events en formats, krijgen een gunstiger tarief en zijn er als eerste bij.</p>
       </div>
     </div>
   </div>

@@ -47,6 +47,12 @@
 .pm-found .k-h3{font-family:Inter,sans-serif;font-size:24px;color:var(--purple);font-weight:600;letter-spacing:-.01em;text-transform:none}
 .pm-found .b-t{color:var(--blue-700)}
 .pm-found .k-p{font-size:15.5px;line-height:1.65}
+.pm-list{list-style:none;margin:18px 0 0;padding:16px 0 0;display:grid;gap:8px;border-top:1.5px solid rgba(58,12,163,.14)}
+.pm-list li{position:relative;padding-left:20px;font-size:14.5px;line-height:1.5;color:var(--ink)}
+.pm-list li::before{content:"";position:absolute;left:2px;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--purple)}
+.pm-soon{display:inline-block;margin-left:6px;padding:2px 9px;border-radius:99px;background:#fff;color:var(--purple);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;vertical-align:1px}
+.pm-note{margin:28px 0 0;max-width:none;font-size:15.5px;line-height:1.65;color:var(--soft)}
+.pm-mo{align-self:flex-start;margin-bottom:12px}
 .pm-found.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .pm-found.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
 .pm-found .k-tile{padding:28px}
@@ -126,69 +132,57 @@
   </div>
 </section>
 
-<!-- 3 wat je krijgt -->
+<!-- 3 waarde -->
 <section class="k-sec k-white">
   <div class="k-wrap">
     <div class="k-head pm-intro">
-      <span class="k-eyebrow" data-reveal>What you get</span>
-      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">A permanent place with talent you can't reach.</h2>
-      <p class="k-lead" data-reveal data-delay="120">For companies that want to be visible to junior talent they can't reach themselves, and that want to make access to work experience broader.</p>
+      <span class="k-eyebrow" data-reveal>What it delivers</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">The reason someone wants to work with you.</h2>
+      <p class="k-lead" data-reveal data-delay="120">Vacancies and recruitment &amp; selection fill a position, at the moment it exists. A partnership builds the reason junior talent wants to work with you: they know you, believe your story because it comes from real people, you learn what they are looking for and you stand for something.</p>
     </div>
     <div class="pm-found c2">
-      <div class="k-tile" data-reveal>
+      <div class="k-tile " data-reveal>
         <span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v4h3l7 4V6L7 10H4Z"></path><path d="M17.5 9.5a4 4 0 0 1 0 5"></path></svg></span>
-        <h3 class="k-h3">Featured in the community</h3>
-        <p class="k-p">Your company gets a permanent place in the VOIDS community, with students and starters you can't reach yourself.</p>
+        <h3 class="k-h3">Being known</h3>
+        <p class="k-p">Students know you exist, what you do and what kind of work there is. For your next vacancy, people respond who already have an impression, instead of people seeing your name for the first time.</p>
+        <ul class="pm-list"><li>Featured in the VOIDS community</li><li>Vacancies included</li></ul>
       </div>
       <div class="k-tile sky" data-reveal data-delay="80">
-        <span class="ic b"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.4"></circle><path d="M5 20c0-3.8 3.1-6.2 7-6.2s7 2.4 7 6.2"></path></svg></span>
-        <h3 class="k-h3 b-t">A face of your team</h3>
-        <p class="k-p">A portrait of a working student or junior at your company shows what it's like to work with you.</p>
+        <span class="ic b"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 4v-4h0A2.5 2.5 0 0 1 4 13.5v-7Z"></path><path d="M8.5 9h7M8.5 12h4"></path></svg></span>
+        <h3 class="k-h3 b-t">Being believed</h3>
+        <p class="k-p">A vacancy text says what a company thinks of itself. A working student telling you what it's like, or an afternoon at the office, shows what it's really like.</p>
+        <ul class="pm-list"><li>A portrait of a working student or junior at your company</li><li>A look behind the scenes for our members <span class="pm-soon">Being built</span></li><li>VOIDS events <span class="pm-soon">Being built</span></li></ul>
       </div>
-      <div class="k-tile" data-reveal data-delay="160">
-        <span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="7" width="17" height="12" rx="2"></rect><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"></path><path d="M3.5 12.5h17"></path></svg></span>
-        <h3 class="k-h3">Vacancies included</h3>
-        <p class="k-p">Your vacancies are part of your partnership, so you don't have to buy them separately.</p>
+      <div class="k-tile " data-reveal data-delay="160">
+        <span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"></path><circle cx="12" cy="12" r="3"></circle></svg></span>
+        <h3 class="k-h3">Learning what junior talent is looking for</h3>
+        <p class="k-p">You hear what attracts students and where they drop off, and can adapt your vacancies, terms and way of working accordingly. That makes you a better employer for this group, not just a more visible one.</p>
+        <ul class="pm-list"><li>Feedback on your vacancy texts from a student's perspective</li><li>A student panel <span class="pm-soon">Being built</span></li></ul>
       </div>
       <div class="k-tile sky" data-reveal data-delay="240">
-        <span class="ic b"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 4v-4h0A2.5 2.5 0 0 1 4 13.5v-7Z"></path><path d="M8.5 9h7M8.5 12h4"></path></svg></span>
-        <h3 class="k-h3 b-t">Feedback from students</h3>
-        <p class="k-p">We read your vacancy texts from a student's perspective, so they appeal to the people you're looking for.</p>
+        <span class="ic b"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.3 3.1 7.9 7.5 9.5 4.4-1.6 7.5-5.2 7.5-9.5V6L12 3Z"></path><path d="m8.8 12 2.4 2.4L15.5 10"></path></svg></span>
+        <h3 class="k-h3 b-t">Standing for something</h3>
+        <p class="k-p">Being a partner means: an employer that offers paid work experience and widens access. That is an association you can't buy with a vacancy.</p>
+        <ul class="pm-list"><li>The partner label</li><li>An impact report <span class="pm-soon">Being built</span></li></ul>
       </div>
     </div>
+    <p class="pm-note" data-reveal>For companies that want to be visible to junior talent they can't reach themselves, and that want to make access to work experience broader. We are still building part of the value: what isn't finished yet is marked 'being built'.</p>
   </div>
 </section>
 
-<!-- 4 wat erbij komt -->
+<!-- 4 voorbeeld -->
 <section class="k-sec k-beige">
   <div class="k-wrap">
     <div class="k-head pm-intro">
-      <span class="k-eyebrow" data-reveal>Being built</span>
-      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">What's coming next.</h2>
-      <p class="k-lead" data-reveal data-delay="120">We are still building part of the value. Partners help shape how we fill it in, get a more favourable rate and are first in line.</p>
+      <span class="k-eyebrow" data-reveal>An example</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">How a partnership can play out.</h2>
     </div>
-    <div class="pm-found c4">
-      <div class="k-tile white" data-reveal>
-        <span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"></rect><path d="M3.5 10h17M8 3v4M16 3v4"></path></svg></span>
-        <h3 class="k-h3">VOIDS events</h3>
-        <p class="k-p">Meet-ups where partners and students really get to know each other.</p>
-      </div>
-      <div class="k-tile white" data-reveal data-delay="80">
-        <span class="ic b"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"></path><circle cx="12" cy="12" r="3"></circle></svg></span>
-        <h3 class="k-h3 b-t">A look behind the scenes</h3>
-        <p class="k-p">Our members see what it's like to work with you, from your own office or team.</p>
-      </div>
-      <div class="k-tile white" data-reveal data-delay="160">
-        <span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.4"></circle><path d="M2.5 20c0-3.6 2.6-6 5.5-6s5.5 2.4 5.5 6"></path><path d="M15 14.2c2.6.2 4.5 2.2 4.5 5.3"></path></svg></span>
-        <h3 class="k-h3">A student panel</h3>
-        <p class="k-p">A group of students who think along on your ideas and texts before you put them live.</p>
-      </div>
-      <div class="k-tile white" data-reveal data-delay="240">
-        <span class="ic b"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V4h10l4 4v12H5Z"></path><path d="M14.5 4v4.5H19M8.5 15v-2.5M12 15v-5M15.5 15v-3.5"></path></svg></span>
-        <h3 class="k-h3 b-t">An impact report</h3>
-        <p class="k-p">A report on who has been reached through your partnership.</p>
-      </div>
+    <div class="pm-found">
+      <div class="k-tile white" data-reveal><span class="k-badge pm-mo">March</span><p class="k-p">A student sees the portrait of your working student.</p></div>
+      <div class="k-tile white" data-reveal data-delay="80"><span class="k-badge pm-mo">June</span><p class="k-p">The same student is at your office.</p></div>
+      <div class="k-tile white" data-reveal data-delay="160"><span class="k-badge pm-mo">September</span><p class="k-p">They apply of their own accord.</p></div>
     </div>
+    <p class="pm-note" data-reveal>That is what a partnership delivers, and what recruitment &amp; selection and vacancies can't: they only start once the vacancy already exists.</p>
   </div>
 </section>
 
@@ -231,7 +225,7 @@
       <span class="k-eyebrow" data-reveal>How it works</span>
       <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Clear about what we ask.</h2>
     </div>
-    <div class="pm-found">
+    <div class="pm-found c4">
       <div class="k-tile white" data-reveal>
         <span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15.5 8.6A4.2 4.2 0 0 0 9 9.8M8.5 11h5.5M8.5 13.5h5.5M15.5 15.4A4.2 4.2 0 0 1 9 14.2"></path></svg></span>
         <h3 class="k-h3">Paid work experience</h3>
@@ -246,6 +240,11 @@
         <span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="12" r="4"></circle><path d="M12 12h9M18 12v3M15.5 12v2"></path></svg></span>
         <h3 class="k-h3">Annual membership</h3>
         <p class="k-p">An annual membership with a permanent place. We discuss the price in a conversation.</p>
+      </div>
+      <div class="k-tile white" data-reveal data-delay="240">
+        <span class="ic b"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.4"></circle><path d="M2.5 20c0-3.6 2.6-6 5.5-6s5.5 2.4 5.5 6"></path><path d="M15 14.2c2.6.2 4.5 2.2 4.5 5.3"></path></svg></span>
+        <h3 class="k-h3 b-t">Building together</h3>
+        <p class="k-p">Partners help shape events and formats, get a more favourable rate and are first in line.</p>
       </div>
     </div>
   </div>
