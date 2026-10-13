@@ -1,0 +1,104 @@
+/* Mobile polish. Linked last in <head> (finalize.py adds the link), so these rules win over page styles. */
+.k-burger,.k-mnav{display:none}
+
+@media(max-width:960px){
+  /* header + full-screen menu */
+  .k-header{padding:10px 20px;gap:12px}
+  .k-header .k-logo img{height:20px}
+  .k-header .k-nav,.k-header .k-wa,.k-header .k-hbtn{display:none}
+  .k-burger{display:inline-flex;width:44px;height:44px;margin:0 -12px 0 0;padding:0;align-items:center;justify-content:center;background:none;border:0;color:var(--ink);cursor:pointer}
+  .k-bars{position:relative;display:block;width:22px;height:14px}
+  .k-bars i{position:absolute;left:0;right:0;height:2px;border-radius:2px;background:currentColor;transition:transform .3s,top .3s}
+  .k-bars i:nth-child(1){top:0}.k-bars i:nth-child(2){top:12px}
+  .k-header.open .k-bars i:nth-child(1){top:6px;transform:rotate(45deg)}
+  .k-header.open .k-bars i:nth-child(2){top:6px;transform:rotate(-45deg)}
+  .k-mnav{display:none;position:fixed;left:0;right:0;top:64px;bottom:0;z-index:49;flex-direction:column;justify-content:space-between;gap:24px;padding:12px 20px calc(24px + env(safe-area-inset-bottom));background:var(--beige);overflow:auto;-webkit-overflow-scrolling:touch}
+  .k-header.open .k-mnav{display:flex;animation:kmn .25s ease-out}
+  @keyframes kmn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+  .k-mn{display:block;padding:12px 0 6px;font:400 38px/1.05 Anton,"Arial Narrow",sans-serif;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+  .k-mn.on{color:var(--purple)}
+  .k-mn-sub{display:grid;gap:0;padding:0 0 8px}
+  .k-mn-sub a{padding:9px 0;font:500 16px Inter,sans-serif;color:var(--soft);text-decoration:none}
+  .k-mn-cta{display:grid;gap:10px}
+  .k-mn-cta .k-btn{justify-content:center;min-height:50px}
+  .k-mn-wa{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;font-weight:600;color:var(--purple);text-decoration:none}
+  .k-mn-wa svg{width:20px;height:20px}
+  html.k-lock{overflow:hidden}
+}
+
+@media(max-width:640px){
+  /* join nudge: a compact bar instead of a card that covers the page */
+  .k-nudge{left:12px!important;right:12px!important;bottom:calc(12px + env(safe-area-inset-bottom))!important;width:auto!important;padding:10px 40px 10px 12px!important;gap:12px!important;align-items:center!important;border-radius:16px!important}
+  .k-nudge svg{width:32px!important;height:32px!important}
+  .k-nudge .k-nudge-p{display:none!important}
+  .k-nudge b{font-size:14px!important;margin:0 0 6px!important}
+  .k-nudge a{padding:8px 14px!important}
+
+  /* rhythm: one gutter, tighter sections, bolder headings */
+  .k-wrap{padding-left:20px!important;padding-right:20px!important}
+  .k-sec{padding:56px 0!important}.k-sec.tight{padding:44px 0!important}
+  .k-hero{padding:36px 0 32px!important}
+  h1.k-h1{font-size:clamp(34px,10.6vw,46px)!important;line-height:1.02}
+  .k-h2{font-size:clamp(28px,8.6vw,36px)}
+  .k-cta .k-h2{font-size:clamp(30px,9vw,40px)}
+  .k-lead{font-size:17px;line-height:1.55}
+  .k-p{font-size:16px}
+  .k-head{margin-bottom:28px!important}
+  .k-eyebrow{display:block}
+  .k-btn{min-height:48px;padding:14px 22px}
+  .k-hero .k-btn,.k-cta .k-btn,.k-cta-row .k-btn{width:100%;justify-content:center}
+  .k-cta-row{flex-direction:column;align-items:stretch}
+
+  /* footer */
+  .k-footer{padding:48px 0 24px}
+  .k-footer .k-wrap{grid-template-columns:1fr 1fr!important;gap:32px 20px}
+  .k-footer .k-wrap>div:first-child,.k-footer .k-wrap>div:nth-child(4){grid-column:1/-1}
+  .k-footer p{max-width:none}
+  .k-footer a{padding:7px 0}
+  .k-footer .k-base{margin-top:8px;flex-direction:column;gap:6px}
+}
+@media(max-width:960px){.k-header.open{flex-wrap:nowrap}.k-header.open .k-nav{display:none!important}}
+
+/* menu buttons also work on pages without kit.css (home) */
+@media(max-width:960px){
+  .k-mn-cta .k-btn{display:flex;align-items:center;justify-content:center;border-radius:10px;font:600 15px Inter,sans-serif;text-decoration:none;background:var(--purple);color:#fff}
+  .k-mn-cta .k-btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+  /* home: its own join card becomes a compact bar too */
+  header.k-header{position:sticky}
+}
+@media(max-width:640px){
+  .nudge{left:12px!important;right:12px!important;bottom:calc(12px + env(safe-area-inset-bottom))!important;width:auto!important;padding:10px 40px 10px 12px!important;gap:12px!important;align-items:center!important;border-radius:16px!important}
+  .nudge .wi{width:32px!important;height:32px!important}
+  .nudge p{display:none!important}
+  .nudge b{margin:0 0 6px!important}
+  .nudge a.go2{padding:8px 14px!important}
+}
+
+/* home hero: keep the CTA clear of the section that slides over the bottom of the hero */
+@media(max-width:860px){
+  .stage .sub,.sub.flat{padding-bottom:72px!important}
+}
+@media(max-width:860px){.stage .pin{padding-top:28px!important}}
+
+/* sticky side columns only make sense next to content: stack them on small screens */
+@media(max-width:960px){
+  .b-side,.cj-side,.eb-scope .k-head,.k-split.top>.k-head,.toc,.tq3-head{position:static!important}
+}
+/* recruitment steps: no empty number column */
+@media(max-width:860px){
+  .rs-step,.rs-step.past{grid-template-columns:minmax(0,1fr)!important;padding:20px!important}
+  .rs-num{display:none!important}
+}
+/* WhatsApp channels: one row per channel instead of cramped tiles */
+@media(max-width:640px){
+  .wc-grid{grid-template-columns:1fr!important;gap:10px}
+  .wc-t{display:grid!important;grid-template-columns:34px minmax(0,1fr) auto;grid-template-areas:"i b ar" "i s ar";column-gap:14px;row-gap:2px;align-items:center;min-height:0!important;padding:16px 18px!important}
+  .wc-i{grid-area:i;margin:0!important}
+  .wc-t b{grid-area:b;margin:0!important;font-size:17px!important}
+  .wc-s{grid-area:s}
+  .wc-ar{grid-area:ar;position:static!important}
+}
+
+@media(max-width:640px){
+  .k-hero .k-h1+.k-lead,.k-hero h1+p{margin-top:16px}
+}

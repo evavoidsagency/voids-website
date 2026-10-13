@@ -56,6 +56,9 @@ def fix_words(h):
 def run(srcpath,outpath,verbose=True):
     src=open(srcpath,encoding='utf-8').read()
     src=re.sub(r'<!--seo-->.*?<!--/seo-->\n?','',src,flags=re.S)  # rebuilt by finalize.py
+    src=re.sub(r'<!--k-home-menu-->.*?<!--/k-home-menu-->','',src,flags=re.S)
+    src=re.sub(r'<!--k-footer-->.*?<!--/k-footer-->','',src,flags=re.S)
+    src=re.sub(r'<!--k-header-->.*?<!--/k-header-->','<div id="k-header"></div>',src,flags=re.S)
     T.leftovers.clear()
     out=T.translate_html(src)
     out=relink(out)
