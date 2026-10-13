@@ -41,28 +41,16 @@
 .pm-found{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
 .pm-found .k-tile{padding:30px}
 .pm-found .ic{width:48px;height:48px;border-radius:50%;background:var(--purple-100);color:var(--purple);display:grid;place-items:center;margin-bottom:18px}
+.pm-found .k-tile:not(.white) .ic,.eb-fgrid .k-tile:not(.white) .ic{background:#fff}
 .pm-found .ic.b{background:var(--blue-100);color:var(--blue-700)}
 .pm-found .ic svg{width:24px;height:24px}
 .pm-found .k-h3{font-family:Inter,sans-serif;font-size:24px;color:var(--purple);font-weight:600;letter-spacing:-.01em;text-transform:none}
 .pm-found .b-t{color:var(--blue-700)}
 .pm-found .k-p{font-size:15.5px;line-height:1.65}
-
-/* offer: sticky heading + tinted rows */
-.eb-scope{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
-.eb-scope .k-head{margin:0;position:sticky;top:96px}
-.eb-scope .k-head{display:block}.eb-scope .k-head .k-lead{margin-top:18px}
-.eb-rows{display:grid;gap:16px}
-.eb-row{display:grid;grid-template-columns:minmax(180px,.7fr) 1.3fr;gap:28px;align-items:center;padding:28px 32px;border-radius:20px;background:var(--purple-100)}
-.eb-row.sky{background:var(--blue-100)}
-.eb-row .nm{font-family:Inter,sans-serif;font-size:clamp(20px,1.9vw,26px);color:var(--purple);line-height:1.1;font-weight:600;letter-spacing:-.01em}
-.eb-row.sky .nm{color:var(--blue-700)}
-.eb-row p{font-size:16px;line-height:1.65;color:var(--soft);margin:0}
-.eb-row p+p{margin-top:10px}
-.eb-row ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.eb-row li{position:relative;padding-left:22px;font-size:16px;line-height:1.55;color:var(--soft)}
-.eb-row li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--purple)}
-.eb-row.sky li::before{background:var(--blue-700)}
-.eb-row .soon{display:inline-block;margin-bottom:8px;padding:4px 11px;border-radius:99px;background:#fff;color:var(--purple);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.pm-found.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pm-found.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.pm-found .k-tile{padding:28px}
+@media(max-width:1100px){.pm-found.c4{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* partner extras: photo + 2x2 equal tiles, descriptions always visible */
 .eb-formats{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:stretch}
@@ -82,10 +70,7 @@
 .eb-cta .k-btn.outline{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}.eb-cta .k-btn.outline:hover{background:rgba(255,255,255,.35)}
 
 @media(max-width:960px){
-  .pm-found{grid-template-columns:1fr}
-  .eb-scope{grid-template-columns:1fr;gap:36px}
-  .eb-scope .k-head{position:static}
-  .eb-row{grid-template-columns:1fr;gap:12px;padding:24px 22px}
+  .pm-found,.pm-found.c2,.pm-found.c4{grid-template-columns:1fr}
   .eb-formats{grid-template-columns:1fr;gap:24px}
   .eb-formats .k-photo{height:auto;aspect-ratio:4/5}
   .eb-cta .btns{justify-content:flex-start}
@@ -141,86 +126,74 @@
   </div>
 </section>
 
-<!-- 3 waarom founding -->
-<section class="k-sec k-beige">
+<!-- 3 wat je krijgt -->
+<section class="k-sec k-white">
   <div class="k-wrap">
     <div class="k-head pm-intro">
-      <span class="k-eyebrow" data-reveal>In opbouw</span>
-      <h2 class="k-h2" data-reveal data-delay="60">Waarom nu instappen?</h2>
-      <p class="k-lead" data-reveal data-delay="120">Een deel van de waarde bouwen we nog op. Daarom zetten we partnerships nu al op de site: met een beperkt aantal bedrijven dat in de opbouwfase instapt.</p>
+      <span class="k-eyebrow" data-reveal>Wat je krijgt</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Een vaste plek bij talent dat je niet bereikt.</h2>
+      <p class="k-lead" data-reveal data-delay="120">Voor bedrijven die zichtbaar willen zijn bij junior talent dat ze zelf niet bereiken, en die toegang tot werkervaring breder willen maken.</p>
     </div>
-    <div class="pm-found">
-      <div class="k-tile white" data-reveal>
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg></span>
-        <h3 class="k-h3">Eerlijk</h3>
-        <p class="k-p">We laten zien wat er nu is en wat er groeit, zonder te overbeloven.</p>
+    <div class="pm-found c2">
+      <div class="k-tile" data-reveal>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v4h3l7 4V6L7 10H4Z"/><path d="M17.5 9.5a4 4 0 0 1 0 5"/></svg></span>
+        <h3 class="k-h3">Uitgelicht in de community</h3>
+        <p class="k-p">Je bedrijf krijgt een vaste plek in de VOIDS-community, bij studenten en starters die je zelf niet bereikt.</p>
       </div>
-      <div class="k-tile white" data-reveal data-delay="80">
-        <span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7L12 3Z"/></svg></span>
-        <h3 class="k-h3 b-t">Exclusief</h3>
-        <p class="k-p">Eén post per week betekent een paar partners tegelijk. Weinig plekken, dus meer waarde.</p>
+      <div class="k-tile sky" data-reveal data-delay="80">
+        <span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.8 3.1-6.2 7-6.2s7 2.4 7 6.2"/></svg></span>
+        <h3 class="k-h3 b-t">Een gezicht van je team</h3>
+        <p class="k-p">Een portret van een werkstudent of junior bij jullie laat zien hoe het is om bij jullie te werken.</p>
       </div>
-      <div class="k-tile white" data-reveal data-delay="160">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2.5 20c0-3.6 2.6-6 5.5-6s5.5 2.4 5.5 6"/><path d="M15 14.2c2.6.2 4.5 2.2 4.5 5.3"/></svg></span>
-        <h3 class="k-h3">Samen bouwen</h3>
-        <p class="k-p">Partners denken mee over events en formats, krijgen een gunstiger tarief en zijn er als eerste bij.</p>
+      <div class="k-tile" data-reveal data-delay="160">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="7" width="17" height="12" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/><path d="M3.5 12.5h17"/></svg></span>
+        <h3 class="k-h3">Vacatures inbegrepen</h3>
+        <p class="k-p">Je vacatures zijn onderdeel van je partnerschap, dus je hoeft ze niet apart in te kopen.</p>
+      </div>
+      <div class="k-tile sky" data-reveal data-delay="240">
+        <span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 4v-4h0A2.5 2.5 0 0 1 4 13.5v-7Z"/><path d="M8.5 9h7M8.5 12h4"/></svg></span>
+        <h3 class="k-h3 b-t">Feedback van studenten</h3>
+        <p class="k-p">We lezen je vacatureteksten mee vanuit studentperspectief, zodat ze aanspreken bij de mensen die je zoekt.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 4 aanbod -->
-<section class="k-sec k-white" id="aanbod" style="scroll-margin-top:70px">
+<!-- 4 wat erbij komt -->
+<section class="k-sec k-beige">
   <div class="k-wrap">
-    <div class="eb-scope">
-      <div class="k-head" data-reveal>
-        <span class="k-eyebrow">Partnerships</span>
-        <h2 class="k-h2">Dit krijg je, dit vragen we.</h2>
-        <p class="k-lead">Eerlijk op een rij: wat er nu is, wat erbij komt en wat we van partners verwachten.</p>
+    <div class="k-head pm-intro">
+      <span class="k-eyebrow" data-reveal>In opbouw</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Wat er de komende tijd bij komt.</h2>
+      <p class="k-lead" data-reveal data-delay="120">Een deel van de waarde bouwen we nog op. Partners denken mee over hoe we dit invullen, krijgen een gunstiger tarief en zijn er als eerste bij.</p>
+    </div>
+    <div class="pm-found c4">
+      <div class="k-tile white" data-reveal>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span>
+        <h3 class="k-h3">VOIDS-events</h3>
+        <p class="k-p">Ontmoetingen waar partners en studenten elkaar echt leren kennen.</p>
       </div>
-      <div class="eb-rows">
-        <div class="eb-row" data-reveal>
-          <div class="nm">Voor wie</div>
-          <p>Bedrijven die zichtbaar willen zijn bij junior talent dat ze zelf niet bereiken, en die toegang tot werkervaring breder willen maken.</p>
-        </div>
-        <div class="eb-row sky" data-reveal data-delay="60">
-          <div class="nm">Wat je nu krijgt</div>
-          <ul>
-            <li>Uitgelicht in de VOIDS-community</li>
-            <li>Een portret van een werkstudent of junior bij jullie</li>
-            <li>Vacatures inbegrepen</li>
-            <li>Feedback vanuit studentperspectief op jullie vacatureteksten</li>
-          </ul>
-        </div>
-        <div class="eb-row" data-reveal data-delay="120">
-          <div class="nm">Wat erbij komt</div>
-          <div><span class="soon">In opbouw</span>
-          <ul>
-            <li>VOIDS-events</li>
-            <li>Een kijkje in de keuken voor onze leden</li>
-            <li>Een studentenpanel</li>
-            <li>Een impactrapportage</li>
-          </ul></div>
-        </div>
-        <div class="eb-row sky" data-reveal data-delay="180">
-          <div class="nm">Het commitment</div>
-          <div><p>Partners bieden betaalde werkervaring. Werkstudenten verdienen bij hen €17 tot €22 per uur.</p><p>Zo betekent het partnerlabel iets voor studenten.</p></div>
-        </div>
-        <div class="eb-row" data-reveal data-delay="240">
-          <div class="nm">Vorm en prijs</div>
-          <p>Jaarlidmaatschap, met een beperkt aantal plekken. Prijs op aanvraag.</p>
-        </div>
-        <div class="eb-row sky" data-reveal data-delay="300">
-          <div class="nm">Hoe je begint</div>
-          <p>Benieuwd of dit bij jullie past? We vertellen je graag meer.</p>
-        </div>
+      <div class="k-tile white" data-reveal data-delay="80">
+        <span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></svg></span>
+        <h3 class="k-h3 b-t">Een kijkje in de keuken</h3>
+        <p class="k-p">Onze leden zien hoe het is om bij jullie te werken, vanuit jullie eigen kantoor of team.</p>
+      </div>
+      <div class="k-tile white" data-reveal data-delay="160">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2.5 20c0-3.6 2.6-6 5.5-6s5.5 2.4 5.5 6"/><path d="M15 14.2c2.6.2 4.5 2.2 4.5 5.3"/></svg></span>
+        <h3 class="k-h3">Een studentenpanel</h3>
+        <p class="k-p">Een groep studenten die meedenkt over je ideeën en teksten, voordat je ze live zet.</p>
+      </div>
+      <div class="k-tile white" data-reveal data-delay="240">
+        <span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V4h10l4 4v12H5Z"/><path d="M14.5 4v4.5H19M8.5 15v-2.5M12 15v-5M15.5 15v-3.5"/></svg></span>
+        <h3 class="k-h3 b-t">Een impactrapportage</h3>
+        <p class="k-p">Een rapportage over wie er via jullie partnerschap bereikt is.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- 5 advies voor partners -->
-<section class="k-sec k-beige">
+<section class="k-sec k-white">
   <div class="k-wrap">
     <div class="k-head pm-intro">
       <span class="k-eyebrow" data-reveal>Voor partners</span>
@@ -230,19 +203,19 @@
     <div class="eb-formats">
       <div class="k-photo" data-reveal><img src="/photography/employer-branding-formats.jpg" alt="VOIDS aan het werk op kantoor"></div>
       <div class="eb-fgrid">
-        <div class="k-tile white" data-reveal>
+        <div class="k-tile" data-reveal>
           <span class="ic"><svg viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 11a8 8 0 1 1 3.2 6.4L3 18.5l1.1-3.3A7.96 7.96 0 0 1 3 11Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M7.5 11h7M7.5 8h5M7.5 14h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
           <h3 class="k-h3">Advies op maat</h3>
           <p class="k-p">Meedenken over hoe je junior talent aantrekt, aanneemt en behoudt, op maat van jouw organisatie.</p></div>
-        <div class="k-tile white" data-reveal data-delay="60">
+        <div class="k-tile sky" data-reveal data-delay="60">
           <span class="ic b"><svg viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M4 20V9L11 3l7 6v11" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.5 20v-6h5v6" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
           <h3 class="k-h3 b-t">Inhouse dagen</h3>
           <p class="k-p">Op vaste dagen werkt een VOIDS-recruiter op locatie bij jouw team: live schakelen met hiring managers, sourcen en interviewen, zonder vertraging tussen twee kantoren.</p></div>
-        <div class="k-tile white" data-reveal data-delay="120">
+        <div class="k-tile" data-reveal data-delay="120">
           <span class="ic"><svg viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="8" cy="6" r="2.6" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="8" r="2.1" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 19c0-3.6 2.6-6 5.5-6s5.5 2.4 5.5 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M14.5 13.3c2.4.3 4 2.5 4 5.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
           <h3 class="k-h3">Trainingen &amp; workshops</h3>
           <p class="k-p">Praktische sessies voor teams en leidinggevenden, bijvoorbeeld over onboarding en talentbehoud van jong talent.</p></div>
-        <div class="k-tile white" data-reveal data-delay="180">
+        <div class="k-tile sky" data-reveal data-delay="180">
           <span class="ic b"><svg viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M5 3v6a3 3 0 0 0 3 3v9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 3v6M8 3v6M11 3v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M17 3v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><ellipse cx="17" cy="4.6" rx="2.2" ry="3.3" stroke="currentColor" stroke-width="1.5"/><path d="M17 11v10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
           <h3 class="k-h3 b-t">Community events</h3>
           <p class="k-p">We organiseren ontmoetingen zoals talentdiners en lunches, waar bedrijven en jong talent elkaar informeel treffen.</p></div>
@@ -251,7 +224,34 @@
   </div>
 </section>
 
-<!-- 6 blog -->
+<!-- 6 zo werkt het -->
+<section class="k-sec k-lav">
+  <div class="k-wrap">
+    <div class="k-head pm-intro">
+      <span class="k-eyebrow" data-reveal>Zo werkt het</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Duidelijk over wat we vragen.</h2>
+    </div>
+    <div class="pm-found">
+      <div class="k-tile white" data-reveal>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.6A4.2 4.2 0 0 0 9 9.8M8.5 11h5.5M8.5 13.5h5.5M15.5 15.4A4.2 4.2 0 0 1 9 14.2"/></svg></span>
+        <h3 class="k-h3">Betaalde werkervaring</h3>
+        <p class="k-p">Partners bieden betaalde werkervaring: werkstudenten verdienen bij hen €17 tot €22 per uur. Zo betekent het partnerlabel iets voor studenten.</p>
+      </div>
+      <div class="k-tile white" data-reveal data-delay="80">
+        <span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.3 3.1 7.9 7.5 9.5 4.4-1.6 7.5-5.2 7.5-9.5V6L12 3Z"/><path d="m8.8 12 2.4 2.4L15.5 10"/></svg></span>
+        <h3 class="k-h3 b-t">Een beperkt aantal partners</h3>
+        <p class="k-p">We werken met een paar partners tegelijk, zodat je écht zichtbaar bent en niet verdwijnt in een lange lijst.</p>
+      </div>
+      <div class="k-tile white" data-reveal data-delay="160">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M15.5 12v2"/></svg></span>
+        <h3 class="k-h3">Jaarlidmaatschap</h3>
+        <p class="k-p">Een jaarlidmaatschap met een vaste plek. De prijs bespreken we in een gesprek.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 blog -->
 <section class="k-sec k-white k-blogrow">
   <div class="k-wrap">
     <div class="k-head" data-reveal><h2 class="k-h2" style="margin-top:0">BOUW VERDER AAN JE MERK.</h2><p class="k-lead">Verdiepend lezen over employer branding, onboarding en diversiteit in junior recruitment.</p></div>
