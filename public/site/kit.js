@@ -82,6 +82,7 @@
     if(innerWidth<=960)return;
     heads.forEach(function(h){
       var intro=h.querySelector(':scope>.k-lead,:scope>.k-p');if(!intro)return;
+      if(h.hasAttribute('data-wide')){h.style.gridTemplateColumns='minmax(0,1fr)';h.style.columnGap='0px';intro.style.gridColumn='1';intro.style.gridRow='3';intro.style.setProperty('max-width','none','important');intro.style.setProperty('padding-top','16px','important');return}
       var nx=h.nextElementSibling;while(nx&&(!nx.offsetHeight||getComputedStyle(nx).position==='absolute'))nx=nx.nextElementSibling;if(!nx)return;
       var hr=h.getBoundingClientRect(),W=hr.width;if(W<600)return;
       var edges=[],list=[nx].concat([].slice.call(nx.querySelectorAll('*')).slice(0,60));
@@ -123,7 +124,7 @@
     var els=[].slice.call(document.querySelectorAll('.k-lead,.im-intro,.k-head>.k-p'));
     els.forEach(function(p){
       if(p.__km||p.closest('.k-cta,.k-purple .k-head,.k-form,.k-footer'))return;
-      if((p.textContent||'').trim().length<260)return;
+      if((p.textContent||'').trim().length<260)return;if(!matchMedia('(max-width:960px)').matches)return;
       p.__km=1;p.classList.add('k-clamp');
       var b=document.createElement('button');b.type='button';b.className='k-more';b.textContent=EN?'Read more':'Lees meer';b.setAttribute('aria-expanded','false');
       b.addEventListener('click',function(){var o=p.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');b.textContent=o?(EN?'Read less':'Minder'):(EN?'Read more':'Lees meer');if(window.__snap)window.__snap()});
