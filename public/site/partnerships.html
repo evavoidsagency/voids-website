@@ -316,7 +316,7 @@
 .pm-zw li b{font-size:17px;color:var(--purple)}
 .pm-zw li span{font-size:14.5px;line-height:1.5;color:var(--soft)}
 .pm-zw li:not(:last-child)::after{content:"→";position:absolute;top:30px;right:-15px;z-index:2;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:14px}
-@media(max-width:1100px){.pm-rp,.pm-zw{grid-template-columns:repeat(2,minmax(0,1fr))}.pm-zw li::after{display:none}}
+@media(max-width:1100px){.pm-rp,.pm-zw{grid-template-columns:repeat(2,minmax(0,1fr))}.pm-zw li:not(:last-child)::after{display:none}}
 @media(max-width:700px){.pm-rs{grid-template-columns:1fr}.pm-rp,.pm-zw{grid-template-columns:1fr}.pm-rs>button{padding:18px}}
 
 /* impact band */
