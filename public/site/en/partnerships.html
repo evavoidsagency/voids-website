@@ -106,7 +106,6 @@
   .pm-phone{height:470px}
   .pm-st,.pm-s{transition:none}
 }
-}
 
 /* bento: four values */
 .pm-bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}
@@ -164,6 +163,91 @@
   .eb-cta .btns{justify-content:flex-start}
 }
 @media(max-width:600px){.eb-fgrid,.pm-ask{grid-template-columns:1fr}.pm-fl{font-size:12.5px}}
+
+.pm-ap .k-form{color:var(--ink)}
+.pm-qn{display:inline-flex;align-items:center;gap:10px}
+.pm-qn::before{content:attr(data-n);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--purple);font:400 17px Anton,sans-serif;letter-spacing:0}
+.pm-q:not(:last-child)::after{content:"→";position:absolute;top:26px;right:-18px;z-index:2;width:34px;height:34px;border-radius:50%;background:var(--purple);color:#fff;display:grid;place-items:center;font-size:16px;box-shadow:0 8px 18px -8px rgba(20,8,90,.6);transition:transform .4s}
+.pm-q:hover:not(:last-child)::after{transform:translateX(4px)}
+.pm-q{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.pm-q:hover{transform:translateY(-4px)}
+@media(max-width:1100px){.pm-q:not(:last-child)::after{display:none}}
+/* goal switch */
+.pm-sw-row{display:flex;align-items:center;gap:14px 18px;flex-wrap:wrap;margin:0 0 26px}
+.pm-sw-l{font-size:14px;font-weight:700;color:var(--purple)}
+.pm-sw{display:inline-flex;gap:4px;padding:4px;border-radius:99px;background:#fff;box-shadow:0 8px 20px -12px rgba(20,8,90,.35)}
+.pm-sw button{border:0;border-radius:99px;padding:10px 18px;background:none;font:600 14px Inter,sans-serif;color:var(--purple);cursor:pointer;transition:background .25s,color .25s}
+.pm-sw button[aria-pressed=true]{background:var(--purple);color:#fff}
+.pm-sw-msg{flex:1 1 320px;font-size:15px;line-height:1.5;color:var(--soft)}
+.pm-sw-msg span{display:none}
+.pm-goal[data-mode=b] .pm-sw-msg [data-m=b],.pm-goal[data-mode=v] .pm-sw-msg [data-m=v],.pm-goal[data-mode=i] .pm-sw-msg [data-m=i]{display:inline}
+.pm-goal [data-g]{transition:opacity .4s,filter .4s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.pm-goal[data-mode=v] [data-g=i],.pm-goal[data-mode=i] [data-g=v]{opacity:.3;filter:saturate(.4)}
+/* year */
+.pm-yr{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:stretch}
+.pm-q{position:relative;display:flex;flex-direction:column;padding:26px;border-radius:22px;background:var(--purple-100)}
+.pm-q:nth-child(even){background:var(--blue-100)}
+.pm-qn{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple)}
+.pm-q h3{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(24px,2.2vw,32px);text-transform:uppercase;line-height:1.05;margin:8px 0 18px}
+.pm-q ul{list-style:none;padding:0;display:grid;gap:10px}
+.pm-q li{position:relative;padding-left:20px;font-size:15px;line-height:1.45}
+.pm-q li::before{content:"";position:absolute;left:2px;top:.5em;width:8px;height:8px;border-radius:50%;background:var(--purple)}
+.pm-q li em{font-style:normal;margin-left:6px;padding:2px 8px;border-radius:99px;background:#fff;color:var(--purple);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+/* afspraken */
+.pm-af{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:stretch}
+.pm-label{padding:32px;border-radius:24px;background:#fff;display:flex;flex-direction:column;gap:22px}
+.pm-label-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.pm-label h3{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(25px,2.4vw,34px);text-transform:uppercase;line-height:1.05;margin-top:10px}
+.pm-label ul{list-style:none;padding:0;display:grid;gap:14px}
+.pm-label li{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;font-size:16px;line-height:1.5}
+.pm-label li svg{width:30px;height:30px;padding:6px;border-radius:50%;background:var(--purple-100);color:var(--purple)}
+.pm-badge{flex:none;display:grid;place-items:center;gap:4px;width:112px;height:112px;border-radius:50%;background:var(--purple);color:#fff;text-align:center;transform:rotate(-6deg);box-shadow:0 14px 28px -12px rgba(20,8,90,.5)}
+.pm-badge span svg{width:26px;height:26px;color:#fff}
+.pm-badge b{font-size:11px;letter-spacing:.06em;text-transform:uppercase;line-height:1.1}
+.pm-badge i{font-style:normal;font-size:9.5px;font-weight:600;color:var(--purple-200);letter-spacing:.06em;text-transform:uppercase}
+.pm-af-r{display:grid;gap:18px;grid-template-rows:repeat(3,1fr)}
+.pm-af-r .k-tile{padding:26px 28px;justify-content:center}
+.pm-af-r .k-h3{font-family:Inter,sans-serif;font-size:21px;color:var(--purple);font-weight:600;letter-spacing:-.01em;text-transform:none;margin-bottom:8px}
+.pm-af-r .k-p{font-size:15px;line-height:1.6}
+/* logos */
+.pm-lh{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:center;margin-bottom:34px}
+.pm-lh .k-p{font-size:15.5px;color:var(--soft)}
+.pm-lrow{overflow:hidden}
+.pm-ltrack{display:flex;gap:14px;width:max-content;animation:pml 70s linear infinite}
+.pm-lrow:hover .pm-ltrack{animation-play-state:paused}
+.pm-logos .lt{flex:none;width:170px;height:92px;display:grid;place-items:center;background:var(--beige);border-radius:18px;padding:14px 22px}
+.pm-logos .lt img{max-width:100%;max-height:48px;width:auto;height:auto;object-fit:contain}
+@keyframes pml{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.pm-ltrack{animation:none}.pm-lrow{overflow-x:auto}}
+/* advies strip */
+.pm-adv{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:center}
+.pm-adv-c{display:flex;flex-wrap:wrap;gap:10px}
+.pm-adv-c .k-badge{background:#fff;padding:10px 18px;font-size:13.5px}
+/* faq */
+.pm-faq{display:grid;gap:12px}
+.pm-faq details{border-radius:18px;background:var(--purple-100);overflow:hidden}
+.pm-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;font-size:17px;font-weight:600;color:var(--ink)}
+.pm-faq summary::-webkit-details-marker{display:none}
+.pm-faq summary::after{content:"+";flex:none;width:32px;height:32px;border-radius:50%;background:#fff;color:var(--purple);display:grid;place-items:center;font-size:18px;transition:transform .3s}
+.pm-faq details[open] summary::after{transform:rotate(45deg)}
+.pm-faq details p{padding:0 24px 22px;font-size:16px;line-height:1.65;color:var(--soft)}
+/* aanmelden */
+.pm-ap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:start}
+.pm-ap-s{list-style:none;padding:0;display:grid;gap:14px}
+.pm-ap-s li{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;padding:20px 22px;border-radius:18px;background:rgba(255,255,255,.1)}
+.pm-ap-s i{font-style:normal;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--purple);display:grid;place-items:center;font:400 22px Anton,sans-serif}
+.pm-ap-s b{display:block;font-size:17px;margin-bottom:2px}
+.pm-ap-s span{font-size:14.5px;line-height:1.5;color:rgba(255,255,255,.84)}
+.pm-consent{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;font-size:13.5px;line-height:1.5;color:var(--soft);cursor:pointer}
+.pm-consent input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--purple)}
+.pm-consent a{color:var(--purple);font-weight:600}
+.pm-err{font-size:14px;color:#b3261e}
+.pm-sent{padding:40px;border-radius:20px;background:#fff;color:var(--ink)}
+.pm-sent .anton{font-size:32px;text-transform:uppercase;color:var(--purple);margin-bottom:10px}
+.k-form select{font:400 15.5px Inter,sans-serif;padding:14px 16px;border:0;border-radius:10px;background:var(--beige);color:var(--ink)}
+@media(max-width:1100px){.pm-yr{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:960px){.pm-af,.pm-lh,.pm-adv,.pm-ap{grid-template-columns:1fr;gap:28px}.pm-label{padding:26px 22px}.pm-badge{width:96px;height:96px}}
+@media(max-width:600px){.pm-yr{grid-template-columns:1fr}.pm-sw button{padding:10px 14px;font-size:13.5px}}
 </style>
 <link rel="stylesheet" href="/site/mobile.css?v=b8a2c9b5">
 </head>
@@ -179,7 +263,7 @@
       <div class="pm-chips" data-reveal data-delay="90"><span class="k-badge">Limited number of places</span><span class="k-badge">Price on request</span></div>
       <p class="k-lead" data-reveal data-delay="120">A vacancy fills a position. A partnership makes sure junior talent already knows you before that vacancy exists.</p>
       <div class="k-cta-row" data-reveal data-delay="180">
-        <a class="k-btn" href="https://calendly.com/wieke-voids/introduction" target="_blank" rel="noopener">Talk to us about partnerships</a>
+        <a class="k-btn" href="#aanmelden">Apply as a partner</a>
         <a class="k-btn ghost" href="#verhaal" style="color:var(--purple)">How it works</a>
       </div>
     </div>
@@ -256,104 +340,143 @@
 </section>
 
 <!-- 4 wat je krijgt -->
-<section class="k-sec k-beige">
+<section class="k-sec k-beige pm-goal" data-mode="b" id="aanbod">
   <div class="k-wrap">
     <div class="k-head">
       <span class="k-eyebrow" data-reveal>What you get</span>
       <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Four things a vacancy can't buy.</h2>
       <p class="k-lead" data-reveal data-delay="120">We are still building part of the offer. What isn't available yet is marked 'being built'.</p>
     </div>
+    <div class="pm-sw-row" data-reveal>
+      <span class="pm-sw-l">I mainly want to</span>
+      <div class="pm-sw" role="group" aria-label="Choose your goal">
+        <button type="button" data-m="v" aria-pressed="false">Become visible</button>
+        <button type="button" data-m="i" aria-pressed="false">Make an impact</button>
+        <button type="button" data-m="b" aria-pressed="true">Both</button>
+      </div>
+      <p class="pm-sw-msg" aria-live="polite"><span data-m="b">Choose what matters most to you and we'll highlight what goes with it.</span><span data-m="v">Visibility: you become known and believed among students you can't reach yourself.</span><span data-m="i">Impact: you show that you offer paid work experience and widen access to it.</span></p>
+    </div>
     <div class="pm-bento">
-      <article class="pm-b p w7" data-reveal>
+      <article class="pm-b p w7" data-g="v" data-reveal>
         <div><h3>Being known</h3><p>Students know you exist, what you do and what work there is. Your next vacancy gets responses from people who already have an impression of you, instead of people seeing your name for the first time.</p></div>
-        <div class="chips"><span class="chip">Featured in the VOIDS community</span><span class="chip">Vacancies included</span></div>
+        <div class="chips"><span class="chip" data-g="v">Featured in the VOIDS community</span><span class="chip" data-g="v">Vacancies included</span></div>
       </article>
-      <article class="pm-b f w5" data-reveal data-delay="80">
-        <img src="/photography/hg-20-c.jpg" alt="" style="object-position:50% 40%" loading="lazy"><div><h3>Being believed</h3><p>A vacancy text says what a company thinks of itself. A working student telling you what it's like, or an afternoon at the office, shows what it's really like.</p></div>
-        <div class="chips"><span class="chip">Portrait of a working student or junior</span><span class="chip">A look behind the scenes <em>Being built</em></span><span class="chip">VOIDS events <em>Being built</em></span></div>
+      <article class="pm-b f w5" data-g="v" data-reveal data-delay="80">
+        <img src="/photography/hg-20-c.jpg" alt="" style="object-position:50% 12%" loading="lazy"><div><h3>Being believed</h3><p>A vacancy text says what a company thinks of itself. A working student telling you what it's like, or an afternoon at the office, shows what it's really like.</p></div>
+        <div class="chips"><span class="chip" data-g="v">Portrait of a working student or junior</span><span class="chip" data-g="v">A look behind the scenes <em>Being built</em></span><span class="chip" data-g="v">VOIDS events <em>Being built</em></span></div>
       </article>
-      <article class="pm-b s w5" data-reveal>
+      <article class="pm-b s w5" data-g="v" data-reveal>
         <div><h3>Knowing what they look for</h3><p>You hear what appeals to students and where they drop off, and adapt your vacancies, terms and way of working accordingly. That makes you a better employer for junior talent, not just a more visible one.</p></div>
-        <div class="chips"><span class="chip">Feedback on your vacancy texts</span><span class="chip">Student panel <em>Being built</em></span></div>
+        <div class="chips"><span class="chip" data-g="v">Feedback on your vacancy texts</span><span class="chip" data-g="v">Student panel <em>Being built</em></span></div>
       </article>
-      <article class="pm-b z w7" data-reveal data-delay="80">
+      <article class="pm-b z w7" data-g="i" data-reveal data-delay="80">
         <div><h3>Standing for something</h3><p>Partners offer paid work experience and widen access to it. That is a message you can't buy with a vacancy.</p></div>
-        <div class="chips"><span class="chip">Partner label</span><span class="chip">Impact report <em>Being built</em></span></div>
+        <div class="chips"><span class="chip" data-g="i">Partner label</span><span class="chip" data-g="i">Impact report <em>Being built</em></span></div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- 5 advies voor partners -->
-<section class="k-sec k-white">
+<!-- 4b jaar -->
+<section class="k-sec k-white pm-goal" data-mode="b" id="jaar">
   <div class="k-wrap">
     <div class="k-head">
-      <span class="k-eyebrow" data-reveal>For partners</span>
-      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Advice for partners.</h2>
-      <p class="k-lead" data-reveal data-delay="120">Partners can come to us for advice on attracting, hiring and retaining junior talent, from a tailored programme to in-house days. We don't offer this separately: it is part of the partnership.</p>
+      <span class="k-eyebrow" data-reveal>What a year looks like</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">A steady rhythm instead of a one-off campaign.</h2>
+      <p class="k-lead" data-reveal data-delay="120">Your partnership runs for a year, in four quarters. That keeps you visible to students, even when you have no vacancy.</p>
     </div>
-    <div class="eb-formats">
-      <div class="k-photo" data-reveal><img src="/photography/employer-branding-formats.jpg" alt="VOIDS at work in the office"></div>
-      <div class="eb-fgrid">
-        <div class="k-tile" data-reveal>
-          <span class="ic"><svg viewbox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 11a8 8 0 1 1 3.2 6.4L3 18.5l1.1-3.3A7.96 7.96 0 0 1 3 11Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path><path d="M7.5 11h7M7.5 8h5M7.5 14h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></span>
-          <h3 class="k-h3">Tailored advice</h3>
-          <p class="k-p">A programme to attract, hire and retain junior talent, tailored to your organisation.</p></div>
-        <div class="k-tile sky" data-reveal data-delay="60">
-          <span class="ic b"><svg viewbox="0 0 22 22" fill="none" aria-hidden="true"><path d="M4 20V9L11 3l7 6v11" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path><path d="M8.5 20v-6h5v6" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path></svg></span>
-          <h3 class="k-h3 b-t">In-house days</h3>
-          <p class="k-p">On set days, a VOIDS recruiter works on location with your team: coordinating directly with the managers who hire, sourcing and interviewing, without delays between two offices.</p></div>
-        <div class="k-tile" data-reveal data-delay="120">
-          <span class="ic"><svg viewbox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="8" cy="6" r="2.6" stroke="currentColor" stroke-width="1.6"></circle><circle cx="16" cy="8" r="2.1" stroke="currentColor" stroke-width="1.6"></circle><path d="M2.5 19c0-3.6 2.6-6 5.5-6s5.5 2.4 5.5 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path><path d="M14.5 13.3c2.4.3 4 2.5 4 5.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></span>
-          <h3 class="k-h3">Trainings &amp; workshops</h3>
-          <p class="k-p">Practical sessions for teams and managers, for example on onboarding and retaining junior talent.</p></div>
-        <div class="k-tile sky" data-reveal data-delay="180">
-          <span class="ic b"><svg viewbox="0 0 22 22" fill="none" aria-hidden="true"><path d="M5 3v6a3 3 0 0 0 3 3v9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 3v6M8 3v6M11 3v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path><path d="M17 3v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path><ellipse cx="17" cy="4.6" rx="2.2" ry="3.3" stroke="currentColor" stroke-width="1.5"></ellipse><path d="M17 11v10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg></span>
-          <h3 class="k-h3 b-t">Community events</h3>
-          <p class="k-p">We organise meet-ups like talent dinners and lunches, where companies and junior talent meet informally.</p></div>
+    <div class="pm-yr" id="yr">
+      <div class="pm-q" data-reveal><span class="pm-qn" data-n="1">Quarter 1</span><h3>Getting started</h3><ul><li>Introduction and intake</li><li data-g="v">Interview for your portrait</li><li data-g="v">Your vacancies are in the community</li><li data-g="i">Partner label active</li></ul></div>
+      <div class="pm-q" data-reveal data-delay="80"><span class="pm-qn" data-n="2">Quarter 2</span><h3>Visible</h3><ul><li data-g="v">Your portrait goes live in the community</li><li data-g="v">Feedback on your vacancy texts</li></ul></div>
+      <div class="pm-q" data-reveal data-delay="160"><span class="pm-qn" data-n="3">Quarter 3</span><h3>Meeting</h3><ul><li data-g="v">VOIDS event or look behind the scenes <em>Being built</em></li><li data-g="v">Student panel <em>Being built</em></li></ul></div>
+      <div class="pm-q" data-reveal data-delay="240"><span class="pm-qn" data-n="4">Quarter 4</span><h3>Review</h3><ul><li data-g="i">Impact report <em>Being built</em></li><li>Evaluation and renewal</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 afspraken + partnerlabel -->
+<section class="k-sec k-lav">
+  <div class="k-wrap">
+    <div class="k-head">
+      <span class="k-eyebrow" data-reveal>Agreements</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">What we ask and what you get.</h2>
+      <p class="k-lead" data-reveal data-delay="120">A partnership only works if it means something to students. That's why we set a few conditions and are open about them.</p>
+    </div>
+    <div class="pm-af">
+      <div class="pm-label" data-reveal>
+        <div class="pm-label-top"><div><span class="k-eyebrow">The partner label</span><h3>What you do as a partner.</h3></div><div class="pm-badge" aria-hidden="true"><span><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"></path></svg></span><b>VOIDS partner</b><i>Example</i></div></div>
+        <ul><li><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"></path></svg><span>You offer paid work experience: working students earn €17 to €22 per hour.</span></li><li><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"></path></svg><span>You show what it's like to work with you, for example with a portrait.</span></li><li><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"></path></svg><span>You are open to feedback from students on your vacancies.</span></li><li><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"></path></svg><span>You make access to work experience broader.</span></li></ul>
+      </div>
+      <div class="pm-af-r">
+        <div class="k-tile white" data-reveal data-delay="80"><h3 class="k-h3">A limited number of partners</h3><p class="k-p">We work with a limited number of partners at a time, so you stay visible and don't disappear in a long list.</p></div>
+        <div class="k-tile white" data-reveal data-delay="160"><h3 class="k-h3">Annual membership</h3><p class="k-p">A partnership runs per year. We discuss the price in a conversation.</p></div>
+        <div class="k-tile white" data-reveal data-delay="240"><h3 class="k-h3">Building together</h3><p class="k-p">Partners who join now help shape events and formats, get a more favourable rate and are first in line.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 6 wat we vragen -->
-<section class="k-sec k-lav">
+<!-- 7 logos -->
+<section class="k-sec tight k-white pm-logos">
+  <div class="k-wrap">
+    <div class="pm-lh" data-reveal><h2 class="k-h2 sv-h2" style="margin:0">Already working with us.</h2><p class="k-p">Employers we recruit for. They are not partners, but they show who we work with.</p></div>
+  </div>
+  <div class="pm-lrow"><div class="pm-ltrack"><span class="lt"><img src="/logos/joulz.svg" alt="Joulz"></span><span class="lt"><img src="/logos/hubby.svg" alt="Hubby"></span><span class="lt"><img src="/logos/van-oort-van-oort.png" alt="Van Oort & Van Oort"></span><span class="lt"><img src="/logos/de-kiesmannen.svg" alt="De Kiesmannen"></span><span class="lt"><img src="/logos/relive.svg" alt="Relive"></span><span class="lt"><img src="/logos/writify.png" alt="Writify"></span><span class="lt"><img src="/logos/structural-collective.png" alt="Structural Collective"></span><span class="lt"><img src="/logos/onestone.png" alt="Onestone"></span><span class="lt"><img src="/logos/mg.svg" alt="M&G"></span><span class="lt"><img src="/logos/dropp.png" alt="Dropp"></span><span class="lt"><img src="/logos/mila-health.png" alt="Mila Health"></span><span class="lt"><img src="/logos/hotelplanner.png" alt="HotelPlanner"></span><span class="lt"><img src="/logos/meute.svg" alt="Meute"></span><span class="lt"><img src="/logos/wepartynow.svg" alt="WePartyNow"></span><span class="lt"><img src="/logos/stuwr.svg" alt="Stuwr"></span><span class="lt"><img src="/logos/cribconnects.jpg" alt="CribConnects"></span><span class="lt"><img src="/logos/de-huismeesters.png" alt="De Huismeesters"></span><span class="lt"><img src="/logos/go-delphi.png" alt="Go Delphi"></span><span class="lt"><img src="/logos/masterjecijfers.png" alt="#MasterJeCijfers"></span><span class="lt"><img src="/logos/monsterscore.png" alt="Monsterscore"></span><span class="lt"><img src="/logos/house-of-inclusion.svg" alt="House of Inclusion"></span><span class="lt"><img src="/logos/the-cirqle.png" alt="The Cirqle"></span><span class="lt"><img src="/logos/check-and-charge.svg" alt="Check and Charge"></span><span class="lt"><img src="/logos/enerzien.png" alt="Enerzien"></span><span class="lt"><img src="/logos/bit.svg" alt="Bit"></span><span class="lt"><img src="/logos/green-team.png" alt="Green Team"></span><span class="lt"><img src="/logos/doing-goods.svg" alt="Doing Goods"></span><span class="lt"><img src="/logos/the-longevity-store.svg" alt="The Longevity Store"></span><span class="lt"><img src="/logos/joulz.svg" alt="Joulz"></span><span class="lt"><img src="/logos/hubby.svg" alt="Hubby"></span><span class="lt"><img src="/logos/van-oort-van-oort.png" alt="Van Oort & Van Oort"></span><span class="lt"><img src="/logos/de-kiesmannen.svg" alt="De Kiesmannen"></span><span class="lt"><img src="/logos/relive.svg" alt="Relive"></span><span class="lt"><img src="/logos/writify.png" alt="Writify"></span><span class="lt"><img src="/logos/structural-collective.png" alt="Structural Collective"></span><span class="lt"><img src="/logos/onestone.png" alt="Onestone"></span><span class="lt"><img src="/logos/mg.svg" alt="M&G"></span><span class="lt"><img src="/logos/dropp.png" alt="Dropp"></span><span class="lt"><img src="/logos/mila-health.png" alt="Mila Health"></span><span class="lt"><img src="/logos/hotelplanner.png" alt="HotelPlanner"></span><span class="lt"><img src="/logos/meute.svg" alt="Meute"></span><span class="lt"><img src="/logos/wepartynow.svg" alt="WePartyNow"></span><span class="lt"><img src="/logos/stuwr.svg" alt="Stuwr"></span><span class="lt"><img src="/logos/cribconnects.jpg" alt="CribConnects"></span><span class="lt"><img src="/logos/de-huismeesters.png" alt="De Huismeesters"></span><span class="lt"><img src="/logos/go-delphi.png" alt="Go Delphi"></span><span class="lt"><img src="/logos/masterjecijfers.png" alt="#MasterJeCijfers"></span><span class="lt"><img src="/logos/monsterscore.png" alt="Monsterscore"></span><span class="lt"><img src="/logos/house-of-inclusion.svg" alt="House of Inclusion"></span><span class="lt"><img src="/logos/the-cirqle.png" alt="The Cirqle"></span><span class="lt"><img src="/logos/check-and-charge.svg" alt="Check and Charge"></span><span class="lt"><img src="/logos/enerzien.png" alt="Enerzien"></span><span class="lt"><img src="/logos/bit.svg" alt="Bit"></span><span class="lt"><img src="/logos/green-team.png" alt="Green Team"></span><span class="lt"><img src="/logos/doing-goods.svg" alt="Doing Goods"></span><span class="lt"><img src="/logos/the-longevity-store.svg" alt="The Longevity Store"></span></div></div>
+</section>
+
+<!-- 8 advies strip -->
+<section class="k-sec tight k-beige">
+  <div class="k-wrap pm-adv">
+    <div data-reveal><span class="k-eyebrow">For partners</span><p class="k-lead" style="margin-top:12px">We don't offer advice on attracting, hiring and retaining junior talent separately. It is part of your partnership.</p></div>
+    <div class="pm-adv-c" data-reveal data-delay="80"><span class="k-badge">Tailored advice</span><span class="k-badge">In-house days</span><span class="k-badge">Training &amp; workshops</span><span class="k-badge">Community events</span></div>
+  </div>
+</section>
+
+<!-- 9 faq -->
+<section class="k-sec k-white" id="faq">
   <div class="k-wrap">
     <div class="k-head">
-      <span class="k-eyebrow" data-reveal>Afspraken</span>
-      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">What we ask of you.</h2>
-      <p class="k-lead" data-reveal data-delay="120">A partnership only works if it means something to students. That's why we set a few conditions.</p>
+      <span class="k-eyebrow" data-reveal>Frequently asked questions</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">What you probably want to know.</h2>
     </div>
-    <div class="pm-ask">
-      <div class="k-tile purple" data-reveal><div class="big">€17 to €22</div><div class="per">per hour</div><h3 class="k-h3" style="color:#fff">Paid work</h3><p class="k-p">Partners offer paid work experience. Working students earn €17 to €22 per hour with them. That's why the partner label means something.</p></div>
-      <div class="k-tile white" data-reveal data-delay="80"><h3 class="k-h3">A limited number of partners</h3><p class="k-p">We work with a limited number of partners at a time, so you stay visible and don't disappear in a long list.</p></div>
-      <div class="k-tile white" data-reveal data-delay="160"><h3 class="k-h3">Annual membership</h3><p class="k-p">A partnership runs per year. We discuss the price in a conversation.</p></div>
-      <div class="k-tile white" data-reveal data-delay="240"><h3 class="k-h3">Building together</h3><p class="k-p">Partners who join now help shape events and formats, get a more favourable rate and are first in line.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 7 blog -->
-<section class="k-sec k-white k-blogrow">
-  <div class="k-wrap">
-    <div class="k-head" data-reveal><h2 class="k-h2" style="margin-top:0">KEEP BUILDING YOUR BRAND.</h2><p class="k-lead">Further reading on employer branding, onboarding and diversity in junior recruitment.</p></div>
-    <div class="br-grid">
-      <a class="br-card" href="/en/blog/employer-branding-voor-gen-z" data-reveal data-delay="0"><div class="br-ph"><img src="/photography/mariselle-1.jpg" alt="" style="object-position:50% 40%" loading="lazy"></div><div class="br-tx"><span class="br-m">6 min</span><h3>Employer branding for Gen Z: what does this generation actually look for?</h3><span class="br-go">Read the article →</span></div></a>
-      <a class="br-card" href="/en/blog/werkstudent-onboarden-eerste-maand" data-reveal data-delay="100"><div class="br-ph"><img src="/photography/mariselle-4.jpg" alt="" style="object-position:50% 45%" loading="lazy"></div><div class="br-tx"><span class="br-m">7 min</span><h3>How to onboard a working student well in the first month</h3><span class="br-go">Read the article →</span></div></a>
-      <a class="br-card" href="/en/blog/diversiteit-in-junior-recruitment" data-reveal data-delay="200"><div class="br-ph"><img src="/photography/mariselle-5-c.jpg" alt="" style="object-position:50% 40%" loading="lazy"></div><div class="br-tx"><span class="br-m">6 min</span><h3>Diversity in junior recruitment: how do you stop attracting the same candidates every time?</h3><span class="br-go">Read the article →</span></div></a>
+    <div class="pm-faq" data-reveal>
+      <details><summary>What does a partnership cost?</summary><p>A partnership is an annual membership. We discuss the price in a conversation.</p></details>
+      <details><summary>What does it ask of my team?</summary><p>An introduction, an interview for your portrait and a short check-in each quarter. We take care of the rest.</p></details>
+      <details><summary>How long does it run?</summary><p>One year, in four quarters.</p></details>
+      <details><summary>What if I already have a vacancy?</summary><p>We'll post it for you: vacancies are included. If you want us to find the candidate, recruitment &amp; selection is a separate service.</p></details>
+      <details><summary>Can anyone become a partner?</summary><p>No. We work with a limited number of partners at a time and look together with you whether it fits, for example your sector, your size and whether you offer paid work experience.</p></details>
+      <details><summary>Do partners pay for a place in your selection?</summary><p>No. Partners pay for visibility and access to the community. Our recruitment &amp; selection stays based on who fits the role best.</p></details>
     </div>
   </div>
 </section>
 
-<section class="k-cta eb-cta">
+<!-- 10 aanmelden -->
+<section class="k-sec k-purple" id="aanmelden" style="scroll-margin-top:70px">
   <div class="k-wrap">
-    <div>
-      <h2 class="k-h2" data-reveal>Does a partnership fit your organisation?</h2>
-      <p data-reveal data-delay="80">A partnership starts with a conversation. We'd love to tell you more.</p>
+    <div class="k-head">
+      <span class="k-eyebrow" data-reveal>Apply</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Apply as a partner.</h2>
+      <p class="k-lead" data-reveal data-delay="120">We work with a limited number of partners at a time. Tell us briefly who you are and we'll see together whether it fits.</p>
     </div>
-    <div class="btns" data-reveal data-delay="120">
-      <a class="k-btn outline" href="/en/about#contact">Request more info</a>
-      <a class="k-btn dark" href="https://calendly.com/wieke-voids/introduction" target="_blank" rel="noopener">Book an intro call</a>
+    <div class="pm-ap">
+      <ol class="pm-ap-s" data-reveal>
+        <li><i>1</i><div><b>You apply</b><span>Two minutes of work: who you are and what you're looking for.</span></div></li>
+        <li><i>2</i><div><b>We get in touch</b><span>For an introduction and intake.</span></div></li>
+        <li><i>3</i><div><b>We see together if it fits</b><span>If it fits, we start your partnership.</span></div></li>
+      </ol>
+      <div data-reveal data-delay="100">
+        <form class="k-form" id="pform" novalidate>
+          <div class="k-row2"><label class="k-field">Name<input name="name" autocomplete="name" required></label><label class="k-field">Company<input name="company" autocomplete="organization" required></label></div>
+          <div class="k-row2"><label class="k-field">Email<input name="email" type="email" autocomplete="email" required></label><label class="k-field">Sector<input name="sector"></label></div>
+          <div class="k-row2"><label class="k-field">Number of employees<select name="size"><option value="">Choose</option><option>1 to 10</option><option>11 to 50</option><option>51 to 250</option><option>250+</option></select></label><label class="k-field">Juniors or working students now<select name="juniors"><option value="">Choose</option><option>None yet</option><option>1 to 5</option><option>6 to 20</option><option>20+</option></select></label></div>
+          <label class="k-field">What do you mainly want<select name="goal"><option value="">Choose</option><option>Become visible</option><option>Make an impact</option><option>Both</option></select></label>
+          <label class="k-field">Notes (optional)<textarea name="note" rows="3"></textarea></label>
+          <label class="pm-consent"><input type="checkbox" name="consent" required><span>I have read the <a href="/en/privacy" target="_blank" rel="noopener">privacy policy</a> and give VOIDS permission to use my details to contact me about a partnership.</span></label>
+          <p class="pm-err" role="alert" hidden>Something went wrong while sending. Try again, or email us directly at contact@voids.agency.</p>
+          <button class="k-btn" type="submit" data-sending="Sending…">Send application</button>
+        </form>
+        <div class="pm-sent" role="status" aria-live="polite" hidden><div class="anton">Application sent.</div><p>Thank you. We'll get in touch with you shortly.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -388,6 +511,23 @@
     var top=sc.getBoundingClientRect().top+scrollY-(parseFloat(getComputedStyle(pin).top)||hh()),span=sc.offsetHeight-pin.offsetHeight;
     scrollTo({top:top+span*((i+.5)/3)});
   })});
+})();
+
+(function(){
+  var secs=[].slice.call(document.querySelectorAll('.pm-goal'));
+  function setMode(m){secs.forEach(function(x){x.setAttribute('data-mode',m)});[].slice.call(document.querySelectorAll('.pm-sw button')).forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-m')===m?'true':'false')})}
+  [].slice.call(document.querySelectorAll('.pm-sw button')).forEach(function(b){b.addEventListener('click',function(){setMode(b.getAttribute('data-m'))})});
+  var f=document.getElementById('pform');if(!f)return;
+  var sent=document.querySelector('.pm-sent'),err=f.querySelector('.pm-err');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){f.reportValidity();return}
+    var b=f.querySelector('[type=submit]'),label=b.textContent,d=new FormData(f);
+    b.disabled=true;b.textContent=b.getAttribute('data-sending')||label;err.hidden=true;
+    fetch('/api/partner-request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:d.get('name'),company:d.get('company'),email:d.get('email'),sector:d.get('sector'),size:d.get('size'),juniors:d.get('juniors'),goal:d.get('goal'),note:d.get('note'),consent:!!d.get('consent')})})
+      .then(function(r){if(!r.ok)throw 0;f.hidden=true;sent.hidden=false})
+      .catch(function(){err.hidden=false;b.disabled=false;b.textContent=label});
+  });
 })();
 </script>
 </body>
