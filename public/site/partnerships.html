@@ -250,38 +250,35 @@
 @media(max-width:600px){.pm-yr{grid-template-columns:1fr}.pm-sw button{padding:10px 14px;font-size:13.5px}}
 .pm-opts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:stretch}@media(max-width:1100px){.pm-opts{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.pm-opts{grid-template-columns:1fr}}.pm-opts+.pm-note{margin-top:28px;font-size:15.5px;line-height:1.65;color:var(--soft)}.pm-opts .k-tile{padding:28px}.pm-opts .k-h3{font-family:Inter,sans-serif;font-size:22px;color:var(--purple);font-weight:600;letter-spacing:-.01em;text-transform:none}.pm-opts .k-tile.sky .k-h3{color:var(--blue-700)}.pm-opts .ic{width:48px;height:48px;border-radius:50%;background:#fff;color:var(--purple);display:grid;place-items:center;margin-bottom:18px}.pm-opts .ic svg{width:24px;height:24px}.pm-opts .k-tile.sky .ic{color:var(--blue-700)}.pm-bd{align-self:flex-start;margin-top:auto;background:#fff!important}.pm-opts .k-p{margin-bottom:18px}
 
-/* junior-traject: four stages, the active one opens up */
-.pm-jr{display:flex;gap:14px;align-items:stretch;min-height:440px}
-.pm-jp{position:relative;flex:1 1 0;min-width:0;display:flex;flex-direction:column;padding:28px;border-radius:26px;overflow:hidden;cursor:pointer;outline:none;transition:flex-grow .6s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
-.pm-jp.on{flex-grow:3.4;cursor:default}
-.pm-jp:focus-visible{box-shadow:0 0 0 3px var(--blue)}
-.pm-jp.p{background:var(--purple);color:#fff}.pm-jp.s{background:var(--blue-100)}.pm-jp.l{background:var(--purple-100)}.pm-jp.z{background:var(--beige-2)}
-.pm-jp .n{font-family:Anton,"Arial Narrow",sans-serif;font-size:15px;letter-spacing:.06em;opacity:.6}
-.pm-jp h3{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(22px,2.1vw,32px);line-height:1.05;text-transform:uppercase;letter-spacing:0;margin:8px 0 10px}
-.pm-jp.s h3{color:var(--blue-700)}.pm-jp.l h3,.pm-jp.z h3{color:var(--purple)}
-.pm-jp .s{font-size:16px;line-height:1.5;max-width:30em;opacity:.92}
-.pm-jp.s>.s,.pm-jp.l>.s,.pm-jp.z>.s{color:var(--soft)}
-.pm-jp ul{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px;opacity:0;transform:translateY(14px);transition:opacity .4s,transform .5s cubic-bezier(.2,.8,.2,1);pointer-events:none}
-.pm-jp.on ul{opacity:1;transform:none;transition-delay:.18s;pointer-events:auto}
-.pm-jp li{padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.92);color:var(--ink);font-size:14px;line-height:1.4}
-.pm-jp.p li{background:rgba(255,255,255,.14);color:#fff}
-.pm-jp li b{display:block;font-size:15px;color:var(--purple);margin-bottom:2px}
-.pm-jp.p li b{color:#fff}.pm-jp.s li b{color:var(--blue-700)}
-.pm-jp li span{color:var(--soft)}.pm-jp.p li span{color:rgba(255,255,255,.86)}
-.pm-jp li em{font-style:normal;margin-left:6px;padding:2px 8px;border-radius:99px;background:var(--purple-100);color:var(--purple);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
-.pm-jp.p li em{background:rgba(255,255,255,.22);color:#fff}
-.pm-jp:not(.on) .s{display:none}
-.pm-jp:not(.on)::after{content:"+";margin-top:auto;width:38px;height:38px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:20px;color:var(--purple);transition:transform .3s}
-.pm-jp:not(.on):hover::after{transform:rotate(90deg)}
-.pm-jr+.pm-note{margin-top:26px;font-size:15.5px;color:var(--soft)}
-@media(max-width:960px){
-  .pm-jr{flex-direction:column;min-height:0}
-  .pm-jp,.pm-jp.on{flex:none;cursor:default}
-  .pm-jp:not(.on) .s{display:block}
-  .pm-jp:not(.on)::after{display:none}
-  .pm-jp ul,.pm-jp.on ul{opacity:1;transform:none;pointer-events:auto;grid-template-columns:1fr}
-}
-@media(prefers-reduced-motion:reduce){.pm-jp,.pm-jp ul{transition:none}}
+
+
+/* idea wall: tap what appeals to you */
+.pm-wall{display:grid;gap:14px}
+.pm-wg{display:grid;grid-template-columns:minmax(220px,.26fr) minmax(0,.74fr);gap:28px;align-items:center;padding:28px 30px;border-radius:26px}
+.pm-wg.p{background:var(--purple);color:#fff}.pm-wg.s{background:var(--blue-100)}.pm-wg.l{background:var(--purple-100)}.pm-wg.z{background:var(--beige-2)}
+.pm-wh .n{font-family:Anton,"Arial Narrow",sans-serif;font-size:15px;letter-spacing:.06em;opacity:.6}
+.pm-wh h3{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(24px,2.3vw,34px);line-height:1.05;text-transform:uppercase;letter-spacing:0;margin:6px 0 8px}
+.pm-wg.s h3{color:var(--blue-700)}.pm-wg.l h3,.pm-wg.z h3{color:var(--purple)}
+.pm-wh p{font-size:15px;line-height:1.5;color:var(--soft)}.pm-wg.p .pm-wh p{color:rgba(255,255,255,.88)}
+.pm-wc{display:flex;flex-wrap:wrap;gap:9px}
+.pm-ch{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:0;border-radius:99px;background:#fff;color:var(--purple);font:600 14px/1.25 Inter,sans-serif;cursor:pointer;text-decoration:none;transition:transform .2s,background .25s,color .25s,box-shadow .25s}
+.pm-ch:hover{transform:translateY(-2px);box-shadow:0 10px 20px -12px rgba(20,8,90,.5)}
+.pm-ch:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.pm-ch em{font-style:normal;padding:2px 8px;border-radius:99px;background:var(--purple-100);color:var(--purple);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+.pm-ch[aria-pressed=true]{background:var(--ink);color:#fff}
+.pm-ch[aria-pressed=true]::before{content:"✓";font-size:13px}
+.pm-ch[aria-pressed=true] em{background:rgba(255,255,255,.2);color:#fff}
+.pm-wg.p .pm-ch[aria-pressed=false]{background:rgba(255,255,255,.16);color:#fff}
+.pm-wg.p .pm-ch[aria-pressed=false] em{background:rgba(255,255,255,.22);color:#fff}
+.pm-wg.p .pm-ch[aria-pressed=true]{background:#fff;color:var(--purple)}
+.pm-wg.p .pm-ch[aria-pressed=true] em{background:var(--purple-100);color:var(--purple)}
+.pm-ch.own{background:transparent;box-shadow:inset 0 0 0 1.5px var(--purple);border:0}
+.pm-tray{margin-top:18px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:center;padding:18px 22px;border-radius:20px;background:var(--ink);color:#fff}
+.pm-tr-t b{display:block;font-size:15px}
+.pm-tr-t span{font-size:13px;color:rgba(255,255,255,.7)}
+.pm-tr-l{display:flex;flex-wrap:wrap;gap:6px;min-height:20px}
+.pm-tr-l i{font-style:normal;padding:5px 11px;border-radius:99px;background:rgba(255,255,255,.14);font-size:12.5px;font-weight:600}
+@media(max-width:960px){.pm-wg{grid-template-columns:1fr;gap:16px;padding:24px 20px}.pm-tray{grid-template-columns:1fr}}
 </style>
 <link rel="stylesheet" href="/site/mobile.css?v=99e8c593">
 </head>
@@ -380,35 +377,31 @@
     <div class="k-head">
       <span class="k-eyebrow" data-reveal>Jouw partnership</span>
       <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Wij denken mee over je hele junior-traject.</h2>
-      <p class="k-lead" data-reveal data-delay="120">Als partner denken we volledig met je mee over junior talent aantrekken, werven, behouden en inzetten, op alle manieren die bij je organisatie passen. Eén onderdeel of het hele traject: jij bepaalt.</p>
+      <p class="k-lead" data-reveal data-delay="120">Als partner denken we volledig met je mee over junior talent aantrekken, werven, behouden en inzetten, op alle manieren die bij je organisatie passen. Een greep uit wat we samen kunnen doen: tik aan wat je aanspreekt, dan nemen we het mee in je aanmelding.</p>
     </div>
-    <div class="pm-jr" id="jr">
-      <article class="pm-jp p on" tabindex="0" data-i="0" data-reveal data-delay="0">
-        <span class="n">01</span>
-        <h3>Aantrekken</h3>
-        <p class="s">Studenten kennen je en willen bij je werken.</p>
-        <ul><li><b>Employer branding</b><span>Content en campagnes die studenten en starters aanspreken.</span></li><li><b>Portret van een werkstudent</b><span>Laat zien hoe het echt is om bij je te werken.</span></li><li><b>Uitgelicht in de community</b><span>Zichtbaar bij 4.000+ studenten en starters.</span></li><li><b>VOIDS-events</b><span>Ontmoetingen waar studenten je leren kennen.</span> <em>In opbouw</em></li></ul>
-      </article>
-      <article class="pm-jp s" tabindex="0" data-i="1" data-reveal data-delay="70">
-        <span class="n">02</span>
-        <h3>Werven</h3>
-        <p class="s">De juiste mensen vinden, ook doorlopend.</p>
-        <ul><li><b>Vacatures plaatsen en delen</b><span>Doorlopend, tegen een gunstiger tarief.</span></li><li><b>Werving &amp; selectie</b><span>Doorlopend, tegen een gunstiger tarief.</span></li><li><b>Inhouse dagen</b><span>Een VOIDS-recruiter op locatie bij je team.</span></li><li><b>Talentdiners en lunches</b><span>Informeel kennismaken met jong talent.</span></li></ul>
-      </article>
-      <article class="pm-jp l" tabindex="0" data-i="2" data-reveal data-delay="140">
-        <span class="n">03</span>
-        <h3>Behouden</h3>
-        <p class="s">Van een goede start een lange samenwerking maken.</p>
-        <ul><li><b>Onboarding</b><span>Sparren over een sterke start van junior talent.</span></li><li><b>Begeleiding</b><span>Zodat talent aanblijft en doorgroeit.</span></li><li><b>Trainingen &amp; workshops</b><span>Voor teams en leidinggevenden.</span></li><li><b>Feedback van studenten</b><span>Via een studentenpanel en een terugkoppeling per kwartaal.</span> <em>In opbouw</em></li></ul>
-      </article>
-      <article class="pm-jp z" tabindex="0" data-i="3" data-reveal data-delay="210">
-        <span class="n">04</span>
-        <h3>Inzetten</h3>
-        <p class="s">Er het meeste uit halen, met je hele team.</p>
-        <ul><li><b>Junior-strategie</b><span>Wanneer en hoe je een werkstudent, stagiair of starter inzet.</span></li><li><b>Functies en taken</b><span>Slim ingericht, zodat juniors echt waarde toevoegen.</span></li><li><b>Consultancy op maat</b><span>Een traject dat meegroeit met je team.</span></li><li><b>Een vast aanspreekpunt</b><span>Sparren wanneer jij dat nodig hebt.</span></li></ul>
-      </article>
+    <div class="pm-wall" id="wall">
+      <div class="pm-wg p" data-reveal>
+        <div class="pm-wh"><span class="n">01</span><h3>Aantrekken</h3><p>Studenten kennen je en willen bij je werken.</p></div>
+        <div class="pm-wc"><button type="button" class="pm-ch" aria-pressed="false" data-w="Employer branding op studentenmaat">Employer branding op studentenmaat</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Portretten van je werkstudenten">Portretten van je werkstudenten</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Uitgelicht in de community">Uitgelicht in de community</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Gastcolleges en lezingen">Gastcolleges en lezingen</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Samenwerken met studieverenigingen">Samenwerken met studieverenigingen</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Case challenges met studenten">Case challenges met studenten</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Talentdiners en lunches">Talentdiners en lunches</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Een eigen profiel op het jobboard">Een eigen profiel op het jobboard</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Vacatureteksten die aanspreken">Vacatureteksten die aanspreken</button><button type="button" class="pm-ch" aria-pressed="false" data-w="VOIDS-events">VOIDS-events <em>In opbouw</em></button></div>
+      </div>
+      <div class="pm-wg s" data-reveal>
+        <div class="pm-wh"><span class="n">02</span><h3>Werven</h3><p>De juiste mensen vinden, ook doorlopend.</p></div>
+        <div class="pm-wc"><button type="button" class="pm-ch" aria-pressed="false" data-w="Vacatures doorlopend plaatsen en delen">Vacatures doorlopend plaatsen en delen <em>Gunstiger tarief</em></button><button type="button" class="pm-ch" aria-pressed="false" data-w="Werving & selectie, doorlopend">Werving &amp; selectie, doorlopend <em>Gunstiger tarief</em></button><button type="button" class="pm-ch" aria-pressed="false" data-w="Inhouse dagen met een VOIDS-recruiter">Inhouse dagen met een VOIDS-recruiter</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Proactieve voorstellen uit de talentpool">Proactieve voorstellen uit de talentpool</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Een selectie zonder vaste patronen">Een selectie zonder vaste patronen</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Matchen op cultuur en karakter">Matchen op cultuur en karakter</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Voorselectie en interviews voor je gedaan">Voorselectie en interviews voor je gedaan</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Naadloze vervanging als iemand stopt">Naadloze vervanging als iemand stopt</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Open sollicitaties van studenten die je al kennen">Open sollicitaties van studenten die je al kennen</button></div>
+      </div>
+      <div class="pm-wg l" data-reveal>
+        <div class="pm-wh"><span class="n">03</span><h3>Behouden</h3><p>Van een goede start een lange samenwerking maken.</p></div>
+        <div class="pm-wc"><button type="button" class="pm-ch" aria-pressed="false" data-w="Onboardingplan voor de eerste maand">Onboardingplan voor de eerste maand</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Een buddy- of mentorprogramma">Een buddy- of mentorprogramma</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Leidinggeven aan junior talent">Leidinggeven aan junior talent</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Workshops voor je team">Workshops voor je team</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Doorgroeipaden van werkstudent naar starter">Doorgroeipaden van werkstudent naar starter</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Eerlijke afspraken over uren, tarief en contract">Eerlijke afspraken over uren, tarief en contract</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Feedback van studenten via een studentenpanel">Feedback van studenten via een studentenpanel <em>In opbouw</em></button><button type="button" class="pm-ch" aria-pressed="false" data-w="Terugblik en evaluatie per kwartaal">Terugblik en evaluatie per kwartaal</button></div>
+      </div>
+      <div class="pm-wg z" data-reveal>
+        <div class="pm-wh"><span class="n">04</span><h3>Inzetten</h3><p>Er het meeste uit halen, met je hele team.</p></div>
+        <div class="pm-wc"><button type="button" class="pm-ch" aria-pressed="false" data-w="Junior-strategie: wanneer wie">Junior-strategie: wanneer wie</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Functies en taken inrichten">Functies en taken inrichten</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Je eerste junior aannemen">Je eerste junior aannemen</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Opschalen naar een tweede of derde werkstudent">Opschalen naar een tweede of derde werkstudent</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Kosten en begroting van junior capaciteit">Kosten en begroting van junior capaciteit</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Projecten waar juniors het verschil maken">Projecten waar juniors het verschil maken</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Consultancy op maat">Consultancy op maat</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Een vast aanspreekpunt">Een vast aanspreekpunt</button><a class="pm-ch own" href="#aanmelden">Of een eigen idee?</a></div>
+      </div>
     </div>
-    <p class="pm-note" data-reveal>Dit zijn voorbeelden. Welke manieren er voor jouw organisatie bij passen, bepalen we samen.</p>
+    <div class="pm-tray" id="tray" data-reveal>
+      <div class="pm-tr-t"><b>Jouw selectie</b><span id="trc">Nog niets gekozen</span></div>
+      <div class="pm-tr-l" id="trl"></div>
+      <a class="k-btn" href="#aanmelden">Bespreek dit met ons</a>
+    </div>
   </div>
 </section>
 
@@ -588,16 +581,26 @@
     if(!f.checkValidity()){f.reportValidity();return}
     var b=f.querySelector('[type=submit]'),label=b.textContent,d=new FormData(f);
     b.disabled=true;b.textContent=b.getAttribute('data-sending')||label;err.hidden=true;
-    fetch('/api/partner-request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:d.get('name'),company:d.get('company'),email:d.get('email'),sector:d.get('sector'),size:d.get('size'),juniors:d.get('juniors'),goal:d.get('goal'),note:d.get('note'),consent:!!d.get('consent')})})
+    fetch('/api/partner-request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:d.get('name'),company:d.get('company'),email:d.get('email'),sector:d.get('sector'),size:d.get('size'),juniors:d.get('juniors'),goal:d.get('goal'),note:((window.pmWishes&&window.pmWishes().length)?'Interesse in: '+window.pmWishes().join(', ')+'\n\n':'')+(d.get('note')||''),consent:!!d.get('consent')})})
       .then(function(r){if(!r.ok)throw 0;f.hidden=true;sent.hidden=false})
       .catch(function(){err.hidden=false;b.disabled=false;b.textContent=label});
   });
 })();
 
+
+
 (function(){
-  var ps=[].slice.call(document.querySelectorAll('.pm-jp'));if(!ps.length)return;
-  function on(i){ps.forEach(function(p,k){p.classList.toggle('on',k===i)})}
-  ps.forEach(function(p,i){p.addEventListener('mouseenter',function(){if(innerWidth>960)on(i)});p.addEventListener('click',function(){if(innerWidth>960)on(i)});p.addEventListener('focus',function(){if(innerWidth>960)on(i)})});
+  var chips=[].slice.call(document.querySelectorAll('.pm-ch[data-w]')),sel=[],trl=document.getElementById('trl'),trc=document.getElementById('trc');
+  window.pmWishes=function(){return sel.slice()};
+  function draw(){
+    trl.innerHTML='';sel.forEach(function(w){var i=document.createElement('i');i.textContent=w;trl.appendChild(i)});
+    var n=sel.length;trc.textContent=n?(n+(n===1?' gekozen':' gekozen')):'Nog niets gekozen';
+  }
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    var w=c.getAttribute('data-w'),i=sel.indexOf(w);
+    if(i>-1){sel.splice(i,1);c.setAttribute('aria-pressed','false')}else{sel.push(w);c.setAttribute('aria-pressed','true')}
+    draw();
+  })});
 })();
 </script>
 </body>
