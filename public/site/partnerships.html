@@ -27,7 +27,7 @@
 <!--/seo-->
 <meta name="description" content="Een vacature vult een plek. Een partnership zorgt dat jong talent je al kent voordat die vacature er is.">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/site/kit.css?v=99e8c593">
+<link rel="stylesheet" href="/site/kit.css?v=0c627834">
 <style>
 /* page-local */
 .k-h1,.k-h2{text-transform:uppercase}
@@ -201,9 +201,9 @@
 .pm-label ul{list-style:none;padding:0;display:grid;gap:14px}
 .pm-label li{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;font-size:16px;line-height:1.5}
 .pm-label li svg{width:30px;height:30px;padding:6px;border-radius:50%;background:var(--purple-100);color:var(--purple)}
-.pm-badge{flex:none;display:grid;place-items:center;gap:4px;width:112px;height:112px;border-radius:50%;background:var(--purple);color:#fff;text-align:center;transform:rotate(-6deg);box-shadow:0 14px 28px -12px rgba(20,8,90,.5)}
+.pm-badge{flex:none;display:grid;place-items:center;align-content:center;gap:4px;width:120px;height:120px;padding:12px;border-radius:50%;background:var(--purple);color:#fff;text-align:center;transform:rotate(-6deg);box-shadow:0 14px 28px -12px rgba(20,8,90,.5)}
 .pm-badge span svg{width:26px;height:26px;color:#fff}
-.pm-badge b{font-size:11px;letter-spacing:.06em;text-transform:uppercase;line-height:1.1}
+.pm-badge b{max-width:84px;white-space:normal;text-align:center;font-size:11px;letter-spacing:.06em;text-transform:uppercase;line-height:1.1}
 .pm-badge i{font-style:normal;font-size:9.5px;font-weight:600;color:var(--purple-200);letter-spacing:.06em;text-transform:uppercase}
 .pm-af-r{display:grid;gap:18px;grid-template-rows:repeat(3,1fr)}
 .pm-af-r .k-tile{padding:26px 28px;justify-content:center}
@@ -279,8 +279,63 @@
 .pm-tr-l{display:flex;flex-wrap:wrap;gap:6px;min-height:20px}
 .pm-tr-l i{font-style:normal;padding:5px 11px;border-radius:99px;background:rgba(255,255,255,.14);font-size:12.5px;font-weight:600}
 @media(max-width:960px){.pm-wg{grid-template-columns:1fr;gap:16px;padding:24px 20px}.pm-tray{grid-template-columns:1fr}}
+
+/* reasons */
+.pm-rs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.pm-rs>button{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;padding:22px 24px;border:0;border-radius:22px;background:#fff;color:var(--ink);text-align:left;cursor:pointer;font:inherit;transition:background .3s,color .3s,transform .3s,box-shadow .3s}
+.pm-rs>button:hover{transform:translateY(-2px);box-shadow:0 14px 28px -16px rgba(20,8,90,.45)}
+.pm-rs>button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.pm-rs .ic{width:52px;height:52px;border-radius:50%;background:var(--purple-100);color:var(--purple);display:grid;place-items:center}
+.pm-rs .ic svg{width:26px;height:26px}
+.pm-rs .tx b{display:block;font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(22px,2vw,30px);line-height:1.05;text-transform:uppercase;color:var(--purple);margin-bottom:4px}
+.pm-rs .tx span{display:block;font-size:14.5px;line-height:1.45;color:var(--soft)}
+.pm-rs>button[aria-selected=true]{background:var(--purple);color:#fff}
+.pm-rs>button[aria-selected=true] .ic{background:rgba(255,255,255,.16);color:#fff}
+.pm-rs>button[aria-selected=true] .tx b{color:#fff}
+.pm-rs>button[aria-selected=true] .tx span{color:rgba(255,255,255,.88)}
+.pm-rp{display:none;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.pm-rp.on{display:grid;animation:pmfade .45s ease}
+@keyframes pmfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.pm-rc{display:flex;flex-direction:column;gap:14px;padding:22px;border-radius:20px;background:#fff}
+.pm-rc .ic{width:44px;height:44px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:grid;place-items:center}
+.pm-rc .ic svg{width:22px;height:22px}
+.pm-rc b{display:block;font-size:17px;line-height:1.2;margin-bottom:4px;color:var(--purple)}
+.pm-rc span{font-size:14.5px;line-height:1.5;color:var(--soft)}
+/* wall tabs */
+.pm-wt{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.pm-wt button{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border:0;border-radius:99px;background:var(--purple-100);color:var(--purple);font:700 14.5px Inter,sans-serif;cursor:pointer;transition:background .25s,color .25s}
+.pm-wt button i{font:400 14px Anton,sans-serif;font-style:normal;opacity:.65}
+.pm-wt button.on{background:var(--purple);color:#fff}
+.pm-wall{display:block}
+.pm-wg{display:none}
+.pm-wg.on{display:grid;animation:pmfade .45s ease}
+/* zo werkt het */
+.pm-zw{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;counter-reset:z}
+.pm-zw li{position:relative;display:grid;gap:6px;align-content:start;padding:22px;border-radius:20px;background:#fff}
+.pm-zw li i{font:400 22px Anton,sans-serif;font-style:normal;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--purple);color:#fff;margin-bottom:8px}
+.pm-zw li b{font-size:17px;color:var(--purple)}
+.pm-zw li span{font-size:14.5px;line-height:1.5;color:var(--soft)}
+.pm-zw li:not(:last-child)::after{content:"→";position:absolute;top:30px;right:-15px;z-index:2;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:14px}
+@media(max-width:1100px){.pm-rp,.pm-zw{grid-template-columns:repeat(2,minmax(0,1fr))}.pm-zw li::after{display:none}}
+@media(max-width:700px){.pm-rs{grid-template-columns:1fr}.pm-rp,.pm-zw{grid-template-columns:1fr}.pm-rs>button{padding:18px}}
+
+/* impact band */
+.pm-imp-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:center}
+.pm-imp-badge{position:relative;display:grid;justify-self:start;place-items:center;align-content:center;gap:3px;width:140px;height:140px;padding:14px;border-radius:50%;background:#fff;color:var(--purple);text-align:center;transform:rotate(-7deg);box-shadow:0 18px 34px -14px rgba(0,0,0,.5);margin-bottom:26px}
+.pm-imp-badge span svg{width:30px;height:30px}
+.pm-imp-badge b{font-size:11px;letter-spacing:.06em;text-transform:uppercase;line-height:1.1}
+.pm-imp-badge i{font-style:normal;font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-700)}
+.pm-imp .k-lead{max-width:30em}
+.pm-imp-r{display:grid;gap:12px}
+.pm-imp-r details{border-radius:18px;background:rgba(255,255,255,.1);overflow:hidden}
+.pm-imp-r summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;font-size:17px;font-weight:600;color:#fff}
+.pm-imp-r summary::-webkit-details-marker{display:none}
+.pm-imp-r summary::after{content:"+";flex:none;width:32px;height:32px;border-radius:50%;background:#fff;color:var(--purple);display:grid;place-items:center;font-size:18px;transition:transform .3s}
+.pm-imp-r details[open] summary::after{transform:rotate(45deg)}
+.pm-imp-r p{padding:0 24px 22px;font-size:15.5px;line-height:1.65;color:rgba(255,255,255,.88)}
+@media(max-width:960px){.pm-imp-g{grid-template-columns:1fr;gap:32px}}
 </style>
-<link rel="stylesheet" href="/site/mobile.css?v=99e8c593">
+<link rel="stylesheet" href="/site/mobile.css?v=0c627834">
 </head>
 <body data-nav="companies">
 <!--k-header--><header class="k-header" id="kh"><a class="k-logo" href="/"><img src="/logo.svg" alt="VOIDS"></a><nav class="k-nav"><a href="/talent" class="">Talent</a><span class="k-dd"><a href="/companies" class="on">Bedrijven &#9662;</a><span class="k-dd-menu"><a href="/companies/community-jobboard">Vacatures adverteren</a><a href="/companies/recruitment-selection">Werving &amp; selectie</a><a href="/companies/partnerships">Partnerships</a></span></span><a href="/impact" class="">Impact</a><a href="/about" class="">Over ons</a><a href="/blog" class="">Blog</a><a href="/jobboard" class="">Jobs</a></nav><span class="k-sp"></span><span class="k-lang"><b>NL</b><a href="/en/companies/partnerships">EN</a></span><a class="k-wa" href="https://linktr.ee/voidscommunity" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/></svg>WhatsApp</a><a class="k-hbtn" href="/about#contact">Contact</a><a class="k-hbtn p" href="/pager">Word lid van de talentpool</a><button class="k-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="k-mnav"><span class="k-bars" aria-hidden="true"><i></i><i></i></span></button><div class="k-mnav" id="k-mnav"><nav aria-label="Menu"><a class="k-mn" href="/talent">Talent</a><a class="k-mn on" href="/companies">Bedrijven</a><div class="k-mn-sub"><a href="/companies/community-jobboard">Vacatures adverteren</a><a href="/companies/recruitment-selection">Werving &amp; selectie</a><a href="/companies/partnerships">Partnerships</a></div><a class="k-mn" href="/impact">Impact</a><a class="k-mn" href="/about">Over ons</a><a class="k-mn" href="/blog">Blog</a><a class="k-mn" href="/jobboard">Jobs</a></nav><div class="k-mn-cta"><a class="k-btn" href="/pager">Word lid van de talentpool</a><a class="k-btn ghost" href="/about#contact">Contact</a><a class="k-mn-wa" href="https://linktr.ee/voidscommunity" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/></svg>WhatsApp</a></div></div></header><!--/k-header-->
@@ -291,7 +346,7 @@
     <div>
       <span class="k-eyebrow" data-reveal>Partnerships</span>
       <h1 class="k-h1" data-reveal data-delay="60">Gezien worden door talent<br><span class="k-accent">dat je zelf niet bereikt.</span></h1>
-      <div class="pm-chips" data-reveal data-delay="90"><span class="k-badge">Beperkt aantal plekken</span><span class="k-badge">Prijs op aanvraag</span></div>
+      <div class="pm-chips" data-reveal data-delay="90"><span class="k-badge">Beperkt aantal plekken</span></div>
       <p class="k-lead" data-reveal data-delay="120">Een vacature vult een plek. Een partnership zorgt dat jong talent je al kent voordat die vacature er is.</p>
       <div class="k-cta-row" data-reveal data-delay="180">
         <a class="k-btn" href="#aanmelden">Meld je aan als partner</a>
@@ -356,7 +411,7 @@
         </div>
         <div class="pm-s" data-i="1">
           <div class="bar"><span>Uitnodiging</span><span class="mo" style="font-size:22px">Juni</span></div>
-          <div class="pm-inv"><span class="s">Voor leden van de community <span class="pm-soon2">In opbouw</span></span><b>Een middag op kantoor bij [Bedrijfsnaam]</b><div class="chips"><i>Meelopen</i><i>Team ontmoeten</i><i>Vragen stellen</i></div><span class="go">Ik kom langs</span></div>
+          <div class="pm-inv"><span class="s">Voor leden van de community</span><b>Een middag op kantoor bij [Bedrijfsnaam]</b><div class="chips"><i>Meelopen</i><i>Team ontmoeten</i><i>Vragen stellen</i></div><span class="go">Ik kom langs</span></div>
           <div class="pm-quiet">Zelf zien hoe het is, zonder sollicitatie.</div>
         </div>
         <div class="pm-s" data-i="2">
@@ -366,7 +421,34 @@
           <div class="pm-quiet">Ze kent je al, dus het gesprek begint verder dan bij een vacature.</div>
         </div>
       </div></div>
-      <span class="pm-voor">Voorbeeld, geen bestaande partner</span>
+      <span class="pm-voor">Voorbeeld</span>
+    </div>
+  </div>
+</section>
+
+<!-- 4 waarom partner -->
+<section class="k-sec k-beige" id="aanbod">
+  <div class="k-wrap">
+    <div class="k-head">
+      <span class="k-eyebrow" data-reveal>Waarom partner</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Twee redenen om partner te worden.</h2>
+      <p class="k-lead" data-reveal data-delay="120">Kies waar je het meeste aan hebt. Allebei kan ook.</p>
+    </div>
+    <div class="pm-rs" role="tablist" data-reveal>
+      <button type="button" role="tab" class="on" data-r="v" aria-selected="true"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></svg></span><span class="tx"><b>Zichtbaar worden</b><span>Employer branding bij high-achieving studenten die je zelf niet bereikt.</span></span></button>
+      <button type="button" role="tab" data-r="i" aria-selected="false"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 7.6 4.2 4.2 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"/></svg></span><span class="tx"><b>Impact maken</b><span>Laat zien dat je voor gelijke kansen voor studenten staat.</span></span></button>
+    </div>
+    <div class="pm-rp on" data-r="v">
+      <div class="pm-rc"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v4h3l7 4V6L7 10H4Z"/><path d="M17.5 9.5a4 4 0 0 1 0 5"/></svg></span><div><b>Uitgelicht in de community</b><span>Een vaste plek bij 4.000+ studenten.</span></div></div>
+      <div class="pm-rc"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.8 3.1-6.2 7-6.2s7 2.4 7 6.2"/></svg></span><div><b>Portret van een werkstudent</b><span>Hoe het echt is om bij je te werken.</span></div></div>
+      <div class="pm-rc"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V9l8-6 8 6v11"/><path d="M9.5 20v-6h5v6"/></svg></span><div><b>Kijkje in de keuken</b><span>Studenten komen kennismaken.</span></div></div>
+      <div class="pm-rc"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 4v-4A2.5 2.5 0 0 1 4 13.5v-7Z"/><path d="M8.5 9h7M8.5 12h4"/></svg></span><div><b>Feedback van studenten</b><span>Op je vacatureteksten, vanuit studentperspectief.</span></div></div>
+    </div>
+    <div class="pm-rp" data-r="i">
+      <div class="pm-rc"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.3 3.1 7.9 7.5 9.5 4.4-1.6 7.5-5.2 7.5-9.5V6L12 3Z"/><path d="m8.8 12 2.4 2.4L15.5 10"/></svg></span><div><b>Partnerlabel</b><span>Het impactvinkje voor je werkgeversmerk.</span></div></div>
+      <div class="pm-rc"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.6A4.2 4.2 0 0 0 9 9.8M8.5 11h5.5M8.5 13.5h5.5M15.5 15.4A4.2 4.2 0 0 1 9 14.2"/></svg></span><div><b>Betaalde werkervaring</b><span>€17 tot €22 per uur voor je werkstudenten.</span></div></div>
+      <div class="pm-rc"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h12M11 6l6 6-6 6"/><path d="M19 4v16"/></svg></span><div><b>Toegang breder maken</b><span>Werkervaring voor studenten die er anders moeilijk aan komen.</span></div></div>
+      <div class="pm-rc"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V4h10l4 4v12H5Z"/><path d="M14.5 4v4.5H19M8.5 15v-2.5M12 15v-5M15.5 15v-3.5"/></svg></span><div><b>Impactrapportage</b><span>Wie je met je partnership bereikt.</span></div></div>
     </div>
   </div>
 </section>
@@ -377,22 +459,28 @@
     <div class="k-head">
       <span class="k-eyebrow" data-reveal>Jouw partnership</span>
       <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Wij denken mee over je hele junior-traject.</h2>
-      <p class="k-lead" data-reveal data-delay="120">Als partner denken we volledig met je mee over junior talent aantrekken, werven, behouden en inzetten, op alle manieren die bij je organisatie passen. Een greep uit wat we samen kunnen doen: tik aan wat je aanspreekt, dan nemen we het mee in je aanmelding.</p>
+      <p class="k-lead" data-reveal data-delay="120">Van aantrekken tot inzetten. Tik aan wat je aanspreekt, dan nemen we het mee in je aanmelding.</p>
+    </div>
+    <div class="pm-wt" role="tablist" data-reveal>
+      <button type="button" class="on" data-s="0"><i>01</i>Aantrekken</button>
+      <button type="button" data-s="1"><i>02</i>Werven</button>
+      <button type="button" data-s="2"><i>03</i>Behouden</button>
+      <button type="button" data-s="3"><i>04</i>Inzetten</button>
     </div>
     <div class="pm-wall" id="wall">
-      <div class="pm-wg p" data-reveal>
+      <div class="pm-wg p on">
         <div class="pm-wh"><span class="n">01</span><h3>Aantrekken</h3><p>Studenten kennen je en willen bij je werken.</p></div>
-        <div class="pm-wc"><button type="button" class="pm-ch" aria-pressed="false" data-w="Employer branding op studentenmaat">Employer branding op studentenmaat</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Portretten van je werkstudenten">Portretten van je werkstudenten</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Uitgelicht in de community">Uitgelicht in de community</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Gastcolleges en lezingen">Gastcolleges en lezingen</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Samenwerken met studieverenigingen">Samenwerken met studieverenigingen</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Case challenges met studenten">Case challenges met studenten</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Talentdiners en lunches">Talentdiners en lunches</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Een eigen profiel op het jobboard">Een eigen profiel op het jobboard</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Vacatureteksten die aanspreken">Vacatureteksten die aanspreken</button><button type="button" class="pm-ch" aria-pressed="false" data-w="VOIDS-events">VOIDS-events <em>In opbouw</em></button></div>
+        <div class="pm-wc"><button type="button" class="pm-ch" aria-pressed="false" data-w="Employer branding op studentenmaat">Employer branding op studentenmaat</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Portretten van je werkstudenten">Portretten van je werkstudenten</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Uitgelicht in de community">Uitgelicht in de community</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Gastcolleges en lezingen">Gastcolleges en lezingen</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Samenwerken met studieverenigingen">Samenwerken met studieverenigingen</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Case challenges met studenten">Case challenges met studenten</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Talentdiners en lunches">Talentdiners en lunches</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Een eigen profiel op het jobboard">Een eigen profiel op het jobboard</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Vacatureteksten die aanspreken">Vacatureteksten die aanspreken</button><button type="button" class="pm-ch" aria-pressed="false" data-w="VOIDS-events">VOIDS-events</button></div>
       </div>
-      <div class="pm-wg s" data-reveal>
+      <div class="pm-wg s">
         <div class="pm-wh"><span class="n">02</span><h3>Werven</h3><p>De juiste mensen vinden, ook doorlopend.</p></div>
         <div class="pm-wc"><button type="button" class="pm-ch" aria-pressed="false" data-w="Vacatures doorlopend plaatsen en delen">Vacatures doorlopend plaatsen en delen <em>Gunstiger tarief</em></button><button type="button" class="pm-ch" aria-pressed="false" data-w="Werving & selectie, doorlopend">Werving &amp; selectie, doorlopend <em>Gunstiger tarief</em></button><button type="button" class="pm-ch" aria-pressed="false" data-w="Inhouse dagen met een VOIDS-recruiter">Inhouse dagen met een VOIDS-recruiter</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Proactieve voorstellen uit de talentpool">Proactieve voorstellen uit de talentpool</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Een selectie zonder vaste patronen">Een selectie zonder vaste patronen</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Matchen op cultuur en karakter">Matchen op cultuur en karakter</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Voorselectie en interviews voor je gedaan">Voorselectie en interviews voor je gedaan</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Naadloze vervanging als iemand stopt">Naadloze vervanging als iemand stopt</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Open sollicitaties van studenten die je al kennen">Open sollicitaties van studenten die je al kennen</button></div>
       </div>
-      <div class="pm-wg l" data-reveal>
+      <div class="pm-wg l">
         <div class="pm-wh"><span class="n">03</span><h3>Behouden</h3><p>Van een goede start een lange samenwerking maken.</p></div>
-        <div class="pm-wc"><button type="button" class="pm-ch" aria-pressed="false" data-w="Onboardingplan voor de eerste maand">Onboardingplan voor de eerste maand</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Een buddy- of mentorprogramma">Een buddy- of mentorprogramma</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Leidinggeven aan junior talent">Leidinggeven aan junior talent</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Workshops voor je team">Workshops voor je team</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Doorgroeipaden van werkstudent naar starter">Doorgroeipaden van werkstudent naar starter</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Eerlijke afspraken over uren, tarief en contract">Eerlijke afspraken over uren, tarief en contract</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Feedback van studenten via een studentenpanel">Feedback van studenten via een studentenpanel <em>In opbouw</em></button><button type="button" class="pm-ch" aria-pressed="false" data-w="Terugblik en evaluatie per kwartaal">Terugblik en evaluatie per kwartaal</button></div>
+        <div class="pm-wc"><button type="button" class="pm-ch" aria-pressed="false" data-w="Onboardingplan voor de eerste maand">Onboardingplan voor de eerste maand</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Een buddy- of mentorprogramma">Een buddy- of mentorprogramma</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Leidinggeven aan junior talent">Leidinggeven aan junior talent</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Workshops voor je team">Workshops voor je team</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Doorgroeipaden van werkstudent naar starter">Doorgroeipaden van werkstudent naar starter</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Eerlijke afspraken over uren, tarief en contract">Eerlijke afspraken over uren, tarief en contract</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Feedback van studenten via een studentenpanel">Feedback van studenten via een studentenpanel</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Terugblik en evaluatie per kwartaal">Terugblik en evaluatie per kwartaal</button></div>
       </div>
-      <div class="pm-wg z" data-reveal>
+      <div class="pm-wg z">
         <div class="pm-wh"><span class="n">04</span><h3>Inzetten</h3><p>Er het meeste uit halen, met je hele team.</p></div>
         <div class="pm-wc"><button type="button" class="pm-ch" aria-pressed="false" data-w="Junior-strategie: wanneer wie">Junior-strategie: wanneer wie</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Functies en taken inrichten">Functies en taken inrichten</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Je eerste junior aannemen">Je eerste junior aannemen</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Opschalen naar een tweede of derde werkstudent">Opschalen naar een tweede of derde werkstudent</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Kosten en begroting van junior capaciteit">Kosten en begroting van junior capaciteit</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Projecten waar juniors het verschil maken">Projecten waar juniors het verschil maken</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Consultancy op maat">Consultancy op maat</button><button type="button" class="pm-ch" aria-pressed="false" data-w="Een vast aanspreekpunt">Een vast aanspreekpunt</button><a class="pm-ch own" href="#aanmelden">Of een eigen idee?</a></div>
       </div>
@@ -405,58 +493,39 @@
   </div>
 </section>
 
-<!-- 4 wat je krijgt -->
-<section class="k-sec k-beige pm-goal" data-mode="b" id="aanbod">
+<!-- 4c impact -->
+<section class="k-sec k-purple pm-imp" id="impact">
   <div class="k-wrap">
-    <div class="k-head">
-      <span class="k-eyebrow" data-reveal>Wat je krijgt</span>
-      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Vier dingen die een vacature niet kan kopen.</h2>
-      <p class="k-lead" data-reveal data-delay="120">Een deel van het aanbod bouwen we nog op. Wat nog niet beschikbaar is, is gemarkeerd als ‘in opbouw’.</p>
-    </div>
-    <div class="pm-sw-row" data-reveal>
-      <span class="pm-sw-l">Ik wil vooral</span>
-      <div class="pm-sw" role="group" aria-label="Kies je doel">
-        <button type="button" data-m="v" aria-pressed="false">Zichtbaar worden</button>
-        <button type="button" data-m="i" aria-pressed="false">Impact maken</button>
-        <button type="button" data-m="b" aria-pressed="true">Allebei</button>
+    <div class="pm-imp-g">
+      <div class="pm-imp-l" data-reveal>
+        <div class="pm-imp-badge" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg></span><b>VOIDS partner</b><i>Gelijke kansen</i></div>
+        <span class="k-eyebrow">Impact</span>
+        <h2 class="k-h2 sv-h2">Laat zien dat je voor gelijke kansen staat.</h2>
+        <p class="k-lead">Relevante, betaalde werkervaring is niet voor elke student bereikbaar. Als partner bied je die wel aan, en dat zie je terug.</p>
       </div>
-      <p class="pm-sw-msg" aria-live="polite"><span data-m="b">Kies wat voor jou het zwaarst weegt, dan lichten we op wat daarbij hoort.</span><span data-m="v">Zichtbaarheid: je wordt gekend en geloofd bij studenten die je zelf niet bereikt.</span><span data-m="i">Impact: je laat zien dat je betaalde werkervaring biedt en de toegang ertoe breder maakt.</span></p>
-    </div>
-    <div class="pm-bento">
-      <article class="pm-b p w7" data-g="v" data-reveal>
-        <div><h3>Gekend worden</h3><p>Studenten weten dat je bestaat, wat je doet en welk werk er is. Op je volgende vacature reageren mensen die al een beeld van je hebben, in plaats van mensen die je naam voor het eerst zien.</p></div>
-        <div class="chips"><span class="chip" data-g="v">Uitgelicht in de VOIDS-community</span><span class="chip" data-g="v">Vacatures inbegrepen</span></div>
-      </article>
-      <article class="pm-b f w5" data-g="v" data-reveal data-delay="80">
-        <img src="/photography/hg-20-c.jpg" alt="" style="object-position:50% 12%" loading="lazy"><div><h3>Geloofd worden</h3><p>Een vacaturetekst zegt wat een bedrijf van zichzelf vindt. Een werkstudent die vertelt hoe het is, of een middag op kantoor, laat zien hoe het echt is.</p></div>
-        <div class="chips"><span class="chip" data-g="v">Portret van een werkstudent of junior</span><span class="chip" data-g="v">Kijkje in de keuken <em>In opbouw</em></span><span class="chip" data-g="v">VOIDS-events <em>In opbouw</em></span></div>
-      </article>
-      <article class="pm-b s w5" data-g="v" data-reveal>
-        <div><h3>Weten wat ze zoeken</h3><p>Je hoort wat studenten aanspreekt en waar ze afhaken, en past je vacatures, voorwaarden en manier van werken daarop aan. Zo word je een betere werkgever voor jong talent, niet alleen een zichtbaardere.</p></div>
-        <div class="chips"><span class="chip" data-g="v">Feedback op je vacatureteksten</span><span class="chip" data-g="v">Studentenpanel <em>In opbouw</em></span></div>
-      </article>
-      <article class="pm-b z w7" data-g="i" data-reveal data-delay="80">
-        <div><h3>Ergens voor staan</h3><p>Partners bieden betaalde werkervaring en maken de toegang ertoe breder. Dat is een boodschap die je met een vacature niet kunt kopen.</p></div>
-        <div class="chips"><span class="chip" data-g="i">Partnerlabel</span><span class="chip" data-g="i">Impactrapportage <em>In opbouw</em></span></div>
-      </article>
+      <div class="pm-imp-r" data-reveal data-delay="100">
+        <details open><summary>Wat betekent dat?</summary><p>Betaalde werkervaring tijdens de studie, ook voor studenten die niet kunnen werken zonder inkomen of een netwerk. Jij maakt de toegang breder.</p></details>
+        <details><summary>Hoe laat je het zien?</summary><p>Met het partnerlabel voor je website, je vacatures en je werkgeversmerk: een impactvinkje voor jouw organisatie.</p></details>
+        <details><summary>Wat kun je rapporteren?</summary><p>Een impactrapportage over wie je met je partnership bereikt, voor je MVO- en diversiteitsverslag.</p></details>
+        <details><summary>Telt dit als social return?</summary><p>Social return in aanbestedingen richt zich meestal op mensen met een afstand tot de arbeidsmarkt. Onze focus is gelijke kansen voor studenten. Hoe dit past binnen jouw MVO- en inclusiebeleid bespreken we graag.</p></details>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 4b jaar -->
-<section class="k-sec k-white pm-goal" data-mode="b" id="jaar">
+<!-- 5 zo werkt het -->
+<section class="k-sec tight k-beige" id="zowerkt">
   <div class="k-wrap">
     <div class="k-head">
-      <span class="k-eyebrow" data-reveal>Zo ziet een jaar eruit</span>
-      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Een vast ritme in plaats van een eenmalige actie.</h2>
-      <p class="k-lead" data-reveal data-delay="120">Je partnership loopt een jaar, in vier kwartalen. Zo blijf je zichtbaar bij studenten, ook als je even geen vacature hebt.</p>
+      <span class="k-eyebrow" data-reveal>Zo werkt het</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">In vier stappen van aanmelding naar partnership.</h2>
     </div>
-    <div class="pm-yr" id="yr">
-      <div class="pm-q" data-reveal><span class="pm-qn" data-n="1">Kwartaal 1</span><h3>Instap</h3><ul><li>Kennismaking en intake</li><li data-g="v">Interview voor je portret</li><li data-g="v">Je vacatures staan in de community</li><li data-g="i">Partnerlabel actief</li></ul></div>
-      <div class="pm-q" data-reveal data-delay="80"><span class="pm-qn" data-n="2">Kwartaal 2</span><h3>Zichtbaar</h3><ul><li data-g="v">Je portret live in de community</li><li data-g="v">Feedback op je vacatureteksten</li></ul></div>
-      <div class="pm-q" data-reveal data-delay="160"><span class="pm-qn" data-n="3">Kwartaal 3</span><h3>Ontmoeten</h3><ul><li data-g="v">VOIDS-event of kijkje in de keuken <em>In opbouw</em></li><li data-g="v">Studentenpanel <em>In opbouw</em></li></ul></div>
-      <div class="pm-q" data-reveal data-delay="240"><span class="pm-qn" data-n="4">Kwartaal 4</span><h3>Terugblik</h3><ul><li data-g="i">Impactrapportage <em>In opbouw</em></li><li>Evaluatie en verlenging</li></ul></div>
-    </div>
+    <ol class="pm-zw">
+      <li data-reveal><i>1</i><b>Aanmelden</b><span>Twee minuten, via het formulier.</span></li>
+      <li data-reveal data-delay="80"><i>2</i><b>Kennismaken</b><span>We bespreken wat je zoekt.</span></li>
+      <li data-reveal data-delay="160"><i>3</i><b>Samenstellen</b><span>Jij kiest wat je inzet.</span></li>
+      <li data-reveal data-delay="240"><i>4</i><b>Een jaar samen</b><span>In een vast ritme, met een terugblik per kwartaal.</span></li>
+    </ol>
   </div>
 </section>
 
@@ -465,18 +534,17 @@
   <div class="k-wrap">
     <div class="k-head">
       <span class="k-eyebrow" data-reveal>Afspraken</span>
-      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Wat we vragen en wat je krijgt.</h2>
-      <p class="k-lead" data-reveal data-delay="120">Een partnership werkt alleen als het iets betekent voor studenten. Daarom stellen we een paar voorwaarden en zijn we er open over.</p>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Dit vragen we, dit krijg je.</h2>
     </div>
     <div class="pm-af">
       <div class="pm-label" data-reveal>
-        <div class="pm-label-top"><div><span class="k-eyebrow">Het partnerlabel</span><h3>Dit doe je als partner.</h3></div><div class="pm-badge" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg></span><b>VOIDS partner</b><i>Voorbeeld</i></div></div>
-        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Je biedt betaalde werkervaring: werkstudenten verdienen €17 tot €22 per uur.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Je laat zien hoe het is om bij je te werken, bijvoorbeeld met een portret.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Je staat open voor feedback van studenten op je vacatures.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Je maakt de toegang tot werkervaring breder.</span></li></ul>
+        <div class="pm-label-top"><div><span class="k-eyebrow">Het partnerlabel</span><h3>Dit doe je als partner.</h3></div><div class="pm-badge" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg></span><b>VOIDS partner</b></div></div>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Betaalde werkervaring, €17 tot €22 per uur</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Open over hoe het is om bij je te werken</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Open voor feedback van studenten</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Werkervaring toegankelijker maken</span></li></ul>
       </div>
       <div class="pm-af-r">
-        <div class="k-tile white" data-reveal data-delay="80"><h3 class="k-h3">Een beperkt aantal partners</h3><p class="k-p">We werken met een beperkt aantal partners tegelijk, zodat je zichtbaar blijft en niet in een lange lijst verdwijnt.</p></div>
-        <div class="k-tile white" data-reveal data-delay="160"><h3 class="k-h3">Jaarlidmaatschap</h3><p class="k-p">Een partnership loopt per jaar. De prijs bespreken we in een gesprek.</p></div>
-        <div class="k-tile white" data-reveal data-delay="240"><h3 class="k-h3">Samen bouwen</h3><p class="k-p">Partners die nu instappen denken mee over events en formats, krijgen een gunstiger tarief en zijn er als eerste bij.</p></div>
+        <div class="k-tile white" data-reveal data-delay="80"><h3 class="k-h3">Jaarlidmaatschap</h3><p class="k-p">Prijs op aanvraag.</p></div>
+        <div class="k-tile white" data-reveal data-delay="160"><h3 class="k-h3">Een beperkt aantal partners</h3><p class="k-p">Zodat je zichtbaar blijft.</p></div>
+        <div class="k-tile white" data-reveal data-delay="240"><h3 class="k-h3">Samen bouwen</h3><p class="k-p">Meedenken en een gunstiger tarief voor partners die nu instappen.</p></div>
       </div>
     </div>
   </div>
@@ -485,7 +553,7 @@
 <!-- 7 logos -->
 <section class="k-sec tight k-white pm-logos">
   <div class="k-wrap">
-    <div class="pm-lh" data-reveal><h2 class="k-h2 sv-h2" style="margin:0">Al met ons aan de slag.</h2><p class="k-p">Werkgevers voor wie we werven. Het zijn geen partners, maar ze laten zien met wie we werken.</p></div>
+    <div class="pm-lh" data-reveal><h2 class="k-h2 sv-h2" style="margin:0">Al met ons aan de slag.</h2><p class="k-p">Werkgevers voor wie we werven.</p></div>
   </div>
   <div class="pm-lrow"><div class="pm-ltrack"><span class="lt"><img src="/logos/joulz.svg" alt="Joulz"></span><span class="lt"><img src="/logos/hubby.svg" alt="Hubby"></span><span class="lt"><img src="/logos/van-oort-van-oort.png" alt="Van Oort &amp; Van Oort"></span><span class="lt"><img src="/logos/de-kiesmannen.svg" alt="De Kiesmannen"></span><span class="lt"><img src="/logos/relive.svg" alt="Relive"></span><span class="lt"><img src="/logos/writify.png" alt="Writify"></span><span class="lt"><img src="/logos/structural-collective.png" alt="Structural Collective"></span><span class="lt"><img src="/logos/onestone.png" alt="Onestone"></span><span class="lt"><img src="/logos/mg.svg" alt="M&amp;G"></span><span class="lt"><img src="/logos/dropp.png" alt="Dropp"></span><span class="lt"><img src="/logos/mila-health.png" alt="Mila Health"></span><span class="lt"><img src="/logos/hotelplanner.png" alt="HotelPlanner"></span><span class="lt"><img src="/logos/meute.svg" alt="Meute"></span><span class="lt"><img src="/logos/wepartynow.svg" alt="WePartyNow"></span><span class="lt"><img src="/logos/stuwr.svg" alt="Stuwr"></span><span class="lt"><img src="/logos/cribconnects.jpg" alt="CribConnects"></span><span class="lt"><img src="/logos/de-huismeesters.png" alt="De Huismeesters"></span><span class="lt"><img src="/logos/go-delphi.png" alt="Go Delphi"></span><span class="lt"><img src="/logos/masterjecijfers.png" alt="#MasterJeCijfers"></span><span class="lt"><img src="/logos/monsterscore.png" alt="Monsterscore"></span><span class="lt"><img src="/logos/house-of-inclusion.svg" alt="House of Inclusion"></span><span class="lt"><img src="/logos/the-cirqle.png" alt="The Cirqle"></span><span class="lt"><img src="/logos/check-and-charge.svg" alt="Check and Charge"></span><span class="lt"><img src="/logos/enerzien.png" alt="Enerzien"></span><span class="lt"><img src="/logos/bit.svg" alt="Bit"></span><span class="lt"><img src="/logos/green-team.png" alt="Green Team"></span><span class="lt"><img src="/logos/doing-goods.svg" alt="Doing Goods"></span><span class="lt"><img src="/logos/the-longevity-store.svg" alt="The Longevity Store"></span><span class="lt"><img src="/logos/joulz.svg" alt="Joulz"></span><span class="lt"><img src="/logos/hubby.svg" alt="Hubby"></span><span class="lt"><img src="/logos/van-oort-van-oort.png" alt="Van Oort &amp; Van Oort"></span><span class="lt"><img src="/logos/de-kiesmannen.svg" alt="De Kiesmannen"></span><span class="lt"><img src="/logos/relive.svg" alt="Relive"></span><span class="lt"><img src="/logos/writify.png" alt="Writify"></span><span class="lt"><img src="/logos/structural-collective.png" alt="Structural Collective"></span><span class="lt"><img src="/logos/onestone.png" alt="Onestone"></span><span class="lt"><img src="/logos/mg.svg" alt="M&amp;G"></span><span class="lt"><img src="/logos/dropp.png" alt="Dropp"></span><span class="lt"><img src="/logos/mila-health.png" alt="Mila Health"></span><span class="lt"><img src="/logos/hotelplanner.png" alt="HotelPlanner"></span><span class="lt"><img src="/logos/meute.svg" alt="Meute"></span><span class="lt"><img src="/logos/wepartynow.svg" alt="WePartyNow"></span><span class="lt"><img src="/logos/stuwr.svg" alt="Stuwr"></span><span class="lt"><img src="/logos/cribconnects.jpg" alt="CribConnects"></span><span class="lt"><img src="/logos/de-huismeesters.png" alt="De Huismeesters"></span><span class="lt"><img src="/logos/go-delphi.png" alt="Go Delphi"></span><span class="lt"><img src="/logos/masterjecijfers.png" alt="#MasterJeCijfers"></span><span class="lt"><img src="/logos/monsterscore.png" alt="Monsterscore"></span><span class="lt"><img src="/logos/house-of-inclusion.svg" alt="House of Inclusion"></span><span class="lt"><img src="/logos/the-cirqle.png" alt="The Cirqle"></span><span class="lt"><img src="/logos/check-and-charge.svg" alt="Check and Charge"></span><span class="lt"><img src="/logos/enerzien.png" alt="Enerzien"></span><span class="lt"><img src="/logos/bit.svg" alt="Bit"></span><span class="lt"><img src="/logos/green-team.png" alt="Green Team"></span><span class="lt"><img src="/logos/doing-goods.svg" alt="Doing Goods"></span><span class="lt"><img src="/logos/the-longevity-store.svg" alt="The Longevity Store"></span></div></div>
 </section>
@@ -539,7 +607,7 @@
 </section>
 
 <!--k-footer--><footer class="k-footer"><div class="k-wrap"><div><a class="k-logo" href="/" style="padding:0"><img src="/logo.svg" alt="VOIDS" style="height:24px;filter:brightness(0) invert(1)"></a><p>Wij verbinden hoogopgeleid talent aan ambitieuze organisaties.</p></div><div><h4>Menu</h4><a href="/talent">Talent</a><a href="/companies">Bedrijven</a><a href="/impact">Impact</a><a href="/about">Over ons</a><a href="/blog">Blog</a><a href="/jobboard">Jobs</a></div><div><h4>Meer</h4><a href="/faq">FAQ</a><a href="/terms">Voorwaarden</a><a href="/privacy">Privacy</a></div><div><h4>Blijf op de hoogte</h4><a href="https://linktr.ee/voidscommunity" target="_blank" rel="noopener" style="padding:0">Vacaturemeldingen en community-updates via WhatsApp</a><a href="https://linktr.ee/voidsagency" target="_blank" rel="noopener" style="padding:0;margin-top:8px">Vacatures van deze week &rarr;</a><div class="k-soc"><a href="https://www.linkedin.com/company/voidsagency" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/voids_agency/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@voidstalentagency" target="_blank" rel="noopener">TikTok</a></div></div><div class="k-base"><span>© 2026 VOIDS.agency, Amsterdam</span><span>contact@voids.agency</span></div></div></footer><!--/k-footer-->
-<script src="/site/kit.js?v=99e8c593"></script>
+<script src="/site/kit.js?v=0c627834"></script>
 <script>
 (function(){
   var sc=document.querySelector('.pm-scene');if(!sc)return;
@@ -571,9 +639,10 @@
 })();
 
 (function(){
-  var secs=[].slice.call(document.querySelectorAll('.pm-goal'));
-  function setMode(m){secs.forEach(function(x){x.setAttribute('data-mode',m)});[].slice.call(document.querySelectorAll('.pm-sw button')).forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-m')===m?'true':'false')})}
-  [].slice.call(document.querySelectorAll('.pm-sw button')).forEach(function(b){b.addEventListener('click',function(){setMode(b.getAttribute('data-m'))})});
+  var rs=[].slice.call(document.querySelectorAll('.pm-rs>button')),rp=[].slice.call(document.querySelectorAll('.pm-rp'));
+  rs.forEach(function(b){b.addEventListener('click',function(){var r=b.getAttribute('data-r');rs.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on?'true':'false')});rp.forEach(function(p){p.classList.toggle('on',p.getAttribute('data-r')===r)})})});
+  var wt=[].slice.call(document.querySelectorAll('.pm-wt button')),wg=[].slice.call(document.querySelectorAll('.pm-wg'));
+  wt.forEach(function(b,i){b.addEventListener('click',function(){wt.forEach(function(x,k){x.classList.toggle('on',k===i)});wg.forEach(function(g,k){g.classList.toggle('on',k===i)})})});
   var f=document.getElementById('pform');if(!f)return;
   var sent=document.querySelector('.pm-sent'),err=f.querySelector('.pm-err');
   f.addEventListener('submit',function(e){

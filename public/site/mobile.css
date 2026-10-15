@@ -15,6 +15,10 @@
   .k-mnav{display:none;position:fixed;left:0;right:0;top:64px;bottom:0;z-index:49;flex-direction:column;justify-content:space-between;gap:24px;padding:12px 20px calc(24px + env(safe-area-inset-bottom));background:var(--beige);overflow:auto;-webkit-overflow-scrolling:touch}
   .k-header.open .k-mnav{display:flex;animation:kmn .25s ease-out}
   @keyframes kmn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+  .k-mnav nav{display:block!important;margin:0!important;gap:0!important}
+  .k-mnav nav a.k-mn{padding:12px 0 6px!important;border-radius:0;background:none!important;color:var(--ink)}
+  .k-mnav nav a.k-mn.on{color:var(--purple)}
+  .k-mnav .k-mn-sub a{display:block}
   .k-mn{display:block;padding:12px 0 6px;font:400 38px/1.05 Anton,"Arial Narrow",sans-serif;text-transform:uppercase;text-decoration:none;color:var(--ink)}
   .k-mn.on{color:var(--purple)}
   .k-mn-sub{display:grid;gap:0;padding:0 0 8px}
