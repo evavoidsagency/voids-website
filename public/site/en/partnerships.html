@@ -86,13 +86,26 @@
 .pm-note2 b{display:block;font-size:14.5px;line-height:1.2}
 .pm-note2 span{font-size:12.5px;color:var(--muted)}
 .pm-quiet{margin-top:auto;border-radius:16px;background:var(--purple-100);padding:12px 14px;font-size:12.5px;line-height:1.4;color:var(--purple);font-weight:600}
+.pm-soon2{display:inline-block;margin-left:6px;padding:2px 8px;border-radius:99px;background:rgba(255,255,255,.2);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.pm-recap{border-radius:20px;background:#fff;padding:16px;box-shadow:0 10px 24px -14px rgba(20,8,90,.35)}
+.pm-recap b{display:block;font-size:13px;margin-bottom:10px;color:var(--purple)}
+.pm-recap ol{list-style:none;padding:0;display:grid;gap:8px}
+.pm-recap li{position:relative;padding-left:22px;font-size:13px;line-height:1.3}
+.pm-recap li::before{content:"";position:absolute;left:2px;top:.25em;width:11px;height:11px;border-radius:50%;background:var(--purple)}
 .pm-voor{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.04em}
-@media(max-width:960px),(prefers-reduced-motion:reduce){
+@media(max-width:960px){
   .pm-scene{height:auto;padding:72px 0}
-  .pm-pin{position:static;height:auto;display:block;padding:0 20px}
-  .pm-phone-wrap{display:none}
-  .pm-st,.pm-st.on,.pm-st.done{opacity:1;transform:none;background:var(--purple-100);color:var(--ink);cursor:default}
-  .pm-st.on p{color:var(--ink)}.pm-st.on .k-badge{background:#fff;color:var(--purple)}
+  .pm-pin{position:static;height:auto;display:grid;grid-template-columns:1fr;gap:32px;padding:0 20px}
+  .pm-phone-wrap{height:auto}
+  .pm-phone{height:470px}
+  .pm-st.on{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .pm-scene{height:auto;padding:72px 0}
+  .pm-pin{position:static;height:auto;padding:0 32px}
+  .pm-phone{height:470px}
+  .pm-st,.pm-s{transition:none}
+}
 }
 
 /* bento: four values */
@@ -227,13 +240,14 @@
         </div>
         <div class="pm-s" data-i="1">
           <div class="bar"><span>Uitnodiging</span><span class="mo" style="font-size:22px">June</span></div>
-          <div class="pm-inv"><span class="s">For community members</span><b>An afternoon at the office at [Company name]</b><div class="chips"><i>Meelopen</i><i>Team ontmoeten</i><i>Vragen stellen</i></div><span class="go">Ik kom langs</span></div>
+          <div class="pm-inv"><span class="s">A look behind the scenes <span class="pm-soon2">Being built</span></span><b>An afternoon at the office at [Company name]</b><span class="s">For community members</span></div>
+          <div class="pm-recap"><b>This student's route</b><ol><li>March: saw the portrait</li><li>June: visited the office</li></ol></div>
           <div class="pm-quiet">See for yourself what it's like, without an application.</div>
         </div>
         <div class="pm-s" data-i="2">
           <div class="bar"><span>Nieuw bericht</span><span class="mo" style="font-size:22px">September</span></div>
           <div class="pm-note2"><span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12.5 2.8 2.8L16.5 9.5"></path></svg></span><span><b>Open sollicitatie</b><span>For [Company name], without a vacancy</span></span></div>
-          <div class="pm-inv"><span class="s">Next step</span><b>First conversation scheduled</b><div class="chips"><i>Introduction</i><i>Office visit done</i></div></div>
+          <div class="pm-recap"><b>This student's route</b><ol><li>March: saw the portrait</li><li>June: visited the office</li><li>September: applied</li></ol></div>
           <div class="pm-quiet">She already knows you, so the conversation starts further along than with a vacancy.</div>
         </div>
       </div></div>
@@ -351,18 +365,27 @@
 (function(){
   var sc=document.querySelector('.pm-scene');if(!sc)return;
   var st=[].slice.call(sc.querySelectorAll('.pm-st')),sn=[].slice.call(sc.querySelectorAll('.pm-s')),pin=sc.querySelector('.pm-pin');
-  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function set(i){st.forEach(function(e,k){e.classList.toggle('on',k===i);e.classList.toggle('done',k<i)});sn.forEach(function(e,k){e.classList.toggle('on',k===i)})}
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,cur=0,timer=null;
+  function isStatic(){return reduce||innerWidth<=960}
+  function set(i){cur=i;st.forEach(function(e,k){e.classList.toggle('on',k===i);e.classList.toggle('done',k<i)});sn.forEach(function(e,k){e.classList.toggle('on',k===i)})}
   function hh(){return (document.querySelector('header')||{offsetHeight:56}).offsetHeight}
   function tick(){
-    if(reduce||innerWidth<=960)return;
+    if(isStatic())return;
     var r=sc.getBoundingClientRect(),pt=parseFloat(getComputedStyle(pin).top)||hh();
     var p=Math.max(0,Math.min(.999,-(r.top-pt)/Math.max(1,sc.offsetHeight-pin.offsetHeight)));
     set(Math.min(2,Math.floor(p*3)));
   }
-  addEventListener('scroll',tick,{passive:true});addEventListener('resize',tick);tick();
+  function auto(){
+    if(timer||reduce)return;
+    timer=setInterval(function(){
+      if(!isStatic())return;
+      var r=sc.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
+      set((cur+1)%3);
+    },3600);
+  }
+  addEventListener('scroll',tick,{passive:true});addEventListener('resize',tick);tick();auto();
   st.forEach(function(e,i){e.addEventListener('click',function(){
-    if(reduce||innerWidth<=960)return;
+    if(isStatic()){set(i);clearInterval(timer);timer=null;return}
     var top=sc.getBoundingClientRect().top+scrollY-(parseFloat(getComputedStyle(pin).top)||hh()),span=sc.offsetHeight-pin.offsetHeight;
     scrollTo({top:top+span*((i+.5)/3)});
   })});
