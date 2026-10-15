@@ -249,6 +249,39 @@
 @media(max-width:960px){.pm-af,.pm-lh,.pm-adv,.pm-ap{grid-template-columns:1fr;gap:28px}.pm-label{padding:26px 22px}.pm-badge{width:96px;height:96px}}
 @media(max-width:600px){.pm-yr{grid-template-columns:1fr}.pm-sw button{padding:10px 14px;font-size:13.5px}}
 .pm-opts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:stretch}@media(max-width:1100px){.pm-opts{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.pm-opts{grid-template-columns:1fr}}.pm-opts+.pm-note{margin-top:28px;font-size:15.5px;line-height:1.65;color:var(--soft)}.pm-opts .k-tile{padding:28px}.pm-opts .k-h3{font-family:Inter,sans-serif;font-size:22px;color:var(--purple);font-weight:600;letter-spacing:-.01em;text-transform:none}.pm-opts .k-tile.sky .k-h3{color:var(--blue-700)}.pm-opts .ic{width:48px;height:48px;border-radius:50%;background:#fff;color:var(--purple);display:grid;place-items:center;margin-bottom:18px}.pm-opts .ic svg{width:24px;height:24px}.pm-opts .k-tile.sky .ic{color:var(--blue-700)}.pm-bd{align-self:flex-start;margin-top:auto;background:#fff!important}.pm-opts .k-p{margin-bottom:18px}
+
+/* junior-traject: four stages, the active one opens up */
+.pm-jr{display:flex;gap:14px;align-items:stretch;min-height:440px}
+.pm-jp{position:relative;flex:1 1 0;min-width:0;display:flex;flex-direction:column;padding:28px;border-radius:26px;overflow:hidden;cursor:pointer;outline:none;transition:flex-grow .6s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.pm-jp.on{flex-grow:3.4;cursor:default}
+.pm-jp:focus-visible{box-shadow:0 0 0 3px var(--blue)}
+.pm-jp.p{background:var(--purple);color:#fff}.pm-jp.s{background:var(--blue-100)}.pm-jp.l{background:var(--purple-100)}.pm-jp.z{background:var(--beige-2)}
+.pm-jp .n{font-family:Anton,"Arial Narrow",sans-serif;font-size:15px;letter-spacing:.06em;opacity:.6}
+.pm-jp h3{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(22px,2.1vw,32px);line-height:1.05;text-transform:uppercase;letter-spacing:0;margin:8px 0 10px}
+.pm-jp.s h3{color:var(--blue-700)}.pm-jp.l h3,.pm-jp.z h3{color:var(--purple)}
+.pm-jp .s{font-size:16px;line-height:1.5;max-width:30em;opacity:.92}
+.pm-jp.s>.s,.pm-jp.l>.s,.pm-jp.z>.s{color:var(--soft)}
+.pm-jp ul{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px;opacity:0;transform:translateY(14px);transition:opacity .4s,transform .5s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.pm-jp.on ul{opacity:1;transform:none;transition-delay:.18s;pointer-events:auto}
+.pm-jp li{padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.92);color:var(--ink);font-size:14px;line-height:1.4}
+.pm-jp.p li{background:rgba(255,255,255,.14);color:#fff}
+.pm-jp li b{display:block;font-size:15px;color:var(--purple);margin-bottom:2px}
+.pm-jp.p li b{color:#fff}.pm-jp.s li b{color:var(--blue-700)}
+.pm-jp li span{color:var(--soft)}.pm-jp.p li span{color:rgba(255,255,255,.86)}
+.pm-jp li em{font-style:normal;margin-left:6px;padding:2px 8px;border-radius:99px;background:var(--purple-100);color:var(--purple);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+.pm-jp.p li em{background:rgba(255,255,255,.22);color:#fff}
+.pm-jp:not(.on) .s{display:none}
+.pm-jp:not(.on)::after{content:"+";margin-top:auto;width:38px;height:38px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:20px;color:var(--purple);transition:transform .3s}
+.pm-jp:not(.on):hover::after{transform:rotate(90deg)}
+.pm-jr+.pm-note{margin-top:26px;font-size:15.5px;color:var(--soft)}
+@media(max-width:960px){
+  .pm-jr{flex-direction:column;min-height:0}
+  .pm-jp,.pm-jp.on{flex:none;cursor:default}
+  .pm-jp:not(.on) .s{display:block}
+  .pm-jp:not(.on)::after{display:none}
+  .pm-jp ul,.pm-jp.on ul{opacity:1;transform:none;pointer-events:auto;grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){.pm-jp,.pm-jp ul{transition:none}}
 </style>
 <link rel="stylesheet" href="/site/mobile.css?v=99e8c593">
 </head>
@@ -341,41 +374,41 @@
   </div>
 </section>
 
-<!-- 3b opties -->
+<!-- 3b junior-traject -->
 <section class="k-sec k-white" id="opties">
   <div class="k-wrap">
     <div class="k-head">
       <span class="k-eyebrow" data-reveal>Your partnership</span>
-      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Choose what suits you.</h2>
-      <p class="k-lead" data-reveal data-delay="120">A partnership is broad. You can focus on continuous vacancy posting or recruiting, on visibility, or on a combination.</p>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">We think along on your entire junior journey.</h2>
+      <p class="k-lead" data-reveal data-delay="120">As a partner we think along fully on attracting, recruiting, retaining and deploying junior talent, in every way that suits your organisation. One part or the whole journey: you decide.</p>
     </div>
-    <div class="pm-opts">
-      <div class="k-tile " data-reveal>
-        <span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v4h3l7 4V6L7 10H4Z"></path><path d="M17.5 9.5a4 4 0 0 1 0 5"></path></svg></span>
-        <h3 class="k-h3">Continuous vacancy posting</h3>
-        <p class="k-p">Post and share your vacancies continuously in the community and on the job board, at a more favourable rate than per placement.</p>
-        <span class="k-badge pm-bd">More favourable rate</span>
-      </div>
-      <div class="k-tile sky" data-reveal data-delay="80">
-        <span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"></circle><path d="m15 15 5 5"></path></svg></span>
-        <h3 class="k-h3">Continuous recruiting</h3>
-        <p class="k-p">Let us recruit for your team continuously with recruitment &amp; selection, at a more favourable rate than per placement.</p>
-        <span class="k-badge pm-bd">More favourable rate</span>
-      </div>
-      <div class="k-tile " data-reveal data-delay="160">
-        <span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 14.4 9l5.9.6-4.4 4 1.3 5.9L12 16.4 6.8 19.5l1.3-5.9-4.4-4L9.6 9 12 3.5Z"></path></svg></span>
-        <h3 class="k-h3">Employer branding</h3>
-        <p class="k-p">Become visible to students with a portrait, events and feedback on your vacancy texts.</p>
-        
-      </div>
-      <div class="k-tile sky" data-reveal data-delay="240">
-        <span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 4v-4A2.5 2.5 0 0 1 4 13.5v-7Z"></path><path d="M8.5 9h7M8.5 12h4"></path></svg></span>
-        <h3 class="k-h3">Advice and in-house days</h3>
-        <p class="k-p">Advice on attracting, hiring and retaining junior talent, in-house days, training and community events.</p>
-        
-      </div>
+    <div class="pm-jr" id="jr">
+      <article class="pm-jp p on" tabindex="0" data-i="0" data-reveal data-delay="0">
+        <span class="n">01</span>
+        <h3>Attract</h3>
+        <p class="s">Students know you and want to work with you.</p>
+        <ul><li><b>Employer branding</b><span>Content and campaigns that appeal to students and starters.</span></li><li><b>Portrait of a working student</b><span>Show what it's really like to work with you.</span></li><li><b>Featured in the community</b><span>Visible to 4,000+ students and starters.</span></li><li><b>VOIDS events</b><span>Meet-ups where students get to know you.</span> <em>Being built</em></li></ul>
+      </article>
+      <article class="pm-jp s" tabindex="0" data-i="1" data-reveal data-delay="70">
+        <span class="n">02</span>
+        <h3>Recruit</h3>
+        <p class="s">Finding the right people, continuously too.</p>
+        <ul><li><b>Posting and sharing vacancies</b><span>Continuous, at a more favourable rate.</span></li><li><b>Recruitment &amp; selection</b><span>Continuous, at a more favourable rate.</span></li><li><b>In-house days</b><span>A VOIDS recruiter on location with your team.</span></li><li><b>Talent dinners and lunches</b><span>Getting to know young talent informally.</span></li></ul>
+      </article>
+      <article class="pm-jp l" tabindex="0" data-i="2" data-reveal data-delay="140">
+        <span class="n">03</span>
+        <h3>Retain</h3>
+        <p class="s">Turning a good start into a long collaboration.</p>
+        <ul><li><b>Onboarding</b><span>Sparring on a strong start for junior talent.</span></li><li><b>Guidance</b><span>So talent stays and grows.</span></li><li><b>Training &amp; workshops</b><span>For teams and managers.</span></li><li><b>Feedback from students</b><span>Via a student panel and a check-in each quarter.</span> <em>Being built</em></li></ul>
+      </article>
+      <article class="pm-jp z" tabindex="0" data-i="3" data-reveal data-delay="210">
+        <span class="n">04</span>
+        <h3>Deploy</h3>
+        <p class="s">Getting the most out of it, with your whole team.</p>
+        <ul><li><b>Junior strategy</b><span>When and how to deploy a working student, intern or starter.</span></li><li><b>Roles and tasks</b><span>Designed smartly, so juniors add real value.</span></li><li><b>Tailored consultancy</b><span>A programme that grows with your team.</span></li><li><b>A fixed point of contact</b><span>Sparring whenever you need it.</span></li></ul>
+      </article>
     </div>
-    <p class="pm-note" data-reveal>Combine what you want, or choose only visibility. Partners choose what suits them.</p>
+    <p class="pm-note" data-reveal>These are examples. Which ways fit your organisation, we decide together.</p>
   </div>
 </section>
 
@@ -559,6 +592,12 @@
       .then(function(r){if(!r.ok)throw 0;f.hidden=true;sent.hidden=false})
       .catch(function(){err.hidden=false;b.disabled=false;b.textContent=label});
   });
+})();
+
+(function(){
+  var ps=[].slice.call(document.querySelectorAll('.pm-jp'));if(!ps.length)return;
+  function on(i){ps.forEach(function(p,k){p.classList.toggle('on',k===i)})}
+  ps.forEach(function(p,i){p.addEventListener('mouseenter',function(){if(innerWidth>960)on(i)});p.addEventListener('click',function(){if(innerWidth>960)on(i)});p.addEventListener('focus',function(){if(innerWidth>960)on(i)})});
 })();
 </script>
 </body>
