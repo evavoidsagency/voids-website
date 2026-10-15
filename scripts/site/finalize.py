@@ -194,7 +194,7 @@ def nav_items(lang):
     nav = [("talent", L["talent"], U(lang, "talent")), ("companies", L["companies"], U(lang, "companies")),
            ("impact", L["impact"], U(lang, "impact")), ("about", L["about"], U(lang, "about")),
            ("blog", L["blog"], U(lang, "blog")), ("jobboard", L["jobboard"], U(lang, "jobboard"))]
-    serv = [(L["s1"], U(lang, "companies/recruitment-selection")), (L["s2"], U(lang, "companies/community-jobboard")),
+    serv = [(L["s2"], U(lang, "companies/community-jobboard")), (L["s1"], U(lang, "companies/recruitment-selection")),
             (L["s3"], U(lang, "companies/partnerships"))]
     return nav, serv
 
