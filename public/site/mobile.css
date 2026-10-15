@@ -106,3 +106,13 @@
 @media(max-width:640px){
   .k-hero .k-h1+.k-lead,.k-hero h1+p{margin-top:16px}
 }
+
+/* long card stacks become swipeable rows on phones */
+@media(max-width:700px){
+  .br-grid,.rs-prof,.c-bento{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;gap:12px!important;margin-left:-20px!important;margin-right:-20px!important;padding:4px 0 14px!important;scroll-padding:0 20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .br-grid::-webkit-scrollbar,.rs-prof::-webkit-scrollbar,.c-bento::-webkit-scrollbar{display:none}
+  .br-grid>*,.rs-prof>*,.c-bento>*{flex:0 0 82%!important;width:82%!important;max-width:82%!important;grid-area:auto!important;scroll-snap-align:start;min-width:0}
+  .br-grid>[data-reveal],.rs-prof>[data-reveal],.c-bento>[data-reveal]{opacity:1!important;transform:none!important}
+  .br-grid>:first-child,.rs-prof>:first-child,.c-bento>:first-child{margin-left:20px!important}
+  .br-grid>:last-child,.rs-prof>:last-child,.c-bento>:last-child{margin-right:20px!important}
+}

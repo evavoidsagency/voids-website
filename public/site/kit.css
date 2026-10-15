@@ -411,3 +411,11 @@ p,li,dd,blockquote,figcaption{text-wrap:pretty}
 .sv-here{font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.78)}
 @media(max-width:960px){.sv-menu{grid-template-columns:1fr}}
 .sv-h2{text-transform:uppercase}
+
+/* read more for long intros */
+.k-clamp{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.k-clamp.open{display:block;-webkit-line-clamp:unset;overflow:visible}
+.k-more{justify-self:start;margin-top:10px;padding:0;border:0;background:none;color:var(--purple);font:700 14.5px Inter,sans-serif;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.k-purple .k-more,.k-ink .k-more{color:#fff}
+.k-head>.k-more{grid-column:1/-1;padding-top:0}
+@media(max-width:960px){.k-head>.k-more{grid-column:1!important}.k-clamp{-webkit-line-clamp:4}}

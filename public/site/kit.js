@@ -115,3 +115,21 @@
 
 /* USP ticker: duplicate once for a seamless loop */
 (function(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.querySelectorAll('.k-usp ul').forEach(function(u){[].slice.call(u.children).forEach(function(li){var c=li.cloneNode(true);c.setAttribute('aria-hidden','true');u.appendChild(c)})})})();
+
+/* long intro texts: clamp to a few lines with a "read more" toggle */
+(function(){
+  var EN=document.documentElement.lang==='en';
+  function setup(){
+    var els=[].slice.call(document.querySelectorAll('.k-lead,.im-intro,.k-head>.k-p'));
+    els.forEach(function(p){
+      if(p.__km||p.closest('.k-cta,.k-purple .k-head,.k-form,.k-footer'))return;
+      if((p.textContent||'').trim().length<260)return;
+      p.__km=1;p.classList.add('k-clamp');
+      var b=document.createElement('button');b.type='button';b.className='k-more';b.textContent=EN?'Read more':'Lees meer';b.setAttribute('aria-expanded','false');
+      b.addEventListener('click',function(){var o=p.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');b.textContent=o?(EN?'Read less':'Minder'):(EN?'Read more':'Lees meer');if(window.__snap)window.__snap()});
+      p.insertAdjacentElement('afterend',b);
+      if(p.parentElement&&p.parentElement.classList.contains('k-head')){var place=function(){var c=getComputedStyle(p).gridColumnStart;b.style.setProperty('grid-column',c==='2'?'2':'1 / -1','important');b.style.setProperty('grid-row','auto','important')};place();setTimeout(place,300);setTimeout(place,900);addEventListener('resize',function(){setTimeout(place,150)})}
+    });
+  }
+  if(document.readyState!=='loading')setup();else document.addEventListener('DOMContentLoaded',setup);
+})();
