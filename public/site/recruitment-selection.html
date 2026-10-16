@@ -381,6 +381,53 @@
 @media(max-width:760px){.k-rev.wide{grid-template-columns:1fr}.k-rev.wide .rv-ph{min-height:0;aspect-ratio:4/3;width:100%}}
 #profielen .k-head>.k-lead{max-width:none!important}
 .rs-vl{margin:6px 0 10px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.78)}.rs-pn{margin-top:14px;font-size:14px;line-height:1.5;color:rgba(255,255,255,.86)}.rs-pn a{color:#fff;font-weight:700;text-decoration:underline}
+
+/* model: VOIDS vs uitzenden */
+.rm-tabs{display:inline-flex;gap:4px;padding:4px;border-radius:99px;background:var(--purple-100);margin:0 0 22px}
+.rm-tabs button{border:0;border-radius:99px;padding:11px 20px;background:none;color:var(--purple);font:600 14.5px Inter,sans-serif;cursor:pointer;transition:background .25s,color .25s}
+.rm-tabs button[aria-selected=true]{background:var(--purple);color:#fff}
+.rm-panel{display:none;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px;align-items:stretch}
+.rm-panel.on{display:grid;animation:rmfade .45s ease}
+@keyframes rmfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.rm-dia{position:relative;display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;padding:36px 28px 64px;border-radius:24px;background:var(--purple)}
+.rm-dia.u{grid-template-columns:1fr auto 1fr auto 1fr;padding-bottom:36px;background:var(--beige-2)}
+.rm-n{display:grid;justify-items:center;gap:6px;text-align:center;padding:20px 12px;border-radius:20px;background:#fff;color:var(--ink)}
+.rm-n .ic{width:48px;height:48px;border-radius:50%;background:var(--purple-100);color:var(--purple);display:grid;place-items:center}
+.rm-n .ic svg{width:24px;height:24px}
+.rm-n b{font-size:16px}
+.rm-n i{font-style:normal;font-size:12.5px;font-weight:600;color:var(--muted)}
+.rm-n.b{background:var(--blue-100)}
+.rm-link{display:grid;justify-items:center;gap:6px;color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;text-align:center;min-width:78px}
+.rm-link::before{content:"";width:100%;min-width:56px;height:6px;border-radius:99px;background:currentColor;opacity:.9}
+.rm-dia.u .rm-link{color:var(--purple)}
+.rm-v{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;padding:9px 16px;border-radius:99px;background:rgba(255,255,255,.16);color:#fff;font-size:13px;white-space:nowrap}
+.rm-v b{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:16px;letter-spacing:.03em}
+.rm-ck{list-style:none;padding:28px;margin:0;display:grid;gap:18px;align-content:center;border-radius:24px;background:var(--purple-100)}
+.rm-ck.u{background:var(--beige-2)}
+.rm-ck li{display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:center;font-size:16px;font-weight:600;line-height:1.35}
+.rm-ck svg{width:32px;height:32px;padding:7px;border-radius:50%;background:#fff;color:var(--purple)}
+@media(max-width:960px){
+  .rm-panel{grid-template-columns:1fr}
+  .rm-dia,.rm-dia.u{grid-template-columns:1fr;padding:24px 20px 24px}
+  .rm-link::before{width:6px;height:28px;min-width:0}
+  .rm-v{position:static;transform:none;justify-self:center;margin-top:4px}
+}
+
+/* filter funnel */
+.rf-g{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px;align-items:stretch}
+.rf-f{display:grid;gap:10px;justify-items:center;align-content:center}
+.rf-b{display:grid;gap:2px;padding:18px 24px;border-radius:18px;background:#fff;text-align:center}
+.rf-b b{font-size:17px}
+.rf-b span{font-size:14px;line-height:1.4;color:var(--soft)}
+.rf-b.b1{background:#fff}.rf-b.b2{background:var(--purple-100)}.rf-b.b2 b{color:var(--purple)}
+.rf-b.b3{background:var(--purple);color:#fff}.rf-b.b3 span{color:rgba(255,255,255,.88)}
+.rf-b.b4{background:var(--ink);color:#fff}.rf-b.b4 span{color:rgba(255,255,255,.8)}
+.rf-gu{display:grid;align-content:center;justify-items:start;gap:12px;padding:32px;border-radius:24px;background:var(--purple);color:#fff}
+.rf-ic{width:60px;height:60px;border-radius:50%;background:#fff;color:var(--purple);display:grid;place-items:center;transform:rotate(-6deg)}
+.rf-ic svg{width:30px;height:30px}
+.rf-gu h3{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(26px,2.6vw,38px);line-height:1.05;text-transform:uppercase}
+.rf-gu p{font-size:17px;color:rgba(255,255,255,.9)}
+@media(max-width:960px){.rf-g{grid-template-columns:1fr}.rf-b{width:100%!important}.rf-b.b2{width:94%!important}.rf-b.b3{width:88%!important}.rf-b.b4{width:82%!important}.rf-gu{padding:26px 22px}}
 </style>
 <link rel="stylesheet" href="/site/mobile.css?v=16f0b6c3">
 </head>
@@ -393,11 +440,11 @@
     <div class="rh-l">
       <span class="k-eyebrow">Werving &amp; selectie</span>
       <h1 class="k-h1 rh-title">HET HELE PROCES,<br>UIT HANDEN.</h1>
-      <p class="k-lead">Wij zoeken in opdracht van jouw organisatie naar junior talent, van werkstudent tot stagiair en starter, om je openstaande rol in te vullen. Zes stappen, wij doen het werk, jullie beslissen.</p>
+      <p class="k-lead">Wij zoeken in opdracht van jouw organisatie naar junior talent, van werkstudent tot stagiair en starter. Wij filteren en spreken de kandidaten, jij krijgt een shortlist van 3 tot 5 geselecteerden en kiest wie het best past.</p>
       <div class="rh-cta"><a class="k-btn light" href="https://calendly.com/wieke-voids/introduction" target="_blank" rel="noopener">Plan een kennismaking</a></div>
     </div>
     <div class="rh-stats">
-      <div class="r-stat" data-reveal><span class="n">2-4</span><p>voorgeselecteerde kandidaten per shortlist</p></div>
+      <div class="r-stat" data-reveal><span class="n">3-5</span><p>geselecteerde kandidaten per shortlist, allemaal al gesproken</p></div>
       <div class="r-stat" data-reveal data-delay="120"><span class="n">~3 weken</span><p>gemiddelde tijd tot shortlist</p></div>
       <div class="r-stat" data-reveal data-delay="240"><span class="n" data-count="4000" data-suffix="+">4.000+</span><p>studenten en starters in onze community</p></div>
     </div>
@@ -406,11 +453,77 @@
 <section class="k-strip" aria-hidden="false" style="background:var(--beige)"><div class="k-strip-in"><figure><img src="/photography/mariselle-6-c.jpg" alt="Twee collega's werken samen aan tafel" style="object-position:50% 45%" loading="lazy"></figure><figure><img src="/photography/mariselle-9.jpg" alt="Collega lacht aan zijn bureau" style="object-position:50% 28%" loading="lazy"></figure><figure><img src="/photography/mariselle-5-c.jpg" alt="Drie collega's werken samen aan tafel" style="object-position:50% 40%" loading="lazy"></figure><figure><img src="/photography/mariselle-1.jpg" alt="Collega schrijft aan tafel met een radio naast zich" style="object-position:50% 40%" loading="lazy"></figure><figure><img src="/photography/mariselle-3.jpg" alt="Twee collega's in overleg op de bank" style="object-position:50% 32%" loading="lazy"></figure></div></section>
 
 
+<!-- 1a FILTER -->
+<section class="k-sec k-beige rs-filter" id="filter">
+  <div class="k-wrap">
+    <div class="k-head">
+      <span class="k-eyebrow" data-reveal>Jouw tijd</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Jij focust op je sleutelrollen. Wij nemen de rest uit handen.</h2>
+      <p class="k-lead" data-reveal data-delay="120">Junior rollen zijn zelden je prioriteit, maar kosten wel veel tijd om te vullen. Wij filteren en spreken de kandidaten, en jij kiest uit de beste.</p>
+    </div>
+    <div class="rf-g">
+      <div class="rf-f">
+        <div class="rf-b b1" style="width:100%" data-reveal><b>Veel kandidaten</b><span>Genoeg reacties, maar filteren kost je veel tijd.</span></div>
+        <div class="rf-b b2" style="width:82%" data-reveal data-delay="80"><b>Wij filteren en spreken</b><span>We beoordelen elke match zelf en voeren de gesprekken.</span></div>
+        <div class="rf-b b3" style="width:62%" data-reveal data-delay="160"><b>3 tot 5 geselecteerden</b><span>Allemaal gesproken en passend bij alle eisen van je vacature.</span></div>
+        <div class="rf-b b4" style="width:44%" data-reveal data-delay="240"><b>Jij kiest</b><span>Maximaal vijf gesprekken.</span></div>
+      </div>
+      <div class="rf-gu" data-reveal data-delay="120">
+        <span class="rf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg></span>
+        <h3>Er zit altijd een goede bij.</h3>
+        <p>Zo niet, dan zoeken we verder.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 1b MODEL -->
+<section class="k-sec k-white rs-model" id="model">
+  <div class="k-wrap">
+    <div class="k-head">
+      <span class="k-eyebrow" data-reveal>Ons model</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Wij zenden niet uit. Je talent komt gewoon bij jou in dienst.</h2>
+      <p class="k-lead" data-reveal data-delay="120">Wij zoeken, selecteren en matchen. Daarna tekent het talent bij jou, en jij bent de werkgever.</p>
+    </div>
+    <div class="rm-tabs" role="tablist" data-reveal>
+      <button type="button" role="tab" class="on" data-m="v" aria-selected="true">Zo werkt VOIDS</button>
+      <button type="button" role="tab" data-m="u" aria-selected="false">Zo werkt uitzenden</button>
+    </div>
+    <div class="rm-panel on" data-m="v">
+      <div class="rm-dia">
+        <div class="rm-n b"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="1.5"/><path d="M9 8h2M13 8h2M9 12h2M13 12h2M10 20.5v-4h4v4"/></svg></span><b>Jouw bedrijf</b><i>werkgever</i></div>
+        <div class="rm-link"><span>contract en payroll</span></div>
+        <div class="rm-n"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.8 3.1-6.2 7-6.2s7 2.4 7 6.2"/></svg></span><b>Het talent</b><i>in dienst bij jou</i></div>
+        <div class="rm-v"><b>VOIDS</b><span>zoekt, selecteert en matcht</span></div>
+      </div>
+      <ul class="rm-ck">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Het talent tekent een contract bij jou</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Het talent staat bij jou op de payroll</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Wij zijn geen partij in het contract</span></li>
+      </ul>
+    </div>
+    <div class="rm-panel" data-m="u">
+      <div class="rm-dia u">
+        <div class="rm-n"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="1.5"/><path d="M9 8h2M13 8h2M9 12h2M13 12h2M10 20.5v-4h4v4"/></svg></span><b>Jouw bedrijf</b><i>inlener</i></div>
+        <div class="rm-link"><span>inleenovereenkomst</span></div>
+        <div class="rm-n"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="7" width="17" height="12" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3.5 12.5h17"/></svg></span><b>Uitzendbureau</b><i>werkgever</i></div>
+        <div class="rm-link"><span>arbeidscontract</span></div>
+        <div class="rm-n"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.8 3.1-6.2 7-6.2s7 2.4 7 6.2"/></svg></span><b>Het talent</b><i>in dienst bij het bureau</i></div>
+      </div>
+      <ul class="rm-ck u">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Het bureau is de werkgever</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Contract en payroll lopen via het bureau</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Het bureau staat tussen jou en het talent</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- 2 PROCESS: pinned scroll steps -->
 <section class="rs-proc k-beige" id="proces">
   <div class="rs-pin">
     <div class="rs-top"><h2 class="k-h2">HOE HET WERKT</h2><p class="k-lead">Zes stappen, wij doen het werk, jullie beslissen.</p></div>
-    <div class="rs-stage"><div class="rs-step on" data-i="0"><div class="rs-num anton" style="background-image:url(/photography/hg-03.jpg);background-position:50% 40%">01</div><div class="rs-body"><div class="rs-meta"><span class="rs-when">Dag 1</span><span class="rs-cnt">01 / 06</span></div><div class="rs-main"><h3 class="rs-t anton">Intake &amp; briefing</h3><p class="rs-p">Wij nemen jullie rol, cultuur en groeifase door. Jij levert de richting, wij de rest.</p></div></div></div><div class="rs-step" data-i="1"><div class="rs-num anton" style="background-image:url(/photography/hg-17.jpg);background-position:50% 45%">02</div><div class="rs-body"><div class="rs-meta"><span class="rs-when">Dag 1-7</span><span class="rs-cnt">02 / 06</span></div><div class="rs-main"><h3 class="rs-t anton">Sourcing, binnen en buiten de community</h3><p class="rs-p">We zoeken actief binnen onze community van 4.000+ studenten, via ons bredere netwerk van samenwerkingspartners, en daarbuiten via studieverenigingen, om zoveel mogelijk geschikte kandidaten te bereiken.</p></div></div></div><div class="rs-step" data-i="2"><div class="rs-num anton" style="background-image:url(/photography/hg-15.jpg);background-position:50% 25%">03</div><div class="rs-body"><div class="rs-meta"><span class="rs-when">Dag 8-14</span><span class="rs-cnt">03 / 06</span></div><div class="rs-main"><h3 class="rs-t anton">Voorselectie &amp; check</h3><p class="rs-p">Een recruiter beoordeelt elke match handmatig. Alleen de sterkste gaan door.</p></div></div></div><div class="rs-step" data-i="3"><div class="rs-num anton" style="background-image:url(/photography/hg-14.jpg);background-position:50% 38%">04</div><div class="rs-body"><div class="rs-meta"><span class="rs-when">Week 3</span><span class="rs-cnt">04 / 06</span></div><div class="rs-main"><h3 class="rs-t anton">Shortlist i.p.v. cv-stapel</h3><p class="rs-p">Geen stapel om zelf uit te pluizen: alleen kandidaten die al streng zijn getoetst op fit, met onderbouwing waarom.</p></div></div></div><div class="rs-step" data-i="4"><div class="rs-num anton" style="background-image:url(/photography/hg-19.jpg);background-position:50% 50%">05</div><div class="rs-body"><div class="rs-meta"><span class="rs-when">Na shortlist</span><span class="rs-cnt">05 / 06</span></div><div class="rs-main"><h3 class="rs-t anton">Gesprekken &amp; match</h3><p class="rs-p">Jullie plannen zelf de gesprekken met de kandidaten uit de shortlist en kiezen wie het beste past.</p></div></div></div><div class="rs-step" data-i="5"><div class="rs-num anton" style="background-image:url(/photography/hg-04.jpg);background-position:50% 30%">06</div><div class="rs-body"><div class="rs-meta"><span class="rs-when">Doorlopend</span><span class="rs-cnt">06 / 06</span></div><div class="rs-main"><h3 class="rs-t anton">Nazorg &amp; retentie</h3><p class="rs-p">We blijven contact houden om te checken of de match werkt.</p></div></div></div></div>
+    <div class="rs-stage"><div class="rs-step on" data-i="0"><div class="rs-num anton" style="background-image:url(/photography/hg-03.jpg);background-position:50% 40%">01</div><div class="rs-body"><div class="rs-meta"><span class="rs-when">Dag 1</span><span class="rs-cnt">01 / 06</span></div><div class="rs-main"><h3 class="rs-t anton">Intake &amp; briefing</h3><p class="rs-p">Wij nemen jullie rol, cultuur en groeifase door. Jij levert de richting, wij de rest.</p></div></div></div><div class="rs-step" data-i="1"><div class="rs-num anton" style="background-image:url(/photography/hg-17.jpg);background-position:50% 45%">02</div><div class="rs-body"><div class="rs-meta"><span class="rs-when">Dag 1-7</span><span class="rs-cnt">02 / 06</span></div><div class="rs-main"><h3 class="rs-t anton">Sourcing, binnen en buiten de community</h3><p class="rs-p">We zoeken actief binnen onze community van 4.000+ studenten, via ons bredere netwerk van samenwerkingspartners, en daarbuiten via studieverenigingen, om zoveel mogelijk geschikte kandidaten te bereiken.</p></div></div></div><div class="rs-step" data-i="2"><div class="rs-num anton" style="background-image:url(/photography/hg-15.jpg);background-position:50% 25%">03</div><div class="rs-body"><div class="rs-meta"><span class="rs-when">Dag 8-14</span><span class="rs-cnt">03 / 06</span></div><div class="rs-main"><h3 class="rs-t anton">Voorselectie &amp; check</h3><p class="rs-p">Een recruiter beoordeelt elke match handmatig en spreekt de kandidaten zelf. Alleen de sterkste gaan door.</p></div></div></div><div class="rs-step" data-i="3"><div class="rs-num anton" style="background-image:url(/photography/hg-14.jpg);background-position:50% 38%">04</div><div class="rs-body"><div class="rs-meta"><span class="rs-when">Week 3</span><span class="rs-cnt">04 / 06</span></div><div class="rs-main"><h3 class="rs-t anton">Shortlist i.p.v. cv-stapel</h3><p class="rs-p">Geen stapel om zelf uit te pluizen: 3 tot 5 geselecteerde kandidaten die we allemaal hebben gesproken en die aan alle eisen van je vacature voldoen, met onderbouwing waarom.</p></div></div></div><div class="rs-step" data-i="4"><div class="rs-num anton" style="background-image:url(/photography/hg-19.jpg);background-position:50% 50%">05</div><div class="rs-body"><div class="rs-meta"><span class="rs-when">Na shortlist</span><span class="rs-cnt">05 / 06</span></div><div class="rs-main"><h3 class="rs-t anton">Gesprekken &amp; match</h3><p class="rs-p">Jullie plannen zelf de gesprekken met de kandidaten uit de shortlist en kiezen wie het beste past. Zit er geen goede bij, dan zoeken we verder.</p></div></div></div><div class="rs-step" data-i="5"><div class="rs-num anton" style="background-image:url(/photography/hg-04.jpg);background-position:50% 30%">06</div><div class="rs-body"><div class="rs-meta"><span class="rs-when">Doorlopend</span><span class="rs-cnt">06 / 06</span></div><div class="rs-main"><h3 class="rs-t anton">Nazorg &amp; retentie</h3><p class="rs-p">We blijven contact houden om te checken of de match werkt.</p></div></div></div></div>
     <div class="rs-rail"><button type="button" class="rs-dot on" data-go="0" aria-label="Stap 01"><i>01</i><span>Intake &amp; briefing</span></button><button type="button" class="rs-dot" data-go="1" aria-label="Stap 02"><i>02</i><span>Sourcing, binnen en buiten de community</span></button><button type="button" class="rs-dot" data-go="2" aria-label="Stap 03"><i>03</i><span>Voorselectie &amp; check</span></button><button type="button" class="rs-dot" data-go="3" aria-label="Stap 04"><i>04</i><span>Shortlist i.p.v. cv-stapel</span></button><button type="button" class="rs-dot" data-go="4" aria-label="Stap 05"><i>05</i><span>Gesprekken &amp; match</span></button><button type="button" class="rs-dot" data-go="5" aria-label="Stap 06"><i>06</i><span>Nazorg &amp; retentie</span></button></div>
   </div>
 </section>
@@ -552,5 +665,11 @@
 </script>
 <!--k-footer--><footer class="k-footer"><div class="k-wrap"><div><a class="k-logo" href="/" style="padding:0"><img src="/logo.svg" alt="VOIDS" style="height:24px;filter:brightness(0) invert(1)"></a><p>Wij verbinden hoogopgeleid talent aan ambitieuze organisaties.</p></div><div><h4>Menu</h4><a href="/talent">Talent</a><a href="/companies">Bedrijven</a><a href="/impact">Impact</a><a href="/about">Over ons</a><a href="/blog">Blog</a><a href="/jobboard">Jobs</a></div><div><h4>Meer</h4><a href="/faq">FAQ</a><a href="/terms">Voorwaarden</a><a href="/privacy">Privacy</a></div><div><h4>Blijf op de hoogte</h4><a href="https://linktr.ee/voidscommunity" target="_blank" rel="noopener" style="padding:0">Vacaturemeldingen en community-updates via WhatsApp</a><a href="https://linktr.ee/voidsagency" target="_blank" rel="noopener" style="padding:0;margin-top:8px">Vacatures van deze week &rarr;</a><div class="k-soc"><a href="https://www.linkedin.com/company/voidsagency" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/voids_agency/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@voidstalentagency" target="_blank" rel="noopener">TikTok</a></div></div><div class="k-base"><span>© 2026 VOIDS.agency, Amsterdam</span><span>contact@voids.agency</span></div></div></footer><!--/k-footer-->
 <script src="/site/kit.js?v=16f0b6c3"></script>
+<script>
+(function(){
+  var tb=[].slice.call(document.querySelectorAll('.rm-tabs button')),pn=[].slice.call(document.querySelectorAll('.rm-panel'));
+  tb.forEach(function(b){b.addEventListener('click',function(){var m=b.getAttribute('data-m');tb.forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});pn.forEach(function(p){p.classList.toggle('on',p.getAttribute('data-m')===m)})})});
+})();
+</script>
 </body>
 </html>
