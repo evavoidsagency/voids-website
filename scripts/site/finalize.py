@@ -134,7 +134,9 @@ def seo_block(lang, nl_path, info, src):
         f'<meta name="twitter:title" content="{esc(og_title)}">',
         f'<meta name="twitter:description" content="{esc(desc)}">',
         f'<meta name="twitter:image" content="{img}">',
-        '<link rel="icon" href="/favicon.ico">',
+        '<link rel="icon" href="/favicon.ico?v=2" sizes="any">',
+        '<link rel="icon" href="/icon.svg?v=2" type="image/svg+xml">',
+        '<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">',
         '<meta name="theme-color" content="#fffaec">',
         '<script type="application/ld+json">' + json.dumps(ORG, ensure_ascii=False) + "</script>",
     ]

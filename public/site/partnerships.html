@@ -21,7 +21,9 @@
 <meta name="twitter:title" content="Partnerships | VOIDS">
 <meta name="twitter:description" content="Partnerships zijn employer branding via een lidmaatschap dat waarde biedt: geen losse projecten, maar een vaste plek in de VOIDS-community.">
 <meta name="twitter:image" content="https://voids.agency/photography/home-hero-8.jpg">
-<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" href="/icon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
 <meta name="theme-color" content="#fffaec">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "VOIDS", "legalName": "VOIDS vof", "url": "https://voids.agency", "logo": "https://voids.agency/logo.svg", "description": "VOIDS is een junior talent agency in Amsterdam die hoogopgeleid junior talent verbindt aan ambitieuze bedrijven via werkstudentschappen, stages en starterrollen.", "founder": [{"@type": "Person", "name": "Eva van Raaij"}, {"@type": "Person", "name": "Wieke Sleutjes"}], "address": {"@type": "PostalAddress", "addressLocality": "Amsterdam", "addressCountry": "NL"}, "email": "contact@voids.agency", "sameAs": ["https://www.linkedin.com/company/voidsagency", "https://www.instagram.com/voids_agency/", "https://www.tiktok.com/@voidstalentagency"]}</script>
 <!--/seo-->
@@ -364,6 +366,38 @@
 .pm-wr.s p,.pm-wr.l p,.pm-wr.z p{color:var(--soft)}
 @media(max-width:1100px){.pm-ch2:last-child{grid-column:span 2}.pm-rch{grid-template-columns:1fr}.pm-rgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.pm-wrs{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.pm-ch2:last-child{grid-column:auto}.pm-rgrid,.pm-wrs{grid-template-columns:1fr}.pm-wr{min-height:0}}
+
+/* example partnerships */
+.pm-vxg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.pm-vx{position:relative;display:flex;flex-direction:column;gap:12px;padding:28px;border-radius:24px}
+.pm-vx.p{background:var(--purple);color:#fff}.pm-vx.s{background:var(--blue-100)}.pm-vx.l{background:var(--purple-100)}
+.pm-vt{align-self:flex-start;padding:4px 11px;border-radius:99px;background:rgba(255,255,255,.2);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.pm-vx.s .pm-vt,.pm-vx.l .pm-vt{background:#fff;color:var(--purple)}
+.pm-vx h3{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(26px,2.4vw,34px);line-height:1.05;text-transform:uppercase}
+.pm-vx.s h3{color:var(--blue-700)}.pm-vx.l h3{color:var(--purple)}
+.pm-vx .who{font-size:15.5px;line-height:1.5;opacity:.92}
+.pm-vx ul{list-style:none;padding:0;margin:6px 0 0;display:grid;gap:10px}
+.pm-vx li{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:center;font-size:14.5px;font-weight:600;line-height:1.35}
+.pm-vx li svg{width:26px;height:26px;padding:5px;border-radius:50%;background:#fff;color:var(--purple)}
+.pm-vx.p li svg{background:rgba(255,255,255,.18);color:#fff}
+.pm-vr{align-self:flex-start;margin-top:auto;padding:6px 12px;border-radius:99px;background:#fff;color:var(--purple);font-size:12px;font-weight:700}
+/* team + quote */
+.pm-tm{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:center}
+.pm-tm-ph{border-radius:26px;overflow:hidden;aspect-ratio:4/3.4}
+.pm-tm-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.pm-tm-tx .k-lead{margin-top:14px}
+.pm-q2{margin:26px 0 0;padding:22px 24px;border-radius:20px;background:#fff}
+.pm-q2 p{font-size:19px;line-height:1.45;font-weight:600;color:var(--ink)}
+.pm-q2 cite{display:block;margin-top:10px;font-style:normal;font-size:14px;font-weight:700;color:var(--purple)}
+.pm-q2 cite span{display:block;font-weight:500;color:var(--muted)}
+/* call + sticky */
+.pm-ap-l{display:grid;gap:18px;align-content:start}
+.pm-call{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:18px 22px;border-radius:18px;background:rgba(255,255,255,.1);font-weight:600}
+.pm-call .k-btn{color:#fff}
+.pm-sticky{position:fixed;right:20px;bottom:20px;z-index:60;padding:14px 22px;border-radius:99px;background:var(--ink);color:#fff;font:700 14.5px Inter,sans-serif;text-decoration:none;box-shadow:0 16px 30px -12px rgba(0,0,0,.5);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .3s,transform .3s}
+.pm-sticky.on{opacity:1;transform:none;pointer-events:auto}
+.pm-sticky:hover{background:var(--purple)}
+@media(max-width:960px){.pm-vxg{grid-template-columns:1fr}.pm-tm{grid-template-columns:1fr;gap:26px}.pm-sticky{right:14px;bottom:84px}}
 </style>
 <link rel="stylesheet" href="/site/mobile.css?v=16f0b6c3">
 </head>
@@ -529,6 +563,22 @@
   </div>
 </section>
 
+<!-- 3c voorbeelden -->
+<section class="k-sec k-white" id="voorbeelden">
+  <div class="k-wrap">
+    <div class="k-head">
+      <span class="k-eyebrow" data-reveal>Zo kan het eruitzien</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Drie voorbeelden van een partnership.</h2>
+      <p class="k-lead" data-reveal data-delay="120">Geen vaste pakketten, wel houvast. We passen elk voorbeeld aan op wat jij nodig hebt.</p>
+    </div>
+    <div class="pm-vxg">
+      <div class="pm-vx p" data-reveal data-delay="0"><span class="pm-vt">Voorbeeld</span><h3>Zichtbaarheid</h3><p class="who">Voor een scale-up of bedrijf dat bekender wil worden bij studenten.</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Employer branding op studentenmaat</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Portretten van je werkstudenten</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Uitgelicht in de community</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Samen een event organiseren</span></li></ul></div>
+      <div class="pm-vx s" data-reveal data-delay="80"><span class="pm-vt">Voorbeeld</span><h3>Doorlopend werven</h3><p class="who">Voor een bedrijf dat vaker junior talent nodig heeft.</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Vacatures doorlopend plaatsen en delen</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Werving &amp; selectie, doorlopend</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Samen inhouse dagen organiseren</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Naadloze vervanging als iemand stopt</span></li></ul><span class="pm-vr">Gunstiger tarief</span></div>
+      <div class="pm-vx l" data-reveal data-delay="160"><span class="pm-vt">Voorbeeld</span><h3>Impact</h3><p class="who">Voor een corporate die voor gelijke kansen wil staan.</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Partnerlabel</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Betaalde werkervaring voor studenten</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Een eigen werkstudentenprogramma</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Impactrapportage</span></li></ul></div>
+    </div>
+  </div>
+</section>
+
 <!-- 4c impact -->
 <section class="k-sec k-purple pm-imp" id="impact">
   <div class="k-wrap">
@@ -578,7 +628,7 @@
         <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Betaalde werkervaring, €17 tot €22 per uur</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Open over hoe het is om bij je te werken</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Open voor feedback van studenten</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg><span>Werkervaring toegankelijker maken</span></li></ul>
       </div>
       <div class="pm-af-r">
-        <div class="k-tile white" data-reveal data-delay="80"><h3 class="k-h3">Jaarlidmaatschap</h3><p class="k-p">Prijs op aanvraag.</p></div>
+        <div class="k-tile white" data-reveal data-delay="80"><h3 class="k-h3">Jaarlidmaatschap</h3><p class="k-p">Prijs op aanvraag. Die hangt af van wat je kiest: de scope, het aantal rollen en de looptijd.</p></div>
         <div class="k-tile white" data-reveal data-delay="160"><h3 class="k-h3">Een beperkt aantal partners</h3><p class="k-p">Zodat je zichtbaar blijft.</p></div>
         <div class="k-tile white" data-reveal data-delay="240"><h3 class="k-h3">Samen bouwen</h3><p class="k-p">Meedenken en een gunstiger tarief voor partners die nu instappen.</p></div>
       </div>
@@ -594,6 +644,21 @@
   <div class="pm-lrow"><div class="pm-ltrack"><span class="lt"><img src="/logos/joulz.svg" alt="Joulz"></span><span class="lt"><img src="/logos/hubby.svg" alt="Hubby"></span><span class="lt"><img src="/logos/van-oort-van-oort.png" alt="Van Oort &amp; Van Oort"></span><span class="lt"><img src="/logos/de-kiesmannen.svg" alt="De Kiesmannen"></span><span class="lt"><img src="/logos/relive.svg" alt="Relive"></span><span class="lt"><img src="/logos/writify.png" alt="Writify"></span><span class="lt"><img src="/logos/structural-collective.png" alt="Structural Collective"></span><span class="lt"><img src="/logos/onestone.png" alt="Onestone"></span><span class="lt"><img src="/logos/mg.svg" alt="M&amp;G"></span><span class="lt"><img src="/logos/dropp.png" alt="Dropp"></span><span class="lt"><img src="/logos/mila-health.png" alt="Mila Health"></span><span class="lt"><img src="/logos/hotelplanner.png" alt="HotelPlanner"></span><span class="lt"><img src="/logos/meute.svg" alt="Meute"></span><span class="lt"><img src="/logos/wepartynow.svg" alt="WePartyNow"></span><span class="lt"><img src="/logos/stuwr.svg" alt="Stuwr"></span><span class="lt"><img src="/logos/cribconnects.jpg" alt="CribConnects"></span><span class="lt"><img src="/logos/de-huismeesters.png" alt="De Huismeesters"></span><span class="lt"><img src="/logos/go-delphi.png" alt="Go Delphi"></span><span class="lt"><img src="/logos/masterjecijfers.png" alt="#MasterJeCijfers"></span><span class="lt"><img src="/logos/monsterscore.png" alt="Monsterscore"></span><span class="lt"><img src="/logos/house-of-inclusion.svg" alt="House of Inclusion"></span><span class="lt"><img src="/logos/the-cirqle.png" alt="The Cirqle"></span><span class="lt"><img src="/logos/check-and-charge.svg" alt="Check and Charge"></span><span class="lt"><img src="/logos/enerzien.png" alt="Enerzien"></span><span class="lt"><img src="/logos/bit.svg" alt="Bit"></span><span class="lt"><img src="/logos/green-team.png" alt="Green Team"></span><span class="lt"><img src="/logos/doing-goods.svg" alt="Doing Goods"></span><span class="lt"><img src="/logos/the-longevity-store.svg" alt="The Longevity Store"></span><span class="lt"><img src="/logos/joulz.svg" alt="Joulz"></span><span class="lt"><img src="/logos/hubby.svg" alt="Hubby"></span><span class="lt"><img src="/logos/van-oort-van-oort.png" alt="Van Oort &amp; Van Oort"></span><span class="lt"><img src="/logos/de-kiesmannen.svg" alt="De Kiesmannen"></span><span class="lt"><img src="/logos/relive.svg" alt="Relive"></span><span class="lt"><img src="/logos/writify.png" alt="Writify"></span><span class="lt"><img src="/logos/structural-collective.png" alt="Structural Collective"></span><span class="lt"><img src="/logos/onestone.png" alt="Onestone"></span><span class="lt"><img src="/logos/mg.svg" alt="M&amp;G"></span><span class="lt"><img src="/logos/dropp.png" alt="Dropp"></span><span class="lt"><img src="/logos/mila-health.png" alt="Mila Health"></span><span class="lt"><img src="/logos/hotelplanner.png" alt="HotelPlanner"></span><span class="lt"><img src="/logos/meute.svg" alt="Meute"></span><span class="lt"><img src="/logos/wepartynow.svg" alt="WePartyNow"></span><span class="lt"><img src="/logos/stuwr.svg" alt="Stuwr"></span><span class="lt"><img src="/logos/cribconnects.jpg" alt="CribConnects"></span><span class="lt"><img src="/logos/de-huismeesters.png" alt="De Huismeesters"></span><span class="lt"><img src="/logos/go-delphi.png" alt="Go Delphi"></span><span class="lt"><img src="/logos/masterjecijfers.png" alt="#MasterJeCijfers"></span><span class="lt"><img src="/logos/monsterscore.png" alt="Monsterscore"></span><span class="lt"><img src="/logos/house-of-inclusion.svg" alt="House of Inclusion"></span><span class="lt"><img src="/logos/the-cirqle.png" alt="The Cirqle"></span><span class="lt"><img src="/logos/check-and-charge.svg" alt="Check and Charge"></span><span class="lt"><img src="/logos/enerzien.png" alt="Enerzien"></span><span class="lt"><img src="/logos/bit.svg" alt="Bit"></span><span class="lt"><img src="/logos/green-team.png" alt="Green Team"></span><span class="lt"><img src="/logos/doing-goods.svg" alt="Doing Goods"></span><span class="lt"><img src="/logos/the-longevity-store.svg" alt="The Longevity Store"></span></div></div>
 </section>
 
+<!-- 8b wie zit erachter -->
+<section class="k-sec k-lav" id="team">
+  <div class="k-wrap">
+    <div class="pm-tm">
+      <div class="pm-tm-ph" data-reveal><img src="/team/together-8-c.jpg" alt="Eva en Wieke, de oprichters van VOIDS" loading="lazy"></div>
+      <div class="pm-tm-tx" data-reveal data-delay="100">
+        <span class="k-eyebrow">Wie zit erachter</span>
+        <h2 class="k-h2 sv-h2">Eva en Wieke, en jouw vaste aanspreekpunt.</h2>
+        <p class="k-lead">Achter VOIDS staan Eva van Raaij en Wieke Sleutjes. Een partnership is een persoonlijke samenwerking, dus je hebt een vast aanspreekpunt bij ons.</p>
+        <blockquote class="pm-q2"><p>&ldquo;Complimenten aan VOIDS voor hun professionaliteit en betrokkenheid.&rdquo;</p><cite>Noortje Jonk, Commercial Manager bij Enerzien<span>Over werken met VOIDS</span></cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 9 faq -->
 <section class="k-sec k-white" id="faq">
   <div class="k-wrap">
@@ -602,12 +667,15 @@
       <h2 class="k-h2 sv-h2" data-reveal data-delay="60">Wat je waarschijnlijk wilt weten.</h2>
     </div>
     <div class="pm-faq" data-reveal>
+      <details><summary>Wat kost een partnership?</summary><p>Een partnership is een jaarlidmaatschap. De prijs hangt af van wat je kiest: de scope, het aantal rollen en de looptijd. We bespreken die in een gesprek.</p></details>
       <details><summary>Is een partnership een vast pakket?</summary><p>Nee. Een partnership is maatwerk: we bepalen samen wat erin zit, van zichtbaarheid en employer branding tot doorlopend vacatures plaatsen of werven. Alles is bespreekbaar.</p></details>
-      <details><summary>Wat kost een partnership?</summary><p>Een partnership is een jaarlidmaatschap. De prijs bespreken we in een gesprek.</p></details>
       <details><summary>Wat vraagt het van mijn team?</summary><p>Een kennismaking, een interview voor je portret en een korte terugkoppeling per kwartaal. De rest regelen wij.</p></details>
-      <details><summary>Hoe lang loopt het?</summary><p>Een jaar, in vier kwartalen.</p></details>
+      <details><summary>Hoe snel kunnen we starten?</summary><p>Na je aanmelding plannen we snel een kennismaking. Daarna stellen we samen je partnership samen en starten we.</p></details>
+      <details><summary>Hoe lang loopt het en kan ik opzeggen?</summary><p>Een partnership loopt per jaar, in vier kwartalen. Afspraken over verlengen en opzeggen bespreken we vooraf.</p></details>
+      <details><summary>Wat krijg ik terug?</summary><p>Elk kwartaal een terugblik: wat je hebt bereikt, wat studenten terugkoppelen en wat het je oplevert. Met een impactrapportage over wie je bereikt.</p></details>
+      <details><summary>Wat is het partnerlabel?</summary><p>Het label dat je als partner voert. Het laat zien dat je betaalde werkervaring biedt, open staat voor feedback van studenten en werkervaring toegankelijker maakt. Je kunt het zien als je impactvinkje.</p></details>
       <details><summary>Wat als ik al een vacature heb?</summary><p>Die plaatsen we voor je. Als partner plaats en deel je vacatures doorlopend tegen een gunstiger tarief. Wil je dat wij de kandidaat vinden, dan kan werving &amp; selectie ook doorlopend binnen je partnership.</p></details>
-      <details><summary>Kan iedereen partner worden?</summary><p>Nee. We werken met een beperkt aantal partners tegelijk en kijken samen met je of het past, bijvoorbeeld bij je sector, je grootte en of je betaalde werkervaring biedt.</p></details>
+      <details><summary>Kan iedereen partner worden?</summary><p>Nee. We werken met een beperkt aantal partners tegelijk, zodat elke partner zichtbaar blijft. We kijken samen met je of het past, bijvoorbeeld bij je sector, je grootte en of je betaalde werkervaring biedt.</p></details>
     </div>
   </div>
 </section>
@@ -621,11 +689,12 @@
       <p class="k-lead" data-reveal data-delay="120">We werken met een beperkt aantal partners tegelijk. Vertel kort wie je bent, dan kijken we samen of het past.</p>
     </div>
     <div class="pm-ap">
-      <ol class="pm-ap-s" data-reveal>
+      <div class="pm-ap-l"><ol class="pm-ap-s" data-reveal>
         <li><i>1</i><div><b>Jij meldt je aan</b><span>Twee minuten werk: wie je bent en wat je zoekt.</span></div></li>
         <li><i>2</i><div><b>Wij nemen contact op</b><span>Voor een kennismaking en intake.</span></div></li>
         <li><i>3</i><div><b>We kijken samen of het past</b><span>Past het, dan starten we met je partnership.</span></div></li>
       </ol>
+      <div class="pm-call" data-reveal><span>Liever eerst bellen?</span><a class="k-btn ghost" href="https://calendly.com/wieke-voids/introduction" target="_blank" rel="noopener">Plan een gesprek</a></div></div>
       <div data-reveal data-delay="100">
         <form class="k-form" id="pform" novalidate>
           <div class="k-row2"><label class="k-field">Naam<input name="name" autocomplete="name" required></label><label class="k-field">Bedrijf<input name="company" autocomplete="organization" required></label></div>
@@ -643,6 +712,7 @@
   </div>
 </section>
 
+<a class="pm-sticky" id="pmsticky" href="#aanmelden">Meld je aan als partner</a>
 <!--k-footer--><footer class="k-footer"><div class="k-wrap"><div><a class="k-logo" href="/" style="padding:0"><img src="/logo.svg" alt="VOIDS" style="height:24px;filter:brightness(0) invert(1)"></a><p>Wij verbinden hoogopgeleid talent aan ambitieuze organisaties.</p></div><div><h4>Menu</h4><a href="/talent">Talent</a><a href="/companies">Bedrijven</a><a href="/impact">Impact</a><a href="/about">Over ons</a><a href="/blog">Blog</a><a href="/jobboard">Jobs</a></div><div><h4>Meer</h4><a href="/faq">FAQ</a><a href="/terms">Voorwaarden</a><a href="/privacy">Privacy</a></div><div><h4>Blijf op de hoogte</h4><a href="https://linktr.ee/voidscommunity" target="_blank" rel="noopener" style="padding:0">Vacaturemeldingen en community-updates via WhatsApp</a><a href="https://linktr.ee/voidsagency" target="_blank" rel="noopener" style="padding:0;margin-top:8px">Vacatures van deze week &rarr;</a><div class="k-soc"><a href="https://www.linkedin.com/company/voidsagency" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/voids_agency/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@voidstalentagency" target="_blank" rel="noopener">TikTok</a></div></div><div class="k-base"><span>© 2026 VOIDS.agency, Amsterdam</span><span>contact@voids.agency</span></div></div></footer><!--/k-footer-->
 <script src="/site/kit.js?v=16f0b6c3"></script>
 <script>
@@ -707,6 +777,12 @@
     if(i>-1){sel.splice(i,1);c.setAttribute('aria-pressed','false')}else{sel.push(w);c.setAttribute('aria-pressed','true')}
     draw();
   })});
+})();
+
+(function(){
+  var st=document.getElementById('pmsticky'),ap=document.getElementById('aanmelden');if(!st||!ap)return;
+  function upd(){var y=scrollY,r=ap.getBoundingClientRect(),inForm=r.top<innerHeight*0.9&&r.bottom>0;st.classList.toggle('on',y>700&&!inForm)}
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
 })();
 </script>
 </body>
