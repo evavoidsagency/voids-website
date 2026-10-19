@@ -398,6 +398,24 @@
 .pm-sticky.on{opacity:1;transform:none;pointer-events:auto}
 .pm-sticky:hover{background:var(--purple)}
 @media(max-width:960px){.pm-vxg{grid-template-columns:1fr}.pm-tm{grid-template-columns:1fr;gap:26px}.pm-sticky{right:14px;bottom:84px}}
+
+/* quotes */
+.pm-qs{margin-top:36px}
+.pm-qg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
+.pm-qc{margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:18px;padding:26px;border-radius:22px;background:#fff}
+.pm-qc p{font-size:19px;line-height:1.45;font-weight:600;color:var(--ink)}
+.pm-qc figcaption{display:flex;align-items:center;gap:14px;font-size:13.5px;line-height:1.35;color:var(--muted)}
+.pm-qc figcaption img{width:52px;height:52px;border-radius:50%;object-fit:cover}
+.pm-qc figcaption b{display:block;font-size:15px;color:var(--purple)}
+/* retrospective */
+.pm-rts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.pm-rt{display:flex;gap:16px;align-items:flex-start;padding:24px;border-radius:20px;background:var(--purple-100)}
+.pm-rt:nth-child(even){background:var(--blue-100)}
+.pm-rt .ic{flex:none;width:46px;height:46px;border-radius:50%;background:#fff;color:var(--purple);display:grid;place-items:center}
+.pm-rt .ic svg{width:23px;height:23px}
+.pm-rt b{display:block;font-size:17px;color:var(--purple);margin-bottom:4px}
+.pm-rt span{font-size:14.5px;line-height:1.5;color:var(--soft)}
+@media(max-width:960px){.pm-qg,.pm-rts{grid-template-columns:1fr}}
 </style>
 <link rel="stylesheet" href="/site/mobile.css?v=16f0b6c3">
 </head>
@@ -615,6 +633,18 @@
   </div>
 </section>
 
+<!-- 5b terugblik -->
+<section class="k-sec k-white" id="terugblik">
+  <div class="k-wrap">
+    <div class="k-head">
+      <span class="k-eyebrow" data-reveal>What you get back</span>
+      <h2 class="k-h2 sv-h2" data-reveal data-delay="60">A review every quarter.</h2>
+      <p class="k-lead" data-reveal data-delay="120">This shows what your partnership delivers, and what we can do better together.</p>
+    </div>
+    <div class="pm-rts"><div class="pm-rt" data-reveal data-delay="0"><span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"></path><circle cx="12" cy="12" r="3"></circle></svg></span><div><b>Reach</b><span>How many students see your content, events and vacancies.</span></div></div><div class="pm-rt" data-reveal data-delay="70"><span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 4v-4A2.5 2.5 0 0 1 4 13.5v-7Z"></path><path d="M8.5 9h7M8.5 12h4"></path></svg></span><div><b>Responses</b><span>How many students respond, apply or drop by.</span></div></div><div class="pm-rt" data-reveal data-delay="140"><span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.4"></circle><path d="M2.5 20c0-3.6 2.6-6 5.5-6s5.5 2.4 5.5 6"></path><path d="M15 14.2c2.6.2 4.5 2.2 4.5 5.3"></path></svg></span><div><b>Interviews and placements</b><span>What your recruiting delivers.</span></div></div><div class="pm-rt" data-reveal data-delay="0"><span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 9a5 5 0 0 1 10 0c0 3-3 3.5-3 6.5a2.5 2.5 0 0 1-5 0"></path><path d="M10 9a2 2 0 0 1 4 0"></path></svg></span><div><b>What students think</b><span>Feedback on your vacancies, terms and way of working.</span></div></div><div class="pm-rt" data-reveal data-delay="70"><span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 7.6 4.2 4.2 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"></path></svg></span><div><b>Impact</b><span>Who you have reached with your partnership.</span></div></div><div class="pm-rt" data-reveal data-delay="140"><span class="ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"></path><path d="m3.5 6 1 1 2-2M3.5 12l1 1 2-2M3.5 18l1 1 2-2"></path></svg></span><div><b>Recommendations</b><span>Concrete improvements for your employer brand.</span></div></div></div>
+  </div>
+</section>
+
 <!-- 6 afspraken + partnerlabel -->
 <section class="k-sec k-lav">
   <div class="k-wrap">
@@ -653,7 +683,14 @@
         <span class="k-eyebrow">Who is behind it</span>
         <h2 class="k-h2 sv-h2">Eva and Wieke, and your steady point of contact.</h2>
         <p class="k-lead">Behind VOIDS are Eva van Raaij and Wieke Sleutjes. A partnership is a personal collaboration, so you have a steady point of contact with us.</p>
-        <blockquote class="pm-q2"><p>“Compliments to VOIDS for their professionalism and commitment.”</p><cite>Noortje Jonk, Commercial Manager at Enerzien<span>On working with VOIDS</span></cite></blockquote>
+        
+      </div>
+    </div>
+    <div class="pm-qs" data-reveal>
+      <span class="k-eyebrow">Clients on working with VOIDS</span>
+      <div class="pm-qg">
+        <figure class="pm-qc"><blockquote><p>“VOIDS delivered candidates within two weeks who matched our request exactly.”</p></blockquote><figcaption><img src="/testimonials/bas-lemmens.jpg" alt="Bas Lemmens" loading="lazy"><span><b>Bas Lemmens</b>Co-founder Booking.com, President HotelPlanner</span></figcaption></figure>
+        <figure class="pm-qc"><blockquote><p>“Compliments to VOIDS for their professionalism and commitment.”</p></blockquote><figcaption><img src="/testimonials/noortje-jonk.jpg" alt="Noortje Jonk" loading="lazy"><span><b>Noortje Jonk</b>Commercial Manager at Enerzien</span></figcaption></figure>
       </div>
     </div>
   </div>
