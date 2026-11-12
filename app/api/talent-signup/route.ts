@@ -8,7 +8,7 @@ import { Resend } from "resend";
 
 const NOTION_VERSION = "2025-09-03";
 const DEFAULT_DATA_SOURCE_ID = "a8456477-78e6-4cb7-be3a-654f4c734a90";
-const TO_ADDRESS = "contact@voids.agency";
+const TO_ADDRESS = "eva@voids.agency";
 const FROM_ADDRESS = "VOIDS website <noreply@voids.agency>";
 
 // Vercel rejects request bodies above ~4.5 MB, so keep attachments below that.
