@@ -187,6 +187,38 @@ body{overflow-x:clip}
   .ab-ct-grid{grid-template-columns:1fr}
 }
 @media(max-width:520px){.k-form{padding:22px}.ab-card{aspect-ratio:4/5}}
+
+/* RAAD VAN ADVIES: split head + repeatable member cards (photo, label, name, function, role) */
+.ab-adv{scroll-margin-top:84px}
+.ab-adv-in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:start}
+.ab-adv-head{position:sticky;top:112px}
+.ab-adv-head .k-h2{margin:12px 0 22px}
+.ab-adv-head .k-lead{max-width:24em}
+.ab-adv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px;row-gap:0;margin:0;padding:0;list-style:none}
+.ab-adv-card{display:flex;flex-direction:column;margin:0 0 20px;padding:14px 14px 26px;border-radius:24px;background:#fff;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.ab-adv-card:hover{transform:translateY(-5px);box-shadow:0 24px 36px -26px rgba(40,10,120,.55)}
+@supports (grid-template-rows:subgrid){.ab-adv-card{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:0}}
+.ab-adv-ph{position:relative;aspect-ratio:4/3.4;border-radius:16px;overflow:hidden;background:var(--purple-100);display:grid;place-items:center}
+.ab-adv-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;filter:grayscale(1) contrast(1.04)}
+.ab-adv-ini{display:grid;place-items:center;width:clamp(96px,9vw,128px);aspect-ratio:1;border-radius:50%;background:var(--purple);color:#fff;font-family:Anton,"Arial Narrow",sans-serif;font-size:clamp(34px,3.4vw,46px);letter-spacing:.04em;line-height:1}
+.ab-adv-card:nth-child(even) .ab-adv-ph{background:var(--blue-100)}
+.ab-adv-card:nth-child(even) .ab-adv-ini{background:var(--blue-700)}
+.ab-adv-tag{justify-self:start;align-self:start;margin:20px 12px 0;padding:6px 14px;border-radius:99px;background:var(--purple-100);color:var(--purple);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.ab-adv-card:nth-child(even) .ab-adv-tag{background:var(--blue-100);color:var(--blue-700)}
+.ab-adv-name{margin:16px 12px 0;font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(22px,2.3vw,32px);line-height:1.02;text-transform:uppercase;color:var(--ink)}
+.ab-adv-fn{margin:8px 12px 0;font-size:15px;line-height:1.4;font-weight:600;color:var(--purple)}
+.ab-adv-card:nth-child(even) .ab-adv-fn{color:var(--blue-700)}
+.ab-adv-role{margin:12px 12px 0;font-size:15px;line-height:1.5;color:var(--soft)}
+@media(max-width:960px){
+  .ab-adv-in{grid-template-columns:1fr;gap:32px}
+  .ab-adv-head{position:static}
+}
+@media(max-width:560px){
+  .ab-adv-grid{grid-template-columns:1fr}
+  .ab-adv-card{display:flex;grid-row:auto}
+  .ab-adv-ph{aspect-ratio:16/10}
+}
+@media(prefers-reduced-motion:reduce){.ab-adv-card{transition:none}.ab-adv-card:hover{transform:none}}
 </style>
 <link rel="stylesheet" href="/site/mobile.css?v=16f0b6c3">
 </head>
@@ -332,6 +364,37 @@ body{overflow-x:clip}
           <p class="k-p">Thank you. We’ll get back to you soon.</p>
         </div>
       </div>
+  </div>
+</section>
+
+<!-- RAAD VAN ADVIES (alleen op deze pagina; nieuwe leden pas toevoegen na akkoord op naam, functie en rolzin) -->
+<section class="k-sec k-beige ab-adv" id="raad-van-advies" aria-labelledby="adv-h">
+  <div class="k-wrap ab-adv-in">
+    <div class="ab-adv-head" data-reveal>
+      <span class="k-eyebrow">Advised by</span>
+      <h2 class="k-h2" id="adv-h">ADVISORY <span class="k-accent">BOARD.</span></h2>
+      <p class="k-lead">Entrepreneurs and HR professionals who keep us sharp and think along with us.</p>
+    </div>
+    <div>
+      <!-- Lid toevoegen: kopieer een <li class="ab-adv-card"> hieronder en pas initialen, naam, functie, label en rolzin aan.
+           Foto beschikbaar? Vervang <span class="ab-adv-ini">...</span> door <img src="/team/<bestand>.jpg" alt="<Naam>" loading="lazy">. -->
+      <ul class="ab-adv-grid">
+        <li class="ab-adv-card" data-reveal>
+          <div class="ab-adv-ph"><img src="/team/bas-lemmens.jpg" alt="Bas Lemmens" loading="lazy"></div>
+          <span class="ab-adv-tag">Scaling and matching</span>
+          <h3 class="ab-adv-name">Bas Lemmens</h3>
+          <p class="ab-adv-fn">Co-founder of Booking.com, President EMEA of HotelPlanner and CEO of Meetings.com</p>
+          <p class="ab-adv-role">Advising on scaling and on matching supply and demand well.</p>
+        </li>
+        <li class="ab-adv-card" data-reveal>
+          <div class="ab-adv-ph"><img src="/team/wouter-glaser.jpg" alt="Wouter Glaser" loading="lazy" style="transform:scale(1.45);transform-origin:50% 24%"></div>
+          <span class="ab-adv-tag">Growth and visibility</span>
+          <h3 class="ab-adv-name">Wouter Glaser</h3>
+          <p class="ab-adv-fn">Founder of Go Delphi, Glasnost and Fitzgerald</p>
+          <p class="ab-adv-role">Advising on growth, organising and PR, and on the VOIDS story.</p>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
 
