@@ -86,7 +86,7 @@ def pick_cols(n):
 def impact_block(shown, lang, data, v):
     c = data["copy"]["impact"][lang]
     cats = data["categories"]
-    note = "<!-- EN: concept, nog niet door Eva goedgekeurd -->\n" if lang == "en" else ""
+    note = ""
     n = len(shown)
     cols = pick_cols(n)
     rem = n % cols
@@ -113,7 +113,7 @@ def impact_block(shown, lang, data, v):
 
 def home_block(shown, lang, data, v):
     c = data["copy"]["home"][lang]
-    note = "<!-- EN: concept, nog niet door Eva goedgekeurd -->\n" if lang == "en" else ""
+    note = ""
     items = [f'<li>{link_open(p)}{logo}</a></li>' for p, logo in shown]
     return (
         f'{note}<section class="pt-strip pt" id="community-partners" aria-labelledby="pt-h">\n'

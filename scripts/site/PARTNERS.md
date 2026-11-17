@@ -53,8 +53,8 @@ Gebruik dat nooit voor wat live gaat.
 ## Teksten en Engels
 
 - De koppen, de intro en de linktekst staan bovenaan in `partners.json` onder `copy` (NL en EN).
-- De Engelse teksten hebben `"status": "concept"` en staan in de pagina als commentaar "EN: concept". Ze zijn een
-  voorstel en nog niet door Eva goedgekeurd. Pas ze aan in `partners.json` en voer "Bijwerken" uit.
+- De Engelse teksten staan in dezelfde `partners.json` (`text.en`, en `copy.*.en`). Pas ze daar aan en voer "Bijwerken" uit.
+  Bij een nieuwe partner is de Engelse zin eerst een voorstel: laat Eva hem lezen voordat de partner live gaat.
 - Gebruik alleen de afgesproken zinnen. Geen contactpersonen, e-mailadressen of afspraken over fees in dit bestand.
 
 ## Later: eigen pagina `/impact/partners`

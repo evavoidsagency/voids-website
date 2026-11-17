@@ -7,9 +7,8 @@
         "intro": "We werken samen met organisaties die jongeren op weg helpen. Dit zijn de partners in onze community."
       },
       "en": {
-        "status": "concept",
         "heading": "WE DON'T DO IT ALONE.",
-        "intro": "We work with organisations that help young people on their way. These are the partners in our community."
+        "intro": "We work with organisations that help young people on their way. Meet the partners in our community."
       }
     },
     "home": {
@@ -18,7 +17,6 @@
         "link": "Bekijk alle partners"
       },
       "en": {
-        "status": "concept",
         "heading": "OUR COMMUNITY PARTNERS",
         "link": "See all partners"
       }
@@ -55,7 +53,7 @@
       "logo": "state-of-youth",
       "text": {
         "nl": "Het representatieve jongerenpanel van KidsRights, met duizenden jongeren, dat hun stem rechtstreeks naar beleidsmakers brengt. Onderdeel van een wereldwijde beweging met 800+ chapters.",
-        "en": "KidsRights' representative youth panel, with thousands of young people, which brings their voice straight to policymakers. Part of a worldwide movement with 800+ chapters."
+        "en": "The representative youth panel of KidsRights: thousands of young people whose voice goes straight to policymakers. Part of a worldwide movement with 800+ chapters."
       },
       "approved": true,
       "notes": "Website bevestigd door Eva: stateofyouth.nl. Cijfers komen van de eigen site, niet door partner bevestigd."
@@ -94,7 +92,7 @@
       "logo": "number-5-foundation",
       "text": {
         "nl": "Sinds 2017 de neutrale plek in Den Haag, opgericht door Constantijn en Laurentien van Oranje, waar changemakers elkaar vinden om te bouwen aan een rechtvaardige en duurzame samenleving.",
-        "en": "Since 2017 the neutral place in The Hague, founded by Constantijn and Laurentien van Oranje, where changemakers meet to build a just and sustainable society."
+        "en": "The neutral place in The Hague where changemakers meet to build a just and sustainable society. Founded in 2017 by Constantijn and Laurentien van Oranje."
       },
       "approved": true,
       "notes": "'2017' en de oprichters komen uit een notitie in de tracker, niet door partner bevestigd."
@@ -107,7 +105,7 @@
       "logo": "sdg-nederland",
       "text": {
         "nl": "Het Nederlandse netwerk van 1525 organisaties die werken aan de VN-duurzaamheidsdoelen, met jonge sprekers voor events via SDG-Voices.",
-        "en": "The Dutch network of 1525 organisations working on the UN sustainability goals, with young speakers for events through SDG-Voices."
+        "en": "The Dutch network of 1,525 organisations working on the UN Sustainable Development Goals, with young speakers for events through SDG-Voices."
       },
       "approved": true,
       "notes": "Zin komt uit de tracker (Tekst voor website). Het logo is het SDG-kleurenwiel dat hun site zelf als logo gebruikt; Eva: mag zo blijven. Aantal (1525) niet door partner bevestigd."
