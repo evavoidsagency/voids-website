@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Renders the impact partners into the site pages from lib/content/partners.json.
+Renders the community partners into the site pages from lib/content/partners.json.
 
     python3 scripts/site/partners.py            # normal: only approved partners WITH a logo file
     python3 scripts/site/partners.py --placeholder   # dev only: approved partners without logo get a text placeholder
@@ -9,7 +9,7 @@ Renders the impact partners into the site pages from lib/content/partners.json.
 Pipeline order: run_tr.py -> partners.py -> finalize.py (see scripts/site/README.md and PARTNERS.md).
 
 The pages contain marker pairs that this script fills (and empties again when there is nothing to show):
-    <!--partners:impact--> ... <!--/partners:impact-->   (impact.html, en/impact.html)
+    <!--partners:band-->   ... <!--/partners:band-->     (talent.html, en/talent.html)
     <!--partners:home-->   ... <!--/partners:home-->     (index.html, en/home.html)
 
 Two locks keep partners offline:
@@ -25,10 +25,10 @@ LOGO_DIR = os.path.join(ROOT, "public", "logos", "partners")
 DEFAULT_DATA = os.path.join(ROOT, "lib", "content", "partners.json")
 
 PAGES = {
-    "impact": {"nl": "impact.html", "en": "en/impact.html"},
+    "band": {"nl": "talent.html", "en": "en/talent.html"},
     "home": {"nl": "index.html", "en": "en/home.html"},
 }
-IMPACT_PATH = {"nl": "/impact#partners", "en": "/en/impact#partners"}
+BAND_PATH = {"nl": "/talent#partners", "en": "/en/talent#partners"}
 
 
 def esc(s):
@@ -73,9 +73,9 @@ def link_open(p):
     return f'<a class="pt-logo" href="{esc(p["website"])}" target="_blank" rel="noopener">'
 
 
-def impact_block(shown, lang, data, v):
-    """Compact band near the bottom of the Impact page: small heading, one row of logos with the name."""
-    c = data["copy"]["impact"][lang]
+def band_block(shown, lang, data, v):
+    """Compact band on the Talent page, above the blog posts: small heading, one row of logos with the name."""
+    c = data["copy"]["band"][lang]
     items = []
     for p, logo in shown:
         # the full sentence stays in the data (and as tooltip); it returns on the later /impact/partners page
@@ -85,7 +85,7 @@ def impact_block(shown, lang, data, v):
             f'<p class="pt-n">{esc(p["name"])}</p></li>'
         )
     return (
-        f'<section class="k-sec k-beige pt pt-band" id="partners">\n'
+        f'<section class="k-sec k-lav pt pt-band" id="partners">\n'
         f'  <link rel="stylesheet" href="/site/partners.css?v={v}">\n'
         f'  <div class="k-wrap">\n'
         f'    <div class="pt-bh"><h2 class="k-h2">{esc(c["heading"])}</h2><p>{esc(c["intro"])}</p></div>\n'
@@ -96,14 +96,19 @@ def impact_block(shown, lang, data, v):
 def home_block(shown, lang, data, v):
     c = data["copy"]["home"][lang]
     note = ""
-    items = [f'<li>{link_open(p)}{logo}</a></li>' for p, logo in shown]
+    items = [f'<li style="--i:{i}">{link_open(p)}{logo}</a></li>' for i, (p, logo) in enumerate(shown)]
     return (
         f'{note}<section class="pt-strip pt" id="community-partners" aria-labelledby="pt-h">\n'
         f'  <link rel="stylesheet" href="/site/partners.css?v={v}">\n'
         f'  <div class="pt-in"><h2 id="pt-h">{esc(c["heading"])}</h2>\n'
         f'    <ul class="pt-row">' + "".join(items) + "</ul>\n"
-        f'    <a class="pt-all" href="{IMPACT_PATH[lang]}">{esc(c["link"])} &rarr;</a></div>\n'
-        f"</section>"
+        f'    <a class="pt-all" href="{BAND_PATH[lang]}">{esc(c["link"])} &rarr;</a></div>\n'
+        f"</section>\n"
+        # entrance: logos rise in one by one when the strip scrolls into view (skipped for reduced motion)
+        "<script>(function(){var s=document.getElementById('community-partners');"
+        "if(!s||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;"
+        "s.classList.add('pt-pre');var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){"
+        "s.classList.remove('pt-pre');s.classList.add('pt-go');io.disconnect()}},{threshold:.3});io.observe(s)})();</script>"
     )
 
 
@@ -136,7 +141,7 @@ def main(argv):
                 if logo:
                     shown.append((p, logo))
             if shown:
-                body = (impact_block if kind == "impact" else home_block)(shown, lang, data, v)
+                body = (band_block if kind == "band" else home_block)(shown, lang, data, v)
                 new = f"<!--partners:{kind}-->\n{body}\n<!--/partners:{kind}-->"
             else:
                 new = f"<!--partners:{kind}--><!--/partners:{kind}-->"

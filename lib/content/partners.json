@@ -1,7 +1,7 @@
 {
-  "_readme": "Impact partners (community partners). Bron van waarheid is de Notion-database 'Impact Partnerships Tracker'. Een partner staat alleen op de site als approved true is EN het logobestand in public/logos/partners/ staat. Uitleg: scripts/site/PARTNERS.md",
+  "_readme": "Community partners. Bron van waarheid is de Notion-database 'Impact Partnerships Tracker'. Een partner staat alleen op de site als approved true is EN het logobestand in public/logos/partners/ staat. Uitleg: scripts/site/PARTNERS.md",
   "copy": {
-    "impact": {
+    "band": {
       "nl": {
         "heading": "WE DOEN HET NIET ALLEEN.",
         "intro": "We werken samen met organisaties die jongeren op weg helpen. Dit zijn de partners in onze community."

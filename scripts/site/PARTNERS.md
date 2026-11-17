@@ -1,9 +1,9 @@
-# Impact partners (community partners)
+# Community partners
 
-Het lijstje met partners staat in **`lib/content/partners.json`**. Daaruit worden het blok op de Impact-pagina
-en het strookje op de homepage gemaakt, in het Nederlands en het Engels.
+Het lijstje met partners staat in **`lib/content/partners.json`**. Daaruit worden het blok op de Talent-pagina
+(boven de blogposts) en het strookje op de homepage gemaakt, in het Nederlands en het Engels.
 
-Dit zijn NIET de klanten ("Vertrouwd door") en NIET de werkgeverspartnerships (Bedrijven > Partnerships).
+Niet alle community partners zijn impactpartners. Dit zijn NIET de klanten ("Vertrouwd door") en NIET de werkgeverspartnerships (Bedrijven > Partnerships).
 
 ## Een partner toevoegen
 
@@ -25,7 +25,7 @@ Alleen als Eva akkoord heeft **en** het logo is aangeleverd:
 
 1. Zet bij die partner `"approved": true`.
 2. Voer "Bijwerken" uit.
-3. Controleer op de Impact-pagina en de homepage, en commit en push zoals altijd.
+3. Controleer op de Talent-pagina en de homepage, en commit en push zoals altijd.
 
 Er zijn twee sloten. Een partner verschijnt alleen als `approved` op `true` staat **en** het logobestand bestaat.
 Staat hij op `true` maar mist het logo, dan toont het script een melding ("NOT SHOWN") en blijft hij weg.
@@ -57,7 +57,7 @@ Gebruik dat nooit voor wat live gaat.
   Bij een nieuwe partner is de Engelse zin eerst een voorstel: laat Eva hem lezen voordat de partner live gaat.
 - Gebruik alleen de afgesproken zinnen. Geen contactpersonen, e-mailadressen of afspraken over fees in dit bestand.
 
-## Later: eigen pagina `/impact/partners`
+## Later: eigen pagina met alle partners
 
 Elke partner heeft een `category` met een volgorde (`categories.<naam>.order`). Daarmee is groeperen per categorie
 straks één extra stap in `partners.py`. De pagina zelf is nog niet gebouwd (plan: bij ongeveer 8 tot 10 live partners).
