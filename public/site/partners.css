@@ -1,0 +1,39 @@
+/* Impact partners: shared by /impact (grid) and the home page (strip). Generated markup: scripts/site/partners.py */
+.pt{--pt-purple:#3a0ca3;--pt-ink:#000;--pt-soft:#2b2b2b;--pt-line:#e4e0d4;--pt-blue:#4476f2}
+
+/* logo tile, same height everywhere */
+.pt-logo{display:grid;place-items:center;height:96px;padding:16px 24px;background:#fff;border:1px solid var(--pt-line);border-radius:20px;text-decoration:none;color:inherit;transition:transform .25s,border-color .25s,box-shadow .25s}
+.pt-logo img{display:block;max-width:100%;max-height:64px;width:auto;height:auto;object-fit:contain;transition:filter .25s,opacity .25s}
+.pt-logo:hover,.pt-logo:focus-visible{transform:translateY(-3px);border-color:var(--pt-purple)}
+/* the compact home strip is grey, colour on hover and focus; the impact cards are in colour */
+.pt-row .pt-logo img{filter:grayscale(1);opacity:.85}
+.pt-row .pt-logo:hover img,.pt-row .pt-logo:focus-visible img{filter:none;opacity:1}
+.pt-logo:focus-visible{outline:3px solid var(--pt-blue);outline-offset:3px}
+
+/* text placeholder (dev preview only, used when the logo file is missing) */
+.pt-ph{display:flex;align-items:center;gap:12px;color:var(--pt-purple);font-weight:700;font-size:15px;line-height:1.2;text-align:left}
+.pt-ph i{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#e8e1f7;font-style:normal;font-size:14px;letter-spacing:.02em}
+
+/* impact: grid of cards */
+.pt-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin:0;padding:0;list-style:none}
+.pt-card{flex:0 0 calc((100% - 60px)/4);min-width:0;display:flex;flex-direction:column;gap:14px;padding:20px;background:#fffaec;border-radius:24px}
+.pt-card .pt-logo{background:#fff;border-color:transparent}
+.pt-card h3{margin:6px 0 0;font-family:Inter,sans-serif;font-size:19px;line-height:1.25;font-weight:700;color:var(--pt-ink)}
+.pt-cat{margin:0;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--pt-purple)}
+.pt-card p.pt-t{margin:0;font-size:15.5px;line-height:1.6;color:var(--pt-soft)}
+@media(max-width:1100px){.pt-card{flex-basis:calc((100% - 20px)/2)}}
+@media(max-width:620px){.pt-card{flex-basis:100%}}
+
+/* home: compact strip */
+.pt-strip{background:#fff;padding:56px 0 64px;text-align:center}
+.pt-strip .pt-in{max-width:1320px;margin:0 auto;padding:0 32px}
+.pt-strip h2{margin:0;font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(24px,2.8vw,40px);line-height:1.04;color:var(--pt-purple);text-transform:uppercase}
+.pt-row{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:28px 0 0;padding:0;list-style:none}
+.pt-row li{flex:0 0 210px;min-width:0}
+.pt-row .pt-logo{width:100%;height:96px}
+.pt-all{display:inline-block;margin-top:26px;font-weight:700;font-size:15px;color:var(--pt-purple);text-decoration:underline;text-underline-offset:4px}
+.pt-all:hover{text-decoration-thickness:2px}
+.pt-all:focus-visible{outline:3px solid var(--pt-blue);outline-offset:3px}
+@media(max-width:860px){.pt-strip{padding:44px 0 52px}.pt-strip .pt-in{padding:0 20px}.pt-row li{flex-basis:calc(50% - 8px)}.pt-row .pt-logo{height:84px;padding:12px 16px}}
+
+@media(prefers-reduced-motion:reduce){.pt-logo,.pt-logo img{transition:none}.pt-logo:hover,.pt-logo:focus-visible{transform:none}}

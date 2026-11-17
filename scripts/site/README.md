@@ -22,7 +22,8 @@ The old React pages under `app/(nl)` and `app/en` are shadowed by those rewrites
    canonical, hreflang, Open Graph, JSON-LD, links `mobile.css` last and puts a content-hash version on `kit.css` / `kit.js` into every page. Titles and descriptions come from `meta.json`
    (pages) and `blogmeta_*.json` (blog). Never edit the `<!--seo-->` block by hand.
 
-Order: edit NL page -> `run_tr.py` -> (`genblog.js` if blog changed) -> `finalize.py`.
+Order: edit NL page -> `run_tr.py` -> (`genblog.js` if blog changed) -> `partners.py` -> `finalize.py`.
+`partners.py` fills the impact partner blocks (Impact page and home) from `lib/content/partners.json`; see [`PARTNERS.md`](PARTNERS.md).
 
 ## Environment variables
 

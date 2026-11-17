@@ -1,0 +1,87 @@
+{
+  "_readme": "Impact partners (community partners). Bron van waarheid is de Notion-database 'Impact Partnerships Tracker'. Een partner staat alleen op de site als approved true is EN het logobestand in public/logos/partners/ staat. Uitleg: scripts/site/PARTNERS.md",
+
+  "copy": {
+    "impact": {
+      "nl": {
+        "heading": "WE DOEN HET NIET ALLEEN.",
+        "intro": "We werken samen met organisaties die jongeren op weg helpen. Dit zijn de partners in onze community."
+      },
+      "en": {
+        "status": "concept",
+        "heading": "WE DON'T DO IT ALONE.",
+        "intro": "We work with organisations that help young people on their way. These are the partners in our community."
+      }
+    },
+    "home": {
+      "nl": { "heading": "ONZE COMMUNITY PARTNERS", "link": "Bekijk alle partners" },
+      "en": { "status": "concept", "heading": "OUR COMMUNITY PARTNERS", "link": "See all partners" }
+    }
+  },
+
+  "categories": {
+    "jongerennetwerk": { "order": 1, "nl": "Jongerennetwerk", "en": "Youth network" },
+    "studentenorganisatie": { "order": 2, "nl": "Studentenorganisatie", "en": "Student organisation" },
+    "vacatureplatform": { "order": 3, "nl": "Vacatureplatform", "en": "Job platform" },
+    "stichting": { "order": 4, "nl": "Stichting", "en": "Foundation" }
+  },
+
+  "partners": [
+    {
+      "slug": "state-of-youth",
+      "name": "State of Youth",
+      "category": "jongerennetwerk",
+      "website": "https://www.kidsrights.org/state-of-youth-nl/",
+      "logo": "state-of-youth",
+      "text": {
+        "nl": "Het representatieve jongerenpanel van KidsRights, met duizenden jongeren, dat hun stem rechtstreeks naar beleidsmakers brengt. Onderdeel van een wereldwijde beweging met 800+ chapters.",
+        "en": "KidsRights' representative youth panel, with thousands of young people, which brings their voice straight to policymakers. Part of a worldwide movement with 800+ chapters."
+      },
+      "approved": false,
+      "notes": "Website nog bevestigen (kidsrights.org of stateofyouth.nl). Cijfers komen van de eigen site, niet door partner bevestigd."
+    },
+    {
+      "slug": "aic",
+      "name": "AIC (Amsterdam Investment Club)",
+      "category": "studentenorganisatie",
+      "website": "https://www.amsterdaminvestmentclub.com",
+      "logo": "aic",
+      "text": {
+        "nl": "De Amsterdamse club waar studenten en young professionals de financiële wereld induiken, van quant-wedstrijden en bedrijfsevents tot een eigen analyst programma. Lidmaatschap vanaf €5 per jaar.",
+        "en": "The Amsterdam club where students and young professionals dive into the world of finance, from quant competitions and company events to its own analyst programme. Membership from €5 a year."
+      },
+      "approved": false,
+      "notes": "Cijfers komen van de eigen site, niet door partner bevestigd."
+    },
+    {
+      "slug": "who-knows-ginny",
+      "name": "Who Knows Ginny",
+      "category": "vacatureplatform",
+      "website": "https://www.whoknowsginny.com",
+      "logo": "who-knows-ginny",
+      "text": {
+        "nl": "Boutique vacatureplatform voor de creatieve industrie, met 300+ vacatures en 260+ klanten, gedeeld via het netwerk van Ginny Ranu.",
+        "en": "Boutique job platform for the creative industry, with 300+ vacancies and 260+ clients, shared through Ginny Ranu's network."
+      },
+      "approved": false,
+      "notes": "Cijfers komen van de eigen site, niet door partner bevestigd."
+    },
+    {
+      "slug": "number-5-foundation",
+      "name": "Number 5 Foundation",
+      "category": "stichting",
+      "website": "https://www.numberfive.community",
+      "logo": "number-5-foundation",
+      "text": {
+        "nl": "Sinds 2017 de neutrale plek in Den Haag, opgericht door Constantijn en Laurentien van Oranje, waar changemakers elkaar vinden om te bouwen aan een rechtvaardige en duurzame samenleving.",
+        "en": "Since 2017 the neutral place in The Hague, founded by Constantijn and Laurentien van Oranje, where changemakers meet to build a just and sustainable society."
+      },
+      "approved": false,
+      "notes": "'2017' en de oprichters komen uit een notitie in de tracker, niet door partner bevestigd."
+    }
+  ],
+
+  "initiatives": {
+    "_note": "Eigen initiatieven van VOIDS (bijvoorbeeld Teach First Nederland / TeachNL, naam nog niet besloten) zijn geen externe partners. Ze komen hier later, niet in 'partners'. Niet getoond op de site."
+  }
+}
