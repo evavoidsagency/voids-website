@@ -73,41 +73,23 @@ def link_open(p):
     return f'<a class="pt-logo" href="{esc(p["website"])}" target="_blank" rel="noopener">'
 
 
-def pick_cols(n):
-    """3 or 4 columns on desktop, whichever leaves the fullest last row (4 wins ties)."""
-    if n <= 3:
-        return max(n, 1)
-    def fill(c):
-        r = n % c
-        return 1.0 if r == 0 else r / c
-    return 4 if fill(4) >= fill(3) else 3
-
-
 def impact_block(shown, lang, data, v):
+    """Compact band near the bottom of the Impact page: small heading, one row of logos with the name."""
     c = data["copy"]["impact"][lang]
-    cats = data["categories"]
-    note = ""
-    n = len(shown)
-    cols = pick_cols(n)
-    rem = n % cols
-    first_last = n - rem if rem else None  # index of the first card in an incomplete last row
-    cards = []
-    for i, (p, logo) in enumerate(shown):
-        cat = cats.get(p["category"], {}).get(lang, "")
-        extra = ""
-        if first_last is not None and i == first_last:
-            extra = f' pt-first" style="--gs:{1 + cols - rem}'  # centres the incomplete last row
-        cards.append(
-            f'<li class="pt-card{extra}" data-reveal>{link_open(p)}{logo}</a>'
-            f'<div><p class="pt-cat">{esc(cat)}</p><h3>{esc(p["name"])}</h3></div>'
-            f'<p class="pt-t">{esc(p["text"][lang])}</p></li>'
+    items = []
+    for p, logo in shown:
+        # the full sentence stays in the data (and as tooltip); it returns on the later /impact/partners page
+        tip = f' title="{esc(p["text"][lang])}"'
+        items.append(
+            f'<li class="pt-mi">{link_open(p).replace(">", tip + ">", 1)}{logo}</a>'
+            f'<p class="pt-n">{esc(p["name"])}</p></li>'
         )
     return (
-        f'{note}<section class="k-sec k-white pt" id="partners">\n'
+        f'<section class="k-sec k-beige pt pt-band" id="partners">\n'
         f'  <link rel="stylesheet" href="/site/partners.css?v={v}">\n'
         f'  <div class="k-wrap">\n'
-        f'    <div class="k-head" data-reveal><h2 class="k-h2" style="margin-top:0">{esc(c["heading"])}</h2><p class="k-lead">{esc(c["intro"])}</p></div>\n'
-        f'    <ul class="pt-grid" style="--cols:{cols}">\n      ' + "\n      ".join(cards) + "\n    </ul>\n  </div>\n</section>"
+        f'    <div class="pt-bh"><h2 class="k-h2">{esc(c["heading"])}</h2><p>{esc(c["intro"])}</p></div>\n'
+        f'    <ul class="pt-mini">' + "".join(items) + "</ul>\n  </div>\n</section>"
     )
 
 
