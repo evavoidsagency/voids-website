@@ -49,15 +49,19 @@ body{overflow-x:clip}
 .s2-ban>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
 .s2-ban:hover>img{transform:scale(1.03)}
 .s2-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
-.s2-t{display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-height:240px;padding:24px 26px 26px;border-radius:24px;background:#fff;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.s2-t{container-type:inline-size;display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-height:240px;padding:24px 26px 26px;border-radius:24px;background:#fff;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
 .s2-t:hover{transform:translateY(-5px);box-shadow:0 24px 36px -26px rgba(40,10,120,.55)}
 .s2-t.t1{background:var(--purple);color:#fff}.s2-t.t3{background:var(--ink);color:#fff}
 .s2-ic{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--purple-100);color:var(--purple);flex:none}
 .s2-t.t1 .s2-ic,.s2-t.t3 .s2-ic{background:rgba(255,255,255,.16);color:#fff}
 .s2-ic svg{width:22px;height:22px}
-.s2-big{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(30px,3.2vw,46px);line-height:1;text-transform:uppercase;letter-spacing:.005em;margin-top:6px}
+.s2-big{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(26px,11.2cqi,46px);line-height:1;text-transform:uppercase;letter-spacing:.005em;margin-top:6px}
 .s2-t p{margin:0;font-size:15px;line-height:1.45;color:var(--soft)}
 .s2-t.t1 p,.s2-t.t3 p{color:rgba(255,255,255,.8)}
+a.s2-t{text-decoration:none;color:inherit;position:relative}
+.s2-go{position:absolute;top:24px;right:26px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.4);color:#fff;font-size:20px;line-height:1;transition:background .3s,color .3s,transform .3s}
+a.s2-t:hover .s2-go,a.s2-t:focus-visible .s2-go{background:#fff;color:var(--purple);transform:translateX(3px)}
+a.s2-t:focus-visible{outline:3px solid #fff;outline-offset:3px}
 @media(max-width:860px){.s2-tiles{grid-template-columns:1fr}}
 .ab-str .k-split{align-items:center;gap:72px;grid-template-columns:1.1fr .9fr}
 .ab-str .k-h2{margin:12px 0 28px}
@@ -250,7 +254,7 @@ body{overflow-x:clip}
       <img src="/photography/hg-10.jpg" alt="Three young professionals talking and laughing at a laptop" style="object-position:50% 62%" loading="lazy">
     </div>
     <div class="s2-tiles">
-      <div class="s2-t t1" data-reveal><span class="s2-ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 2.5 9 12 14l9.5-5L12 4Z"></path><path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"></path></svg></span><div class="s2-big">Partners</div><p>Student associations and other student organisations: together we join forces to reach young talent.</p></div>
+      <a class="s2-t t1" href="/en/talent#partners" data-reveal><span class="s2-ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 2.5 9 12 14l9.5-5L12 4Z"></path><path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"></path></svg></span><div class="s2-big">Community partners</div><p>Student associations and other student organisations: together we join forces to reach young talent.</p><span class="s2-go" aria-hidden="true">&rarr;</span></a>
       <div class="s2-t t2" data-reveal data-delay="80"><span class="s2-ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"></rect><path d="M8 3v4M16 3v4M3.5 10h17"></path></svg></span><div class="s2-big">Events</div><p>We host events for young talent ourselves and attend events run by others, to meet students in person.</p></div>
       <div class="s2-t t3" data-reveal data-delay="160"><span class="s2-ic"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"></circle><circle cx="17" cy="9.5" r="2.5"></circle><path d="M3 19c0-3.2 2.7-5.5 6-5.5s6 2.3 6 5.5M15.5 14.5c2.7 0 5 1.8 5 4.5"></path></svg></span><div class="s2-big" data-count="4000" data-suffix="+">4,000+</div><p>students and starters in our community, with whom we share vacancies and opportunities directly.</p></div>
     </div>
